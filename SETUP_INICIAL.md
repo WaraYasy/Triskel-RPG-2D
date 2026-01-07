@@ -116,7 +116,7 @@ Experimenta con estos valores en Inspector:
 
 Una vez funcione movimiento + dash:
 
-1. **RelicSystem** - Cambio entre 3 reliquias (teclas 1/2/3)
+1. ✅ **RelicSystem** - Cambio entre 3 reliquias (SIGUIENTE)
 2. **Habilidades básicas** - Usar reliquia con Z
 3. **Visual feedback** - Sprite diferente por reliquia equipada
 4. **GameManager expandido** - Guardar moral, reliquias obtenidas
@@ -124,4 +124,65 @@ Una vez funcione movimiento + dash:
 
 ---
 
-**¿Todo funcionando?** Avísame cuando esté listo y seguimos con las reliquias! 🎮
+## 🌸 Paso 7: Sistema de Reliquias (v1.0)
+
+### **Nuevas Características:**
+- Cambia entre 3 reliquias con teclas **1/2/3**
+- Presiona **0** para desequipar
+- Visual feedback con colores
+- Enum para tipos de reliquias
+
+### **Configuración en Unity:**
+
+#### 1. Añadir RelicSystem al Player:
+1. Seleccionar `Player` en Hierarchy
+2. Add Component → **RelicSystem**
+
+#### 2. Crear Visual Indicator (Opcional):
+1. Click derecho en Player → 2D Object → Sprites → Circle
+2. Nombre: `RelicIndicator`
+3. Transform → Scale: `(0.3, 0.3, 1)`
+4. Transform → Position: `(0, 0.7, 0)` (encima del jugador)
+
+#### 3. Configurar RelicSystem:
+En Inspector → RelicSystem:
+```
+Configuración:
+  Current Relic: None
+
+Visual Feedback (Opcional):
+  Relic Indicator: [Arrastrar RelicIndicator aquí]
+  Color Lirio: Cyan
+  Color Hacha: Red
+  Color Manto: Purple
+```
+
+### **Cómo Probarlo:**
+1. Play ▶️
+2. Presiona **1** → Indicador se vuelve Cyan (Lirio Azul)
+3. Presiona **2** → Indicador se vuelve Rojo (Hacha Sagrada)
+4. Presiona **3** → Indicador se vuelve Púrpura (Manto de Luna)
+5. Presiona **0** → Indicador desaparece (Sin reliquia)
+6. Verás logs en Console indicando el cambio
+
+### **Tipos de Reliquias:**
+```
+0 = None (Sin reliquia)
+1 = Lirio Azul (Cyan)
+2 = Hacha Sagrada (Rojo)
+3 = Manto de Luna (Púrpura)
+```
+
+---
+
+## 🎯 Siguiente: Habilidades Básicas
+
+Próximo paso será añadir una habilidad simple por cada reliquia:
+
+1. **Lirio Azul (Z)** → Detectar objetos cerca (área visual)
+2. **Hacha Sagrada (Z)** → Golpe en dirección del movimiento
+3. **Manto de Luna (Z)** → Toggle invisibilidad
+
+---
+
+**¿Funciona el cambio de reliquias?** Avísame cuando esté listo! ⚡
