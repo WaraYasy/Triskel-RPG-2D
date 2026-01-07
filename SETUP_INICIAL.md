@@ -75,15 +75,53 @@ git push origin Dev_GRB
 
 ---
 
-## 🔧 Próximas Mejoras
+## 🚀 Paso 6: Añadir Dash (v2.0)
 
-Una vez funcione el movimiento básico, añadiremos:
+El PlayerController ahora incluye sistema de Dash:
 
-1. **Dash** (Space para dash)
-2. **Animaciones** (caminar en 4 direcciones)
-3. **Input System** (mejor manejo de inputs)
-4. **Reliquias básicas** (cambio con 1/2/3)
+### **Nuevas Características:**
+- Presiona **SPACE** para hacer dash
+- Dash en la última dirección de movimiento
+- Cooldown de 1.5 segundos
+- Velocidad: 3x más rápido que caminar
+
+### **Configuración en Inspector:**
+```
+Configuración de Movimiento:
+  Move Speed: 5
+
+Configuración de Dash:  ← NUEVO
+  Dash Speed: 15        ← Velocidad del dash
+  Dash Duration: 0.2    ← Duración del dash
+  Dash Cooldown: 1.5    ← Tiempo entre dashes
+```
+
+### **Cómo Probarlo:**
+1. Play ▶️
+2. Muévete con **WASD**
+3. Presiona **SPACE** → ¡Dash!
+4. Intenta spamear Space → Verás que tiene cooldown
+
+### **Ajustes Recomendados:**
+Experimenta con estos valores en Inspector:
+
+| Para más acción | Para más estratégico |
+|----------------|---------------------|
+| Dash Speed: 20 | Dash Speed: 12 |
+| Cooldown: 1.0  | Cooldown: 2.0 |
 
 ---
 
-**¿Todo funcionando?** Avísame cuando lo pruebes y seguimos con el Dash! 🎮
+## 🎯 Próximas Mejoras
+
+Una vez funcione movimiento + dash:
+
+1. **RelicSystem** - Cambio entre 3 reliquias (teclas 1/2/3)
+2. **Habilidades básicas** - Usar reliquia con Z
+3. **Visual feedback** - Sprite diferente por reliquia equipada
+4. **GameManager expandido** - Guardar moral, reliquias obtenidas
+5. **DiarioEvolutivo** - Sistema de frases narrativas
+
+---
+
+**¿Todo funcionando?** Avísame cuando esté listo y seguimos con las reliquias! 🎮
