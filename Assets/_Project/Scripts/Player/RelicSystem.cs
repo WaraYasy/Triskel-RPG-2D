@@ -2,7 +2,7 @@ using UnityEngine;
 
 /// <summary>
 /// Sistema de Reliquias - Cambio y uso de habilidades
-/// Versión 1.0 - Cambio básico entre reliquias con teclas 1/2/3
+/// Versión 2.0 - Con habilidades básicas por reliquia
 /// </summary>
 public class RelicSystem : MonoBehaviour
 {
@@ -17,14 +17,34 @@ public class RelicSystem : MonoBehaviour
     [Header("Configuración")]
     [SerializeField] private RelicType currentRelic = RelicType.None;
     
-    [Header("Visual Feedback (Opcional)")]
-    [SerializeField] private SpriteRenderer relicIndicator; // Sprite para mostrar reliquia activa
+    [Header("Visual Feedback")]
+    [SerializeField] private SpriteRenderer relicIndicator;
     [SerializeField] private Color colorLirio = Color.cyan;
     [SerializeField] private Color colorHacha = Color.red;
-    [SerializeField] private Color colorManto = new Color(0.5f, 0f, 0.5f); // Púrpura
+    [SerializeField] private Color colorManto = new Color(0.5f, 0f, 0.5f);
+    
+    [Header("Habilidades")]
+    [SerializeField] private float abilityCooldown = 2f;
+    [SerializeField] private float lilioDetectionRadius = 3f;
+    [SerializeField] private SpriteRenderer playerSprite; // Para invisibilidad del Manto
+    
+    private float abilityCooldownTimer = 0f;
+    private bool isInvisible = false;
+    private PlayerController playerController; // Referencia para dirección
+    
+    private void Awake()
+    {
+        playerController = GetComponent<PlayerController>();
+    }
     
     private void Update()
     {
+        // Cooldown de habilidad
+        if (abilityCooldownTimer > 0)
+        {
+            abilityCooldownTimer -= Time.deltaTime;
+        }
+        
         // Cambio de reliquia con teclas numéricas
         if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
         {
@@ -43,21 +63,17 @@ public class RelicSystem : MonoBehaviour
             SelectRelic(RelicType.None);
         }
         
-        // TODO: Input para usar reliquia (tecla Z)
-        // if (Input.GetKeyDown(KeyCode.Z))
-        // {
-        //     UseCurrentRelic();
-        // }
+        // Usar habilidad con tecla Z
+        if (Input.GetKeyDown(KeyCode.Z) && abilityCooldownTimer <= 0)
+        {
+            UseCurrentRelic();
+        }
     }
     
     public void SelectRelic(RelicType relic)
     {
         currentRelic = relic;
-        
-        // Visual feedback
         UpdateVisualFeedback();
-        
-        // Log para debug
         Debug.Log($"Reliquia seleccionada: {relic}");
     }
     
@@ -89,7 +105,6 @@ public class RelicSystem : MonoBehaviour
         }
     }
     
-    // Método para usar la reliquia actual
     private void UseCurrentRelic()
     {
         if (currentRelic == RelicType.None)
@@ -98,11 +113,91 @@ public class RelicSystem : MonoBehaviour
             return;
         }
         
-        // TODO: Implementar habilidades por reliquia
-        Debug.Log($"Usando reliquia: {currentRelic}");
+        // Activar cooldown
+        abilityCooldownTimer = abilityCooldown;
+        
+        // Ejecutar habilidad según reliquia
+        switch (currentRelic)
+        {
+            case RelicType.LirioAzul:
+                UseLirio();
+                break;
+            
+            case RelicType.HachaSagrada:
+                UseHacha();
+                break;
+            
+            case RelicType.MantoDeLuna:
+                UseManto();
+                break;
+        }
     }
     
-    // Métodos públicos para acceder al estado
+    // === HABILIDADES ===
+    
+    private void UseLirio()
+    {
+        Debug.Log("🌸 Lirio Azul activado - Revelando entorno");
+        
+        // Crear área de detección visual temporal
+        GameObject detectionArea = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        detectionArea.transform.position = transform.position;
+        detectionArea.transform.localScale = Vector3.one * lilioDetectionRadius * 2f;
+        
+        // Hacer transparente y cyan
+        var renderer = detectionArea.GetComponent<Renderer>();
+        renderer.material.color = new Color(0, 1, 1, 0.3f); // Cyan transparente
+        
+        // Eliminar collider (solo visual)
+        Destroy(detectionArea.GetComponent<Collider>());
+        
+        // Destruir después de 1 segundo
+        Destroy(detectionArea, 1f);
+    }
+    
+    private void UseHacha()
+    {
+        Debug.Log("⚔️ Hacha Sagrada - Golpe direccional");
+        
+        // Obtener dirección del movimiento
+        Vector2 direction = playerController != null ? 
+            playerController.GetLastMoveDirection() : Vector2.down;
+        
+        // Crear proyectil visual simple
+        GameObject projectile = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        projectile.transform.position = transform.position;
+        projectile.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        
+        var renderer = projectile.GetComponent<Renderer>();
+        renderer.material.color = colorHacha;
+        
+        // Mover en dirección
+        var rb = projectile.AddComponent<Rigidbody>();
+        rb.useGravity = false;
+        rb.linearVelocity = (Vector3)direction * 10f;
+        
+        // Destruir después de 2 segundos
+        Destroy(projectile, 2f);
+    }
+    
+    private void UseManto()
+    {
+        isInvisible = !isInvisible;
+        
+        if (playerSprite != null)
+        {
+            Color color = playerSprite.color;
+            color.a = isInvisible ? 0.3f : 1f;
+            playerSprite.color = color;
+        }
+        
+        Debug.Log($"🌙 Manto de Luna - Invisibilidad: {(isInvisible ? "ON" : "OFF")}");
+    }
+    
+    // Métodos públicos
     public RelicType GetCurrentRelic() => currentRelic;
     public bool HasRelicEquipped() => currentRelic != RelicType.None;
+    public float GetAbilityCooldownProgress() => 1f - (abilityCooldownTimer / abilityCooldown);
+    public bool IsInvisible() => isInvisible;
 }
+

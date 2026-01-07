@@ -179,10 +179,69 @@ Visual Feedback (Opcional):
 
 Próximo paso será añadir una habilidad simple por cada reliquia:
 
-1. **Lirio Azul (Z)** → Detectar objetos cerca (área visual)
-2. **Hacha Sagrada (Z)** → Golpe en dirección del movimiento
-3. **Manto de Luna (Z)** → Toggle invisibilidad
+1. ✅ **Lirio Azul (Z)** → Detectar objetos cerca (HECHO)
+2. ✅ **Hacha Sagrada (Z)** → Golpe direccional (HECHO)
+3. ✅ **Manto de Luna (Z)** → Toggle invisibilidad (HECHO)
 
 ---
 
-**¿Funciona el cambio de reliquias?** Avísame cuando esté listo! ⚡
+## ⚡ Paso 8: Habilidades de Reliquias (v2.0)
+
+### **Nuevas Características:**
+- Presiona **Z** para usar la reliquia equipada
+- Cada reliquia tiene su habilidad única
+- Cooldown de 2 segundos entre usos
+
+### **Configuración Adicional:**
+
+1. **Selecciona Player** en Hierarchy
+2. **Inspector → RelicSystem:**
+
+```
+Habilidades:  ← NUEVO
+  Ability Cooldown: 2           ← Tiempo entre usos
+  Lirio Detection Radius: 3     ← Radio del Lirio
+  Player Sprite: [Arrastra el SpriteRenderer del Player aquí]
+```
+
+**Importante:** Para que funcione la invisibilidad del Manto, **arrastra** el componente **Sprite Renderer** del Player al campo "Player Sprite".
+
+---
+
+### **Cómo Probar las Habilidades:**
+
+#### **🌸 Lirio Azul:**
+1. Presiona **1** (equipar Lirio)
+2. Presiona **Z**
+3. Verás una **esfera cyan** aparecer alrededor del jugador por 1 segundo
+
+#### **⚔️ Hacha Sagrada:**
+1. Presiona **2** (equipar Hacha)
+2. **Muévete** en una dirección (WASD)
+3. Presiona **Z**
+4. Verás un **cubo rojo** dispararse en esa dirección
+
+#### **🌙 Manto de Luna:**
+1. Presiona **3** (equipar Manto)
+2. Presiona **Z** → Player se vuelve semi-transparente (invisibilidad ON)
+3. Presiona **Z** otra vez → Player vuelve a ser opaco (invisibilidad OFF)
+
+---
+
+### **Cooldown:**
+- Si presionas Z varias veces seguidas, verás en Console que hay un cooldown de 2 segundos
+- Puedes ajustar el tiempo en Inspector → Ability Cooldown
+
+---
+
+## 🎯 Siguiente Paso: GameManager Expandido
+
+Ahora que las mecánicas básicas funcionan, podemos añadir:
+
+1. **GameManager** → Guardar moral, reliquias obtenidas
+2. **GameData** → Estructura de datos persistente
+3. **DiarioEvolutivo** → Frases narrativas básicas
+
+---
+
+**¿Funcionan las habilidades?** Pruébalas todas y avísame! 🌸⚔️🌙
