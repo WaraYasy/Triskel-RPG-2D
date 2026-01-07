@@ -78,3 +78,63 @@ crashlytics-build.properties
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+# ========================================
+# 🔐 API & Configuración Sensible
+# ========================================
+# NO SUBIR credenciales, tokens o API keys
+**/ApiKeys.cs
+**/Secrets.json
+**/ApiConfig.cs
+Assets/_Project/Scripts/API/Utils/ApiConfig.cs
+Assets/_Project/Resources/Config/ApiSettings.asset
+
+# Variables de entorno
+.env
+.env.local
+
+# ========================================
+# 📚 Documentación Temporal (opcional)
+# ========================================
+# Descomentar si no quieres subir docs de trabajo
+# Documentation/NOTES.md
+# Documentation/TODO.md
+
+# ========================================
+# 🎨 Assets Temporales
+# ========================================
+# Assets grandes que no deben estar en git
+Assets/_Project/Audio/*.wav
+Assets/_Project/Models/*.fbx.meta
+# Descomentar si quieres ignorar assets temporales
+# Assets/_Project/Sprites/Temp/
+
+# ========================================
+# 🔧 IDE y Herramientas
+# ========================================
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# VSCode workspace específico
+.vscode/settings.json
+.vscode/launch.json
+
+# ========================================
+# 📦 Packages y Assets de Terceros
+# ========================================
+# Asset Store content (descomentar si usas Asset Store)
+# Assets/AssetStoreTools/
+# Assets/Plugins/
+
+# ========================================
+# 🚀 Builds y Releases
+# ========================================
+# Carpetas de builds
+*.apk
+*.aab
+*.ipa
+WebGL/
+Android/
+iOS/
+PC/
