@@ -1090,7 +1090,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -1104,7 +1104,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -1125,7 +1125,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -1149,6 +1149,45 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1156,10 +1195,10 @@ TextureImporter:
       name: assetsGigante_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 3393
-        width: 32
-        height: 48
+        x: 17
+        y: 3394
+        width: 30
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1178,10 +1217,10 @@ TextureImporter:
       name: assetsGigante_1
       rect:
         serializedVersion: 2
-        x: 81
-        y: 3393
-        width: 30
-        height: 48
+        x: 82
+        y: 3394
+        width: 28
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1200,10 +1239,10 @@ TextureImporter:
       name: assetsGigante_2
       rect:
         serializedVersion: 2
-        x: 145
-        y: 3393
-        width: 30
-        height: 48
+        x: 146
+        y: 3394
+        width: 28
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1222,10 +1261,10 @@ TextureImporter:
       name: assetsGigante_3
       rect:
         serializedVersion: 2
-        x: 205
-        y: 3393
-        width: 38
-        height: 48
+        x: 206
+        y: 3394
+        width: 36
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1244,10 +1283,10 @@ TextureImporter:
       name: assetsGigante_4
       rect:
         serializedVersion: 2
-        x: 262
-        y: 3393
-        width: 52
-        height: 48
+        x: 263
+        y: 3394
+        width: 50
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1266,10 +1305,10 @@ TextureImporter:
       name: assetsGigante_5
       rect:
         serializedVersion: 2
-        x: 327
-        y: 3393
-        width: 50
-        height: 48
+        x: 328
+        y: 3394
+        width: 48
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1288,10 +1327,10 @@ TextureImporter:
       name: assetsGigante_6
       rect:
         serializedVersion: 2
-        x: 397
-        y: 3393
-        width: 38
-        height: 48
+        x: 398
+        y: 3394
+        width: 36
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1310,10 +1349,10 @@ TextureImporter:
       name: assetsGigante_7
       rect:
         serializedVersion: 2
-        x: 22
-        y: 3329
-        width: 22
-        height: 49
+        x: 23
+        y: 3330
+        width: 20
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1332,10 +1371,10 @@ TextureImporter:
       name: assetsGigante_8
       rect:
         serializedVersion: 2
-        x: 84
-        y: 3329
-        width: 25
-        height: 49
+        x: 85
+        y: 3330
+        width: 23
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1354,10 +1393,10 @@ TextureImporter:
       name: assetsGigante_9
       rect:
         serializedVersion: 2
-        x: 149
-        y: 3329
-        width: 23
-        height: 49
+        x: 150
+        y: 3330
+        width: 21
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1376,10 +1415,10 @@ TextureImporter:
       name: assetsGigante_10
       rect:
         serializedVersion: 2
-        x: 211
-        y: 3329
-        width: 28
-        height: 49
+        x: 212
+        y: 3330
+        width: 26
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1398,10 +1437,10 @@ TextureImporter:
       name: assetsGigante_11
       rect:
         serializedVersion: 2
-        x: 273
-        y: 3329
-        width: 35
-        height: 49
+        x: 274
+        y: 3330
+        width: 33
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1420,10 +1459,10 @@ TextureImporter:
       name: assetsGigante_12
       rect:
         serializedVersion: 2
-        x: 337
-        y: 3329
-        width: 35
-        height: 49
+        x: 338
+        y: 3330
+        width: 33
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1442,10 +1481,10 @@ TextureImporter:
       name: assetsGigante_13
       rect:
         serializedVersion: 2
-        x: 403
-        y: 3329
-        width: 30
-        height: 49
+        x: 404
+        y: 3330
+        width: 28
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1464,10 +1503,10 @@ TextureImporter:
       name: assetsGigante_14
       rect:
         serializedVersion: 2
-        x: 16
-        y: 3265
-        width: 32
-        height: 49
+        x: 17
+        y: 3266
+        width: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1486,10 +1525,10 @@ TextureImporter:
       name: assetsGigante_15
       rect:
         serializedVersion: 2
-        x: 80
-        y: 3265
-        width: 32
-        height: 49
+        x: 81
+        y: 3266
+        width: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1508,10 +1547,10 @@ TextureImporter:
       name: assetsGigante_16
       rect:
         serializedVersion: 2
-        x: 145
-        y: 3265
-        width: 30
-        height: 49
+        x: 146
+        y: 3266
+        width: 28
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1530,10 +1569,10 @@ TextureImporter:
       name: assetsGigante_17
       rect:
         serializedVersion: 2
-        x: 205
-        y: 3265
-        width: 38
-        height: 49
+        x: 206
+        y: 3266
+        width: 36
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1552,10 +1591,10 @@ TextureImporter:
       name: assetsGigante_18
       rect:
         serializedVersion: 2
-        x: 262
-        y: 3265
-        width: 52
-        height: 49
+        x: 263
+        y: 3266
+        width: 50
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1574,10 +1613,10 @@ TextureImporter:
       name: assetsGigante_19
       rect:
         serializedVersion: 2
-        x: 327
-        y: 3265
-        width: 50
-        height: 49
+        x: 328
+        y: 3266
+        width: 48
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1596,10 +1635,10 @@ TextureImporter:
       name: assetsGigante_20
       rect:
         serializedVersion: 2
-        x: 398
-        y: 3265
-        width: 36
-        height: 49
+        x: 399
+        y: 3266
+        width: 34
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1618,10 +1657,10 @@ TextureImporter:
       name: assetsGigante_21
       rect:
         serializedVersion: 2
-        x: 20
-        y: 3201
-        width: 22
-        height: 49
+        x: 21
+        y: 3202
+        width: 20
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1640,10 +1679,10 @@ TextureImporter:
       name: assetsGigante_22
       rect:
         serializedVersion: 2
-        x: 83
-        y: 3201
-        width: 25
-        height: 49
+        x: 84
+        y: 3202
+        width: 23
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1662,10 +1701,10 @@ TextureImporter:
       name: assetsGigante_23
       rect:
         serializedVersion: 2
-        x: 148
-        y: 3201
-        width: 23
-        height: 49
+        x: 149
+        y: 3202
+        width: 21
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1684,10 +1723,10 @@ TextureImporter:
       name: assetsGigante_24
       rect:
         serializedVersion: 2
-        x: 209
-        y: 3201
-        width: 28
-        height: 49
+        x: 210
+        y: 3202
+        width: 26
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1706,10 +1745,10 @@ TextureImporter:
       name: assetsGigante_25
       rect:
         serializedVersion: 2
-        x: 268
-        y: 3201
-        width: 35
-        height: 49
+        x: 269
+        y: 3202
+        width: 33
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1728,10 +1767,10 @@ TextureImporter:
       name: assetsGigante_26
       rect:
         serializedVersion: 2
-        x: 332
-        y: 3201
-        width: 35
-        height: 49
+        x: 333
+        y: 3202
+        width: 33
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1750,10 +1789,10 @@ TextureImporter:
       name: assetsGigante_27
       rect:
         serializedVersion: 2
-        x: 399
-        y: 3201
-        width: 30
-        height: 49
+        x: 400
+        y: 3202
+        width: 28
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1772,10 +1811,10 @@ TextureImporter:
       name: assetsGigante_28
       rect:
         serializedVersion: 2
-        x: 16
-        y: 3137
-        width: 32
-        height: 48
+        x: 17
+        y: 3138
+        width: 30
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1794,10 +1833,10 @@ TextureImporter:
       name: assetsGigante_29
       rect:
         serializedVersion: 2
-        x: 83
-        y: 3135
-        width: 28
-        height: 49
+        x: 84
+        y: 3136
+        width: 26
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1816,10 +1855,10 @@ TextureImporter:
       name: assetsGigante_30
       rect:
         serializedVersion: 2
-        x: 149
-        y: 3135
-        width: 24
-        height: 50
+        x: 150
+        y: 3136
+        width: 22
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1838,10 +1877,10 @@ TextureImporter:
       name: assetsGigante_31
       rect:
         serializedVersion: 2
-        x: 213
-        y: 3135
-        width: 24
-        height: 50
+        x: 214
+        y: 3136
+        width: 22
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1860,10 +1899,10 @@ TextureImporter:
       name: assetsGigante_32
       rect:
         serializedVersion: 2
-        x: 278
-        y: 3135
-        width: 24
-        height: 49
+        x: 279
+        y: 3136
+        width: 22
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1882,10 +1921,10 @@ TextureImporter:
       name: assetsGigante_33
       rect:
         serializedVersion: 2
-        x: 342
-        y: 3135
-        width: 24
-        height: 49
+        x: 343
+        y: 3136
+        width: 22
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1904,10 +1943,10 @@ TextureImporter:
       name: assetsGigante_34
       rect:
         serializedVersion: 2
-        x: 406
-        y: 3135
-        width: 24
-        height: 49
+        x: 407
+        y: 3136
+        width: 22
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1926,10 +1965,10 @@ TextureImporter:
       name: assetsGigante_35
       rect:
         serializedVersion: 2
-        x: 469
-        y: 3135
-        width: 24
-        height: 50
+        x: 470
+        y: 3136
+        width: 22
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1948,10 +1987,10 @@ TextureImporter:
       name: assetsGigante_36
       rect:
         serializedVersion: 2
-        x: 22
-        y: 3073
-        width: 22
-        height: 49
+        x: 23
+        y: 3074
+        width: 20
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1970,10 +2009,10 @@ TextureImporter:
       name: assetsGigante_37
       rect:
         serializedVersion: 2
-        x: 82
-        y: 3073
-        width: 27
-        height: 49
+        x: 83
+        y: 3074
+        width: 25
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1992,10 +2031,10 @@ TextureImporter:
       name: assetsGigante_38
       rect:
         serializedVersion: 2
-        x: 146
-        y: 3073
-        width: 29
-        height: 49
+        x: 147
+        y: 3074
+        width: 27
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2014,10 +2053,10 @@ TextureImporter:
       name: assetsGigante_39
       rect:
         serializedVersion: 2
-        x: 213
-        y: 3073
-        width: 27
-        height: 49
+        x: 214
+        y: 3074
+        width: 25
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2036,10 +2075,10 @@ TextureImporter:
       name: assetsGigante_40
       rect:
         serializedVersion: 2
-        x: 270
-        y: 3073
-        width: 29
-        height: 49
+        x: 271
+        y: 3074
+        width: 27
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2058,10 +2097,10 @@ TextureImporter:
       name: assetsGigante_41
       rect:
         serializedVersion: 2
-        x: 331
-        y: 3073
-        width: 32
-        height: 49
+        x: 332
+        y: 3074
+        width: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2080,10 +2119,10 @@ TextureImporter:
       name: assetsGigante_42
       rect:
         serializedVersion: 2
-        x: 398
-        y: 3073
-        width: 29
-        height: 49
+        x: 399
+        y: 3074
+        width: 27
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2102,10 +2141,10 @@ TextureImporter:
       name: assetsGigante_43
       rect:
         serializedVersion: 2
-        x: 469
-        y: 3073
-        width: 27
-        height: 49
+        x: 470
+        y: 3074
+        width: 25
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2124,10 +2163,10 @@ TextureImporter:
       name: assetsGigante_44
       rect:
         serializedVersion: 2
-        x: 16
-        y: 3009
-        width: 32
-        height: 49
+        x: 17
+        y: 3010
+        width: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2146,10 +2185,10 @@ TextureImporter:
       name: assetsGigante_45
       rect:
         serializedVersion: 2
-        x: 82
-        y: 3010
-        width: 26
-        height: 48
+        x: 83
+        y: 3011
+        width: 24
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2168,10 +2207,10 @@ TextureImporter:
       name: assetsGigante_46
       rect:
         serializedVersion: 2
-        x: 148
-        y: 3010
-        width: 24
-        height: 48
+        x: 149
+        y: 3011
+        width: 22
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2190,10 +2229,10 @@ TextureImporter:
       name: assetsGigante_47
       rect:
         serializedVersion: 2
-        x: 209
-        y: 3010
-        width: 27
-        height: 48
+        x: 210
+        y: 3011
+        width: 25
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2212,10 +2251,10 @@ TextureImporter:
       name: assetsGigante_48
       rect:
         serializedVersion: 2
-        x: 276
-        y: 3010
-        width: 24
-        height: 47
+        x: 277
+        y: 3011
+        width: 22
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2234,10 +2273,10 @@ TextureImporter:
       name: assetsGigante_49
       rect:
         serializedVersion: 2
-        x: 340
-        y: 3010
-        width: 24
-        height: 47
+        x: 341
+        y: 3011
+        width: 22
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2256,10 +2295,10 @@ TextureImporter:
       name: assetsGigante_50
       rect:
         serializedVersion: 2
-        x: 404
-        y: 3010
-        width: 24
-        height: 47
+        x: 405
+        y: 3011
+        width: 22
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2278,10 +2317,10 @@ TextureImporter:
       name: assetsGigante_51
       rect:
         serializedVersion: 2
-        x: 465
-        y: 3010
-        width: 27
-        height: 48
+        x: 466
+        y: 3011
+        width: 25
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2300,10 +2339,10 @@ TextureImporter:
       name: assetsGigante_52
       rect:
         serializedVersion: 2
-        x: 20
-        y: 2945
-        width: 22
-        height: 49
+        x: 21
+        y: 2946
+        width: 20
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2322,10 +2361,10 @@ TextureImporter:
       name: assetsGigante_53
       rect:
         serializedVersion: 2
-        x: 83
-        y: 2945
-        width: 27
-        height: 49
+        x: 84
+        y: 2946
+        width: 25
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2344,10 +2383,10 @@ TextureImporter:
       name: assetsGigante_54
       rect:
         serializedVersion: 2
-        x: 145
-        y: 2945
-        width: 29
-        height: 49
+        x: 146
+        y: 2946
+        width: 27
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2366,10 +2405,10 @@ TextureImporter:
       name: assetsGigante_55
       rect:
         serializedVersion: 2
-        x: 208
-        y: 2945
-        width: 27
-        height: 49
+        x: 209
+        y: 2946
+        width: 25
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2388,10 +2427,10 @@ TextureImporter:
       name: assetsGigante_56
       rect:
         serializedVersion: 2
-        x: 277
-        y: 2945
-        width: 29
-        height: 49
+        x: 278
+        y: 2946
+        width: 27
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2410,10 +2449,10 @@ TextureImporter:
       name: assetsGigante_57
       rect:
         serializedVersion: 2
-        x: 341
-        y: 2945
-        width: 32
-        height: 49
+        x: 342
+        y: 2946
+        width: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2432,10 +2471,10 @@ TextureImporter:
       name: assetsGigante_58
       rect:
         serializedVersion: 2
-        x: 405
-        y: 2945
-        width: 29
-        height: 49
+        x: 406
+        y: 2946
+        width: 27
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2454,10 +2493,10 @@ TextureImporter:
       name: assetsGigante_59
       rect:
         serializedVersion: 2
-        x: 464
-        y: 2945
-        width: 27
-        height: 49
+        x: 465
+        y: 2946
+        width: 25
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2476,10 +2515,10 @@ TextureImporter:
       name: assetsGigante_60
       rect:
         serializedVersion: 2
-        x: 16
-        y: 2882
-        width: 32
-        height: 48
+        x: 17
+        y: 2883
+        width: 30
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2498,10 +2537,10 @@ TextureImporter:
       name: assetsGigante_61
       rect:
         serializedVersion: 2
-        x: 80
-        y: 2882
-        width: 32
-        height: 48
+        x: 81
+        y: 2883
+        width: 30
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2520,10 +2559,10 @@ TextureImporter:
       name: assetsGigante_62
       rect:
         serializedVersion: 2
-        x: 144
-        y: 2881
-        width: 32
-        height: 49
+        x: 145
+        y: 2882
+        width: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2542,10 +2581,10 @@ TextureImporter:
       name: assetsGigante_63
       rect:
         serializedVersion: 2
-        x: 208
-        y: 2880
-        width: 31
-        height: 49
+        x: 209
+        y: 2881
+        width: 29
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2564,10 +2603,10 @@ TextureImporter:
       name: assetsGigante_64
       rect:
         serializedVersion: 2
-        x: 272
-        y: 2881
-        width: 32
-        height: 49
+        x: 273
+        y: 2882
+        width: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2586,10 +2625,10 @@ TextureImporter:
       name: assetsGigante_65
       rect:
         serializedVersion: 2
-        x: 336
-        y: 2882
-        width: 32
-        height: 48
+        x: 337
+        y: 2883
+        width: 30
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2608,10 +2647,10 @@ TextureImporter:
       name: assetsGigante_66
       rect:
         serializedVersion: 2
-        x: 400
-        y: 2881
-        width: 32
-        height: 49
+        x: 401
+        y: 2882
+        width: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2630,10 +2669,10 @@ TextureImporter:
       name: assetsGigante_67
       rect:
         serializedVersion: 2
-        x: 465
-        y: 2880
-        width: 31
-        height: 49
+        x: 466
+        y: 2881
+        width: 29
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2652,10 +2691,10 @@ TextureImporter:
       name: assetsGigante_68
       rect:
         serializedVersion: 2
-        x: 528
-        y: 2881
-        width: 32
-        height: 49
+        x: 529
+        y: 2882
+        width: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2674,10 +2713,10 @@ TextureImporter:
       name: assetsGigante_69
       rect:
         serializedVersion: 2
-        x: 22
-        y: 2817
-        width: 22
-        height: 49
+        x: 23
+        y: 2818
+        width: 20
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2696,10 +2735,10 @@ TextureImporter:
       name: assetsGigante_70
       rect:
         serializedVersion: 2
-        x: 82
-        y: 2817
-        width: 27
-        height: 48
+        x: 83
+        y: 2818
+        width: 25
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2718,10 +2757,10 @@ TextureImporter:
       name: assetsGigante_71
       rect:
         serializedVersion: 2
-        x: 148
-        y: 2818
-        width: 24
-        height: 48
+        x: 149
+        y: 2819
+        width: 22
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2740,10 +2779,10 @@ TextureImporter:
       name: assetsGigante_72
       rect:
         serializedVersion: 2
-        x: 214
-        y: 2818
-        width: 24
-        height: 48
+        x: 215
+        y: 2819
+        width: 22
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2762,10 +2801,10 @@ TextureImporter:
       name: assetsGigante_73
       rect:
         serializedVersion: 2
-        x: 277
-        y: 2817
-        width: 26
-        height: 49
+        x: 278
+        y: 2818
+        width: 24
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2784,10 +2823,10 @@ TextureImporter:
       name: assetsGigante_74
       rect:
         serializedVersion: 2
-        x: 339
-        y: 2817
-        width: 30
-        height: 48
+        x: 340
+        y: 2818
+        width: 28
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2806,10 +2845,10 @@ TextureImporter:
       name: assetsGigante_75
       rect:
         serializedVersion: 2
-        x: 406
-        y: 2817
-        width: 25
-        height: 49
+        x: 407
+        y: 2818
+        width: 23
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2828,10 +2867,10 @@ TextureImporter:
       name: assetsGigante_76
       rect:
         serializedVersion: 2
-        x: 470
-        y: 2817
-        width: 24
-        height: 49
+        x: 471
+        y: 2818
+        width: 22
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2850,10 +2889,10 @@ TextureImporter:
       name: assetsGigante_77
       rect:
         serializedVersion: 2
-        x: 534
-        y: 2817
-        width: 23
-        height: 49
+        x: 535
+        y: 2818
+        width: 21
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2872,10 +2911,10 @@ TextureImporter:
       name: assetsGigante_78
       rect:
         serializedVersion: 2
-        x: 16
-        y: 2753
-        width: 32
-        height: 49
+        x: 17
+        y: 2754
+        width: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2894,10 +2933,10 @@ TextureImporter:
       name: assetsGigante_79
       rect:
         serializedVersion: 2
-        x: 80
-        y: 2753
-        width: 32
-        height: 49
+        x: 81
+        y: 2754
+        width: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2916,10 +2955,10 @@ TextureImporter:
       name: assetsGigante_80
       rect:
         serializedVersion: 2
-        x: 144
-        y: 2752
-        width: 32
-        height: 50
+        x: 145
+        y: 2753
+        width: 30
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2938,10 +2977,10 @@ TextureImporter:
       name: assetsGigante_81
       rect:
         serializedVersion: 2
-        x: 209
-        y: 2752
-        width: 31
-        height: 49
+        x: 210
+        y: 2753
+        width: 29
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2960,10 +2999,10 @@ TextureImporter:
       name: assetsGigante_82
       rect:
         serializedVersion: 2
-        x: 272
-        y: 2752
-        width: 32
-        height: 50
+        x: 273
+        y: 2753
+        width: 30
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2982,10 +3021,10 @@ TextureImporter:
       name: assetsGigante_83
       rect:
         serializedVersion: 2
-        x: 336
-        y: 2753
-        width: 32
-        height: 49
+        x: 337
+        y: 2754
+        width: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3004,10 +3043,10 @@ TextureImporter:
       name: assetsGigante_84
       rect:
         serializedVersion: 2
-        x: 400
-        y: 2752
-        width: 32
-        height: 50
+        x: 401
+        y: 2753
+        width: 30
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3026,10 +3065,10 @@ TextureImporter:
       name: assetsGigante_85
       rect:
         serializedVersion: 2
-        x: 464
-        y: 2752
-        width: 31
-        height: 49
+        x: 465
+        y: 2753
+        width: 29
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3048,10 +3087,10 @@ TextureImporter:
       name: assetsGigante_86
       rect:
         serializedVersion: 2
-        x: 528
-        y: 2752
-        width: 32
-        height: 50
+        x: 529
+        y: 2753
+        width: 30
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3070,10 +3109,10 @@ TextureImporter:
       name: assetsGigante_87
       rect:
         serializedVersion: 2
-        x: 20
-        y: 2689
-        width: 22
-        height: 49
+        x: 21
+        y: 2690
+        width: 20
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3092,10 +3131,10 @@ TextureImporter:
       name: assetsGigante_88
       rect:
         serializedVersion: 2
-        x: 83
-        y: 2689
-        width: 27
-        height: 48
+        x: 84
+        y: 2690
+        width: 25
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3114,10 +3153,10 @@ TextureImporter:
       name: assetsGigante_89
       rect:
         serializedVersion: 2
-        x: 148
-        y: 2690
-        width: 24
-        height: 48
+        x: 149
+        y: 2691
+        width: 22
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3136,10 +3175,10 @@ TextureImporter:
       name: assetsGigante_90
       rect:
         serializedVersion: 2
-        x: 210
-        y: 2690
-        width: 24
-        height: 48
+        x: 211
+        y: 2691
+        width: 22
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3158,10 +3197,10 @@ TextureImporter:
       name: assetsGigante_91
       rect:
         serializedVersion: 2
-        x: 273
-        y: 2689
-        width: 26
-        height: 49
+        x: 274
+        y: 2690
+        width: 24
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3180,10 +3219,10 @@ TextureImporter:
       name: assetsGigante_92
       rect:
         serializedVersion: 2
-        x: 335
-        y: 2689
-        width: 30
-        height: 48
+        x: 336
+        y: 2690
+        width: 28
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3202,10 +3241,10 @@ TextureImporter:
       name: assetsGigante_93
       rect:
         serializedVersion: 2
-        x: 401
-        y: 2689
-        width: 25
-        height: 49
+        x: 402
+        y: 2690
+        width: 23
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3224,10 +3263,10 @@ TextureImporter:
       name: assetsGigante_94
       rect:
         serializedVersion: 2
-        x: 466
-        y: 2689
-        width: 24
-        height: 49
+        x: 467
+        y: 2690
+        width: 22
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3246,10 +3285,10 @@ TextureImporter:
       name: assetsGigante_95
       rect:
         serializedVersion: 2
-        x: 531
-        y: 2689
-        width: 23
-        height: 49
+        x: 532
+        y: 2690
+        width: 21
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3268,10 +3307,10 @@ TextureImporter:
       name: assetsGigante_96
       rect:
         serializedVersion: 2
-        x: 16
-        y: 2625
-        width: 32
-        height: 48
+        x: 17
+        y: 2626
+        width: 30
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3290,10 +3329,10 @@ TextureImporter:
       name: assetsGigante_97
       rect:
         serializedVersion: 2
-        x: 82
-        y: 2624
-        width: 28
-        height: 48
+        x: 83
+        y: 2625
+        width: 26
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3312,10 +3351,10 @@ TextureImporter:
       name: assetsGigante_98
       rect:
         serializedVersion: 2
-        x: 147
-        y: 2624
-        width: 27
-        height: 48
+        x: 148
+        y: 2625
+        width: 25
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3334,10 +3373,10 @@ TextureImporter:
       name: assetsGigante_99
       rect:
         serializedVersion: 2
-        x: 210
-        y: 2624
-        width: 29
-        height: 49
+        x: 211
+        y: 2625
+        width: 27
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3356,10 +3395,10 @@ TextureImporter:
       name: assetsGigante_100
       rect:
         serializedVersion: 2
-        x: 273
-        y: 2624
-        width: 38
-        height: 49
+        x: 274
+        y: 2625
+        width: 36
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3378,10 +3417,10 @@ TextureImporter:
       name: assetsGigante_101
       rect:
         serializedVersion: 2
-        x: 337
-        y: 2624
-        width: 41
-        height: 49
+        x: 338
+        y: 2625
+        width: 39
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3400,10 +3439,10 @@ TextureImporter:
       name: assetsGigante_102
       rect:
         serializedVersion: 2
-        x: 22
-        y: 2561
-        width: 22
-        height: 49
+        x: 23
+        y: 2562
+        width: 20
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3422,10 +3461,10 @@ TextureImporter:
       name: assetsGigante_103
       rect:
         serializedVersion: 2
-        x: 80
-        y: 2561
-        width: 27
-        height: 47
+        x: 81
+        y: 2562
+        width: 25
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3444,10 +3483,10 @@ TextureImporter:
       name: assetsGigante_104
       rect:
         serializedVersion: 2
-        x: 147
-        y: 2561
-        width: 26
-        height: 49
+        x: 148
+        y: 2562
+        width: 24
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3466,10 +3505,10 @@ TextureImporter:
       name: assetsGigante_105
       rect:
         serializedVersion: 2
-        x: 202
-        y: 2561
-        width: 36
-        height: 49
+        x: 203
+        y: 2562
+        width: 34
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3488,10 +3527,10 @@ TextureImporter:
       name: assetsGigante_106
       rect:
         serializedVersion: 2
-        x: 263
-        y: 2561
-        width: 38
-        height: 49
+        x: 264
+        y: 2562
+        width: 36
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3510,10 +3549,10 @@ TextureImporter:
       name: assetsGigante_107
       rect:
         serializedVersion: 2
-        x: 330
-        y: 2561
-        width: 35
-        height: 49
+        x: 331
+        y: 2562
+        width: 33
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3532,10 +3571,10 @@ TextureImporter:
       name: assetsGigante_108
       rect:
         serializedVersion: 2
-        x: 16
-        y: 2497
-        width: 32
-        height: 49
+        x: 17
+        y: 2498
+        width: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3554,10 +3593,10 @@ TextureImporter:
       name: assetsGigante_109
       rect:
         serializedVersion: 2
-        x: 82
-        y: 2497
-        width: 28
-        height: 49
+        x: 83
+        y: 2498
+        width: 26
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3576,10 +3615,10 @@ TextureImporter:
       name: assetsGigante_110
       rect:
         serializedVersion: 2
-        x: 146
-        y: 2497
-        width: 28
-        height: 47
+        x: 147
+        y: 2498
+        width: 26
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3598,10 +3637,10 @@ TextureImporter:
       name: assetsGigante_111
       rect:
         serializedVersion: 2
-        x: 211
-        y: 2497
-        width: 28
-        height: 48
+        x: 212
+        y: 2498
+        width: 26
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3620,10 +3659,10 @@ TextureImporter:
       name: assetsGigante_112
       rect:
         serializedVersion: 2
-        x: 275
-        y: 2497
-        width: 37
-        height: 49
+        x: 276
+        y: 2498
+        width: 35
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3642,10 +3681,10 @@ TextureImporter:
       name: assetsGigante_113
       rect:
         serializedVersion: 2
-        x: 338
-        y: 2497
-        width: 41
-        height: 49
+        x: 339
+        y: 2498
+        width: 39
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3664,10 +3703,10 @@ TextureImporter:
       name: assetsGigante_114
       rect:
         serializedVersion: 2
-        x: 20
-        y: 2433
-        width: 22
-        height: 49
+        x: 21
+        y: 2434
+        width: 20
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3686,10 +3725,10 @@ TextureImporter:
       name: assetsGigante_115
       rect:
         serializedVersion: 2
-        x: 85
-        y: 2433
-        width: 27
-        height: 47
+        x: 86
+        y: 2434
+        width: 25
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3708,10 +3747,10 @@ TextureImporter:
       name: assetsGigante_116
       rect:
         serializedVersion: 2
-        x: 147
-        y: 2433
-        width: 26
-        height: 49
+        x: 148
+        y: 2434
+        width: 24
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3730,10 +3769,10 @@ TextureImporter:
       name: assetsGigante_117
       rect:
         serializedVersion: 2
-        x: 210
-        y: 2433
-        width: 36
-        height: 49
+        x: 211
+        y: 2434
+        width: 34
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3752,10 +3791,10 @@ TextureImporter:
       name: assetsGigante_118
       rect:
         serializedVersion: 2
-        x: 275
-        y: 2433
-        width: 38
-        height: 49
+        x: 276
+        y: 2434
+        width: 36
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3774,10 +3813,10 @@ TextureImporter:
       name: assetsGigante_119
       rect:
         serializedVersion: 2
-        x: 339
-        y: 2433
-        width: 35
-        height: 49
+        x: 340
+        y: 2434
+        width: 33
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3796,10 +3835,10 @@ TextureImporter:
       name: assetsGigante_120
       rect:
         serializedVersion: 2
-        x: 15
-        y: 2369
-        width: 32
-        height: 48
+        x: 16
+        y: 2370
+        width: 30
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3818,10 +3857,10 @@ TextureImporter:
       name: assetsGigante_121
       rect:
         serializedVersion: 2
-        x: 82
-        y: 2367
-        width: 28
-        height: 49
+        x: 83
+        y: 2368
+        width: 26
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3840,10 +3879,10 @@ TextureImporter:
       name: assetsGigante_122
       rect:
         serializedVersion: 2
-        x: 148
-        y: 2367
-        width: 24
-        height: 50
+        x: 149
+        y: 2368
+        width: 22
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3862,10 +3901,10 @@ TextureImporter:
       name: assetsGigante_123
       rect:
         serializedVersion: 2
-        x: 211
-        y: 2367
-        width: 24
-        height: 50
+        x: 212
+        y: 2368
+        width: 22
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3884,10 +3923,10 @@ TextureImporter:
       name: assetsGigante_124
       rect:
         serializedVersion: 2
-        x: 275
-        y: 2367
-        width: 29
-        height: 50
+        x: 276
+        y: 2368
+        width: 27
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3906,10 +3945,10 @@ TextureImporter:
       name: assetsGigante_125
       rect:
         serializedVersion: 2
-        x: 339
-        y: 2367
-        width: 27
-        height: 50
+        x: 340
+        y: 2368
+        width: 25
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3928,10 +3967,10 @@ TextureImporter:
       name: assetsGigante_126
       rect:
         serializedVersion: 2
-        x: 403
-        y: 2367
-        width: 28
-        height: 50
+        x: 404
+        y: 2368
+        width: 26
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3950,10 +3989,10 @@ TextureImporter:
       name: assetsGigante_127
       rect:
         serializedVersion: 2
-        x: 467
-        y: 2367
-        width: 29
-        height: 50
+        x: 468
+        y: 2368
+        width: 27
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3972,10 +4011,10 @@ TextureImporter:
       name: assetsGigante_128
       rect:
         serializedVersion: 2
-        x: 531
-        y: 2367
-        width: 30
-        height: 50
+        x: 532
+        y: 2368
+        width: 28
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3994,10 +4033,10 @@ TextureImporter:
       name: assetsGigante_129
       rect:
         serializedVersion: 2
-        x: 595
-        y: 2367
-        width: 29
-        height: 50
+        x: 596
+        y: 2368
+        width: 27
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4016,10 +4055,10 @@ TextureImporter:
       name: assetsGigante_130
       rect:
         serializedVersion: 2
-        x: 659
-        y: 2367
-        width: 24
-        height: 50
+        x: 660
+        y: 2368
+        width: 22
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4038,10 +4077,10 @@ TextureImporter:
       name: assetsGigante_131
       rect:
         serializedVersion: 2
-        x: 723
-        y: 2367
-        width: 24
-        height: 50
+        x: 724
+        y: 2368
+        width: 22
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4060,10 +4099,10 @@ TextureImporter:
       name: assetsGigante_132
       rect:
         serializedVersion: 2
-        x: 787
-        y: 2367
-        width: 24
-        height: 50
+        x: 788
+        y: 2368
+        width: 22
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4082,10 +4121,10 @@ TextureImporter:
       name: assetsGigante_133
       rect:
         serializedVersion: 2
-        x: 23
-        y: 2305
-        width: 22
-        height: 49
+        x: 24
+        y: 2306
+        width: 20
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4104,10 +4143,10 @@ TextureImporter:
       name: assetsGigante_134
       rect:
         serializedVersion: 2
-        x: 83
-        y: 2305
-        width: 27
-        height: 49
+        x: 84
+        y: 2306
+        width: 25
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4126,10 +4165,10 @@ TextureImporter:
       name: assetsGigante_135
       rect:
         serializedVersion: 2
-        x: 142
-        y: 2305
-        width: 34
-        height: 49
+        x: 143
+        y: 2306
+        width: 32
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4148,10 +4187,10 @@ TextureImporter:
       name: assetsGigante_136
       rect:
         serializedVersion: 2
-        x: 204
-        y: 2305
-        width: 37
-        height: 49
+        x: 205
+        y: 2306
+        width: 35
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4170,10 +4209,10 @@ TextureImporter:
       name: assetsGigante_137
       rect:
         serializedVersion: 2
-        x: 268
-        y: 2305
-        width: 37
-        height: 49
+        x: 269
+        y: 2306
+        width: 35
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4192,10 +4231,10 @@ TextureImporter:
       name: assetsGigante_138
       rect:
         serializedVersion: 2
-        x: 331
-        y: 2305
-        width: 34
-        height: 49
+        x: 332
+        y: 2306
+        width: 32
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4214,10 +4253,10 @@ TextureImporter:
       name: assetsGigante_139
       rect:
         serializedVersion: 2
-        x: 395
-        y: 2305
-        width: 36
-        height: 49
+        x: 396
+        y: 2306
+        width: 34
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4236,10 +4275,10 @@ TextureImporter:
       name: assetsGigante_140
       rect:
         serializedVersion: 2
-        x: 460
-        y: 2305
-        width: 38
-        height: 49
+        x: 461
+        y: 2306
+        width: 36
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4258,10 +4297,10 @@ TextureImporter:
       name: assetsGigante_141
       rect:
         serializedVersion: 2
-        x: 524
-        y: 2305
-        width: 40
-        height: 49
+        x: 525
+        y: 2306
+        width: 38
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4280,10 +4319,10 @@ TextureImporter:
       name: assetsGigante_142
       rect:
         serializedVersion: 2
-        x: 588
-        y: 2305
-        width: 37
-        height: 49
+        x: 589
+        y: 2306
+        width: 35
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4302,10 +4341,10 @@ TextureImporter:
       name: assetsGigante_143
       rect:
         serializedVersion: 2
-        x: 652
-        y: 2305
-        width: 36
-        height: 49
+        x: 653
+        y: 2306
+        width: 34
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4324,10 +4363,10 @@ TextureImporter:
       name: assetsGigante_144
       rect:
         serializedVersion: 2
-        x: 716
-        y: 2305
-        width: 33
-        height: 49
+        x: 717
+        y: 2306
+        width: 31
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4346,10 +4385,10 @@ TextureImporter:
       name: assetsGigante_145
       rect:
         serializedVersion: 2
-        x: 780
-        y: 2305
-        width: 36
-        height: 49
+        x: 781
+        y: 2306
+        width: 34
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4368,10 +4407,10 @@ TextureImporter:
       name: assetsGigante_146
       rect:
         serializedVersion: 2
-        x: 15
-        y: 2241
-        width: 32
-        height: 49
+        x: 16
+        y: 2242
+        width: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4390,10 +4429,10 @@ TextureImporter:
       name: assetsGigante_147
       rect:
         serializedVersion: 2
-        x: 81
-        y: 2242
-        width: 27
-        height: 48
+        x: 82
+        y: 2243
+        width: 25
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4412,10 +4451,10 @@ TextureImporter:
       name: assetsGigante_148
       rect:
         serializedVersion: 2
-        x: 145
-        y: 2242
-        width: 26
-        height: 48
+        x: 146
+        y: 2243
+        width: 24
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4434,10 +4473,10 @@ TextureImporter:
       name: assetsGigante_149
       rect:
         serializedVersion: 2
-        x: 209
-        y: 2241
-        width: 26
-        height: 49
+        x: 210
+        y: 2242
+        width: 24
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4456,10 +4495,10 @@ TextureImporter:
       name: assetsGigante_150
       rect:
         serializedVersion: 2
-        x: 274
-        y: 2241
-        width: 25
-        height: 49
+        x: 275
+        y: 2242
+        width: 23
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4478,10 +4517,10 @@ TextureImporter:
       name: assetsGigante_151
       rect:
         serializedVersion: 2
-        x: 338
-        y: 2241
-        width: 25
-        height: 49
+        x: 339
+        y: 2242
+        width: 23
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4500,10 +4539,10 @@ TextureImporter:
       name: assetsGigante_152
       rect:
         serializedVersion: 2
-        x: 402
-        y: 2241
-        width: 25
-        height: 49
+        x: 403
+        y: 2242
+        width: 23
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4522,10 +4561,10 @@ TextureImporter:
       name: assetsGigante_153
       rect:
         serializedVersion: 2
-        x: 465
-        y: 2241
-        width: 26
-        height: 49
+        x: 466
+        y: 2242
+        width: 24
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4544,10 +4583,10 @@ TextureImporter:
       name: assetsGigante_154
       rect:
         serializedVersion: 2
-        x: 529
-        y: 2241
-        width: 26
-        height: 49
+        x: 530
+        y: 2242
+        width: 24
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4566,10 +4605,10 @@ TextureImporter:
       name: assetsGigante_155
       rect:
         serializedVersion: 2
-        x: 594
-        y: 2241
-        width: 25
-        height: 49
+        x: 595
+        y: 2242
+        width: 23
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4588,10 +4627,10 @@ TextureImporter:
       name: assetsGigante_156
       rect:
         serializedVersion: 2
-        x: 657
-        y: 2241
-        width: 26
-        height: 49
+        x: 658
+        y: 2242
+        width: 24
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4610,10 +4649,10 @@ TextureImporter:
       name: assetsGigante_157
       rect:
         serializedVersion: 2
-        x: 723
-        y: 2241
-        width: 24
-        height: 49
+        x: 724
+        y: 2242
+        width: 22
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4632,10 +4671,10 @@ TextureImporter:
       name: assetsGigante_158
       rect:
         serializedVersion: 2
-        x: 785
-        y: 2241
-        width: 26
-        height: 49
+        x: 786
+        y: 2242
+        width: 24
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4654,10 +4693,10 @@ TextureImporter:
       name: assetsGigante_159
       rect:
         serializedVersion: 2
-        x: 19
-        y: 2177
-        width: 22
-        height: 49
+        x: 20
+        y: 2178
+        width: 20
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4676,10 +4715,10 @@ TextureImporter:
       name: assetsGigante_160
       rect:
         serializedVersion: 2
-        x: 82
-        y: 2177
-        width: 27
-        height: 49
+        x: 83
+        y: 2178
+        width: 25
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4698,10 +4737,10 @@ TextureImporter:
       name: assetsGigante_161
       rect:
         serializedVersion: 2
-        x: 144
-        y: 2177
-        width: 34
-        height: 49
+        x: 145
+        y: 2178
+        width: 32
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4720,10 +4759,10 @@ TextureImporter:
       name: assetsGigante_162
       rect:
         serializedVersion: 2
-        x: 207
-        y: 2177
-        width: 37
-        height: 49
+        x: 208
+        y: 2178
+        width: 35
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4742,10 +4781,10 @@ TextureImporter:
       name: assetsGigante_163
       rect:
         serializedVersion: 2
-        x: 271
-        y: 2177
-        width: 37
-        height: 49
+        x: 272
+        y: 2178
+        width: 35
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4764,10 +4803,10 @@ TextureImporter:
       name: assetsGigante_164
       rect:
         serializedVersion: 2
-        x: 339
-        y: 2177
-        width: 34
-        height: 49
+        x: 340
+        y: 2178
+        width: 32
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4786,10 +4825,10 @@ TextureImporter:
       name: assetsGigante_165
       rect:
         serializedVersion: 2
-        x: 401
-        y: 2177
-        width: 36
-        height: 49
+        x: 402
+        y: 2178
+        width: 34
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4808,10 +4847,10 @@ TextureImporter:
       name: assetsGigante_166
       rect:
         serializedVersion: 2
-        x: 462
-        y: 2177
-        width: 38
-        height: 49
+        x: 463
+        y: 2178
+        width: 36
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4830,10 +4869,10 @@ TextureImporter:
       name: assetsGigante_167
       rect:
         serializedVersion: 2
-        x: 524
-        y: 2177
-        width: 40
-        height: 49
+        x: 525
+        y: 2178
+        width: 38
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4852,10 +4891,10 @@ TextureImporter:
       name: assetsGigante_168
       rect:
         serializedVersion: 2
-        x: 591
-        y: 2177
-        width: 37
-        height: 49
+        x: 592
+        y: 2178
+        width: 35
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4874,10 +4913,10 @@ TextureImporter:
       name: assetsGigante_169
       rect:
         serializedVersion: 2
-        x: 656
-        y: 2177
-        width: 36
-        height: 49
+        x: 657
+        y: 2178
+        width: 34
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4896,10 +4935,10 @@ TextureImporter:
       name: assetsGigante_170
       rect:
         serializedVersion: 2
-        x: 723
-        y: 2177
-        width: 33
-        height: 49
+        x: 724
+        y: 2178
+        width: 31
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4918,10 +4957,10 @@ TextureImporter:
       name: assetsGigante_171
       rect:
         serializedVersion: 2
-        x: 784
-        y: 2177
-        width: 36
-        height: 49
+        x: 785
+        y: 2178
+        width: 34
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4940,10 +4979,10 @@ TextureImporter:
       name: assetsGigante_172
       rect:
         serializedVersion: 2
-        x: 16
-        y: 2113
-        width: 32
-        height: 49
+        x: 17
+        y: 2114
+        width: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4962,10 +5001,10 @@ TextureImporter:
       name: assetsGigante_173
       rect:
         serializedVersion: 2
-        x: 81
-        y: 2113
-        width: 33
-        height: 48
+        x: 82
+        y: 2114
+        width: 31
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4984,10 +5023,10 @@ TextureImporter:
       name: assetsGigante_174
       rect:
         serializedVersion: 2
-        x: 146
-        y: 2113
-        width: 32
-        height: 45
+        x: 147
+        y: 2114
+        width: 30
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5006,10 +5045,10 @@ TextureImporter:
       name: assetsGigante_175
       rect:
         serializedVersion: 2
-        x: 210
-        y: 2114
-        width: 32
-        height: 36
+        x: 211
+        y: 2115
+        width: 30
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5028,10 +5067,10 @@ TextureImporter:
       name: assetsGigante_176
       rect:
         serializedVersion: 2
-        x: 274
-        y: 2114
-        width: 33
-        height: 31
+        x: 275
+        y: 2115
+        width: 31
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5050,10 +5089,10 @@ TextureImporter:
       name: assetsGigante_177
       rect:
         serializedVersion: 2
-        x: 337
-        y: 2112
-        width: 36
-        height: 37
+        x: 338
+        y: 2113
+        width: 34
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5072,10 +5111,10 @@ TextureImporter:
       name: assetsGigante_178
       rect:
         serializedVersion: 2
-        x: 19
-        y: 2050
-        width: 28
-        height: 51
+        x: 20
+        y: 2051
+        width: 26
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5094,10 +5133,10 @@ TextureImporter:
       name: assetsGigante_179
       rect:
         serializedVersion: 2
-        x: 83
-        y: 2049
-        width: 28
-        height: 51
+        x: 84
+        y: 2050
+        width: 26
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5116,10 +5155,10 @@ TextureImporter:
       name: assetsGigante_180
       rect:
         serializedVersion: 2
-        x: 145
-        y: 2053
-        width: 29
-        height: 49
+        x: 146
+        y: 2054
+        width: 27
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5138,10 +5177,10 @@ TextureImporter:
       name: assetsGigante_181
       rect:
         serializedVersion: 2
-        x: 209
-        y: 2050
-        width: 28
-        height: 51
+        x: 210
+        y: 2051
+        width: 26
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5160,10 +5199,10 @@ TextureImporter:
       name: assetsGigante_182
       rect:
         serializedVersion: 2
-        x: 273
-        y: 2049
-        width: 28
-        height: 51
+        x: 274
+        y: 2050
+        width: 26
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5182,10 +5221,10 @@ TextureImporter:
       name: assetsGigante_183
       rect:
         serializedVersion: 2
-        x: 338
-        y: 2053
-        width: 29
-        height: 49
+        x: 339
+        y: 2054
+        width: 27
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5204,10 +5243,10 @@ TextureImporter:
       name: assetsGigante_184
       rect:
         serializedVersion: 2
-        x: 16
-        y: 1985
-        width: 32
-        height: 48
+        x: 17
+        y: 1986
+        width: 30
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5226,10 +5265,10 @@ TextureImporter:
       name: assetsGigante_185
       rect:
         serializedVersion: 2
-        x: 80
-        y: 1985
-        width: 32
-        height: 49
+        x: 81
+        y: 1986
+        width: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5248,10 +5287,10 @@ TextureImporter:
       name: assetsGigante_186
       rect:
         serializedVersion: 2
-        x: 22
-        y: 1921
-        width: 22
-        height: 49
+        x: 23
+        y: 1922
+        width: 20
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5270,10 +5309,10 @@ TextureImporter:
       name: assetsGigante_187
       rect:
         serializedVersion: 2
-        x: 86
-        y: 1921
-        width: 22
-        height: 50
+        x: 87
+        y: 1922
+        width: 20
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5292,10 +5331,10 @@ TextureImporter:
       name: assetsGigante_188
       rect:
         serializedVersion: 2
-        x: 16
-        y: 1857
-        width: 32
-        height: 49
+        x: 17
+        y: 1858
+        width: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5314,10 +5353,10 @@ TextureImporter:
       name: assetsGigante_189
       rect:
         serializedVersion: 2
-        x: 80
-        y: 1857
-        width: 32
-        height: 50
+        x: 81
+        y: 1858
+        width: 30
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5336,10 +5375,10 @@ TextureImporter:
       name: assetsGigante_190
       rect:
         serializedVersion: 2
-        x: 20
-        y: 1793
-        width: 22
-        height: 49
+        x: 21
+        y: 1794
+        width: 20
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5358,10 +5397,10 @@ TextureImporter:
       name: assetsGigante_191
       rect:
         serializedVersion: 2
-        x: 84
-        y: 1793
-        width: 22
-        height: 50
+        x: 85
+        y: 1794
+        width: 20
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5380,10 +5419,10 @@ TextureImporter:
       name: assetsGigante_192
       rect:
         serializedVersion: 2
-        x: 16
-        y: 1729
-        width: 32
-        height: 47
+        x: 17
+        y: 1730
+        width: 30
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5402,10 +5441,10 @@ TextureImporter:
       name: assetsGigante_193
       rect:
         serializedVersion: 2
-        x: 79
-        y: 1729
-        width: 34
-        height: 45
+        x: 80
+        y: 1730
+        width: 32
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5424,10 +5463,10 @@ TextureImporter:
       name: assetsGigante_194
       rect:
         serializedVersion: 2
-        x: 144
-        y: 1730
-        width: 32
-        height: 50
+        x: 145
+        y: 1731
+        width: 30
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5446,10 +5485,10 @@ TextureImporter:
       name: assetsGigante_195
       rect:
         serializedVersion: 2
-        x: 208
-        y: 1737
-        width: 33
-        height: 45
+        x: 209
+        y: 1738
+        width: 31
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5468,10 +5507,10 @@ TextureImporter:
       name: assetsGigante_196
       rect:
         serializedVersion: 2
-        x: 265
-        y: 1733
-        width: 46
-        height: 45
+        x: 266
+        y: 1734
+        width: 44
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5490,10 +5529,10 @@ TextureImporter:
       name: assetsGigante_197
       rect:
         serializedVersion: 2
-        x: 22
-        y: 1665
-        width: 22
-        height: 49
+        x: 23
+        y: 1666
+        width: 20
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5512,10 +5551,10 @@ TextureImporter:
       name: assetsGigante_198
       rect:
         serializedVersion: 2
-        x: 83
-        y: 1665
-        width: 26
-        height: 46
+        x: 84
+        y: 1666
+        width: 24
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5534,10 +5573,10 @@ TextureImporter:
       name: assetsGigante_199
       rect:
         serializedVersion: 2
-        x: 145
-        y: 1667
-        width: 31
-        height: 48
+        x: 146
+        y: 1668
+        width: 29
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5556,10 +5595,10 @@ TextureImporter:
       name: assetsGigante_200
       rect:
         serializedVersion: 2
-        x: 212
-        y: 1668
-        width: 31
-        height: 49
+        x: 213
+        y: 1669
+        width: 29
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5578,10 +5617,10 @@ TextureImporter:
       name: assetsGigante_201
       rect:
         serializedVersion: 2
-        x: 276
-        y: 1665
-        width: 36
-        height: 48
+        x: 277
+        y: 1666
+        width: 34
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5600,10 +5639,10 @@ TextureImporter:
       name: assetsGigante_202
       rect:
         serializedVersion: 2
-        x: 16
-        y: 1601
-        width: 32
-        height: 49
+        x: 17
+        y: 1602
+        width: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5622,10 +5661,10 @@ TextureImporter:
       name: assetsGigante_203
       rect:
         serializedVersion: 2
-        x: 80
-        y: 1601
-        width: 32
-        height: 46
+        x: 81
+        y: 1602
+        width: 30
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5644,10 +5683,10 @@ TextureImporter:
       name: assetsGigante_204
       rect:
         serializedVersion: 2
-        x: 145
-        y: 1603
-        width: 29
-        height: 47
+        x: 146
+        y: 1604
+        width: 27
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5666,10 +5705,10 @@ TextureImporter:
       name: assetsGigante_205
       rect:
         serializedVersion: 2
-        x: 206
-        y: 1607
-        width: 33
-        height: 46
+        x: 207
+        y: 1608
+        width: 31
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5688,10 +5727,10 @@ TextureImporter:
       name: assetsGigante_206
       rect:
         serializedVersion: 2
-        x: 264
-        y: 1604
-        width: 48
-        height: 45
+        x: 265
+        y: 1605
+        width: 46
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5710,10 +5749,10 @@ TextureImporter:
       name: assetsGigante_207
       rect:
         serializedVersion: 2
-        x: 20
-        y: 1537
-        width: 22
-        height: 49
+        x: 21
+        y: 1538
+        width: 20
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5732,10 +5771,10 @@ TextureImporter:
       name: assetsGigante_208
       rect:
         serializedVersion: 2
-        x: 83
-        y: 1537
-        width: 26
-        height: 46
+        x: 84
+        y: 1538
+        width: 24
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5754,10 +5793,10 @@ TextureImporter:
       name: assetsGigante_209
       rect:
         serializedVersion: 2
-        x: 144
-        y: 1539
-        width: 31
-        height: 48
+        x: 145
+        y: 1540
+        width: 29
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5776,10 +5815,10 @@ TextureImporter:
       name: assetsGigante_210
       rect:
         serializedVersion: 2
-        x: 205
-        y: 1540
-        width: 31
-        height: 49
+        x: 206
+        y: 1541
+        width: 29
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5798,10 +5837,10 @@ TextureImporter:
       name: assetsGigante_211
       rect:
         serializedVersion: 2
-        x: 264
-        y: 1537
-        width: 36
-        height: 48
+        x: 265
+        y: 1538
+        width: 34
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5820,10 +5859,10 @@ TextureImporter:
       name: assetsGigante_212
       rect:
         serializedVersion: 2
-        x: 17
-        y: 1473
-        width: 30
-        height: 39
+        x: 18
+        y: 1474
+        width: 28
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5842,10 +5881,10 @@ TextureImporter:
       name: assetsGigante_213
       rect:
         serializedVersion: 2
-        x: 81
-        y: 1473
-        width: 30
-        height: 40
+        x: 82
+        y: 1474
+        width: 28
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5864,10 +5903,10 @@ TextureImporter:
       name: assetsGigante_214
       rect:
         serializedVersion: 2
-        x: 145
-        y: 1483
-        width: 30
-        height: 39
+        x: 146
+        y: 1484
+        width: 28
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5886,10 +5925,10 @@ TextureImporter:
       name: assetsGigante_215
       rect:
         serializedVersion: 2
-        x: 14
-        y: 1410
-        width: 33
-        height: 40
+        x: 15
+        y: 1411
+        width: 31
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5908,10 +5947,10 @@ TextureImporter:
       name: assetsGigante_216
       rect:
         serializedVersion: 2
-        x: 81
-        y: 1409
-        width: 30
-        height: 41
+        x: 82
+        y: 1410
+        width: 28
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5930,10 +5969,10 @@ TextureImporter:
       name: assetsGigante_217
       rect:
         serializedVersion: 2
-        x: 140
-        y: 1411
-        width: 29
-        height: 47
+        x: 141
+        y: 1412
+        width: 27
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5952,10 +5991,10 @@ TextureImporter:
       name: assetsGigante_218
       rect:
         serializedVersion: 2
-        x: 19
-        y: 1345
-        width: 29
-        height: 47
+        x: 20
+        y: 1346
+        width: 27
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5974,10 +6013,10 @@ TextureImporter:
       name: assetsGigante_219
       rect:
         serializedVersion: 2
-        x: 80
-        y: 1345
-        width: 30
-        height: 42
+        x: 81
+        y: 1346
+        width: 28
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5996,10 +6035,10 @@ TextureImporter:
       name: assetsGigante_220
       rect:
         serializedVersion: 2
-        x: 146
-        y: 1345
-        width: 28
-        height: 51
+        x: 147
+        y: 1346
+        width: 26
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6018,10 +6057,10 @@ TextureImporter:
       name: assetsGigante_221
       rect:
         serializedVersion: 2
-        x: 17
-        y: 1282
-        width: 33
-        height: 39
+        x: 18
+        y: 1283
+        width: 31
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6040,10 +6079,10 @@ TextureImporter:
       name: assetsGigante_222
       rect:
         serializedVersion: 2
-        x: 81
-        y: 1281
-        width: 30
-        height: 40
+        x: 82
+        y: 1282
+        width: 28
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6062,10 +6101,10 @@ TextureImporter:
       name: assetsGigante_223
       rect:
         serializedVersion: 2
-        x: 151
-        y: 1283
-        width: 29
-        height: 47
+        x: 152
+        y: 1284
+        width: 27
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6084,10 +6123,10 @@ TextureImporter:
       name: assetsGigante_224
       rect:
         serializedVersion: 2
-        x: 17
-        y: 1217
-        width: 30
-        height: 48
+        x: 18
+        y: 1218
+        width: 28
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6106,10 +6145,10 @@ TextureImporter:
       name: assetsGigante_225
       rect:
         serializedVersion: 2
-        x: 81
-        y: 1217
-        width: 30
-        height: 48
+        x: 82
+        y: 1218
+        width: 28
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6128,10 +6167,10 @@ TextureImporter:
       name: assetsGigante_226
       rect:
         serializedVersion: 2
-        x: 135
-        y: 1217
-        width: 50
-        height: 50
+        x: 136
+        y: 1218
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6150,10 +6189,10 @@ TextureImporter:
       name: assetsGigante_227
       rect:
         serializedVersion: 2
-        x: 22
-        y: 1153
-        width: 22
-        height: 49
+        x: 23
+        y: 1154
+        width: 20
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6172,10 +6211,10 @@ TextureImporter:
       name: assetsGigante_228
       rect:
         serializedVersion: 2
-        x: 86
-        y: 1153
-        width: 22
-        height: 49
+        x: 87
+        y: 1154
+        width: 20
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6194,10 +6233,10 @@ TextureImporter:
       name: assetsGigante_229
       rect:
         serializedVersion: 2
-        x: 149
-        y: 1153
-        width: 37
-        height: 51
+        x: 150
+        y: 1154
+        width: 35
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6216,10 +6255,10 @@ TextureImporter:
       name: assetsGigante_230
       rect:
         serializedVersion: 2
-        x: 15
-        y: 1089
-        width: 34
-        height: 49
+        x: 16
+        y: 1090
+        width: 32
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6238,10 +6277,10 @@ TextureImporter:
       name: assetsGigante_231
       rect:
         serializedVersion: 2
-        x: 82
-        y: 1089
-        width: 28
-        height: 49
+        x: 83
+        y: 1090
+        width: 26
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6260,10 +6299,10 @@ TextureImporter:
       name: assetsGigante_232
       rect:
         serializedVersion: 2
-        x: 135
-        y: 1089
-        width: 50
-        height: 51
+        x: 136
+        y: 1090
+        width: 48
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6282,10 +6321,10 @@ TextureImporter:
       name: assetsGigante_233
       rect:
         serializedVersion: 2
-        x: 20
-        y: 1025
-        width: 22
-        height: 49
+        x: 21
+        y: 1026
+        width: 20
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6304,10 +6343,10 @@ TextureImporter:
       name: assetsGigante_234
       rect:
         serializedVersion: 2
-        x: 84
-        y: 1025
-        width: 22
-        height: 49
+        x: 85
+        y: 1026
+        width: 20
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6326,10 +6365,10 @@ TextureImporter:
       name: assetsGigante_235
       rect:
         serializedVersion: 2
-        x: 134
-        y: 1025
-        width: 37
-        height: 51
+        x: 135
+        y: 1026
+        width: 35
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6348,10 +6387,10 @@ TextureImporter:
       name: assetsGigante_236
       rect:
         serializedVersion: 2
-        x: 19
-        y: 962
-        width: 25
-        height: 48
+        x: 20
+        y: 963
+        width: 23
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6370,10 +6409,10 @@ TextureImporter:
       name: assetsGigante_237
       rect:
         serializedVersion: 2
-        x: 84
-        y: 959
-        width: 25
-        height: 50
+        x: 85
+        y: 960
+        width: 23
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6392,10 +6431,10 @@ TextureImporter:
       name: assetsGigante_238
       rect:
         serializedVersion: 2
-        x: 147
-        y: 959
-        width: 25
-        height: 51
+        x: 148
+        y: 960
+        width: 23
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6414,10 +6453,10 @@ TextureImporter:
       name: assetsGigante_239
       rect:
         serializedVersion: 2
-        x: 211
-        y: 959
-        width: 27
-        height: 53
+        x: 212
+        y: 960
+        width: 25
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6436,10 +6475,10 @@ TextureImporter:
       name: assetsGigante_240
       rect:
         serializedVersion: 2
-        x: 276
-        y: 962
-        width: 25
-        height: 48
+        x: 277
+        y: 963
+        width: 23
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6458,10 +6497,10 @@ TextureImporter:
       name: assetsGigante_241
       rect:
         serializedVersion: 2
-        x: 339
-        y: 959
-        width: 25
-        height: 50
+        x: 340
+        y: 960
+        width: 23
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6480,10 +6519,10 @@ TextureImporter:
       name: assetsGigante_242
       rect:
         serializedVersion: 2
-        x: 404
-        y: 959
-        width: 25
-        height: 51
+        x: 405
+        y: 960
+        width: 23
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6502,10 +6541,10 @@ TextureImporter:
       name: assetsGigante_243
       rect:
         serializedVersion: 2
-        x: 466
-        y: 959
-        width: 27
-        height: 53
+        x: 467
+        y: 960
+        width: 25
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6524,10 +6563,10 @@ TextureImporter:
       name: assetsGigante_244
       rect:
         serializedVersion: 2
-        x: 17
-        y: 897
-        width: 31
-        height: 48
+        x: 18
+        y: 898
+        width: 29
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6546,10 +6585,10 @@ TextureImporter:
       name: assetsGigante_245
       rect:
         serializedVersion: 2
-        x: 84
-        y: 896
-        width: 24
-        height: 48
+        x: 85
+        y: 897
+        width: 22
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6568,10 +6607,10 @@ TextureImporter:
       name: assetsGigante_246
       rect:
         serializedVersion: 2
-        x: 148
-        y: 896
-        width: 22
-        height: 49
+        x: 149
+        y: 897
+        width: 20
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6590,10 +6629,10 @@ TextureImporter:
       name: assetsGigante_247
       rect:
         serializedVersion: 2
-        x: 209
-        y: 900
-        width: 31
-        height: 47
+        x: 210
+        y: 901
+        width: 29
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6612,10 +6651,10 @@ TextureImporter:
       name: assetsGigante_248
       rect:
         serializedVersion: 2
-        x: 272
-        y: 897
-        width: 32
-        height: 48
+        x: 273
+        y: 898
+        width: 30
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6634,10 +6673,10 @@ TextureImporter:
       name: assetsGigante_249
       rect:
         serializedVersion: 2
-        x: 340
-        y: 896
-        width: 22
-        height: 48
+        x: 341
+        y: 897
+        width: 20
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6656,10 +6695,10 @@ TextureImporter:
       name: assetsGigante_250
       rect:
         serializedVersion: 2
-        x: 404
-        y: 896
-        width: 23
-        height: 49
+        x: 405
+        y: 897
+        width: 21
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6678,10 +6717,10 @@ TextureImporter:
       name: assetsGigante_251
       rect:
         serializedVersion: 2
-        x: 465
-        y: 898
-        width: 31
-        height: 49
+        x: 466
+        y: 899
+        width: 29
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6700,10 +6739,10 @@ TextureImporter:
       name: assetsGigante_252
       rect:
         serializedVersion: 2
-        x: 20
-        y: 831
-        width: 24
-        height: 50
+        x: 21
+        y: 832
+        width: 22
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6722,10 +6761,10 @@ TextureImporter:
       name: assetsGigante_253
       rect:
         serializedVersion: 2
-        x: 83
-        y: 831
-        width: 26
-        height: 49
+        x: 84
+        y: 832
+        width: 24
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6744,10 +6783,10 @@ TextureImporter:
       name: assetsGigante_254
       rect:
         serializedVersion: 2
-        x: 146
-        y: 832
-        width: 27
-        height: 49
+        x: 147
+        y: 833
+        width: 25
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6766,10 +6805,10 @@ TextureImporter:
       name: assetsGigante_255
       rect:
         serializedVersion: 2
-        x: 212
-        y: 835
-        width: 24
-        height: 48
+        x: 213
+        y: 836
+        width: 22
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6788,10 +6827,10 @@ TextureImporter:
       name: assetsGigante_256
       rect:
         serializedVersion: 2
-        x: 276
-        y: 831
-        width: 24
-        height: 50
+        x: 277
+        y: 832
+        width: 22
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6810,10 +6849,10 @@ TextureImporter:
       name: assetsGigante_257
       rect:
         serializedVersion: 2
-        x: 339
-        y: 831
-        width: 26
-        height: 49
+        x: 340
+        y: 832
+        width: 24
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6832,10 +6871,10 @@ TextureImporter:
       name: assetsGigante_258
       rect:
         serializedVersion: 2
-        x: 403
-        y: 832
-        width: 27
-        height: 49
+        x: 404
+        y: 833
+        width: 25
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6854,10 +6893,10 @@ TextureImporter:
       name: assetsGigante_259
       rect:
         serializedVersion: 2
-        x: 468
-        y: 835
-        width: 24
-        height: 48
+        x: 469
+        y: 836
+        width: 22
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6876,10 +6915,10 @@ TextureImporter:
       name: assetsGigante_260
       rect:
         serializedVersion: 2
-        x: 16
-        y: 769
-        width: 31
-        height: 48
+        x: 17
+        y: 770
+        width: 29
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6898,10 +6937,10 @@ TextureImporter:
       name: assetsGigante_261
       rect:
         serializedVersion: 2
-        x: 84
-        y: 768
-        width: 24
-        height: 48
+        x: 85
+        y: 769
+        width: 22
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6920,10 +6959,10 @@ TextureImporter:
       name: assetsGigante_262
       rect:
         serializedVersion: 2
-        x: 150
-        y: 768
-        width: 22
-        height: 49
+        x: 151
+        y: 769
+        width: 20
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6942,10 +6981,10 @@ TextureImporter:
       name: assetsGigante_263
       rect:
         serializedVersion: 2
-        x: 208
-        y: 772
-        width: 31
-        height: 47
+        x: 209
+        y: 773
+        width: 29
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6964,10 +7003,10 @@ TextureImporter:
       name: assetsGigante_264
       rect:
         serializedVersion: 2
-        x: 272
-        y: 769
-        width: 32
-        height: 48
+        x: 273
+        y: 770
+        width: 30
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6986,10 +7025,10 @@ TextureImporter:
       name: assetsGigante_265
       rect:
         serializedVersion: 2
-        x: 342
-        y: 768
-        width: 22
-        height: 48
+        x: 343
+        y: 769
+        width: 20
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7008,10 +7047,10 @@ TextureImporter:
       name: assetsGigante_266
       rect:
         serializedVersion: 2
-        x: 405
-        y: 768
-        width: 23
-        height: 49
+        x: 406
+        y: 769
+        width: 21
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7030,10 +7069,10 @@ TextureImporter:
       name: assetsGigante_267
       rect:
         serializedVersion: 2
-        x: 464
-        y: 770
-        width: 31
-        height: 49
+        x: 465
+        y: 771
+        width: 29
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7052,10 +7091,10 @@ TextureImporter:
       name: assetsGigante_268
       rect:
         serializedVersion: 2
-        x: 20
-        y: 705
-        width: 27
-        height: 48
+        x: 21
+        y: 706
+        width: 25
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7074,10 +7113,10 @@ TextureImporter:
       name: assetsGigante_269
       rect:
         serializedVersion: 2
-        x: 84
-        y: 705
-        width: 27
-        height: 46
+        x: 85
+        y: 706
+        width: 25
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7096,10 +7135,10 @@ TextureImporter:
       name: assetsGigante_270
       rect:
         serializedVersion: 2
-        x: 18
-        y: 641
-        width: 28
-        height: 49
+        x: 19
+        y: 642
+        width: 26
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7118,10 +7157,10 @@ TextureImporter:
       name: assetsGigante_271
       rect:
         serializedVersion: 2
-        x: 81
-        y: 641
-        width: 29
-        height: 47
+        x: 82
+        y: 642
+        width: 27
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7140,10 +7179,10 @@ TextureImporter:
       name: assetsGigante_272
       rect:
         serializedVersion: 2
-        x: 20
-        y: 576
-        width: 25
-        height: 51
+        x: 21
+        y: 577
+        width: 23
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7162,10 +7201,10 @@ TextureImporter:
       name: assetsGigante_273
       rect:
         serializedVersion: 2
-        x: 84
-        y: 576
-        width: 25
-        height: 49
+        x: 85
+        y: 577
+        width: 23
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7184,10 +7223,10 @@ TextureImporter:
       name: assetsGigante_274
       rect:
         serializedVersion: 2
-        x: 18
-        y: 513
-        width: 28
-        height: 49
+        x: 19
+        y: 514
+        width: 26
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7206,10 +7245,10 @@ TextureImporter:
       name: assetsGigante_275
       rect:
         serializedVersion: 2
-        x: 82
-        y: 513
-        width: 29
-        height: 47
+        x: 83
+        y: 514
+        width: 27
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7228,10 +7267,10 @@ TextureImporter:
       name: assetsGigante_276
       rect:
         serializedVersion: 2
-        x: 19
-        y: 448
-        width: 25
-        height: 46
+        x: 20
+        y: 449
+        width: 23
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7250,10 +7289,10 @@ TextureImporter:
       name: assetsGigante_277
       rect:
         serializedVersion: 2
-        x: 82
-        y: 449
-        width: 32
-        height: 49
+        x: 83
+        y: 450
+        width: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7272,10 +7311,10 @@ TextureImporter:
       name: assetsGigante_278
       rect:
         serializedVersion: 2
-        x: 142
-        y: 449
-        width: 27
-        height: 48
+        x: 143
+        y: 450
+        width: 25
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7294,10 +7333,10 @@ TextureImporter:
       name: assetsGigante_279
       rect:
         serializedVersion: 2
-        x: 206
-        y: 449
-        width: 27
-        height: 47
+        x: 207
+        y: 450
+        width: 25
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7316,10 +7355,10 @@ TextureImporter:
       name: assetsGigante_280
       rect:
         serializedVersion: 2
-        x: 270
-        y: 449
-        width: 27
-        height: 47
+        x: 271
+        y: 450
+        width: 25
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7338,10 +7377,10 @@ TextureImporter:
       name: assetsGigante_281
       rect:
         serializedVersion: 2
-        x: 334
-        y: 449
-        width: 27
-        height: 47
+        x: 335
+        y: 450
+        width: 25
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7360,10 +7399,10 @@ TextureImporter:
       name: assetsGigante_282
       rect:
         serializedVersion: 2
-        x: 402
-        y: 449
-        width: 32
-        height: 49
+        x: 403
+        y: 450
+        width: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7382,10 +7421,10 @@ TextureImporter:
       name: assetsGigante_283
       rect:
         serializedVersion: 2
-        x: 461
-        y: 449
-        width: 28
-        height: 47
+        x: 462
+        y: 450
+        width: 26
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7404,10 +7443,10 @@ TextureImporter:
       name: assetsGigante_284
       rect:
         serializedVersion: 2
-        x: 526
-        y: 449
-        width: 28
-        height: 48
+        x: 527
+        y: 450
+        width: 26
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7426,10 +7465,10 @@ TextureImporter:
       name: assetsGigante_285
       rect:
         serializedVersion: 2
-        x: 596
-        y: 449
-        width: 32
-        height: 49
+        x: 597
+        y: 450
+        width: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7448,10 +7487,10 @@ TextureImporter:
       name: assetsGigante_286
       rect:
         serializedVersion: 2
-        x: 662
-        y: 449
-        width: 34
-        height: 49
+        x: 663
+        y: 450
+        width: 32
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7470,10 +7509,10 @@ TextureImporter:
       name: assetsGigante_287
       rect:
         serializedVersion: 2
-        x: 726
-        y: 449
-        width: 34
-        height: 49
+        x: 727
+        y: 450
+        width: 32
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7492,10 +7531,10 @@ TextureImporter:
       name: assetsGigante_288
       rect:
         serializedVersion: 2
-        x: 790
-        y: 449
-        width: 34
-        height: 49
+        x: 791
+        y: 450
+        width: 32
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7514,10 +7553,10 @@ TextureImporter:
       name: assetsGigante_289
       rect:
         serializedVersion: 2
-        x: 19
-        y: 385
-        width: 38
-        height: 50
+        x: 20
+        y: 386
+        width: 36
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7536,10 +7575,10 @@ TextureImporter:
       name: assetsGigante_290
       rect:
         serializedVersion: 2
-        x: 76
-        y: 385
-        width: 34
-        height: 48
+        x: 77
+        y: 386
+        width: 32
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7558,10 +7597,10 @@ TextureImporter:
       name: assetsGigante_291
       rect:
         serializedVersion: 2
-        x: 138
-        y: 385
-        width: 33
-        height: 47
+        x: 139
+        y: 386
+        width: 31
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7580,10 +7619,10 @@ TextureImporter:
       name: assetsGigante_292
       rect:
         serializedVersion: 2
-        x: 202
-        y: 385
-        width: 33
-        height: 47
+        x: 203
+        y: 386
+        width: 31
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7602,10 +7641,10 @@ TextureImporter:
       name: assetsGigante_293
       rect:
         serializedVersion: 2
-        x: 266
-        y: 385
-        width: 33
-        height: 47
+        x: 267
+        y: 386
+        width: 31
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7624,10 +7663,10 @@ TextureImporter:
       name: assetsGigante_294
       rect:
         serializedVersion: 2
-        x: 330
-        y: 385
-        width: 33
-        height: 47
+        x: 331
+        y: 386
+        width: 31
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7646,10 +7685,10 @@ TextureImporter:
       name: assetsGigante_295
       rect:
         serializedVersion: 2
-        x: 396
-        y: 385
-        width: 34
-        height: 48
+        x: 397
+        y: 386
+        width: 32
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7668,10 +7707,10 @@ TextureImporter:
       name: assetsGigante_296
       rect:
         serializedVersion: 2
-        x: 462
-        y: 385
-        width: 28
-        height: 47
+        x: 463
+        y: 386
+        width: 26
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7690,10 +7729,10 @@ TextureImporter:
       name: assetsGigante_297
       rect:
         serializedVersion: 2
-        x: 528
-        y: 385
-        width: 27
-        height: 47
+        x: 529
+        y: 386
+        width: 25
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7712,10 +7751,10 @@ TextureImporter:
       name: assetsGigante_298
       rect:
         serializedVersion: 2
-        x: 594
-        y: 385
-        width: 28
-        height: 49
+        x: 595
+        y: 386
+        width: 26
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7734,10 +7773,10 @@ TextureImporter:
       name: assetsGigante_299
       rect:
         serializedVersion: 2
-        x: 659
-        y: 385
-        width: 33
-        height: 50
+        x: 660
+        y: 386
+        width: 31
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7756,10 +7795,10 @@ TextureImporter:
       name: assetsGigante_300
       rect:
         serializedVersion: 2
-        x: 723
-        y: 385
-        width: 33
-        height: 50
+        x: 724
+        y: 386
+        width: 31
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7778,10 +7817,10 @@ TextureImporter:
       name: assetsGigante_301
       rect:
         serializedVersion: 2
-        x: 787
-        y: 385
-        width: 33
-        height: 50
+        x: 788
+        y: 386
+        width: 31
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7800,10 +7839,10 @@ TextureImporter:
       name: assetsGigante_302
       rect:
         serializedVersion: 2
-        x: 13
-        y: 320
-        width: 28
-        height: 51
+        x: 14
+        y: 321
+        width: 26
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7822,10 +7861,10 @@ TextureImporter:
       name: assetsGigante_303
       rect:
         serializedVersion: 2
-        x: 80
-        y: 320
-        width: 31
-        height: 49
+        x: 81
+        y: 321
+        width: 29
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7844,10 +7883,10 @@ TextureImporter:
       name: assetsGigante_304
       rect:
         serializedVersion: 2
-        x: 151
-        y: 320
-        width: 26
-        height: 49
+        x: 152
+        y: 321
+        width: 24
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7866,10 +7905,10 @@ TextureImporter:
       name: assetsGigante_305
       rect:
         serializedVersion: 2
-        x: 216
-        y: 320
-        width: 25
-        height: 49
+        x: 217
+        y: 321
+        width: 23
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7888,10 +7927,10 @@ TextureImporter:
       name: assetsGigante_306
       rect:
         serializedVersion: 2
-        x: 280
-        y: 320
-        width: 25
-        height: 49
+        x: 281
+        y: 321
+        width: 23
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7910,10 +7949,10 @@ TextureImporter:
       name: assetsGigante_307
       rect:
         serializedVersion: 2
-        x: 344
-        y: 320
-        width: 25
-        height: 49
+        x: 345
+        y: 321
+        width: 23
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7932,10 +7971,10 @@ TextureImporter:
       name: assetsGigante_308
       rect:
         serializedVersion: 2
-        x: 400
-        y: 320
-        width: 31
-        height: 49
+        x: 401
+        y: 321
+        width: 29
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7954,10 +7993,10 @@ TextureImporter:
       name: assetsGigante_309
       rect:
         serializedVersion: 2
-        x: 474
-        y: 320
-        width: 24
-        height: 49
+        x: 475
+        y: 321
+        width: 22
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7976,10 +8015,10 @@ TextureImporter:
       name: assetsGigante_310
       rect:
         serializedVersion: 2
-        x: 535
-        y: 320
-        width: 24
-        height: 49
+        x: 536
+        y: 321
+        width: 22
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7998,10 +8037,10 @@ TextureImporter:
       name: assetsGigante_311
       rect:
         serializedVersion: 2
-        x: 590
-        y: 320
-        width: 30
-        height: 51
+        x: 591
+        y: 321
+        width: 28
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8020,10 +8059,10 @@ TextureImporter:
       name: assetsGigante_312
       rect:
         serializedVersion: 2
-        x: 648
-        y: 320
-        width: 35
-        height: 52
+        x: 649
+        y: 321
+        width: 33
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8042,10 +8081,10 @@ TextureImporter:
       name: assetsGigante_313
       rect:
         serializedVersion: 2
-        x: 712
-        y: 320
-        width: 35
-        height: 52
+        x: 713
+        y: 321
+        width: 33
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8064,10 +8103,10 @@ TextureImporter:
       name: assetsGigante_314
       rect:
         serializedVersion: 2
-        x: 776
-        y: 320
-        width: 35
-        height: 52
+        x: 777
+        y: 321
+        width: 33
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8086,10 +8125,10 @@ TextureImporter:
       name: assetsGigante_315
       rect:
         serializedVersion: 2
-        x: 7
-        y: 257
-        width: 38
-        height: 50
+        x: 8
+        y: 258
+        width: 36
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8108,10 +8147,10 @@ TextureImporter:
       name: assetsGigante_316
       rect:
         serializedVersion: 2
-        x: 82
-        y: 257
-        width: 34
-        height: 48
+        x: 83
+        y: 258
+        width: 32
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8130,10 +8169,10 @@ TextureImporter:
       name: assetsGigante_317
       rect:
         serializedVersion: 2
-        x: 149
-        y: 257
-        width: 33
-        height: 47
+        x: 150
+        y: 258
+        width: 31
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8152,10 +8191,10 @@ TextureImporter:
       name: assetsGigante_318
       rect:
         serializedVersion: 2
-        x: 213
-        y: 257
-        width: 33
-        height: 47
+        x: 214
+        y: 258
+        width: 31
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8174,10 +8213,10 @@ TextureImporter:
       name: assetsGigante_319
       rect:
         serializedVersion: 2
-        x: 277
-        y: 257
-        width: 33
-        height: 47
+        x: 278
+        y: 258
+        width: 31
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8196,10 +8235,10 @@ TextureImporter:
       name: assetsGigante_320
       rect:
         serializedVersion: 2
-        x: 341
-        y: 257
-        width: 33
-        height: 47
+        x: 342
+        y: 258
+        width: 31
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8218,10 +8257,10 @@ TextureImporter:
       name: assetsGigante_321
       rect:
         serializedVersion: 2
-        x: 402
-        y: 257
-        width: 34
-        height: 48
+        x: 403
+        y: 258
+        width: 32
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8240,10 +8279,10 @@ TextureImporter:
       name: assetsGigante_322
       rect:
         serializedVersion: 2
-        x: 470
-        y: 257
-        width: 29
-        height: 47
+        x: 471
+        y: 258
+        width: 27
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8262,10 +8301,10 @@ TextureImporter:
       name: assetsGigante_323
       rect:
         serializedVersion: 2
-        x: 533
-        y: 257
-        width: 27
-        height: 47
+        x: 534
+        y: 258
+        width: 25
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8284,10 +8323,10 @@ TextureImporter:
       name: assetsGigante_324
       rect:
         serializedVersion: 2
-        x: 594
-        y: 257
-        width: 28
-        height: 49
+        x: 595
+        y: 258
+        width: 26
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8306,10 +8345,10 @@ TextureImporter:
       name: assetsGigante_325
       rect:
         serializedVersion: 2
-        x: 652
-        y: 257
-        width: 33
-        height: 50
+        x: 653
+        y: 258
+        width: 31
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8328,10 +8367,10 @@ TextureImporter:
       name: assetsGigante_326
       rect:
         serializedVersion: 2
-        x: 716
-        y: 257
-        width: 33
-        height: 50
+        x: 717
+        y: 258
+        width: 31
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8350,10 +8389,10 @@ TextureImporter:
       name: assetsGigante_327
       rect:
         serializedVersion: 2
-        x: 780
-        y: 257
-        width: 33
-        height: 50
+        x: 781
+        y: 258
+        width: 31
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8372,10 +8411,10 @@ TextureImporter:
       name: assetsGigante_328
       rect:
         serializedVersion: 2
-        x: 19
-        y: 192
-        width: 25
-        height: 46
+        x: 20
+        y: 193
+        width: 23
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8394,10 +8433,10 @@ TextureImporter:
       name: assetsGigante_329
       rect:
         serializedVersion: 2
-        x: 82
-        y: 193
-        width: 32
-        height: 49
+        x: 83
+        y: 194
+        width: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8416,10 +8455,10 @@ TextureImporter:
       name: assetsGigante_330
       rect:
         serializedVersion: 2
-        x: 144
-        y: 194
-        width: 26
-        height: 49
+        x: 145
+        y: 195
+        width: 24
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8438,10 +8477,10 @@ TextureImporter:
       name: assetsGigante_331
       rect:
         serializedVersion: 2
-        x: 208
-        y: 195
-        width: 25
-        height: 49
+        x: 209
+        y: 196
+        width: 23
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8460,10 +8499,10 @@ TextureImporter:
       name: assetsGigante_332
       rect:
         serializedVersion: 2
-        x: 272
-        y: 195
-        width: 25
-        height: 49
+        x: 273
+        y: 196
+        width: 23
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8482,10 +8521,10 @@ TextureImporter:
       name: assetsGigante_333
       rect:
         serializedVersion: 2
-        x: 338
-        y: 193
-        width: 32
-        height: 49
+        x: 339
+        y: 194
+        width: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8504,10 +8543,10 @@ TextureImporter:
       name: assetsGigante_334
       rect:
         serializedVersion: 2
-        x: 19
-        y: 129
-        width: 38
-        height: 50
+        x: 20
+        y: 130
+        width: 36
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8526,10 +8565,10 @@ TextureImporter:
       name: assetsGigante_335
       rect:
         serializedVersion: 2
-        x: 76
-        y: 129
-        width: 34
-        height: 48
+        x: 77
+        y: 130
+        width: 32
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8548,10 +8587,10 @@ TextureImporter:
       name: assetsGigante_336
       rect:
         serializedVersion: 2
-        x: 136
-        y: 129
-        width: 33
-        height: 47
+        x: 137
+        y: 130
+        width: 31
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8570,10 +8609,10 @@ TextureImporter:
       name: assetsGigante_337
       rect:
         serializedVersion: 2
-        x: 192
-        y: 129
-        width: 39
-        height: 47
+        x: 193
+        y: 130
+        width: 37
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8592,10 +8631,10 @@ TextureImporter:
       name: assetsGigante_338
       rect:
         serializedVersion: 2
-        x: 256
-        y: 129
-        width: 39
-        height: 47
+        x: 257
+        y: 130
+        width: 37
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8614,10 +8653,10 @@ TextureImporter:
       name: assetsGigante_339
       rect:
         serializedVersion: 2
-        x: 332
-        y: 129
-        width: 34
-        height: 48
+        x: 333
+        y: 130
+        width: 32
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8636,10 +8675,10 @@ TextureImporter:
       name: assetsGigante_340
       rect:
         serializedVersion: 2
-        x: 13
-        y: 64
-        width: 28
-        height: 51
+        x: 14
+        y: 65
+        width: 26
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8658,10 +8697,10 @@ TextureImporter:
       name: assetsGigante_341
       rect:
         serializedVersion: 2
-        x: 80
-        y: 64
-        width: 31
-        height: 49
+        x: 81
+        y: 65
+        width: 29
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8680,10 +8719,10 @@ TextureImporter:
       name: assetsGigante_342
       rect:
         serializedVersion: 2
-        x: 151
-        y: 64
-        width: 24
-        height: 49
+        x: 152
+        y: 65
+        width: 22
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8702,10 +8741,10 @@ TextureImporter:
       name: assetsGigante_343
       rect:
         serializedVersion: 2
-        x: 215
-        y: 64
-        width: 25
-        height: 49
+        x: 216
+        y: 65
+        width: 23
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8724,10 +8763,10 @@ TextureImporter:
       name: assetsGigante_344
       rect:
         serializedVersion: 2
-        x: 279
-        y: 64
-        width: 25
-        height: 49
+        x: 280
+        y: 65
+        width: 23
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8746,10 +8785,10 @@ TextureImporter:
       name: assetsGigante_345
       rect:
         serializedVersion: 2
-        x: 336
-        y: 64
-        width: 31
-        height: 49
+        x: 337
+        y: 65
+        width: 29
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8768,10 +8807,10 @@ TextureImporter:
       name: assetsGigante_346
       rect:
         serializedVersion: 2
-        x: 7
-        y: 1
-        width: 38
-        height: 50
+        x: 8
+        y: 2
+        width: 36
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8790,10 +8829,10 @@ TextureImporter:
       name: assetsGigante_347
       rect:
         serializedVersion: 2
-        x: 82
-        y: 1
-        width: 34
-        height: 48
+        x: 83
+        y: 2
+        width: 32
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8812,10 +8851,10 @@ TextureImporter:
       name: assetsGigante_348
       rect:
         serializedVersion: 2
-        x: 151
-        y: 1
-        width: 33
-        height: 47
+        x: 152
+        y: 2
+        width: 31
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8834,10 +8873,10 @@ TextureImporter:
       name: assetsGigante_349
       rect:
         serializedVersion: 2
-        x: 217
-        y: 1
-        width: 39
-        height: 47
+        x: 218
+        y: 2
+        width: 37
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8856,10 +8895,10 @@ TextureImporter:
       name: assetsGigante_350
       rect:
         serializedVersion: 2
-        x: 281
-        y: 1
-        width: 39
-        height: 47
+        x: 282
+        y: 2
+        width: 37
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8878,10 +8917,10 @@ TextureImporter:
       name: assetsGigante_351
       rect:
         serializedVersion: 2
-        x: 338
-        y: 1
-        width: 34
-        height: 48
+        x: 339
+        y: 2
+        width: 32
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8900,7 +8939,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8d228d1bab6c9164287ab2461c90b7db
     internalID: 0
     vertices: []
     indices: 
