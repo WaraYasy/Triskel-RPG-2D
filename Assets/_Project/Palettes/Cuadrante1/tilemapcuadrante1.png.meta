@@ -1,0 +1,2353 @@
+fileFormatVersion: 2
+guid: dece0ce8678ba8f408cba9e62d9d3d82
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 80702873477996894
+    second: tilemapcuadrante1_0
+  - first:
+      213: -3820990792532635455
+    second: tilemapcuadrante1_1
+  - first:
+      213: -6577090436764489719
+    second: tilemapcuadrante1_2
+  - first:
+      213: -8337472502277214178
+    second: tilemapcuadrante1_3
+  - first:
+      213: 523744861600214670
+    second: tilemapcuadrante1_4
+  - first:
+      213: 8763781332606915124
+    second: tilemapcuadrante1_5
+  - first:
+      213: -2344605609954566486
+    second: tilemapcuadrante1_6
+  - first:
+      213: 1461412632186265519
+    second: tilemapcuadrante1_7
+  - first:
+      213: 1645295391178248810
+    second: tilemapcuadrante1_8
+  - first:
+      213: 3851686293806360668
+    second: tilemapcuadrante1_9
+  - first:
+      213: 8945953078656189771
+    second: tilemapcuadrante1_10
+  - first:
+      213: -8636501499957924520
+    second: tilemapcuadrante1_11
+  - first:
+      213: -2261526692123396565
+    second: tilemapcuadrante1_12
+  - first:
+      213: 9120620500874593309
+    second: tilemapcuadrante1_13
+  - first:
+      213: 9050739995795897235
+    second: tilemapcuadrante1_14
+  - first:
+      213: 4580793837949504539
+    second: tilemapcuadrante1_15
+  - first:
+      213: 3653922208134053637
+    second: tilemapcuadrante1_16
+  - first:
+      213: -7007145354226928004
+    second: tilemapcuadrante1_17
+  - first:
+      213: 427510425047898774
+    second: tilemapcuadrante1_18
+  - first:
+      213: -4706775838269934956
+    second: tilemapcuadrante1_19
+  - first:
+      213: 8190443990435401155
+    second: tilemapcuadrante1_20
+  - first:
+      213: 7407575672652559097
+    second: tilemapcuadrante1_21
+  - first:
+      213: 497117524289031109
+    second: tilemapcuadrante1_22
+  - first:
+      213: -8164721890471696093
+    second: tilemapcuadrante1_23
+  - first:
+      213: 2548119782816766564
+    second: tilemapcuadrante1_24
+  - first:
+      213: -1233295356247010119
+    second: tilemapcuadrante1_25
+  - first:
+      213: -5475125124825914905
+    second: tilemapcuadrante1_26
+  - first:
+      213: -2963729959921428061
+    second: tilemapcuadrante1_27
+  - first:
+      213: -8778186663612177131
+    second: tilemapcuadrante1_28
+  - first:
+      213: -2644667823650889148
+    second: tilemapcuadrante1_29
+  - first:
+      213: 5456762547762998347
+    second: tilemapcuadrante1_30
+  - first:
+      213: -6831942782445667976
+    second: tilemapcuadrante1_31
+  - first:
+      213: 7981338641831411417
+    second: tilemapcuadrante1_32
+  - first:
+      213: -3946648990034777973
+    second: tilemapcuadrante1_33
+  - first:
+      213: 5817147552898184692
+    second: tilemapcuadrante1_34
+  - first:
+      213: 3779838703307262638
+    second: tilemapcuadrante1_35
+  - first:
+      213: 8740952493764871400
+    second: tilemapcuadrante1_36
+  - first:
+      213: -4635751631932977343
+    second: tilemapcuadrante1_37
+  - first:
+      213: 2072086581170705707
+    second: tilemapcuadrante1_38
+  - first:
+      213: -1968646597977906048
+    second: tilemapcuadrante1_39
+  - first:
+      213: -3163784909597149678
+    second: tilemapcuadrante1_40
+  - first:
+      213: 2304186101556643570
+    second: tilemapcuadrante1_41
+  - first:
+      213: 6878275415191799087
+    second: tilemapcuadrante1_42
+  - first:
+      213: -3590568974529156871
+    second: tilemapcuadrante1_43
+  - first:
+      213: -3016042321065716224
+    second: tilemapcuadrante1_44
+  - first:
+      213: 5628905481291509186
+    second: tilemapcuadrante1_45
+  - first:
+      213: -3750791588158799678
+    second: tilemapcuadrante1_46
+  - first:
+      213: -3518174748638171873
+    second: tilemapcuadrante1_47
+  - first:
+      213: 2276149904931785224
+    second: tilemapcuadrante1_48
+  - first:
+      213: 8119523967803245708
+    second: tilemapcuadrante1_49
+  - first:
+      213: -2256352787674480661
+    second: tilemapcuadrante1_50
+  - first:
+      213: 1022203750830603966
+    second: tilemapcuadrante1_51
+  - first:
+      213: -5604359391613433894
+    second: tilemapcuadrante1_52
+  - first:
+      213: 7975357205794026865
+    second: tilemapcuadrante1_53
+  - first:
+      213: -2724419902903133453
+    second: tilemapcuadrante1_54
+  - first:
+      213: -6006464911536768072
+    second: tilemapcuadrante1_55
+  - first:
+      213: 8957115963159272303
+    second: tilemapcuadrante1_56
+  - first:
+      213: 9179135824364122734
+    second: tilemapcuadrante1_57
+  - first:
+      213: -6202029437715167249
+    second: tilemapcuadrante1_58
+  - first:
+      213: -3926019393912974277
+    second: tilemapcuadrante1_59
+  - first:
+      213: -2793951385190081501
+    second: tilemapcuadrante1_60
+  - first:
+      213: -5214982845874547859
+    second: tilemapcuadrante1_61
+  - first:
+      213: -989346763585493322
+    second: tilemapcuadrante1_62
+  - first:
+      213: -7505844185502450041
+    second: tilemapcuadrante1_63
+  - first:
+      213: -5660617817232933443
+    second: tilemapcuadrante1_64
+  - first:
+      213: -3257631916279952948
+    second: tilemapcuadrante1_65
+  - first:
+      213: 4671552676852339647
+    second: tilemapcuadrante1_66
+  - first:
+      213: -2851832324603001652
+    second: tilemapcuadrante1_67
+  - first:
+      213: 7515803931465881211
+    second: tilemapcuadrante1_68
+  - first:
+      213: 6623115996583385335
+    second: tilemapcuadrante1_69
+  - first:
+      213: 5308912964662598577
+    second: tilemapcuadrante1_70
+  - first:
+      213: -2174050279389352514
+    second: tilemapcuadrante1_71
+  - first:
+      213: 8439945274700202794
+    second: tilemapcuadrante1_72
+  - first:
+      213: -2836699206970440535
+    second: tilemapcuadrante1_73
+  - first:
+      213: 4062081197080661877
+    second: tilemapcuadrante1_74
+  - first:
+      213: -4748536158063988835
+    second: tilemapcuadrante1_75
+  - first:
+      213: -2178638729757306234
+    second: tilemapcuadrante1_76
+  - first:
+      213: -6592256747341012305
+    second: tilemapcuadrante1_77
+  - first:
+      213: 5693692293622970726
+    second: tilemapcuadrante1_78
+  - first:
+      213: -30572524865458230
+    second: tilemapcuadrante1_79
+  - first:
+      213: -3698223325034909132
+    second: tilemapcuadrante1_80
+  - first:
+      213: 1507256381257854937
+    second: tilemapcuadrante1_81
+  - first:
+      213: 6520477377777028194
+    second: tilemapcuadrante1_82
+  - first:
+      213: -1408508990936485892
+    second: tilemapcuadrante1_83
+  - first:
+      213: -3213435811242018894
+    second: tilemapcuadrante1_84
+  - first:
+      213: -1412453182838435760
+    second: tilemapcuadrante1_85
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tilemapcuadrante1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 740
+        width: 219
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e51620af5d6be1100800000000000000
+      internalID: 80702873477996894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_1
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 899
+        width: 54
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c0dd016e1d19fac0800000000000000
+      internalID: -3820990792532635455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_2
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 943
+        width: 33
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 908a80d381b79b4a0800000000000000
+      internalID: -6577090436764489719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_3
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 900
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e10fd29dee85b4c80800000000000000
+      internalID: -8337472502277214178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_4
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 882
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8eed9c3d27b44700800000000000000
+      internalID: 523744861600214670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_5
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 800
+        width: 35
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4321c3380b43f9970800000000000000
+      internalID: 8763781332606915124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_6
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 861
+        width: 40
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aae1548be99467fd0800000000000000
+      internalID: -2344605609954566486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_7
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 738
+        width: 121
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faf1bbbcb0bf74410800000000000000
+      internalID: 1461412632186265519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_8
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 802
+        width: 33
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6254cde07345d610800000000000000
+      internalID: 1645295391178248810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_9
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 697
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c58a190f640f37530800000000000000
+      internalID: 3851686293806360668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_10
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 697
+        width: 99
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b454d966de8662c70800000000000000
+      internalID: 8945953078656189771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_11
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 697
+        width: 70
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85d21e8d4abf42880800000000000000
+      internalID: -8636501499957924520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_12
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 739
+        width: 12
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b26bbe1a4717d90e0800000000000000
+      internalID: -2261526692123396565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_13
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 719
+        width: 12
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1486cdb504f29e70800000000000000
+      internalID: 9120620500874593309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 679
+        width: 53
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39bb5d3c210ba9d70800000000000000
+      internalID: 9050739995795897235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_15
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 664
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1c474cb9bf329f30800000000000000
+      internalID: 4580793837949504539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_16
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 683
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50fbdb493e655b230800000000000000
+      internalID: 3653922208134053637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_17
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 626
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7676cffc6e91ce90800000000000000
+      internalID: -7007145354226928004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_18
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 636
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69a91ce6772dee500800000000000000
+      internalID: 427510425047898774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_19
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 645
+        width: 91
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 492778a005c2eaeb0800000000000000
+      internalID: -4706775838269934956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_20
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 616
+        width: 42
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cd82aa1a6d4aa170800000000000000
+      internalID: 8190443990435401155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_21
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 616
+        width: 46
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f2f747c3defcc660800000000000000
+      internalID: 7407575672652559097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_22
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 636
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cb8ed621cd16e600800000000000000
+      internalID: 497117524289031109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 516
+        width: 72
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 329249cf2b411be80800000000000000
+      internalID: -8164721890471696093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_24
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 515
+        width: 81
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46a50f3217dbc5320800000000000000
+      internalID: 2548119782816766564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_25
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 513
+        width: 77
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b412c3686472eee0800000000000000
+      internalID: -1233295356247010119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_26
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 578
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e16fe915b27404b0800000000000000
+      internalID: -5475125124825914905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_27
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 519
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a953b0dd47bed6d0800000000000000
+      internalID: -2963729959921428061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 460
+        width: 46
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 515235ffcbd9d2680800000000000000
+      internalID: -8778186663612177131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_29
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 473
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 442226e50a04c4bd0800000000000000
+      internalID: -2644667823650889148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_30
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 479
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4ca11340a05abb40800000000000000
+      internalID: 5456762547762998347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_31
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 475
+        width: 36
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 879388e8c301031a0800000000000000
+      internalID: -6831942782445667976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_32
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 482
+        width: 27
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9deb572353963ce60800000000000000
+      internalID: 7981338641831411417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_33
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 479
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b88a2df57afaa39c0800000000000000
+      internalID: -3946648990034777973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_34
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 481
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f57788f0e8aab050800000000000000
+      internalID: 5817147552898184692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 399
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaa07e2364fa47430800000000000000
+      internalID: 3779838703307262638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_36
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 431
+        width: 82
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e48b654bf91e4970800000000000000
+      internalID: 8740952493764871400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_37
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 437
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14f82b7b3708aafb0800000000000000
+      internalID: -4635751631932977343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_38
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 441
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b25988664c781cc10800000000000000
+      internalID: 2072086581170705707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_39
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 445
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 084ee377956fda4e0800000000000000
+      internalID: -1968646597977906048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_40
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 445
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21678bd136af714d0800000000000000
+      internalID: -3163784909597149678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_41
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 398
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f60daf1d0d1aff10800000000000000
+      internalID: 2304186101556643570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_42
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 400
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f254fc52c0b847f50800000000000000
+      internalID: 6878275415191799087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_43
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 383
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f8a6a39a8cbb2ec0800000000000000
+      internalID: -3590568974529156871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_44
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 328
+        width: 97
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00655591d7dd426d0800000000000000
+      internalID: -3016042321065716224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 334
+        width: 39
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cd21a646b3ed1e40800000000000000
+      internalID: 5628905481291509186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_46
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 338
+        width: 51
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c085415ce282fbc0800000000000000
+      internalID: -3750791588158799678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_47
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 330
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1d2ca9c4beec2fc0800000000000000
+      internalID: -3518174748638171873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 251
+        width: 64
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80a8ffa6742869f10800000000000000
+      internalID: 2276149904931785224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_49
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 269
+        width: 45
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c84ce2697085ea070800000000000000
+      internalID: 8119523967803245708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_50
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 272
+        width: 55
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bef33b22813dfa0e0800000000000000
+      internalID: -2256352787674480661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_51
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 313
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebe745045e89f2e00800000000000000
+      internalID: 1022203750830603966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_52
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 229
+        width: 33
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad7c14593d05932b0800000000000000
+      internalID: -5604359391613433894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_53
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 229
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17574389f192eae60800000000000000
+      internalID: 7975357205794026865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_54
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 226
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fa547c688ae03ad0800000000000000
+      internalID: -2724419902903133453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_55
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 249
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bbb0009cffb4aca0800000000000000
+      internalID: -6006464911536768072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_56
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 205
+        width: 71
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6bd61cf2811e4c70800000000000000
+      internalID: 8957115963159272303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_57
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 187
+        width: 52
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e62394c2667d26f70800000000000000
+      internalID: 9179135824364122734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_58
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 228
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe7c87e0617fde9a0800000000000000
+      internalID: -6202029437715167249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_59
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 187
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b34d584892af389c0800000000000000
+      internalID: -3926019393912974277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_60
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 188
+        width: 49
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32cd806a404e939d0800000000000000
+      internalID: -2793951385190081501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_61
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 183
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6354e95bb8a0a7b0800000000000000
+      internalID: -5214982845874547859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_62
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 174
+        width: 50
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b6edcc3c522542f0800000000000000
+      internalID: -989346763585493322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_63
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 164
+        width: 27
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78ef1bf1b72e5d790800000000000000
+      internalID: -7505844185502450041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 103
+        width: 62
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbd759226127171b0800000000000000
+      internalID: -5660617817232933443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_65
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 106
+        width: 70
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc9882528019ac2d0800000000000000
+      internalID: -3257631916279952948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_66
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 168
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb31f4d9860b4d040800000000000000
+      internalID: 4671552676852339647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_67
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 106
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc4cf054c914c68d0800000000000000
+      internalID: -2851832324603001652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_68
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 105
+        width: 52
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b761280fadf7d4860800000000000000
+      internalID: 7515803931465881211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_69
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 103
+        width: 54
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f85f8a78e80aeb50800000000000000
+      internalID: 6623115996583385335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_70
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 103
+        width: 13
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bb1e2aa63c0da940800000000000000
+      internalID: 5308912964662598577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_71
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 50
+        width: 43
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebda82d1ac834d1e0800000000000000
+      internalID: -2174050279389352514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_72
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 53
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a230e36b285b02570800000000000000
+      internalID: 8439945274700202794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_73
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 52
+        width: 50
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a405e9c91502a8d0800000000000000
+      internalID: -2836699206970440535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_74
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 65
+        width: 40
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57f49c0b3596f5830800000000000000
+      internalID: 4062081197080661877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_75
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 51
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9f6f77e58fc91eb0800000000000000
+      internalID: -4748536158063988835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_76
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 51
+        width: 31
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68258e24e9be3c1e0800000000000000
+      internalID: -2178638729757306234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_77
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 45
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa221926a699384a0800000000000000
+      internalID: -6592256747341012305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_78
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 45
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 669b6cd79fe040f40800000000000000
+      internalID: 5693692293622970726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_79
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acfe18b5372639ff0800000000000000
+      internalID: -30572524865458230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_80
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 7
+        width: 35
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 432fa3bda754dacc0800000000000000
+      internalID: -3698223325034909132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_81
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 5
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dfa05661b9dae410800000000000000
+      internalID: 1507256381257854937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_82
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 10
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26cce5cc0a36d7a50800000000000000
+      internalID: 6520477377777028194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_83
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 0
+        width: 126
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cff694c0988f37ce0800000000000000
+      internalID: -1408508990936485892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_84
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 22
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b7766ab7259763d0800000000000000
+      internalID: -3213435811242018894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapcuadrante1_85
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 5
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0509b0f4055f56ce0800000000000000
+      internalID: -1412453182838435760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      tilemapcuadrante1_0: 80702873477996894
+      tilemapcuadrante1_1: -3820990792532635455
+      tilemapcuadrante1_10: 8945953078656189771
+      tilemapcuadrante1_11: -8636501499957924520
+      tilemapcuadrante1_12: -2261526692123396565
+      tilemapcuadrante1_13: 9120620500874593309
+      tilemapcuadrante1_14: 9050739995795897235
+      tilemapcuadrante1_15: 4580793837949504539
+      tilemapcuadrante1_16: 3653922208134053637
+      tilemapcuadrante1_17: -7007145354226928004
+      tilemapcuadrante1_18: 427510425047898774
+      tilemapcuadrante1_19: -4706775838269934956
+      tilemapcuadrante1_2: -6577090436764489719
+      tilemapcuadrante1_20: 8190443990435401155
+      tilemapcuadrante1_21: 7407575672652559097
+      tilemapcuadrante1_22: 497117524289031109
+      tilemapcuadrante1_23: -8164721890471696093
+      tilemapcuadrante1_24: 2548119782816766564
+      tilemapcuadrante1_25: -1233295356247010119
+      tilemapcuadrante1_26: -5475125124825914905
+      tilemapcuadrante1_27: -2963729959921428061
+      tilemapcuadrante1_28: -8778186663612177131
+      tilemapcuadrante1_29: -2644667823650889148
+      tilemapcuadrante1_3: -8337472502277214178
+      tilemapcuadrante1_30: 5456762547762998347
+      tilemapcuadrante1_31: -6831942782445667976
+      tilemapcuadrante1_32: 7981338641831411417
+      tilemapcuadrante1_33: -3946648990034777973
+      tilemapcuadrante1_34: 5817147552898184692
+      tilemapcuadrante1_35: 3779838703307262638
+      tilemapcuadrante1_36: 8740952493764871400
+      tilemapcuadrante1_37: -4635751631932977343
+      tilemapcuadrante1_38: 2072086581170705707
+      tilemapcuadrante1_39: -1968646597977906048
+      tilemapcuadrante1_4: 523744861600214670
+      tilemapcuadrante1_40: -3163784909597149678
+      tilemapcuadrante1_41: 2304186101556643570
+      tilemapcuadrante1_42: 6878275415191799087
+      tilemapcuadrante1_43: -3590568974529156871
+      tilemapcuadrante1_44: -3016042321065716224
+      tilemapcuadrante1_45: 5628905481291509186
+      tilemapcuadrante1_46: -3750791588158799678
+      tilemapcuadrante1_47: -3518174748638171873
+      tilemapcuadrante1_48: 2276149904931785224
+      tilemapcuadrante1_49: 8119523967803245708
+      tilemapcuadrante1_5: 8763781332606915124
+      tilemapcuadrante1_50: -2256352787674480661
+      tilemapcuadrante1_51: 1022203750830603966
+      tilemapcuadrante1_52: -5604359391613433894
+      tilemapcuadrante1_53: 7975357205794026865
+      tilemapcuadrante1_54: -2724419902903133453
+      tilemapcuadrante1_55: -6006464911536768072
+      tilemapcuadrante1_56: 8957115963159272303
+      tilemapcuadrante1_57: 9179135824364122734
+      tilemapcuadrante1_58: -6202029437715167249
+      tilemapcuadrante1_59: -3926019393912974277
+      tilemapcuadrante1_6: -2344605609954566486
+      tilemapcuadrante1_60: -2793951385190081501
+      tilemapcuadrante1_61: -5214982845874547859
+      tilemapcuadrante1_62: -989346763585493322
+      tilemapcuadrante1_63: -7505844185502450041
+      tilemapcuadrante1_64: -5660617817232933443
+      tilemapcuadrante1_65: -3257631916279952948
+      tilemapcuadrante1_66: 4671552676852339647
+      tilemapcuadrante1_67: -2851832324603001652
+      tilemapcuadrante1_68: 7515803931465881211
+      tilemapcuadrante1_69: 6623115996583385335
+      tilemapcuadrante1_7: 1461412632186265519
+      tilemapcuadrante1_70: 5308912964662598577
+      tilemapcuadrante1_71: -2174050279389352514
+      tilemapcuadrante1_72: 8439945274700202794
+      tilemapcuadrante1_73: -2836699206970440535
+      tilemapcuadrante1_74: 4062081197080661877
+      tilemapcuadrante1_75: -4748536158063988835
+      tilemapcuadrante1_76: -2178638729757306234
+      tilemapcuadrante1_77: -6592256747341012305
+      tilemapcuadrante1_78: 5693692293622970726
+      tilemapcuadrante1_79: -30572524865458230
+      tilemapcuadrante1_8: 1645295391178248810
+      tilemapcuadrante1_80: -3698223325034909132
+      tilemapcuadrante1_81: 1507256381257854937
+      tilemapcuadrante1_82: 6520477377777028194
+      tilemapcuadrante1_83: -1408508990936485892
+      tilemapcuadrante1_84: -3213435811242018894
+      tilemapcuadrante1_85: -1412453182838435760
+      tilemapcuadrante1_9: 3851686293806360668
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

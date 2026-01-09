@@ -1,0 +1,2457 @@
+fileFormatVersion: 2
+guid: 37d5f7e1b7f0fa9489162cbdaa7b65fb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2651943289739214250
+    second: asset3Cuadrante_0
+  - first:
+      213: -3318906215972559651
+    second: asset3Cuadrante_1
+  - first:
+      213: 6092347454872893768
+    second: asset3Cuadrante_2
+  - first:
+      213: 5884358553887346212
+    second: asset3Cuadrante_3
+  - first:
+      213: 7020710485393914040
+    second: asset3Cuadrante_4
+  - first:
+      213: -7835329869466103538
+    second: asset3Cuadrante_5
+  - first:
+      213: -6547429290822565959
+    second: asset3Cuadrante_6
+  - first:
+      213: 4604559165476557171
+    second: asset3Cuadrante_7
+  - first:
+      213: -3024845381152710929
+    second: asset3Cuadrante_8
+  - first:
+      213: 543140882406680070
+    second: asset3Cuadrante_9
+  - first:
+      213: -3569868487932330349
+    second: asset3Cuadrante_10
+  - first:
+      213: -7593407534972504084
+    second: asset3Cuadrante_11
+  - first:
+      213: 3302569076232058587
+    second: asset3Cuadrante_12
+  - first:
+      213: -8846170036912012603
+    second: asset3Cuadrante_13
+  - first:
+      213: 8343986909836687348
+    second: asset3Cuadrante_14
+  - first:
+      213: 1788033519931798421
+    second: asset3Cuadrante_15
+  - first:
+      213: 6622967272909966200
+    second: asset3Cuadrante_16
+  - first:
+      213: -6881096117112466809
+    second: asset3Cuadrante_17
+  - first:
+      213: -1861536826734357482
+    second: asset3Cuadrante_18
+  - first:
+      213: -6588974080799268661
+    second: asset3Cuadrante_19
+  - first:
+      213: -4548001016203160111
+    second: asset3Cuadrante_20
+  - first:
+      213: -624097417524082949
+    second: asset3Cuadrante_21
+  - first:
+      213: 7884335901501186437
+    second: asset3Cuadrante_22
+  - first:
+      213: -4180288179601151054
+    second: asset3Cuadrante_23
+  - first:
+      213: -8552171287542867149
+    second: asset3Cuadrante_24
+  - first:
+      213: -2660839944489570732
+    second: asset3Cuadrante_25
+  - first:
+      213: 5214209885882753218
+    second: asset3Cuadrante_26
+  - first:
+      213: -8047849619824323644
+    second: asset3Cuadrante_27
+  - first:
+      213: 2021462779383780602
+    second: asset3Cuadrante_28
+  - first:
+      213: -925266433644101187
+    second: asset3Cuadrante_29
+  - first:
+      213: -6691454272568756703
+    second: asset3Cuadrante_30
+  - first:
+      213: -393595865342110221
+    second: asset3Cuadrante_31
+  - first:
+      213: -2362754982832582073
+    second: asset3Cuadrante_32
+  - first:
+      213: 1847395882595235897
+    second: asset3Cuadrante_33
+  - first:
+      213: 8140989758636728776
+    second: asset3Cuadrante_34
+  - first:
+      213: 6427460616636801540
+    second: asset3Cuadrante_35
+  - first:
+      213: 7637617227067296880
+    second: asset3Cuadrante_36
+  - first:
+      213: -8361874504507895929
+    second: asset3Cuadrante_37
+  - first:
+      213: 6087541263487899629
+    second: asset3Cuadrante_38
+  - first:
+      213: 3340781754740256607
+    second: asset3Cuadrante_39
+  - first:
+      213: 2520775354649378116
+    second: asset3Cuadrante_40
+  - first:
+      213: -2559182728428121345
+    second: asset3Cuadrante_41
+  - first:
+      213: 6890814180133363185
+    second: asset3Cuadrante_42
+  - first:
+      213: -5378069699484944602
+    second: asset3Cuadrante_43
+  - first:
+      213: 6659834355413752095
+    second: asset3Cuadrante_44
+  - first:
+      213: 6937961349683341762
+    second: asset3Cuadrante_45
+  - first:
+      213: -6868640959988463790
+    second: asset3Cuadrante_46
+  - first:
+      213: 3325004308641344361
+    second: asset3Cuadrante_47
+  - first:
+      213: 8539514350843931315
+    second: asset3Cuadrante_48
+  - first:
+      213: 3056801802664240116
+    second: asset3Cuadrante_49
+  - first:
+      213: 8468304252342635329
+    second: asset3Cuadrante_50
+  - first:
+      213: -8934205646327728840
+    second: asset3Cuadrante_51
+  - first:
+      213: -2973681131125579015
+    second: asset3Cuadrante_52
+  - first:
+      213: 8402175088644349496
+    second: asset3Cuadrante_53
+  - first:
+      213: 3114360128638906931
+    second: asset3Cuadrante_54
+  - first:
+      213: -5185170120461832730
+    second: asset3Cuadrante_55
+  - first:
+      213: 3776637061458836095
+    second: asset3Cuadrante_56
+  - first:
+      213: 2808181256798327328
+    second: asset3Cuadrante_57
+  - first:
+      213: 5516211336397936825
+    second: asset3Cuadrante_58
+  - first:
+      213: 8367494577238205175
+    second: asset3Cuadrante_59
+  - first:
+      213: -6486153037260631891
+    second: asset3Cuadrante_60
+  - first:
+      213: -5121947305354073407
+    second: asset3Cuadrante_61
+  - first:
+      213: 7499198780579754600
+    second: asset3Cuadrante_62
+  - first:
+      213: -6048487198197469755
+    second: asset3Cuadrante_63
+  - first:
+      213: -7867593484173955058
+    second: asset3Cuadrante_64
+  - first:
+      213: -8844235776812827395
+    second: asset3Cuadrante_65
+  - first:
+      213: -846633651790730474
+    second: asset3Cuadrante_66
+  - first:
+      213: -3975253956951637898
+    second: asset3Cuadrante_67
+  - first:
+      213: 7423384665637070034
+    second: asset3Cuadrante_68
+  - first:
+      213: 2994782875127611017
+    second: asset3Cuadrante_69
+  - first:
+      213: -1684806984078354219
+    second: asset3Cuadrante_70
+  - first:
+      213: 2601854991909693174
+    second: asset3Cuadrante_71
+  - first:
+      213: -3980204527203771710
+    second: asset3Cuadrante_72
+  - first:
+      213: 5124903854219449387
+    second: asset3Cuadrante_73
+  - first:
+      213: 5124760113578867331
+    second: asset3Cuadrante_74
+  - first:
+      213: 3859323489394438280
+    second: asset3Cuadrante_75
+  - first:
+      213: 656397944715964004
+    second: asset3Cuadrante_76
+  - first:
+      213: 5777467800516106913
+    second: asset3Cuadrante_77
+  - first:
+      213: -2346194311262331842
+    second: asset3Cuadrante_78
+  - first:
+      213: -4636368469273715028
+    second: asset3Cuadrante_79
+  - first:
+      213: 233523466201813428
+    second: asset3Cuadrante_80
+  - first:
+      213: 3160563407499932021
+    second: asset3Cuadrante_81
+  - first:
+      213: 8869047920681531209
+    second: asset3Cuadrante_82
+  - first:
+      213: 1147900573391424024
+    second: asset3Cuadrante_83
+  - first:
+      213: -4837528220216095849
+    second: asset3Cuadrante_84
+  - first:
+      213: 8249281515774401862
+    second: asset3Cuadrante_85
+  - first:
+      213: 2720280377581133548
+    second: asset3Cuadrante_86
+  - first:
+      213: -6150819634874538391
+    second: asset3Cuadrante_87
+  - first:
+      213: -899067730074277141
+    second: asset3Cuadrante_88
+  - first:
+      213: -5082722551214372291
+    second: asset3Cuadrante_89
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: asset3Cuadrante_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 863
+        width: 167
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aadf2651f589dc420800000000000000
+      internalID: 2651943289739214250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 758
+        width: 174
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd4ae128160e0f1d0800000000000000
+      internalID: -3318906215972559651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_2
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 769
+        width: 66
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84934f74bbd5c8450800000000000000
+      internalID: 6092347454872893768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 808
+        width: 46
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42e8c779de079a150800000000000000
+      internalID: 5884358553887346212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_4
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 739
+        width: 121
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b8b3c83df29e6160800000000000000
+      internalID: 7020710485393914040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 740
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0117704ff0534390800000000000000
+      internalID: -7835329869466103538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 671
+        width: 98
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bf7880ffbbd225a0800000000000000
+      internalID: -6547429290822565959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 697
+        width: 101
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 371df7d3a2ea6ef30800000000000000
+      internalID: 4604559165476557171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_8
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 720
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fee59e3f6279506d0800000000000000
+      internalID: -3024845381152710929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_9
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 697
+        width: 29
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 606a7de31cf998700800000000000000
+      internalID: 543140882406680070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_10
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 625
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39ebee13687457ec0800000000000000
+      internalID: -3569868487932330349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_11
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 634
+        width: 47
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce7703b141cce9690800000000000000
+      internalID: -7593407534972504084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_12
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 642
+        width: 90
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd6700bb31515dd20800000000000000
+      internalID: 3302569076232058587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_13
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 634
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c2c72f68371c3580800000000000000
+      internalID: -8846170036912012603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_14
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 644
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f7335bd2ebcbc370800000000000000
+      internalID: 8343986909836687348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_15
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 616
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 593b602530f50d810800000000000000
+      internalID: 1788033519931798421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_16
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 616
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87b06dc05a189eb50800000000000000
+      internalID: 6622967272909966200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 515
+        width: 70
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78211320a8f6180a0800000000000000
+      internalID: -6881096117112466809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_18
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 506
+        width: 81
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 614d0327e1e7a26e0800000000000000
+      internalID: -1861536826734357482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_19
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 508
+        width: 76
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc024bfbbf24f84a0800000000000000
+      internalID: -6588974080799268661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_20
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 577
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d5581f0c2142e0c0800000000000000
+      internalID: -4548001016203160111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_21
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 518
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf60d3394b2c657f0800000000000000
+      internalID: -624097417524082949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 51
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58166dabab9ca6d60800000000000000
+      internalID: 7884335901501186437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_23
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 471
+        width: 42
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bbeb1c7c02acf5c0800000000000000
+      internalID: -4180288179601151054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_24
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 473
+        width: 40
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33b56bb7685905980800000000000000
+      internalID: -8552171287542867149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_25
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 471
+        width: 46
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45e67801b2cc21bd0800000000000000
+      internalID: -2660839944489570732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_26
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 499
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c02f50e3489c5840800000000000000
+      internalID: 5214209885882753218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_27
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 475
+        width: 36
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c3db9cf86b405090800000000000000
+      internalID: -8047849619824323644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_28
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 470
+        width: 30
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af418db00bdad0c10800000000000000
+      internalID: 2021462779383780602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_29
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 481
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db10d04b41bc823f0800000000000000
+      internalID: -925266433644101187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_30
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 430
+        width: 83
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 126f4ccbacd2323a0800000000000000
+      internalID: -6691454272568756703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_31
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 434
+        width: 35
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f5983555aaa98af0800000000000000
+      internalID: -393595865342110221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_32
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 461
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 742dafc8cdec53fd0800000000000000
+      internalID: -2362754982832582073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_33
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 454
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 938bb9d64c443a910800000000000000
+      internalID: 1847395882595235897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_34
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 445
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c1a2ab7d0b9af070800000000000000
+      internalID: 8140989758636728776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_35
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 437
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 402237e606de23950800000000000000
+      internalID: 6427460616636801540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_36
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 458
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07c00c5f6644ef960800000000000000
+      internalID: 7637617227067296880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_37
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 440
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78f4966f077a4fb80800000000000000
+      internalID: -8361874504507895929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_38
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 446
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de79ab5a68a4b7450800000000000000
+      internalID: 6087541263487899629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 398
+        width: 97
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5f26634e47dc5e20800000000000000
+      internalID: 3340781754740256607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_40
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 447
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44d7f6454d79bf220800000000000000
+      internalID: 2520775354649378116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_41
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 400
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff21abc1ed4fb7cd0800000000000000
+      internalID: -2559182728428121345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_42
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 423
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fdd21cdcf611af50800000000000000
+      internalID: 6890814180133363185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_43
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 389
+        width: 33
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62778e04a124d55b0800000000000000
+      internalID: -5378069699484944602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_44
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 327
+        width: 102
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1911699f0c7c6c50800000000000000
+      internalID: 6659834355413752095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 334
+        width: 39
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c9e341b617984060800000000000000
+      internalID: 6937961349683341762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_46
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 337
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2578032407fada0a0800000000000000
+      internalID: -6868640959988463790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_47
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 384
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96be5355dc9c42e20800000000000000
+      internalID: 3325004308641344361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_48
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 330
+        width: 25
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ba276cce03728670800000000000000
+      internalID: 8539514350843931315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_49
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 313
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f3639c3b01fb6a20800000000000000
+      internalID: 3056801802664240116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 251
+        width: 64
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14b00dab9d5758570800000000000000
+      internalID: 8468304252342635329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_51
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 269
+        width: 44
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 835b854dc43530480800000000000000
+      internalID: -8934205646327728840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_52
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 272
+        width: 54
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f26af734cc5bb6d0800000000000000
+      internalID: -2973681131125579015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_53
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 226
+        width: 71
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83e584bf9b58a9470800000000000000
+      internalID: 8402175088644349496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_54
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 229
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3327922590e683b20800000000000000
+      internalID: 3114360128638906931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_55
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 229
+        width: 40
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ed27e56f339a08b0800000000000000
+      internalID: -5185170120461832730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_56
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 225
+        width: 40
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7a34ddd56f496430800000000000000
+      internalID: 3776637061458836095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_57
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 248
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 022df5489f9a8f620800000000000000
+      internalID: 2808181256798327328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_58
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 228
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b85bfbfbf48d8c40800000000000000
+      internalID: 5516211336397936825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_59
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 187
+        width: 52
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f26a403cff4f1470800000000000000
+      internalID: 8367494577238205175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_60
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 187
+        width: 39
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da0524f7d2e8cf5a0800000000000000
+      internalID: -6486153037260631891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_61
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 188
+        width: 49
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cae91220103be8b0800000000000000
+      internalID: -5121947305354073407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_62
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 183
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 862bf78fe81821860800000000000000
+      internalID: 7499198780579754600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_63
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 174
+        width: 50
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cd21f280f47f0ca0800000000000000
+      internalID: -6048487198197469755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_64
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 205
+        width: 34
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0032a21961b0d290800000000000000
+      internalID: -7867593484173955058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_65
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 123
+        width: 27
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfc35457b66f24580800000000000000
+      internalID: -8844235776812827395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_66
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 103
+        width: 62
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61b2f1aed272044f0800000000000000
+      internalID: -846633651790730474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_67
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 106
+        width: 71
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6708ee3869f05d8c0800000000000000
+      internalID: -3975253956951637898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_68
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 168
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d4216ac509250760800000000000000
+      internalID: 7423384665637070034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_69
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 106
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98e776b682b9f8920800000000000000
+      internalID: 2994782875127611017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_70
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 105
+        width: 51
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d899e679fc5e98e0800000000000000
+      internalID: -1684806984078354219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_71
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 103
+        width: 54
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f6aad57455ab1420800000000000000
+      internalID: 2601854991909693174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_72
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 103
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ca1e9e021973c8c0800000000000000
+      internalID: -3980204527203771710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_73
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 50
+        width: 43
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b24d7ca07e05f1740800000000000000
+      internalID: 5124903854219449387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_74
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 52
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38a75f0db2ece1740800000000000000
+      internalID: 5124760113578867331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_75
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 51
+        width: 50
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8803daa14421f8530800000000000000
+      internalID: 3859323489394438280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_76
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 65
+        width: 40
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46e6716f37efb1900800000000000000
+      internalID: 656397944715964004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_77
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 51
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1aa150faa50bd2050800000000000000
+      internalID: 5777467800516106913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_78
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 51
+        width: 31
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3c9a2f54b4a07fd0800000000000000
+      internalID: -2346194311262331842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_79
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 45
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cae5e15117f48afb0800000000000000
+      internalID: -4636368469273715028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_80
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 45
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b15da1fa54ad3300800000000000000
+      internalID: 233523466201813428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_81
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 571b12a7ca39cdb20800000000000000
+      internalID: 3160563407499932021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_82
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 6
+        width: 35
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 947b328f710351b70800000000000000
+      internalID: 8869047920681531209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_83
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 5
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81a867a5d792eef00800000000000000
+      internalID: 1147900573391424024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_84
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 10
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79b871bc6b5addcb0800000000000000
+      internalID: -4837528220216095849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_85
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 0
+        width: 69
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64dddeff4d55b7270800000000000000
+      internalID: 8249281515774401862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_86
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 0
+        width: 59
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cee503b379060c520800000000000000
+      internalID: 2720280377581133548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_87
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 0
+        width: 58
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9662ec96126e3aaa0800000000000000
+      internalID: -6150819634874538391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_88
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 22
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beae7e7b9aed583f0800000000000000
+      internalID: -899067730074277141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset3Cuadrante_89
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 5
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3a0003e4ca8679b0800000000000000
+      internalID: -5082722551214372291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      asset3Cuadrante_0: 2651943289739214250
+      asset3Cuadrante_1: -3318906215972559651
+      asset3Cuadrante_10: -3569868487932330349
+      asset3Cuadrante_11: -7593407534972504084
+      asset3Cuadrante_12: 3302569076232058587
+      asset3Cuadrante_13: -8846170036912012603
+      asset3Cuadrante_14: 8343986909836687348
+      asset3Cuadrante_15: 1788033519931798421
+      asset3Cuadrante_16: 6622967272909966200
+      asset3Cuadrante_17: -6881096117112466809
+      asset3Cuadrante_18: -1861536826734357482
+      asset3Cuadrante_19: -6588974080799268661
+      asset3Cuadrante_2: 6092347454872893768
+      asset3Cuadrante_20: -4548001016203160111
+      asset3Cuadrante_21: -624097417524082949
+      asset3Cuadrante_22: 7884335901501186437
+      asset3Cuadrante_23: -4180288179601151054
+      asset3Cuadrante_24: -8552171287542867149
+      asset3Cuadrante_25: -2660839944489570732
+      asset3Cuadrante_26: 5214209885882753218
+      asset3Cuadrante_27: -8047849619824323644
+      asset3Cuadrante_28: 2021462779383780602
+      asset3Cuadrante_29: -925266433644101187
+      asset3Cuadrante_3: 5884358553887346212
+      asset3Cuadrante_30: -6691454272568756703
+      asset3Cuadrante_31: -393595865342110221
+      asset3Cuadrante_32: -2362754982832582073
+      asset3Cuadrante_33: 1847395882595235897
+      asset3Cuadrante_34: 8140989758636728776
+      asset3Cuadrante_35: 6427460616636801540
+      asset3Cuadrante_36: 7637617227067296880
+      asset3Cuadrante_37: -8361874504507895929
+      asset3Cuadrante_38: 6087541263487899629
+      asset3Cuadrante_39: 3340781754740256607
+      asset3Cuadrante_4: 7020710485393914040
+      asset3Cuadrante_40: 2520775354649378116
+      asset3Cuadrante_41: -2559182728428121345
+      asset3Cuadrante_42: 6890814180133363185
+      asset3Cuadrante_43: -5378069699484944602
+      asset3Cuadrante_44: 6659834355413752095
+      asset3Cuadrante_45: 6937961349683341762
+      asset3Cuadrante_46: -6868640959988463790
+      asset3Cuadrante_47: 3325004308641344361
+      asset3Cuadrante_48: 8539514350843931315
+      asset3Cuadrante_49: 3056801802664240116
+      asset3Cuadrante_5: -7835329869466103538
+      asset3Cuadrante_50: 8468304252342635329
+      asset3Cuadrante_51: -8934205646327728840
+      asset3Cuadrante_52: -2973681131125579015
+      asset3Cuadrante_53: 8402175088644349496
+      asset3Cuadrante_54: 3114360128638906931
+      asset3Cuadrante_55: -5185170120461832730
+      asset3Cuadrante_56: 3776637061458836095
+      asset3Cuadrante_57: 2808181256798327328
+      asset3Cuadrante_58: 5516211336397936825
+      asset3Cuadrante_59: 8367494577238205175
+      asset3Cuadrante_6: -6547429290822565959
+      asset3Cuadrante_60: -6486153037260631891
+      asset3Cuadrante_61: -5121947305354073407
+      asset3Cuadrante_62: 7499198780579754600
+      asset3Cuadrante_63: -6048487198197469755
+      asset3Cuadrante_64: -7867593484173955058
+      asset3Cuadrante_65: -8844235776812827395
+      asset3Cuadrante_66: -846633651790730474
+      asset3Cuadrante_67: -3975253956951637898
+      asset3Cuadrante_68: 7423384665637070034
+      asset3Cuadrante_69: 2994782875127611017
+      asset3Cuadrante_7: 4604559165476557171
+      asset3Cuadrante_70: -1684806984078354219
+      asset3Cuadrante_71: 2601854991909693174
+      asset3Cuadrante_72: -3980204527203771710
+      asset3Cuadrante_73: 5124903854219449387
+      asset3Cuadrante_74: 5124760113578867331
+      asset3Cuadrante_75: 3859323489394438280
+      asset3Cuadrante_76: 656397944715964004
+      asset3Cuadrante_77: 5777467800516106913
+      asset3Cuadrante_78: -2346194311262331842
+      asset3Cuadrante_79: -4636368469273715028
+      asset3Cuadrante_8: -3024845381152710929
+      asset3Cuadrante_80: 233523466201813428
+      asset3Cuadrante_81: 3160563407499932021
+      asset3Cuadrante_82: 8869047920681531209
+      asset3Cuadrante_83: 1147900573391424024
+      asset3Cuadrante_84: -4837528220216095849
+      asset3Cuadrante_85: 8249281515774401862
+      asset3Cuadrante_86: 2720280377581133548
+      asset3Cuadrante_87: -6150819634874538391
+      asset3Cuadrante_88: -899067730074277141
+      asset3Cuadrante_89: -5082722551214372291
+      asset3Cuadrante_9: 543140882406680070
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
