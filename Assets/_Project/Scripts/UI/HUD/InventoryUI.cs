@@ -34,24 +34,30 @@ namespace Triskel.UI.HUD
         private void OnEnable()
         {
             // Obtener la raíz del documento UI
-            root = uiDocument.rootVisualElement;
+            if (uiDocument != null)
+            {
+                root = uiDocument.rootVisualElement;
 
-            // Obtener referencias a los slots (botones)
-            slot1 = root.Q<Button>("Slot1");
-            slot2 = root.Q<Button>("Slot2");
-            slot3 = root.Q<Button>("Slot3");
+                // Obtener referencias a los slots (botones)
+                slot1 = root.Q<Button>("Slot1");
+                slot2 = root.Q<Button>("Slot2");
+                slot3 = root.Q<Button>("Slot3");
 
-            // Obtener referencias a los iconos
-            icon1 = root.Q<VisualElement>("Icon1");
-            icon2 = root.Q<VisualElement>("Icon2");
-            icon3 = root.Q<VisualElement>("Icon3");
+                // Obtener referencias a los iconos
+                icon1 = root.Q<VisualElement>("Icon1");
+                icon2 = root.Q<VisualElement>("Icon2");
+                icon3 = root.Q<VisualElement>("Icon3");
 
-            // Suscribirse a eventos de clic
-            slot1.clicked += () => OnSlotClicked(slot1, 0);
-            slot2.clicked += () => OnSlotClicked(slot2, 1);
-            slot3.clicked += () => OnSlotClicked(slot3, 2);
+                // Suscribirse a eventos de clic
+                if (slot1 != null) slot1.clicked += () => OnSlotClicked(slot1, 0);
+                if (slot2 != null) slot2.clicked += () => OnSlotClicked(slot2, 1);
+                if (slot3 != null) slot3.clicked += () => OnSlotClicked(slot3, 2);
+            }
+        }
 
-            // Suscribirse a eventos de InventoryData
+        private void Start()
+        {
+            // Suscribirse a eventos de InventoryData (después de Awake)
             SubscribeToInventoryEvents();
 
             // Cargar estado actual del inventario

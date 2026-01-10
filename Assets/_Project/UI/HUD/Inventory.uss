@@ -1,0 +1,119 @@
+/* ========================================
+   INVENTARIO - UI TOOLKIT STYLES
+   Para Windows y Android
+   ======================================== */
+
+/* CONTENEDOR PRINCIPAL */
+.inventory-container {
+    /* Layout horizontal */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    /* Posicionamiento */
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+
+    /* Espaciado */
+    padding: 10px;
+}
+
+/* SLOT DE INVENTARIO (Estado Normal) */
+.inventory-slot {
+    /* Tamaño del slot */
+    width: 120px;
+    height: 120px;
+
+    /* Espaciado entre slots */
+    margin-left: 8px;
+    margin-right: 8px;
+
+    /* Imagen de fondo (estado normal) */
+    background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/grey.png?fileID=21300000&guid=470ebc63106a0264cad66631eb48d26d&type=3#grey");
+    -unity-background-scale-mode: scale-to-fit;
+
+    /* Remover estilos de botón por defecto */
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+
+    /* Suavizar transiciones */
+    transition-duration: 0.15s;
+}
+
+/* HOVER - Para PC (cuando pasas el mouse) */
+.inventory-slot:hover {
+    scale: 1.1;
+    transition-duration: 0.1s;
+}
+
+/* ACTIVE - Para móviles y PC (cuando haces clic/touch) */
+.inventory-slot:active {
+    background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/grey_pressed.png?fileID=2800000&guid=6bccd603c8ea30143ac163ee4cf92e0e&type=3#grey_pressed");
+    scale: 0.95;
+}
+
+/* SELECTED - Cuando el slot está seleccionado (se controla desde C#) */
+.inventory-slot.selected {
+    background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/grey_pressed.png?fileID=2800000&guid=6bccd603c8ea30143ac163ee4cf92e0e&type=3#grey_pressed");
+}
+
+/* ICONO DENTRO DEL SLOT */
+.inventory-icon {
+    /* Centrado */
+    align-self: center;
+    margin: auto;
+
+    /* Tamaño del icono (ajusta según tus sprites) */
+    width: 60px;
+    height: 60px;
+
+    /* El icono no debe capturar clics (deja pasar al botón) */
+    picking-mode: Ignore;
+
+    /* Imagen del item (se asigna desde C#) */
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+/* ========================================
+   VARIANTES DE COLOR (OPCIONAL)
+   Puedes cambiar el color del slot desde C#
+   agregando estas clases
+   ======================================== */
+
+.inventory-slot.blue {
+    background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/blue.png");
+}
+
+.inventory-slot.blue:active,
+.inventory-slot.blue.selected {
+    background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/blue_pressed.png");
+}
+
+.inventory-slot.green {
+    background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/green.png");
+}
+
+.inventory-slot.green:active,
+.inventory-slot.green.selected {
+    background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/green_pressed.png");
+}
+
+.inventory-slot.red {
+    background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/red.png");
+}
+
+.inventory-slot.red:active,
+.inventory-slot.red.selected {
+    background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/red_pressed.png");
+}
+
+.inventory-slot.yellow {
+    background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/yellow.png");
+}
+
+.inventory-slot.yellow:active,
+.inventory-slot.yellow.selected {
+    background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/yellow_pressed.png");
+}
