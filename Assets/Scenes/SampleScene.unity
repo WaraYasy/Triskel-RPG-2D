@@ -2276,9 +2276,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testItems:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: c4b78d38d77d6a54e8aafdf7ee93cb70, type: 2}
+  - {fileID: 11400000, guid: 0d481a73dc7d4d64a8df7d6405970be0, type: 2}
+  - {fileID: 11400000, guid: 7f003a87a6eb6b54e85a882750b22e06, type: 2}
   btnAddItem1: {fileID: 419603913}
   btnAddItem2: {fileID: 619176669}
   btnAddItem3: {fileID: 1254463134}
