@@ -78,11 +78,6 @@ namespace Triskel.Player
                 {
                     CollectItem();
                 }
-                else
-                {
-                    // Mostrar UI de "Presiona E para recoger" (implementar después)
-                    ShowPickupPrompt(true);
-                }
             }
         }
 
@@ -91,7 +86,6 @@ namespace Triskel.Player
             if (other.CompareTag("Player"))
             {
                 isPlayerNearby = false;
-                ShowPickupPrompt(false);
             }
         }
 
@@ -148,15 +142,13 @@ namespace Triskel.Player
         /// </summary>
         private void SaveInventory()
         {
-            InventoryPersistence persistence = FindFirstObjectByType<InventoryPersistence>();
-
-            if (persistence != null)
+            if (InventoryPersistence.Instance != null)
             {
-                persistence.SaveInventory();
+                InventoryPersistence.Instance.SaveInventory();
             }
             else
             {
-                Debug.LogWarning("[CollectibleObject] No se encontró InventoryPersistence en la escena. No se guardó automáticamente.");
+                Debug.LogWarning("[CollectibleObject] InventoryPersistence no está inicializado. No se guardó automáticamente.");
             }
         }
 
@@ -192,34 +184,6 @@ namespace Triskel.Player
 
             Collider2D col = GetComponent<Collider2D>();
             if (col != null) col.enabled = false;
-        }
-
-        /// <summary>
-        /// Muestra/oculta el prompt de "Presiona E para recoger".
-        /// Implementar según tu sistema de UI.
-        /// </summary>
-        private void ShowPickupPrompt(bool show)
-        {
-            // TODO: Implementar UI de prompt
-            // Ejemplo: PromptUI.Instance.Show(show, $"Presiona {interactKey} para recoger {itemData.displayName}");
-
-            if (show)
-            {
-                Debug.Log($"[CollectibleObject] Presiona {interactKey} para recoger {itemData.displayName}");
-            }
-        }
-
-        #endregion
-
-        #region Gizmos (Visualización en Editor)
-
-        private void OnDrawGizmos()
-        {
-            // Dibujar icono del item en la escena (solo en Editor)
-            if (itemData != null && itemData.icon != null)
-            {
-                Gizmos.DrawIcon(transform.position, itemData.icon.name, true);
-            }
         }
 
         #endregion

@@ -186,30 +186,6 @@ namespace Triskel.Core
             }
         }
 
-        /// <summary>
-        /// Obtiene el número de items en el inventario.
-        /// </summary>
-        public int GetItemCount()
-        {
-            return collectedItems.Count;
-        }
-
-        /// <summary>
-        /// Verifica si el inventario está lleno.
-        /// </summary>
-        public bool IsFull()
-        {
-            return collectedItems.Count >= maxInventorySize;
-        }
-
-        /// <summary>
-        /// Verifica si el inventario está vacío.
-        /// </summary>
-        public bool IsEmpty()
-        {
-            return collectedItems.Count == 0;
-        }
-
         #endregion
 
         #region Debug Methods

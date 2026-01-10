@@ -18,40 +18,32 @@ namespace Triskel.UI.HUD
 
         // Referencias a los elementos UI
         private VisualElement root;
-        private Button slot1;
-        private Button slot2;
-        private Button slot3;
-        private VisualElement icon1;
-        private VisualElement icon2;
-        private VisualElement icon3;
+        private Button[] slots = new Button[3];
+        private VisualElement[] icons = new VisualElement[3];
 
         // Estado de selección
-        private Button currentlySelectedSlot;
         private int currentlySelectedIndex = -1;
 
         #region Unity Lifecycle
 
         private void OnEnable()
         {
-            // Obtener la raíz del documento UI
-            if (uiDocument != null)
+            if (uiDocument == null) return;
+
+            root = uiDocument.rootVisualElement;
+
+            // Obtener referencias a slots e iconos
+            for (int i = 0; i < 3; i++)
             {
-                root = uiDocument.rootVisualElement;
+                slots[i] = root.Q<Button>($"Slot{i + 1}");
+                icons[i] = root.Q<VisualElement>($"Icon{i + 1}");
 
-                // Obtener referencias a los slots (botones)
-                slot1 = root.Q<Button>("Slot1");
-                slot2 = root.Q<Button>("Slot2");
-                slot3 = root.Q<Button>("Slot3");
-
-                // Obtener referencias a los iconos
-                icon1 = root.Q<VisualElement>("Icon1");
-                icon2 = root.Q<VisualElement>("Icon2");
-                icon3 = root.Q<VisualElement>("Icon3");
-
-                // Suscribirse a eventos de clic
-                if (slot1 != null) slot1.clicked += () => OnSlotClicked(slot1, 0);
-                if (slot2 != null) slot2.clicked += () => OnSlotClicked(slot2, 1);
-                if (slot3 != null) slot3.clicked += () => OnSlotClicked(slot3, 2);
+                // Suscribirse a eventos de clic (capturar índice para lambda)
+                int index = i;
+                if (slots[i] != null)
+                {
+                    slots[i].clicked += () => OnSlotClicked(slots[index], index);
+                }
             }
         }
 
@@ -67,9 +59,14 @@ namespace Triskel.UI.HUD
         private void OnDisable()
         {
             // Desuscribirse de eventos para evitar memory leaks
-            if (slot1 != null) slot1.clicked -= () => OnSlotClicked(slot1, 0);
-            if (slot2 != null) slot2.clicked -= () => OnSlotClicked(slot2, 1);
-            if (slot3 != null) slot3.clicked -= () => OnSlotClicked(slot3, 2);
+            for (int i = 0; i < 3; i++)
+            {
+                int index = i;
+                if (slots[i] != null)
+                {
+                    slots[i].clicked -= () => OnSlotClicked(slots[index], index);
+                }
+            }
 
             // Desuscribirse de eventos de InventoryData
             UnsubscribeFromInventoryEvents();
@@ -227,7 +224,6 @@ namespace Triskel.UI.HUD
             {
                 // Deseleccionar
                 DeselectSlot(clickedSlot);
-                currentlySelectedSlot = null;
                 currentlySelectedIndex = -1;
 
                 // Aquí puedes añadir lógica cuando se deselecciona (ejemplo: guardar arma)
@@ -235,15 +231,14 @@ namespace Triskel.UI.HUD
             }
             else
             {
-                // Deseleccionar el slot anterior
-                if (currentlySelectedSlot != null)
+                // Deseleccionar el slot anterior si existe
+                if (currentlySelectedIndex >= 0 && currentlySelectedIndex < slots.Length)
                 {
-                    DeselectSlot(currentlySelectedSlot);
+                    DeselectSlot(slots[currentlySelectedIndex]);
                 }
 
                 // Seleccionar el nuevo slot
                 SelectSlot(clickedSlot);
-                currentlySelectedSlot = clickedSlot;
                 currentlySelectedIndex = slotIndex;
 
                 // Aquí puedes añadir lógica cuando se selecciona (ejemplo: equipar arma)
@@ -257,18 +252,10 @@ namespace Triskel.UI.HUD
         /// </summary>
         private void SelectSlotByIndex(int slotIndex)
         {
-            Button slotToSelect = slotIndex switch
-            {
-                0 => slot1,
-                1 => slot2,
-                2 => slot3,
-                _ => null
-            };
+            if (slotIndex < 0 || slotIndex >= slots.Length) return;
+            if (slots[slotIndex] == null) return;
 
-            if (slotToSelect == null) return;
-
-            // Simular clic
-            OnSlotClicked(slotToSelect, slotIndex);
+            OnSlotClicked(slots[slotIndex], slotIndex);
         }
 
         #endregion
@@ -296,19 +283,10 @@ namespace Triskel.UI.HUD
         /// </summary>
         private void SetItemIcon(int slotIndex, Sprite sprite)
         {
-            VisualElement icon = slotIndex switch
-            {
-                0 => icon1,
-                1 => icon2,
-                2 => icon3,
-                _ => null
-            };
+            if (slotIndex < 0 || slotIndex >= icons.Length) return;
+            if (icons[slotIndex] == null || sprite == null) return;
 
-            if (icon != null && sprite != null)
-            {
-                // Convertir Sprite a Background para UI Toolkit
-                icon.style.backgroundImage = new StyleBackground(sprite);
-            }
+            icons[slotIndex].style.backgroundImage = new StyleBackground(sprite);
         }
 
         /// <summary>
@@ -316,26 +294,19 @@ namespace Triskel.UI.HUD
         /// </summary>
         private void SetSlotColor(int slotIndex, string color)
         {
-            Button slot = slotIndex switch
-            {
-                0 => slot1,
-                1 => slot2,
-                2 => slot3,
-                _ => null
-            };
-
-            if (slot == null) return;
+            if (slotIndex < 0 || slotIndex >= slots.Length) return;
+            if (slots[slotIndex] == null) return;
 
             // Remover todas las clases de color anteriores
-            slot.RemoveFromClassList("blue");
-            slot.RemoveFromClassList("green");
-            slot.RemoveFromClassList("red");
-            slot.RemoveFromClassList("yellow");
+            slots[slotIndex].RemoveFromClassList("blue");
+            slots[slotIndex].RemoveFromClassList("green");
+            slots[slotIndex].RemoveFromClassList("red");
+            slots[slotIndex].RemoveFromClassList("yellow");
 
             // Agregar la nueva clase de color (si no es grey)
             if (color != "grey")
             {
-                slot.AddToClassList(color);
+                slots[slotIndex].AddToClassList(color);
             }
         }
 
@@ -344,18 +315,10 @@ namespace Triskel.UI.HUD
         /// </summary>
         private void ClearItemIcon(int slotIndex)
         {
-            VisualElement icon = slotIndex switch
-            {
-                0 => icon1,
-                1 => icon2,
-                2 => icon3,
-                _ => null
-            };
+            if (slotIndex < 0 || slotIndex >= icons.Length) return;
+            if (icons[slotIndex] == null) return;
 
-            if (icon != null)
-            {
-                icon.style.backgroundImage = null;
-            }
+            icons[slotIndex].style.backgroundImage = null;
         }
 
         #endregion
@@ -372,7 +335,6 @@ namespace Triskel.UI.HUD
 
             // TODO: Añadir lógica de gameplay
             // Ejemplo: PlayerController.Instance.EquipItem(item);
-            // Ejemplo: RelicSystem.Instance.ActivateRelic(item.itemID);
         }
 
         /// <summary>
@@ -384,26 +346,6 @@ namespace Triskel.UI.HUD
 
             // TODO: Añadir lógica de gameplay
             // Ejemplo: PlayerController.Instance.UnequipItem();
-        }
-
-        /// <summary>
-        /// Obtiene el índice del slot actualmente seleccionado.
-        /// </summary>
-        public int GetSelectedSlotIndex()
-        {
-            return currentlySelectedIndex;
-        }
-
-        /// <summary>
-        /// Obtiene el item actualmente seleccionado.
-        /// </summary>
-        public CollectibleItem GetSelectedItem()
-        {
-            if (currentlySelectedIndex >= 0 && InventoryData.Instance != null)
-            {
-                return InventoryData.Instance.GetItemAtSlot(currentlySelectedIndex);
-            }
-            return null;
         }
 
         #endregion

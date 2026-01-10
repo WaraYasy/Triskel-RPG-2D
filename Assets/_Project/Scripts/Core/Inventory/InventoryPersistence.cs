@@ -1,26 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
-using Triskel.API;
 
 namespace Triskel.Core
 {
     /// <summary>
-    /// Gestor de persistencia del inventario.
-    ///
-    /// TOGGLE: Cambia entre guardado local (PlayerPrefs) y remoto (API).
-    ///
-    /// ┌──────────────────────────────────────────┐
-    /// │  useAPI = false  →  PlayerPrefs (Local)  │
-    /// │  useAPI = true   →  TriskelAPI (Remote)  │
-    /// └──────────────────────────────────────────┘
+    /// Gestor de persistencia del inventario (Singleton).
+    /// Guarda y carga el inventario usando PlayerPrefs (guardado local).
     ///
     /// RESPONSABILIDAD: Guardar y cargar el inventario, NO gestionar lógica.
     /// </summary>
     public class InventoryPersistence : MonoBehaviour
     {
-        [Header("🔧 TOGGLE: Modo de Persistencia")]
-        [Tooltip("FALSE = PlayerPrefs local | TRUE = API remota")]
-        [SerializeField] private bool useAPI = false;
+        // Singleton instance
+        public static InventoryPersistence Instance { get; private set; }
 
         [Header("Referencias")]
         [Tooltip("Arrastra aquí los 3 CollectibleItem assets (Lavender, Lily, etc.)")]
@@ -34,6 +26,16 @@ namespace Triskel.Core
 
         private void Awake()
         {
+            // Implementación Singleton
+            if (Instance != null && Instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+
             // Construir diccionario de items disponibles
             BuildItemDictionary();
         }
@@ -59,8 +61,7 @@ namespace Triskel.Core
         #region Public Methods
 
         /// <summary>
-        /// Guarda el inventario actual.
-        /// Elige automáticamente entre local o API según el toggle.
+        /// Guarda el inventario actual en PlayerPrefs.
         /// </summary>
         public void SaveInventory()
         {
@@ -71,20 +72,11 @@ namespace Triskel.Core
             }
 
             string[] relics = InventoryData.Instance.GetItemIDs();
-
-            if (useAPI)
-            {
-                SaveToAPI(relics);
-            }
-            else
-            {
-                SaveToPlayerPrefs(relics);
-            }
+            SaveToPlayerPrefs(relics);
         }
 
         /// <summary>
-        /// Carga el inventario guardado.
-        /// Elige automáticamente entre local o API según el toggle.
+        /// Carga el inventario guardado desde PlayerPrefs.
         /// </summary>
         public void LoadInventory()
         {
@@ -94,22 +86,14 @@ namespace Triskel.Core
                 return;
             }
 
-            if (useAPI)
-            {
-                LoadFromAPI();
-            }
-            else
-            {
-                LoadFromPlayerPrefs();
-            }
+            LoadFromPlayerPrefs();
         }
 
         /// <summary>
-        /// Limpia todos los datos guardados (local y/o API).
+        /// Limpia todos los datos guardados localmente.
         /// </summary>
         public void ClearSavedData()
         {
-            // Limpiar local
             PlayerPrefs.DeleteKey(PREFS_KEY_RELICS);
             PlayerPrefs.Save();
 
@@ -160,82 +144,6 @@ namespace Triskel.Core
 
         #endregion
 
-        #region API Storage (TriskelAPI)
-
-        /// <summary>
-        /// Guarda el inventario en la API remota.
-        /// Endpoint: PATCH /v1/games/{game_id}
-        /// </summary>
-        private void SaveToAPI(string[] relics)
-        {
-            if (TriskelAPIClient.Instance == null)
-            {
-                Debug.LogError("[InventoryPersistence] TriskelAPIClient no está inicializado.");
-                return;
-            }
-
-            TriskelAPIClient.Instance.UpdateGameRelics(
-                relics,
-                onSuccess: () =>
-                {
-                    Debug.Log($"[InventoryPersistence] ✓ Guardado API: {string.Join(", ", relics)}");
-                },
-                onError: (error) =>
-                {
-                    Debug.LogError($"[InventoryPersistence] ✗ Error al guardar en API: {error}");
-                    // Fallback: Guardar local si falla la API
-                    Debug.Log("[InventoryPersistence] Guardando en local como fallback...");
-                    SaveToPlayerPrefs(relics);
-                }
-            );
-        }
-
-        /// <summary>
-        /// Carga el inventario desde la API remota.
-        /// Endpoint: GET /v1/games/{game_id}
-        /// </summary>
-        private void LoadFromAPI()
-        {
-            if (TriskelAPIClient.Instance == null)
-            {
-                Debug.LogError("[InventoryPersistence] TriskelAPIClient no está inicializado.");
-                return;
-            }
-
-            string gameID = TriskelAPIClient.Instance.currentGameID;
-
-            if (string.IsNullOrEmpty(gameID))
-            {
-                Debug.LogWarning("[InventoryPersistence] No hay gameID configurado. No se puede cargar desde API.");
-                return;
-            }
-
-            TriskelAPIClient.Instance.GetGame(
-                gameID,
-                onSuccess: (gameData) =>
-                {
-                    if (gameData.relics != null && gameData.relics.Length > 0)
-                    {
-                        LoadRelicsIntoInventory(gameData.relics);
-                        Debug.Log($"[InventoryPersistence] ✓ Cargado API: {string.Join(", ", gameData.relics)}");
-                    }
-                    else
-                    {
-                        Debug.Log("[InventoryPersistence] La partida no tiene reliquias guardadas.");
-                    }
-                },
-                onError: (error) =>
-                {
-                    Debug.LogError($"[InventoryPersistence] ✗ Error al cargar desde API: {error}");
-                    // Fallback: Intentar cargar local
-                    Debug.Log("[InventoryPersistence] Intentando cargar desde local como fallback...");
-                    LoadFromPlayerPrefs();
-                }
-            );
-        }
-
-        #endregion
-
         #region Helper Methods
 
         /// <summary>
@@ -262,20 +170,6 @@ namespace Triskel.Core
                     Debug.LogError($"[InventoryPersistence] No se encontró item con ID '{id}' en availableItems.");
                 }
             }
-        }
-
-        /// <summary>
-        /// Obtiene un CollectibleItem por su ID.
-        /// </summary>
-        public CollectibleItem GetItemByID(string itemID)
-        {
-            if (itemDictionary.TryGetValue(itemID, out CollectibleItem item))
-            {
-                return item;
-            }
-
-            Debug.LogWarning($"[InventoryPersistence] Item con ID '{itemID}' no encontrado.");
-            return null;
         }
 
         #endregion

@@ -42,21 +42,11 @@
     transition-duration: 0.15s;
 }
 
-/* HOVER - Para PC (cuando pasas el mouse) */
-.inventory-slot:hover {
-    scale: 1.1;
-    transition-duration: 0.1s;
-}
-
-/* ACTIVE - Para móviles y PC (cuando haces clic/touch) */
-.inventory-slot:active {
-    background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/grey_pressed.png?fileID=2800000&guid=6bccd603c8ea30143ac163ee4cf92e0e&type=3#grey_pressed");
-    scale: 0.95;
-}
-
 /* SELECTED - Cuando el slot está seleccionado (se controla desde C#) */
 .inventory-slot.selected {
     background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/grey_pressed.png?fileID=2800000&guid=6bccd603c8ea30143ac163ee4cf92e0e&type=3#grey_pressed");
+    scale: 1.1;
+    transition-duration: 0.15s;
 }
 
 /* ICONO DENTRO DEL SLOT */
@@ -86,34 +76,38 @@
     background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/blue.png");
 }
 
-.inventory-slot.blue:active,
 .inventory-slot.blue.selected {
     background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/blue_pressed.png");
+    scale: 1.1;
+    transition-duration: 0.15s;
 }
 
 .inventory-slot.green {
     background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/green.png");
 }
 
-.inventory-slot.green:active,
 .inventory-slot.green.selected {
     background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/green_pressed.png");
+    scale: 1.1;
+    transition-duration: 0.15s;
 }
 
 .inventory-slot.red {
     background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/red.png");
 }
 
-.inventory-slot.red:active,
 .inventory-slot.red.selected {
     background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/red_pressed.png");
+    scale: 1.1;
+    transition-duration: 0.15s;
 }
 
 .inventory-slot.yellow {
     background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/yellow.png");
 }
 
-.inventory-slot.yellow:active,
 .inventory-slot.yellow.selected {
     background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/yellow_pressed.png");
+    scale: 1.1;
+    transition-duration: 0.15s;
 }

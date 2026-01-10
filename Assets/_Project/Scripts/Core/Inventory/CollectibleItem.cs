@@ -25,11 +25,6 @@ namespace Triskel.Core
         [Tooltip("Color del slot: 'blue', 'green', 'red', 'yellow', 'grey'")]
         public string slotColor = "grey";
 
-        [Header("Descripción")]
-        [Tooltip("Descripción del item (para tooltips, diálogos, etc.)")]
-        [TextArea(2, 4)]
-        public string description = "Una reliquia misteriosa...";
-
         /// <summary>
         /// Validación automática al editar en el Inspector.
         /// Genera itemID basado en el nombre del asset si está vacío.
