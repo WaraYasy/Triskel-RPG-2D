@@ -1,0 +1,156 @@
+/* =====================================================
+   DIARIO NARRATIVO - ESTILOS UI TOOLKIT
+   ===================================================== */
+
+/* Panel Principal del Diario */
+.diary-panel {
+    position: absolute;
+    width: 90%;
+    height: 85%;
+    left: 5%;
+    top: 7.5%;
+    background-color: rgba(20, 20, 25, 0.95);
+    border-width: 3px;
+    border-color: rgb(200, 180, 140);
+    border-radius: 10px;
+    padding: 0;
+}
+
+/* Header del Diario */
+.diary-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: rgba(40, 35, 30, 0.9);
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-width: 2px;
+    border-bottom-color: rgb(200, 180, 140);
+}
+
+.diary-header-title {
+    font-size: 28px;
+    color: rgb(220, 200, 160);
+    -unity-font-style: bold;
+    margin: 0;
+}
+
+.close-button {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(150, 50, 50, 0.8);
+    border-width: 2px;
+    border-color: rgb(200, 100, 100);
+    border-radius: 5px;
+    margin: 0;
+    padding: 0;
+}
+
+.close-button:hover {
+    background-color: rgba(200, 70, 70, 1);
+}
+
+/* Contenido Principal (2 paneles lado a lado) */
+.diary-content {
+    flex-direction: row;
+    flex-grow: 1;
+    padding: 10px;
+}
+
+/* ===== PANEL IZQUIERDO: Lista de Entradas ===== */
+.entry-list-panel {
+    width: 35%;
+    background-color: rgba(30, 30, 35, 0.8);
+    border-width: 2px;
+    border-color: rgb(100, 100, 110);
+    border-radius: 8px;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.panel-title {
+    font-size: 18px;
+    color: rgb(200, 200, 210);
+    -unity-font-style: bold;
+    margin-bottom: 10px;
+    -unity-text-align: upper-center;
+}
+
+.entry-list-scrollview {
+    flex-grow: 1;
+}
+
+.entry-list-container {
+    flex-direction: column;
+}
+
+/* Botones de Entrada */
+.entry-list-button {
+    height: 50px;
+    margin-bottom: 8px;
+    padding: 10px;
+    background-color: rgba(50, 50, 60, 0.8);
+    border-width: 2px;
+    border-color: rgb(120, 120, 130);
+    border-radius: 5px;
+    color: rgb(220, 220, 230);
+    font-size: 14px;
+    -unity-text-align: middle-left;
+    white-space: normal;
+}
+
+.entry-list-button:hover {
+    background-color: rgba(70, 70, 80, 1);
+    border-color: rgb(180, 180, 200);
+}
+
+.entry-list-button:active {
+    background-color: rgba(100, 100, 120, 1);
+}
+
+/* Mensaje cuando no hay entradas */
+.entry-empty-message {
+    font-size: 16px;
+    color: rgb(150, 150, 160);
+    -unity-text-align: upper-center;
+    margin-top: 30px;
+    -unity-font-style: italic;
+}
+
+/* ===== PANEL DERECHO: Visualización de Entrada ===== */
+.entry-display-panel {
+    width: 65%;
+    background-color: rgba(40, 38, 35, 0.9);
+    border-width: 2px;
+    border-color: rgb(120, 110, 100);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.entry-title {
+    font-size: 24px;
+    color: rgb(230, 210, 170);
+    -unity-font-style: bold;
+    margin-bottom: 15px;
+    -unity-text-align: upper-left;
+}
+
+.entry-text-scrollview {
+    flex-grow: 1;
+    background-color: rgba(25, 23, 20, 0.7);
+    border-width: 1px;
+    border-color: rgb(80, 75, 70);
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.entry-text {
+    font-size: 16px;
+    color: rgb(210, 200, 180);
+    white-space: normal;
+    -unity-text-align: upper-left;
+    padding-bottom: 5px;
+}

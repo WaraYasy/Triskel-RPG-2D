@@ -1,0 +1,30 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="DiaryPanel" class="diary-panel">
+        <!-- Header -->
+        <ui:VisualElement name="DiaryHeader" class="diary-header">
+            <ui:Label text="Diario del Viajero" name="DiaryHeaderTitle" class="diary-header-title" />
+            <ui:Button text="X" name="CloseButton" class="close-button" />
+        </ui:VisualElement>
+
+        <!-- Main Content Area -->
+        <ui:VisualElement name="DiaryContent" class="diary-content">
+
+            <!-- Left Panel: Entry List -->
+            <ui:VisualElement name="EntryListPanel" class="entry-list-panel">
+                <ui:Label text="Entradas Desbloqueadas" class="panel-title" />
+                <ui:ScrollView name="EntryListScrollView" class="entry-list-scrollview">
+                    <ui:VisualElement name="EntryListContainer" class="entry-list-container" />
+                </ui:ScrollView>
+            </ui:VisualElement>
+
+            <!-- Right Panel: Entry Display -->
+            <ui:VisualElement name="EntryDisplayPanel" class="entry-display-panel">
+                <ui:Label text="Selecciona una entrada" name="EntryTitle" class="entry-title" />
+                <ui:ScrollView name="EntryTextScrollView" class="entry-text-scrollview">
+                    <ui:Label text="..." name="EntryText" class="entry-text" />
+                </ui:ScrollView>
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
