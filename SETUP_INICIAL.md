@@ -320,6 +320,31 @@ Fire Rate: 1
 
 ---
 
+### **Paso 3.5: Crear DangerZone Prefab** ⭐ NUEVO
+
+#### Crear GameObject:
+1. Hierarchy → 2D Object → Sprites → Circle
+2. Nombre: `DangerZone`
+3. Transform → Scale: `(1, 1, 1)` (se ajusta dinámicamente)
+
+#### Configurar los Componentes:
+4. **Sprite Renderer:**
+   - Color: Naranja (RGB: 255, 128, 0, Alpha: 100)
+   - Sorting Layer: Default
+   - Order in Layer: -1 (detrás del player)
+
+5. **Add Component → Circle Collider 2D:**
+   - Is Trigger: ✅
+   - Radius: `0.5`
+
+6. **Add Component → DangerZone** (script)
+
+#### Crear Prefab:
+7. Arrastra `DangerZone` desde Hierarchy a `Assets/_Project/Prefabs/`
+8. **Elimina** el DangerZone original del Hierarchy
+
+---
+
 ### **Paso 4: Crear FirePoint**
 
 1. SelectBoss en Hierarchy
@@ -334,6 +359,7 @@ Fire Rate: 1
 1. Selecciona **Boss** en Hierarchy
 2. Inspector → **BulletPattern:**
    - Projectile Prefab: Arrastra el prefab `Projectile`
+   - Danger Zone Prefab: Arrastra el prefab `DangerZone` ⭐ NUEVO
    - Fire Point: Arrastra `FirePoint` desde Hierarchy
 
 3. Inspector → **BossManager:**
@@ -366,14 +392,32 @@ Fire Rate: 1
 
 ## 🎮 Patrones de Disparo
 
-El boss alterna entre 4 patrones:
-
+### **Fase 1 (0-20s):** Solo proyectiles
 | Patrón | Descripción |
 |--------|-------------|
 | **Circle** | 12 proyectiles en 360° |
 | **Line** | 1 proyectil en línea recta |
 | **Spread** | 5 proyectiles en abanico |
+
+### **Fase 2 (20-40s):** ⚠️ Zonas de Peligro
+| Patrón | Descripción |
+|--------|-------------|
 | **Spiral** | 8 proyectiles girando |
+| **DangerZone Grande** ⭐ | Zona 2.5u debajo del boss |
+| **Circle** | 12 proyectiles |
+| **Cross** | 4 proyectiles en cruz |
+| **Double DangerZone** | 2 zonas laterales (2u cada una) |
+| **Spread** | 5 proyectiles en abanico |
+
+### **Fase 3 (40-60s):** INFIERNO
+| Patrón | Descripción |
+|--------|-------------|
+| **Spiral + Circle** | COMBO de 2 patrones |
+| **Cross** | Respiro (solo 4) |
+| **Spread + Line** | COMBO |
+| **Circle Denso** | 16 proyectiles |
+| **Spiral + Cross** | COMBO |
+| **Random** | 15 proyectiles caóticos |
 
 ---
 
