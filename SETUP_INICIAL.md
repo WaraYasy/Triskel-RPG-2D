@@ -244,4 +244,179 @@ Ahora que las mecánicas básicas funcionan, podemos añadir:
 
 ---
 
-**¿Funcionan las habilidades?** Pruébalas todas y avísame! 🌸⚔️🌙
+## 👾 Paso 10: Boss Final - Sistema de Supervivencia
+
+### **Scripts Creados:**
+- `BossManager.cs` → Timer + gestión del combate
+- `BulletPattern.cs` → Patrones de disparo (círculo, abanico, espiral)
+- `Projectile.cs` → Comportamiento del proyectil
+
+### **Mecánica:**
+- ⏱️ Sobrevivir 60 segundos
+- 👾 Boss invencible (no se puede matar)
+- 🎯 Esquivar proyectiles
+- ⚖️ Dificultad según moral (cuando se implemente)
+
+---
+
+## 🛠️ Configuración en Unity
+
+### **Paso 1: Crear Escena BossFight**
+
+1. `Assets/_Project/Scenes/` → Click derecho → Create → Scene
+2. Nombre: `BossFight`
+3. Abrir la escena
+
+---
+
+### **Paso 2: Crear el Boss GameObject**
+
+1. Hierarchy → Create Empty
+2. Nombre: `Boss`
+3. Transform → Position: `(0, 4, 0)` (arriba del player)
+
+#### Añadir BossManager:
+4. Add Component → **BossManager**
+5. Configurar:
+```
+Combat Duration: 60
+Show Debug Logs: ✅
+```
+
+#### Añadir BulletPattern:
+6. Add Component → **BulletPattern**
+7. Configurar:
+```
+Base Projectile Speed: 5
+Fire Rate: 1
+```
+
+---
+
+### **Paso 3: Crear Projectile Prefab**
+
+#### Crear GameObject:
+1. Hierarchy → 2D Object → Sprites → Circle
+2. Nombre: `Projectile`
+3. Transform → Scale: `(0.3, 0.3, 1)`
+
+#### Configurar los Componentes:
+4. **Sprite Renderer:**
+   - Color: Rojo
+
+5. **Add Component → Rigidbody 2D:**
+   - Gravity Scale: `0`
+   - Constraints → Freeze Rotation Z: ✅
+
+6. **Add Component → Circle Collider 2D:**
+   - Is Trigger: ✅
+   - Radius: `0.5`
+
+7. **Add Component → Projectile** (script)
+
+#### Crear Prefab:
+8. Arrastra `Projectile` desde Hierarchy a `Assets/_Project/Prefabs/`
+9. **Elimina** el Projectile original del Hierarchy
+
+---
+
+### **Paso 4: Crear FirePoint**
+
+1. SelectBoss en Hierarchy
+2. Click derecho Boss → Create Empty
+3. Nombre: `FirePoint`
+4. Transform → Position: `(0, -0.5, 0)` (relativo al Boss)
+
+---
+
+### **Paso 5: Conectar Referencias**
+
+1. Selecciona **Boss** en Hierarchy
+2. Inspector → **BulletPattern:**
+   - Projectile Prefab: Arrastra el prefab `Projectile`
+   - Fire Point: Arrastra `FirePoint` desde Hierarchy
+
+3. Inspector → **BossManager:**
+   - Bullet Pattern: Arrastra el componente `BulletPattern` del Boss
+
+---
+
+### **Paso 6: Configurar Player**
+
+1. Asegúrate de tener el **Player** en la escena
+2. Selecciona Player → Inspector → Tag: `Player`
+
+---
+
+### **Paso 7: ¡PROBAR!**
+
+1. **Play** ▶️
+2. Verás en Console:
+   ```
+   ⚔️ ¡COMBATE INICIADO! Sobrevive 60 segundos
+   ```
+3. El boss empezará a disparar proyectiles en diferentes patrones
+4. **Esquívalos** con WASD y Dash (Space)
+5. **Sobrevive 60 segundos** para ver:
+   ```
+   🎉 ¡VICTORIA! Has sobrevivido
+   ```
+
+---
+
+## 🎮 Patrones de Disparo
+
+El boss alterna entre 4 patrones:
+
+| Patrón | Descripción |
+|--------|-------------|
+| **Circle** | 12 proyectiles en 360° |
+| **Line** | 1 proyectil en línea recta |
+| **Spread** | 5 proyectiles en abanico |
+| **Spiral** | 8 proyectiles girando |
+
+---
+
+## ⚙️ Ajustes Recomendados
+
+Experimenta con estos valores en Inspector → BulletPattern:
+
+| Para más fácil | Para más difícil |
+|----------------|------------------|
+| Fire Rate: 2 | Fire Rate: 0.5 |
+| Projectile Speed: 3 | Projectile Speed: 8 |
+
+En BossManager:
+| Para más fácil | Para más difícil |
+|----------------|------------------|
+| Combat Duration: 30 | Combat Duration: 90 |
+
+---
+
+## 🐛 Troubleshooting
+
+**❌ No aparecen proyectiles:**
+- Verifica que Projectile Prefab esté asignado
+- Verifica que FirePoint esté asignado
+- Mira la Console por errores
+
+**❌ Proyectiles no detectan al Player:**
+- Asegúrate que Player tenga Tag "Player"
+- Verifica que Projectile tenga Collider con `Is Trigger = true`
+- Verifica que Player tenga un Collider
+
+**❌ Boss no dispara:**
+- Verifica que BulletPattern esté asignado en BossManager
+- Verifica Fire Rate > 0
+
+---
+
+## 🎯 Siguiente: Añadir HUD con Timer
+
+Próximo paso será crear un UI que muestre:
+- Tiempo restante
+- Mensaje de victoria/derrota
+
+---
+
+**¿Funciona el boss?** ¡Pruébalo y cuéntame! 👾⚔️
