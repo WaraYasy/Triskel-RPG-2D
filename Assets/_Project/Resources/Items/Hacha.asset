@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7919f92b795716f44b6bebe74a7a33d1, type: 3}
+  m_Name: Hacha
+  m_EditorClassIdentifier: 
+  itemID: hacha
+  displayName: Hacha
+  icon: {fileID: 2897642942625874573, guid: d969af008bb18394f9aa5f8d554e0c8a, type: 3}
+  slotColor: grey
+  description: Una reliquia misteriosa...
