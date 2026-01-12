@@ -1,0 +1,19 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/UI/Diary/DiaryUI.uss?fileID=7433441132597879392&amp;guid=182fd3f8f1bb71d45915c299968a40e2&amp;type=3#DiaryUI" />
+    <ui:VisualElement name="DiaryPanel" class="diary-panel" style="background-image: url(&quot;project://database/Assets/_Project/Sprites/UI/Elements/Journal/journal_dark.png?fileID=2800000&amp;guid=cfc4ccb352c250640a32829c8aed5137&amp;type=3#journal_dark&quot;); -unity-background-scale-mode: scale-and-crop;">
+        <ui:Button text="X" name="CloseButton" class="close-button" />
+        <ui:VisualElement name="DiaryContent" class="diary-content">
+            <ui:VisualElement name="EntryDisplayPanel" class="entry-display-panel">
+                <ui:Label text="Selecciona una entrada" name="EntryTitle" class="entry-title" />
+                <ui:ScrollView name="EntryTextScrollView" class="entry-text-scrollview">
+                    <ui:Label text="Abre el diario para ver tus entradas..." name="EntryText" class="entry-text" />
+                </ui:ScrollView>
+                <ui:Label name="PageIndicator" class="page-indicator" />
+            </ui:VisualElement>
+            <ui:VisualElement name="NavigationPanel" class="navigation-panel">
+                <ui:Button text="&lt; Anterior" name="PrevButton" class="nav-button" />
+                <ui:Button text="Siguiente &gt;" name="NextButton" class="nav-button" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
