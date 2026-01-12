@@ -28,15 +28,18 @@ namespace Triskel.UI
         private UIDocument uiDocument;
         private VisualElement root;
         private VisualElement diaryPanel;
-        private VisualElement entryListContainer;
         private Label entryTitleLabel;
         private Label entryTextLabel;
         private ScrollView entryTextScrollView;
+        private Label pageIndicatorLabel;
         private Button closeButton;
+        private Button prevButton;
+        private Button nextButton;
 
         // Estado
         private bool isPanelOpen = false;
-        private DiaryEntryData currentSelectedEntry = null;
+        private List<DiaryEntryData> unlockedEntries = new List<DiaryEntryData>();
+        private int currentPageIndex = 0;
 
         private void Awake()
         {
@@ -61,11 +64,13 @@ namespace Triskel.UI
 
             // Obtener referencias a elementos
             diaryPanel = root.Q<VisualElement>("DiaryPanel");
-            entryListContainer = root.Q<VisualElement>("EntryListContainer");
             entryTitleLabel = root.Q<Label>("EntryTitle");
             entryTextLabel = root.Q<Label>("EntryText");
             entryTextScrollView = root.Q<ScrollView>("EntryTextScrollView");
+            pageIndicatorLabel = root.Q<Label>("PageIndicator");
             closeButton = root.Q<Button>("CloseButton");
+            prevButton = root.Q<Button>("PrevButton");
+            nextButton = root.Q<Button>("NextButton");
 
             // Validar referencias
             if (diaryPanel == null)
@@ -78,6 +83,21 @@ namespace Triskel.UI
             if (closeButton != null)
             {
                 closeButton.clicked += ClosePanel;
+                Debug.Log("[DiaryUI] Botón cerrar registrado correctamente.");
+            }
+            else
+            {
+                Debug.LogError("[DiaryUI] No se encontró el botón 'CloseButton' en el UXML.");
+            }
+
+            if (prevButton != null)
+            {
+                prevButton.clicked += ShowPreviousPage;
+            }
+
+            if (nextButton != null)
+            {
+                nextButton.clicked += ShowNextPage;
             }
 
             // Inicialmente oculto
@@ -111,7 +131,7 @@ namespace Triskel.UI
         }
 
         /// <summary>
-        /// Abre el panel del diario y actualiza la lista de entradas.
+        /// Abre el panel del diario y muestra las entradas.
         /// </summary>
         public void OpenPanel()
         {
@@ -124,8 +144,12 @@ namespace Triskel.UI
             diaryPanel.style.display = DisplayStyle.Flex;
             isPanelOpen = true;
 
-            // Actualizar lista de entradas
-            RefreshEntryList();
+            // Cargar entradas desbloqueadas
+            LoadUnlockedEntries();
+
+            // Mostrar primera página
+            currentPageIndex = 0;
+            ShowCurrentPage();
 
             Debug.Log("[DiaryUI] Panel del diario abierto.");
         }
@@ -135,7 +159,13 @@ namespace Triskel.UI
         /// </summary>
         public void ClosePanel()
         {
-            if (diaryPanel == null) return;
+            Debug.Log("[DiaryUI] ClosePanel() llamado.");
+
+            if (diaryPanel == null)
+            {
+                Debug.LogError("[DiaryUI] diaryPanel es null, no se puede cerrar.");
+                return;
+            }
 
             diaryPanel.style.display = DisplayStyle.None;
             isPanelOpen = false;
@@ -145,75 +175,139 @@ namespace Triskel.UI
 
         #endregion
 
-        #region Entry List
+        #region Entry Loading and Navigation
 
         /// <summary>
-        /// Actualiza la lista de entradas desbloqueadas.
+        /// Carga las entradas desbloqueadas del DiaryManager.
         /// </summary>
-        private void RefreshEntryList()
+        private void LoadUnlockedEntries()
         {
-            if (entryListContainer == null)
-            {
-                Debug.LogError("[DiaryUI] EntryListContainer es null.");
-                return;
-            }
-
-            // Limpiar lista actual
-            entryListContainer.Clear();
-
-            // Obtener entradas desbloqueadas del DiaryManager
             if (DiaryManager.Instance == null)
             {
                 Debug.LogError("[DiaryUI] DiaryManager no está disponible.");
+                unlockedEntries.Clear();
                 return;
             }
 
-            List<DiaryEntryData> unlockedEntries = DiaryManager.Instance.GetUnlockedEntries();
+            unlockedEntries.Clear();
+            foreach (var entry in DiaryManager.Instance.GetUnlockedEntries())
+            {
+                // Convertir DiaryEntry a DiaryEntryData temporal
+                DiaryEntryData data = ScriptableObject.CreateInstance<DiaryEntryData>();
+                data.entryID = entry.id;
+                data.levelIndex = entry.level;
+                data.title = entry.title;
+                data.text = entry.text;
+                unlockedEntries.Add(data);
+            }
+            Debug.Log($"[DiaryUI] Entradas cargadas: {unlockedEntries.Count}");
+        }
+
+        /// <summary>
+        /// Muestra la página actual (entrada).
+        /// </summary>
+        private void ShowCurrentPage()
+        {
+            if (unlockedEntries.Count == 0)
+            {
+                // No hay entradas desbloqueadas
+                ShowEmptyState();
+                UpdateNavigationButtons();
+                return;
+            }
+
+            // Asegurar que el índice está en rango
+            currentPageIndex = Mathf.Clamp(currentPageIndex, 0, unlockedEntries.Count - 1);
+
+            // Mostrar entrada actual
+            DiaryEntryData currentEntry = unlockedEntries[currentPageIndex];
+            DisplayEntry(currentEntry);
+
+            // Actualizar indicador de página
+            UpdatePageIndicator();
+
+            // Actualizar estado de botones de navegación
+            UpdateNavigationButtons();
+        }
+
+        /// <summary>
+        /// Muestra mensaje cuando no hay entradas.
+        /// </summary>
+        private void ShowEmptyState()
+        {
+            if (entryTitleLabel != null)
+            {
+                entryTitleLabel.text = "Sin Entradas";
+            }
+
+            if (entryTextLabel != null)
+            {
+                entryTextLabel.text = "Aún no has desbloqueado ninguna entrada del diario.\n\nCompleta niveles para desbloquear nuevas páginas de tu historia.";
+            }
+
+            if (pageIndicatorLabel != null)
+            {
+                pageIndicatorLabel.text = "";
+            }
+        }
+
+        /// <summary>
+        /// Navega a la página anterior.
+        /// </summary>
+        private void ShowPreviousPage()
+        {
+            if (currentPageIndex > 0)
+            {
+                currentPageIndex--;
+                ShowCurrentPage();
+                Debug.Log($"[DiaryUI] Página anterior: {currentPageIndex + 1}/{unlockedEntries.Count}");
+            }
+        }
+
+        /// <summary>
+        /// Navega a la página siguiente.
+        /// </summary>
+        private void ShowNextPage()
+        {
+            if (currentPageIndex < unlockedEntries.Count - 1)
+            {
+                currentPageIndex++;
+                ShowCurrentPage();
+                Debug.Log($"[DiaryUI] Página siguiente: {currentPageIndex + 1}/{unlockedEntries.Count}");
+            }
+        }
+
+        /// <summary>
+        /// Actualiza el indicador de página (ej: "1 / 5").
+        /// </summary>
+        private void UpdatePageIndicator()
+        {
+            if (pageIndicatorLabel == null) return;
 
             if (unlockedEntries.Count == 0)
             {
-                // Mostrar mensaje de "no hay entradas"
-                Label emptyLabel = new Label("No hay entradas desbloqueadas aún.");
-                emptyLabel.AddToClassList("entry-empty-message");
-                entryListContainer.Add(emptyLabel);
-                return;
+                pageIndicatorLabel.text = "";
             }
-
-            // Crear botones para cada entrada
-            foreach (DiaryEntryData entry in unlockedEntries)
+            else
             {
-                Button entryButton = CreateEntryButton(entry);
-                entryListContainer.Add(entryButton);
-            }
-
-            // Seleccionar primera entrada por defecto
-            if (unlockedEntries.Count > 0)
-            {
-                DisplayEntry(unlockedEntries[0]);
+                pageIndicatorLabel.text = $"Página {currentPageIndex + 1} / {unlockedEntries.Count}";
             }
         }
 
         /// <summary>
-        /// Crea un botón para una entrada del diario.
+        /// Actualiza el estado (habilitado/deshabilitado) de los botones de navegación.
         /// </summary>
-        private Button CreateEntryButton(DiaryEntryData entry)
+        private void UpdateNavigationButtons()
         {
-            Button button = new Button();
-            button.text = $"Nivel {entry.levelIndex + 1}: {entry.title}";
-            button.AddToClassList("entry-list-button");
+            if (prevButton != null)
+            {
+                prevButton.SetEnabled(currentPageIndex > 0);
+            }
 
-            // Evento al hacer clic
-            button.clicked += () => OnEntryButtonClicked(entry);
-
-            return button;
-        }
-
-        /// <summary>
-        /// Callback cuando se hace clic en un botón de entrada.
-        /// </summary>
-        private void OnEntryButtonClicked(DiaryEntryData entry)
-        {
-            DisplayEntry(entry);
+            if (nextButton != null)
+            {
+                nextButton.SetEnabled(currentPageIndex < unlockedEntries.Count - 1);
+            }
         }
 
         #endregion
@@ -231,12 +325,10 @@ namespace Triskel.UI
                 return;
             }
 
-            currentSelectedEntry = entry;
-
             // Actualizar título
             if (entryTitleLabel != null)
             {
-                entryTitleLabel.text = entry.title;
+                entryTitleLabel.text = $"Nivel {entry.levelIndex + 1}: {entry.title}";
             }
 
             // Actualizar texto
@@ -265,7 +357,8 @@ namespace Triskel.UI
         {
             if (isPanelOpen)
             {
-                RefreshEntryList();
+                LoadUnlockedEntries();
+                ShowCurrentPage();
             }
         }
 

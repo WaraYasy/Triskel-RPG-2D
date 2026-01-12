@@ -1,0 +1,40 @@
+{
+  "entries": [
+    {
+      "id": "level0_bueno",
+      "level": 0,
+      "title": "Bondad en el Bosque",
+      "text": "Hoy ayudé a una criatura atrapada. El bosque brilló como agradeciéndome. Hice lo correcto."
+    },
+    {
+      "id": "level0_malo",
+      "level": 0,
+      "title": "El Precio de la Prisa",
+      "text": "Ignoré a una criatura que necesitaba ayuda. El bosque se oscureció. Ya es tarde para arrepentimientos."
+    },
+    {
+      "id": "level1_bueno",
+      "level": 1,
+      "title": "Héroes Olvidados",
+      "text": "Salvé a los aldeanos del fuego. Sus rostros de gratitud lo valen todo."
+    },
+    {
+      "id": "level1_malo",
+      "level": 1,
+      "title": "Supervivencia Egoísta",
+      "text": "Dejé que la aldea ardiera. Sus gritos aún resuenan en mi mente."
+    },
+    {
+      "id": "level2_bueno",
+      "level": 2,
+      "title": "Compartir en la Adversidad",
+      "text": "Compartí mis provisiones con un viajero perdido. Me dio un amuleto antiguo."
+    },
+    {
+      "id": "level2_malo",
+      "level": 2,
+      "title": "Recursos Escasos",
+      "text": "Dejé atrás al viajero. Solo los fuertes sobreviven."
+    }
+  ]
+}

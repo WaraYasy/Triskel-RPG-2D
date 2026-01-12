@@ -5,37 +5,20 @@ using UnityEngine;
 namespace Triskel.Core
 {
     /// <summary>
-    /// Gestor central del sistema de diario narrativo (Singleton).
-    ///
-    /// RESPONSABILIDADES:
-    /// - Recibir notificación de "nivel completado" con condiciones.
-    /// - Elegir la DiaryEntryData correcta según el nivel y condiciones.
-    /// - Guardar el entryID seleccionado.
-    /// - Exponer lista ordenada de entradas desbloqueadas.
-    /// - Permitir consulta del texto asociado a un entryID.
-    ///
-    /// NO DEBE:
-    /// - Tener referencias a UI.
-    /// - Tener textos hardcodeados.
+    /// Gestor del sistema de diario (Singleton).
+    /// Carga entradas desde JSON y desbloquea según decisiones del jugador.
     /// </summary>
     public class DiaryManager : MonoBehaviour
     {
-        // Singleton instance
         public static DiaryManager Instance { get; private set; }
 
-        [Header("Referencias")]
-        [Tooltip("Arrastra aquí todas las DiaryEntryData assets creadas")]
-        [SerializeField] private DiaryEntryData[] allEntries;
+        [SerializeField] private string jsonFileName = "DiaryEntries";
 
-        // Diccionario para búsqueda rápida por entryID
-        private Dictionary<string, DiaryEntryData> entryDictionary;
-
-        // Lista de entryIDs desbloqueados (en orden cronológico)
-        private List<string> unlockedEntryIDs = new List<string>();
+        private Dictionary<string, DiaryEntry> entries = new Dictionary<string, DiaryEntry>();
+        private List<string> unlockedIDs = new List<string>();
 
         private void Awake()
         {
-            // Implementación Singleton
             if (Instance != null && Instance != this)
             {
                 Destroy(gameObject);
@@ -44,293 +27,98 @@ namespace Triskel.Core
 
             Instance = this;
             DontDestroyOnLoad(gameObject);
-
-            // Construir diccionario de entradas disponibles
-            BuildEntryDictionary();
+            LoadEntriesFromJSON();
         }
 
         private void Start()
         {
-            // Cargar entradas desbloqueadas al iniciar
-            LoadUnlockedEntries();
+            LoadProgress();
         }
 
-        /// <summary>
-        /// Construye un diccionario de entradas para búsqueda rápida.
-        /// </summary>
-        private void BuildEntryDictionary()
+        private void LoadEntriesFromJSON()
         {
-            entryDictionary = new Dictionary<string, DiaryEntryData>();
-
-            foreach (var entry in allEntries)
+            TextAsset json = Resources.Load<TextAsset>($"DiaryData/{jsonFileName}");
+            if (json == null)
             {
-                if (entry != null && !string.IsNullOrEmpty(entry.entryID))
-                {
-                    if (entryDictionary.ContainsKey(entry.entryID))
-                    {
-                        Debug.LogError($"[DiaryManager] ¡ID duplicado detectado! '{entry.entryID}' ya existe. Revisa tus DiaryEntryData assets.");
-                        continue;
-                    }
-
-                    entryDictionary[entry.entryID] = entry;
-                }
-                else
-                {
-                    Debug.LogWarning($"[DiaryManager] DiaryEntryData con entryID vacío detectado: {(entry != null ? entry.name : "null")}");
-                }
-            }
-
-            Debug.Log($"[DiaryManager] Entradas disponibles registradas: {entryDictionary.Count}");
-        }
-
-        #region Public Methods - Level Completion
-
-        /// <summary>
-        /// Notifica al diario que un nivel ha sido completado.
-        /// Selecciona y desbloquea automáticamente la entrada correspondiente.
-        /// </summary>
-        /// <param name="levelIndex">Índice del nivel completado (0 = Nivel 1)</param>
-        /// <param name="conditionIDs">Lista de IDs de condiciones cumplidas durante el nivel</param>
-        public void OnLevelCompleted(int levelIndex, string[] conditionIDs)
-        {
-            if (conditionIDs == null || conditionIDs.Length == 0)
-            {
-                Debug.LogWarning($"[DiaryManager] Nivel {levelIndex} completado sin condiciones. No se desbloqueará ninguna entrada.");
+                Debug.LogError($"[Diario] No se encontró {jsonFileName}.json");
                 return;
             }
 
-            // Buscar la entrada que coincida con el nivel y alguna de las condiciones
-            DiaryEntryData matchedEntry = FindEntryForLevel(levelIndex, conditionIDs);
+            DiaryData data = JsonUtility.FromJson<DiaryData>(json.text);
+            foreach (var entry in data.entries)
+            {
+                entries[entry.id] = entry;
+            }
 
-            if (matchedEntry != null)
-            {
-                UnlockEntry(matchedEntry.entryID);
-            }
-            else
-            {
-                Debug.LogWarning($"[DiaryManager] No se encontró entrada para nivel {levelIndex} con condiciones: {string.Join(", ", conditionIDs)}");
-            }
+            Debug.Log($"[Diario] {entries.Count} entradas cargadas");
         }
 
         /// <summary>
-        /// Busca la entrada correcta para un nivel dado y sus condiciones.
-        /// Prioridad: Primera coincidencia encontrada.
+        /// Desbloquea entrada según nivel y decisión.
         /// </summary>
-        private DiaryEntryData FindEntryForLevel(int levelIndex, string[] conditionIDs)
+        public void UnlockEntry(int level, string decision)
         {
-            // Filtrar entradas por nivel
-            var entriesForLevel = allEntries.Where(e => e != null && e.levelIndex == levelIndex).ToList();
+            string id = $"level{level}_{decision}";
 
-            if (entriesForLevel.Count == 0)
+            if (!entries.ContainsKey(id))
             {
-                Debug.LogWarning($"[DiaryManager] No hay entradas configuradas para el nivel {levelIndex}.");
-                return null;
-            }
-
-            // Buscar coincidencia con condiciones (primera que coincida)
-            foreach (var conditionID in conditionIDs)
-            {
-                var matchedEntry = entriesForLevel.FirstOrDefault(e => e.conditionID == conditionID);
-                if (matchedEntry != null)
-                {
-                    Debug.Log($"[DiaryManager] Entrada encontrada: '{matchedEntry.entryID}' para nivel {levelIndex} y condición '{conditionID}'");
-                    return matchedEntry;
-                }
-            }
-
-            // Si no hay coincidencia exacta, retornar la primera entrada del nivel como fallback
-            Debug.LogWarning($"[DiaryManager] No se encontró coincidencia exacta. Usando entrada por defecto para nivel {levelIndex}.");
-            return entriesForLevel.First();
-        }
-
-        #endregion
-
-        #region Public Methods - Entry Management
-
-        /// <summary>
-        /// Desbloquea una entrada del diario.
-        /// </summary>
-        /// <param name="entryID">ID de la entrada a desbloquear</param>
-        public void UnlockEntry(string entryID)
-        {
-            if (string.IsNullOrEmpty(entryID))
-            {
-                Debug.LogError("[DiaryManager] No se puede desbloquear entrada con ID vacío.");
+                Debug.LogWarning($"[Diario] Entrada '{id}' no existe");
                 return;
             }
 
-            // Verificar que la entrada existe
-            if (!entryDictionary.ContainsKey(entryID))
+            if (unlockedIDs.Contains(id))
             {
-                Debug.LogError($"[DiaryManager] No se encontró entrada con ID '{entryID}'.");
+                Debug.Log($"[Diario] '{id}' ya desbloqueada");
                 return;
             }
 
-            // Verificar si ya está desbloqueada
-            if (unlockedEntryIDs.Contains(entryID))
-            {
-                Debug.LogWarning($"[DiaryManager] Entrada '{entryID}' ya está desbloqueada.");
-                return;
-            }
-
-            // Desbloquear
-            unlockedEntryIDs.Add(entryID);
-            Debug.Log($"[DiaryManager] ✓ Entrada desbloqueada: '{entryID}'");
-
-            // Guardar automáticamente
-            SaveUnlockedEntries();
+            unlockedIDs.Add(id);
+            SaveProgress();
+            Debug.Log($"[Diario] ✓ '{id}' desbloqueada");
         }
 
         /// <summary>
-        /// Verifica si una entrada está desbloqueada.
+        /// Obtiene entrada por ID.
         /// </summary>
-        public bool IsEntryUnlocked(string entryID)
+        public DiaryEntry GetEntry(string id)
         {
-            return unlockedEntryIDs.Contains(entryID);
+            return entries.ContainsKey(id) ? entries[id] : null;
         }
 
         /// <summary>
-        /// Obtiene la lista de IDs de entradas desbloqueadas (en orden cronológico).
+        /// Obtiene todas las entradas desbloqueadas.
         /// </summary>
-        public string[] GetUnlockedEntryIDs()
+        public List<DiaryEntry> GetUnlockedEntries()
         {
-            return unlockedEntryIDs.ToArray();
+            return unlockedIDs.Select(id => GetEntry(id)).Where(e => e != null).ToList();
         }
 
         /// <summary>
-        /// Obtiene los datos completos de una entrada por su ID.
+        /// Limpia todas las entradas desbloqueadas.
         /// </summary>
-        /// <returns>DiaryEntryData o null si no existe</returns>
-        public DiaryEntryData GetEntryData(string entryID)
+        public void ClearAll()
         {
-            if (entryDictionary.TryGetValue(entryID, out DiaryEntryData entry))
-            {
-                return entry;
-            }
-
-            Debug.LogWarning($"[DiaryManager] No se encontró entrada con ID '{entryID}'.");
-            return null;
+            unlockedIDs.Clear();
+            PlayerPrefs.DeleteKey("diary_unlocked");
+            PlayerPrefs.Save();
+            Debug.Log("[Diario] Entradas limpiadas");
         }
 
-        /// <summary>
-        /// Obtiene todas las entradas desbloqueadas ordenadas cronológicamente.
-        /// </summary>
-        public List<DiaryEntryData> GetUnlockedEntries()
+        private void SaveProgress()
         {
-            List<DiaryEntryData> unlockedEntries = new List<DiaryEntryData>();
-
-            foreach (string entryID in unlockedEntryIDs)
-            {
-                DiaryEntryData entry = GetEntryData(entryID);
-                if (entry != null)
-                {
-                    unlockedEntries.Add(entry);
-                }
-            }
-
-            return unlockedEntries;
+            string data = string.Join(",", unlockedIDs);
+            PlayerPrefs.SetString("diary_unlocked", data);
+            PlayerPrefs.Save();
         }
 
-        #endregion
-
-        #region Persistence
-
-        /// <summary>
-        /// Guarda las entradas desbloqueadas.
-        /// </summary>
-        private void SaveUnlockedEntries()
+        private void LoadProgress()
         {
-            if (DiaryPersistence.Instance != null)
+            string data = PlayerPrefs.GetString("diary_unlocked", "");
+            if (!string.IsNullOrEmpty(data))
             {
-                DiaryPersistence.Instance.SaveUnlockedEntries(unlockedEntryIDs.ToArray());
-            }
-            else
-            {
-                Debug.LogError("[DiaryManager] DiaryPersistence no está disponible.");
+                unlockedIDs = data.Split(',').ToList();
+                Debug.Log($"[Diario] {unlockedIDs.Count} entradas cargadas");
             }
         }
-
-        /// <summary>
-        /// Carga las entradas desbloqueadas.
-        /// </summary>
-        private void LoadUnlockedEntries()
-        {
-            if (DiaryPersistence.Instance != null)
-            {
-                string[] loadedIDs = DiaryPersistence.Instance.LoadUnlockedEntries();
-
-                // Limpiar y cargar
-                unlockedEntryIDs.Clear();
-                unlockedEntryIDs.AddRange(loadedIDs);
-
-                Debug.Log($"[DiaryManager] Entradas cargadas: {unlockedEntryIDs.Count}");
-            }
-            else
-            {
-                Debug.LogError("[DiaryManager] DiaryPersistence no está disponible.");
-            }
-        }
-
-        /// <summary>
-        /// Limpia todas las entradas desbloqueadas (para reset/debug).
-        /// </summary>
-        public void ClearAllEntries()
-        {
-            unlockedEntryIDs.Clear();
-
-            if (DiaryPersistence.Instance != null)
-            {
-                DiaryPersistence.Instance.ClearSavedData();
-            }
-
-            Debug.Log("[DiaryManager] Todas las entradas han sido limpiadas.");
-        }
-
-        #endregion
-
-        #region Debug Methods
-
-        [ContextMenu("Debug: Desbloquear Entrada de Prueba")]
-        public void DebugUnlockTestEntry()
-        {
-            if (allEntries.Length > 0)
-            {
-                UnlockEntry(allEntries[0].entryID);
-            }
-            else
-            {
-                Debug.LogWarning("[DiaryManager] No hay entradas configuradas para desbloquear.");
-            }
-        }
-
-        [ContextMenu("Debug: Mostrar Entradas Desbloqueadas")]
-        public void DebugShowUnlockedEntries()
-        {
-            Debug.Log($"[DiaryManager] Entradas desbloqueadas ({unlockedEntryIDs.Count}):");
-            foreach (string entryID in unlockedEntryIDs)
-            {
-                DiaryEntryData entry = GetEntryData(entryID);
-                if (entry != null)
-                {
-                    Debug.Log($" - {entryID}: '{entry.title}' (Nivel {entry.levelIndex})");
-                }
-            }
-        }
-
-        [ContextMenu("Debug: Limpiar Todas las Entradas")]
-        public void DebugClearEntries()
-        {
-            ClearAllEntries();
-        }
-
-        [ContextMenu("Debug: Simular Nivel Completado")]
-        public void DebugSimulateLevelCompleted()
-        {
-            // Simular nivel 0 con condición de prueba
-            string[] testConditions = new string[] { "test_condition" };
-            OnLevelCompleted(0, testConditions);
-        }
-
-        #endregion
     }
 }
