@@ -227,6 +227,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    
     private void LoadFromLocal()
     {
         moralScore = PlayerPrefs.GetInt("game_moral", 0);
