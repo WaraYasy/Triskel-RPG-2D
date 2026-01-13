@@ -22,13 +22,13 @@ namespace Triskel.Testing
         {
             if (DiaryManager.Instance == null) return;
 
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.Alpha7))
                 DiaryManager.Instance.UnlockEntry(0, "bueno");
 
-            if (Input.GetKeyDown(KeyCode.Alpha2))
+            if (Input.GetKeyDown(KeyCode.Alpha8))
                 DiaryManager.Instance.UnlockEntry(0, "malo");
 
-            if (Input.GetKeyDown(KeyCode.Alpha3))
+            if (Input.GetKeyDown(KeyCode.Alpha9))
                 DiaryManager.Instance.UnlockEntry(1, "bueno");
 
             if (Input.GetKeyDown(KeyCode.Alpha4))
@@ -40,7 +40,7 @@ namespace Triskel.Testing
             if (Input.GetKeyDown(KeyCode.Alpha6))
                 DiaryManager.Instance.UnlockEntry(2, "malo");
 
-            if (Input.GetKeyDown(KeyCode.Alpha0))
+            if (Input.GetKeyDown(KeyCode.Z))
                 DiaryManager.Instance.ClearAll();
         }
     }

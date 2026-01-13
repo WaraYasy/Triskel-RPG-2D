@@ -7,6 +7,7 @@ namespace Triskel.Core
     /// <summary>
     /// Gestor del sistema de diario (Singleton).
     /// Carga entradas desde JSON y desbloquea según decisiones del jugador.
+    /// NOTA: La persistencia ahora es manejada por GameManager + DiaryPersistence.
     /// </summary>
     public class DiaryManager : MonoBehaviour
     {
@@ -30,11 +31,6 @@ namespace Triskel.Core
             LoadEntriesFromJSON();
         }
 
-        private void Start()
-        {
-            LoadProgress();
-        }
-
         private void LoadEntriesFromJSON()
         {
             TextAsset json = Resources.Load<TextAsset>($"DiaryData/{jsonFileName}");
@@ -50,11 +46,12 @@ namespace Triskel.Core
                 entries[entry.id] = entry;
             }
 
-            Debug.Log($"[Diario] {entries.Count} entradas cargadas");
+            Debug.Log($"[Diario] {entries.Count} entradas cargadas desde JSON");
         }
 
         /// <summary>
         /// Desbloquea entrada según nivel y decisión.
+        /// NOTA: Ya no guarda automáticamente. GameManager se encarga del guardado.
         /// </summary>
         public void UnlockEntry(int level, string decision)
         {
@@ -73,7 +70,6 @@ namespace Triskel.Core
             }
 
             unlockedIDs.Add(id);
-            SaveProgress();
             Debug.Log($"[Diario] ✓ '{id}' desbloqueada");
         }
 
@@ -95,29 +91,28 @@ namespace Triskel.Core
 
         /// <summary>
         /// Limpia todas las entradas desbloqueadas.
+        /// NOTA: Ya no elimina de PlayerPrefs. GameManager se encarga de la persistencia.
         /// </summary>
         public void ClearAll()
         {
             unlockedIDs.Clear();
-            PlayerPrefs.DeleteKey("diary_unlocked");
-            PlayerPrefs.Save();
             Debug.Log("[Diario] Entradas limpiadas");
         }
 
-        private void SaveProgress()
+        /// <summary>
+        /// Restaura una entrada desbloqueada sin guardar (usado al cargar partida desde GameManager).
+        /// </summary>
+        public void RestoreEntry(string id)
         {
-            string data = string.Join(",", unlockedIDs);
-            PlayerPrefs.SetString("diary_unlocked", data);
-            PlayerPrefs.Save();
-        }
-
-        private void LoadProgress()
-        {
-            string data = PlayerPrefs.GetString("diary_unlocked", "");
-            if (!string.IsNullOrEmpty(data))
+            if (!entries.ContainsKey(id))
             {
-                unlockedIDs = data.Split(',').ToList();
-                Debug.Log($"[Diario] {unlockedIDs.Count} entradas cargadas");
+                Debug.LogWarning($"[Diario] Entrada '{id}' no existe al restaurar");
+                return;
+            }
+
+            if (!unlockedIDs.Contains(id))
+            {
+                unlockedIDs.Add(id);
             }
         }
     }
