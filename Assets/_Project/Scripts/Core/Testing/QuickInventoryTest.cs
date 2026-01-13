@@ -19,6 +19,8 @@ namespace Triskel.Testing
         [Tooltip("Arrastra aquí los 3 CollectibleItem assets desde Resources/Items")]
         [SerializeField] private CollectibleItem[] testItems = new CollectibleItem[3];
 
+        private bool hasShownInventoryError = false;
+
         private void Start()
         {
             Debug.Log("=== INVENTARIO TEST ===");
@@ -39,7 +41,11 @@ namespace Triskel.Testing
         {
             if (InventoryData.Instance == null)
             {
-                Debug.LogError("[QuickInventoryTest] InventoryData no encontrado en la escena.");
+                if (!hasShownInventoryError)
+                {
+                    Debug.LogWarning("[QuickInventoryTest] InventoryData no encontrado en la escena. Asegúrate de tener el prefab InventorySystem en la escena.");
+                    hasShownInventoryError = true;
+                }
                 return;
             }
 

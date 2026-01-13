@@ -32,7 +32,7 @@ namespace Triskel.UI
         private Label entryTextLabel;
         private ScrollView entryTextScrollView;
         private Label pageIndicatorLabel;
-        private Button closeButton;
+        private VisualElement closeButton;
         private Button prevButton;
         private Button nextButton;
 
@@ -40,6 +40,7 @@ namespace Triskel.UI
         private bool isPanelOpen = false;
         private List<DiaryEntry> unlockedEntries = new List<DiaryEntry>();
         private int currentPageIndex = 0;
+        private bool isInitialized = false;
 
         private void Awake()
         {
@@ -49,7 +50,16 @@ namespace Triskel.UI
         private void OnEnable()
         {
             // Esperar un frame para asegurarse de que el UIDocument esté inicializado
-            Invoke(nameof(InitializeUI), 0.1f);
+            if (!isInitialized)
+            {
+                Invoke(nameof(InitializeUI), 0.1f);
+            }
+        }
+
+        private void OnDisable()
+        {
+            // Limpiar eventos al desactivar
+            UnregisterEvents();
         }
 
         private void InitializeUI()
@@ -68,7 +78,7 @@ namespace Triskel.UI
             entryTextLabel = root.Q<Label>("EntryText");
             entryTextScrollView = root.Q<ScrollView>("EntryTextScrollView");
             pageIndicatorLabel = root.Q<Label>("PageIndicator");
-            closeButton = root.Q<Button>("CloseButton");
+            closeButton = root.Q<VisualElement>("CloseButton");
             prevButton = root.Q<Button>("PrevButton");
             nextButton = root.Q<Button>("NextButton");
 
@@ -80,10 +90,21 @@ namespace Triskel.UI
             }
 
             // Registrar eventos
+            RegisterEvents();
+
+            // Inicialmente oculto
+            ClosePanel();
+
+            isInitialized = true;
+            Debug.Log("[DiaryUI] UI inicializada correctamente.");
+        }
+
+        private void RegisterEvents()
+        {
             if (closeButton != null)
             {
-                closeButton.clicked += ClosePanel;
-                Debug.Log("[DiaryUI] Botón cerrar registrado correctamente.");
+                closeButton.RegisterCallback<ClickEvent>(OnCloseButtonClicked);
+                Debug.Log($"[DiaryUI] Botón cerrar registrado. Visible: {closeButton.visible}");
             }
             else
             {
@@ -99,8 +120,29 @@ namespace Triskel.UI
             {
                 nextButton.clicked += ShowNextPage;
             }
+        }
 
-            // Inicialmente oculto
+        private void UnregisterEvents()
+        {
+            if (closeButton != null)
+            {
+                closeButton.UnregisterCallback<ClickEvent>(OnCloseButtonClicked);
+            }
+
+            if (prevButton != null)
+            {
+                prevButton.clicked -= ShowPreviousPage;
+            }
+
+            if (nextButton != null)
+            {
+                nextButton.clicked -= ShowNextPage;
+            }
+        }
+
+        private void OnCloseButtonClicked(ClickEvent evt)
+        {
+            Debug.Log("[DiaryUI] ¡Botón X clickeado!");
             ClosePanel();
         }
 
@@ -147,8 +189,8 @@ namespace Triskel.UI
             // Cargar entradas desbloqueadas
             LoadUnlockedEntries();
 
-            // Mostrar primera página
-            currentPageIndex = 0;
+            // Mostrar última página (entrada más reciente)
+            currentPageIndex = Mathf.Max(0, unlockedEntries.Count - 1);
             ShowCurrentPage();
 
             Debug.Log("[DiaryUI] Panel del diario abierto.");
@@ -170,7 +212,7 @@ namespace Triskel.UI
             diaryPanel.style.display = DisplayStyle.None;
             isPanelOpen = false;
 
-            Debug.Log("[DiaryUI] Panel del diario cerrado.");
+            Debug.Log("[DiaryUI] ✓ Panel del diario cerrado exitosamente.");
         }
 
         #endregion
