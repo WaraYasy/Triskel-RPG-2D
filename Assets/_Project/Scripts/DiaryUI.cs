@@ -38,7 +38,7 @@ namespace Triskel.UI
 
         // Estado
         private bool isPanelOpen = false;
-        private List<DiaryEntryData> unlockedEntries = new List<DiaryEntryData>();
+        private List<DiaryEntry> unlockedEntries = new List<DiaryEntry>();
         private int currentPageIndex = 0;
 
         private void Awake()
@@ -189,17 +189,7 @@ namespace Triskel.UI
                 return;
             }
 
-            unlockedEntries.Clear();
-            foreach (var entry in DiaryManager.Instance.GetUnlockedEntries())
-            {
-                // Convertir DiaryEntry a DiaryEntryData temporal
-                DiaryEntryData data = ScriptableObject.CreateInstance<DiaryEntryData>();
-                data.entryID = entry.id;
-                data.levelIndex = entry.level;
-                data.title = entry.title;
-                data.text = entry.text;
-                unlockedEntries.Add(data);
-            }
+            unlockedEntries = DiaryManager.Instance.GetUnlockedEntries();
             Debug.Log($"[DiaryUI] Entradas cargadas: {unlockedEntries.Count}");
         }
 
@@ -220,7 +210,7 @@ namespace Triskel.UI
             currentPageIndex = Mathf.Clamp(currentPageIndex, 0, unlockedEntries.Count - 1);
 
             // Mostrar entrada actual
-            DiaryEntryData currentEntry = unlockedEntries[currentPageIndex];
+            DiaryEntry currentEntry = unlockedEntries[currentPageIndex];
             DisplayEntry(currentEntry);
 
             // Actualizar indicador de página
@@ -317,7 +307,7 @@ namespace Triskel.UI
         /// <summary>
         /// Muestra el contenido completo de una entrada.
         /// </summary>
-        private void DisplayEntry(DiaryEntryData entry)
+        private void DisplayEntry(DiaryEntry entry)
         {
             if (entry == null)
             {
@@ -328,7 +318,7 @@ namespace Triskel.UI
             // Actualizar título
             if (entryTitleLabel != null)
             {
-                entryTitleLabel.text = $"Nivel {entry.levelIndex + 1}: {entry.title}";
+                entryTitleLabel.text = $"Nivel {entry.level + 1}: {entry.title}";
             }
 
             // Actualizar texto

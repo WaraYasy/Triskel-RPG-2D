@@ -64,14 +64,14 @@ foreach (var entry in unlocked)
 1. Abre la escena `Diario.unity`
 2. Dale Play
 3. Usa las teclas:
-   - **1** = Nivel 0 Bueno
-   - **2** = Nivel 0 Malo
-   - **3** = Nivel 1 Bueno
-   - **4** = Nivel 1 Malo
-   - **5** = Nivel 2 Bueno
-   - **6** = Nivel 2 Malo
+   - **F1** = Nivel 0 Bueno
+   - **F2** = Nivel 0 Malo
+   - **F3** = Nivel 1 Bueno
+   - **F4** = Nivel 1 Malo
+   - **F5** = Nivel 2 Bueno
+   - **F6** = Nivel 2 Malo
    - **J** = Abrir/Cerrar Diario
-   - **0** = Limpiar todo
+   - **F12** = Limpiar todo
 
 ## Añadir Nuevas Entradas
 
