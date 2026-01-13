@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Triskel.Core
@@ -96,51 +95,6 @@ namespace Triskel.Core
             Debug.Log($"[DiaryPersistence] ✓ Cargado LOCAL: {csv}");
 
             return entryIDs;
-        }
-
-        #endregion
-
-        #region Remote Storage (API Integration)
-
-        /// <summary>
-        /// Guarda las entradas en la API remota.
-        /// NOTA: Diseñado para integrarse con TriskelAPIClient cuando sea necesario.
-        /// </summary>
-        /// <param name="entryIDs">Array de IDs de entradas desbloqueadas</param>
-        /// <param name="onSuccess">Callback cuando la operación es exitosa</param>
-        /// <param name="onError">Callback cuando hay error</param>
-        public void SaveToRemote(string[] entryIDs, Action onSuccess = null, Action<string> onError = null)
-        {
-            // TODO: Implementar cuando TriskelAPIClient tenga endpoint para diario
-            Debug.LogWarning("[DiaryPersistence] SaveToRemote no implementado. Usa TriskelAPIClient cuando el endpoint esté disponible.");
-
-            // Ejemplo de cómo sería la integración:
-            // if (TriskelAPIClient.Instance != null)
-            // {
-            //     TriskelAPIClient.Instance.UpdateDiaryEntries(entryIDs, onSuccess, onError);
-            // }
-
-            onSuccess?.Invoke();
-        }
-
-        /// <summary>
-        /// Carga las entradas desde la API remota.
-        /// NOTA: Diseñado para integrarse con TriskelAPIClient cuando sea necesario.
-        /// </summary>
-        /// <param name="onSuccess">Callback con las entradas cargadas</param>
-        /// <param name="onError">Callback cuando hay error</param>
-        public void LoadFromRemote(Action<string[]> onSuccess = null, Action<string> onError = null)
-        {
-            // TODO: Implementar cuando TriskelAPIClient tenga endpoint para diario
-            Debug.LogWarning("[DiaryPersistence] LoadFromRemote no implementado. Usa TriskelAPIClient cuando el endpoint esté disponible.");
-
-            // Ejemplo de cómo sería la integración:
-            // if (TriskelAPIClient.Instance != null)
-            // {
-            //     TriskelAPIClient.Instance.GetDiaryEntries(onSuccess, onError);
-            // }
-
-            onSuccess?.Invoke(new string[0]);
         }
 
         #endregion

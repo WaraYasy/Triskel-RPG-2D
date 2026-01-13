@@ -24,6 +24,9 @@ namespace Triskel.UI.HUD
         // Estado de selección
         private int currentlySelectedIndex = -1;
 
+        // Guardar referencias a las actions para poder desuscribirlas
+        private System.Action[] slotClickActions = new System.Action[3];
+
         #region Unity Lifecycle
 
         private void OnEnable()
@@ -42,7 +45,8 @@ namespace Triskel.UI.HUD
                 int index = i;
                 if (slots[i] != null)
                 {
-                    slots[i].clicked += () => OnSlotClicked(slots[index], index);
+                    slotClickActions[index] = () => OnSlotClicked(slots[index], index);
+                    slots[i].clicked += slotClickActions[index];
                 }
             }
         }
@@ -61,10 +65,9 @@ namespace Triskel.UI.HUD
             // Desuscribirse de eventos para evitar memory leaks
             for (int i = 0; i < 3; i++)
             {
-                int index = i;
-                if (slots[i] != null)
+                if (slots[i] != null && slotClickActions[i] != null)
                 {
-                    slots[i].clicked -= () => OnSlotClicked(slots[index], index);
+                    slots[i].clicked -= slotClickActions[i];
                 }
             }
 
