@@ -146,50 +146,16 @@ public class RelicSystem : MonoBehaviour
     
     private void UseLirio()
     {
-        // Toggle ON/OFF
-        isLilioActive = !isLilioActive;
+        // Delegar a PlayerLight para manejar la intensidad
+        PlayerLight playerLight = GetComponent<PlayerLight>();
         
-        if (isLilioActive)
+        if (playerLight != null)
         {
-            Debug.Log("🌸 Lirio Azul ACTIVADO - Luz encendida");
-            
-            // Crear luz si no existe
-            if (activeLilioLight == null)
-            {
-                if (lilioLightPrefab != null)
-                {
-                    // Usar prefab personalizado
-                    activeLilioLight = Instantiate(lilioLightPrefab, transform.position, Quaternion.identity);
-                }
-                else
-                {
-                    // Crear luz básica si no hay prefab
-                    activeLilioLight = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                    activeLilioLight.transform.localScale = Vector3.one * lilioDetectionRadius * 2f;
-                    
-                    var renderer = activeLilioLight.GetComponent<Renderer>();
-                    renderer.material.color = new Color(0, 1, 1, 0.3f); // Cyan transparente
-                    
-                    // Eliminar collider (solo visual)
-                    Destroy(activeLilioLight.GetComponent<Collider>());
-                }
-                
-                // Tag para que los fantasmas lo encuentren
-                activeLilioLight.tag = "LirioLight";
-                activeLilioLight.name = "LirioLight";
-            }
-            
-            activeLilioLight.SetActive(true);
+            playerLight.ToggleLirioAbility();
         }
         else
         {
-            Debug.Log("🌸 Lirio Azul DESACTIVADO - Luz apagada");
-            
-            // Desactivar luz
-            if (activeLilioLight != null)
-            {
-                activeLilioLight.SetActive(false);
-            }
+            Debug.LogWarning("⚠️ No se encontró PlayerLight en el Player!");
         }
     }
     

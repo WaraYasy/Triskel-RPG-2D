@@ -24,7 +24,7 @@ namespace Triskel.Testing
         private void Start()
         {
             Debug.Log("=== INVENTARIO TEST ===");
-            Debug.Log("Q: Añadir Item 1 | W: Añadir Item 2 | E: Añadir Item 3");
+            Debug.Log("Numpad1: Añadir Item 1 | Numpad2: Añadir Item 2 | Numpad3: Añadir Item 3");
             Debug.Log("R: Remover último | T: Limpiar todo");
             Debug.Log("Y: Guardar | U: Cargar | I: Imprimir estado");
             Debug.Log("======================");
@@ -49,14 +49,14 @@ namespace Triskel.Testing
                 return;
             }
 
-            // Añadir items
-            if (Input.GetKeyDown(KeyCode.Q))
+            // Añadir items (CAMBIADO A NUMPAD para no interferir con movimiento)
+            if (Input.GetKeyDown(KeyCode.Keypad1))
                 AddItem(0);
 
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.Keypad2))
                 AddItem(1);
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.Keypad3))
                 AddItem(2);
 
             // Remover último

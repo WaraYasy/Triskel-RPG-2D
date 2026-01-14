@@ -1,8 +1,8 @@
 using UnityEngine;
 
 /// <summary>
-/// GhostAI - Fantasma que se mueve hacia la luz del Lirio
-/// Versión 2.0 - Con animaciones 4 direcciones
+/// GhostAI - Fantasma que se mueve hacia el jugador
+/// Versión 4.0 - Solo sigue al player cuando usa habilidad del Lirio (Z)
 /// </summary>
 public class GhostAI : MonoBehaviour
 {
@@ -18,7 +18,8 @@ public class GhostAI : MonoBehaviour
     private readonly int horizontalParam = Animator.StringToHash("Horizontal");
     private readonly int verticalParam = Animator.StringToHash("Vertical");
     
-    private Transform lirioLightTransform;
+    private Transform playerTransform;
+    private PlayerLight playerLight;
     private Vector2 lastMoveDirection = Vector2.down;
 
     private void Awake()
@@ -29,44 +30,66 @@ public class GhostAI : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        // Buscar jugador una vez al inicio
+        FindPlayer();
+    }
+
     private void Update()
     {
-        // Buscar la luz del Lirio activa
-        FindLirioLight();
-        
-        // Si hay luz, moverse hacia ella
-        if (lirioLightTransform != null)
+        // Si no hay player, buscarlo
+        if (playerTransform == null)
         {
-            MoveTowardsLight();
+            FindPlayer();
+        }
+        
+        // Verificar si la habilidad del Lirio está activa
+        bool shouldFollow = playerLight != null && playerLight.IsAbilityActive();
+        
+        // Si hay player Y la habilidad está activa, seguirlo
+        if (playerTransform != null && shouldFollow)
+        {
+            MoveTowardsPlayer();
         }
         else
         {
-            // Si no hay luz, animación idle (dirección 0,0)
+            // Si no hay habilidad activa, quedarse quieto
             UpdateAnimation(Vector2.zero);
         }
     }
 
-    private void FindLirioLight()
+    private void FindPlayer()
     {
-        // Buscar objeto con tag "LirioLight"
-        GameObject lirioLight = GameObject.FindGameObjectWithTag("LirioLight");
+        // Buscar objeto con tag "Player"
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
         
-        if (lirioLight != null && lirioLight.activeInHierarchy)
+        if (player != null)
         {
-            lirioLightTransform = lirioLight.transform;
+            playerTransform = player.transform;
+            playerLight = player.GetComponent<PlayerLight>();
+            
+            if (playerLight != null)
+            {
+                Debug.Log($"[GhostAI] Player y PlayerLight encontrados");
+            }
+            else
+            {
+                Debug.LogWarning("[GhostAI] Player encontrado pero sin PlayerLight component");
+            }
         }
         else
         {
-            lirioLightTransform = null;
+            Debug.LogWarning("[GhostAI] No se encontró Player con tag 'Player'");
         }
     }
 
-    private void MoveTowardsLight()
+    private void MoveTowardsPlayer()
     {
-        if (lirioLightTransform == null) return;
+        if (playerTransform == null) return;
         
         // Calcular distancia
-        float distance = Vector2.Distance(transform.position, lirioLightTransform.position);
+        float distance = Vector2.Distance(transform.position, playerTransform.position);
         
         // Solo moverse si está dentro del radio de detección
         if (distance > detectionRadius)
@@ -82,9 +105,9 @@ public class GhostAI : MonoBehaviour
             return;
         }
         
-        // Moverse hacia la luz
-        Vector2 direction = ((Vector2)lirioLightTransform.position - (Vector2)transform.position).normalized;
-        transform.position = Vector2.MoveTowards(transform.position, lirioLightTransform.position, moveSpeed * Time.deltaTime);
+        // Moverse hacia el player
+        Vector2 direction = ((Vector2)playerTransform.position - (Vector2)transform.position).normalized;
+        transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, moveSpeed * Time.deltaTime);
         
         // Actualizar animación con dirección
         lastMoveDirection = direction;
