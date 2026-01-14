@@ -185,11 +185,33 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Android
-<<<<<<< Updated upstream:Assets/_Project/Sprites/assetfantasma.png.meta
     maxTextureSize: 2048
-=======
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
     maxTextureSize: 8192
->>>>>>> Stashed changes:Assets/_Project/Sprites/UI/assetfantasma.png.meta
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -207,20 +229,20 @@ TextureImporter:
       name: assetfantasma_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 143
-        width: 31
-        height: 45
+        x: 9
+        y: 144
+        width: 29
+        height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d80f088ed2280ce50800000000000000
-      internalID: 6827600168779575437
+      spriteID: 800d58027ff81f743b1d759db5295a63
+      internalID: -1594675205
       vertices: []
       indices: 
       edges: []
@@ -229,20 +251,20 @@ TextureImporter:
       name: assetfantasma_1
       rect:
         serializedVersion: 2
-        x: 56
-        y: 145
-        width: 31
-        height: 45
+        x: 57
+        y: 146
+        width: 29
+        height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8d02d3f7f2350d860800000000000000
-      internalID: 7552628038563602648
+      spriteID: f2bf2515d419ec644a3ac40064d3d17a
+      internalID: -1578982004
       vertices: []
       indices: 
       edges: []
@@ -251,20 +273,20 @@ TextureImporter:
       name: assetfantasma_2
       rect:
         serializedVersion: 2
-        x: 104
-        y: 146
-        width: 31
-        height: 45
+        x: 105
+        y: 147
+        width: 29
+        height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 55a3d8fdee3de3f00800000000000000
-      internalID: 1098548382031231573
+      spriteID: aacb28e283cfb34479826ff2f3926560
+      internalID: 147257662
       vertices: []
       indices: 
       edges: []
@@ -273,20 +295,20 @@ TextureImporter:
       name: assetfantasma_3
       rect:
         serializedVersion: 2
-        x: 144
-        y: 143
-        width: 48
-        height: 49
+        x: 145
+        y: 144
+        width: 46
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3ae8b8883cd8c6d70800000000000000
-      internalID: 9037754423174729379
+      spriteID: c69dabf43e377d941bbabf226b9ce762
+      internalID: -1164220660
       vertices: []
       indices: 
       edges: []
@@ -295,20 +317,20 @@ TextureImporter:
       name: assetfantasma_4
       rect:
         serializedVersion: 2
-        x: 192
-        y: 144
-        width: 48
-        height: 48
+        x: 193
+        y: 145
+        width: 46
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 67cee95830f156430800000000000000
-      internalID: 3775457962607176822
+      spriteID: 510706b5c51b188499f1622d4ba843a2
+      internalID: 1621021700
       vertices: []
       indices: 
       edges: []
@@ -317,20 +339,20 @@ TextureImporter:
       name: assetfantasma_5
       rect:
         serializedVersion: 2
-        x: 240
-        y: 143
-        width: 48
-        height: 49
+        x: 241
+        y: 144
+        width: 46
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 28e7fc6e3a96afa60800000000000000
-      internalID: 7708589864870968962
+      spriteID: f6f67ac4c84803a48aca503b2d627a53
+      internalID: -1661033955
       vertices: []
       indices: 
       edges: []
@@ -339,20 +361,20 @@ TextureImporter:
       name: assetfantasma_6
       rect:
         serializedVersion: 2
-        x: 288
-        y: 143
-        width: 48
-        height: 49
+        x: 289
+        y: 144
+        width: 46
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: bd7e98ffe2a1f30f0800000000000000
-      internalID: -1135159791916029989
+      spriteID: af362164710d40f46ab21db342ed2db6
+      internalID: 1141227071
       vertices: []
       indices: 
       edges: []
@@ -361,20 +383,20 @@ TextureImporter:
       name: assetfantasma_7
       rect:
         serializedVersion: 2
-        x: 336
-        y: 144
-        width: 48
-        height: 48
+        x: 337
+        y: 145
+        width: 46
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cb45d40b70227e6d0800000000000000
-      internalID: -2961360813554838340
+      spriteID: 20e7ba0c639f1b24ba1832f703bc92ad
+      internalID: -1855213541
       vertices: []
       indices: 
       edges: []
@@ -383,20 +405,20 @@ TextureImporter:
       name: assetfantasma_8
       rect:
         serializedVersion: 2
-        x: 384
-        y: 143
-        width: 48
-        height: 49
+        x: 385
+        y: 144
+        width: 46
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6f2e6898d70908950800000000000000
-      internalID: 6449313535247180534
+      spriteID: 703b9614bacb88341bc7cd0bac985dba
+      internalID: 843356743
       vertices: []
       indices: 
       edges: []
@@ -405,20 +427,20 @@ TextureImporter:
       name: assetfantasma_9
       rect:
         serializedVersion: 2
-        x: 144
-        y: 47
-        width: 41
-        height: 49
+        x: 147
+        y: 96
+        width: 43
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9046c0aa5ed3454a0800000000000000
-      internalID: -6605586696835931127
+      spriteID: 54ce652de232e5d4a8fe3d00502e2448
+      internalID: 2076425168
       vertices: []
       indices: 
       edges: []
@@ -427,20 +449,20 @@ TextureImporter:
       name: assetfantasma_10
       rect:
         serializedVersion: 2
-        x: 146
-        y: 95
-        width: 45
-        height: 49
+        x: 195
+        y: 97
+        width: 43
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: fbc669b88b476eb20800000000000000
-      internalID: 3163344124239047871
+      spriteID: 50c6b03665ddcff44b27db664fc90cbb
+      internalID: 2034388071
       vertices: []
       indices: 
       edges: []
@@ -449,20 +471,20 @@ TextureImporter:
       name: assetfantasma_11
       rect:
         serializedVersion: 2
-        x: 192
-        y: 48
-        width: 41
-        height: 49
+        x: 243
+        y: 96
+        width: 43
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5df2afe568ec8cdc0800000000000000
-      internalID: -3618415224077799467
+      spriteID: 55d57cbd9765c604e878b8d908748487
+      internalID: -755551794
       vertices: []
       indices: 
       edges: []
@@ -471,20 +493,20 @@ TextureImporter:
       name: assetfantasma_12
       rect:
         serializedVersion: 2
-        x: 194
+        x: 291
         y: 96
-        width: 45
-        height: 49
+        width: 43
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6308fc6cd56510cf0800000000000000
-      internalID: -287853940407566282
+      spriteID: b9d5ffc4263b5424b807246e2f473a6e
+      internalID: 300560152
       vertices: []
       indices: 
       edges: []
@@ -493,20 +515,20 @@ TextureImporter:
       name: assetfantasma_13
       rect:
         serializedVersion: 2
-        x: 240
-        y: 47
-        width: 41
-        height: 49
+        x: 339
+        y: 97
+        width: 43
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c911a67bfa95b3960800000000000000
-      internalID: 7582753008839692700
+      spriteID: ffd3b37610c0a3849ad50957f7f08182
+      internalID: -964774408
       vertices: []
       indices: 
       edges: []
@@ -515,20 +537,20 @@ TextureImporter:
       name: assetfantasma_14
       rect:
         serializedVersion: 2
-        x: 242
-        y: 95
-        width: 45
-        height: 49
+        x: 387
+        y: 96
+        width: 43
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4d02db6029b5d8c40800000000000000
-      internalID: 5516165801335136468
+      spriteID: 3fd196e74e6f10d4a850ef05a39893da
+      internalID: 832102211
       vertices: []
       indices: 
       edges: []
@@ -537,20 +559,20 @@ TextureImporter:
       name: assetfantasma_15
       rect:
         serializedVersion: 2
-        x: 288
-        y: 47
-        width: 41
-        height: 49
+        x: 145
+        y: 48
+        width: 39
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: deaae574fcb269240800000000000000
-      internalID: 4798070622265453293
+      spriteID: f5e92552d7e121247ba6d663156cda94
+      internalID: 1036993212
       vertices: []
       indices: 
       edges: []
@@ -559,20 +581,20 @@ TextureImporter:
       name: assetfantasma_16
       rect:
         serializedVersion: 2
-        x: 290
-        y: 95
-        width: 45
-        height: 49
+        x: 193
+        y: 49
+        width: 39
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ab70d977bbdd26530800000000000000
-      internalID: 3846880828963227578
+      spriteID: 521a3be7d4e80c14eb321c2782131fdb
+      internalID: -734978638
       vertices: []
       indices: 
       edges: []
@@ -581,20 +603,20 @@ TextureImporter:
       name: assetfantasma_17
       rect:
         serializedVersion: 2
-        x: 336
+        x: 241
         y: 48
-        width: 41
-        height: 49
+        width: 39
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c2d888340abfc5e30800000000000000
-      internalID: 4493743193955274028
+      spriteID: 3591fcd1ecdb3e346a5c4653909f713f
+      internalID: 470113198
       vertices: []
       indices: 
       edges: []
@@ -603,20 +625,20 @@ TextureImporter:
       name: assetfantasma_18
       rect:
         serializedVersion: 2
-        x: 338
-        y: 96
-        width: 45
-        height: 49
+        x: 289
+        y: 48
+        width: 39
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ccc2635ae794e4b20800000000000000
-      internalID: 3120512400100830412
+      spriteID: 757ab1b80835f9140a6e07074aff9487
+      internalID: 610299943
       vertices: []
       indices: 
       edges: []
@@ -625,20 +647,20 @@ TextureImporter:
       name: assetfantasma_19
       rect:
         serializedVersion: 2
-        x: 384
-        y: 47
-        width: 41
-        height: 49
+        x: 337
+        y: 49
+        width: 39
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3952595c0c8df8060800000000000000
-      internalID: 6958018271770912147
+      spriteID: e3111df164e181a49b2b10acdd4d5bdc
+      internalID: -1948054568
       vertices: []
       indices: 
       edges: []
@@ -647,20 +669,20 @@ TextureImporter:
       name: assetfantasma_20
       rect:
         serializedVersion: 2
-        x: 386
-        y: 95
-        width: 45
-        height: 49
+        x: 385
+        y: 48
+        width: 39
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 82962e4ca66740de0800000000000000
-      internalID: -1367838185872004824
+      spriteID: ac976ddc2494d24449722907b3cb05c8
+      internalID: 1574845887
       vertices: []
       indices: 
       edges: []
@@ -669,20 +691,20 @@ TextureImporter:
       name: assetfantasma_21
       rect:
         serializedVersion: 2
-        x: 9
+        x: 10
         y: 0
-        width: 31
-        height: 44
+        width: 29
+        height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0f912d7362f9496a0800000000000000
-      internalID: -6443350180366247440
+      spriteID: cf68daa3ebbeb644fb88390ec5f16f2c
+      internalID: -1009599699
       vertices: []
       indices: 
       edges: []
@@ -691,20 +713,20 @@ TextureImporter:
       name: assetfantasma_22
       rect:
         serializedVersion: 2
-        x: 57
-        y: 1
-        width: 31
-        height: 45
+        x: 58
+        y: 2
+        width: 29
+        height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e2b4c57f6f791cc60800000000000000
-      internalID: 7836711913569143598
+      spriteID: 1c1ac14d86307ca4e9348328aab160ba
+      internalID: 1372582361
       vertices: []
       indices: 
       edges: []
@@ -713,20 +735,20 @@ TextureImporter:
       name: assetfantasma_23
       rect:
         serializedVersion: 2
-        x: 105
-        y: 2
-        width: 31
-        height: 45
+        x: 106
+        y: 3
+        width: 29
+        height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: dd9083c180954baf0800000000000000
-      internalID: -381582177051604515
+      spriteID: 5b6f094516bfc7a40b634a8ba9d44eb8
+      internalID: -2005514438
       vertices: []
       indices: 
       edges: []
@@ -735,20 +757,20 @@ TextureImporter:
       name: assetfantasma_24
       rect:
         serializedVersion: 2
-        x: 143
+        x: 144
         y: 0
-        width: 48
-        height: 48
+        width: 46
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3ef571802547c4ae0800000000000000
-      internalID: -1563747074932514845
+      spriteID: 8464059e31cded343a276b3a9261dd2b
+      internalID: -276263803
       vertices: []
       indices: 
       edges: []
@@ -757,20 +779,20 @@ TextureImporter:
       name: assetfantasma_25
       rect:
         serializedVersion: 2
-        x: 191
-        y: 0
-        width: 48
-        height: 49
+        x: 192
+        y: 1
+        width: 46
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 54c3e55707298f7d0800000000000000
-      internalID: -2884394549627700155
+      spriteID: bfc7f2770b8e20748bf50025da1e7d9f
+      internalID: 790582802
       vertices: []
       indices: 
       edges: []
@@ -779,20 +801,20 @@ TextureImporter:
       name: assetfantasma_26
       rect:
         serializedVersion: 2
-        x: 239
+        x: 240
         y: 0
-        width: 48
-        height: 48
+        width: 46
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5d27a629b87893690800000000000000
-      internalID: -7621911860821200171
+      spriteID: eeb6f74f411d09c4992b24c97787bca0
+      internalID: 535244112
       vertices: []
       indices: 
       edges: []
@@ -801,20 +823,20 @@ TextureImporter:
       name: assetfantasma_27
       rect:
         serializedVersion: 2
-        x: 287
+        x: 288
         y: 0
-        width: 48
-        height: 48
+        width: 46
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: fd523f72278865e10800000000000000
-      internalID: 2186084693012850143
+      spriteID: b8be04cc0330c5b41b0012c64041f121
+      internalID: -206091618
       vertices: []
       indices: 
       edges: []
@@ -823,20 +845,20 @@ TextureImporter:
       name: assetfantasma_28
       rect:
         serializedVersion: 2
-        x: 335
-        y: 0
-        width: 48
-        height: 49
+        x: 336
+        y: 1
+        width: 46
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: eb1de1717055f8dc0800000000000000
-      internalID: -3634592885323673154
+      spriteID: dc56488c698f2b0498835e6a223b4052
+      internalID: -338359280
       vertices: []
       indices: 
       edges: []
@@ -845,20 +867,20 @@ TextureImporter:
       name: assetfantasma_29
       rect:
         serializedVersion: 2
-        x: 383
+        x: 384
         y: 0
-        width: 48
-        height: 48
+        width: 46
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5197da04910100440800000000000000
-      internalID: 4899934095224437013
+      spriteID: 5a21ffb3eaaf76d459726b7edac68e19
+      internalID: -1293194061
       vertices: []
       indices: 
       edges: []
@@ -867,7 +889,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: cc33563a31f6040488497152bdf9bd89
     internalID: 0
     vertices: []
     indices: 
@@ -877,36 +899,36 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      assetfantasma_0: 6827600168779575437
-      assetfantasma_1: 7552628038563602648
-      assetfantasma_10: 3163344124239047871
-      assetfantasma_11: -3618415224077799467
-      assetfantasma_12: -287853940407566282
-      assetfantasma_13: 7582753008839692700
-      assetfantasma_14: 5516165801335136468
-      assetfantasma_15: 4798070622265453293
-      assetfantasma_16: 3846880828963227578
-      assetfantasma_17: 4493743193955274028
-      assetfantasma_18: 3120512400100830412
-      assetfantasma_19: 6958018271770912147
-      assetfantasma_2: 1098548382031231573
-      assetfantasma_20: -1367838185872004824
-      assetfantasma_21: -6443350180366247440
-      assetfantasma_22: 7836711913569143598
-      assetfantasma_23: -381582177051604515
-      assetfantasma_24: -1563747074932514845
-      assetfantasma_25: -2884394549627700155
-      assetfantasma_26: -7621911860821200171
-      assetfantasma_27: 2186084693012850143
-      assetfantasma_28: -3634592885323673154
-      assetfantasma_29: 4899934095224437013
-      assetfantasma_3: 9037754423174729379
-      assetfantasma_4: 3775457962607176822
-      assetfantasma_5: 7708589864870968962
-      assetfantasma_6: -1135159791916029989
-      assetfantasma_7: -2961360813554838340
-      assetfantasma_8: 6449313535247180534
-      assetfantasma_9: -6605586696835931127
+      assetfantasma_0: -1594675205
+      assetfantasma_1: -1578982004
+      assetfantasma_10: 2034388071
+      assetfantasma_11: -755551794
+      assetfantasma_12: 300560152
+      assetfantasma_13: -964774408
+      assetfantasma_14: 832102211
+      assetfantasma_15: 1036993212
+      assetfantasma_16: -734978638
+      assetfantasma_17: 470113198
+      assetfantasma_18: 610299943
+      assetfantasma_19: -1948054568
+      assetfantasma_2: 147257662
+      assetfantasma_20: 1574845887
+      assetfantasma_21: -1009599699
+      assetfantasma_22: 1372582361
+      assetfantasma_23: -2005514438
+      assetfantasma_24: -276263803
+      assetfantasma_25: 790582802
+      assetfantasma_26: 535244112
+      assetfantasma_27: -206091618
+      assetfantasma_28: -338359280
+      assetfantasma_29: -1293194061
+      assetfantasma_3: -1164220660
+      assetfantasma_4: 1621021700
+      assetfantasma_5: -1661033955
+      assetfantasma_6: 1141227071
+      assetfantasma_7: -1855213541
+      assetfantasma_8: 843356743
+      assetfantasma_9: 2076425168
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

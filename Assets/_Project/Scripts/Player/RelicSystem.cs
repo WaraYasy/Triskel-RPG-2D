@@ -27,9 +27,12 @@ public class RelicSystem : MonoBehaviour
     [SerializeField] private float abilityCooldown = 2f;
     [SerializeField] private float lilioDetectionRadius = 3f;
     [SerializeField] private SpriteRenderer playerSprite; // Para invisibilidad del Manto
+    [SerializeField] private GameObject lilioLightPrefab; // Prefab de luz del Lirio
     
     private float abilityCooldownTimer = 0f;
     private bool isInvisible = false;
+    private GameObject activeLilioLight; // Referencia a la luz activa
+    private bool isLilioActive = false;
     private PlayerController playerController; // Referencia para dirección
     
     private void Awake()
@@ -43,6 +46,12 @@ public class RelicSystem : MonoBehaviour
         if (abilityCooldownTimer > 0)
         {
             abilityCooldownTimer -= Time.deltaTime;
+        }
+        
+        // Actualizar posición de la luz del Lirio si está activa
+        if (isLilioActive && activeLilioLight != null)
+        {
+            activeLilioLight.transform.position = transform.position;
         }
         
         // Cambio de reliquia con teclas numéricas
@@ -137,22 +146,51 @@ public class RelicSystem : MonoBehaviour
     
     private void UseLirio()
     {
-        Debug.Log("🌸 Lirio Azul activado - Revelando entorno");
+        // Toggle ON/OFF
+        isLilioActive = !isLilioActive;
         
-        // Crear área de detección visual temporal
-        GameObject detectionArea = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        detectionArea.transform.position = transform.position;
-        detectionArea.transform.localScale = Vector3.one * lilioDetectionRadius * 2f;
-        
-        // Hacer transparente y cyan
-        var renderer = detectionArea.GetComponent<Renderer>();
-        renderer.material.color = new Color(0, 1, 1, 0.3f); // Cyan transparente
-        
-        // Eliminar collider (solo visual)
-        Destroy(detectionArea.GetComponent<Collider>());
-        
-        // Destruir después de 1 segundo
-        Destroy(detectionArea, 1f);
+        if (isLilioActive)
+        {
+            Debug.Log("🌸 Lirio Azul ACTIVADO - Luz encendida");
+            
+            // Crear luz si no existe
+            if (activeLilioLight == null)
+            {
+                if (lilioLightPrefab != null)
+                {
+                    // Usar prefab personalizado
+                    activeLilioLight = Instantiate(lilioLightPrefab, transform.position, Quaternion.identity);
+                }
+                else
+                {
+                    // Crear luz básica si no hay prefab
+                    activeLilioLight = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                    activeLilioLight.transform.localScale = Vector3.one * lilioDetectionRadius * 2f;
+                    
+                    var renderer = activeLilioLight.GetComponent<Renderer>();
+                    renderer.material.color = new Color(0, 1, 1, 0.3f); // Cyan transparente
+                    
+                    // Eliminar collider (solo visual)
+                    Destroy(activeLilioLight.GetComponent<Collider>());
+                }
+                
+                // Tag para que los fantasmas lo encuentren
+                activeLilioLight.tag = "LirioLight";
+                activeLilioLight.name = "LirioLight";
+            }
+            
+            activeLilioLight.SetActive(true);
+        }
+        else
+        {
+            Debug.Log("🌸 Lirio Azul DESACTIVADO - Luz apagada");
+            
+            // Desactivar luz
+            if (activeLilioLight != null)
+            {
+                activeLilioLight.SetActive(false);
+            }
+        }
     }
     
     private void UseHacha()
