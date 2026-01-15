@@ -9,8 +9,18 @@ namespace Triskel.Testing
     /// </summary>
     public class QuickDiaryTest : MonoBehaviour
     {
+        [Header("Testing Control")]
+        [Tooltip("Desactiva este script si no quieres testing (evita conflictos con Input System)")]
+        [SerializeField] private bool enableTesting = false; // ← FALSE por defecto
+        
         private void Start()
         {
+            if (!enableTesting)
+            {
+                Debug.Log("[QuickDiaryTest] Testing desactivado. Activa 'Enable Testing' en Inspector si lo necesitas.");
+                return;
+            }
+            
             Debug.Log("=== DIARIO TEST ===");
             Debug.Log("F1: Nivel 0 Bueno | F2: Nivel 0 Malo");
             Debug.Log("F3: Nivel 1 Bueno | F4: Nivel 1 Malo");
@@ -20,6 +30,7 @@ namespace Triskel.Testing
 
         private void Update()
         {
+            if (!enableTesting) return; // ← Salir si testing desactivado
             if (DiaryManager.Instance == null) return;
 
             if (Input.GetKeyDown(KeyCode.F1))

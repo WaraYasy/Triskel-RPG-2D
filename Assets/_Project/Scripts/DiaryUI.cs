@@ -148,11 +148,16 @@ namespace Triskel.UI
 
         private void Update()
         {
+            // NOTA: Toggle del diario se puede manejar con Input System OpenDiary action
+            // Por ahora comentado para evitar conflictos
+            
+            /* COMENTADO - Se puede implementar con Input System
             // Toggle del panel con tecla
             if (Input.GetKeyDown(toggleKey))
             {
                 TogglePanel();
             }
+            */
         }
 
         #region Panel Control
