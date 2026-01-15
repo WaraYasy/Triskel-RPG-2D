@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     private InventoryData inventoryData;
     private InventoryPersistence inventoryPersistence;
     private DiaryPersistence diaryPersistence;
+    public DialogueEvents dialogueEvents;
 
     // ===== ESTADO DEL JUEGO =====
     [Header("Estado del Juego")]
@@ -39,6 +40,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        dialogueEvents = new DialogueEvents();
     }
 
     private void Start()
