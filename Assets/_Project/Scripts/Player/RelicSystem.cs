@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 /// <summary>
 /// Sistema de Reliquias - Cambio y uso de habilidades
-/// Versión 2.0 - Con habilidades básicas por reliquia
+/// Versión 3.0 - REFACTORIZADO para Input System
 /// </summary>
 public class RelicSystem : MonoBehaviour
 {
@@ -34,10 +35,40 @@ public class RelicSystem : MonoBehaviour
     private GameObject activeLilioLight; // Referencia a la luz activa
     private bool isLilioActive = false;
     private PlayerController playerController; // Referencia para dirección
+    private PlayerInputActions inputActions;
     
     private void Awake()
     {
         playerController = GetComponent<PlayerController>();
+        inputActions = new PlayerInputActions();
+    }
+    
+    private void OnEnable()
+    {
+        inputActions.Enable();
+        
+        // Suscribirse a eventos de selección DIRECTA (PC - Teclas 1/2/3)
+        inputActions.Player.SelectRelic1.performed += ctx => SelectRelic(RelicType.LirioAzul);
+        inputActions.Player.SelectRelic2.performed += ctx => SelectRelic(RelicType.HachaSagrada);
+        inputActions.Player.SelectRelic3.performed += ctx => SelectRelic(RelicType.MantoDeLuna);
+        
+        // Suscribirse a evento de CICLAR reliquia (Móvil - Botón Next)
+        inputActions.Player.CycleRelic.performed += OnCycleRelicPerformed;
+        
+        // Suscribirse a evento de usar reliquia
+        inputActions.Player.UseRelic.performed += OnUseRelicPerformed;
+    }
+    
+    private void OnDisable()
+    {
+        // Desuscribirse de eventos
+        inputActions.Player.SelectRelic1.performed -= ctx => SelectRelic(RelicType.LirioAzul);
+        inputActions.Player.SelectRelic2.performed -= ctx => SelectRelic(RelicType.HachaSagrada);
+        inputActions.Player.SelectRelic3.performed -= ctx => SelectRelic(RelicType.MantoDeLuna);
+        inputActions.Player.CycleRelic.performed -= OnCycleRelicPerformed;
+        inputActions.Player.UseRelic.performed -= OnUseRelicPerformed;
+        
+        inputActions.Disable();
     }
     
     private void Update()
@@ -53,30 +84,34 @@ public class RelicSystem : MonoBehaviour
         {
             activeLilioLight.transform.position = transform.position;
         }
-        
-        // Cambio de reliquia con teclas numéricas
-        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
-        {
-            SelectRelic(RelicType.LirioAzul);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
-        {
-            SelectRelic(RelicType.HachaSagrada);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
-        {
-            SelectRelic(RelicType.MantoDeLuna);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha0) || Input.GetKeyDown(KeyCode.Keypad0))
-        {
-            SelectRelic(RelicType.None);
-        }
-        
-        // Usar habilidad con tecla Z
-        if (Input.GetKeyDown(KeyCode.Z) && abilityCooldownTimer <= 0)
+    }
+    
+    // Callback del Input System para ciclar reliquia
+    private void OnCycleRelicPerformed(InputAction.CallbackContext context)
+    {
+        CycleToNextRelic();
+    }
+    
+    // Callback del Input System para usar reliquia
+    private void OnUseRelicPerformed(InputAction.CallbackContext context)
+    {
+        if (abilityCooldownTimer <= 0)
         {
             UseCurrentRelic();
         }
+    }
+    
+    /// <summary>
+    /// Cicla a la siguiente reliquia (para móviles)
+    /// </summary>
+    public void CycleToNextRelic()
+    {
+        // Ciclar: Lirio → Hacha → Manto → Lirio
+        int nextIndex = ((int)currentRelic % 3) + 1;
+        currentRelic = (RelicType)nextIndex;
+        
+        SelectRelic(currentRelic);
+        Debug.Log($"🔄 Reliquia ciclada a: {currentRelic}");
     }
     
     public void SelectRelic(RelicType relic)
