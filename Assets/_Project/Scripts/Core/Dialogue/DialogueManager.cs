@@ -30,7 +30,6 @@ public class DialogueManager : MonoBehaviour
 
     // ===== ESTADO DEL DIÁLOGO =====
     private bool isDialogueActive = false;              // ¿Está activo un diálogo?
-    private int currentChoiceIndex = 0;                 // Índice de la elección actual seleccionada
 
     // ===== PROPIEDADES PÚBLICAS =====
     /// <summary>Indica si hay un diálogo actualmente activo</summary>
@@ -125,7 +124,6 @@ public class DialogueManager : MonoBehaviour
 
         // Activar estado de diálogo
         isDialogueActive = true;
-        currentChoiceIndex = 0;
 
         // Navegar al knot especificado
         currentStory.ChoosePathString(knotName);
@@ -249,7 +247,6 @@ public class DialogueManager : MonoBehaviour
 
         // Desactivar estado de diálogo
         isDialogueActive = false;
-        currentChoiceIndex = 0;
 
         // TODO: Aquí deberías reactivar el movimiento del jugador, ocultar UI, etc.
         // Ejemplo:
