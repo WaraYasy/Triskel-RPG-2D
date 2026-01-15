@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.InputSystem;
 using Triskel.Core;
 
 namespace Triskel.UI
@@ -41,14 +42,22 @@ namespace Triskel.UI
         private List<DiaryEntry> unlockedEntries = new List<DiaryEntry>();
         private int currentPageIndex = 0;
         private bool isInitialized = false;
+        
+        // Input System
+        private PlayerInputActions inputActions;
 
         private void Awake()
         {
             uiDocument = GetComponent<UIDocument>();
+            inputActions = new PlayerInputActions();
         }
 
         private void OnEnable()
         {
+            // Suscribir a Input System
+            inputActions.Enable();
+            inputActions.Player.OpenDiary.performed += OnOpenDiaryPerformed;
+            
             // Esperar un frame para asegurarse de que el UIDocument esté inicializado
             if (!isInitialized)
             {
@@ -58,6 +67,9 @@ namespace Triskel.UI
 
         private void OnDisable()
         {
+            // Desuscribir de Input System
+            inputActions.Player.OpenDiary.performed -= OnOpenDiaryPerformed;
+            inputActions.Disable();
             // Limpiar eventos al desactivar
             UnregisterEvents();
         }
@@ -146,18 +158,15 @@ namespace Triskel.UI
             ClosePanel();
         }
 
+        // Callback del Input System para abrir/cerrar diario
+        private void OnOpenDiaryPerformed(InputAction.CallbackContext context)
+        {
+            TogglePanel();
+        }
+
         private void Update()
         {
-            // NOTA: Toggle del diario se puede manejar con Input System OpenDiary action
-            // Por ahora comentado para evitar conflictos
-            
-            /* COMENTADO - Se puede implementar con Input System
-            // Toggle del panel con tecla
-            if (Input.GetKeyDown(toggleKey))
-            {
-                TogglePanel();
-            }
-            */
+            // Update vacío - Input manejado por Input System
         }
 
         #region Panel Control
