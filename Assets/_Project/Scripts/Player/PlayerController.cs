@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 /// <summary>
-/// Controlador básico del jugador - Movimiento en 2D con Dash
-/// Versión 2.0 - Movimiento + Dash con cooldown
+/// Controlador del jugador - Movimiento en 2D con Dash
+/// Versión 3.0 - REFACTORIZADO para Input System
 /// </summary>
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(PlayerInput))]
 public class PlayerController : MonoBehaviour
 {
     [Header("Configuración de Movimiento")]
@@ -15,8 +18,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashCooldown = 1.5f;
     
     private Rigidbody2D rb;
+    private PlayerInput playerInput;
+    private PlayerInputActions inputActions;
+    
     private Vector2 moveInput;
-    private Vector2 lastMoveDirection = Vector2.down; // Para dash sin moverse
+    private Vector2 lastMoveDirection = Vector2.down;
     
     // Estado del Dash
     private bool isDashing = false;
@@ -26,6 +32,28 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerInput = GetComponent<PlayerInput>();
+        
+        // Crear instancia de Input Actions
+        inputActions = new PlayerInputActions();
+    }
+
+    private void OnEnable()
+    {
+        // Habilitar Input Actions
+        inputActions.Enable();
+        
+        // Suscribirse a eventos
+        inputActions.Player.Dash.performed += OnDashPerformed;
+    }
+
+    private void OnDisable()
+    {
+        // Desuscribirse de eventos
+        inputActions.Player.Dash.performed -= OnDashPerformed;
+        
+        // Deshabilitar Input Actions
+        inputActions.Disable();
     }
 
     private void Update()
@@ -41,9 +69,8 @@ public class PlayerController : MonoBehaviour
             return;
         }
         
-        // Leer input del teclado
-        moveInput.x = Input.GetAxisRaw("Horizontal"); // A/D o Flechas
-        moveInput.y = Input.GetAxisRaw("Vertical");   // W/S o Flechas
+        // Leer input de movimiento (funciona para teclado, gamepad, móvil)
+        moveInput = inputActions.Player.Move.ReadValue<Vector2>();
         
         // Guardar última dirección (para dash)
         if (moveInput != Vector2.zero)
@@ -55,12 +82,6 @@ public class PlayerController : MonoBehaviour
         if (dashCooldownTimer > 0)
         {
             dashCooldownTimer -= Time.deltaTime;
-        }
-        
-        // Input de Dash (Space)
-        if (Input.GetKeyDown(KeyCode.Space) && dashCooldownTimer <= 0)
-        {
-            StartDash();
         }
     }
 
@@ -78,6 +99,15 @@ public class PlayerController : MonoBehaviour
         }
     }
     
+    // Callback del Input System para Dash
+    private void OnDashPerformed(InputAction.CallbackContext context)
+    {
+        if (dashCooldownTimer <= 0)
+        {
+            StartDash();
+        }
+    }
+    
     private void StartDash()
     {
         isDashing = true;
@@ -92,5 +122,5 @@ public class PlayerController : MonoBehaviour
     public bool IsDashing() => isDashing;
     public float GetDashCooldownProgress() => 1f - (dashCooldownTimer / dashCooldown);
     public Vector2 GetLastMoveDirection() => lastMoveDirection;
+    public Vector2 GetMoveInput() => moveInput;
 }
-

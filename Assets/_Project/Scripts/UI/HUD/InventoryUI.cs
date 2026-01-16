@@ -77,6 +77,10 @@ namespace Triskel.UI.HUD
 
         private void Update()
         {
+            // NOTA: Selección de slots con teclado 1/2/3 ahora se maneja desde RelicSystem
+            // con el nuevo Input System. Este código ya no es necesario.
+            
+            /* COMENTADO - Ya se maneja con Input System en RelicSystem
             // Control con teclado: Teclas 1, 2, 3
             if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
             {
@@ -90,6 +94,7 @@ namespace Triskel.UI.HUD
             {
                 SelectSlotByIndex(2);
             }
+            */
         }
 
         #endregion
@@ -336,8 +341,16 @@ namespace Triskel.UI.HUD
         {
             Debug.Log($"[InventoryUI] Item seleccionado: {item.displayName} en slot {slotIndex}");
 
-            // TODO: Añadir lógica de gameplay
-            // Ejemplo: PlayerController.Instance.EquipItem(item);
+            // Integración con RelicSystem - Seleccionar reliquia según slot
+            RelicSystem relicSystem = FindObjectOfType<RelicSystem>();
+            if (relicSystem != null)
+            {
+                // Mapear slot index a tipo de reliquia
+                // Asumiendo: Slot 0 = Lirio, Slot 1 = Hacha, Slot 2 = Manto
+                RelicSystem.RelicType relicType = (RelicSystem.RelicType)(slotIndex + 1);
+                relicSystem.SelectRelic(relicType);
+                Debug.Log($"[InventoryUI] Reliquia seleccionada: {relicType}");
+            }
         }
 
         /// <summary>
