@@ -15,6 +15,10 @@ namespace Triskel.Testing
     /// </summary>
     public class QuickInventoryTest : MonoBehaviour
     {
+        [Header("Testing Control")]
+        [Tooltip("Desactiva este script si no quieres testing (evita conflictos con Input System)")]
+        [SerializeField] private bool enableTesting = false; // ← CAMBIADO A FALSE por defecto
+        
         [Header("Items de Prueba")]
         [Tooltip("Arrastra aquí los 3 CollectibleItem assets desde Resources/Items")]
         [SerializeField] private CollectibleItem[] testItems = new CollectibleItem[3];
@@ -23,6 +27,11 @@ namespace Triskel.Testing
 
         private void Start()
         {
+            if (!enableTesting)
+            {
+                Debug.Log("[QuickInventoryTest] Testing desactivado. Activa 'Enable Testing' en Inspector si lo necesitas.");
+                return;
+            }
             Debug.Log("=== INVENTARIO TEST ===");
             Debug.Log("Numpad1: Añadir Item 1 | Numpad2: Añadir Item 2 | Numpad3: Añadir Item 3");
             Debug.Log("R: Remover último | T: Limpiar todo");
@@ -39,6 +48,8 @@ namespace Triskel.Testing
 
         private void Update()
         {
+            if (!enableTesting) return; // ← NUEVO: salir si testing desactivado
+            
             if (InventoryData.Instance == null)
             {
                 if (!hasShownInventoryError)

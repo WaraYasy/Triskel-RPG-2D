@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3152743458087353297}
+  - component: {fileID: 630148557578949614}
+  - component: {fileID: 1935952902116546393}
   m_Layer: 0
   m_Name: DiaryUI
   m_TagString: Untagged
@@ -33,6 +35,38 @@ Transform:
   - {fileID: 2138011793281512476}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &630148557578949614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4384372175677496260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 9b614f972ad31284aa4ba9488e0ec341, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 95776a5efa76a3d4892707567ed25791, type: 3}
+  m_SortingOrder: 3
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+--- !u!114 &1935952902116546393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4384372175677496260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434e79429daf76b4a9751742b8b69458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggleKey: 106
 --- !u!1 &6973358958119747041
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: 9b614f972ad31284aa4ba9488e0ec341, type: 2}
-  m_ParentUI: {fileID: 0}
+  m_ParentUI: {fileID: 630148557578949614}
   sourceAsset: {fileID: 9197481963319205126, guid: 95776a5efa76a3d4892707567ed25791, type: 3}
   m_SortingOrder: 0
   m_WorldSpaceSizeMode: 1
@@ -130,8 +164,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jsonFileName: DiaryEntries
-  allEntries:
-  - {fileID: 0}
 --- !u!114 &7125624011613657217
 MonoBehaviour:
   m_ObjectHideFlags: 0
