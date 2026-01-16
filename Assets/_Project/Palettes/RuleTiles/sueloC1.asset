@@ -1,8 +1,8 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5468946365972060206
+--- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 8
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
-  m_Name: sueloC2 (Override)
+  m_Name: sueloC1
   m_EditorClassIdentifier: 
   m_DefaultSprite: {fileID: -922141671, guid: dece0ce8678ba8f408cba9e62d9d3d82, type: 3}
   m_DefaultGameObject: {fileID: 0}
@@ -240,19 +240,3 @@ MonoBehaviour:
     - {x: 0, y: -1, z: 0}
     - {x: 1, y: 0, z: 0}
     m_RuleTransform: 0
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c779848d9dd029409ca676b49e10a18, type: 3}
-  m_Name: hojassueloC2
-  m_EditorClassIdentifier: 
-  m_Tile: {fileID: 11400000, guid: 1df1c5b5dbd28bd4b80d479b5a309687, type: 2}
-  m_Sprites: []
-  m_GameObjects: []
-  m_InstanceTile: {fileID: -5468946365972060206}
