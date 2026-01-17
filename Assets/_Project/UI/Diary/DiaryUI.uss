@@ -1,8 +1,3 @@
-/* =====================================================
-   DIARIO NARRATIVO - ESTILOS UI TOOLKIT
-   ===================================================== */
-
-/* Panel Principal del Diario - Pantalla Completa */
 .diary-panel {
     position: absolute;
     width: 100%;
@@ -13,21 +8,19 @@
     bottom: 0;
     padding: 0;
     margin: 0;
-    display: none; /* Oculto por defecto - Cambiar a 'flex' temporalmente para ver en Preview */
+    display: none;
     flex-direction: column;
     flex-grow: 1;
 }
 
-/* Botón Cerrar - Esquina Superior Derecha */
 .close-button {
     position: absolute;
     top: 20px;
     right: 20px;
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     margin: 0;
     padding: 0;
-    /* Asegurar que esté por encima del contenido */
     z-index: 1000;
     cursor: link;
 }
@@ -40,7 +33,6 @@
     opacity: 0.6;
 }
 
-/* Background del botón (sprite de cuadrado) */
 .close-button-bg {
     position: absolute;
     width: 100%;
@@ -49,13 +41,8 @@
     border-width: 2px;
     border-color: rgb(200, 100, 100);
     border-radius: 8px;
-    /* Aquí puedes agregar tu sprite:
-       background-image: url('project://database/path/to/your/square-sprite.png');
-       -unity-background-scale-mode: scale-to-fit;
-    */
 }
 
-/* Icono del botón (sprite de X) */
 .close-button-icon {
     position: absolute;
     width: 70%;
@@ -63,15 +50,9 @@
     left: 15%;
     top: 15%;
     background-color: transparent;
-    /* Aquí puedes agregar tu sprite de X:
-       background-image: url('project://database/path/to/your/x-icon.png');
-       -unity-background-scale-mode: scale-to-fit;
-    */
-    /* Por ahora, simulamos una X con color */
     -unity-background-image-tint-color: rgb(255, 255, 255);
 }
 
-/* Contenido Principal Centrado */
 .diary-content {
     flex-direction: column;
     flex-grow: 1;
@@ -82,7 +63,6 @@
     justify-content: center;
 }
 
-/* ===== PANEL DE ENTRADA CENTRADO - Pantalla Completa ===== */
 .entry-display-panel {
     width: 80%;
     max-width: 900px;
@@ -120,7 +100,6 @@
     padding: 10px;
 }
 
-/* ===== NAVEGACIÓN DE PÁGINAS ===== */
 .navigation-panel {
     flex-direction: row;
     justify-content: space-between;
@@ -133,21 +112,24 @@
     width: 180px;
     height: 50px;
     font-size: 18px;
-    color: rgb(220, 220, 230);
-    background-color: rgba(60, 60, 70, 0.9);
+    color: rgb(255, 255, 255);
+    background-color: rgb(59, 26, 13);
     border-width: 3px;
     border-color: rgb(150, 140, 120);
     border-radius: 10px;
     padding: 10px;
+    -unity-text-align: upper-center;
+    -unity-background-scale-mode: scale-and-crop;
 }
 
 .nav-button:hover {
-    background-color: rgba(80, 80, 90, 1);
+    background-color: rgb(181, 116, 33);
     border-color: rgb(200, 180, 140);
+    color: rgb(255, 255, 255);
 }
 
 .nav-button:active {
-    background-color: rgba(100, 100, 110, 1);
+    background-color: rgb(100, 100, 110);
 }
 
 .nav-button:disabled {
@@ -155,7 +137,6 @@
     background-color: rgba(40, 40, 50, 0.6);
 }
 
-/* Indicador de Página */
 .page-indicator {
     font-size: 18px;
     color: rgb(180, 170, 150);
