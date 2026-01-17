@@ -1,4 +1,100 @@
-﻿title: Level1
+﻿title: Nivel1_Intro
 ---
-This is an example of a Yarn Spinner script. Write your dialogue here!
+Narrador: Aquí es donde el bosque viene a llorar.
+Narrador: Cada gota es un recuerdo que nadie quiso guardar.
+Narrador: Ten cuidado, Sacha.
+Narrador: La tristeza es pesada.
+Narrador: Si te detienes demasiado, te hundirás.
+===
+title: Nivel1_Lirio
+---
+Narrador: Un claro se abre entre los árboles.
+Narrador: El agua es oscura, quieta, como si mirara de vuelta.
+Narrador: En el centro, flota una flor que no teme a la noche.
+
+Narrador: El Lirio...
+Narrador: Dicen que sus pétalos no se abren con el sol, sino con la compasión.
+Narrador: No es una espada, pequeño.
+Narrador: Es un faro.
+Narrador: Úsalo para guiar a quien ha perdido el camino.
+
+<<jump Nivel1_Fantasmas>>
+===
+title: Nivel1_Fantasmas
+---
+Narrador: El camino se estrecha.
+Narrador: El aire se vuelve más frío.
+
+Narrador: Ahí están.
+Narrador: Los Olvidados.
+Narrador: No te odian, Sacha.
+Narrador: Solo tienen frío.
+
+Narrador: Bloquean el paso buscando calor.
+Narrador: Pero su tacto congela la vida.
+
+Narrador: ¿Qué harás?
+
+<<jump Nivel1_Decision>>
+===
+title: Nivel1_Decision
+---
+<<choice>>
+    <<option "Usar la luz contra ellos">>
+        <<jump Nivel1_Ruta_Miedo>>
+    <<option "Ofrecer la luz a la estatua cercana">>
+        <<jump Nivel1_Ruta_Bondad>>
+<<endchoice>>
+===
+title: Nivel1_Ruta_Miedo
+---
+Narrador: La luz estalla de forma brusca.
+Narrador: Los Olvidados chillan.
+Narrador: Huyen, deformados por el resplandor.
+
+Narrador: El camino queda libre.
+Narrador: Pero el aire es más frío ahora.
+Narrador: Algo se ha ido con ellos.
+
+<<jump Nivel1_Fin>>
+===
+title: Nivel1_Ruta_Bondad
+---
+Narrador: La luz no se alza.
+Narrador: Se ofrece.
+
+Narrador: El calor despierta la piedra dormida.
+Narrador: Los Olvidados se acercan lentamente.
+Narrador: Dejan de llorar.
+
+Narrador: No apartaste la oscuridad.
+Narrador: Le diste un lugar donde descansar.
+
+<<jump Nivel1_Fin>>
+===
+title: Nivel1_Fin
+---
+Narrador: El camino continúa.
+Narrador: El bosque observa en silencio.
+
+===
+title: Ebano_Frases_01
+---
+Narrador: El bosque no llora por los que se fueron, sino por los que nunca pudieron decir adiós.
+===
+title: Ebano_Frases_02
+---
+Narrador: La lluvia no cae del cielo, Sacha. Sube desde la tierra.
+===
+title: Ebano_Frases_03
+---
+Narrador: Hay recuerdos que pesan tanto que el suelo prefiere tragárselos.
+===
+title: Ebano_Frases_04
+---
+Narrador: Caminar duele menos que quedarse quieto… pero ambas cosas dejan marcas.
+===
+title: Ebano_Frases_05
+---
+Narrador: No todo lo que brilla quiere ser visto. A veces solo quiere ser comprendido.
 ===
