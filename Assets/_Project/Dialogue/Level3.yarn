@@ -1,4 +1,107 @@
-﻿title: Level3
+﻿title: Nivel3_Intro
 ---
-This is an example of a Yarn Spinner script. Write your dialogue here!
+Narrador: Shhh... no hagas ruido.
+Narrador: El Akelarre.
+Narrador: Donde el bosque guarda sus secretos.
+
+Narrador: Aquí, tus ojos te mentirán.
+Narrador: El miedo dibuja monstruos donde solo hay sombras.
+
+Narrador: Camina despacio, Sacha.
+Narrador: La oscuridad tiene dientes.
+
+===
+
+title: Nivel3_Manto
+---
+Narrador: Entre raíces retorcidas, algo brilla.
+Narrador: No es fuego.
+Narrador: No es sol.
+
+Narrador: El Manto de la Luna.
+Narrador: Tejido con hilos de silencio.
+
+Narrador: Puede ocultarte de los ojos ajenos.
+Narrador: O puede mostrarte lo que se esconde ante los tuyos.
+
+Narrador: Dime, pequeño…
+Narrador: ¿prefieres no ser visto?
+Narrador: ¿o prefieres ver la verdad?
+
+===
+
+title: Nivel3_Sombras
+---
+Narrador: El camino se estrecha.
+Narrador: Algo se mueve en la oscuridad.
+
+Narrador: Ahí están.
+Narrador: Los Guardianes del Secreto.
+
+Narrador: Parecen pesadillas, ¿verdad?
+Narrador: Están aterrorizados de ti.
+Narrador: Por eso atacan.
+
+Narrador: Creen que vienes a robar su oscuridad.
+
+Narrador: ¿Qué harás?
+===
+
+title: Nivel3_Decision
+---
+<<choice>>
+    <<option "Ocultarte y pasar sin ser visto">>
+        <<jump Nivel3_Miedo>>
+    <<option "Acercarte y revelar la verdad">>
+        <<jump Nivel3_Verdad>>
+<<endchoice>>
+===
+
+title: Nivel3_Miedo
+---
+Narrador: Te haces pequeño.
+Narrador: Te vuelves casi nada.
+
+Narrador: Pasas entre ellos sin ser visto.
+Narrador: Nadie te toca.
+Narrador: Nadie te recuerda.
+
+Narrador: Has sobrevivido.
+Narrador: Pero el bosque sigue a oscuras.
+
+Narrador: Correr es útil…
+Narrador: pero un Guardián no debería esconderse de su propio hogar.
+
+===
+title: Nivel3_Verdad
+---
+Narrador: Das un paso hacia el centro.
+Narrador: La luz no se esconde.
+
+Narrador: La oscuridad se rompe.
+Narrador: El hechizo cae.
+
+Narrador: No eran monstruos.
+Narrador: Solo criaturas asustadas.
+Narrador: Igual que tú.
+
+Narrador: El miedo era una sombra en la pared.
+Narrador: Y la verdad, la luz detrás de ella.
+
+===
+
+title: Nivel3_Fin
+---
+Narrador: El Lirio.
+Narrador: El Hacha.
+Narrador: El Manto.
+
+Narrador: Has visto la Tristeza.
+Narrador: La Ira.
+Narrador: Y el Miedo del bosque.
+
+Narrador: El Espíritu te espera.
+Narrador: Ya no hay vuelta atrás.
+
+Narrador: ¿Estás listo, Sacha?
 ===

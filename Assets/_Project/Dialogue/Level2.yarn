@@ -1,4 +1,93 @@
-﻿title: Level2
+﻿title: Nivel2_Intro
 ---
-This is an example of a Yarn Spinner script. Write your dialogue here!
+Narrador: Siente el calor, Sacha.
+Narrador: Esta es la cicatriz del bosque.
+Narrador: Aquí es donde la tierra recuerda la guerra.
+
+Narrador: La ira no es más que dolor que se ha endurecido.
+Narrador: No dejes que el polvo te ciegue.
+===
+title: Nivel2_Hacha
+---
+Narrador: En el centro del camino, algo espera.
+Narrador: No es un arma cualquiera.
+Narrador: Es pesada.
+Narrador: Antigua.
+
+Narrador: El Hacha del Arquitecto.
+Narrador: Con ella se tallaron cunas y se partieron montañas.
+
+Narrador: Recuerda esto, pequeño.
+Narrador: Un golpe puede construir un refugio...
+Narrador: o derribarlo sobre tu cabeza.
+
+===
+
+title: Nivel2_Gigante
+---
+Narrador: El camino termina en un muro.
+Narrador: Rocas apiladas por el pánico.
+
+Narrador: Detrás, observa el Viejo Guardián de Piedra.
+Narrador: No avanza.
+Narrador: No ataca.
+
+Narrador: Está atrapado en su propia fuerza.
+Narrador: Espera a alguien que ponga orden en el caos.
+
+Narrador: ¿Qué harás?
+
+===
+
+title: Nivel2_Decision
+---
+<<choice>>
+    <<option "Golpear el muro con fuerza">>
+        <<jump Nivel2_Destruccion>>
+    <<option "Buscar otra forma de abrir el paso">>
+        <<jump Nivel2_Construccion>>
+<<endchoice>>
+===
+
+title: Nivel2_Destruccion
+---
+Narrador: La fuerza responde a la fuerza.
+Narrador: La piedra se rompe.
+Narrador: El polvo lo cubre todo.
+
+Narrador: El camino se abre.
+Narrador: Pero algo se pierde en el estruendo.
+
+Narrador: El Gigante aparta la mirada.
+Narrador: Has roto lo que intentaba proteger.
+
+===
+
+title: Nivel2_Construccion
+---
+Narrador: No todo obstáculo necesita ser destruido.
+Narrador: A veces, solo espera ser entendido.
+
+Narrador: Las piedras se mueven.
+Narrador: Se ordenan.
+Narrador: Encuentran su lugar.
+
+Narrador: Has creado un paso donde solo había un muro.
+Narrador: La piedra reconoce al maestro.
+
+Narrador: El Gigante asiente.
+Narrador: Su tarea ha terminado.
+
+===
+
+title: Nivel2_Fin
+---
+Narrador: La ira se apaga.
+Narrador: Pero la ceniza queda.
+
+Narrador: Has sobrevivido a la fuerza del bosque.
+Narrador: Ahora viene lo difícil.
+
+Narrador: Vuelve a casa.
+Narrador: Prepárate para la oscuridad.
 ===
