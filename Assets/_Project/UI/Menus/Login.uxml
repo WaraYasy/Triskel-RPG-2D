@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="Login.uss" />
+    <ui:VisualElement name="LoginOverlay" class="login-overlay" style="display: flex;">
+        <ui:VisualElement name="LoginPanel" class="login-panel">
+            <ui:Label text="INICIAR SESION" name="LoginTitle" class="login-title" />
+
+            <ui:VisualElement name="UserSection" class="login-section">
+                <ui:Label text="Usuario" name="UserLabel" class="login-label" />
+                <ui:TextField name="UserInput" class="login-input" max-length="20" />
+            </ui:VisualElement>
+
+            <ui:Button text="Entrar" name="LoginButton" class="login-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
