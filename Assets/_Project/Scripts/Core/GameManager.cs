@@ -20,10 +20,12 @@ public class GameManager : MonoBehaviour
     [Header("Estado del Juego")]
     [SerializeField] private int moralScore = 0;
     [SerializeField] private int currentLevel = 1;
+    [SerializeField] private string lastExitUsed = ""; // Rastrae qué puerta usamos
 
     // ===== PROPIEDADES PÚBLICAS =====
     public int MoralScore => moralScore;
     public int CurrentLevel => currentLevel;
+    public string LastExitUsed { get => lastExitUsed; set => lastExitUsed = value; }
 
     #region Unity Lifecycle
 

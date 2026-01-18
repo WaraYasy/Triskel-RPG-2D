@@ -26,7 +26,7 @@ public class LevelLightingController : MonoBehaviour
     private void Start()
     {
         // Buscar todas las luces globales en la escena
-        sceneLights = FindObjectsOfType<Light2D>();
+        sceneLights = FindObjectsByType<Light2D>(FindObjectsSortMode.None);
         
         // Detectar escena actual
         string currentScene = SceneManager.GetActiveScene().name;

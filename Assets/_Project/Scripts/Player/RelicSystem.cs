@@ -26,7 +26,6 @@ public class RelicSystem : MonoBehaviour
     
     [Header("Habilidades")]
     [SerializeField] private float abilityCooldown = 2f;
-    [SerializeField] private float lilioDetectionRadius = 3f;
     [SerializeField] private SpriteRenderer playerSprite; // Para invisibilidad del Manto
     [SerializeField] private GameObject lilioLightPrefab; // Prefab de luz del Lirio
     
