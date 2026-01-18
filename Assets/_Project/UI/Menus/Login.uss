@@ -16,7 +16,7 @@
 }
 
 .login-title {
-    font-size: 60px;
+    font-size: 55px;
     color: rgb(20, 18, 15);
     -unity-font-style: normal;
     margin-bottom: 30px;
@@ -87,4 +87,19 @@
 .login-button:active {
     background-color: rgb(40, 70, 80);
     scale: 0.95;
+}
+
+.error-label {
+    font-size: 24px;
+    color: rgb(200, 60, 60);
+    background-color: rgba(200, 60, 60, 0.15);
+    border-width: 2px;
+    border-color: rgb(200, 60, 60);
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin-top: 15px;
+    -unity-text-align: middle-center;
+    white-space: normal;
+    max-width: 90%;
+    -unity-font-definition: url("project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
 }
