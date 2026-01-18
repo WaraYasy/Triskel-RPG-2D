@@ -17,13 +17,14 @@
 }
 
 .pause-title {
-    font-size: 90px;
+    font-size: 95px;
     color: rgb(0, 0, 0);
     -unity-font-style: normal;
     margin-bottom: 50px;
     -unity-text-align: middle-center;
     margin-top: 60px;
     -unity-font-definition: url("project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
+    letter-spacing: 5px;
 }
 
 .pause-button {
@@ -31,9 +32,9 @@
     height: 80px;
     font-size: 40px;
     color: rgb(255, 255, 255);
-    background-color: rgb(59, 26, 13);
+    background-color: rgb(35, 75, 90);
     border-width: 3px;
-    border-color: rgb(150, 140, 120);
+    border-color: rgb(127, 179, 192);
     border-radius: 10px;
     margin-bottom: 15px;
     -unity-text-align: middle-center;
@@ -42,12 +43,13 @@
 }
 
 .pause-button:hover {
-    background-color: rgb(180, 120, 40);
-    border-color: rgb(230, 200, 120);
+    background-color: rgb(232, 214, 107);
+    border-color: rgb(255, 240, 150);
+    color: rgb(30, 30, 30);
     scale: 1.05;
 }
 
 .pause-button:active {
-    background-color: rgb(30, 15, 5);
+    background-color: rgb(40, 70, 80);
     scale: 0.95;
 }

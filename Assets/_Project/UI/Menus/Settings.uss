@@ -43,7 +43,7 @@
 }
 
 .settings-slider .unity-base-slider__dragger {
-    background-color: rgb(180, 120, 40);
+    background-color: rgb(35, 75, 90);
     border-radius: 8px;
     width: 20px;
     height: 20px;
@@ -87,21 +87,22 @@
     height: 45px;
     font-size: 35px;
     color: rgb(255, 255, 255);
-    background-color: rgb(59, 26, 13);
+    background-color: rgb(35, 75, 90);
     border-width: 3px;
-    border-color: rgb(150, 140, 120);
+    border-color: rgb(127, 179, 192);
     border-radius: 10px;
     margin-top: 20px;
     -unity-text-align: middle-center;
 }
 
 .settings-button:hover {
-    background-color: rgb(180, 120, 40);
-    border-color: rgb(230, 200, 120);
+    background-color: rgb(232, 214, 107);
+    border-color: rgb(255, 240, 150);
+    color: rgb(30, 30, 30);
     scale: 1.05;
 }
 
 .settings-button:active {
-    background-color: rgb(30, 15, 5);
+    background-color: rgb(40, 70, 80);
     scale: 0.95;
 }

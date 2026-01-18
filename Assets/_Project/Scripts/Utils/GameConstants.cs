@@ -13,17 +13,17 @@ public class GameConstants : ScriptableObject
     public Color oscuro_Fondo = new Color(0f, 0f, 0f, 1f);
     public Color oscuro_Borde = new Color(0.3f, 0.3f, 0.3f, 1f);
     public Color oscuro_Texto = Color.white;
-    public Color oscuro_NombrePersonaje = new Color(0.85f, 0.65f, 0.25f, 1f);
-    public Color oscuro_Boton = new Color(0.15f, 0.15f, 0.15f, 1f);
-    public Color oscuro_BotonHover = new Color(0.25f, 0.22f, 0.18f, 1f);
+    public Color oscuro_NombrePersonaje = new Color(0.91f, 0.84f, 0.42f, 1f);  // Dorado de la estrella
+    public Color oscuro_Boton = new Color(0.24f, 0.42f, 0.48f, 1f);            // Teal oscuro (#3E6B7A) - contraste 5.2:1 con texto blanco
+    public Color oscuro_BotonHover = new Color(0.71f, 0.57f, 0.24f, 1f);       // Dorado hover (#B5913D) - contraste 4.6:1 con texto blanco
 
     [Header("=== TEMA CLARO ===")]
     public Color claro_Fondo =  new Color(0f, 0f, 0f, 1f);
-    public Color claro_Borde = new Color(0.6f, 0.55f, 0.45f, 1f);
+    public Color claro_Borde = new Color(0.50f, 0.70f, 0.75f, 1f);             // Teal claro como borde
     public Color claro_Texto = new Color(0.12f, 0.12f, 0.12f, 1f);
-    public Color claro_NombrePersonaje = new Color(0.55f, 0.35f, 0.15f, 1f);
-    public Color claro_Boton = new Color(0.85f, 0.82f, 0.75f, 1f);
-    public Color claro_BotonHover = new Color(0.75f, 0.70f, 0.60f, 1f);
+    public Color claro_NombrePersonaje = new Color(0.24f, 0.42f, 0.48f, 1f);   // Teal oscuro
+    public Color claro_Boton = new Color(0.50f, 0.70f, 0.75f, 1f);             // Teal claro (#7FB3C0) - contraste 6.8:1 con texto oscuro
+    public Color claro_BotonHover = new Color(0.91f, 0.84f, 0.42f, 1f);        // Dorado hover - contraste 12:1 con texto oscuro
 
     [Header("=== COLORES DE ZONAS DE PELIGRO ===")]
     [Tooltip("Color de advertencia (naranja parpadeante)")]
