@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Triskel.Core;
 
 /// <summary>
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     [Header("Estado del Juego")]
     [SerializeField] private int moralScore = 0;
     [SerializeField] private int currentLevel = 1;
+    [SerializeField] private string hubSceneName = "Hub"; // Nombre de la escena del Hub
     [SerializeField] private string lastExitUsed = ""; // Rastrae qué puerta usamos
 
     // ===== PROPIEDADES PÚBLICAS =====
@@ -149,6 +151,13 @@ public class GameManager : MonoBehaviour
         int diaryCount = diaryManager?.GetUnlockedEntries().Count ?? 0;
 
         Debug.Log($"[GameManager] ✓ Partida cargada: Moral={moralScore}, Nivel={currentLevel}, Items={itemCount}, Entradas={diaryCount}");
+
+        // Tras cargar los datos, enviamos al jugador al HUB
+        if (!string.IsNullOrEmpty(hubSceneName))
+        {
+            Debug.Log($"[GameManager] Volviendo al Hub: {hubSceneName}");
+            SceneManager.LoadScene(hubSceneName);
+        }
     }
 
     /// <summary>

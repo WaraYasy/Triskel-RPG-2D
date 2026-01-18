@@ -1,17 +1,24 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-/// <summary>
-/// LevelExit - Gestiona el cambio a una escena específica.
-/// </summary>
 public class LevelExit : MonoBehaviour
 {
-    [Header("Configuración")]
+    [Header("Tipo de Transición")]
+    [Tooltip("Si está marcado, ignorará 'Scene To Load' y cargará 'Cuadrante + Nivel Actual'.")]
+    [SerializeField] private bool useLevelProgression = false;
+    
+    [Tooltip("Si quieres avanzar al siguiente nivel al cruzar esta puerta, marca esto.")]
+    [SerializeField] private bool incrementLevelOnExit = false;
+
+    [Header("Escena Fija (si no usas Progresión)")]
     [Tooltip("Nombre de la escena a la que quieres ir (ej: DentroDelHub2)")]
-    [SerializeField] private string sceneToLoad = "DentroDelHub2";
+    [SerializeField] private string sceneToLoad = "";
+
+    [Header("Punto de Aparición")]
     [Tooltip("ID de aparición en la siguiente escena (ej: Puerta_Casa)")]
     [SerializeField] private string targetSpawnID = "";
     
+    [Header("Ajustes")]
     [SerializeField] private string playerTag = "Player";
     [SerializeField] private bool saveOnExit = true;
 
@@ -19,25 +26,33 @@ public class LevelExit : MonoBehaviour
     {
         if (other.CompareTag(playerTag))
         {
-            // Guardar el ID de la puerta en el GameManager para que la siguiente escena sepa dónde ponernos
-            if (GameManager.Instance != null)
+            if (GameManager.Instance == null) return;
+
+            // 1. ¿Debemos avanzar de nivel? (Ej: al terminar el nivel 1)
+            if (incrementLevelOnExit)
             {
-                GameManager.Instance.LastExitUsed = targetSpawnID;
-                
-                if (saveOnExit)
-                {
-                    GameManager.Instance.SaveGame();
-                }
+                GameManager.Instance.NextLevel();
             }
+
+            // 2. Guardar el ID de aparición
+            GameManager.Instance.LastExitUsed = targetSpawnID;
             
-            if (!string.IsNullOrEmpty(sceneToLoad))
+            if (saveOnExit) GameManager.Instance.SaveGame();
+
+            // 3. Determinar qué escena cargar
+            string finalScene = sceneToLoad;
+
+            if (useLevelProgression)
             {
-                Debug.Log($"[LevelExit] Guardando salida: {targetSpawnID}. Cargando escena: {sceneToLoad}");
-                SceneManager.LoadScene(sceneToLoad);
+                // Si usamos progresión, la escena será "Cuadrante" + el nivel actual
+                finalScene = "Cuadrante" + GameManager.Instance.CurrentLevel;
             }
-            else
+
+            // 4. Cargar la escena
+            if (!string.IsNullOrEmpty(finalScene))
             {
-                Debug.LogWarning("[LevelExit] ¡No has puesto nombre de escena en Scene To Load!");
+                Debug.Log($"[LevelExit] Transición a: {finalScene}");
+                SceneManager.LoadScene(finalScene);
             }
         }
     }
