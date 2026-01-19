@@ -59,9 +59,6 @@
     width: 60px;
     height: 60px;
 
-    /* El icono no debe capturar clics (deja pasar al botón) */
-    picking-mode: Ignore;
-
     /* Imagen del item (se asigna desde C#) */
     -unity-background-scale-mode: scale-to-fit;
 }

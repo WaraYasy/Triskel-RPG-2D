@@ -1,0 +1,172 @@
+﻿title: FINAL_ENTRADA
+---
+NARRADOR:
+Ya está.
+El ciclo está completo.
+
+NARRADOR:
+Tienes las herramientas de los antiguos.
+Sacha...
+pase lo que pase ahí fuera...
+gracias por devolver el fuego a este hogar.
+
+NARRADOR:
+La puerta se abre sola.
+El Espíritu te espera.
+No lleves armas.
+Lleva tus decisiones.
+
+-> Ir al claro
+===
+
+title: FINAL_CLARO
+---
+NARRADOR:
+El claro es perfecto.
+Hierba blanca.
+Un cielo que no sabe decidirse entre el caos y la belleza.
+
+ESPIRITU:
+¿POR QUÉ HAS VUELTO, PEQUEÑO INTRUSO?
+¿CREES QUE PUEDES DOMINARME?
+
+NARRADOR:
+No hables.
+Aguanta.
+Demuéstrale quién eres.
+
+-> Resistir
+===
+
+title: FINAL_TRISTEZA
+---
+NARRADOR:
+El Espíritu se vuelve azul.
+La tristeza cae como lluvia lenta.
+
+<<if $ayudo_tristeza>>
+    NARRADOR:
+    Ellos recuerdan tu calidez.
+    El dolor no puede tocarte ahora.
+<<else>>
+    NARRADOR:
+    Estás solo contra la lluvia.
+    Corre, Sacha.
+<<endif>>
+
+-> Seguir
+===
+
+title: FINAL_IRA
+---
+NARRADOR:
+El rojo lo invade todo.
+La ira rompe el suelo bajo tus pies.
+
+<<if $ayudo_ira>>
+    NARRADOR:
+    La montaña te devuelve el favor.
+    La piedra te protege.
+<<else>>
+    NARRADOR:
+    La violencia genera violencia.
+    Aguanta el golpe.
+<<endif>>
+
+-> Seguir
+===
+
+title: FINAL_MIEDO
+---
+NARRADOR:
+La luz desaparece.
+El miedo se arrastra por la tierra.
+
+<<if $ayudo_miedo>>
+    NARRADOR:
+    La verdad ilumina tus pasos.
+    No hay nada que temer.
+<<else>>
+    NARRADOR:
+    Te escondiste en las sombras.
+    Ahora las sombras vienen a por ti.
+<<endif>>
+
+-> Veredicto
+    <<jump FINAL_VEREDICTO>>
+===
+
+title: FINAL_VEREDICTO
+---
+NARRADOR:
+Todo se detiene.
+El Espíritu flota frente a ti.
+Agotado.
+===
+title: FINAL_0
+---
+NARRADOR:
+Has silenciado al bosque, Sacha.
+Confundiste la paz con el silencio.
+
+NARRADOR:
+No hay amenazas.
+Pero tampoco hay vida.
+
+NARRADOR:
+Eres el rey
+de un reino de cenizas.
+===
+
+title: FINAL_1
+---
+NARRADOR:
+Una tregua.
+Eso es todo lo que tenemos.
+
+NARRADOR:
+El bosque te tolera,
+pero no te ama.
+
+NARRADOR:
+Cierra la puerta.
+Será un invierno largo.
+
+===
+
+title: FINAL_2
+---
+NARRADOR:
+Has traído el equilibrio, Sacha.
+La mayoría de las heridas han cerrado.
+
+NARRADOR:
+Aún queda una sombra.
+Pero es suficiente.
+
+NARRADOR:
+Eres un buen Guardián.
+
+===
+
+title: FINAL_3
+---
+NARRADOR:
+Mirad.
+Ya no hay diferencia
+entre el Guardián y el Bosque.
+
+NARRADOR:
+Has escuchado cada llanto.
+Has iluminado cada miedo.
+
+NARRADOR:
+La primavera eterna
+comienza hoy.
+
+NARRADOR:
+Descansa, Sacha.
+Lo has conseguido todo.
+
+===
+
