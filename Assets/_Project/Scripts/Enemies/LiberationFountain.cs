@@ -11,7 +11,11 @@ public class LiberationFountain : MonoBehaviour
     [SerializeField] private int ghostsLiberated = 0;
     
     [Header("Efectos")]
+    [SerializeField] private Animator animator;
     [SerializeField] private ParticleSystem liberationParticles;
+
+    private readonly int liberateParam = Animator.StringToHash("Liberate");
+    private readonly int activatedParam = Animator.StringToHash("Activated");
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -46,6 +50,11 @@ public class LiberationFountain : MonoBehaviour
             ghostsLiberated = 0; // Reiniciar o lo que prefieras
         }
 
+        if (animator != null)
+        {
+            animator.SetTrigger(liberateParam);
+        }
+
         if (liberationParticles != null)
         {
             liberationParticles.Play();
@@ -58,6 +67,11 @@ public class LiberationFountain : MonoBehaviour
         {
             GameManager.Instance.ModifyMoral(1);
             Debug.Log("[Fountain] ¡4 fantasmas liberados! +1 Moral concedida.");
+        }
+
+        if (animator != null)
+        {
+            animator.SetTrigger(activatedParam);
         }
     }
 }
