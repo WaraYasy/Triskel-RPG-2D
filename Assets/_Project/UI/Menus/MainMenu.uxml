@@ -2,7 +2,7 @@
     <Style src="project://database/Assets/_Project/UI/Menus/MainMenu.uss?fileID=7433441132597879392&amp;guid=5e9d0672d689db7448b9509a2df5de84&amp;type=3#MainMenu" />
     <ui:VisualElement name="MainMenuOverlay" class="main-menu-overlay" style="background-image: url(&quot;project://database/Assets/_Project/Sprites/UI/Common/Backgrounds/bg_main_menu.png?fileID=2800000&amp;guid=5c782f566e36c0b419cd306bdb0dafe1&amp;type=3#bg_main_menu&quot;); -unity-background-scale-mode: scale-and-crop; background-color: rgb(0, 0, 0);">
         <ui:VisualElement name="MainMenuPanel" class="main-menu-panel" style="background-image: none; justify-content: flex-end;">
-            <ui:Label name="WelcomeLabel" class="main-menu-welcome" style="display: none;" />
+            <ui:Label name="WelcomeLabel" class="main-menu-welcome" style="display: none; margin-bottom: 10px;" />
             <ui:VisualElement name="ButtonContainer" class="button-container" style="height: 204px; width: 355px;">
                 <ui:Button text="Iniciar Sesión" name="LoginButton" class="main-menu-button" />
                 <ui:Button text="Salir" name="ExitButton" class="main-menu-button-secondary" />

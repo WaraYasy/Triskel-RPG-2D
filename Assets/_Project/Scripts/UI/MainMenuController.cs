@@ -34,8 +34,11 @@ namespace Triskel.UI
         {
             InitializeMainMenu();
             InitializeLoginPanel();
+        }
 
-            // Suscribirse a eventos del API
+        private void Start()
+        {
+            // Suscribirse a eventos del API (en Start para asegurar que el singleton exista)
             if (TriskelAPIClient.Instance != null)
             {
                 TriskelAPIClient.Instance.OnLoggedIn += OnLoggedIn;
@@ -239,6 +242,10 @@ namespace Triskel.UI
 
         private void ShowLogin()
         {
+            // Poner el Login encima del MainMenu
+            if (loginDocument != null)
+                loginDocument.sortingOrder = mainMenuDocument.sortingOrder + 1;
+
             if (loginOverlay != null)
                 loginOverlay.style.display = DisplayStyle.Flex;
         }
