@@ -16,6 +16,7 @@ public class GhostLiberation : MonoBehaviour
     [SerializeField] private bool useParticles = false;          // Si quieres partículas
     
     private bool isBeingLiberated = false;
+    public bool IsBeingLiberated => isBeingLiberated; // Propiedad pública
     private GhostAI ghostAI;
 
     private void Awake()

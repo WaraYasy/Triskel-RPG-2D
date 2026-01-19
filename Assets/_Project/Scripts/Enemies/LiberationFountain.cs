@@ -28,12 +28,14 @@ public class LiberationFountain : MonoBehaviour
 
     private void LiberateGhost(GameObject ghostObj)
     {
-        // Intentar obtener el script de liberación para el efecto visual si existe
+        // Intentar obtener el script de liberación
         GhostLiberation liberation = ghostObj.GetComponent<GhostLiberation>();
         
+        // Evitar procesar el mismo fantasma si ya está en proceso de liberación
+        if (liberation != null && liberation.IsBeingLiberated) return;
+
         if (liberation != null)
         {
-            // Llamamos a un método de liberación que no dé moral directamente
             liberation.LiberateAtFountain();
         }
         else
@@ -47,12 +49,15 @@ public class LiberationFountain : MonoBehaviour
         if (ghostsLiberated >= ghostsRequiredForMoral)
         {
             AwardMoral();
-            ghostsLiberated = 0; // Reiniciar o lo que prefieras
+            ghostsLiberated = 0;
         }
-
-        if (animator != null)
+        else
         {
-            animator.SetTrigger(liberateParam);
+            // Solo disparamos la animación normal si NO hemos llegado al tope
+            if (animator != null)
+            {
+                animator.SetTrigger(liberateParam);
+            }
         }
 
         if (liberationParticles != null)
