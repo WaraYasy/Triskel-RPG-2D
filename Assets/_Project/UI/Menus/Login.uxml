@@ -5,7 +5,7 @@
             <ui:Label text="INICIAR SESIÓN" name="LoginTitle" class="login-title" style="margin-top: 60px; width: 90%; margin-bottom: 30px; white-space: normal; -unity-font-style: normal;" />
             <ui:VisualElement name="UserSection" class="login-section">
                 <ui:Label text="Usuario" name="UserLabel" class="login-label" />
-                <ui:TextField name="UserInput" max-length="20" class="login-input" />
+                <ui:TextField name="UserInput" max-length="20" class="login-input" style="-unity-text-outline-color: rgba(0, 0, 0, 0);" />
             </ui:VisualElement>
             <ui:Button text="Entrar" name="LoginButton" class="login-button" style="background-color: rgb(18, 73, 91); margin-top: 20px;" />
             <ui:Label name="ErrorLabel" class="error-label" style="display: none; font-size: 24px;" />
