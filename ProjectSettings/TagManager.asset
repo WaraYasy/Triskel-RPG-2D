@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - LirioLight
+  - Ghost
   layers:
   - Default
   - TransparentFX

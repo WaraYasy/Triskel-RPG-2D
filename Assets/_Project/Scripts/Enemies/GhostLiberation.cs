@@ -8,8 +8,6 @@ using UnityEngine;
 public class GhostLiberation : MonoBehaviour
 {
     [Header("Configuración de Liberación")]
-    [SerializeField] private float embraceDistance = 0.8f;       // Distancia para "abrazar"
-    [SerializeField] private float freezeDuration = 2f;          // Tiempo que congela al player
     [SerializeField] private float liberationDuration = 2.5f;    // Duración del efecto de liberación
     [SerializeField] private float ascendHeight = 4f;            // Altura que asciende
     
@@ -25,25 +23,13 @@ public class GhostLiberation : MonoBehaviour
         ghostAI = GetComponent<GhostAI>();
     }
 
-    private void Update()
+    /// <summary>
+    /// Método llamado por la LiberationFountain para liberar al fantasma.
+    /// </summary>
+    public void LiberateAtFountain()
     {
         if (isBeingLiberated) return;
         
-        // Buscar player
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player == null) return;
-        
-        // Verificar distancia
-        float distance = Vector2.Distance(transform.position, player.transform.position);
-        
-        if (distance <= embraceDistance)
-        {
-            TriggerLiberation(player);
-        }
-    }
-
-    private void TriggerLiberation(GameObject player)
-    {
         isBeingLiberated = true;
         
         // Desactivar IA del fantasma
@@ -51,46 +37,13 @@ public class GhostLiberation : MonoBehaviour
         {
             ghostAI.enabled = false;
         }
-        
-        // Congelar player
-        var playerController = player.GetComponent<PlayerController>();
-        if (playerController != null)
-        {
-            StartCoroutine(FreezePlayer(playerController, freezeDuration));
-        }
-        
-        // Incrementar moral
-        if (GameManager.Instance != null)
-        {
-            GameManager.Instance.ModifyMoral(1);
-        }
-        
+
         // Efecto de liberación
         StartCoroutine(LiberationEffect());
         
-        Debug.Log("👻 ¡Fantasma liberado! +1 Moral");
+        Debug.Log("👻 ¡Fantasma liberado en la fuente!");
     }
 
-    private IEnumerator FreezePlayer(PlayerController player, float duration)
-    {
-        // Guardar estado original
-        bool wasEnabled = player.enabled;
-        
-        // Desactivar control
-        player.enabled = false;
-        
-        // Opcional: Efecto visual de freeze
-        var rb = player.GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-            rb.linearVelocity = Vector2.zero;
-        }
-        
-        yield return new WaitForSeconds(duration);
-        
-        // Restaurar control
-        player.enabled = wasEnabled;
-    }
 
     private IEnumerator LiberationEffect()
     {
@@ -166,10 +119,4 @@ public class GhostLiberation : MonoBehaviour
         return particlesObj;
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        // Visualizar área de abrazo
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, embraceDistance);
-    }
 }
