@@ -22,9 +22,6 @@ namespace Triskel.UI
     public class DiaryUI : MonoBehaviour
     {
         [Header("Referencias")]
-        [Tooltip("Tecla para abrir/cerrar el diario")]
-        [SerializeField] private KeyCode toggleKey = KeyCode.J;
-
         // Referencias UI Toolkit
         private UIDocument uiDocument;
         private VisualElement root;

@@ -342,7 +342,7 @@ namespace Triskel.UI.HUD
             Debug.Log($"[InventoryUI] Item seleccionado: {item.displayName} en slot {slotIndex}");
 
             // Integración con RelicSystem - Seleccionar reliquia según slot
-            RelicSystem relicSystem = FindObjectOfType<RelicSystem>();
+            RelicSystem relicSystem = FindFirstObjectByType<RelicSystem>();
             if (relicSystem != null)
             {
                 // Mapear slot index a tipo de reliquia
