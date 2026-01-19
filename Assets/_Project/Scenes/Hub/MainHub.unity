@@ -10468,10 +10468,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArrowSalida
       objectReference: {fileID: 0}
-    - target: {fileID: 7998885337925890859, guid: 97847a521aea20a45b1462090daa1a94, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8073733928217052245, guid: 97847a521aea20a45b1462090daa1a94, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.99
