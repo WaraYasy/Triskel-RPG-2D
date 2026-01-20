@@ -10,26 +10,11 @@ title: Hub2
 position: 388,-176
 ---
 Guardian: Tus piernas tiemblan. Es normal. El miedo pesa. Pero no puedes quedarte ahí tirado. Levántate.
-
-<<if $isMobile>>
-    <<jump mov_mobile>>
-<<else>>
-    <<jump mov_pc>>
-<<endif>>
-
-Guardian: El bosque es un lugar peligroso para alguien como tú.
 ===
-title: mov_mobile
+title: Hub_Instrucciones
 position: 388,-176
 ---
 Tutorial: Usa el control táctil para moverte.
-<<wait 0.1>>
-<<jump Hub2>>
-===
-title: mov_pc
-position: 388,-176
----
-Tutorial: Usa WASD o las flechas para moverte.
 <<wait 0.1>>
 <<jump Hub2>>
 ===
