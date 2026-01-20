@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5410134978316698649}
   m_Layer: 0
   m_Name: Ghost
-  m_TagString: Untagged
+  m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,12 +94,12 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Offset: {x: 0.025346184, y: 0}
+  m_Size: {x: 1.3955935, y: 1.3955935}
   m_Direction: 0
 --- !u!212 &1327596367680413405
 SpriteRenderer:
@@ -193,6 +193,8 @@ MonoBehaviour:
   moveSpeed: 5
   detectionRadius: 7
   stopDistance: 0.7
+  damageAmount: 1
+  damageCooldown: 1.5
   animator: {fileID: 0}
 --- !u!114 &5410134978316698649
 MonoBehaviour:
@@ -206,8 +208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a796631c0d09c94a80d68d64698c7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  embraceDistance: 0.8
-  freezeDuration: 2
   liberationDuration: 2.5
   ascendHeight: 4
   liberationColor: {r: 0, g: 1, b: 1, a: 1}

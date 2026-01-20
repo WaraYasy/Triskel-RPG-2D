@@ -32,7 +32,6 @@ namespace Triskel.API
         [SerializeField] private string baseURL = "http://localhost:8000";
 
         [Header("Debug")]
-        [SerializeField] private bool logRequests = true;
 
         // ==========================================
         // ESTADO

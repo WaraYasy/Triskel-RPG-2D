@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 316797970781899091}
   - component: {fileID: 8980077758569696469}
   - component: {fileID: 8170739509240534764}
+  - component: {fileID: 2234910189048950744}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -70,7 +71,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &3547479493384959020
 CircleCollider2D:
@@ -151,7 +152,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 10
   m_Sprite: {fileID: 1313336827645281769, guid: 84bb255a3d84d9d4eaf8f16408483bbb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -197,7 +198,6 @@ MonoBehaviour:
   colorHacha: {r: 1, g: 0, b: 0, a: 1}
   colorManto: {r: 0.5, g: 0, b: 0.5, a: 1}
   abilityCooldown: 2
-  lilioDetectionRadius: 3
   playerSprite: {fileID: 1740344116099198231}
   lilioLightPrefab: {fileID: 5831536546675441728, guid: f1282937b513c224d99ecb0f9c9ca557, type: 3}
 --- !u!95 &4352505960213510836
@@ -415,9 +415,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   footstepSounds:
-  - {fileID: 8300000, guid: ba7ad250d14daf443ae12275147124fc, type: 3}
-  - {fileID: 8300000, guid: be07949651598d0479dd6557cc3bb7f1, type: 3}
-  - {fileID: 8300000, guid: 74453f97fa18cb348a98837baad7af2b, type: 3}
+  - {fileID: 8300000, guid: 003b032dfa5d9fc4087052659a0eb6af, type: 3}
+  - {fileID: 8300000, guid: 6dce3131fe195fd469392c6a5b618e6a, type: 3}
+  - {fileID: 8300000, guid: 2c3db39b517f793469f526873fea99ef, type: 3}
   volumeMin: 0.8
   volumeMax: 1
   pitchMin: 0.95
@@ -449,7 +449,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &8170739509240534764
@@ -467,7 +467,31 @@ MonoBehaviour:
   scenesWithDarkness:
   - Cuadrante1
   playerLight: {fileID: 8113486159504391756}
-  globalLight: {fileID: 0}
+  darknessIntensity: 0.2
+  normalIntensity: 1
+--- !u!114 &2234910189048950744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881880895286324670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 475f570dccbc2384a8cb1c4c5e08f8fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  playerSprite: {fileID: 1740344116099198231}
+  invulnerabilityDuration: 1.5
+  hitColor: {r: 1, g: 0, b: 0, a: 1}
+  knockbackForce: 10
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPlayerDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7128821115742827991
 GameObject:
   m_ObjectHideFlags: 0
