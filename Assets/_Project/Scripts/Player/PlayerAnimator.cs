@@ -8,7 +8,7 @@ using UnityEngine;
 public class PlayerAnimator : MonoBehaviour
 {
     private Animator animator;
-    private PlayerController playerController;
+    private Rigidbody2D rb;
     
     // Parámetros del Animator
     private readonly int speedParam = Animator.StringToHash("Speed");
@@ -22,7 +22,15 @@ public class PlayerAnimator : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        playerController = GetComponent<PlayerController>();
+        rb = GetComponent<Rigidbody2D>();
+    }
+    
+    private void Start()
+    {
+        // Inicializar con dirección hacia abajo (frente)
+        animator.SetFloat(lastHorizontalParam, 0f);
+        animator.SetFloat(lastVerticalParam, -1f);
+        animator.SetFloat(speedParam, 0f);
     }
 
     private void Update()
@@ -32,36 +40,38 @@ public class PlayerAnimator : MonoBehaviour
 
     private void UpdateAnimation()
     {
-        if (playerController == null) return;
+        if (animator == null || rb == null) return;
         
-        // Obtener dirección de movimiento del PlayerController
-        Vector2 moveDirection = playerController.GetLastMoveDirection();
-        float speed = moveDirection.magnitude;
+        // Obtener velocidad REAL del Rigidbody
+        Vector2 velocity = rb.linearVelocity;
+        float speed = velocity.magnitude;
         
-        // Si está en movimiento, actualizar dirección
-        if (speed > 0.01f)
+        // Si está en movimiento (velocidad > umbral)
+        if (speed > 0.1f)
         {
+            // Normalizar dirección
+            Vector2 moveDirection = velocity.normalized;
             lastMoveDirection = moveDirection;
             
-            // Parámetros de movimiento
-            animator.SetFloat(horizontalParam, moveDirection.x);
-            animator.SetFloat(verticalParam, moveDirection.y);
-            
-            // Actualizar última dirección
+            // IMPORTANTE: Actualizar PRIMERO los Last values
             animator.SetFloat(lastHorizontalParam, moveDirection.x);
             animator.SetFloat(lastVerticalParam, moveDirection.y);
+            
+            // Luego los valores actuales
+            animator.SetFloat(horizontalParam, moveDirection.x);
+            animator.SetFloat(verticalParam, moveDirection.y);
         }
         else
         {
-            // Si está quieto, mantener la dirección en 0
+            // Si está quieto
             animator.SetFloat(horizontalParam, 0);
             animator.SetFloat(verticalParam, 0);
             
-            // Pero mantener la última dirección para idle
-            // (ya está guardada en lastHorizontal/lastVertical)
+            // NO tocar Last values aquí - mantener los últimos conocidos
         }
         
-        // Parámetro de velocidad (0 = idle, >0 = andando)
+        // Actualizar velocidad AL FINAL
         animator.SetFloat(speedParam, speed);
     }
 }
+

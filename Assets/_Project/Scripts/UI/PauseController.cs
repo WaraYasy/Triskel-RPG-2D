@@ -1,0 +1,199 @@
+using UnityEngine;
+using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
+
+namespace Triskel.UI
+{
+    /// <summary>
+    /// Controlador del menu de pausa.
+    /// </summary>
+    public class PauseController : MonoBehaviour
+    {
+        [Header("Referencias")]
+        [SerializeField] private UIDocument pauseDocument;
+        [SerializeField] private UIDocument settingsDocument;
+
+        [Header("Escenas")]
+        [SerializeField] private string mainMenuSceneName = "MainMenu";
+
+        // Elementos UI
+        private VisualElement pauseOverlay;
+        private Button continueButton;
+        private Button restartButton;
+        private Button settingsButton;
+        private Button quitButton;
+
+        // Estado
+        private bool isPaused;
+        public bool IsPaused => isPaused;
+
+        // Eventos
+        public event System.Action OnPause;
+        public event System.Action OnResume;
+
+        private void OnEnable()
+        {
+            InitializePauseMenu();
+        }
+
+        private void OnDisable()
+        {
+            if (continueButton != null) continueButton.clicked -= OnContinueClicked;
+            if (restartButton != null) restartButton.clicked -= OnRestartClicked;
+            if (settingsButton != null) settingsButton.clicked -= OnSettingsClicked;
+            if (quitButton != null) quitButton.clicked -= OnQuitClicked;
+        }
+
+        private void Update()
+        {
+            // Detectar tecla Escape para pausar/despausar
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (isPaused)
+                    Resume();
+                else
+                    Pause();
+            }
+        }
+
+        private void InitializePauseMenu()
+        {
+            if (pauseDocument == null)
+                pauseDocument = GetComponent<UIDocument>();
+
+            if (pauseDocument == null)
+            {
+                Debug.LogError("[PauseController] UIDocument no asignado");
+                return;
+            }
+
+            var root = pauseDocument.rootVisualElement;
+
+            // Obtener referencias
+            pauseOverlay = root.Q<VisualElement>("PauseOverlay");
+            continueButton = root.Q<Button>("ContinueButton");
+            restartButton = root.Q<Button>("RestartButton");
+            settingsButton = root.Q<Button>("SettingsButton");
+            quitButton = root.Q<Button>("QuitButton");
+
+            // Configurar eventos
+            if (continueButton != null) continueButton.clicked += OnContinueClicked;
+            if (restartButton != null) restartButton.clicked += OnRestartClicked;
+            if (settingsButton != null) settingsButton.clicked += OnSettingsClicked;
+            if (quitButton != null) quitButton.clicked += OnQuitClicked;
+
+            // Ocultar inicialmente
+            Hide();
+        }
+
+        #region Public Methods
+
+        public void Pause()
+        {
+            if (isPaused) return;
+
+            isPaused = true;
+            Time.timeScale = 0f;
+            Show();
+            OnPause?.Invoke();
+
+            Debug.Log("[PauseController] Juego pausado");
+        }
+
+        public void Resume()
+        {
+            if (!isPaused) return;
+
+            isPaused = false;
+            Time.timeScale = 1f;
+            Hide();
+            HideSettings();
+            OnResume?.Invoke();
+
+            Debug.Log("[PauseController] Juego reanudado");
+        }
+
+        public void Show()
+        {
+            if (pauseOverlay != null)
+                pauseOverlay.style.display = DisplayStyle.Flex;
+        }
+
+        public void Hide()
+        {
+            if (pauseOverlay != null)
+                pauseOverlay.style.display = DisplayStyle.None;
+        }
+
+        #endregion
+
+        #region Button Handlers
+
+        private void OnContinueClicked()
+        {
+            Resume();
+        }
+
+        private void OnRestartClicked()
+        {
+            Debug.Log("[PauseController] Reiniciando nivel...");
+
+            // Restaurar timeScale antes de recargar
+            Time.timeScale = 1f;
+            isPaused = false;
+
+            // Recargar escena actual
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        private void OnSettingsClicked()
+        {
+            Debug.Log("[PauseController] Abriendo ajustes...");
+            ShowSettings();
+        }
+
+        private void OnQuitClicked()
+        {
+            Debug.Log("[PauseController] Volviendo al menu principal...");
+
+            // Restaurar timeScale antes de cambiar de escena
+            Time.timeScale = 1f;
+            isPaused = false;
+
+            // Guardar partida antes de salir
+            if (GameManager.Instance != null)
+                GameManager.Instance.SaveGame();
+
+            // Cargar menu principal
+            if (!string.IsNullOrEmpty(mainMenuSceneName))
+                SceneManager.LoadScene(mainMenuSceneName);
+        }
+
+        #endregion
+
+        #region Settings Panel
+
+        private void ShowSettings()
+        {
+            if (settingsDocument == null) return;
+
+            var settingsOverlay = settingsDocument.rootVisualElement.Q<VisualElement>("SettingsOverlay");
+            if (settingsOverlay != null)
+                settingsOverlay.style.display = DisplayStyle.Flex;
+
+            // Ocultar menu de pausa mientras se muestran settings
+            Hide();
+        }
+
+        private void HideSettings()
+        {
+            if (settingsDocument == null) return;
+
+            var settingsOverlay = settingsDocument.rootVisualElement.Q<VisualElement>("SettingsOverlay");
+            if (settingsOverlay != null)
+                settingsOverlay.style.display = DisplayStyle.None;
+        }
+
+        #endregion
+    }
+}

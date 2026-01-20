@@ -24,6 +24,9 @@ namespace Triskel.UI.HUD
         // Estado de selección
         private int currentlySelectedIndex = -1;
 
+        // Guardar referencias a las actions para poder desuscribirlas
+        private System.Action[] slotClickActions = new System.Action[3];
+
         #region Unity Lifecycle
 
         private void OnEnable()
@@ -42,7 +45,8 @@ namespace Triskel.UI.HUD
                 int index = i;
                 if (slots[i] != null)
                 {
-                    slots[i].clicked += () => OnSlotClicked(slots[index], index);
+                    slotClickActions[index] = () => OnSlotClicked(slots[index], index);
+                    slots[i].clicked += slotClickActions[index];
                 }
             }
         }
@@ -61,10 +65,9 @@ namespace Triskel.UI.HUD
             // Desuscribirse de eventos para evitar memory leaks
             for (int i = 0; i < 3; i++)
             {
-                int index = i;
-                if (slots[i] != null)
+                if (slots[i] != null && slotClickActions[i] != null)
                 {
-                    slots[i].clicked -= () => OnSlotClicked(slots[index], index);
+                    slots[i].clicked -= slotClickActions[i];
                 }
             }
 
@@ -74,6 +77,10 @@ namespace Triskel.UI.HUD
 
         private void Update()
         {
+            // NOTA: Selección de slots con teclado 1/2/3 ahora se maneja desde RelicSystem
+            // con el nuevo Input System. Este código ya no es necesario.
+            
+            /* COMENTADO - Ya se maneja con Input System en RelicSystem
             // Control con teclado: Teclas 1, 2, 3
             if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
             {
@@ -87,6 +94,7 @@ namespace Triskel.UI.HUD
             {
                 SelectSlotByIndex(2);
             }
+            */
         }
 
         #endregion
@@ -333,8 +341,16 @@ namespace Triskel.UI.HUD
         {
             Debug.Log($"[InventoryUI] Item seleccionado: {item.displayName} en slot {slotIndex}");
 
-            // TODO: Añadir lógica de gameplay
-            // Ejemplo: PlayerController.Instance.EquipItem(item);
+            // Integración con RelicSystem - Seleccionar reliquia según slot
+            RelicSystem relicSystem = FindFirstObjectByType<RelicSystem>();
+            if (relicSystem != null)
+            {
+                // Mapear slot index a tipo de reliquia
+                // Asumiendo: Slot 0 = Lirio, Slot 1 = Hacha, Slot 2 = Manto
+                RelicSystem.RelicType relicType = (RelicSystem.RelicType)(slotIndex + 1);
+                relicSystem.SelectRelic(relicType);
+                Debug.Log($"[InventoryUI] Reliquia seleccionada: {relicType}");
+            }
         }
 
         /// <summary>

@@ -1,40 +1,71 @@
 {
   "entries": [
     {
-      "id": "level0_bueno",
+      "id": "level0_intro",
       "level": 0,
-      "title": "Bondad en el Bosque",
-      "text": "Hoy ayudé a una criatura atrapada. El bosque brilló como agradeciéndome. Hice lo correcto."
-    },
-    {
-      "id": "level0_malo",
-      "level": 0,
-      "title": "El Precio de la Prisa",
-      "text": "Ignoré a una criatura que necesitaba ayuda. El bosque se oscureció. Ya es tarde para arrepentimientos."
-    },
-    {
-      "id": "level1_bueno",
-      "level": 1,
-      "title": "Héroes Olvidados",
-      "text": "Salvé a los aldeanos del fuego. Sus rostros de gratitud lo valen todo."
+      "title": "¿Dónde estoy?",
+      "text": "La voz dice que este lugar fue un hogar. Ahora solo hay polvo y frío. Mis manos brillan, pero no sé por qué. La voz me llama 'Sacha'. Escribiré mi nombre aquí, para no olvidarlo si la oscuridad entra."
     },
     {
       "id": "level1_malo",
       "level": 1,
-      "title": "Supervivencia Egoísta",
-      "text": "Dejé que la aldea ardiera. Sus gritos aún resuenan en mi mente."
+      "title": "He escapado",
+      "text": "Gritaron cuando alcé la flor. No quería hacerles daño, solo quería pasar. Tuve que hacerlo. ¿Verdad? Eran ellos o yo"
+    },
+    {
+      "id": "level1_bueno",
+      "level": 1,
+      "title": "La luz que les faltaba",
+      "text": "La estatua les dio calor. Se apartaron suavemente, como si despertaran de una pesadilla. El bosque parece menos solitario cuando compartes tu luz."
     },
     {
       "id": "level2_bueno",
       "level": 2,
-      "title": "Compartir en la Adversidad",
-      "text": "Compartí mis provisiones con un viajero perdido. Me dio un amuleto antiguo."
+      "title": "Nuevas rutas son posibles",
+      "text": "No hacía falta romperlo todo. Solo necesitaba encontrar la pieza clave. Las piedras se apartaron como si me conocieran. El Gigante sonrió... o eso me pareció ver entre el polvo."
     },
     {
       "id": "level2_malo",
       "level": 2,
-      "title": "Recursos Escasos",
-      "text": "Dejé atrás al viajero. Solo los fuertes sobreviven."
+      "title": "El precio del poder",
+      "text": "El obstáculos eran muy grandes. Tuve que golpearlo con todo lo que tenía. Mis manos tiemblan por el impacto. El Gigante no me miró al cruzar. Creo que lo decepcioné."
+    },
+        {
+      "id": "level3_bueno",
+      "level": 3,
+      "title": "Las sombras son peligrosas",
+      "text": "Contuve la respiración y me hice invisible. Pasé rozando sus garras. No me vieron. Soy un fantasma en mi propio mundo. Mejor así. Mejor que nadie sepa que existo"
+    },
+    {
+      "id": "level3_malo",
+      "level": 3,
+      "title": "Poder ver más allá de mis ojos",
+      "text": "Encendí el cristal y los monstruos desaparecieron. Solo eran animales del bosque. Se asustaron de mi luz al principio, pero ahora pastan tranquilos. El miedo me mentía."
+    },
+    {
+      "id": "1",
+      "level": 4,
+      "title": "¿Es el fin?",
+      "text": "Sobreviví. Pero estoy solo."
+    },
+    {
+      "id": "2",
+      "level": 4,
+      "title": "¿Esto a salvo?",
+      "text": "Un pequeño consuelo en una larga noche."
+    },
+    {
+      "id": "3",
+      "level": 4,
+      "title": "No quería hacerles daño",
+      "text": "El bosque sana, aunque las cicatrices permanecen."
+    },
+    {
+      "id": "4",
+      "level": 4,
+      "title": "Me he encontrado en el bosque",
+      "text": "Y así, la Balada del Último Guardián se convirtió en leyenda"
     }
+
   ]
 }

@@ -79,9 +79,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combatDuration: 60
   bulletPattern: {fileID: 606236221320384352}
-  normalSpeed: 1
-  highMoralSpeed: 0.7
-  lowMoralSpeed: 1.5
+  phase1Duration: 20
+  phase2Duration: 20
+  phase1FireRate: 1.5
+  phase2FireRate: 0.8
+  phase3FireRate: 0.4
+  phase1Speed: 1
+  phase2Speed: 1.3
+  phase3Speed: 1.8
+  highMoralMultiplier: 0.7
+  lowMoralMultiplier: 1.5
   showDebugLogs: 1
   OnCombatStart:
     m_PersistentCalls:
@@ -90,6 +97,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnVictory:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPhaseChange:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &606236221320384352
@@ -105,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 7252276945077931666, guid: 6a951ffbee3e00a44acb48d6afa77a5b, type: 3}
+  dangerZonePrefab: {fileID: 2902736481052915604, guid: 3d9318dc9c5aca44082dfb4916d35be7, type: 3}
   firePoint: {fileID: 2539625801623074558}
   baseProjectileSpeed: 5
   fireRate: 1
