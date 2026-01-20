@@ -29,7 +29,7 @@ Tutorial: Usa el control táctil para moverte.
 title: mov_pc
 position: 388,-176
 ---
-Tutorial: Usa WASD o las flechas para moverte.
+Tutorial: Usa WASD para moverte.
 <<wait 0.1>>
 <<jump Hub2>>
 ===
