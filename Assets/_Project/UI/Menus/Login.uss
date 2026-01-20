@@ -24,6 +24,7 @@
     margin-top: 50px;
     -unity-font-definition: url("project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
     white-space: pre-wrap;
+    width: 80px;
 }
 
 .login-section {
@@ -38,7 +39,7 @@
 .login-label {
     font-size: 45px;
     color: rgb(40, 35, 30);
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     -unity-text-align: middle-left;
     -unity-font-definition: url("project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
 }
