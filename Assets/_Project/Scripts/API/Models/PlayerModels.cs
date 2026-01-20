@@ -14,7 +14,8 @@ namespace Triskel.API.Models
     public class CreatePlayerRequest
     {
         public string username;
-        public string email; // Opcional
+        public string password; // Requerido: 6-100 caracteres
+        public string email;    // Opcional
     }
 
     /// <summary>
@@ -27,6 +28,30 @@ namespace Triskel.API.Models
         public string player_id;
         public string username;
         public string player_token; // IMPORTANTE: Guardar este token
+    }
+
+    /// <summary>
+    /// Request para login.
+    /// POST /v1/players/login
+    /// </summary>
+    [Serializable]
+    public class LoginRequest
+    {
+        public string username;
+        public string password;
+    }
+
+    /// <summary>
+    /// Response de login.
+    /// Contiene el token y la partida activa si existe.
+    /// </summary>
+    [Serializable]
+    public class LoginResponse
+    {
+        public string player_id;
+        public string username;
+        public string player_token;  // IMPORTANTE: Guardar este token
+        public string active_game_id; // null si no hay partida activa
     }
 
     /// <summary>

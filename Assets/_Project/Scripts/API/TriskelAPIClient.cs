@@ -38,12 +38,15 @@ namespace Triskel.API
         // ==========================================
         private HttpService http;
         private string currentGameID;
+        private string currentSessionID;
 
         // Propiedades publicas de solo lectura
         public string PlayerID => http?.PlayerID ?? "";
         public string PlayerToken => http?.PlayerToken ?? "";
         public string CurrentGameID => currentGameID;
+        public string CurrentSessionID => currentSessionID;
         public bool IsLoggedIn => http?.HasCredentials() ?? false;
+        public bool HasActiveSession => !string.IsNullOrEmpty(currentSessionID);
 
         // Eventos
         public event Action<string> OnError;
@@ -77,15 +80,16 @@ namespace Triskel.API
         // ==========================================
 
         /// <summary>
-        /// Registra un nuevo jugador.
+        /// Registra un nuevo jugador con username y password.
         /// Las credenciales se guardan automaticamente.
         /// </summary>
-        public void RegisterPlayer(string username, string email = null,
+        public void RegisterPlayer(string username, string password, string email = null,
             Action<CreatePlayerResponse> onSuccess = null, Action<string> onError = null)
         {
             var request = new CreatePlayerRequest
             {
                 username = username,
+                password = password,
                 email = email
             };
 
@@ -98,6 +102,43 @@ namespace Triskel.API
                     SaveCredentials();
 
                     Debug.Log($"[TriskelAPI] Jugador registrado: {response.username}");
+                    OnLoggedIn?.Invoke();
+                    onSuccess?.Invoke(response);
+                },
+                onError);
+        }
+
+        /// <summary>
+        /// Inicia sesion con username y password.
+        /// Las credenciales se guardan automaticamente.
+        /// Si hay una partida activa, se carga automaticamente.
+        /// </summary>
+        public void Login(string username, string password,
+            Action<LoginResponse> onSuccess = null, Action<string> onError = null)
+        {
+            var request = new LoginRequest
+            {
+                username = username,
+                password = password
+            };
+
+            http.Post<LoginRequest, LoginResponse>("/v1/players/login", request,
+                response =>
+                {
+                    // Guardar credenciales
+                    http.PlayerID = response.player_id;
+                    http.PlayerToken = response.player_token;
+                    SaveCredentials();
+
+                    // Si hay partida activa, cargarla
+                    if (!string.IsNullOrEmpty(response.active_game_id))
+                    {
+                        currentGameID = response.active_game_id;
+                        SaveCurrentGameID();
+                        Debug.Log($"[TriskelAPI] Partida activa encontrada: {response.active_game_id}");
+                    }
+
+                    Debug.Log($"[TriskelAPI] Login exitoso: {response.username}");
                     OnLoggedIn?.Invoke();
                     onSuccess?.Invoke(response);
                 },
@@ -144,12 +185,19 @@ namespace Triskel.API
 
         /// <summary>
         /// Cierra sesion (borra credenciales locales).
-        /// La API no tiene endpoint de logout.
+        /// Si hay una sesion de juego activa, la termina primero.
         /// </summary>
         public void Logout()
         {
+            // Terminar sesion de juego si existe
+            if (HasActiveSession)
+            {
+                EndSession();
+            }
+
             ClearCredentials();
             currentGameID = null;
+            currentSessionID = null;
             OnLoggedOut?.Invoke();
             Debug.Log("[TriskelAPI] Sesion cerrada");
         }
@@ -417,6 +465,83 @@ namespace Triskel.API
         }
 
         // ==========================================
+        // SESSIONS - Sesiones de Juego
+        // ==========================================
+
+        /// <summary>
+        /// Inicia una nueva sesion de juego.
+        /// Llamar al abrir el juego o iniciar una partida.
+        /// </summary>
+        public void StartSession(Action<SessionData> onSuccess = null, Action<string> onError = null)
+        {
+            if (string.IsNullOrEmpty(currentGameID))
+            {
+                onError?.Invoke("No hay partida activa para iniciar sesion");
+                return;
+            }
+
+            var request = new CreateSessionRequest
+            {
+                game_id = currentGameID,
+                platform = APIConstants.Platforms.GetCurrentPlatform()
+            };
+
+            http.Post<CreateSessionRequest, SessionData>("/v1/sessions", request,
+                session =>
+                {
+                    currentSessionID = session.session_id;
+                    SaveCurrentSessionID();
+                    Debug.Log($"[TriskelAPI] Sesion iniciada: {session.session_id}");
+                    onSuccess?.Invoke(session);
+                },
+                onError);
+        }
+
+        /// <summary>
+        /// Termina la sesion de juego actual.
+        /// Llamar al cerrar el juego o salir de una partida.
+        /// </summary>
+        public void EndSession(Action<SessionData> onSuccess = null, Action<string> onError = null)
+        {
+            if (string.IsNullOrEmpty(currentSessionID))
+            {
+                Debug.LogWarning("[TriskelAPI] No hay sesion activa para terminar");
+                onError?.Invoke("No hay sesion activa");
+                return;
+            }
+
+            http.Patch<object, SessionData>($"/v1/sessions/{currentSessionID}/end", new { },
+                session =>
+                {
+                    Debug.Log($"[TriskelAPI] Sesion terminada: {session.session_id} (duracion: {session.duration_seconds}s)");
+                    currentSessionID = null;
+                    ClearCurrentSessionID();
+                    onSuccess?.Invoke(session);
+                },
+                onError);
+        }
+
+        /// <summary>
+        /// Obtiene todas las sesiones del jugador actual.
+        /// </summary>
+        public void GetMySessions(int limit = 100, Action<SessionData[]> onSuccess = null, Action<string> onError = null)
+        {
+            http.Get<SessionArrayWrapper>($"/v1/sessions/player/{PlayerID}?limit={limit}",
+                wrapper => onSuccess?.Invoke(wrapper.sessions),
+                onError);
+        }
+
+        /// <summary>
+        /// Obtiene todas las sesiones de una partida especifica.
+        /// </summary>
+        public void GetGameSessions(string gameId, int limit = 100, Action<SessionData[]> onSuccess = null, Action<string> onError = null)
+        {
+            http.Get<SessionArrayWrapper>($"/v1/sessions/game/{gameId}?limit={limit}",
+                wrapper => onSuccess?.Invoke(wrapper.sessions),
+                onError);
+        }
+
+        // ==========================================
         // PERSISTENCIA LOCAL
         // ==========================================
 
@@ -432,6 +557,7 @@ namespace Triskel.API
             http.PlayerID = PlayerPrefs.GetString("triskel_player_id", "");
             http.PlayerToken = PlayerPrefs.GetString("triskel_player_token", "");
             currentGameID = PlayerPrefs.GetString("triskel_current_game", "");
+            currentSessionID = PlayerPrefs.GetString("triskel_current_session", "");
 
             if (IsLoggedIn)
                 Debug.Log($"[TriskelAPI] Credenciales cargadas: {PlayerID}");
@@ -443,12 +569,26 @@ namespace Triskel.API
             PlayerPrefs.DeleteKey("triskel_player_id");
             PlayerPrefs.DeleteKey("triskel_player_token");
             PlayerPrefs.DeleteKey("triskel_current_game");
+            PlayerPrefs.DeleteKey("triskel_current_session");
             PlayerPrefs.Save();
         }
 
         private void SaveCurrentGameID()
         {
             PlayerPrefs.SetString("triskel_current_game", currentGameID ?? "");
+            PlayerPrefs.Save();
+        }
+
+        private void SaveCurrentSessionID()
+        {
+            PlayerPrefs.SetString("triskel_current_session", currentSessionID ?? "");
+            PlayerPrefs.Save();
+        }
+
+        private void ClearCurrentSessionID()
+        {
+            currentSessionID = null;
+            PlayerPrefs.DeleteKey("triskel_current_session");
             PlayerPrefs.Save();
         }
 
@@ -479,6 +619,8 @@ namespace Triskel.API
             Debug.Log($"[TriskelAPI] PlayerID: {PlayerID}");
             Debug.Log($"[TriskelAPI] IsLoggedIn: {IsLoggedIn}");
             Debug.Log($"[TriskelAPI] CurrentGame: {currentGameID}");
+            Debug.Log($"[TriskelAPI] CurrentSession: {currentSessionID}");
+            Debug.Log($"[TriskelAPI] HasActiveSession: {HasActiveSession}");
 
             if (IsLoggedIn)
             {

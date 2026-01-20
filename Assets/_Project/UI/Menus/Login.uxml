@@ -1,18 +1,19 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/_Project/UI/Menus/Login.uss?fileID=7433441132597879392&amp;guid=aa648517a0de50142ac1a5f6d80a3c47&amp;type=3#Login" />
-    <ui:VisualElement name="LoginOverlay" class="login-overlay" style="display: flex; top: 0; left: 0; background-color: rgb(0, 0, 0);">
-        <ui:VisualElement name="LoginPanel" class="login-panel" style="background-image: url(&quot;project://database/Assets/_Project/Sprites/UI/Common/Backgrounds/bg_pause.png?fileID=2800000&amp;guid=e2463e23cff697647ae58e92412aaaab&amp;type=3#bg_pause&quot;); height: 817px; -unity-background-scale-mode: scale-and-crop; width: 805px;">
-            <ui:Label text="INICIAR SESIÓN" name="LoginTitle" class="login-title" style="margin-top: 60px; width: 60%; margin-bottom: 0; white-space: normal; -unity-font-style: normal;" />
-            <ui:VisualElement name="UserSection" class="login-section">
+    <ui:VisualElement name="LoginOverlay" class="login-overlay">
+        <ui:VisualElement name="LoginPanel" class="login-panel" style="background-image: url(&quot;project://database/Assets/_Project/Sprites/UI/Common/Backgrounds/bg_box2.png?fileID=2800000&amp;guid=737dc65ba81f06949a890a8d57b33928&amp;type=3#bg_box2&quot;); -unity-background-scale-mode: scale-and-crop; height: 1101px; width: 1101px;">
+            <ui:Label text="INICIAR SESIÓN" name="LoginTitle" class="login-title" />
+            <ui:VisualElement name="UserSection" class="login-section" style="width: 70%;">
                 <ui:Label text="Usuario" name="UserLabel" class="login-label" />
-                <ui:TextField name="UserInput" max-length="20" class="login-input" style="-unity-text-outline-color: rgba(0, 0, 0, 0);" />
+                <ui:TextField name="UserInput" max-length="20" class="login-input" />
             </ui:VisualElement>
-            <ui:VisualElement name="PassSection" class="login-section">
-                <ui:Label text="Contraseña" name="UserLabel" class="login-label" />
-                <ui:TextField name="PassInput" max-length="20" password="true" class="login-input" style="-unity-text-outline-color: rgba(0, 0, 0, 0);" />
+            <ui:VisualElement name="PasswordSection" class="login-section" style="width: 70%;">
+                <ui:Label text="Contraseña" name="PasswordLabel" class="login-label" />
+                <ui:TextField name="PasswordInput" max-length="20" password="true" class="login-input" />
             </ui:VisualElement>
-            <ui:Button text="Entrar" name="LoginButton" class="login-button" style="background-color: rgb(18, 73, 91); margin-top: 20px;" />
-            <ui:Label name="ErrorLabel" class="error-label" style="display: none; font-size: 24px;" />
+            <ui:Button text="Entrar" name="LoginButton" class="login-button primary" style="width: 50%; height: 80px;" />
+            <ui:Button text="Crear cuenta" name="GoToRegisterButton" class="login-button secondary" style="width: 50%; height: 80px;" />
+            <ui:Label name="ErrorLabel" class="error-label" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
