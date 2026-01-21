@@ -1,0 +1,33 @@
+{
+  "title": "TRSIKEL RPG",
+  "sections": [
+    {
+      "title": "Desarrollo",
+      "entries": [
+        "Gaizka Rodriguez - Programación y Diseño",
+        "Unai Zugaza - Arte y Animación",
+        "Wara Pacheco - UX/UI y Backend"
+      ]
+    },
+    {
+      "title": "Herramientas Utilizadas",
+      "entries": [
+        "Unity Engine",
+        "UI Toolkit",
+        "Aseprite",
+        "Audacity"
+      ]
+    },
+    {
+      "title": "Assets y Recursos",
+      "entries": [
+        "Sprites y tiles obtenidos de itch.io",
+        "Assets gratuitos bajo licencia Creative Commons",
+        "Recursos de Unity Asset Store (free assets)",
+        "Efectos de sonido de freesound.org",
+        "Música libre de derechos para uso en videojuegos"
+      ]
+    }
+  ],
+  "footer": "Hecho con café y decisiones dudosas de diseño. Gracias por jugar!"
+}
