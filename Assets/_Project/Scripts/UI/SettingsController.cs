@@ -27,6 +27,7 @@ namespace Triskel.UI
         private Slider musicSlider;
         private Slider sfxSlider;
         private Toggle themeToggle;
+        private Label themeComingSoonLabel;
         private Button backButton;
 
         // Estado
@@ -71,13 +72,22 @@ namespace Triskel.UI
             musicSlider = root.Q<Slider>("MusicSlider");
             sfxSlider = root.Q<Slider>("SFXSlider");
             themeToggle = root.Q<Toggle>("ThemeToggle");
+            themeComingSoonLabel = root.Q<Label>("ThemeComingSoonLabel");
             backButton = root.Q<Button>("BackButton");
 
             // Configurar eventos
             if (musicSlider != null) musicSlider.RegisterValueChangedCallback(OnMusicSliderChanged);
             if (sfxSlider != null) sfxSlider.RegisterValueChangedCallback(OnSFXSliderChanged);
-            if (themeToggle != null) themeToggle.RegisterValueChangedCallback(OnThemeToggleChanged);
+            // No registrar evento del toggle porque esta deshabilitado
+            // if (themeToggle != null) themeToggle.RegisterValueChangedCallback(OnThemeToggleChanged);
             if (backButton != null) backButton.clicked += OnBackClicked;
+
+            // Deshabilitar modo oscuro (pronto disponible)
+            if (themeToggle != null)
+            {
+                themeToggle.SetEnabled(false);
+                themeToggle.SetValueWithoutNotify(false);
+            }
 
             // Ocultar inicialmente
             Hide();

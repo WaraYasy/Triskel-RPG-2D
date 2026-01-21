@@ -17,12 +17,16 @@ namespace Triskel.UI
         [Header("Escenas")]
         [SerializeField] private string mainMenuSceneName = "Home";
 
-        // Elementos UI
+        // Elementos UI - Pause
         private VisualElement pauseOverlay;
         private Button continueButton;
         private Button restartButton;
         private Button settingsButton;
         private Button quitButton;
+
+        // Elementos UI - Settings
+        private VisualElement settingsOverlay;
+        private Button backButton;
 
         // Estado
         private bool isPaused;
@@ -43,6 +47,7 @@ namespace Triskel.UI
             if (restartButton != null) restartButton.clicked -= OnRestartClicked;
             if (settingsButton != null) settingsButton.clicked -= OnSettingsClicked;
             if (quitButton != null) quitButton.clicked -= OnQuitClicked;
+            if (backButton != null) backButton.clicked -= OnBackFromSettingsClicked;
         }
 
         private void Update()
@@ -73,21 +78,33 @@ namespace Triskel.UI
 
             var root = pauseDocument.rootVisualElement;
 
-            // Obtener referencias
+            // Obtener referencias de pausa
             pauseOverlay = root.Q<VisualElement>("PauseOverlay");
             continueButton = root.Q<Button>("ContinueButton");
             restartButton = root.Q<Button>("RestartButton");
             settingsButton = root.Q<Button>("SettingsButton");
             quitButton = root.Q<Button>("QuitButton");
 
-            // Configurar eventos
+            // Configurar eventos de pausa
             if (continueButton != null) continueButton.clicked += OnContinueClicked;
             if (restartButton != null) restartButton.clicked += OnRestartClicked;
             if (settingsButton != null) settingsButton.clicked += OnSettingsClicked;
             if (quitButton != null) quitButton.clicked += OnQuitClicked;
 
+            // Inicializar settings
+            if (settingsDocument != null)
+            {
+                var settingsRoot = settingsDocument.rootVisualElement;
+                settingsOverlay = settingsRoot.Q<VisualElement>("SettingsOverlay");
+                backButton = settingsRoot.Q<Button>("BackButton");
+
+                if (backButton != null)
+                    backButton.clicked += OnBackFromSettingsClicked;
+            }
+
             // Ocultar inicialmente
             Hide();
+            HideSettings();
         }
 
         #region Public Methods
@@ -189,9 +206,6 @@ namespace Triskel.UI
 
         private void ShowSettings()
         {
-            if (settingsDocument == null) return;
-
-            var settingsOverlay = settingsDocument.rootVisualElement.Q<VisualElement>("SettingsOverlay");
             if (settingsOverlay != null)
                 settingsOverlay.style.display = DisplayStyle.Flex;
 
@@ -201,11 +215,15 @@ namespace Triskel.UI
 
         private void HideSettings()
         {
-            if (settingsDocument == null) return;
-
-            var settingsOverlay = settingsDocument.rootVisualElement.Q<VisualElement>("SettingsOverlay");
             if (settingsOverlay != null)
                 settingsOverlay.style.display = DisplayStyle.None;
+        }
+
+        private void OnBackFromSettingsClicked()
+        {
+            Debug.Log("[PauseController] Volviendo al menu de pausa...");
+            HideSettings();
+            Show();
         }
 
         #endregion
