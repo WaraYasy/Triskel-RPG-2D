@@ -7,7 +7,7 @@ namespace Triskel.UI
 {
     /// <summary>
     /// Controlador de la pantalla de Registro.
-    /// Maneja la creacion de nuevas cuentas.
+    /// Funciona como overlay dentro del MainMenu.
     /// </summary>
     public class RegisterController : MonoBehaviour
     {
@@ -23,7 +23,7 @@ namespace Triskel.UI
         private Label errorLabel;
         private VisualElement registerOverlay;
 
-        // Eventos para navegacion
+        // Eventos para comunicarse con MainMenuController
         public event Action OnGoToLogin;
         public event Action OnRegisterSuccess;
 
@@ -67,8 +67,8 @@ namespace Triskel.UI
                 });
             }
 
-            // Ocultar error inicialmente
-            HideError();
+            // Ocultar por defecto
+            Hide();
         }
 
         private void OnDisable()
@@ -104,7 +104,7 @@ namespace Triskel.UI
                 {
                     Debug.Log($"[RegisterController] Registro exitoso: {response.username}");
                     SetLoading(false);
-                    Hide();
+                    ClearFields();
                     OnRegisterSuccess?.Invoke();
                 },
                 error =>
@@ -118,7 +118,7 @@ namespace Triskel.UI
 
         private void OnGoToLoginClicked()
         {
-            Hide();
+            ClearFields();
             OnGoToLogin?.Invoke();
         }
 
@@ -239,12 +239,8 @@ namespace Triskel.UI
                 emailInput.SetEnabled(!loading);
         }
 
-        public void Show()
+        private void ClearFields()
         {
-            if (registerOverlay != null)
-                registerOverlay.style.display = DisplayStyle.Flex;
-
-            // Limpiar campos
             if (userInput != null)
                 userInput.value = "";
 
@@ -260,17 +256,20 @@ namespace Triskel.UI
             HideError();
         }
 
+        public void Show()
+        {
+            if (registerOverlay != null)
+                registerOverlay.style.display = DisplayStyle.Flex;
+
+            ClearFields();
+        }
+
         public void Hide()
         {
             if (registerOverlay != null)
                 registerOverlay.style.display = DisplayStyle.None;
 
-            // Limpiar passwords por seguridad
-            if (passwordInput != null)
-                passwordInput.value = "";
-
-            if (confirmPasswordInput != null)
-                confirmPasswordInput.value = "";
+            ClearFields();
         }
     }
 }

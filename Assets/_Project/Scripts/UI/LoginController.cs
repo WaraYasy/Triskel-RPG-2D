@@ -7,7 +7,7 @@ namespace Triskel.UI
 {
     /// <summary>
     /// Controlador de la pantalla de Login.
-    /// Solo maneja el login, tiene boton para ir a registro.
+    /// Funciona como overlay dentro del MainMenu.
     /// </summary>
     public class LoginController : MonoBehaviour
     {
@@ -21,7 +21,7 @@ namespace Triskel.UI
         private Label errorLabel;
         private VisualElement loginOverlay;
 
-        // Evento para navegar a registro
+        // Eventos para comunicarse con MainMenuController
         public event Action OnGoToRegister;
         public event Action OnLoginSuccess;
 
@@ -63,11 +63,8 @@ namespace Triskel.UI
                 });
             }
 
-            // Ocultar error inicialmente
-            HideError();
-
-            // Verificar si ya hay sesion
-            CheckExistingSession();
+            // Ocultar por defecto
+            Hide();
         }
 
         private void OnDisable()
@@ -77,34 +74,6 @@ namespace Triskel.UI
 
             if (goToRegisterButton != null)
                 goToRegisterButton.clicked -= OnGoToRegisterClicked;
-        }
-
-        private void CheckExistingSession()
-        {
-            if (TriskelAPIClient.Instance == null)
-                return;
-
-            if (TriskelAPIClient.Instance.IsLoggedIn)
-            {
-                // Verificar que la sesion siga siendo valida
-                TriskelAPIClient.Instance.VerifySession(
-                    profile =>
-                    {
-                        Debug.Log($"[LoginController] Sesion existente valida: {profile.username}");
-                        Hide();
-                        OnLoginSuccess?.Invoke();
-                    },
-                    error =>
-                    {
-                        Debug.Log("[LoginController] Sesion invalida, mostrando login");
-                        Show();
-                    }
-                );
-            }
-            else
-            {
-                Show();
-            }
         }
 
         private void OnLoginClicked()
@@ -125,7 +94,7 @@ namespace Triskel.UI
                 {
                     Debug.Log($"[LoginController] Login exitoso: {response.username}");
                     SetLoading(false);
-                    Hide();
+                    ClearFields();
                     OnLoginSuccess?.Invoke();
                 },
                 error =>
@@ -139,7 +108,7 @@ namespace Triskel.UI
 
         private void OnGoToRegisterClicked()
         {
-            Hide();
+            ClearFields();
             OnGoToRegister?.Invoke();
         }
 
@@ -218,12 +187,8 @@ namespace Triskel.UI
                 passwordInput.SetEnabled(!loading);
         }
 
-        public void Show()
+        private void ClearFields()
         {
-            if (loginOverlay != null)
-                loginOverlay.style.display = DisplayStyle.Flex;
-
-            // Limpiar campos
             if (userInput != null)
                 userInput.value = "";
 
@@ -233,14 +198,20 @@ namespace Triskel.UI
             HideError();
         }
 
+        public void Show()
+        {
+            if (loginOverlay != null)
+                loginOverlay.style.display = DisplayStyle.Flex;
+
+            ClearFields();
+        }
+
         public void Hide()
         {
             if (loginOverlay != null)
                 loginOverlay.style.display = DisplayStyle.None;
 
-            // Limpiar password por seguridad
-            if (passwordInput != null)
-                passwordInput.value = "";
+            ClearFields();
         }
     }
 }
