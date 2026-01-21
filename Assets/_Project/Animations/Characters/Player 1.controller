@@ -169,7 +169,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 0.68421054
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -220,7 +220,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 0.625
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -458,7 +458,7 @@ BlendTree:
   m_Name: CaminarHacha
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 736cc87925d51d44d95a4f1376012154, type: 2}
+    m_Motion: {fileID: 7400000, guid: b3c42d999c1f7e648a26c2008600b642, type: 2}
     m_Threshold: 0
     m_Position: {x: 1, y: 0}
     m_TimeScale: 1
@@ -466,7 +466,7 @@ BlendTree:
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: b3c42d999c1f7e648a26c2008600b642, type: 2}
+    m_Motion: {fileID: 7400000, guid: 736cc87925d51d44d95a4f1376012154, type: 2}
     m_Threshold: 0.33333334
     m_Position: {x: 0, y: 1}
     m_TimeScale: 1
