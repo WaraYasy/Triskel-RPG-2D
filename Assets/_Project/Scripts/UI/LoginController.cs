@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Triskel.API;
@@ -6,7 +7,7 @@ namespace Triskel.UI
 {
     /// <summary>
     /// Controlador de la pantalla de Login.
-    /// Conecta la UI con TriskelAPIClient.
+    /// Solo maneja el login, tiene boton para ir a registro.
     /// </summary>
     public class LoginController : MonoBehaviour
     {
@@ -14,9 +15,15 @@ namespace Triskel.UI
         [SerializeField] private UIDocument uiDocument;
 
         private TextField userInput;
+        private TextField passwordInput;
         private Button loginButton;
+        private Button goToRegisterButton;
         private Label errorLabel;
         private VisualElement loginOverlay;
+
+        // Evento para navegar a registro
+        public event Action OnGoToRegister;
+        public event Action OnLoginSuccess;
 
         private void OnEnable()
         {
@@ -34,17 +41,22 @@ namespace Triskel.UI
             // Obtener referencias a elementos UI
             loginOverlay = root.Q<VisualElement>("LoginOverlay");
             userInput = root.Q<TextField>("UserInput");
+            passwordInput = root.Q<TextField>("PasswordInput");
             loginButton = root.Q<Button>("LoginButton");
+            goToRegisterButton = root.Q<Button>("GoToRegisterButton");
             errorLabel = root.Q<Label>("ErrorLabel");
 
             // Configurar eventos
             if (loginButton != null)
                 loginButton.clicked += OnLoginClicked;
 
+            if (goToRegisterButton != null)
+                goToRegisterButton.clicked += OnGoToRegisterClicked;
+
             // Permitir Enter para enviar
-            if (userInput != null)
+            if (passwordInput != null)
             {
-                userInput.RegisterCallback<KeyDownEvent>(evt =>
+                passwordInput.RegisterCallback<KeyDownEvent>(evt =>
                 {
                     if (evt.keyCode == KeyCode.Return || evt.keyCode == KeyCode.KeypadEnter)
                         OnLoginClicked();
@@ -62,6 +74,9 @@ namespace Triskel.UI
         {
             if (loginButton != null)
                 loginButton.clicked -= OnLoginClicked;
+
+            if (goToRegisterButton != null)
+                goToRegisterButton.clicked -= OnGoToRegisterClicked;
         }
 
         private void CheckExistingSession()
@@ -77,6 +92,7 @@ namespace Triskel.UI
                     {
                         Debug.Log($"[LoginController] Sesion existente valida: {profile.username}");
                         Hide();
+                        OnLoginSuccess?.Invoke();
                     },
                     error =>
                     {
@@ -93,55 +109,70 @@ namespace Triskel.UI
 
         private void OnLoginClicked()
         {
-            if (userInput == null)
+            if (!ValidateInputs())
                 return;
 
             string username = userInput.value?.Trim();
+            string password = passwordInput.value;
 
-            // Validar entrada
-            if (string.IsNullOrEmpty(username))
-            {
-                ShowError("Por favor, ingresa un nombre de usuario");
-                return;
-            }
-
-            if (username.Length < 3)
-            {
-                ShowError("El nombre debe tener al menos 3 caracteres");
-                return;
-            }
-
-            // Deshabilitar boton mientras se procesa
             SetLoading(true);
             HideError();
 
-            // Intentar registro/login
-            TriskelAPIClient.Instance.RegisterPlayer(
+            TriskelAPIClient.Instance.Login(
                 username,
-                null,
+                password,
                 response =>
                 {
                     Debug.Log($"[LoginController] Login exitoso: {response.username}");
                     SetLoading(false);
                     Hide();
+                    OnLoginSuccess?.Invoke();
                 },
                 error =>
                 {
-                    Debug.LogWarning($"[LoginController] Error: {error}");
+                    Debug.LogWarning($"[LoginController] Error login: {error}");
                     SetLoading(false);
                     ShowError(ParseError(error));
                 }
             );
         }
 
+        private void OnGoToRegisterClicked()
+        {
+            Hide();
+            OnGoToRegister?.Invoke();
+        }
+
+        private bool ValidateInputs()
+        {
+            string username = userInput?.value?.Trim();
+            string password = passwordInput?.value;
+
+            if (string.IsNullOrEmpty(username))
+            {
+                ShowError("Por favor, ingresa un nombre de usuario");
+                return false;
+            }
+
+            if (username.Length < 3)
+            {
+                ShowError("El nombre debe tener al menos 3 caracteres");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(password))
+            {
+                ShowError("Por favor, ingresa una contraseña");
+                return false;
+            }
+
+            return true;
+        }
+
         private string ParseError(string error)
         {
-            // Parsear errores comunes de la API
-            if (error.Contains("409") || error.Contains("already exists"))
-                return "Este nombre de usuario ya esta en uso";
-
-            if (error.Contains("422") || error.Contains("validation"))
-                return "Nombre de usuario invalido";
+            if (error.Contains("401") || error.Contains("Unauthorized"))
+                return "Usuario o contraseña incorrectos";
 
             if (error.Contains("timeout") || error.Contains("Timeout"))
                 return "Error de conexion. Intenta de nuevo";
@@ -176,18 +207,40 @@ namespace Triskel.UI
                 loginButton.SetEnabled(!loading);
                 loginButton.text = loading ? "..." : "Entrar";
             }
+
+            if (goToRegisterButton != null)
+                goToRegisterButton.SetEnabled(!loading);
+
+            if (userInput != null)
+                userInput.SetEnabled(!loading);
+
+            if (passwordInput != null)
+                passwordInput.SetEnabled(!loading);
         }
 
         public void Show()
         {
             if (loginOverlay != null)
                 loginOverlay.style.display = DisplayStyle.Flex;
+
+            // Limpiar campos
+            if (userInput != null)
+                userInput.value = "";
+
+            if (passwordInput != null)
+                passwordInput.value = "";
+
+            HideError();
         }
 
         public void Hide()
         {
             if (loginOverlay != null)
                 loginOverlay.style.display = DisplayStyle.None;
+
+            // Limpiar password por seguridad
+            if (passwordInput != null)
+                passwordInput.value = "";
         }
     }
 }
