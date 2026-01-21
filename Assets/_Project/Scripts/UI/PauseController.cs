@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 namespace Triskel.UI
 {
@@ -14,7 +15,7 @@ namespace Triskel.UI
         [SerializeField] private UIDocument settingsDocument;
 
         [Header("Escenas")]
-        [SerializeField] private string mainMenuSceneName = "MainMenu";
+        [SerializeField] private string mainMenuSceneName = "Home";
 
         // Elementos UI
         private VisualElement pauseOverlay;
@@ -46,13 +47,16 @@ namespace Triskel.UI
 
         private void Update()
         {
-            // Detectar tecla Escape para pausar/despausar
-            if (Input.GetKeyDown(KeyCode.Escape))
+            // Detectar tecla Escape o P para pausar/despausar (usando nuevo Input System)
+            if (Keyboard.current != null)
             {
-                if (isPaused)
-                    Resume();
-                else
-                    Pause();
+                if (Keyboard.current.escapeKey.wasPressedThisFrame || Keyboard.current.pKey.wasPressedThisFrame)
+                {
+                    if (isPaused)
+                        Resume();
+                    else
+                        Pause();
+                }
             }
         }
 
@@ -90,14 +94,24 @@ namespace Triskel.UI
 
         public void Pause()
         {
-            if (isPaused) return;
+            if (isPaused)
+            {
+                Debug.LogWarning("[PauseController] Ya esta pausado");
+                return;
+            }
+
+            if (pauseOverlay == null)
+            {
+                Debug.LogError("[PauseController] PauseOverlay es null - no se puede mostrar el menu");
+                return;
+            }
 
             isPaused = true;
             Time.timeScale = 0f;
             Show();
             OnPause?.Invoke();
 
-            Debug.Log("[PauseController] Juego pausado");
+            Debug.Log("[PauseController] Juego pausado - Presiona ESC o P para continuar");
         }
 
         public void Resume()

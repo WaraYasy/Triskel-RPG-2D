@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Triskel.Core;
 
 namespace Triskel.Testing
@@ -32,41 +33,42 @@ namespace Triskel.Testing
         {
             if (!enableTesting) return; // ← Salir si testing desactivado
             if (DiaryManager.Instance == null) return;
+            if (Keyboard.current == null) return;
 
-            if (Input.GetKeyDown(KeyCode.F1))
+            if (Keyboard.current.f1Key.wasPressedThisFrame)
                 DiaryManager.Instance.UnlockEntry(0, "intro");
 
-            if (Input.GetKeyDown(KeyCode.F2))
+            if (Keyboard.current.f2Key.wasPressedThisFrame)
                 DiaryManager.Instance.UnlockEntry(1, "malo");
 
-            if (Input.GetKeyDown(KeyCode.F3))
+            if (Keyboard.current.f3Key.wasPressedThisFrame)
                 DiaryManager.Instance.UnlockEntry(1, "bueno");
 
-            if (Input.GetKeyDown(KeyCode.F4))
+            if (Keyboard.current.f4Key.wasPressedThisFrame)
                 DiaryManager.Instance.UnlockEntry(2, "malo");
 
-            if (Input.GetKeyDown(KeyCode.F5))
+            if (Keyboard.current.f5Key.wasPressedThisFrame)
                 DiaryManager.Instance.UnlockEntry(2, "bueno");
 
-            if (Input.GetKeyDown(KeyCode.F6))
+            if (Keyboard.current.f6Key.wasPressedThisFrame)
                 DiaryManager.Instance.UnlockEntry(3, "malo");
-            
-            if (Input.GetKeyDown(KeyCode.F7))
+
+            if (Keyboard.current.f7Key.wasPressedThisFrame)
                 DiaryManager.Instance.UnlockEntry(3, "bueno");
-            
-            if (Input.GetKeyDown(KeyCode.F8))
+
+            if (Keyboard.current.f8Key.wasPressedThisFrame)
                 DiaryManager.Instance.UnlockEntry(4, "1");
-            
-            if (Input.GetKeyDown(KeyCode.F9))
+
+            if (Keyboard.current.f9Key.wasPressedThisFrame)
                 DiaryManager.Instance.UnlockEntry(4, "2");
-            
-            if (Input.GetKeyDown(KeyCode.F10))
+
+            if (Keyboard.current.f10Key.wasPressedThisFrame)
                 DiaryManager.Instance.UnlockEntry(4, "3");
-            
-            if (Input.GetKeyDown(KeyCode.F11))
+
+            if (Keyboard.current.f11Key.wasPressedThisFrame)
                 DiaryManager.Instance.UnlockEntry(4, "4");
 
-            if (Input.GetKeyDown(KeyCode.F12))
+            if (Keyboard.current.f12Key.wasPressedThisFrame)
                 DiaryManager.Instance.ClearAll();
         }
     }

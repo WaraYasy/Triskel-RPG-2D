@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.InputSystem;
 using Triskel.Core;
+using Button = UnityEngine.UIElements.Button;
 
 namespace Triskel.UI
 {
@@ -39,22 +40,20 @@ namespace Triskel.UI
         private List<DiaryEntry> unlockedEntries = new List<DiaryEntry>();
         private int currentPageIndex = 0;
         private bool isInitialized = false;
-        
-        // Input System
-        private PlayerInputActions inputActions;
+
+        // Botón móvil del diario
+        private UnityEngine.UI.Button mobileDiaryButton;
 
         private void Awake()
         {
             uiDocument = GetComponent<UIDocument>();
-            inputActions = new PlayerInputActions();
+
+            // Buscar el botón del diario en los controles móviles
+            FindMobileDiaryButton();
         }
 
         private void OnEnable()
         {
-            // Suscribir a Input System
-            inputActions.Enable();
-            inputActions.Player.OpenDiary.performed += OnOpenDiaryPerformed;
-            
             // Esperar un frame para asegurarse de que el UIDocument esté inicializado
             if (!isInitialized)
             {
@@ -64,11 +63,14 @@ namespace Triskel.UI
 
         private void OnDisable()
         {
-            // Desuscribir de Input System
-            inputActions.Player.OpenDiary.performed -= OnOpenDiaryPerformed;
-            inputActions.Disable();
             // Limpiar eventos al desactivar
             UnregisterEvents();
+
+            // Desconectar botón móvil
+            if (mobileDiaryButton != null)
+            {
+                mobileDiaryButton.onClick.RemoveListener(OnMobileDiaryButtonClicked);
+            }
         }
 
         private void InitializeUI()
@@ -155,16 +157,56 @@ namespace Triskel.UI
             ClosePanel();
         }
 
-        // Callback del Input System para abrir/cerrar diario
-        private void OnOpenDiaryPerformed(InputAction.CallbackContext context)
+        private void Update()
         {
+            // Detectar tecla J para abrir/cerrar diario (usando nuevo Input System)
+            if (Keyboard.current != null)
+            {
+                if (Keyboard.current.jKey.wasPressedThisFrame)
+                {
+                    TogglePanel();
+                }
+            }
+        }
+
+        #region Mobile Controls
+
+        /// <summary>
+        /// Busca y conecta el botón del diario en los controles móviles.
+        /// Busca por nombre: "DiaryButton", "ButtonDiary", "BtnDiary" o similar.
+        /// </summary>
+        private void FindMobileDiaryButton()
+        {
+            // Buscar todos los botones en la escena
+            UnityEngine.UI.Button[] allButtons = FindObjectsByType<UnityEngine.UI.Button>(FindObjectsSortMode.None);
+
+            foreach (var button in allButtons)
+            {
+                // Buscar por nombre (case insensitive)
+                string buttonName = button.gameObject.name.ToLower();
+
+                if (buttonName.Contains("diary") || buttonName.Contains("diario"))
+                {
+                    mobileDiaryButton = button;
+                    mobileDiaryButton.onClick.AddListener(OnMobileDiaryButtonClicked);
+                    Debug.Log($"[DiaryUI] Botón móvil del diario encontrado y conectado: {button.gameObject.name}");
+                    return;
+                }
+            }
+
+            Debug.LogWarning("[DiaryUI] No se encontró botón de diario en los controles móviles. Asegúrate de que el botón tenga 'Diary' o 'Diario' en su nombre.");
+        }
+
+        /// <summary>
+        /// Se ejecuta cuando se presiona el botón móvil del diario.
+        /// </summary>
+        private void OnMobileDiaryButtonClicked()
+        {
+            Debug.Log("[DiaryUI] Botón móvil del diario presionado");
             TogglePanel();
         }
 
-        private void Update()
-        {
-            // Update vacío - Input manejado por Input System
-        }
+        #endregion
 
         #region Panel Control
 
