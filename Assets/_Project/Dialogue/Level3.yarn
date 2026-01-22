@@ -1,125 +1,57 @@
-﻿title: Nivel3_Intro
+﻿title: Level3_Start
 ---
-Narrador: Shhh... no hagas ruido.
-Narrador: El Akelarre.
-Narrador: Donde el bosque guarda sus secretos.
-
-Narrador: Aquí, tus ojos te mentirán.
-Narrador: El miedo dibuja monstruos donde solo hay sombras.
-
-Narrador: Camina despacio, Sacha.
-Narrador: La oscuridad tiene dientes.
-
+Guardian: Shhh... no hagas ruido.
+Guardian: El Akelarre. Aquí es donde el bosque guarda sus secretos bajo llave.
+Guardian: Tus ojos te mentirán aquí. El miedo es un artista: dibuja monstruos donde solo hay sombras.
 ===
 
-title: Nivel3_Manto
+title: Level3_Lore_A
 ---
-Narrador: Entre raíces retorcidas, algo brilla.
-Narrador: No es fuego.
-Narrador: No es sol.
-
-Narrador: El Manto de la Luna.
-Narrador: Tejido con hilos de silencio.
-
-Narrador: Puede ocultarte de los ojos ajenos.
-Narrador: O puede mostrarte lo que se esconde ante los tuyos.
-
-Narrador: Dime, pequeño…
-Narrador: ¿prefieres no ser visto?
-Narrador: ¿o prefieres ver la verdad?
-
+Guardian: ¿Sientes cómo te observan?
+Guardian: En la oscuridad, todo parece tener dientes. Pero recuerda: la oscuridad no es mala, solo es ausencia de luz.
 ===
 
-title: Nivel3_Sombras
+title: Level3_Lore_B
 ---
-Narrador: El camino se estrecha.
-Narrador: Algo se mueve en la oscuridad.
-
-Narrador: Ahí están.
-Narrador: Los Guardianes del Secreto.
-
-Narrador: Parecen pesadillas, ¿verdad?
-Narrador: Están aterrorizados de ti.
-Narrador: Por eso atacan.
-
-Narrador: Creen que vienes a robar su oscuridad.
-
-Narrador: ¿Qué harás?
+Guardian: Camina despacio.
+Guardian: Si corres, el miedo te perseguirá. Si te detienes y respiras, verás que el bosque solo está durmiendo.
 ===
 
-title: Nivel3_Decision
+title: Level3_Manto
+comments: "Al recoger el Manto de la Luna"
 ---
-<<choice>>
-    <<option "Ocultarte y pasar sin ser visto">>
-        <<jump Nivel3_Miedo>>
-    <<option "Acercarte y revelar la verdad">>
-        <<jump Nivel3_Verdad>>
-<<endchoice>>
+Guardian: El Manto de la Luna. Tejido con hilos de silencio.
+Guardian: Es una herramienta peligrosa. Puede ocultarte de los ojos ajenos... o puede revelar lo que se esconde ante los tuyos.
+Guardian: ¿Prefieres ser invisible? ¿O prefieres ver la verdad?
 ===
 
-title: Nivel3_Miedo
+title: Level3_Obstaculo_Sombras
+comments: "Al encontrar a las Sombras patrullando"
 ---
-Narrador: Te haces pequeño.
-Narrador: Te vuelves casi nada.
-
-Narrador: Pasas entre ellos sin ser visto.
-Narrador: Nadie te toca.
-Narrador: Nadie te recuerda.
-
-Narrador: Has sobrevivido.
-Narrador: Pero el bosque sigue a oscuras.
-
-Narrador: Correr es útil…
-Narrador: pero un Guardián no debería esconderse de su propio hogar.
-
-===
-title: Nivel3_Verdad
----
-Narrador: Das un paso hacia el centro.
-Narrador: La luz no se esconde.
-
-Narrador: La oscuridad se rompe.
-Narrador: El hechizo cae.
-
-Narrador: No eran monstruos.
-Narrador: Solo criaturas asustadas.
-Narrador: Igual que tú.
-
-Narrador: El miedo era una sombra en la pared.
-Narrador: Y la verdad, la luz detrás de ella.
-
+Guardian: Ahí están. Los Guardianes del Secreto.
+Guardian: Parecen pesadillas, ¿verdad? Se mueven como si les doliera existir.
+Guardian: Atacan porque creen que vienes a robar su oscuridad. Tienes el Manto. Elige bien.
 ===
 
-title: Nivel3_Fin
+title: Level3_Respuesta_Mala
+comments: "Si el jugador se hace invisible (Miedo)"
 ---
-Narrador: El Lirio.
-Narrador: El Hacha.
-Narrador: El Manto.
-
-Narrador: Has visto la Tristeza.
-Narrador: La Ira.
-Narrador: Y el Miedo del bosque.
-
-Narrador: El Espíritu te espera.
-Narrador: Ya no hay vuelta atrás.
-
-Narrador: ¿Estás listo, Sacha?
+Guardian: Te has convertido en nada.
+Guardian: Has sobrevivido, sí. Nadie te ha visto. Nadie te ha tocado.
+Guardian: Pero correr es útil... no valiente. Un Guardián no debería esconderse de su propio hogar.
 ===
 
-title: Akelarre_Frases_01
+title: Level3_Respuesta_Buena
+comments: "Si el jugador revela el cristal (Verdad)"
 ---
-Narrador: La oscuridad no quiere hacerte daño. Quiere que te quedes.
+Guardian: ¿Lo ves ahora? ¡Mira!
+Guardian: No eran monstruos, Sacha. Eran ciervos asustados. Criaturas inocentes.
+Guardian: El miedo era solo una sombra en la pared. La luz de la verdad ha roto el hechizo.
 ===
 
-title: Akelarre_Frases_02
+title: Level3_Final
 ---
-Narrador: Las sombras recuerdan quién eras antes de que aprendieras a tener miedo.
-===
-title: Akelarre_Frases_03
----
-Narrador: La oscuridad no es el final. Es el lugar donde esperan las verdades impacientes.
-===
-title: Akelarre_Frases_04
----
-Narrador: Crees que estás solo. Eso es lo primero que la oscuridad te enseña.
+Guardian: Lo tienes todo. Has visto la Tristeza, la Ira y el Miedo.
+Guardian: El Espíritu te espera en el Claro de las Almas.
+Guardian: Ya no hay vuelta atrás. ¿Estás listo para el juicio final?
 ===

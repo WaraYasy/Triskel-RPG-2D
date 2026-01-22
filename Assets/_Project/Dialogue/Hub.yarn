@@ -1,20 +1,89 @@
 ﻿title: Hub1
-position: -39,54
+position: -270,-52
 ---
-Guardian: Ahí estás. Tan pequeño. 
-Guardian: Tan... brillante. El bosque ruge ahí fuera.
-Guardian: Siente tu presencia. Y no le gusta.
+Desconocido: Ah... por fin despiertas.
+Desconocido: Bienvenido al mundo de los sólidos y el polvo, pequeña chispa.
+Desconocido: No tienes piel, ni huesos, ni peso.
+Desconocido: Eres pura luz atrapada en una forma prestada.
+
+-> ¿Quién eres tú?
+    <<jump Hub1_Quien>>
+-> ¿Dónde estoy?
+    <<jump Hub1_Donde>>
+===
+
+title: Hub1_Quien
+color: red
+position: 45,-188
+---
+Sacha: ¿Quién eres tú?
+
+Desconocido: Esa es una pregunta para la que no tengo respuesta... no aquí abajo.
+Desconocido: Mi identidad está ligada a lo que hay en el piso de arriba.
+
+<<jump Hub_SubirEscaleras>>
+===
+
+title: Hub1_Donde
+position: -121,263
+---
+Sacha: ¿Dónde estoy?
+
+Desconocido: Esta cabaña fue mi hogar hace mucho tiempo.
+Desconocido: Ahora es tu cáscara, lo único que te separa de la tormenta.
+Desconocido: Pero este refugio es solo el principio. Aquí abajo solo hay polvo... lo importante está encima de nosotros.
+
+<<jump Hub_SubirEscaleras>>
+===
+
+title: Hub_SubirEscaleras
+position: 249,100
+---
+Desconocido: No hay tiempo para hacerse preguntas entre mantas viejas.
+Desconocido: Levanta la vista. ¿Ves esa luz arriba?
+Desconocido: Sube las escaleras.
+Desconocido: Hay algo ahí arriba que lleva demasiados años esperando a que alguien tenga el valor de mirarlo.
+===
+
+title: Hub3
+position: -149,-330
+---
+Desconocido: La madera se queja bajo tus pies. Hace eras que nadie sube al Santuario. 
+Desconocido: Ven. No tengas miedo. Lo que vas a ver ahí arriba es la razón por la que existes.
+===
+
+title: Hub4
+position: 213,322
+---
+Desconocido: Míralos. Tres pedestales. Tres huecos en la piedra. Tres heridas en mi orgullo. 
+Desconocido: Aquí es donde descansaba el equilibrio del bosque. Aquí yacían el Consuelo, la Fuerza y la Verdad.
+===
+
+title: Hub5
+position: -570,179
+---
+Desconocido: Permíteme presentarme ahora que ves mi vergüenza. 
+Desconocido: Yo soy la voz que escuchas. Soy el arquitecto de esta cabaña. 
+Desconocido: Fui el Guardián de este bosque... y el hombre que dejó que esos altares se quedaran vacíos.
+===
+
+title: Hub6
+position: 888,-176
+---
+Guardian: Por eso estás aquí, Sacha.
+Guardian: Yo soy un fantasma atado a su fracaso. No puedo salir de aquí. No puedo recuperarlas. 
+Guardian: Pero tú... tú no tienes historia. No tienes mis culpas. Tienes que ir ahí fuera. 
+Guardian: Tienes que bajar al infierno en el que se ha convertido mi bosque y traerlas de vuelta. 
+Guardian: Solo cuando estos tres altares estén llenos otra vez, podremos enfrentarnos al Espíritu.
 ===
 
 title: Hub2
 position: 388,-176
 ---
-Guardian: Tus piernas tiemblan. Es normal. El miedo pesa. Pero no puedes quedarte ahí tirado. Levántate.
-===
-title: Hub_Instrucciones
-position: 388,-176
----
-Tutorial: Usa el control táctil para moverte.
-<<wait 0.1>>
-<<jump Hub2>>
+Guardian: ¿Ya quieres salir?
+Guardian: Eres valiente... o ignorante.
+Guardian: Escucha el viento.
+Guardian: El bosque sabe que has despertado y está gritando.
+Guardian: Ahí fuera hay tres heridas: la Tristeza, la Ira y el Miedo.
+Guardian: El Espíritu del Bosque intentará aplastarte porque no entiende lo que eres.
 ===
