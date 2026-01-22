@@ -9,6 +9,7 @@ public class PlayerAnimator : MonoBehaviour
 {
     private Animator animator;
     private Rigidbody2D rb;
+    private RelicSystem relicSystem;
     
     // Parámetros del Animator
     private readonly int speedParam = Animator.StringToHash("Speed");
@@ -16,6 +17,7 @@ public class PlayerAnimator : MonoBehaviour
     private readonly int verticalParam = Animator.StringToHash("Vertical");
     private readonly int lastHorizontalParam = Animator.StringToHash("LastHorizontal");
     private readonly int lastVerticalParam = Animator.StringToHash("LastVertical");
+    private readonly int equippedItemParam = Animator.StringToHash("EquippedItem");
     
     private Vector2 lastMoveDirection = Vector2.down; // Dirección por defecto
 
@@ -23,6 +25,7 @@ public class PlayerAnimator : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        relicSystem = GetComponent<RelicSystem>();
     }
     
     private void Start()
@@ -31,6 +34,7 @@ public class PlayerAnimator : MonoBehaviour
         animator.SetFloat(lastHorizontalParam, 0f);
         animator.SetFloat(lastVerticalParam, -1f);
         animator.SetFloat(speedParam, 0f);
+        animator.SetFloat(equippedItemParam, 0f);
     }
 
     private void Update()
@@ -42,6 +46,12 @@ public class PlayerAnimator : MonoBehaviour
     {
         if (animator == null || rb == null) return;
         
+        // Actualizar item equipado (0: Nada, 1: Lirio, 2: Hacha, 3: Manto)
+        if (relicSystem != null)
+        {
+            animator.SetFloat(equippedItemParam, (float)relicSystem.GetCurrentRelic());
+        }
+
         // Obtener velocidad REAL del Rigidbody
         Vector2 velocity = rb.linearVelocity;
         float speed = velocity.magnitude;

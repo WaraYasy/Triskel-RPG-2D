@@ -43,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -57,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -148,10 +148,10 @@ TextureImporter:
       name: frame_007_0
       rect:
         serializedVersion: 2
-        x: 85
-        y: 113
-        width: 276
-        height: 274
+        x: 0
+        y: 0
+        width: 429
+        height: 461
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,55 +166,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: frame_007_1
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 367
-        width: 25
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 075377c092af3a920800000000000000
-      internalID: 3000516830968624496
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: frame_007_2
-      rect:
-        serializedVersion: 2
-        x: 232
-        y: 378
-        width: 27
-        height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2a90a011cc759fd50800000000000000
-      internalID: 6771540048699066786
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 205173fbc5d9c4648ac7ffcf6eadd070
     internalID: 0
     vertices: []
     indices: 
@@ -225,8 +181,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       frame_007_0: -8556153337439913670
-      frame_007_1: 3000516830968624496
-      frame_007_2: 6771540048699066786
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

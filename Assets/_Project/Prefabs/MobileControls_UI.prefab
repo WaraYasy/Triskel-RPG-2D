@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1254991570192517160}
   - component: {fileID: 4128025951254612966}
   - component: {fileID: 292646106910332596}
+  - component: {fileID: -2002349988544515146}
   m_Layer: 5
   m_Name: MobileControls_UI
   m_TagString: Untagged
@@ -105,6 +106,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &-2002349988544515146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15599436616681413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57a17dd59d0cbe34294cbbbb41038a6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showInEditor: 1
 --- !u!1 &445925606321722249
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,14 +363,22 @@ PrefabInstance:
     - target: {fileID: 114826362001716654, guid: 05f32eddd3e41fd4597ada617b785928, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: -7414830730180813051, guid: 2209fd511b305254e9627f9db4a2c59f, type: 3}
     - target: {fileID: 114826362001716654, guid: 05f32eddd3e41fd4597ada617b785928, type: 3}
       propertyPath: m_Color.a
-      value: 0.5882353
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114826362001716654, guid: 05f32eddd3e41fd4597ada617b785928, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 114826362001716654, guid: 05f32eddd3e41fd4597ada617b785928, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7411765
       objectReference: {fileID: 0}
     - target: {fileID: 114826362001716654, guid: 05f32eddd3e41fd4597ada617b785928, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 0.28627452
       objectReference: {fileID: 0}
     - target: {fileID: 224771122883764374, guid: 05f32eddd3e41fd4597ada617b785928, type: 3}
       propertyPath: m_Pivot.x
@@ -640,7 +662,7 @@ PrefabInstance:
     - target: {fileID: 114826362001716654, guid: 05f32eddd3e41fd4597ada617b785928, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 7440982637290965791, guid: 2209fd511b305254e9627f9db4a2c59f, type: 3}
     - target: {fileID: 224771122883764374, guid: 05f32eddd3e41fd4597ada617b785928, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

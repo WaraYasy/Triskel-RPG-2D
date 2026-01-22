@@ -11,6 +11,11 @@ public class GhostAI : MonoBehaviour
     [SerializeField] private float detectionRadius = 10f;
     [SerializeField] private float stopDistance = 0.5f;
     
+    [Header("Configuración de Combate")]
+    [SerializeField] private float damageAmount = 1f;
+    [SerializeField] private float damageCooldown = 1.5f;
+    private float lastDamageTime = 0f;
+
     [Header("Referencias (Opcional)")]
     [SerializeField] private Animator animator;
     
@@ -20,6 +25,7 @@ public class GhostAI : MonoBehaviour
     
     private Transform playerTransform;
     private PlayerLight playerLight;
+    private PlayerHealth playerHealth;
     private Vector2 lastMoveDirection = Vector2.down;
 
     private void Awake()
@@ -68,19 +74,12 @@ public class GhostAI : MonoBehaviour
         {
             playerTransform = player.transform;
             playerLight = player.GetComponent<PlayerLight>();
+            playerHealth = player.GetComponent<PlayerHealth>();
             
             if (playerLight != null)
             {
                 Debug.Log($"[GhostAI] Player y PlayerLight encontrados");
             }
-            else
-            {
-                Debug.LogWarning("[GhostAI] Player encontrado pero sin PlayerLight component");
-            }
-        }
-        else
-        {
-            Debug.LogWarning("[GhostAI] No se encontró Player con tag 'Player'");
         }
     }
 
@@ -114,18 +113,28 @@ public class GhostAI : MonoBehaviour
         UpdateAnimation(direction);
     }
 
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log($"[GhostAI] Tocando al Player. PlayerHealth es null? {playerHealth == null}");
+            if (Time.time >= lastDamageTime + damageCooldown)
+            {
+                if (playerHealth != null)
+                {
+                    playerHealth.TakeDamage(damageAmount, transform.position);
+                    lastDamageTime = Time.time;
+                    Debug.Log($"[GhostAI] ¡Daño causado al Player! Vida restante: {playerHealth.GetCurrentHealth()}");
+                }
+            }
+        }
+    }
+
     private void UpdateAnimation(Vector2 direction)
     {
-        if (animator == null)
-        {
-            Debug.LogWarning("[GhostAI] Animator es null!");
-            return;
-        }
+        if (animator == null) return;
         
-        // DEBUG: Ver valores que se envían
-        Debug.Log($"[GhostAI] Enviando al Animator: H={direction.x:F2}, V={direction.y:F2}");
-        
-        // Actualizar parámetros del Animator (igual que PlayerAnimator)
+        // Actualizar parámetros del Animator
         animator.SetFloat(horizontalParam, direction.x);
         animator.SetFloat(verticalParam, direction.y);
     }
