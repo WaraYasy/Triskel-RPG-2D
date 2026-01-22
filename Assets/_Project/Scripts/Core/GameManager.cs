@@ -45,10 +45,49 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
     private void Start()
     {
         // Obtener referencias DESPUÉS de que todos los Awake() terminen
         InitializeManagers();
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Safety Net: Verificar si falta la cámara principal
+        if (Camera.main == null)
+        {
+            Debug.LogWarning($"[GameManager] ALERTA: No se encontró MainCamera en la escena '{scene.name}'. Creando cámara de respaldo.");
+            CreateFallbackCamera();
+        }
+    }
+
+    private void CreateFallbackCamera()
+    {
+        GameObject cameraObj = new GameObject("FallbackCamera");
+        cameraObj.tag = "MainCamera";
+        
+        Camera cam = cameraObj.AddComponent<Camera>();
+        cam.clearFlags = CameraClearFlags.SolidColor;
+        cam.backgroundColor = Color.black;
+        cam.orthographic = true;
+        cam.orthographicSize = 5f; // Tamaño estándar 2D
+
+        cameraObj.AddComponent<AudioListener>();
+        
+        // Posicionar detrás para ver el plano 2D (Z = 0)
+        cameraObj.transform.position = new Vector3(0, 0, -10);
+        
+        Debug.Log("[GameManager] Cámara de respaldo creada exitosamente.");
     }
 
     #endregion
