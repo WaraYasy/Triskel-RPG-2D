@@ -431,6 +431,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 1354840154}
   soloUnaVez: 1
   freezePlayer: 1
+  persisteEntreEscenas: 0
   yaUsado: 0
 --- !u!61 &196873342
 BoxCollider2D:
@@ -739,6 +740,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5527937721369888723, guid: 50ef614bbfe761e4abf974d048f71d3f, type: 3}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6347445498604003613, guid: 50ef614bbfe761e4abf974d048f71d3f, type: 3}
       propertyPath: m_Name
       value: Ghost (3)
@@ -830,11 +835,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2801058867458340857, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.97
+      value: 5.3
       objectReference: {fileID: 0}
     - target: {fileID: 2801058867458340857, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 41.46
+      value: 73.9
       objectReference: {fileID: 0}
     - target: {fileID: 2801058867458340857, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -377512,6 +377517,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7601468624503164915, guid: 25b25b112de0afd49974225a3deb58e2, type: 3}
+      propertyPath: startNode
+      value: Intro1
+      objectReference: {fileID: 0}
     - target: {fileID: 8430032995033986544, guid: 25b25b112de0afd49974225a3deb58e2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -377706,7 +377715,7 @@ Transform:
   m_GameObject: {fileID: 1356241593}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.97, y: 41.46, z: -10}
+  m_LocalPosition: {x: 5.3, y: 73.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
