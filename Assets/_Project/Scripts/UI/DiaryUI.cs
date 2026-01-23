@@ -54,10 +54,20 @@ namespace Triskel.UI
 
         private void OnEnable()
         {
-            // Esperar un frame para asegurarse de que el UIDocument esté inicializado
+            // Intentar inicializar inmediatamente para evitar que la UI aparezca un segundo (parpadeo)
             if (!isInitialized)
             {
-                Invoke(nameof(InitializeUI), 0.1f);
+                if (uiDocument == null) uiDocument = GetComponent<UIDocument>();
+
+                if (uiDocument != null && uiDocument.rootVisualElement != null)
+                {
+                    InitializeUI();
+                }
+                else
+                {
+                    // Fallback: Si por alguna razón no está lista, esperar lo mínimo posible
+                    Invoke(nameof(InitializeUI), 0.01f);
+                }
             }
         }
 

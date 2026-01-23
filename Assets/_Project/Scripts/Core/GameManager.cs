@@ -45,49 +45,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
     private void Start()
     {
         // Obtener referencias DESPUÉS de que todos los Awake() terminen
         InitializeManagers();
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        // Safety Net: Verificar si falta la cámara principal
-        if (Camera.main == null)
-        {
-            Debug.LogWarning($"[GameManager] ALERTA: No se encontró MainCamera en la escena '{scene.name}'. Creando cámara de respaldo.");
-            CreateFallbackCamera();
-        }
-    }
-
-    private void CreateFallbackCamera()
-    {
-        GameObject cameraObj = new GameObject("FallbackCamera");
-        cameraObj.tag = "MainCamera";
-        
-        Camera cam = cameraObj.AddComponent<Camera>();
-        cam.clearFlags = CameraClearFlags.SolidColor;
-        cam.backgroundColor = Color.black;
-        cam.orthographic = true;
-        cam.orthographicSize = 5f; // Tamaño estándar 2D
-
-        cameraObj.AddComponent<AudioListener>();
-        
-        // Posicionar detrás para ver el plano 2D (Z = 0)
-        cameraObj.transform.position = new Vector3(0, 0, -10);
-        
-        Debug.Log("[GameManager] Cámara de respaldo creada exitosamente.");
     }
 
     #endregion
@@ -230,28 +191,12 @@ public class GameManager : MonoBehaviour
             diaryPersistence.ClearSavedData();
         }
 
-        // 4. Limpiar estados de diálogos persistentes (Hub)
-        ClearDialogueStates();
-
-        // 5. Limpiar PlayerPrefs
+        // 4. Limpiar PlayerPrefs
         PlayerPrefs.DeleteKey("game_moral");
         PlayerPrefs.DeleteKey("game_level");
         PlayerPrefs.Save();
 
         Debug.Log("[GameManager] ✓ Nueva partida iniciada");
-    }
-
-    /// <summary>
-    /// Limpia todos los estados de diálogos persistentes.
-    /// </summary>
-    private void ClearDialogueStates()
-    {
-        // Limpiar todos los PlayerPrefs que empiecen con "DialogueZone_"
-        // Como Unity no permite enumerar PlayerPrefs, limpiamos los conocidos del Hub
-        PlayerPrefs.DeleteKey("DialogueZone_DentroDelHub1_Hub1");
-        PlayerPrefs.DeleteKey("DialogueZone_DentroDelHub2_Hub3");
-        PlayerPrefs.DeleteKey("DialogueZone_MainHub_Hub2");
-        // Agrega aquí más si usas DialogueZone con persisteEntreEscenas en otras partes
     }
 
     #endregion
