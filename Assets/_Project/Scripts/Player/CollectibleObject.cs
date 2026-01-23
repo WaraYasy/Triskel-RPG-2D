@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Triskel.Core;
 
 namespace Triskel.Player
@@ -60,10 +61,31 @@ namespace Triskel.Player
             // Si requiere tecla y el jugador está cerca
             if (!autoCollect && isPlayerNearby && !wasCollected)
             {
-                if (Input.GetKeyDown(interactKey))
+                if (IsInteractKeyPressed())
                 {
                     CollectItem();
                 }
+            }
+        }
+
+        /// <summary>
+        /// Comprueba si se presionó la tecla de interacción usando el nuevo Input System.
+        /// </summary>
+        private bool IsInteractKeyPressed()
+        {
+            if (Keyboard.current == null) return false;
+
+            // Mapear KeyCode a Keyboard keys del nuevo Input System
+            switch (interactKey)
+            {
+                case KeyCode.E: return Keyboard.current.eKey.wasPressedThisFrame;
+                case KeyCode.F: return Keyboard.current.fKey.wasPressedThisFrame;
+                case KeyCode.Space: return Keyboard.current.spaceKey.wasPressedThisFrame;
+                case KeyCode.Return: return Keyboard.current.enterKey.wasPressedThisFrame;
+                // Agregar más casos según sea necesario
+                default:
+                    Debug.LogWarning($"[CollectibleObject] KeyCode {interactKey} no está mapeado en el nuevo Input System.");
+                    return false;
             }
         }
 

@@ -1,93 +1,59 @@
-﻿title: Nivel2_Intro
+﻿title: Level2_Start
 ---
-Narrador: Siente el calor, Sacha.
-Narrador: Esta es la cicatriz del bosque.
-Narrador: Aquí es donde la tierra recuerda la guerra.
-
-Narrador: La ira no es más que dolor que se ha endurecido.
-Narrador: No dejes que el polvo te ciegue.
-===
-title: Nivel2_Hacha
----
-Narrador: En el centro del camino, algo espera.
-Narrador: No es un arma cualquiera.
-Narrador: Es pesada.
-Narrador: Antigua.
-
-Narrador: El Hacha del Arquitecto.
-Narrador: Con ella se tallaron cunas y se partieron montañas.
-
-Narrador: Recuerda esto, pequeño.
-Narrador: Un golpe puede construir un refugio...
-Narrador: o derribarlo sobre tu cabeza.
-
+Guardian: Siente el calor, Sacha. El aire aquí quema la garganta.
+Guardian: Esta es la cicatriz del bosque. Aquí es donde la tierra recuerda la guerra.
+Guardian: La Ira no es más que dolor que se ha endurecido. No dejes que el polvo te ciegue.
 ===
 
-title: Nivel2_Gigante
+title: Level2_Lore_A
 ---
-Narrador: El camino termina en un muro.
-Narrador: Rocas apiladas por el pánico.
-
-Narrador: Detrás, observa el Viejo Guardián de Piedra.
-Narrador: No avanza.
-Narrador: No ataca.
-
-Narrador: Está atrapado en su propia fuerza.
-Narrador: Espera a alguien que ponga orden en el caos.
-
-Narrador: ¿Qué harás?
-
+Guardian: ¿Ves esas rocas rotas? Antes eran torres.
+Guardian: Levantamos muros para proteger lo que amábamos, pero los muros también nos encerraron.
 ===
 
-title: Nivel2_Decision
+title: Level2_Lore_B
 ---
-<<choice>>
-    <<option "Golpear el muro con fuerza">>
-        <<jump Nivel2_Destruccion>>
-    <<option "Buscar otra forma de abrir el paso">>
-        <<jump Nivel2_Construccion>>
-<<endchoice>>
+Guardian: El Viejo Guardián de Piedra sigue aquí.
+Guardian: Su furia es tan vieja que ya no recuerda por qué está enfadado. Solo sabe golpear.
 ===
 
-title: Nivel2_Destruccion
+title: Level2_Hacha
+comments: "Al recoger el Hacha del Arquitecto"
 ---
-Narrador: La fuerza responde a la fuerza.
-Narrador: La piedra se rompe.
-Narrador: El polvo lo cubre todo.
-
-Narrador: El camino se abre.
-Narrador: Pero algo se pierde en el estruendo.
-
-Narrador: El Gigante aparta la mirada.
-Narrador: Has roto lo que intentaba proteger.
-
+Guardian: Pesa, ¿verdad? Es el Hacha del Arquitecto.
+Guardian: Con ella se tallaron cunas y se partieron montañas.
+Guardian: Recuerda: un golpe puede construir un refugio... o derribarlo sobre tu cabeza.
+Guardian: Todo depende de la mano que la empuñe.
 ===
 
-title: Nivel2_Construccion
+title: Level2_Obstaculo_Muro
+comments: "Al llegar al derrumbe con el Gigante"
 ---
-Narrador: No todo obstáculo necesita ser destruido.
-Narrador: A veces, solo espera ser entendido.
-
-Narrador: Las piedras se mueven.
-Narrador: Se ordenan.
-Narrador: Encuentran su lugar.
-
-Narrador: Has creado un paso donde solo había un muro.
-Narrador: La piedra reconoce al maestro.
-
-Narrador: El Gigante asiente.
-Narrador: Su tarea ha terminado.
-
+Guardian: El paso está cerrado. Es un caos de piedra y ruido.
+Guardian: Mira al Gigante. Está atrapado detrás de su propia destrucción.
+Guardian: Espera a alguien que ponga orden en el caos. Tienes la herramienta. ¿Romperás o construirás?
 ===
 
-title: Nivel2_Fin
+title: Level2_Respuesta_Mala
+comments: "Si el jugador rompe el muro a golpes (Destrucción)"
 ---
-Narrador: La ira se apaga.
-Narrador: Pero la ceniza queda.
+Guardian: ¿Fuerza contra fuerza?
+Guardian: Has abierto el camino, sí... convirtiendo la piedra en arena.
+Guardian: Mira al Gigante. Se ha dado la vuelta. Has roto lo único que le quedaba.
+Guardian: Avanza, destructor.
+===
 
-Narrador: Has sobrevivido a la fuerza del bosque.
-Narrador: Ahora viene lo difícil.
+title: Level2_Respuesta_Buena
+comments: "Si el jugador golpea el pilar clave (Construcción)"
+---
+Guardian: Increíble... No has destruido el obstáculo, lo has transformado.
+Guardian: Has dado forma a su ira. Has creado un puente donde solo había un muro.
+Guardian: El Gigante descansa por fin. La piedra reconoce al maestro.
+===
 
-Narrador: Vuelve a casa.
-Narrador: Prepárate para la oscuridad.
+title: Level2_Final
+---
+Guardian: La ira se apaga, pero la ceniza queda.
+Guardian: Has sobrevivido a la fuerza del bosque.
+Guardian: Vuelve a casa, Sacha. Prepárate, porque ahora viene la oscuridad.
 ===

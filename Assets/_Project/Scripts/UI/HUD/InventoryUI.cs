@@ -75,27 +75,8 @@ namespace Triskel.UI.HUD
             UnsubscribeFromInventoryEvents();
         }
 
-        private void Update()
-        {
-            // NOTA: Selección de slots con teclado 1/2/3 ahora se maneja desde RelicSystem
-            // con el nuevo Input System. Este código ya no es necesario.
-            
-            /* COMENTADO - Ya se maneja con Input System en RelicSystem
-            // Control con teclado: Teclas 1, 2, 3
-            if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
-            {
-                SelectSlotByIndex(0);
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
-            {
-                SelectSlotByIndex(1);
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
-            {
-                SelectSlotByIndex(2);
-            }
-            */
-        }
+        // NOTA: Selección de slots con teclado 1/2/3 ahora se maneja desde RelicSystem
+        // con el nuevo Input System, por lo que no necesitamos Update() aquí.
 
         #endregion
 

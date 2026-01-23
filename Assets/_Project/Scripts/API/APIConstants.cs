@@ -122,5 +122,26 @@ namespace Triskel.API
                 };
             }
         }
+
+        // ==========================================
+        // PLATAFORMAS
+        // ==========================================
+        public static class Platforms
+        {
+            public const string WINDOWS = "windows";
+            public const string ANDROID = "android";
+
+            /// <summary>
+            /// Obtiene la plataforma actual automaticamente.
+            /// </summary>
+            public static string GetCurrentPlatform()
+            {
+#if UNITY_ANDROID
+                return ANDROID;
+#else
+                return WINDOWS;
+#endif
+            }
+        }
     }
 }

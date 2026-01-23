@@ -8,12 +8,14 @@ namespace Triskel.UI
     /// <summary>
     /// Controlador del Menu Principal.
     /// Muestra diferentes opciones segun el estado de sesion.
+    /// Coordina los overlays de Login y Registro.
     /// </summary>
     public class MainMenuController : MonoBehaviour
     {
         [Header("Referencias")]
-        [SerializeField] private UIDocument mainMenuDocument;
-        [SerializeField] private UIDocument loginDocument;
+        [SerializeField] private UIDocument uiDocument;
+        [SerializeField] private LoginController loginController;
+        [SerializeField] private RegisterController registerController;
 
         [Header("Escenas")]
         [SerializeField] private string gameSceneName = "Game";
@@ -27,22 +29,31 @@ namespace Triskel.UI
         private Button newGameButton;
         private Button logoutButton;
 
-        // Elementos UI - Login
-        private VisualElement loginOverlay;
-
         private void OnEnable()
         {
-            InitializeMainMenu();
-            InitializeLoginPanel();
+            InitializeUI();
         }
 
         private void Start()
         {
-            // Suscribirse a eventos del API (en Start para asegurar que el singleton exista)
+            // Suscribirse a eventos del API
             if (TriskelAPIClient.Instance != null)
             {
                 TriskelAPIClient.Instance.OnLoggedIn += OnLoggedIn;
                 TriskelAPIClient.Instance.OnLoggedOut += OnLoggedOut;
+            }
+
+            // Suscribirse a eventos de los controladores de auth
+            if (loginController != null)
+            {
+                loginController.OnGoToRegister += ShowRegister;
+                loginController.OnLoginSuccess += OnAuthSuccess;
+            }
+
+            if (registerController != null)
+            {
+                registerController.OnGoToLogin += ShowLogin;
+                registerController.OnRegisterSuccess += OnAuthSuccess;
             }
 
             // Verificar estado inicial
@@ -51,11 +62,24 @@ namespace Triskel.UI
 
         private void OnDisable()
         {
-            // Desuscribirse de eventos
+            // Desuscribirse de eventos del API
             if (TriskelAPIClient.Instance != null)
             {
                 TriskelAPIClient.Instance.OnLoggedIn -= OnLoggedIn;
                 TriskelAPIClient.Instance.OnLoggedOut -= OnLoggedOut;
+            }
+
+            // Desuscribirse de eventos de auth
+            if (loginController != null)
+            {
+                loginController.OnGoToRegister -= ShowRegister;
+                loginController.OnLoginSuccess -= OnAuthSuccess;
+            }
+
+            if (registerController != null)
+            {
+                registerController.OnGoToLogin -= ShowLogin;
+                registerController.OnRegisterSuccess -= OnAuthSuccess;
             }
 
             // Limpiar eventos de botones
@@ -66,18 +90,18 @@ namespace Triskel.UI
             if (logoutButton != null) logoutButton.clicked -= OnLogoutClicked;
         }
 
-        private void InitializeMainMenu()
+        private void InitializeUI()
         {
-            if (mainMenuDocument == null)
-                mainMenuDocument = GetComponent<UIDocument>();
+            if (uiDocument == null)
+                uiDocument = GetComponent<UIDocument>();
 
-            if (mainMenuDocument == null)
+            if (uiDocument == null)
             {
-                Debug.LogError("[MainMenuController] UIDocument del menu principal no asignado");
+                Debug.LogError("[MainMenuController] UIDocument no asignado");
                 return;
             }
 
-            var root = mainMenuDocument.rootVisualElement;
+            var root = uiDocument.rootVisualElement;
 
             // Obtener referencias
             mainMenuOverlay = root.Q<VisualElement>("MainMenuOverlay");
@@ -94,18 +118,6 @@ namespace Triskel.UI
             if (continueButton != null) continueButton.clicked += OnContinueClicked;
             if (newGameButton != null) newGameButton.clicked += OnNewGameClicked;
             if (logoutButton != null) logoutButton.clicked += OnLogoutClicked;
-        }
-
-        private void InitializeLoginPanel()
-        {
-            if (loginDocument == null)
-                return;
-
-            var root = loginDocument.rootVisualElement;
-            loginOverlay = root.Q<VisualElement>("LoginOverlay");
-
-            // Ocultar login inicialmente
-            HideLogin();
         }
 
         private void CheckSessionState()
@@ -151,8 +163,8 @@ namespace Triskel.UI
             SetDisplay(newGameButton, true);
             SetDisplay(logoutButton, true);
 
-            // Ocultar login si esta visible
-            HideLogin();
+            // Ocultar overlays de auth
+            HideAuthOverlays();
         }
 
         private void ShowLoggedOutState()
@@ -169,6 +181,9 @@ namespace Triskel.UI
             SetDisplay(continueButton, false);
             SetDisplay(newGameButton, false);
             SetDisplay(logoutButton, false);
+
+            // Asegurar que los overlays esten ocultos
+            HideAuthOverlays();
         }
 
         private void SetDisplay(VisualElement element, bool visible)
@@ -219,7 +234,15 @@ namespace Triskel.UI
             if (TriskelAPIClient.Instance != null)
             {
                 TriskelAPIClient.Instance.CreateGame(
-                    game => Debug.Log($"[MainMenuController] Partida creada: {game.game_id}"),
+                    game =>
+                    {
+                        Debug.Log($"[MainMenuController] Partida creada: {game.game_id}");
+                        // Iniciar sesion de juego
+                        TriskelAPIClient.Instance.StartSession(
+                            session => Debug.Log($"[MainMenuController] Sesion iniciada: {session.session_id}"),
+                            error => Debug.LogWarning($"[MainMenuController] Error iniciando sesion: {error}")
+                        );
+                    },
                     error => Debug.LogWarning($"[MainMenuController] Error creando partida: {error}")
                 );
             }
@@ -238,22 +261,55 @@ namespace Triskel.UI
 
         #endregion
 
-        #region Login Panel
+        #region Auth Overlay Management
 
         private void ShowLogin()
         {
-            // Poner el Login encima del MainMenu
-            if (loginDocument != null)
-                loginDocument.sortingOrder = mainMenuDocument.sortingOrder + 1;
+            HideRegister();
+            if (loginController != null)
+                loginController.Show();
+        }
 
-            if (loginOverlay != null)
-                loginOverlay.style.display = DisplayStyle.Flex;
+        private void ShowRegister()
+        {
+            HideLogin();
+            if (registerController != null)
+                registerController.Show();
         }
 
         private void HideLogin()
         {
-            if (loginOverlay != null)
-                loginOverlay.style.display = DisplayStyle.None;
+            if (loginController != null)
+                loginController.Hide();
+        }
+
+        private void HideRegister()
+        {
+            if (registerController != null)
+                registerController.Hide();
+        }
+
+        private void HideAuthOverlays()
+        {
+            HideLogin();
+            HideRegister();
+        }
+
+        private void OnAuthSuccess()
+        {
+            Debug.Log("[MainMenuController] Autenticacion exitosa");
+
+            // Ocultar overlays
+            HideAuthOverlays();
+
+            // Obtener perfil y actualizar UI
+            if (TriskelAPIClient.Instance != null)
+            {
+                TriskelAPIClient.Instance.GetMyProfile(
+                    profile => ShowLoggedInState(profile.username),
+                    error => ShowLoggedInState()
+                );
+            }
         }
 
         #endregion

@@ -1,0 +1,134 @@
+.login-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+}
+
+.login-panel {
+    width: 500px;
+    padding: 40px;
+    align-items: center;
+    border-radius: 15px;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.login-title {
+    font-size: 90px;
+    color: rgb(20, 18, 15);
+    -unity-font-style: normal;
+    margin-bottom: 10px;
+    -unity-text-align: middle-center;
+    margin-top: 70px;
+    -unity-font-definition: url("project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
+    white-space: pre-wrap;
+    width: 60%;
+    -unity-background-scale-mode: scale-and-crop;
+    border-top-width: 80px;
+}
+
+.login-section {
+    width: 75%;
+    margin-bottom: 0;
+    align-items: stretch;
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
+    background-size: 70% 100%;
+}
+
+.login-label {
+    font-size: 45px;
+    color: rgb(40, 35, 30);
+    margin-bottom: 5px;
+    -unity-text-align: middle-left;
+    -unity-font-definition: url("project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
+}
+
+.login-input {
+    height: 70px;
+    font-size: 35px;
+    color: rgb(30, 25, 20);
+    background-color: rgb(240, 245, 248);
+    border-width: 3px;
+    border-color: rgb(127, 179, 192);
+    border-radius: 8px;
+    padding: 5px 15px;
+    -unity-text-align: middle-left;
+    border-left-color: rgb(39, 93, 107);
+    border-right-color: rgb(39, 93, 107);
+    border-top-color: rgb(39, 93, 107);
+    border-bottom-color: rgb(39, 93, 107);
+    -unity-font-definition: url("project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
+}
+
+.login-input:focus {
+    border-color: rgb(61, 107, 122);
+    background-color: rgb(255, 255, 255);
+}
+
+.login-button {
+    width: 250px;
+    height: 60px;
+    font-size: 45px;
+    color: rgb(255, 255, 255);
+    border-width: 3px;
+    border-radius: 10px;
+    margin-top: 15px;
+    -unity-text-align: middle-center;
+    -unity-font-definition: url("project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
+    letter-spacing: 5px;
+    -unity-font-style: normal;
+}
+
+.login-button.primary {
+    background-color: rgb(35, 75, 90);
+    border-color: rgb(127, 179, 192);
+}
+
+.login-button.primary:hover {
+    background-color: rgb(232, 214, 107);
+    border-color: rgb(255, 240, 150);
+    color: rgb(30, 30, 30);
+    scale: 1.05;
+}
+
+.login-button.primary:active {
+    background-color: rgb(40, 70, 80);
+    scale: 0.95;
+}
+
+.login-button.secondary {
+    background-color: rgb(73, 91, 60);
+    border-color: rgb(127, 179, 192);
+}
+
+.login-button.secondary:hover {
+    background-color: rgb(107, 214, 132);
+    border-color: rgb(150, 255, 180);
+    color: rgb(30, 30, 30);
+    scale: 1.05;
+}
+
+.login-button.secondary:active {
+    background-color: rgb(60, 80, 50);
+    scale: 0.95;
+}
+
+.error-label {
+    display: none;
+    font-size: 40px;
+    color: rgb(200, 60, 60);
+    background-color: rgba(200, 60, 60, 0.15);
+    border-width: 2px;
+    border-color: rgb(200, 60, 60);
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin-top: 15px;
+    -unity-text-align: middle-center;
+    white-space: normal;
+    max-width: 90%;
+    -unity-font-definition: url("project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
+}

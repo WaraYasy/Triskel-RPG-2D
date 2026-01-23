@@ -1,0 +1,27 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/UI/Menus/Register.uss?fileID=7433441132597879392&amp;guid=9f9cb40b78c0e9b4389b2abae3209d1c&amp;type=3#Register" />
+    <ui:VisualElement name="RegisterOverlay" class="login-overlay">
+        <ui:VisualElement name="RegisterPanel" class="login-panel" style="background-image: url(&quot;project://database/Assets/_Project/Sprites/UI/Common/Backgrounds/bg_box2.png?fileID=2800000&amp;guid=737dc65ba81f06949a890a8d57b33928&amp;type=3#bg_box2&quot;); -unity-background-scale-mode: scale-and-crop; height: 1318px; width: 1351px;">
+            <ui:Label text="CREAR CUENTA" name="RegisterTitle" class="login-title" />
+            <ui:VisualElement name="UserSection" class="login-section" style="width: 70%;">
+                <ui:Label text="Usuario (3-20 caracteres)" name="UserLabel" class="login-label" />
+                <ui:TextField name="UserInput" max-length="20" class="login-input" />
+            </ui:VisualElement>
+            <ui:VisualElement name="EmailSection" class="login-section" style="width: 70%;">
+                <ui:Label text="Email (opcional)" name="EmailLabel" class="login-label" />
+                <ui:TextField name="EmailInput" class="login-input" />
+            </ui:VisualElement>
+            <ui:VisualElement name="PasswordSection" class="login-section" style="width: 70%;">
+                <ui:Label text="Contraseña (mín. 6 caracteres)" name="PasswordLabel" class="login-label" />
+                <ui:TextField name="PasswordInput" max-length="20" password="true" class="login-input" />
+            </ui:VisualElement>
+            <ui:VisualElement name="ConfirmPasswordSection" class="login-section" style="width: 70%;">
+                <ui:Label text="Confirmar contraseña" name="ConfirmPasswordLabel" class="login-label" />
+                <ui:TextField name="ConfirmPasswordInput" max-length="20" password="true" class="login-input" />
+            </ui:VisualElement>
+            <ui:Button text="Crear cuenta" name="RegisterButton" class="login-button primary" style="width: 50%; height: 80px;" />
+            <ui:Button text="Ya tengo cuenta" name="GoToLoginButton" class="login-button secondary" style="width: 50%; height: 80px;" />
+            <ui:Label name="ErrorLabel" class="error-label" style="display: none;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

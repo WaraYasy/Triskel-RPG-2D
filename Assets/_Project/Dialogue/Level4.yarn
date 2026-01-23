@@ -1,172 +1,51 @@
-﻿title: FINAL_ENTRADA
+﻿title: Final_Intro_Cabana
+comments: "De vuelta en el Hub, antes de salir a la batalla"
 ---
-NARRADOR:
-Ya está.
-El ciclo está completo.
-
-NARRADOR:
-Tienes las herramientas de los antiguos.
-Sacha...
-pase lo que pase ahí fuera...
-gracias por devolver el fuego a este hogar.
-
-NARRADOR:
-La puerta se abre sola.
-El Espíritu te espera.
-No lleves armas.
-Lleva tus decisiones.
-
--> Ir al claro
+Guardian: Ya está. El ciclo está completo.
+Guardian: Tienes las herramientas de los antiguos en los altares.
+Guardian: Sacha... pase lo que pase ahí fuera... Gracias por devolver el fuego a este hogar.
+Guardian: Sal. No lleves armas. Lleva tus decisiones.
 ===
 
-title: FINAL_CLARO
+title: Final_Boss_Intro
+comments: "Al entrar en el Claro de las Almas"
 ---
-NARRADOR:
-El claro es perfecto.
-Hierba blanca.
-Un cielo que no sabe decidirse entre el caos y la belleza.
-
-ESPIRITU:
-¿POR QUÉ HAS VUELTO, PEQUEÑO INTRUSO?
-¿CREES QUE PUEDES DOMINARME?
-
-NARRADOR:
-No hables.
-Aguanta.
-Demuéstrale quién eres.
-
--> Resistir
+Espiritu: ¿POR QUÉ HAS VUELTO, PEQUEÑO INTRUSO?
+Espiritu: ¿CREES QUE PUEDES DOMINARME?
+Guardian: No hables, Sacha. Aguanta. Demuéstrale quién eres.
 ===
 
-title: FINAL_TRISTEZA
+title: Final_Ending_0_Usurpador
+comments: "0 Aciertos (Todo Malo). Final Triste."
 ---
-NARRADOR:
-El Espíritu se vuelve azul.
-La tristeza cae como lluvia lenta.
-
-<<if $ayudo_tristeza>>
-    NARRADOR:
-    Ellos recuerdan tu calidez.
-    El dolor no puede tocarte ahora.
-<<else>>
-    NARRADOR:
-    Estás solo contra la lluvia.
-    Corre, Sacha.
-<<endif>>
-
--> Seguir
+Guardian: ... Silencio.
+Guardian: Has silenciado al bosque, Sacha. Confundiste la paz con la muerte.
+Guardian: El Espíritu se ha desmoronado. Ya no hay amenazas... pero tampoco hay vida.
+Guardian: Eres el rey de un reino de cenizas. Sobreviviste, pero estás solo.
 ===
 
-title: FINAL_IRA
+title: Final_Ending_1_Ermitano
+comments: "1 Acierto. Final Agridulce."
 ---
-NARRADOR:
-El rojo lo invade todo.
-La ira rompe el suelo bajo tus pies.
-
-<<if $ayudo_ira>>
-    NARRADOR:
-    La montaña te devuelve el favor.
-    La piedra te protege.
-<<else>>
-    NARRADOR:
-    La violencia genera violencia.
-    Aguanta el golpe.
-<<endif>>
-
--> Seguir
+Guardian: Una tregua. Eso es todo lo que tenemos.
+Guardian: El bosque te tolera, Guardián, pero no te ama. Has salvado una pequeña parte... pero el resto sigue herido.
+Guardian: Vuelve a tu cabaña y cierra la puerta. Será un invierno largo, pero al menos estamos vivos.
 ===
 
-title: FINAL_MIEDO
+title: Final_Ending_2_Cicatrizado
+comments: "2 Aciertos. Final Bueno."
 ---
-NARRADOR:
-La luz desaparece.
-El miedo se arrastra por la tierra.
-
-<<if $ayudo_miedo>>
-    NARRADOR:
-    La verdad ilumina tus pasos.
-    No hay nada que temer.
-<<else>>
-    NARRADOR:
-    Te escondiste en las sombras.
-    Ahora las sombras vienen a por ti.
-<<endif>>
-
--> Veredicto
-    <<jump FINAL_VEREDICTO>>
+Guardian: Has traído el equilibrio, Sacha.
+Guardian: La mayoría de las heridas han cerrado. El bosque vuelve a respirar.
+Guardian: Aún queda una sombra, un rincón que no pudimos salvar... Pero es suficiente.
+Guardian: Eres un buen Guardián. Descansa.
 ===
 
-title: FINAL_VEREDICTO
+title: Final_Ending_3_Leyenda
+comments: "3 Aciertos. Final Perfecto."
 ---
-NARRADOR:
-Todo se detiene.
-El Espíritu flota frente a ti.
-Agotado.
+Guardian: Mirad... Ya no hay diferencia entre el Guardián y el Bosque.
+Guardian: Has escuchado cada llanto, has reparado cada muro, has iluminado cada miedo.
+Guardian: El sueño ha terminado. La primavera eterna comienza hoy.
+Guardian: Lo has conseguido todo, Sacha. Tu luz nunca se apagará.
 ===
-title: FINAL_0
----
-NARRADOR:
-Has silenciado al bosque, Sacha.
-Confundiste la paz con el silencio.
-
-NARRADOR:
-No hay amenazas.
-Pero tampoco hay vida.
-
-NARRADOR:
-Eres el rey
-de un reino de cenizas.
-===
-
-title: FINAL_1
----
-NARRADOR:
-Una tregua.
-Eso es todo lo que tenemos.
-
-NARRADOR:
-El bosque te tolera,
-pero no te ama.
-
-NARRADOR:
-Cierra la puerta.
-Será un invierno largo.
-
-===
-
-title: FINAL_2
----
-NARRADOR:
-Has traído el equilibrio, Sacha.
-La mayoría de las heridas han cerrado.
-
-NARRADOR:
-Aún queda una sombra.
-Pero es suficiente.
-
-NARRADOR:
-Eres un buen Guardián.
-
-===
-
-title: FINAL_3
----
-NARRADOR:
-Mirad.
-Ya no hay diferencia
-entre el Guardián y el Bosque.
-
-NARRADOR:
-Has escuchado cada llanto.
-Has iluminado cada miedo.
-
-NARRADOR:
-La primavera eterna
-comienza hoy.
-
-NARRADOR:
-Descansa, Sacha.
-Lo has conseguido todo.
-
-===
-

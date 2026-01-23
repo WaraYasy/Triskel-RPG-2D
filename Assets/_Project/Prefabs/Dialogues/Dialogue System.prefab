@@ -1260,8 +1260,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Last line
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 88bc9261d125b6f42ba313d55059bfe2, type: 2}
+  m_sharedMaterial: {fileID: 3580373306147222004, guid: 88bc9261d125b6f42ba313d55059bfe2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1389,7 +1389,7 @@ MonoBehaviour:
   - {fileID: 3431882456414989256}
   verboseLogging: 1
   autoStart: 1
-  startNode: Nivel1_Intro
+  startNode: Hub1
   runSelectedOptionAsLine: 0
   allowOptionFallthrough: 1
   onNodeStart:

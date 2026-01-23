@@ -230,12 +230,28 @@ public class GameManager : MonoBehaviour
             diaryPersistence.ClearSavedData();
         }
 
-        // 4. Limpiar PlayerPrefs
+        // 4. Limpiar estados de diálogos persistentes (Hub)
+        ClearDialogueStates();
+
+        // 5. Limpiar PlayerPrefs
         PlayerPrefs.DeleteKey("game_moral");
         PlayerPrefs.DeleteKey("game_level");
         PlayerPrefs.Save();
 
         Debug.Log("[GameManager] ✓ Nueva partida iniciada");
+    }
+
+    /// <summary>
+    /// Limpia todos los estados de diálogos persistentes.
+    /// </summary>
+    private void ClearDialogueStates()
+    {
+        // Limpiar todos los PlayerPrefs que empiecen con "DialogueZone_"
+        // Como Unity no permite enumerar PlayerPrefs, limpiamos los conocidos del Hub
+        PlayerPrefs.DeleteKey("DialogueZone_DentroDelHub1_Hub1");
+        PlayerPrefs.DeleteKey("DialogueZone_DentroDelHub2_Hub3");
+        PlayerPrefs.DeleteKey("DialogueZone_MainHub_Hub2");
+        // Agrega aquí más si usas DialogueZone con persisteEntreEscenas en otras partes
     }
 
     #endregion

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Triskel.Core;
 
 namespace Triskel.Testing
@@ -49,7 +50,7 @@ namespace Triskel.Testing
         private void Update()
         {
             if (!enableTesting) return; // ← NUEVO: salir si testing desactivado
-            
+
             if (InventoryData.Instance == null)
             {
                 if (!hasShownInventoryError)
@@ -60,34 +61,36 @@ namespace Triskel.Testing
                 return;
             }
 
+            if (Keyboard.current == null) return;
+
             // Añadir items (CAMBIADO A NUMPAD para no interferir con movimiento)
-            if (Input.GetKeyDown(KeyCode.Keypad1))
+            if (Keyboard.current.numpad1Key.wasPressedThisFrame)
                 AddItem(0);
 
-            if (Input.GetKeyDown(KeyCode.Keypad2))
+            if (Keyboard.current.numpad2Key.wasPressedThisFrame)
                 AddItem(1);
 
-            if (Input.GetKeyDown(KeyCode.Keypad3))
+            if (Keyboard.current.numpad3Key.wasPressedThisFrame)
                 AddItem(2);
 
             // Remover último
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Keyboard.current.rKey.wasPressedThisFrame)
                 RemoveLastItem();
 
             // Limpiar todo
-            if (Input.GetKeyDown(KeyCode.T))
+            if (Keyboard.current.tKey.wasPressedThisFrame)
                 ClearAll();
 
             // Guardar
-            if (Input.GetKeyDown(KeyCode.Y))
+            if (Keyboard.current.yKey.wasPressedThisFrame)
                 SaveInventory();
 
             // Cargar
-            if (Input.GetKeyDown(KeyCode.U))
+            if (Keyboard.current.uKey.wasPressedThisFrame)
                 LoadInventory();
 
             // Imprimir
-            if (Input.GetKeyDown(KeyCode.I))
+            if (Keyboard.current.iKey.wasPressedThisFrame)
                 PrintInventory();
         }
 
