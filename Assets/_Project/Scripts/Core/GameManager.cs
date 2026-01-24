@@ -152,6 +152,9 @@ public class GameManager : MonoBehaviour
 
         Debug.Log($"[GameManager] ✓ Partida cargada: Moral={moralScore}, Nivel={currentLevel}, Items={itemCount}, Entradas={diaryCount}");
 
+        // Resetear diálogos del hub al volver
+        Triskel.Dialogue.DialogueZone.ResetearTodosLosDialogos();
+
         // Tras cargar los datos, enviamos al jugador al HUB
         if (!string.IsNullOrEmpty(hubSceneName))
         {
@@ -195,6 +198,9 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.DeleteKey("game_moral");
         PlayerPrefs.DeleteKey("game_level");
         PlayerPrefs.Save();
+
+        // 5. Resetear diálogos del hub
+        Triskel.Dialogue.DialogueZone.ResetearTodosLosDialogos();
 
         Debug.Log("[GameManager] ✓ Nueva partida iniciada");
     }
