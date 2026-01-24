@@ -691,7 +691,7 @@ GameObject:
   - component: {fileID: 1632464250668138707}
   - component: {fileID: 3738530502134276665}
   m_Layer: 0
-  m_Name: Contexto3 (1)
+  m_Name: ContextoFantasmas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
