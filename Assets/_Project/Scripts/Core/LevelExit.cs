@@ -33,28 +33,37 @@ public class LevelExit : MonoBehaviour
 
             if (saveOnExit) GameManager.Instance.SaveGame();
 
-            // 2. Determinar qué escena cargar
-            string finalScene = sceneToLoad;
-
-            if (useLevelProgression)
+            // 2. Cargar escena (CON o SIN transición)
+            if (incrementLevelOnExit)
             {
-                // Si usamos progresión, la escena será "Cuadrante" + el nivel actual
-                finalScene = "Cuadrante" + GameManager.Instance.CurrentLevel;
-            }
+                // FINAL DE NIVEL → Con transición narrativa
+                int nivelCompletado = GameManager.Instance.CurrentLevel;
+                GameManager.Instance.NextLevel(); // Avanzar antes de calcular siguiente escena
 
-            // 3. Cargar escena (CON o SIN transición)
-            if (!string.IsNullOrEmpty(finalScene))
-            {
-                if (incrementLevelOnExit)
+                // Recalcular escena destino después de incrementar nivel
+                string finalScene = sceneToLoad;
+                if (useLevelProgression)
                 {
-                    // FINAL DE NIVEL → Con transición narrativa
-                    int nivelCompletado = GameManager.Instance.CurrentLevel;
-                    GameManager.Instance.NextLevel(); // Avanzar antes de la transición
+                    finalScene = "Cuadrante" + GameManager.Instance.CurrentLevel;
+                }
+
+                if (!string.IsNullOrEmpty(finalScene))
+                {
                     GameManager.Instance.IrATransicion(nivelCompletado, finalScene);
                 }
-                else
+            }
+            else
+            {
+                // PUERTA DEL HUB → Sin transición (carga directa)
+                string finalScene = sceneToLoad;
+
+                if (useLevelProgression)
                 {
-                    // PUERTA DEL HUB → Sin transición (carga directa)
+                    finalScene = "Cuadrante" + GameManager.Instance.CurrentLevel;
+                }
+
+                if (!string.IsNullOrEmpty(finalScene))
+                {
                     Debug.Log($"[LevelExit] Transición directa a: {finalScene}");
                     SceneManager.LoadScene(finalScene);
                 }

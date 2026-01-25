@@ -96,6 +96,7 @@ MonoBehaviour:
   soloUnaVez: 1
   freezePlayer: 1
   persisteEntreEscenas: 0
+  uniqueDialogueID: 
   yaUsado: 0
 --- !u!1 &4465096519657957574
 GameObject:
@@ -227,6 +228,7 @@ MonoBehaviour:
   soloUnaVez: 1
   freezePlayer: 1
   persisteEntreEscenas: 0
+  uniqueDialogueID: 
   yaUsado: 0
 --- !u!1 &7551386846609797098
 GameObject:
@@ -295,7 +297,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -2.8977942, y: 7.46859}
+  m_Offset: {x: -2.8579884, y: 7.46859}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -305,7 +307,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 7.6470327, y: 2.971115}
+  m_Size: {x: 9.637287, y: 2.971115}
   m_EdgeRadius: 0
 --- !u!114 &8763580468500093435
 MonoBehaviour:
@@ -324,4 +326,5 @@ MonoBehaviour:
   soloUnaVez: 1
   freezePlayer: 1
   persisteEntreEscenas: 0
+  uniqueDialogueID: 
   yaUsado: 0
