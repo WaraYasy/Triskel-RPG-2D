@@ -28,18 +28,12 @@ public class LevelExit : MonoBehaviour
         {
             if (GameManager.Instance == null) return;
 
-            // 1. ¿Debemos avanzar de nivel? (Ej: al terminar el nivel 1)
-            if (incrementLevelOnExit)
-            {
-                GameManager.Instance.NextLevel();
-            }
-
-            // 2. Guardar el ID de aparición
+            // 1. Guardar el ID de aparición
             GameManager.Instance.LastExitUsed = targetSpawnID;
-            
+
             if (saveOnExit) GameManager.Instance.SaveGame();
 
-            // 3. Determinar qué escena cargar
+            // 2. Determinar qué escena cargar
             string finalScene = sceneToLoad;
 
             if (useLevelProgression)
@@ -48,11 +42,22 @@ public class LevelExit : MonoBehaviour
                 finalScene = "Cuadrante" + GameManager.Instance.CurrentLevel;
             }
 
-            // 4. Cargar la escena
+            // 3. Cargar escena (CON o SIN transición)
             if (!string.IsNullOrEmpty(finalScene))
             {
-                Debug.Log($"[LevelExit] Transición a: {finalScene}");
-                SceneManager.LoadScene(finalScene);
+                if (incrementLevelOnExit)
+                {
+                    // FINAL DE NIVEL → Con transición narrativa
+                    int nivelCompletado = GameManager.Instance.CurrentLevel;
+                    GameManager.Instance.NextLevel(); // Avanzar antes de la transición
+                    GameManager.Instance.IrATransicion(nivelCompletado, finalScene);
+                }
+                else
+                {
+                    // PUERTA DEL HUB → Sin transición (carga directa)
+                    Debug.Log($"[LevelExit] Transición directa a: {finalScene}");
+                    SceneManager.LoadScene(finalScene);
+                }
             }
         }
     }

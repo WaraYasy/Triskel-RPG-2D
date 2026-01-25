@@ -316,7 +316,7 @@ public class GameManager : MonoBehaviour
     private string ObtenerIDTransicion(int nivel)
     {
         // Ejemplo: basado en moral (ajusta según tu lógica)
-        string sufijo = moralScore >= 50 ? "bueno" : "malo";
+        string sufijo = moralScore >= 0 ? "bueno" : "malo";
         return $"nivel{nivel}_{sufijo}";
     }
 
