@@ -314,7 +314,13 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private string ObtenerIDTransicion(int nivel)
     {
-        // Ejemplo: basado en moral (ajusta según tu lógica)
+        // Nivel 0 (Hub) no tiene moral, siempre usa el mismo texto
+        if (nivel == 0)
+        {
+            return "nivel0";
+        }
+        
+        // Para otros niveles, basado en moral
         string sufijo = moralScore >= 0 ? "bueno" : "malo";
         return $"nivel{nivel}_{sufijo}";
     }

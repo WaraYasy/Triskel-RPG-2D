@@ -131,6 +131,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobileControls_UI
       objectReference: {fileID: 0}
+    - target: {fileID: 231249588550135767, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 231249588550135767, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017462100948317513, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -210,6 +218,14 @@ PrefabInstance:
     - target: {fileID: 3017462100948317513, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7740158013738510936, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 809310123}
+    - target: {fileID: 7740158013738510936, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Pause
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -462,6 +478,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4889c7eb9334e4438939b3dd6047548, type: 3}
+--- !u!114 &809310123 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4028443519380004723, guid: c4889c7eb9334e4438939b3dd6047548, type: 3}
+  m_PrefabInstance: {fileID: 809310122}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57d51fa2913a7cf44bdd96ac2b4c3287, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &820192001
 GameObject:
   m_ObjectHideFlags: 0
@@ -10644,10 +10671,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5cbfeafc3ce284c8ed9c767789fadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exitType: 1
   useLevelProgression: 1
-  incrementLevelOnExit: 0
   sceneToLoad: 
-  targetSpawnID: Inicio_Nivel
+  targetSpawnID: Inicio_Nivel1
   playerTag: Player
   saveOnExit: 1
 --- !u!1 &1239964114 stripped
@@ -74126,8 +74153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5cbfeafc3ce284c8ed9c767789fadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exitType: 0
   useLevelProgression: 0
-  incrementLevelOnExit: 0
   sceneToLoad: DentroDelHub1
   targetSpawnID: EntradaCasa
   playerTag: Player
@@ -74262,14 +74289,14 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1753015056}
   - {fileID: 1677989878}
+  - {fileID: 2073564702}
+  - {fileID: 1234693222}
   - {fileID: 135305059}
   - {fileID: 608599385}
   - {fileID: 820192003}
-  - {fileID: 1234693222}
-  - {fileID: 1753015056}
   - {fileID: 123449156}
-  - {fileID: 2073564702}
   - {fileID: 888649054}
   - {fileID: 1336010921}
   - {fileID: 809310122}

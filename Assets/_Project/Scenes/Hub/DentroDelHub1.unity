@@ -24847,7 +24847,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1041398786469690009, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
       propertyPath: m_Name
-      value: Dialoguesh1
+      value: DialoguesH1
       objectReference: {fileID: 0}
     - target: {fileID: 2651304729194577993, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24889,82 +24889,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4399445112115701619, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
-      propertyPath: soloUnaVez
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4399445112115701619, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
+    - target: {fileID: 4098380150492027395, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
       propertyPath: dialogueRunner
       value: 
       objectReference: {fileID: 1937290611}
     - target: {fileID: 4399445112115701619, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
-      propertyPath: uniqueDialogueID
-      value: Hub3_escaleras
-      objectReference: {fileID: 0}
-    - target: {fileID: 4399445112115701619, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
-      propertyPath: persisteEntreEscenas
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5055559050736587041, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
-      propertyPath: freezePlayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5055559050736587041, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
       propertyPath: dialogueRunner
       value: 
       objectReference: {fileID: 1937290611}
     - target: {fileID: 5055559050736587041, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
-      propertyPath: uniqueDialogueID
-      value: Hub_intro
-      objectReference: {fileID: 0}
-    - target: {fileID: 5055559050736587041, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
-      propertyPath: persisteEntreEscenas
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: dialogueRunner
+      value: 
+      objectReference: {fileID: 1937290611}
     - target: {fileID: 5820496670191860365, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
       propertyPath: dialogueRunner
       value: 
       objectReference: {fileID: 1937290611}
-    - target: {fileID: 5913786949644032358, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 5913786949644032358, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 8804542998873928945, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
-      propertyPath: m_Size.y
-      value: 2.4448295
-      objectReference: {fileID: 0}
-    - target: {fileID: 8804542998873928945, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.72241473
-      objectReference: {fileID: 0}
-    - target: {fileID: 9071815159224082520, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
-      propertyPath: m_Size.x
-      value: 2.8251314
-      objectReference: {fileID: 0}
-    - target: {fileID: 9071815159224082520, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
-      propertyPath: m_Size.y
-      value: 2.0002663
-      objectReference: {fileID: 0}
-    - target: {fileID: 9071815159224082520, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.61221933
-      objectReference: {fileID: 0}
-    - target: {fileID: 9071815159224082520, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.166711
-      objectReference: {fileID: 0}
-    - target: {fileID: 9220501588651489893, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 11.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 9220501588651489893, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -6.45
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25477,18 +25417,18 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 2118849171}
   - {fileID: 307485830}
   - {fileID: 1688834300}
   - {fileID: 1470600488}
   - {fileID: 693328133}
-  - {fileID: 1446692673}
   - {fileID: 1578183373}
+  - {fileID: 1446692673}
   - {fileID: 618045402}
   - {fileID: 1325689370}
-  - {fileID: 2118849171}
   - {fileID: 587675250}
   - {fileID: 1298828512681723123}
   - {fileID: 561428005}
-  - {fileID: 8859961347077178496}
   - {fileID: 1937290610}
   - {fileID: 1545477678}
+  - {fileID: 8859961347077178496}

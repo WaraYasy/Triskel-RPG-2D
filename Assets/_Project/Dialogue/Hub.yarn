@@ -1,10 +1,10 @@
 ﻿title: Hub1
 position: -270,-52
 ---
-Desconocido: Ah... por fin despiertas.
-Desconocido: Bienvenido al mundo de los sólidos y el polvo, pequeña chispa.
-Desconocido: No tienes piel, ni huesos, ni peso.
-Desconocido: Eres pura luz atrapada en una forma prestada.
+Ah... por fin despiertas.
+Bienvenido al mundo de los sólidos y el polvo, pequeña chispa.
+No tienes piel, ni huesos, ni peso.
+Eres pura luz atrapada en una forma prestada.
 
 -> ¿Quién eres tú?
     <<jump Hub1_Quien>>
@@ -18,8 +18,8 @@ position: 45,-188
 ---
 Sacha: ¿Quién eres tú?
 
-Desconocido: Esa es una pregunta para la que no tengo respuesta... no aquí abajo.
-Desconocido: Mi identidad está ligada a lo que hay en el piso de arriba.
+Esa es una pregunta para la que no tengo respuesta... no aquí abajo.
+Mi identidad está ligada a lo que hay en el piso de arriba.
 
 <<jump Hub_SubirEscaleras>>
 ===
@@ -29,9 +29,9 @@ position: -121,263
 ---
 Sacha: ¿Dónde estoy?
 
-Desconocido: Esta cabaña fue mi hogar hace mucho tiempo.
-Desconocido: Ahora es tu cáscara, lo único que te separa de la tormenta.
-Desconocido: Pero este refugio es solo el principio. Aquí abajo solo hay polvo... lo importante está encima de nosotros.
+Esta cabaña fue mi hogar hace mucho tiempo.
+Ahora es tu cáscara, lo único que te separa de la tormenta.
+Pero este refugio es solo el principio. Aquí abajo solo hay polvo... lo importante está encima de nosotros.
 
 <<jump Hub_SubirEscaleras>>
 ===
@@ -39,24 +39,32 @@ Desconocido: Pero este refugio es solo el principio. Aquí abajo solo hay polvo.
 title: Hub_SubirEscaleras
 position: 249,100
 ---
-Desconocido: No hay tiempo para hacerse preguntas entre mantas viejas.
-Desconocido: Levanta la vista. ¿Ves esa luz arriba?
-Desconocido: Sube las escaleras.
-Desconocido: Hay algo ahí arriba que lleva demasiados años esperando a que alguien tenga el valor de mirarlo.
+No hay tiempo para hacerse preguntas entre mantas viejas.
+Levanta la vista. ¿Ves esa luz arriba?
+Sube las escaleras.
+Hay algo ahí arriba que lleva demasiados años esperando a que alguien tenga el valor de mirarlo.
+===
+
+title: Hub_Estanteria
+comments: "Interacción con los libros viejos"
+---
+Viejos tomos llenos de polvo... Historias de batallas que ya nadie recuerda.
+No busques respuestas en mis memorias, Sacha. Es hora de que escribas las tuyas.
+Abre el Diario (presiona el icono o la tecla J). La página en blanco te espera.
 ===
 
 title: Hub3
 position: -149,-330
 ---
-Desconocido: La madera se queja bajo tus pies. Hace eras que nadie sube al Santuario. 
-Desconocido: Ven. No tengas miedo. Lo que vas a ver ahí arriba es la razón por la que existes.
+La madera se queja bajo tus pies. Hace eras que nadie sube al Santuario. 
+Ven. No tengas miedo. Lo que vas a ver ahí arriba es la razón por la que existes.
 ===
 
 title: Hub4
 position: 213,322
 ---
-Desconocido: Míralos. Tres pedestales. Tres huecos en la piedra. Tres heridas en mi orgullo. 
-Desconocido: Aquí es donde descansaba el equilibrio del bosque. Aquí yacían el Consuelo, la Fuerza y la Verdad.
+Míralos. Tres pedestales. Tres huecos en la piedra. Tres heridas en mi orgullo. 
+Aquí es donde descansaba el equilibrio del bosque. Aquí yacían el Consuelo, la Fuerza y la Verdad.
 ===
 
 title: Hub5
@@ -80,10 +88,10 @@ Guardian: Solo cuando estos tres altares estén llenos otra vez, podremos enfren
 title: Hub2
 position: 388,-176
 ---
-Guardian: ¿Ya quieres salir?
-Guardian: Eres valiente... o ignorante.
-Guardian: Escucha el viento.
-Guardian: El bosque sabe que has despertado y está gritando.
-Guardian: Ahí fuera hay tres heridas: la Tristeza, la Ira y el Miedo.
-Guardian: El Espíritu del Bosque intentará aplastarte porque no entiende lo que eres.
+¿Ya quieres salir?
+Eres valiente... o ignorante.
+Escucha el viento.
+El bosque sabe que has despertado y está gritando.
+Ahí fuera hay tres heridas: la Tristeza, la Ira y el Miedo.
+El Espíritu del Bosque intentará aplastarte porque no entiende lo que eres.
 ===
