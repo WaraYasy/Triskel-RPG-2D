@@ -23218,8 +23218,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5cbfeafc3ce284c8ed9c767789fadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exitType: 0
   useLevelProgression: 0
-  incrementLevelOnExit: 0
   sceneToLoad: DentroDelHub2
   targetSpawnID: Escalera
   playerTag: Player
@@ -24671,6 +24671,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobileControls_UI
       objectReference: {fileID: 0}
+    - target: {fileID: 231249588550135767, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 231249588550135767, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017462100948317513, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -24940,8 +24948,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5cbfeafc3ce284c8ed9c767789fadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exitType: 0
   useLevelProgression: 0
-  incrementLevelOnExit: 0
   sceneToLoad: MainHub
   targetSpawnID: Casa
   playerTag: Player
@@ -25360,10 +25368,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 206857148377235751, guid: c4889c7eb9334e4438939b3dd6047548, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 1961538907921629405, guid: c4889c7eb9334e4438939b3dd6047548, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.0708055

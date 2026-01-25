@@ -34,9 +34,17 @@ public class LevelExit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log($"[LevelExit] Trigger detectado con: {other.name} (Tag: {other.tag})");
+
         if (other.CompareTag(playerTag))
         {
-            if (GameManager.Instance == null) return;
+            Debug.Log($"[LevelExit] ✓ Jugador detectado. Tipo de salida: {exitType}");
+
+            if (GameManager.Instance == null)
+            {
+                Debug.LogError("[LevelExit] GameManager.Instance es null!");
+                return;
+            }
 
             // Guardar punto de aparición
             GameManager.Instance.LastExitUsed = targetSpawnID;
@@ -87,6 +95,9 @@ public class LevelExit : MonoBehaviour
     /// </summary>
     private void HandleHubToLevel()
     {
+        // Desbloquear entrada del diario "level0_intro"
+        UnlockDiaryEntry(0);
+
         string targetScene = useLevelProgression ?
             "Cuadrante" + GameManager.Instance.CurrentLevel :
             sceneToLoad;
@@ -108,6 +119,10 @@ public class LevelExit : MonoBehaviour
     private void HandleLevelComplete()
     {
         int nivelCompletado = GameManager.Instance.CurrentLevel;
+
+        // Desbloquear entrada del diario según moral
+        UnlockDiaryEntry(nivelCompletado);
+
         GameManager.Instance.NextLevel(); // Avanzar al siguiente nivel
 
         string targetScene = useLevelProgression ?
@@ -122,6 +137,35 @@ public class LevelExit : MonoBehaviour
         else
         {
             Debug.LogError("[LevelExit] No se especificó escena destino");
+        }
+    }
+
+    /// <summary>
+    /// Desbloquea la entrada del diario correspondiente al nivel completado.
+    /// </summary>
+    private void UnlockDiaryEntry(int nivel)
+    {
+        // Nivel 0 (hub) tiene entrada fija "level0_intro"
+        if (nivel == 0)
+        {
+            if (Triskel.Core.DiaryManager.Instance != null)
+            {
+                Triskel.Core.DiaryManager.Instance.UnlockEntry(0, "intro");
+                Debug.Log($"[LevelExit] Diario desbloqueado: level0_intro");
+            }
+            return;
+        }
+
+        // Para niveles 1+, basado en moral
+        if (Triskel.Core.DiaryManager.Instance != null)
+        {
+            string decision = GameManager.Instance.MoralScore >= 0 ? "bueno" : "malo";
+            Triskel.Core.DiaryManager.Instance.UnlockEntry(nivel, decision);
+            Debug.Log($"[LevelExit] Diario desbloqueado: level{nivel}_{decision}");
+        }
+        else
+        {
+            Debug.LogWarning("[LevelExit] DiaryManager no disponible para desbloquear entrada");
         }
     }
 }
