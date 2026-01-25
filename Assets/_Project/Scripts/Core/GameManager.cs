@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int moralScore = 0;
     [SerializeField] private int currentLevel = 1;
     [SerializeField] private string hubSceneName = "Hub"; // Nombre de la escena del Hub
-    [SerializeField] private string lastExitUsed = ""; // Rastrae qué puerta usamos
+    [SerializeField] private string lastExitUsed = ""; // Rastrea qué puerta usamos
 
     // ===== PROPIEDADES PÚBLICAS =====
     public int MoralScore => moralScore;
@@ -287,6 +287,18 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("[TEST] Verificando estado restaurado:");
         DebugPrintState();
+    }
+    private void DebugSetMoralGood()
+    {
+        moralScore = 5;
+        Debug.Log("Moral = 5 (bueno)");
+    }
+
+    [ContextMenu("Debug: Set Moral Bad")]
+    private void DebugSetMoralBad()
+    {
+        moralScore = -5;
+        Debug.Log("Moral = -5 (malo)");
     }
 
     #endregion

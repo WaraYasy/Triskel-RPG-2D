@@ -40,7 +40,15 @@ Guardian: Siento sed solo de mirar este lugar.
 Guardian: La rabia es eso, ¿sabes? Una sed que nunca se sacia.
 Guardian: Bebió los ríos, secó los lagos y nos dejó este infierno estéril.
 ===
-
+title: Level2_Salida_Bloqueada
+comments: "Al intentar ir a la salida al principio del nivel sin tener el Hacha"
+---
+Guardian: El camino de salida está ahí detrás... pero está asfixiado.
+Guardian: Mira estas raíces. El calor y el tiempo las han convertido en hierro.
+Guardian: No intentes embujar las ramas. Tus manos son de luz; te romperías tú antes que ellas.
+Guardian: Necesitamos algo con filo. Algo capaz de morder la piedra.
+Guardian: Adéntrate en las dunas. Busca el Hacha del Arquitecto. Sin ella, estamos atrapados aquí.
+===
 title: Level2_Lore_Viento_Aullante
 comments: "Cuando suene el viento fuerte"
 ---
