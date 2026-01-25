@@ -288,19 +288,6 @@ public class GameManager : MonoBehaviour
         Debug.Log("[TEST] Verificando estado restaurado:");
         DebugPrintState();
     }
-    private void DebugSetMoralGood()
-    {
-        moralScore = 5;
-        Debug.Log("Moral = 5 (bueno)");
-    }
-
-    [ContextMenu("Debug: Set Moral Bad")]
-    private void DebugSetMoralBad()
-    {
-        moralScore = -5;
-        Debug.Log("Moral = -5 (malo)");
-    }
-
     #endregion
     
     /// <summary>
