@@ -109,7 +109,15 @@ public class PlayerHealth : MonoBehaviour
         isDead = true;
         Debug.Log("[PlayerHealth] El jugador ha muerto.");
         if (playerSprite != null) playerSprite.color = Color.gray;
+
+        // Notificar evento (para listeners en el Inspector)
         OnPlayerDeath?.Invoke();
+
+        // Llamar al GameManager para transición de muerte
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.OnJugadorMuerto();
+        }
     }
 
     public float GetCurrentHealth() => currentHealth;
