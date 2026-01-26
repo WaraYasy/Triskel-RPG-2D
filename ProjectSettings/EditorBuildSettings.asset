@@ -23,6 +23,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/Levels/Cuadrante1.unity
     guid: 946f461f45d95cf4dbad1990ff71e63f
+  - enabled: 1
+    path: Assets/_Project/Scenes/Levels/Cuadrante2.unity
+    guid: 26e89d5e9621d4749b68956e67a830b6
+  - enabled: 1
+    path: Assets/_Project/Scenes/UI/LevelTransition.unity
+    guid: 781d8077e4e99054d80415be94a036db
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
