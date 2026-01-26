@@ -1,3 +1,4 @@
+using _Project.Scripts.Core.Transition;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Triskel.Core;
@@ -22,7 +23,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int moralScore = 0;
     [SerializeField] private int currentLevel = 1;
     [SerializeField] private string hubSceneName = "Hub"; // Nombre de la escena del Hub
-    [SerializeField] private string lastExitUsed = ""; // Rastrae qué puerta usamos
+    [SerializeField] private string lastExitUsed = ""; // Rastrea qué puerta usamos
 
     // ===== PROPIEDADES PÚBLICAS =====
     public int MoralScore => moralScore;
@@ -152,6 +153,9 @@ public class GameManager : MonoBehaviour
 
         Debug.Log($"[GameManager] ✓ Partida cargada: Moral={moralScore}, Nivel={currentLevel}, Items={itemCount}, Entradas={diaryCount}");
 
+        // Resetear diálogos del hub al volver
+        Triskel.Dialogue.DialogueZone.ResetearTodosLosDialogos();
+
         // Tras cargar los datos, enviamos al jugador al HUB
         if (!string.IsNullOrEmpty(hubSceneName))
         {
@@ -195,6 +199,9 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.DeleteKey("game_moral");
         PlayerPrefs.DeleteKey("game_level");
         PlayerPrefs.Save();
+
+        // 5. Resetear diálogos del hub
+        Triskel.Dialogue.DialogueZone.ResetearTodosLosDialogos();
 
         Debug.Log("[GameManager] ✓ Nueva partida iniciada");
     }
@@ -281,6 +288,80 @@ public class GameManager : MonoBehaviour
         Debug.Log("[TEST] Verificando estado restaurado:");
         DebugPrintState();
     }
-
     #endregion
+    
+    /// <summary>
+    /// Inicia una transición de nivel con ID dinámico basado en decisiones.
+    /// </summary>
+    public void IrATransicion(int nivelCompletado, string
+        escenaDestino)
+    {
+        // Determinar el ID de transición según moral/decisiones
+        string transitionID = ObtenerIDTransicion(nivelCompletado);
+
+        Debug.Log($"[GameManager] Transición: {transitionID} → {escenaDestino}");
+
+    // Pasar datos a la escena de transición
+    TransitionManager.TransitionID = transitionID;
+    TransitionManager.SiguienteEscena = escenaDestino;
+
+    // Cargar escena de transición
+    SceneManager.LoadScene("LevelTransition");
+}
+
+    /// <summary>
+    /// Determina qué texto de transición mostrar según nivel y decisiones.
+    /// </summary>
+    private string ObtenerIDTransicion(int nivel)
+    {
+        // Nivel 0 (Hub) no tiene moral, siempre usa el mismo texto
+        if (nivel == 0)
+        {
+            return "nivel0";
+        }
+        
+        // Para otros niveles, basado en moral
+        string sufijo = moralScore >= 0 ? "bueno" : "malo";
+        return $"nivel{nivel}_{sufijo}";
+    }
+
+    /// <summary>
+    /// Maneja la muerte del jugador con transición y reinicio de nivel.
+    /// </summary>
+    public void OnJugadorMuerto()
+    {
+        Debug.Log("[GameManager] Jugador ha muerto. Reiniciando nivel con transición...");
+
+        // Determinar el nivel actual
+        string escenaActual = SceneManager.GetActiveScene().name;
+
+        // Determinar qué texto de muerte mostrar
+        string transitionID = ObtenerIDMuerte(escenaActual);
+
+        // Reiniciar el mismo nivel
+        TransitionManager.TransitionID = transitionID;
+        TransitionManager.SiguienteEscena = escenaActual; // Misma escena (reiniciar)
+
+        SceneManager.LoadScene("LevelTransition");
+    }
+
+    /// <summary>
+    /// Obtiene el ID de transición de muerte según la escena actual.
+    /// </summary>
+    private string ObtenerIDMuerte(string nombreEscena)
+    {
+        // Detectar en qué nivel murió
+        if (nombreEscena.Contains("Cuadrante1"))
+            return "muerte_nivel1";
+        else if (nombreEscena.Contains("Cuadrante2"))
+            return "muerte_nivel2";
+        else if (nombreEscena.Contains("Cuadrante3"))
+            return "muerte_nivel3";
+        else if (nombreEscena.Contains("Cuadrante4"))
+            return "muerte_nivel4";
+        else if (nombreEscena.Contains("Hub"))
+            return "muerte_hub";
+        else
+            return "muerte_hub"; // Default
+    }
 }

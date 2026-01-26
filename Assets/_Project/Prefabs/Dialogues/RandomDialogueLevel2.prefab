@@ -26,13 +26,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677293513680376963}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.12467451, w: 0.9921977}
+  m_LocalPosition: {x: 148.6, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 597989979107352276}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 14.324}
 --- !u!61 &957419313261448876
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -67,7 +67,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 4.618408, y: -2.0205538}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -77,7 +77,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.236816, y: 5.0411077}
   m_EdgeRadius: 0
 --- !u!114 &3077379993237610717
 MonoBehaviour:
@@ -91,9 +91,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c034b2ba3052b44d8ce8cba083a1271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodoDialogo: Bosque_Frases_04
+  nodoDialogo: Level2_Lore_Viento_Aullante
   dialogueRunner: {fileID: 0}
   soloUnaVez: 1
+  freezePlayer: 1
+  persisteEntreEscenas: 0
+  uniqueDialogueID: 
   yaUsado: 0
 --- !u!1 &1467474036848358177
 GameObject:
@@ -156,13 +159,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4851758981088114470}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.2522635, w: 0.9676586}
+  m_LocalPosition: {x: -3.7, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 597989979107352276}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 29.223}
 --- !u!61 &2411446126445020726
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -197,7 +200,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 1.6813769}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -207,7 +210,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 8.135598}
   m_EdgeRadius: 0
 --- !u!114 &6470998706441737215
 MonoBehaviour:
@@ -221,9 +224,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c034b2ba3052b44d8ce8cba083a1271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodoDialogo: Bosque_Frases_01
+  nodoDialogo: Level2_Lore_Arena
   dialogueRunner: {fileID: 0}
   soloUnaVez: 1
+  freezePlayer: 1
+  persisteEntreEscenas: 0
+  uniqueDialogueID: 
   yaUsado: 0
 --- !u!1 &6000560401450844858
 GameObject:
@@ -252,7 +258,7 @@ Transform:
   m_GameObject: {fileID: 6000560401450844858}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 40.3, y: -5.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -292,7 +298,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -3.4778204}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -302,7 +308,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 7.955641}
   m_EdgeRadius: 0
 --- !u!114 &2947214228364892377
 MonoBehaviour:
@@ -316,9 +322,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c034b2ba3052b44d8ce8cba083a1271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodoDialogo: Bosque_Frases_03
+  nodoDialogo: Level2_Lore_Sed
   dialogueRunner: {fileID: 0}
   soloUnaVez: 1
+  freezePlayer: 1
+  persisteEntreEscenas: 0
+  uniqueDialogueID: 
   yaUsado: 0
 --- !u!1 &9222306113016906163
 GameObject:
@@ -347,7 +356,7 @@ Transform:
   m_GameObject: {fileID: 9222306113016906163}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 63.9, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -387,7 +396,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 2.2694588, y: 0.09586334}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -397,7 +406,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5.5389175, y: 5.6109085}
   m_EdgeRadius: 0
 --- !u!114 &9014055924544110885
 MonoBehaviour:
@@ -411,7 +420,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c034b2ba3052b44d8ce8cba083a1271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodoDialogo: Bosque_Frases_02
+  nodoDialogo: Level2_Lore_Erosion
   dialogueRunner: {fileID: 0}
   soloUnaVez: 1
+  freezePlayer: 1
+  persisteEntreEscenas: 0
+  uniqueDialogueID: 
   yaUsado: 0

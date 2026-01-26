@@ -1,0 +1,70 @@
+﻿{
+  "transitions": [
+    {
+      "id": "nivel0",
+      "level": 0,
+      "text": "El camino se abre ante ti. Las sombras esperan en el bosque.",
+      "displayTime": 3
+    },
+    {
+      "id": "nivel1_bueno",
+      "level": 1,
+      "text": "La estatua les dio calor. Las sombras se apartaron como si despertaran. El bosque parece menos solitario cuando compartes tu luz.",
+      "displayTime": 0
+    },
+    {
+      "id": "nivel1_malo",
+      "level": 1,
+      "text": "Gritaron cuando alcé la flor. No quería hacerles daño, solo quería pasar. ¿Verdad? Eran ellos o yo.",
+      "displayTime": 0
+    },
+    {
+      "id": "nivel2_bueno",
+      "level": 2,
+      "text": "Las piedras se apartaron como si me conocieran. El Gigante sonrió entre el polvo.",
+      "displayTime": 0
+    },
+    {
+      "id": "nivel2_malo",
+      "level": 2,
+      "text": "Tuve que golpearlo con todo lo que tenía. Mis manos tiemblan. El Gigante no me miró al cruzar.",
+      "displayTime": 0
+    },
+    {
+      "id": "hub_intro",
+      "level": 0,
+      "text": "Has regresado al refugio. La voz te espera en la penumbra.",
+      "displayTime": 3
+    },
+    {
+      "id": "muerte_nivel1",
+      "level": 1,
+      "text": "La oscuridad te ha consumido. Pero las sombras no pueden retener tu luz para siempre...",
+      "displayTime": 4
+    },
+    {
+      "id": "muerte_nivel2",
+      "level": 2,
+      "text": "El Gigante de piedra observa tu caída. No es el fin, solo un tropiezo en el camino...",
+      "displayTime": 4
+    },
+    {
+      "id": "muerte_nivel3",
+      "level": 3,
+      "text": "Las garras de las sombras te atraparon. Pero cada caída te hace más fuerte...",
+      "displayTime": 4
+    },
+    {
+      "id": "muerte_nivel4",
+      "level": 4,
+      "text": "El bosque te ha derrotado. Pero aún tienes fuerzas para intentarlo de nuevo...",
+      "displayTime": 4
+    },
+    {
+      "id": "muerte_hub",
+      "level": 0,
+      "text": "Incluso en el refugio, el peligro acecha. Vuelve a intentarlo...",
+      "displayTime": 3
+    }
+  ]
+}

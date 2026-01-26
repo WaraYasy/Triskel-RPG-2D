@@ -27,7 +27,11 @@ namespace Triskel.Core
             }
 
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+
+            // Si no es raíz, usar el GameObject raíz para DontDestroyOnLoad
+            GameObject rootObject = transform.root.gameObject;
+            DontDestroyOnLoad(rootObject);
+
             LoadEntriesFromJSON();
         }
 

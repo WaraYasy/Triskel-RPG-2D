@@ -1,0 +1,167 @@
+﻿title: Level1_Start
+---
+Guardian: Sacha, aquí es donde el bosque viene a llorar.
+Guardian: Cada gota es un recuerdo que nadie quiso guardar.
+Guardian: Ten cuidado, Sacha. La tristeza es pesada.
+Guardian: Si te detienes demasiado, te hundirás.
+===
+
+title: Level1_Lore_A1
+position: 605,-471
+---
+Guardian: ¿Oyes eso? Es estática espiritual.
+Guardian: Son los Olvidados. Vagan sin rumbo porque perdieron su luz hace mucho tiempo.
+===
+
+title: Level1_Lore_B1
+position: 621,-307
+position: -260,116
+---
+Guardian: No tiembles. No son monstruos, Sacha.
+Guardian: Solo son almas que tienen frío. Buscan calor desesperadamente, pero su tacto congela la vida.
+===
+
+title: Level1_Lore_A2
+comments: "Colocar al principio, tras ver sombras lejanas"
+position: 848,-457
+---
+Guardian: ¿Sientes ese frío? No es el clima.
+Guardian: Son ellos. Han estado a oscuras tanto tiempo que han olvidado cómo volver a casa.
+Guardian: La oscuridad les ha borrado el mapa, Sacha. Están atrapados en un bucle.
+===
+
+title: Level1_Lore_B2
+comments: "Colocar cerca de algún fantasma que no ataca o ambiente"
+position: 848,-296
+---
+Guardian: Míralos fijamente. No son depredadores, son náufragos.
+Guardian: Al verte brillar, sienten un hambre voraz.
+Guardian: Creen que si toman tu luz, dejarán de tener frío.
+Guardian: Intentarán absorberte. No por odio, sino por pura desesperación.
+===
+
+title: Level1_Bloqueo
+comments: "Justo antes de decidir qué hacer con los fantasmas"
+position: 338,-134
+---
+Guardian: Ahí están... Los Olvidados.
+Guardian: Se agolpan ante ti como polillas ciegas frente a una llama.
+Guardian: Quieren tu calor, Sacha. Lo necesitan. Van a intentar arrancártelo si te acercas demasiado.
+Guardian: Tienes el Lirio. Puedes quemarlos para alejarlos... o puedes enseñarles otra fuente de luz.
+===
+
+title: Level1_Lirio
+position: -259,-26
+---
+Guardian: Ahí está... El Lirio del Consuelo.
+Guardian: Dicen que sus pétalos no se abren con el sol, sino con la compasión.
+Guardian: Tómalo. No es una espada, es un faro. 
+<wait 2.5>
+Guardian: ... Cuidado. Tu brillo ha llamado la atención.
+Guardian: Los Olvidados se agolpan ante ti como polillas ciegas. Han olvidado su camino.
+Guardian: Intentarán absorber tu luz a la fuerza porque es la única que ven en esta oscuridad.
+Guardian: Tienes el Lirio, Sacha. ¿Qué harás?
+
+-> Los guiaré hacia la fuente de piedra.
+    Guardian: Una elección compasiva.
+    Guardian: La fuente está fría, pero si usas el Lirio sobre la estatua, les darás un hogar eterno.
+    Guardian: Ve hacia la piedra y comparte tu luz con ella.
+-> Los cegaré con luz para poder huir.
+    Guardian: Aseguras tu supervivencia, es lo más seguro en este bosque.
+    Guardian: Si usas el Lirio directamente contra ellos, la intensidad los quemará y huirán.
+    Guardian: Despejarás el camino, pero dejarás cicatrices. Hazlo si no ves otra opción.
+===
+
+
+title: Level1_Fuente_Pista
+comments: "Activar al examinar la estatua apagada"
+position: -38,-333
+---
+Guardian: Esa vieja fuente... está helada.
+Guardian: La piedra es fría, pero tiene buena memoria.
+Guardian: Si le dieras un poco de tu luz, podría guardar el calor durante siglos...
+Guardian: Sería un buen refugio para aquellos que no tienen hogar.
+===
+
+title: Level1_Bloqueo_Op2
+comments: "Activar al ver a los fantasmas bloqueando el camino"
+position: 328,-295
+---
+Guardian: El camino se estrecha.
+Guardian: Ahí están. Los Olvidados.
+Guardian: Bloquean el paso porque sienten tu brillo. Quieren acercarse, pero tienen miedo.
+Guardian: Tienes el Lirio. ¿Qué harás con él?
+===
+
+title: Level1_Respuesta_Mala
+comments: "Activar si el jugador ataca/asusta a los fantasmas"
+position: 872,51
+---
+Guardian: ¡La luz también puede herir si se usa como un látigo!
+Guardian: ¿Has visto cómo huían? Gritaban de dolor.
+Guardian: El camino está libre, sí... pero el aire se siente más frío ahora.
+Guardian: Se han llevado su pena a otra parte.
+===
+
+title: Level1_Respuesta_Buena
+comments: "Activar si el jugador enciende la estatua"
+position: 620,48
+---
+Guardian: Eso es... Mira cómo se calman.
+Guardian: No apartaste la oscuridad; simplemente le diste un lugar donde descansar.
+Guardian: Mira cómo rodean la estatua. Ya no están perdidos.
+Guardian: El bosque parece menos solitario cuando compartes tu luz.
+===
+
+title: Level1_Final
+position: 736,-101
+---
+Guardian: Has cruzado el sendero de lágrimas, Guardián.
+Guardian: Pero el bosque es vasto y sus heridas son profundas.
+Guardian: Vuelve a la cabaña. El fuego te espera.
+===
+
+title: Level1_Fantasmas
+color: red
+position: -36,-486
+---
+Narrador: El camino se estrecha.
+Narrador: El aire se vuelve más frío.
+
+Narrador: Ahí están.
+Narrador: Los Olvidados.
+Narrador: No te odian, Sacha.
+Narrador: Solo tienen frío.
+
+Narrador: Bloquean el paso buscando calor.
+Narrador: Pero su tacto congela la vida.
+
+Narrador: ¿Qué harás?
+===
+
+title: Ebano_Frases_01
+position: -54,170
+---
+Narrador: El bosque no llora por los que se fueron, sino por los que nunca pudieron decir adiós.
+===
+title: Ebano_Frases_02
+position: 213,184
+---
+Narrador: La lluvia no cae del cielo, Sacha. Sube desde la tierra.
+===
+title: Ebano_Frases_03
+position: 312,302
+---
+Narrador: Hay recuerdos que pesan tanto que el suelo prefiere tragárselos.
+===
+title: Ebano_Frases_04
+color: red
+position: 85,303
+---
+Narrador: Caminar duele menos que quedarse quieto… pero ambas cosas dejan marcas.
+===
+title: Ebano_Frases_05
+position: -129,305
+---
+Narrador: No todo lo que brilla quiere ser visto. A veces solo quiere ser comprendido.
+===
