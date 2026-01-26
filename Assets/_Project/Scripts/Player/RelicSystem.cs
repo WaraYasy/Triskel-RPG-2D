@@ -193,29 +193,58 @@ public class RelicSystem : MonoBehaviour
         }
     }
     
+    [Header("Hacha Settings")]
+    [SerializeField] private float axeRange = 1.2f;
+    [SerializeField] private float axeRadius = 0.6f;
+
     private void UseHacha()
     {
-        Debug.Log("⚔️ Hacha Sagrada - Golpe direccional");
+        Debug.Log("⚔️ Hacha Sagrada - Golpe");
         
         // Obtener dirección del movimiento
         Vector2 direction = playerController != null ? 
             playerController.GetLastMoveDirection() : Vector2.down;
         
-        // Crear proyectil visual simple
-        GameObject projectile = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        projectile.transform.position = transform.position;
-        projectile.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        // Posición del golpe (frente al jugador)
+        Vector2 hitPosition = (Vector2)transform.position + direction * axeRange;
+
+        // Detectar impactos en 2D
+        Collider2D[] hits = Physics2D.OverlapCircleAll(hitPosition, axeRadius);
         
-        var renderer = projectile.GetComponent<Renderer>();
-        renderer.material.color = colorHacha;
-        
-        // Mover en dirección
-        var rb = projectile.AddComponent<Rigidbody>();
-        rb.useGravity = false;
-        rb.linearVelocity = (Vector3)direction * 10f;
-        
-        // Destruir después de 2 segundos
-        Destroy(projectile, 2f);
+        bool hitAnything = false;
+        foreach (var hit in hits)
+        {
+            // 1. Cristales Malignos (Cuadrante 2 - Fortaleza del Gigante)
+            var crystal = hit.GetComponent<Triskel.GiantFortress.MalignCrystal>();
+            if (crystal != null)
+            {
+                crystal.OnAxeHit();
+                hitAnything = true;
+                continue;
+            }
+
+            // 2. Árboles Malditos (Cuadrante 2 - Fortaleza del Gigante)
+            var tree = hit.GetComponent<Triskel.GiantFortress.CursedTree>();
+            if (tree != null)
+            {
+                tree.OnAxeHit();
+                hitAnything = true;
+                continue;
+            }
+
+            // 3. Otros objetos destructibles (futuro)
+            var destructible = hit.GetComponent<Triskel.GiantFortress.IAxeDestructible>();
+            if (destructible != null)
+            {
+                destructible.OnAxeHit();
+                hitAnything = true;
+            }
+        }
+
+        if (hitAnything)
+        {
+            Debug.Log("🎯 ¡Impacto!");
+        }
     }
     
     private void UseManto()
