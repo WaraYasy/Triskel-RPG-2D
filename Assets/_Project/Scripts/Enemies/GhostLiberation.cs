@@ -2,122 +2,92 @@ using System.Collections;
 using UnityEngine;
 
 /// <summary>
-/// GhostLiberation - Maneja la mecánica de liberación de fantasmas
-/// Versión 1.0 - Abrazo que libera al fantasma con efecto visual
+/// GhostLiberation - Maneja la mecánica de liberación (paz) o destrucción (dolor) de fantasmas.
 /// </summary>
 public class GhostLiberation : MonoBehaviour
 {
-    [Header("Configuración de Liberación")]
-    [SerializeField] private float liberationDuration = 2.5f;    // Duración del efecto de liberación
-    [SerializeField] private float ascendHeight = 4f;            // Altura que asciende
+    public enum LiberationMode { Peaceful, Intense }
+
+    [Header("Configuración General")]
+    [SerializeField] private float peacefulDuration = 2.5f;
+    [SerializeField] private float intenseDuration = 1.2f; // Un poco más para ver el "sufrimiento"
+    [SerializeField] private float ascendHeight = 4f;
     
-    [Header("Efectos Visuales (Opcional)")]
-    [SerializeField] private Color liberationColor = Color.cyan; // Color del efecto
-    [SerializeField] private bool useParticles = false;          // Si quieres partículas
+    [Header("Colores")]
+    [SerializeField] private Color peacefulColor = Color.cyan;
+    [SerializeField] private Color intenseColor = Color.red; // Color de "daño/quemadura"
     
     private bool isBeingLiberated = false;
-    public bool IsBeingLiberated => isBeingLiberated; // Propiedad pública
+    public bool IsBeingLiberated => isBeingLiberated;
     private GhostAI ghostAI;
+    private SpriteRenderer sprite;
 
     private void Awake()
     {
         ghostAI = GetComponent<GhostAI>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
-    /// <summary>
-    /// Método llamado por la LiberationFountain para liberar al fantasma.
-    /// </summary>
-    public void LiberateAtFountain()
+    public void Liberate(LiberationMode mode)
     {
         if (isBeingLiberated) return;
-        
         isBeingLiberated = true;
         
-        // Desactivar IA del fantasma
-        if (ghostAI != null)
-        {
-            ghostAI.enabled = false;
-        }
+        if (ghostAI != null) ghostAI.enabled = false;
 
-        // Efecto de liberación
-        StartCoroutine(LiberationEffect());
-        
-        Debug.Log("👻 ¡Fantasma liberado en la fuente!");
+        StartCoroutine(LiberationEffect(mode));
     }
 
-
-    private IEnumerator LiberationEffect()
+    private IEnumerator LiberationEffect(LiberationMode mode)
     {
-        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
-        if (sprite == null)
-        {
-            Destroy(gameObject);
-            yield break;
-        }
+        if (sprite == null) { Destroy(gameObject); yield break; }
         
-        Color originalColor = sprite.color;
-        Vector3 startPos = transform.position;
         float elapsed = 0f;
-        
-        // Opcional: Crear partículas
-        GameObject particles = null;
-        if (useParticles)
-        {
-            particles = CreateLiberationParticles();
-        }
-        
-        // Animación de ascenso y fade
-        while (elapsed < liberationDuration)
+        float duration = (mode == LiberationMode.Peaceful) ? peacefulDuration : intenseDuration;
+        Vector3 startPos = transform.position;
+        Vector3 startScale = transform.localScale;
+        Color originalColor = sprite.color;
+
+        while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
-            float progress = elapsed / liberationDuration;
-            
-            // Fade out (desvanecerse)
-            float alpha = Mathf.Lerp(1f, 0f, progress);
-            sprite.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
-            
-            // Move up (ascender)
-            transform.position = startPos + Vector3.up * progress * ascendHeight;
-            
-            // Opcional: Rotar suavemente
-            transform.Rotate(Vector3.forward * Time.deltaTime * 30f);
+            float t = elapsed / duration;
+
+            if (mode == LiberationMode.Peaceful)
+            {
+                // MODO FUENTE: Asciende y se desvanece suavemente (Paz)
+                transform.position = startPos + Vector3.up * t * ascendHeight;
+                sprite.color = Color.Lerp(originalColor, new Color(peacefulColor.r, peacefulColor.g, peacefulColor.b, 0), t);
+                transform.Rotate(Vector3.forward * Time.deltaTime * 50f);
+            }
+            else
+            {
+                // MODO LUZ INTENSA: Destrucción por daño (Sufrimiento)
+                
+                // 1. Vibración Violenta (Shake)
+                float shakeAmount = 0.2f * (t + 0.5f); // Aumenta con el tiempo
+                transform.position = startPos + (Vector3)Random.insideUnitCircle * shakeAmount;
+
+                // 2. Parpadeo de color "Quemadura" (Rojo/Blanco intensos)
+                float flash = Mathf.Abs(Mathf.Sin(elapsed * 25f)); // Parpadeo muy rápido
+                sprite.color = Color.Lerp(originalColor, Color.white, flash);
+                if (flash > 0.5f) sprite.color = intenseColor;
+
+                // 3. Deformación (Jitter de escala)
+                float jitter = 1f + Mathf.Sin(elapsed * 50f) * 0.2f;
+                transform.localScale = new Vector3(startScale.x * jitter, startScale.y * (2f - jitter), startScale.z);
+
+                // 4. Encogimiento final agónico
+                if (t > 0.8f)
+                {
+                    float finalT = (t - 0.8f) * 5f;
+                    transform.localScale = Vector3.Lerp(transform.localScale, Vector3.zero, finalT);
+                }
+            }
             
             yield return null;
         }
         
-        // Destruir fantasma
         Destroy(gameObject);
-        
-        // Limpiar partículas
-        if (particles != null)
-        {
-            Destroy(particles, 2f);
-        }
     }
-
-    private GameObject CreateLiberationParticles()
-    {
-        GameObject particlesObj = new GameObject("LiberationParticles");
-        particlesObj.transform.position = transform.position;
-        
-        ParticleSystem ps = particlesObj.AddComponent<ParticleSystem>();
-        
-        var main = ps.main;
-        main.startColor = liberationColor;
-        main.startSize = new ParticleSystem.MinMaxCurve(0.1f, 0.3f);
-        main.startSpeed = new ParticleSystem.MinMaxCurve(1f, 3f);
-        main.startLifetime = 2f;
-        main.maxParticles = 100;
-        main.simulationSpace = ParticleSystemSimulationSpace.World;
-        
-        var emission = ps.emission;
-        emission.rateOverTime = 40f;
-        
-        var shape = ps.shape;
-        shape.shapeType = ParticleSystemShapeType.Sphere;
-        shape.radius = 0.5f;
-        
-        return particlesObj;
-    }
-
 }
