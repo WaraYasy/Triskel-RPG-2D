@@ -65,16 +65,13 @@ public class MusicManager : MonoBehaviour
     {
         // El volumen final es el volumen global (0-1) multiplicado por el volumen base de este clip (0-1)
         targetVolume = globalVolume * volume;
-        
+
         // Si no estamos haciendo fade, aplicamos inmediatamente
         if (!useFadeIn)
         {
             audioSource.volume = targetVolume;
         }
-        // Si hay fade, targetVolume ya se actualizó, y el Update se encargará (si está reproduciendo)
-        // Pero si el fade ya terminó o estamos en medio, queremos ajustar
-        if (audioSource.volume > targetVolume && !useFadeIn)
-            audioSource.volume = targetVolume;
+        // Si useFadeIn está activo, el Update se encargará de ajustar el volumen suavemente
     }
 
     private void Start()
@@ -87,13 +84,18 @@ public class MusicManager : MonoBehaviour
 
     private void Update()
     {
-        // Fade in suave
-        if (useFadeIn && audioSource.isPlaying && audioSource.volume < targetVolume)
+        // Fade in suave o ajuste de volumen
+        if (useFadeIn && audioSource.isPlaying && audioSource.volume != targetVolume)
         {
+            // Calcular velocidad de fade (más rápido para cambios de slider, más lento para fade inicial)
+            float fadeSpeed = Mathf.Abs(audioSource.volume - targetVolume) > 0.1f
+                ? (1f / fadeInDuration) * Time.deltaTime  // Fade inicial lento
+                : 2f * Time.deltaTime; // Cambios de slider más rápidos
+
             audioSource.volume = Mathf.MoveTowards(
                 audioSource.volume,
                 targetVolume,
-                (targetVolume / fadeInDuration) * Time.deltaTime
+                fadeSpeed
             );
         }
     }
