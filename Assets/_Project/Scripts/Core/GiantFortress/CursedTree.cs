@@ -105,7 +105,7 @@ namespace Triskel.GiantFortress
             }
             
             OnChopped?.Invoke();
-            GetComponent<Collider2D>().enabled = false;
+            // El collider se mantiene para que el tocón siga bloqueando el paso
         }
         
         private void HealTree()
@@ -132,7 +132,7 @@ namespace Triskel.GiantFortress
             }
             
             OnHealed?.Invoke();
-            GetComponent<Collider2D>().enabled = false;
+            // Eliminado: GetComponent<Collider2D>().enabled = false;
         }
         
         private void UpdatePartialHealing()

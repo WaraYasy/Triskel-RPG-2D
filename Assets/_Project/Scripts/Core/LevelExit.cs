@@ -75,13 +75,17 @@ public class LevelExit : MonoBehaviour
     /// </summary>
     private void HandleHubDoor()
     {
-        string targetScene = useLevelProgression ?
-            "Cuadrante" + GameManager.Instance.CurrentLevel :
-            sceneToLoad;
+        string targetScene = sceneToLoad;
+        
+        // Solo usamos progresión si se marca explícitamente Y no es una puerta interna
+        if (useLevelProgression && !string.IsNullOrEmpty(targetSpawnID))
+        {
+            targetScene = "Cuadrante" + GameManager.Instance.CurrentLevel;
+        }
 
         if (!string.IsNullOrEmpty(targetScene))
         {
-            Debug.Log($"[LevelExit] Hub Door → {targetScene}");
+            Debug.Log($"[LevelExit] Hub Door ({exitType}) → {targetScene} (Spawn: {targetSpawnID})");
             SceneManager.LoadScene(targetScene);
         }
         else
@@ -98,13 +102,16 @@ public class LevelExit : MonoBehaviour
         // Desbloquear entrada del diario "level0_intro"
         UnlockDiaryEntry(0);
 
-        string targetScene = useLevelProgression ?
-            "Cuadrante" + GameManager.Instance.CurrentLevel :
-            sceneToLoad;
+        string targetScene = sceneToLoad;
+        
+        if (useLevelProgression)
+        {
+            targetScene = "Cuadrante" + GameManager.Instance.CurrentLevel;
+        }
 
         if (!string.IsNullOrEmpty(targetScene))
         {
-            Debug.Log($"[LevelExit] Hub → Level: {targetScene} (mostrando transición nivel0)");
+            Debug.Log($"[LevelExit] Hub → Level: {targetScene} (usando transición nivel0)");
             GameManager.Instance.IrATransicion(0, targetScene);
         }
         else

@@ -57,6 +57,16 @@ public class RelicSystem : MonoBehaviour
         // Suscribirse a evento de usar reliquia
         inputActions.Player.UseRelic.performed += OnUseRelicPerformed;
     }
+
+    private void Start()
+    {
+        // Comprobar si ya tenemos el Lirio en el inventario al empezar el nivel
+        if (Triskel.Core.InventoryData.Instance != null && Triskel.Core.InventoryData.Instance.HasItem("lirio"))
+        {
+            SelectRelic(RelicType.LirioAzul);
+            Debug.Log("[RelicSystem] Lirio detectado en inventario. Equipado automáticamente.");
+        }
+    }
     
     private void OnDisable()
     {
@@ -267,4 +277,3 @@ public class RelicSystem : MonoBehaviour
     public float GetAbilityCooldownProgress() => 1f - (abilityCooldownTimer / abilityCooldown);
     public bool IsInvisible() => isInvisible;
 }
-
