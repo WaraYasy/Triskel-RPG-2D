@@ -1,0 +1,624 @@
+fileFormatVersion: 2
+guid: b0a4692dbc8219a4185de085dc613fbb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3850792892168746322
+    second: AnimacionArbolMaldito_0
+  - first:
+      213: -6585220297319494709
+    second: AnimacionArbolMaldito_1
+  - first:
+      213: 3647796642303222968
+    second: AnimacionArbolMaldito_2
+  - first:
+      213: 5870294849106480820
+    second: AnimacionArbolMaldito_3
+  - first:
+      213: -2077100512685525836
+    second: AnimacionArbolMaldito_4
+  - first:
+      213: -1144603743798795946
+    second: AnimacionArbolMaldito_5
+  - first:
+      213: 2252934495758253165
+    second: AnimacionArbolMaldito_6
+  - first:
+      213: -6829560029848811323
+    second: AnimacionArbolMaldito_7
+  - first:
+      213: 4199521607815491249
+    second: AnimacionArbolMaldito_8
+  - first:
+      213: 7491774575502949300
+    second: AnimacionArbolMaldito_9
+  - first:
+      213: -6578597663692053926
+    second: AnimacionArbolMaldito_10
+  - first:
+      213: 6403626347754294232
+    second: AnimacionArbolMaldito_11
+  - first:
+      213: -8674015742965655772
+    second: AnimacionArbolMaldito_12
+  - first:
+      213: 3036133113431002476
+    second: AnimacionArbolMaldito_13
+  - first:
+      213: -1265812495853141579
+    second: AnimacionArbolMaldito_14
+  - first:
+      213: -5763457167600333337
+    second: AnimacionArbolMaldito_15
+  - first:
+      213: -7021839089711337160
+    second: AnimacionArbolMaldito_16
+  - first:
+      213: -8504448892419194761
+    second: AnimacionArbolMaldito_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AnimacionArbolMaldito_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 258
+        width: 100
+        height: 124
+      alignment: 9
+      pivot: {x: 0.28780922, y: 0.15249166}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2553159abb3c07530800000000000000
+      internalID: 3850792892168746322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionArbolMaldito_1
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 258
+        width: 96
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcb449297099c94a0800000000000000
+      internalID: -6585220297319494709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionArbolMaldito_2
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 258
+        width: 96
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b4a85528b39f9230800000000000000
+      internalID: 3647796642303222968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionArbolMaldito_3
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 258
+        width: 96
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4be0cc7201a777150800000000000000
+      internalID: 5870294849106480820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionArbolMaldito_4
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 258
+        width: 96
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b4f892b618ac23e0800000000000000
+      internalID: -2077100512685525836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionArbolMaldito_5
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 258
+        width: 96
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6516a4a95fc8d10f0800000000000000
+      internalID: -1144603743798795946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionArbolMaldito_6
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 130
+        width: 100
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6cf4e1ccf7044f10800000000000000
+      internalID: 2252934495758253165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionArbolMaldito_7
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 130
+        width: 96
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c8c7a066578831a0800000000000000
+      internalID: -6829560029848811323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionArbolMaldito_8
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 130
+        width: 96
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1be6b6cf6a2b74a30800000000000000
+      internalID: 4199521607815491249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionArbolMaldito_9
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 130
+        width: 96
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bbf726884128f760800000000000000
+      internalID: 7491774575502949300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionArbolMaldito_10
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 130
+        width: 97
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a52ab6f974024b4a0800000000000000
+      internalID: -6578597663692053926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionArbolMaldito_11
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 130
+        width: 95
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8db0a344c304ed850800000000000000
+      internalID: 6403626347754294232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionArbolMaldito_12
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 2
+        width: 100
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 427d26083a4bf9780800000000000000
+      internalID: -8674015742965655772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionArbolMaldito_13
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 2
+        width: 96
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6d0bd40bf2822a20800000000000000
+      internalID: 3036133113431002476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionArbolMaldito_14
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 2
+        width: 96
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b14c68dd3eee6ee0800000000000000
+      internalID: -1265812495853141579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionArbolMaldito_15
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 2
+        width: 96
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7edc00ffd361400b0800000000000000
+      internalID: -5763457167600333337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionArbolMaldito_16
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 2
+        width: 96
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 831bdcb1d8a6d8e90800000000000000
+      internalID: -7021839089711337160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionArbolMaldito_17
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 2
+        width: 96
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 770c3e47ac02af980800000000000000
+      internalID: -8504448892419194761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ca49c7f9f6d54294b87f84a230bec370
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AnimacionArbolMaldito_0: 3850792892168746322
+      AnimacionArbolMaldito_1: -6585220297319494709
+      AnimacionArbolMaldito_10: -6578597663692053926
+      AnimacionArbolMaldito_11: 6403626347754294232
+      AnimacionArbolMaldito_12: -8674015742965655772
+      AnimacionArbolMaldito_13: 3036133113431002476
+      AnimacionArbolMaldito_14: -1265812495853141579
+      AnimacionArbolMaldito_15: -5763457167600333337
+      AnimacionArbolMaldito_16: -7021839089711337160
+      AnimacionArbolMaldito_17: -8504448892419194761
+      AnimacionArbolMaldito_2: 3647796642303222968
+      AnimacionArbolMaldito_3: 5870294849106480820
+      AnimacionArbolMaldito_4: -2077100512685525836
+      AnimacionArbolMaldito_5: -1144603743798795946
+      AnimacionArbolMaldito_6: 2252934495758253165
+      AnimacionArbolMaldito_7: -6829560029848811323
+      AnimacionArbolMaldito_8: 4199521607815491249
+      AnimacionArbolMaldito_9: 7491774575502949300
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
