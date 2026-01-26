@@ -36,7 +36,7 @@ public class LiberationFountain : MonoBehaviour
 
         if (liberation != null)
         {
-            liberation.LiberateAtFountain();
+            liberation.Liberate(GhostLiberation.LiberationMode.Peaceful);
         }
         else
         {

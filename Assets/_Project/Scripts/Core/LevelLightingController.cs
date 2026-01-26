@@ -3,84 +3,47 @@ using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// LevelLightingController - Controla si el sistema de luz está activo según el nivel
-/// Versión 1.0 - Solo activa luz en niveles específicos
+/// LevelLightingController - Gestiona la intensidad de la luz global por escena.
 /// </summary>
 public class LevelLightingController : MonoBehaviour
 {
-    [Header("Configuración")]
-    [Tooltip("Nombres de las escenas donde la luz DEBE estar activa")]
-    [SerializeField] private string[] scenesWithDarkness = { "Cuadrante1", "Nivel1" };
-    
+    [Header("Escenas y Modos")]
+    [SerializeField] private string[] darknessScenes = { "Cueva", "Mina" };
+    [SerializeField] private string[] subtleScenes = { "Cuadrante1", "Cuadrante2", "Fortaleza" };
+
+    [Header("Intensidades")]
+    [Range(0, 1)] [SerializeField] private float darknessLevel = 0.2f; // Muy oscuro
+    [Range(0, 1)] [SerializeField] private float subtleLevel = 0.8f;   // Sutil (nublado)
+    [Range(0, 1)] [SerializeField] private float normalLevel = 1.0f;   // Soleado
+
     [Header("Referencias")]
-    [SerializeField] private Light2D playerLight;
-    
-    [Header("Configuración de Iluminación")]
-    [Tooltip("Intensidad de luz en niveles oscuros")]
-    [SerializeField] private float darknessIntensity = 0.2f;
-    [Tooltip("Intensidad de luz en niveles normales")]
-    [SerializeField] private float normalIntensity = 1.0f;
-    
-    private Light2D[] sceneLights; // Todas las luces de la escena
+    [SerializeField] private Light2D playerLight; // Para excluirla del oscurecimiento
 
     private void Start()
     {
-        // Buscar todas las luces globales en la escena
-        sceneLights = FindObjectsByType<Light2D>(FindObjectsSortMode.None);
-        
-        // Detectar escena actual
+        ApplyLighting();
+    }
+
+    private void ApplyLighting()
+    {
         string currentScene = SceneManager.GetActiveScene().name;
-        
-        // Verificar si esta escena debe tener oscuridad
-        bool shouldHaveDarkness = System.Array.Exists(scenesWithDarkness, scene => scene == currentScene);
-        
-        if (shouldHaveDarkness)
+        float targetIntensity = normalLevel;
+
+        if (System.Array.Exists(darknessScenes, s => s == currentScene))
+            targetIntensity = darknessLevel;
+        else if (System.Array.Exists(subtleScenes, s => s == currentScene))
+            targetIntensity = subtleLevel;
+
+        Light2D[] allLights = FindObjectsByType<Light2D>(FindObjectsSortMode.None);
+        foreach (Light2D light in allLights)
         {
-            ActivateDarknessSystem();
-        }
-        else
-        {
-            DeactivateDarknessSystem();
-        }
-        
-        Debug.Log($"[LevelLighting] Escena: {currentScene} | Oscuridad: {shouldHaveDarkness}");
-    }
-    
-    private void ActivateDarknessSystem()
-    {
-        // Activar luz del player
-        if (playerLight != null)
-        {
-            playerLight.enabled = true;
-        }
-        
-        // OSCURECER todas las luces globales (excepto la del player)
-        foreach (Light2D light in sceneLights)
-        {
-            if (light != playerLight && light.lightType == Light2D.LightType.Global)
+            // Solo afectamos a las luces GLOBALES del nivel
+            if (light.lightType == Light2D.LightType.Global && light != playerLight)
             {
-                light.intensity = darknessIntensity;
-                Debug.Log($"[LevelLighting] Luz global oscurecida: {light.name}");
+                light.intensity = targetIntensity;
             }
         }
-    }
-    
-    private void DeactivateDarknessSystem()
-    {
-        // Desactivar luz del player (no es necesaria)
-        if (playerLight != null)
-        {
-            playerLight.enabled = false;
-        }
-        
-        // ILUMINAR todas las luces globales
-        foreach (Light2D light in sceneLights)
-        {
-            if (light != playerLight && light.lightType == Light2D.LightType.Global)
-            {
-                light.intensity = normalIntensity;
-                Debug.Log($"[LevelLighting] Luz global restaurada: {light.name}");
-            }
-        }
+
+        Debug.Log($"[Lighting] Escena '{currentScene}' configurada con intensidad: {targetIntensity}");
     }
 }

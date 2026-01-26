@@ -810,11 +810,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2801058867458340857, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 49.6
+      value: 5.7
       objectReference: {fileID: 0}
     - target: {fileID: 2801058867458340857, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 119.3
+      value: 54.3
       objectReference: {fileID: 0}
     - target: {fileID: 2801058867458340857, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -879,6 +879,14 @@ PrefabInstance:
     - target: {fileID: 6754596914938329153, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
       propertyPath: orthographic size
       value: 5.3999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 7153998470911297965, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
+      propertyPath: baseIntensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8113486159504391756, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
+      propertyPath: m_Intensity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8980077758569696469, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
       propertyPath: m_DefaultActionMap
@@ -356052,7 +356060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5cbfeafc3ce284c8ed9c767789fadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exitType: 0
+  exitType: 2
   useLevelProgression: 1
   sceneToLoad: 
   targetSpawnID: Inicio_Nivel2
@@ -377783,7 +377791,7 @@ Transform:
   m_GameObject: {fileID: 1356241593}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 49.6, y: 119.3, z: -10}
+  m_LocalPosition: {x: 5.7, y: 54.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -539758,7 +539766,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.5021243
-  m_PointLightOuterRadius: 4.476165
+  m_PointLightOuterRadius: 4.281393
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -539832,7 +539840,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2015840100}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.014041357, w: 0.9999014}
+  m_LocalRotation: {x: 0, y: 0, z: 0.0034864529, w: 0.9999939}
   m_LocalPosition: {x: 4.87, y: 103.35, z: -0.63}
   m_LocalScale: {x: 0.1674234, y: 0.1674234, z: 0.1674234}
   m_ConstrainProportionsScale: 0
@@ -539873,8 +539881,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.77998626, y: -2.591404}
-  m_Radius: 24.913105
+  m_Offset: {x: 0.5000526, y: 0.23541684}
+  m_Radius: 8.214192
 --- !u!114 &2015840106
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -296,10 +296,13 @@ public class GameManager : MonoBehaviour
     public void IrATransicion(int nivelCompletado, string
         escenaDestino)
     {
+        // Guardar automáticamente el inventario y estado al cambiar de nivel
+        SaveGame();
+
         // Determinar el ID de transición según moral/decisiones
         string transitionID = ObtenerIDTransicion(nivelCompletado);
 
-        Debug.Log($"[GameManager] Transición: {transitionID} → {escenaDestino}");
+        Debug.Log($"[GameManager] Transición (Autoguardado): {transitionID} → {escenaDestino}");
 
     // Pasar datos a la escena de transición
     TransitionManager.TransitionID = transitionID;
