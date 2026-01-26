@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Yarn.Unity;
 
 namespace Triskel.Dialogue
 {
@@ -24,6 +25,32 @@ namespace Triskel.Dialogue
 
         public DialogueTheme CurrentTheme { get; private set; }
 
+        [Header("Visibilidad y Control")]
+        [SerializeField] private DialogueRunner dialogueRunner;
+        [SerializeField] private CanvasGroup uiCanvasGroup;
+        [SerializeField] private GameObject uiRootObject; // Alternativa si no hay CanvasGroup
+
+        private void OnEnable()
+        {
+            if (dialogueRunner == null)
+                dialogueRunner = FindFirstObjectByType<DialogueRunner>();
+
+            if (dialogueRunner != null)
+            {
+                dialogueRunner.onDialogueStart.AddListener(OnDialogueStart);
+                dialogueRunner.onDialogueComplete.AddListener(OnDialogueComplete);
+            }
+        }
+
+        private void OnDisable()
+        {
+            if (dialogueRunner != null)
+            {
+                dialogueRunner.onDialogueStart.RemoveListener(OnDialogueStart);
+                dialogueRunner.onDialogueComplete.RemoveListener(OnDialogueComplete);
+            }
+        }
+
         private void Awake()
         {
             int saved = PlayerPrefs.GetInt(THEME_PREF_KEY, 0);
@@ -37,7 +64,23 @@ namespace Triskel.Dialogue
                 Debug.LogError("[DialogueThemeManager] GameConstants no asignado.");
                 return;
             }
+
+            // Intentar encontrar referencias de UI si faltan
+            if (uiCanvasGroup == null && backgroundPanel != null)
+                uiCanvasGroup = backgroundPanel.GetComponentInParent<CanvasGroup>();
+            
+            if (uiRootObject == null && uiCanvasGroup != null)
+                uiRootObject = uiCanvasGroup.gameObject;
+            else if (uiRootObject == null && backgroundPanel != null)
+                uiRootObject = backgroundPanel.transform.parent.gameObject;
+
             ApplyTheme(CurrentTheme);
+
+            // Estado inicial: Ocultar si no hay diálogo activo
+            if (dialogueRunner != null && !dialogueRunner.IsDialogueRunning)
+            {
+                OnDialogueComplete();
+            }
         }
 
         public void SetTheme(DialogueTheme theme)
@@ -96,6 +139,45 @@ namespace Triskel.Dialogue
             colors.pressedColor = hover * 0.9f;
             colors.selectedColor = hover;
             button.colors = colors;
+        }
+
+
+        private void OnDialogueStart()
+        {
+            ShowUI();
+        }
+
+        private void OnDialogueComplete()
+        {
+            HideUI();
+        }
+
+        public void ShowUI()
+        {
+            if (uiCanvasGroup != null)
+            {
+                uiCanvasGroup.alpha = 1f;
+                uiCanvasGroup.interactable = true;
+                uiCanvasGroup.blocksRaycasts = true;
+            }
+            else if (uiRootObject != null)
+            {
+                uiRootObject.SetActive(true);
+            }
+        }
+
+        public void HideUI()
+        {
+            if (uiCanvasGroup != null)
+            {
+                uiCanvasGroup.alpha = 0f;
+                uiCanvasGroup.interactable = false;
+                uiCanvasGroup.blocksRaycasts = false;
+            }
+            else if (uiRootObject != null)
+            {
+                uiRootObject.SetActive(false);
+            }
         }
     }
 }
