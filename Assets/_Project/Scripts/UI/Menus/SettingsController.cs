@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using Triskel.Core;
+using System.Collections.Generic;
 
 namespace Triskel.UI
 {
     /// <summary>
     /// Controlador del menu de ajustes.
-    /// Maneja volumen de musica, efectos y tema visual.
+    /// Conecta la UI con el SettingsManager.
     /// </summary>
     public class SettingsController : MonoBehaviour
     {
@@ -13,45 +15,25 @@ namespace Triskel.UI
         [SerializeField] private UIDocument settingsDocument;
         [SerializeField] private PauseController pauseController;
 
-        [Header("Audio")]
-        [SerializeField] private string musicVolumeKey = "MusicVolume";
-        [SerializeField] private string sfxVolumeKey = "SFXVolume";
-        [SerializeField] private float defaultVolume = 80f;
-
-        [Header("Tema")]
-        [SerializeField] private string themeKey = "DarkMode";
-        [SerializeField] private bool defaultDarkMode = true;
-
         // Elementos UI
         private VisualElement settingsOverlay;
         private Slider musicSlider;
         private Slider sfxSlider;
-        private Toggle themeToggle;
-        private Label themeComingSoonLabel;
+        private DropdownField fontSizeDropdown;
         private Button backButton;
-
-        // Estado
-        public float MusicVolume { get; private set; }
-        public float SFXVolume { get; private set; }
-        public bool IsDarkMode { get; private set; }
-
-        // Eventos
-        public event System.Action<float> OnMusicVolumeChanged;
-        public event System.Action<float> OnSFXVolumeChanged;
-        public event System.Action<bool> OnThemeChanged;
+        
+        // Elementos decorativos
+        private VisualElement themeSection; 
 
         private void OnEnable()
         {
             InitializeSettings();
-            LoadSettings();
+            RefreshUI();
         }
 
         private void OnDisable()
         {
-            if (musicSlider != null) musicSlider.UnregisterValueChangedCallback(OnMusicSliderChanged);
-            if (sfxSlider != null) sfxSlider.UnregisterValueChangedCallback(OnSFXSliderChanged);
-            if (themeToggle != null) themeToggle.UnregisterValueChangedCallback(OnThemeToggleChanged);
-            if (backButton != null) backButton.clicked -= OnBackClicked;
+            UnregisterEvents();
         }
 
         private void InitializeSettings()
@@ -71,34 +53,44 @@ namespace Triskel.UI
             settingsOverlay = root.Q<VisualElement>("SettingsOverlay");
             musicSlider = root.Q<Slider>("MusicSlider");
             sfxSlider = root.Q<Slider>("SFXSlider");
-            themeToggle = root.Q<Toggle>("ThemeToggle");
-            themeComingSoonLabel = root.Q<Label>("ThemeComingSoonLabel");
+            fontSizeDropdown = root.Q<DropdownField>("DialogueFontSizeDropdown");
             backButton = root.Q<Button>("BackButton");
+            themeSection = root.Q<VisualElement>("DialogueFontSizeSection");
 
-            // Configurar eventos
-            if (musicSlider != null) musicSlider.RegisterValueChangedCallback(OnMusicSliderChanged);
-            if (sfxSlider != null) sfxSlider.RegisterValueChangedCallback(OnSFXSliderChanged);
-            // No registrar evento del toggle porque esta deshabilitado
-            // if (themeToggle != null) themeToggle.RegisterValueChangedCallback(OnThemeToggleChanged);
-            if (backButton != null) backButton.clicked += OnBackClicked;
-
-            // Deshabilitar modo oscuro (pronto disponible)
-            if (themeToggle != null)
+            // Configurar Dropdown
+            if (fontSizeDropdown != null)
             {
-                themeToggle.SetEnabled(false);
-                themeToggle.SetValueWithoutNotify(false);
+                fontSizeDropdown.choices = new List<string> { "Normal", "Grande" };
             }
+
+            RegisterEvents();
 
             // Ocultar inicialmente
             Hide();
         }
 
-        #region Public Methods
+        private void RegisterEvents()
+        {
+            if (musicSlider != null) musicSlider.RegisterValueChangedCallback(OnMusicSliderChanged);
+            if (sfxSlider != null) sfxSlider.RegisterValueChangedCallback(OnSFXSliderChanged);
+            if (fontSizeDropdown != null) fontSizeDropdown.RegisterValueChangedCallback(OnFontSizeChanged);
+            if (backButton != null) backButton.clicked += OnBackClicked;
+        }
+
+        private void UnregisterEvents()
+        {
+            if (musicSlider != null) musicSlider.UnregisterValueChangedCallback(OnMusicSliderChanged);
+            if (sfxSlider != null) sfxSlider.UnregisterValueChangedCallback(OnSFXSliderChanged);
+            if (fontSizeDropdown != null) fontSizeDropdown.UnregisterValueChangedCallback(OnFontSizeChanged);
+            if (backButton != null) backButton.clicked -= OnBackClicked;
+        }
 
         public void Show()
         {
             if (settingsOverlay != null)
                 settingsOverlay.style.display = DisplayStyle.Flex;
+            
+            RefreshUI();
         }
 
         public void Hide()
@@ -107,138 +99,51 @@ namespace Triskel.UI
                 settingsOverlay.style.display = DisplayStyle.None;
         }
 
-        public void SetMusicVolume(float volume)
+        private void RefreshUI()
         {
-            MusicVolume = Mathf.Clamp(volume, 0f, 100f);
+            if (SettingsManager.Instance == null) return;
 
-            if (musicSlider != null)
-                musicSlider.SetValueWithoutNotify(MusicVolume);
+            if (musicSlider != null) 
+                musicSlider.SetValueWithoutNotify(SettingsManager.Instance.MusicVolume * 100f);
+            
+            if (sfxSlider != null) 
+                sfxSlider.SetValueWithoutNotify(SettingsManager.Instance.SFXVolume * 100f);
 
-            ApplyMusicVolume();
-            SaveSettings();
+            if (fontSizeDropdown != null)
+            {
+                int index = SettingsManager.Instance.UseLargeText ? 1 : 0;
+                fontSizeDropdown.index = index;
+            }
         }
-
-        public void SetSFXVolume(float volume)
-        {
-            SFXVolume = Mathf.Clamp(volume, 0f, 100f);
-
-            if (sfxSlider != null)
-                sfxSlider.SetValueWithoutNotify(SFXVolume);
-
-            ApplySFXVolume();
-            SaveSettings();
-        }
-
-        public void SetDarkMode(bool darkMode)
-        {
-            IsDarkMode = darkMode;
-
-            if (themeToggle != null)
-                themeToggle.SetValueWithoutNotify(IsDarkMode);
-
-            ApplyTheme();
-            SaveSettings();
-        }
-
-        #endregion
 
         #region Event Handlers
 
         private void OnMusicSliderChanged(ChangeEvent<float> evt)
         {
-            MusicVolume = evt.newValue;
-            ApplyMusicVolume();
-            SaveSettings();
-
-            Debug.Log($"[SettingsController] Volumen musica: {MusicVolume}%");
+            if (SettingsManager.Instance != null)
+                SettingsManager.Instance.SetMusicVolume(evt.newValue / 100f);
         }
 
         private void OnSFXSliderChanged(ChangeEvent<float> evt)
         {
-            SFXVolume = evt.newValue;
-            ApplySFXVolume();
-            SaveSettings();
-
-            Debug.Log($"[SettingsController] Volumen SFX: {SFXVolume}%");
+            if (SettingsManager.Instance != null)
+                SettingsManager.Instance.SetSFXVolume(evt.newValue / 100f);
         }
 
-        private void OnThemeToggleChanged(ChangeEvent<bool> evt)
+        private void OnFontSizeChanged(ChangeEvent<string> evt)
         {
-            IsDarkMode = evt.newValue;
-            ApplyTheme();
-            SaveSettings();
-
-            Debug.Log($"[SettingsController] Modo oscuro: {IsDarkMode}");
+            if (SettingsManager.Instance != null)
+            {
+                bool largeText = evt.newValue == "Grande";
+                SettingsManager.Instance.SetLargeText(largeText);
+            }
         }
 
         private void OnBackClicked()
         {
-            Debug.Log("[SettingsController] Volviendo...");
             Hide();
-
-            // Mostrar menu de pausa si existe
             if (pauseController != null && pauseController.IsPaused)
                 pauseController.Show();
-        }
-
-        #endregion
-
-        #region Apply Settings
-
-        private void ApplyMusicVolume()
-        {
-            // TODO: Conectar con tu MusicManager
-            // Ejemplo: MusicManager.Instance?.SetVolume(MusicVolume / 100f);
-
-            OnMusicVolumeChanged?.Invoke(MusicVolume);
-        }
-
-        private void ApplySFXVolume()
-        {
-            // TODO: Conectar con tu SFXManager o AudioManager
-            // Ejemplo: AudioManager.Instance?.SetSFXVolume(SFXVolume / 100f);
-
-            OnSFXVolumeChanged?.Invoke(SFXVolume);
-        }
-
-        private void ApplyTheme()
-        {
-            // TODO: Conectar con tu DialogueThemeManager o sistema de temas
-            // Ejemplo: DialogueThemeManager.Instance?.SetTheme(IsDarkMode ? DialogueTheme.Oscuro : DialogueTheme.Claro);
-
-            OnThemeChanged?.Invoke(IsDarkMode);
-        }
-
-        #endregion
-
-        #region Persistence
-
-        private void SaveSettings()
-        {
-            PlayerPrefs.SetFloat(musicVolumeKey, MusicVolume);
-            PlayerPrefs.SetFloat(sfxVolumeKey, SFXVolume);
-            PlayerPrefs.SetInt(themeKey, IsDarkMode ? 1 : 0);
-            PlayerPrefs.Save();
-        }
-
-        private void LoadSettings()
-        {
-            // Cargar valores guardados o usar defaults
-            MusicVolume = PlayerPrefs.GetFloat(musicVolumeKey, defaultVolume);
-            SFXVolume = PlayerPrefs.GetFloat(sfxVolumeKey, defaultVolume);
-            IsDarkMode = PlayerPrefs.GetInt(themeKey, defaultDarkMode ? 1 : 0) == 1;
-
-            // Actualizar UI
-            if (musicSlider != null) musicSlider.SetValueWithoutNotify(MusicVolume);
-            if (sfxSlider != null) sfxSlider.SetValueWithoutNotify(SFXVolume);
-            if (themeToggle != null) themeToggle.SetValueWithoutNotify(IsDarkMode);
-
-            // Aplicar settings
-            ApplyMusicVolume();
-            ApplySFXVolume();
-            ApplyTheme();
-
-            Debug.Log($"[SettingsController] Settings cargados - Music: {MusicVolume}%, SFX: {SFXVolume}%, DarkMode: {IsDarkMode}");
         }
 
         #endregion

@@ -41,6 +41,12 @@ namespace Triskel.UI
         private int currentPageIndex = 0;
         private bool isInitialized = false;
 
+        [Header("Tamaño de Texto")]
+        [SerializeField] private float normalTitleSize = 40f;
+        [SerializeField] private float largeTitleSize = 80f;
+        [SerializeField] private float normalTextSize = 30f;
+        [SerializeField] private float largeTextSize = 60f;
+
         // Botón móvil del diario
         private UnityEngine.UI.Button mobileDiaryButton;
 
@@ -69,6 +75,11 @@ namespace Triskel.UI
                     Invoke(nameof(InitializeUI), 0.01f);
                 }
             }
+
+            if (SettingsManager.Instance != null)
+            {
+                SettingsManager.Instance.OnFontSizeChanged += ApplyFontSize;
+            }
         }
 
         private void OnDisable()
@@ -80,6 +91,11 @@ namespace Triskel.UI
             if (mobileDiaryButton != null)
             {
                 mobileDiaryButton.onClick.RemoveListener(OnMobileDiaryButtonClicked);
+            }
+
+            if (SettingsManager.Instance != null)
+            {
+                SettingsManager.Instance.OnFontSizeChanged -= ApplyFontSize;
             }
         }
 
@@ -117,7 +133,29 @@ namespace Triskel.UI
             ClosePanel();
 
             isInitialized = true;
+            isInitialized = true;
             Debug.Log("[DiaryUI] UI inicializada correctamente.");
+            
+            // Aplicar tamaño inicial
+            if (SettingsManager.Instance != null)
+            {
+                ApplyFontSize(SettingsManager.Instance.UseLargeText);
+            }
+
+        }
+
+        private void Start()
+        {
+             // Retry subscription if it failed in OnEnable (Race Condition fix)
+            if (SettingsManager.Instance != null)
+            {
+                 // Asegurar no suscribirse doble
+                 SettingsManager.Instance.OnFontSizeChanged -= ApplyFontSize;
+                 SettingsManager.Instance.OnFontSizeChanged += ApplyFontSize;
+                 
+                 // Aplicar inicial
+                 ApplyFontSize(SettingsManager.Instance.UseLargeText);
+            }
         }
 
         private void RegisterEvents()
@@ -455,6 +493,24 @@ namespace Triskel.UI
                 LoadUnlockedEntries();
                 ShowCurrentPage();
             }
+        }
+
+        #endregion
+        #region Font Size Control
+
+        private void ApplyFontSize(bool large)
+        {
+            if (entryTitleLabel != null)
+            {
+                entryTitleLabel.style.fontSize = new Length(large ? largeTitleSize : normalTitleSize, LengthUnit.Pixel);
+            }
+
+            if (entryTextLabel != null)
+            {
+                entryTextLabel.style.fontSize = new Length(large ? largeTextSize : normalTextSize, LengthUnit.Pixel);
+            }
+
+            Debug.Log($"[DiaryUI] Tamaño de fuente aplicado: {(large ? "Grande" : "Normal")}");
         }
 
         #endregion

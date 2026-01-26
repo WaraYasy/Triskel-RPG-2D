@@ -1,4 +1,5 @@
 using UnityEngine;
+using Triskel.Core;
 
 /// <summary>
 /// MusicManager - Gestiona música de fondo del nivel
@@ -36,8 +37,44 @@ public class MusicManager : MonoBehaviour
         }
         else
         {
-            audioSource.volume = volume;
+            // Inicializar con volumen global
+            float globalVolume = SettingsManager.Instance != null ? SettingsManager.Instance.MusicVolume : volume;
+            targetVolume = globalVolume * volume; // (Volumen Global * Volumen Local)
+            audioSource.volume = targetVolume;
         }
+
+        // Suscribirse a cambios de volumen
+        if (SettingsManager.Instance != null)
+        {
+            SettingsManager.Instance.OnMusicVolumeChanged += OnGlobalVolumeChanged;
+            
+            // Actualizar targetVolume inmediatamente
+            OnGlobalVolumeChanged(SettingsManager.Instance.MusicVolume);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (SettingsManager.Instance != null)
+        {
+            SettingsManager.Instance.OnMusicVolumeChanged -= OnGlobalVolumeChanged;
+        }
+    }
+
+    private void OnGlobalVolumeChanged(float globalVolume)
+    {
+        // El volumen final es el volumen global (0-1) multiplicado por el volumen base de este clip (0-1)
+        targetVolume = globalVolume * volume;
+        
+        // Si no estamos haciendo fade, aplicamos inmediatamente
+        if (!useFadeIn)
+        {
+            audioSource.volume = targetVolume;
+        }
+        // Si hay fade, targetVolume ya se actualizó, y el Update se encargará (si está reproduciendo)
+        // Pero si el fade ya terminó o estamos en medio, queremos ajustar
+        if (audioSource.volume > targetVolume && !useFadeIn)
+            audioSource.volume = targetVolume;
     }
 
     private void Start()

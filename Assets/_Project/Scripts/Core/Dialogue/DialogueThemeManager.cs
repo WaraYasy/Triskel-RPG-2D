@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using TMPro;
 using Yarn.Unity;
 
+using Triskel.Core;
+
 namespace Triskel.Dialogue
 {
     /// <summary>
@@ -25,6 +27,10 @@ namespace Triskel.Dialogue
 
         public DialogueTheme CurrentTheme { get; private set; }
 
+        [Header("Tamaño de Texto")]
+        [SerializeField] private float normalFontSize = 36f;
+        [SerializeField] private float largeFontSize = 72f;
+
         [Header("Visibilidad y Control")]
         [SerializeField] private DialogueRunner dialogueRunner;
         [SerializeField] private CanvasGroup uiCanvasGroup;
@@ -40,6 +46,11 @@ namespace Triskel.Dialogue
                 dialogueRunner.onDialogueStart.AddListener(OnDialogueStart);
                 dialogueRunner.onDialogueComplete.AddListener(OnDialogueComplete);
             }
+
+            if (SettingsManager.Instance != null)
+            {
+                SettingsManager.Instance.OnFontSizeChanged += ApplyFontSize;
+            }
         }
 
         private void OnDisable()
@@ -48,6 +59,11 @@ namespace Triskel.Dialogue
             {
                 dialogueRunner.onDialogueStart.RemoveListener(OnDialogueStart);
                 dialogueRunner.onDialogueComplete.RemoveListener(OnDialogueComplete);
+            }
+
+            if (SettingsManager.Instance != null)
+            {
+                SettingsManager.Instance.OnFontSizeChanged -= ApplyFontSize;
             }
         }
 
@@ -62,7 +78,18 @@ namespace Triskel.Dialogue
             if (gameConstants == null)
             {
                 Debug.LogError("[DialogueThemeManager] GameConstants no asignado.");
-                return;
+                // No retornamos aqui para permitir que el resto funcione
+            }
+
+            // Retry subscription if it failed in OnEnable (Race Condition fix)
+            if (SettingsManager.Instance != null)
+            {
+                 // Asegurar no suscribirse doble
+                 SettingsManager.Instance.OnFontSizeChanged -= ApplyFontSize;
+                 SettingsManager.Instance.OnFontSizeChanged += ApplyFontSize;
+                 
+                 // Aplicar inicial
+                 ApplyFontSize(SettingsManager.Instance.UseLargeText);
             }
 
             // Intentar encontrar referencias de UI si faltan
@@ -139,6 +166,16 @@ namespace Triskel.Dialogue
             colors.pressedColor = hover * 0.9f;
             colors.selectedColor = hover;
             button.colors = colors;
+        }
+
+        private void ApplyFontSize(bool large)
+        {
+            if (dialogueText != null)
+            {
+                dialogueText.enableAutoSizing = false; // IMPORTANTE: Desactivar auto-ajuste para que el tamaño manual funcione
+                dialogueText.fontSize = large ? largeFontSize : normalFontSize;
+                Debug.Log($"[DialogueThemeManager] Tamaño de fuente aplicado: {(large ? "Grande" : "Normal")} ({dialogueText.fontSize})");
+            }
         }
 
 
