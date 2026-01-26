@@ -24898,6 +24898,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4098380150492027395, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
+      propertyPath: soloUnaVez
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098380150492027395, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
       propertyPath: dialogueRunner
       value: 
       objectReference: {fileID: 1937290611}
@@ -24913,6 +24917,18 @@ PrefabInstance:
       propertyPath: dialogueRunner
       value: 
       objectReference: {fileID: 1937290611}
+    - target: {fileID: 7342827196860089087, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
+      propertyPath: m_Name
+      value: ZoneLibros
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144939912759274710, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5010581
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144939912759274710, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.39509368
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25130,6 +25146,14 @@ PrefabInstance:
     - target: {fileID: 3684718113515933718, guid: 25b25b112de0afd49974225a3deb58e2, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3684718113515933721, guid: 25b25b112de0afd49974225a3deb58e2, type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3684718113515933721, guid: 25b25b112de0afd49974225a3deb58e2, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3684718114128952226, guid: 25b25b112de0afd49974225a3deb58e2, type: 3}
       propertyPath: m_SizeDelta.y
