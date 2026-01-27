@@ -200,6 +200,8 @@ MonoBehaviour:
   abilityCooldown: 2
   playerSprite: {fileID: 1740344116099198231}
   lilioLightPrefab: {fileID: 5831536546675441728, guid: f1282937b513c224d99ecb0f9c9ca557, type: 3}
+  axeRange: 1.2
+  axeRadius: 0.6
 --- !u!95 &4352505960213510836
 Animator:
   serializedVersion: 7
@@ -298,12 +300,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 372d054fb2f48d847bd57d5b6693591c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseLightIntensity: 0.5
-  lilioLightIntensity: 1.5
-  activeAbilityIntensity: 3
+  baseIntensity: 0.2
+  lilioIntensity: 0.8
+  abilityIntensity: 1.5
   baseRadius: 3
   lilioRadius: 4
-  activeAbilityRadius: 7
+  abilityRadius: 6
   transitionSpeed: 2
 --- !u!82 &1860309138686563558
 AudioSource:
@@ -464,11 +466,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 862f560d1d84c2f4c975f300d039e2da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenesWithDarkness:
+  darknessScenes:
+  - Cueva
+  - Mina
+  subtleScenes:
   - Cuadrante1
+  - Cuadrante2
+  - Fortaleza
+  darknessLevel: 0.2
+  subtleLevel: 0.8
+  normalLevel: 1
   playerLight: {fileID: 8113486159504391756}
-  darknessIntensity: 0.2
-  normalIntensity: 1
 --- !u!114 &2234910189048950744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,10 +526,10 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1043045542832307970}
+  m_GameObject: {fileID: 7128821115742827991}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.947479, y: 87.308495, z: -8.35488}
+  m_LocalPosition: {x: 0, y: 0, z: -8.35488}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -533,7 +541,7 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1043045542832307970}
+  m_GameObject: {fileID: 7128821115742827991}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -584,7 +592,7 @@ AudioListener:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1043045542832307970}
+  m_GameObject: {fileID: 7128821115742827991}
   m_Enabled: 1
 --- !u!114 &8805855108684679847
 MonoBehaviour:
@@ -592,7 +600,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1043045542832307970}
+  m_GameObject: {fileID: 7128821115742827991}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
@@ -636,7 +644,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1043045542832307970}
+  m_GameObject: {fileID: 7128821115742827991}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
