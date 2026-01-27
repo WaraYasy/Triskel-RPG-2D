@@ -42,10 +42,10 @@ namespace Triskel.UI
         private bool isInitialized = false;
 
         [Header("Tamaño de Texto")]
-        [SerializeField] private float normalTitleSize = 40f;
-        [SerializeField] private float largeTitleSize = 80f;
-        [SerializeField] private float normalTextSize = 30f;
-        [SerializeField] private float largeTextSize = 60f;
+        [SerializeField] private float normalTitleSize = 50f;
+        [SerializeField] private float largeTitleSize = 55f;
+        [SerializeField] private float normalTextSize = 35f;
+        [SerializeField] private float largeTextSize = 45f;
 
         // Botón móvil del diario
         private UnityEngine.UI.Button mobileDiaryButton;

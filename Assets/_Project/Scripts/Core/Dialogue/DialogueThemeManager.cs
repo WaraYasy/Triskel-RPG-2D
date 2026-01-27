@@ -28,8 +28,8 @@ namespace Triskel.Dialogue
         public DialogueTheme CurrentTheme { get; private set; }
 
         [Header("Tamaño de Texto")]
-        [SerializeField] private float normalFontSize = 36f;
-        [SerializeField] private float largeFontSize = 72f;
+        [SerializeField] private float normalFontSize = 48f;
+        [SerializeField] private float largeFontSize = 64f;
 
         [Header("Visibilidad y Control")]
         [SerializeField] private DialogueRunner dialogueRunner;
