@@ -28,6 +28,8 @@ namespace Triskel.UI
         private Button continueButton;
         private Button newGameButton;
         private Button logoutButton;
+        private VisualElement loadingIndicator;
+        private Label loadingLabel;
 
         private void OnEnable()
         {
@@ -111,6 +113,8 @@ namespace Triskel.UI
             continueButton = root.Q<Button>("ContinueButton");
             newGameButton = root.Q<Button>("NewGameButton");
             logoutButton = root.Q<Button>("LogoutButton");
+            loadingIndicator = root.Q<VisualElement>("LoadingIndicator");
+            loadingLabel = root.Q<Label>("LoadingLabel");
 
             // Configurar eventos
             if (loginButton != null) loginButton.clicked += OnLoginClicked;
@@ -131,10 +135,21 @@ namespace Triskel.UI
 
             if (TriskelAPIClient.Instance.IsLoggedIn)
             {
+                // Mostrar loader mientras verifica
+                ShowLoading("Verificando sesion...");
+
                 // Verificar que la sesion sea valida
                 TriskelAPIClient.Instance.VerifySession(
-                    profile => ShowLoggedInState(profile.username),
-                    error => ShowLoggedOutState()
+                    profile =>
+                    {
+                        HideLoading();
+                        ShowLoggedInState(profile.username);
+                    },
+                    error =>
+                    {
+                        HideLoading();
+                        ShowLoggedOutState();
+                    }
                 );
             }
             else
@@ -145,6 +160,8 @@ namespace Triskel.UI
 
         private void ShowLoggedInState(string username = null)
         {
+            HideLoading();
+
             // Mostrar mensaje de bienvenida
             if (welcomeLabel != null)
             {
@@ -158,8 +175,12 @@ namespace Triskel.UI
             SetDisplay(loginButton, false);
             SetDisplay(exitButton, false);
 
+            // Verificar si hay partida activa para mostrar "Continuar"
+            bool hasActiveGame = TriskelAPIClient.Instance != null &&
+                                 !string.IsNullOrEmpty(TriskelAPIClient.Instance.CurrentGameID);
+
             // Mostrar botones de logueado
-            SetDisplay(continueButton, true);
+            SetDisplay(continueButton, hasActiveGame); // Solo si hay partida activa
             SetDisplay(newGameButton, true);
             SetDisplay(logoutButton, true);
 
@@ -169,6 +190,8 @@ namespace Triskel.UI
 
         private void ShowLoggedOutState()
         {
+            HideLoading();
+
             // Ocultar mensaje de bienvenida
             if (welcomeLabel != null)
                 welcomeLabel.style.display = DisplayStyle.None;
@@ -190,6 +213,27 @@ namespace Triskel.UI
         {
             if (element != null)
                 element.style.display = visible ? DisplayStyle.Flex : DisplayStyle.None;
+        }
+
+        private void ShowLoading(string message = "Cargando...")
+        {
+            if (loadingLabel != null)
+                loadingLabel.text = message;
+
+            SetDisplay(loadingIndicator, true);
+
+            // Ocultar todos los botones mientras carga
+            SetDisplay(loginButton, false);
+            SetDisplay(exitButton, false);
+            SetDisplay(continueButton, false);
+            SetDisplay(newGameButton, false);
+            SetDisplay(logoutButton, false);
+            SetDisplay(welcomeLabel, false);
+        }
+
+        private void HideLoading()
+        {
+            SetDisplay(loadingIndicator, false);
         }
 
         #region Button Handlers
@@ -214,6 +258,10 @@ namespace Triskel.UI
         {
             Debug.Log("[MainMenuController] Continuando partida...");
 
+            // Prevenir doble-click
+            if (continueButton != null)
+                continueButton.SetEnabled(false);
+
             // Cargar partida guardada
             if (GameManager.Instance != null)
                 GameManager.Instance.LoadGame();
@@ -225,6 +273,10 @@ namespace Triskel.UI
         private void OnNewGameClicked()
         {
             Debug.Log("[MainMenuController] Nueva partida...");
+
+            // Deshabilitar botón para prevenir doble-click
+            if (newGameButton != null)
+                newGameButton.SetEnabled(false);
 
             // Iniciar nueva partida
             if (GameManager.Instance != null)
@@ -242,13 +294,24 @@ namespace Triskel.UI
                             session => Debug.Log($"[MainMenuController] Sesion iniciada: {session.session_id}"),
                             error => Debug.LogWarning($"[MainMenuController] Error iniciando sesion: {error}")
                         );
+
+                        // Cargar escena del juego
+                        LoadGameScene();
                     },
-                    error => Debug.LogWarning($"[MainMenuController] Error creando partida: {error}")
+                    error =>
+                    {
+                        Debug.LogWarning($"[MainMenuController] Error creando partida: {error}");
+                        // Re-habilitar botón si falla
+                        if (newGameButton != null)
+                            newGameButton.SetEnabled(true);
+                    }
                 );
             }
-
-            // Cargar escena del juego
-            LoadGameScene();
+            else
+            {
+                // Si no hay API, cargar escena directamente
+                LoadGameScene();
+            }
         }
 
         private void OnLogoutClicked()
@@ -302,6 +365,9 @@ namespace Triskel.UI
             // Ocultar overlays
             HideAuthOverlays();
 
+            // Mostrar loader mientras obtiene perfil
+            ShowLoading("Cargando perfil...");
+
             // Obtener perfil y actualizar UI
             if (TriskelAPIClient.Instance != null)
             {
@@ -309,6 +375,10 @@ namespace Triskel.UI
                     profile => ShowLoggedInState(profile.username),
                     error => ShowLoggedInState()
                 );
+            }
+            else
+            {
+                HideLoading();
             }
         }
 
@@ -318,6 +388,8 @@ namespace Triskel.UI
 
         private void OnLoggedIn()
         {
+            ShowLoading("Cargando perfil...");
+
             // Obtener perfil para mostrar nombre
             TriskelAPIClient.Instance?.GetMyProfile(
                 profile => ShowLoggedInState(profile.username),

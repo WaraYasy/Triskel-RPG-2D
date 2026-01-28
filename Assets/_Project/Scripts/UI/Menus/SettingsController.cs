@@ -21,9 +21,9 @@ namespace Triskel.UI
         private Slider sfxSlider;
         private DropdownField fontSizeDropdown;
         private Button backButton;
-        
-        // Elementos decorativos
-        private VisualElement themeSection; 
+
+        // Estado
+        public bool IsVisible { get; private set; } 
 
         private void OnEnable()
         {
@@ -69,7 +69,6 @@ namespace Triskel.UI
             sfxSlider = root.Q<Slider>("SFXSlider");
             fontSizeDropdown = root.Q<DropdownField>("DialogueFontSizeDropdown");
             backButton = root.Q<Button>("BackButton");
-            themeSection = root.Q<VisualElement>("DialogueFontSizeSection");
 
             // Configurar Dropdown
             if (fontSizeDropdown != null)
@@ -102,15 +101,25 @@ namespace Triskel.UI
         public void Show()
         {
             if (settingsOverlay != null)
+            {
                 settingsOverlay.style.display = DisplayStyle.Flex;
-            
+                IsVisible = true;
+            }
+
             RefreshUI();
         }
 
         public void Hide()
         {
             if (settingsOverlay != null)
+            {
                 settingsOverlay.style.display = DisplayStyle.None;
+                IsVisible = false;
+            }
+
+            // Guardar settings al cerrar (optimización)
+            if (SettingsManager.Instance != null)
+                PlayerPrefs.Save();
         }
 
         private void RefreshUI()
@@ -155,6 +164,9 @@ namespace Triskel.UI
 
         private void OnBackClicked()
         {
+            // Prevenir doble-click
+            if (!IsVisible) return;
+
             Hide();
             if (pauseController != null && pauseController.IsPaused)
                 pauseController.Show();

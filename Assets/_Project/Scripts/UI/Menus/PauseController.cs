@@ -61,6 +61,15 @@ namespace Triskel.UI
             {
                 if (Keyboard.current.escapeKey.wasPressedThisFrame || Keyboard.current.pKey.wasPressedThisFrame)
                 {
+                    // Si settings está abierto, cerrar settings primero
+                    if (settingsController != null && settingsController.IsVisible)
+                    {
+                        settingsController.Hide();
+                        Show();
+                        return;
+                    }
+
+                    // Si no, toggle pausa normal
                     if (isPaused)
                         Resume();
                     else
@@ -163,12 +172,26 @@ namespace Triskel.UI
 
         private void OnContinueClicked()
         {
+            // Prevenir doble-click
+            if (!isPaused) return;
+
             Resume();
         }
 
         private void OnRestartClicked()
         {
             Debug.Log("[PauseController] Reiniciando nivel...");
+
+            // Guardar progreso antes de reiniciar
+            if (GameManager.Instance != null)
+                GameManager.Instance.SaveGame();
+
+            // Ocultar ventana de pausa
+            Hide();
+
+            // Ocultar settings si está abierto
+            if (settingsController != null)
+                settingsController.Hide();
 
             // Restaurar timeScale antes de recargar
             Time.timeScale = 1f;
@@ -197,13 +220,18 @@ namespace Triskel.UI
         {
             Debug.Log("[PauseController] Volviendo al menu principal...");
 
-            // Restaurar timeScale antes de cambiar de escena
-            Time.timeScale = 1f;
-            isPaused = false;
-
             // Guardar partida antes de salir
             if (GameManager.Instance != null)
                 GameManager.Instance.SaveGame();
+
+            // Ocultar ventanas
+            Hide();
+            if (settingsController != null)
+                settingsController.Hide();
+
+            // Restaurar timeScale antes de cambiar de escena
+            Time.timeScale = 1f;
+            isPaused = false;
 
             // Cargar menu principal
             if (!string.IsNullOrEmpty(mainMenuSceneName))
