@@ -208041,12 +208041,24 @@ PrefabInstance:
       value: Sombra
       objectReference: {fileID: 0}
     - target: {fileID: 3100186440983688378, guid: f65ec19d76905264995746af42532e1b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.95195997
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100186440983688378, guid: f65ec19d76905264995746af42532e1b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.95195997
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100186440983688378, guid: f65ec19d76905264995746af42532e1b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.95195997
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100186440983688378, guid: f65ec19d76905264995746af42532e1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.18
+      value: -12.69
       objectReference: {fileID: 0}
     - target: {fileID: 3100186440983688378, guid: f65ec19d76905264995746af42532e1b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.41
+      value: 2.63
       objectReference: {fileID: 0}
     - target: {fileID: 3100186440983688378, guid: f65ec19d76905264995746af42532e1b, type: 3}
       propertyPath: m_LocalPosition.z

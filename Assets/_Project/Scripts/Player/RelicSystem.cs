@@ -44,6 +44,10 @@ public class RelicSystem : MonoBehaviour
     
     private void OnEnable()
     {
+        // Asegurar que inputActions existe (OnEnable puede ejecutarse antes que Awake)
+        if (inputActions == null)
+            inputActions = new PlayerInputActions();
+        
         inputActions.Enable();
         
         // Suscribirse a eventos de selección DIRECTA (PC - Teclas 1/2/3)
