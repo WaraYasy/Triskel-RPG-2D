@@ -17404,10 +17404,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArrowEscalera
       objectReference: {fileID: 0}
-    - target: {fileID: 7998885337925890859, guid: 97847a521aea20a45b1462090daa1a94, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8073733928217052245, guid: 97847a521aea20a45b1462090daa1a94, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.36
@@ -24917,6 +24913,14 @@ PrefabInstance:
       propertyPath: dialogueRunner
       value: 
       objectReference: {fileID: 1937290611}
+    - target: {fileID: 5820496670191860365, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
+      propertyPath: uniqueDialogueID
+      value: salida_hub1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820496670191860365, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
+      propertyPath: persisteEntreEscenas
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7342827196860089087, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
       propertyPath: m_Name
       value: ZoneLibros
@@ -24934,8 +24938,16 @@ PrefabInstance:
       value: 3.6633983
       objectReference: {fileID: 0}
     - target: {fileID: 8520226871668624490, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
+      propertyPath: m_Size.y
+      value: 2.432131
+      objectReference: {fileID: 0}
+    - target: {fileID: 8520226871668624490, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
       propertyPath: m_Offset.x
       value: 0.3089385
+      objectReference: {fileID: 0}
+    - target: {fileID: 8520226871668624490, guid: 7c3e380caa840e241844dbdba342e605, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.07956302
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25342,10 +25354,6 @@ PrefabInstance:
     - target: {fileID: 260017218367006456, guid: 97847a521aea20a45b1462090daa1a94, type: 3}
       propertyPath: m_Name
       value: ArrowSalida
-      objectReference: {fileID: 0}
-    - target: {fileID: 7998885337925890859, guid: 97847a521aea20a45b1462090daa1a94, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8073733928217052245, guid: 97847a521aea20a45b1462090daa1a94, type: 3}
       propertyPath: m_LocalPosition.x
