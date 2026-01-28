@@ -1,4 +1,5 @@
 using UnityEngine;
+using Triskel.Core;
 
 /// <summary>
 /// MusicManager - Gestiona música de fondo del nivel
@@ -36,8 +37,41 @@ public class MusicManager : MonoBehaviour
         }
         else
         {
-            audioSource.volume = volume;
+            // Inicializar con volumen global
+            float globalVolume = SettingsManager.Instance != null ? SettingsManager.Instance.MusicVolume : volume;
+            targetVolume = globalVolume * volume; // (Volumen Global * Volumen Local)
+            audioSource.volume = targetVolume;
         }
+
+        // Suscribirse a cambios de volumen
+        if (SettingsManager.Instance != null)
+        {
+            SettingsManager.Instance.OnMusicVolumeChanged += OnGlobalVolumeChanged;
+            
+            // Actualizar targetVolume inmediatamente
+            OnGlobalVolumeChanged(SettingsManager.Instance.MusicVolume);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (SettingsManager.Instance != null)
+        {
+            SettingsManager.Instance.OnMusicVolumeChanged -= OnGlobalVolumeChanged;
+        }
+    }
+
+    private void OnGlobalVolumeChanged(float globalVolume)
+    {
+        // El volumen final es el volumen global (0-1) multiplicado por el volumen base de este clip (0-1)
+        targetVolume = globalVolume * volume;
+
+        // Si no estamos haciendo fade, aplicamos inmediatamente
+        if (!useFadeIn)
+        {
+            audioSource.volume = targetVolume;
+        }
+        // Si useFadeIn está activo, el Update se encargará de ajustar el volumen suavemente
     }
 
     private void Start()
@@ -50,13 +84,18 @@ public class MusicManager : MonoBehaviour
 
     private void Update()
     {
-        // Fade in suave
-        if (useFadeIn && audioSource.isPlaying && audioSource.volume < targetVolume)
+        // Fade in suave o ajuste de volumen
+        if (useFadeIn && audioSource.isPlaying && audioSource.volume != targetVolume)
         {
+            // Calcular velocidad de fade (más rápido para cambios de slider, más lento para fade inicial)
+            float fadeSpeed = Mathf.Abs(audioSource.volume - targetVolume) > 0.1f
+                ? (1f / fadeInDuration) * Time.deltaTime  // Fade inicial lento
+                : 2f * Time.deltaTime; // Cambios de slider más rápidos
+
             audioSource.volume = Mathf.MoveTowards(
                 audioSource.volume,
                 targetVolume,
-                (targetVolume / fadeInDuration) * Time.deltaTime
+                fadeSpeed
             );
         }
     }

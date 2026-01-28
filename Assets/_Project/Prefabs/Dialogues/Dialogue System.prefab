@@ -183,7 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.5921569, g: 0.5921569, b: 0.5921569, a: 0.8352941}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -443,8 +443,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1157,7 +1157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.8352941}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1388,8 +1388,8 @@ MonoBehaviour:
   - {fileID: 8458213760793579081}
   - {fileID: 3431882456414989256}
   verboseLogging: 1
-  autoStart: 1
-  startNode: Hub1
+  autoStart: 0
+  startNode: Level1_Start
   runSelectedOptionAsLine: 0
   allowOptionFallthrough: 1
   onNodeStart:
@@ -1440,3 +1440,8 @@ MonoBehaviour:
   characterNameText: {fileID: 3684718114807335031}
   optionButtons: []
   continueButton: {fileID: 3684718113456293766}
+  normalFontSize: 48
+  largeFontSize: 64
+  dialogueRunner: {fileID: 0}
+  uiCanvasGroup: {fileID: 0}
+  uiRootObject: {fileID: 0}
