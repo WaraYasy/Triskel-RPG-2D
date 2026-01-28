@@ -36,7 +36,7 @@ namespace Triskel.UI
         public event System.Action OnPause;
         public event System.Action OnResume;
 
-        private void OnEnable()
+        private void Start()
         {
             InitializePauseMenu();
         }
@@ -77,6 +77,11 @@ namespace Triskel.UI
             }
 
             var root = pauseDocument.rootVisualElement;
+            if (root == null)
+            {
+                Debug.LogWarning("[PauseController] rootVisualElement aun no esta listo");
+                return;
+            }
 
             // Obtener referencias de pausa
             pauseOverlay = root.Q<VisualElement>("PauseOverlay");
@@ -92,7 +97,7 @@ namespace Triskel.UI
             if (quitButton != null) quitButton.clicked += OnQuitClicked;
 
             // Inicializar settings
-            if (settingsDocument != null)
+            if (settingsDocument != null && settingsDocument.rootVisualElement != null)
             {
                 var settingsRoot = settingsDocument.rootVisualElement;
                 settingsOverlay = settingsRoot.Q<VisualElement>("SettingsOverlay");

@@ -129,6 +129,7 @@ MonoBehaviour:
   soloUnaVez: 1
   freezePlayer: 1
   persisteEntreEscenas: 1
+  uniqueDialogueID: entrada_hub1
   yaUsado: 0
 --- !u!1 &3590070333791587337
 GameObject:
@@ -226,4 +227,5 @@ MonoBehaviour:
   soloUnaVez: 1
   freezePlayer: 1
   persisteEntreEscenas: 1
+  uniqueDialogueID: 
   yaUsado: 0
