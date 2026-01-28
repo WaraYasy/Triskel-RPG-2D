@@ -34,6 +34,15 @@ namespace Triskel.UI
 
         private void OnEnable()
         {
+            // Buscar SettingsController si no está asignado (útil con UI persistente)
+            if (settingsController == null)
+            {
+                // Buscar en el padre (UI root)
+                var uiRoot = transform.parent;
+                if (uiRoot != null)
+                    settingsController = uiRoot.GetComponentInChildren<SettingsController>(true);
+            }
+
             InitializePauseMenu();
         }
 

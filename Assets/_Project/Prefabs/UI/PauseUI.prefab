@@ -10,9 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1338895283426869050}
   - component: {fileID: 6029511057000920240}
-  - component: {fileID: 7369785951063649755}
   m_Layer: 0
-  m_Name: UIDocument
+  m_Name: PauseUXML
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,21 +51,6 @@ MonoBehaviour:
   m_WorldSpaceSizeMode: 1
   m_WorldSpaceWidth: 1920
   m_WorldSpaceHeight: 1080
---- !u!114 &7369785951063649755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4591876850599773628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57d51fa2913a7cf44bdd96ac2b4c3287, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseDocument: {fileID: 6029511057000920240}
-  settingsDocument: {fileID: 0}
-  mainMenuSceneName: Home
 --- !u!1 &8753052475737176536
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,6 +60,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4696384824599355253}
+  - component: {fileID: 7676218621386219840}
   m_Layer: 0
   m_Name: PauseUI
   m_TagString: Untagged
@@ -99,3 +84,18 @@ Transform:
   - {fileID: 1338895283426869050}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7676218621386219840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8753052475737176536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57d51fa2913a7cf44bdd96ac2b4c3287, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseDocument: {fileID: 6029511057000920240}
+  settingsController: {fileID: 0}
+  mainMenuSceneName: Home

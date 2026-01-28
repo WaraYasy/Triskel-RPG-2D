@@ -27,6 +27,15 @@ namespace Triskel.UI
 
         private void OnEnable()
         {
+            // Buscar PauseController si no está asignado (útil con UI persistente)
+            if (pauseController == null)
+            {
+                // Buscar en el padre (UI root)
+                var uiRoot = transform.parent;
+                if (uiRoot != null)
+                    pauseController = uiRoot.GetComponentInChildren<PauseController>(true);
+            }
+
             InitializeSettings();
             RefreshUI();
         }
