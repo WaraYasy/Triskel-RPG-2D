@@ -8107,14 +8107,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7601468624503164915, guid: 25b25b112de0afd49974225a3deb58e2, type: 3}
-      propertyPath: autoStart
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7601468624503164915, guid: 25b25b112de0afd49974225a3deb58e2, type: 3}
-      propertyPath: startNode
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8430032995033986544, guid: 25b25b112de0afd49974225a3deb58e2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9991,6 +9983,14 @@ PrefabInstance:
     - target: {fileID: 15599436616681413, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
       propertyPath: m_Name
       value: MobileControls_UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 231249588550135767, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 231249588550135767, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3017462100948317513, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
       propertyPath: m_Pivot.x

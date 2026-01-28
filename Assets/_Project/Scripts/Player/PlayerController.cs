@@ -40,6 +40,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
+        // Asegurar que inputActions existe (OnEnable puede ejecutarse antes que Awake)
+        if (inputActions == null)
+            inputActions = new PlayerInputActions();
+        
         // Habilitar Input Actions
         inputActions.Enable();
         

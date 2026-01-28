@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Yarn.Unity;
+
+using Triskel.Core;
 
 namespace Triskel.Dialogue
 {
@@ -24,6 +27,46 @@ namespace Triskel.Dialogue
 
         public DialogueTheme CurrentTheme { get; private set; }
 
+        [Header("Tamaño de Texto")]
+        [SerializeField] private float normalFontSize = 48f;
+        [SerializeField] private float largeFontSize = 64f;
+
+        [Header("Visibilidad y Control")]
+        [SerializeField] private DialogueRunner dialogueRunner;
+        [SerializeField] private CanvasGroup uiCanvasGroup;
+        [SerializeField] private GameObject uiRootObject; // Alternativa si no hay CanvasGroup
+
+        private void OnEnable()
+        {
+            if (dialogueRunner == null)
+                dialogueRunner = FindFirstObjectByType<DialogueRunner>();
+
+            if (dialogueRunner != null)
+            {
+                dialogueRunner.onDialogueStart.AddListener(OnDialogueStart);
+                dialogueRunner.onDialogueComplete.AddListener(OnDialogueComplete);
+            }
+
+            if (SettingsManager.Instance != null)
+            {
+                SettingsManager.Instance.OnFontSizeChanged += ApplyFontSize;
+            }
+        }
+
+        private void OnDisable()
+        {
+            if (dialogueRunner != null)
+            {
+                dialogueRunner.onDialogueStart.RemoveListener(OnDialogueStart);
+                dialogueRunner.onDialogueComplete.RemoveListener(OnDialogueComplete);
+            }
+
+            if (SettingsManager.Instance != null)
+            {
+                SettingsManager.Instance.OnFontSizeChanged -= ApplyFontSize;
+            }
+        }
+
         private void Awake()
         {
             int saved = PlayerPrefs.GetInt(THEME_PREF_KEY, 0);
@@ -35,9 +78,36 @@ namespace Triskel.Dialogue
             if (gameConstants == null)
             {
                 Debug.LogError("[DialogueThemeManager] GameConstants no asignado.");
-                return;
+                // No retornamos aqui para permitir que el resto funcione
             }
+
+            // Retry subscription if it failed in OnEnable (Race Condition fix)
+            if (SettingsManager.Instance != null)
+            {
+                 // Asegurar no suscribirse doble
+                 SettingsManager.Instance.OnFontSizeChanged -= ApplyFontSize;
+                 SettingsManager.Instance.OnFontSizeChanged += ApplyFontSize;
+                 
+                 // Aplicar inicial
+                 ApplyFontSize(SettingsManager.Instance.UseLargeText);
+            }
+
+            // Intentar encontrar referencias de UI si faltan
+            if (uiCanvasGroup == null && backgroundPanel != null)
+                uiCanvasGroup = backgroundPanel.GetComponentInParent<CanvasGroup>();
+            
+            if (uiRootObject == null && uiCanvasGroup != null)
+                uiRootObject = uiCanvasGroup.gameObject;
+            else if (uiRootObject == null && backgroundPanel != null)
+                uiRootObject = backgroundPanel.transform.parent.gameObject;
+
             ApplyTheme(CurrentTheme);
+
+            // Estado inicial: Ocultar si no hay diálogo activo
+            if (dialogueRunner != null && !dialogueRunner.IsDialogueRunning)
+            {
+                OnDialogueComplete();
+            }
         }
 
         public void SetTheme(DialogueTheme theme)
@@ -96,6 +166,55 @@ namespace Triskel.Dialogue
             colors.pressedColor = hover * 0.9f;
             colors.selectedColor = hover;
             button.colors = colors;
+        }
+
+        private void ApplyFontSize(bool large)
+        {
+            if (dialogueText != null)
+            {
+                dialogueText.enableAutoSizing = false; // IMPORTANTE: Desactivar auto-ajuste para que el tamaño manual funcione
+                dialogueText.fontSize = large ? largeFontSize : normalFontSize;
+                Debug.Log($"[DialogueThemeManager] Tamaño de fuente aplicado: {(large ? "Grande" : "Normal")} ({dialogueText.fontSize})");
+            }
+        }
+
+
+        private void OnDialogueStart()
+        {
+            ShowUI();
+        }
+
+        private void OnDialogueComplete()
+        {
+            HideUI();
+        }
+
+        public void ShowUI()
+        {
+            if (uiCanvasGroup != null)
+            {
+                uiCanvasGroup.alpha = 1f;
+                uiCanvasGroup.interactable = true;
+                uiCanvasGroup.blocksRaycasts = true;
+            }
+            else if (uiRootObject != null)
+            {
+                uiRootObject.SetActive(true);
+            }
+        }
+
+        public void HideUI()
+        {
+            if (uiCanvasGroup != null)
+            {
+                uiCanvasGroup.alpha = 0f;
+                uiCanvasGroup.interactable = false;
+                uiCanvasGroup.blocksRaycasts = false;
+            }
+            else if (uiRootObject != null)
+            {
+                uiRootObject.SetActive(false);
+            }
         }
     }
 }

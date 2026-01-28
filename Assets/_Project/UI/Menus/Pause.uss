@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: center;
     color: rgba(0, 0, 0, 0.95);
+    -unity-background-scale-mode: scale-and-crop;
 }
 
 .pause-panel {
