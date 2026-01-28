@@ -34,6 +34,7 @@ namespace Triskel.UI
         private VisualElement closeButton;
         private Button prevButton;
         private Button nextButton;
+        private VisualElement scrollIndicator;
 
         // Estado
         private bool isPanelOpen = false;
@@ -118,6 +119,7 @@ namespace Triskel.UI
             closeButton = root.Q<VisualElement>("CloseButton");
             prevButton = root.Q<Button>("PrevButton");
             nextButton = root.Q<Button>("NextButton");
+            scrollIndicator = root.Q<VisualElement>("ScrollIndicator");
 
             // Validar referencias
             if (diaryPanel == null)
@@ -179,6 +181,11 @@ namespace Triskel.UI
             {
                 nextButton.clicked += ShowNextPage;
             }
+
+            if (scrollIndicator != null)
+            {
+                scrollIndicator.RegisterCallback<ClickEvent>(OnScrollIndicatorClicked);
+            }
         }
 
         private void UnregisterEvents()
@@ -196,6 +203,11 @@ namespace Triskel.UI
             if (nextButton != null)
             {
                 nextButton.clicked -= ShowNextPage;
+            }
+
+            if (scrollIndicator != null)
+            {
+                scrollIndicator.UnregisterCallback<ClickEvent>(OnScrollIndicatorClicked);
             }
         }
 
@@ -370,18 +382,21 @@ namespace Triskel.UI
         {
             if (entryTitleLabel != null)
             {
-                entryTitleLabel.text = "Sin Entradas";
+                entryTitleLabel.text = "¿Qué está pasando?";
             }
 
             if (entryTextLabel != null)
             {
-                entryTextLabel.text = "Aún no has desbloqueado ninguna entrada del diario.\n\nCompleta niveles para desbloquear nuevas páginas de tu historia.";
+                entryTextLabel.text = "Querido diario, aun no conozco este lugar. Tan pronto descubra que hay detrás de estas puertas te contaré mis descubriemientos...";
             }
 
             if (pageIndicatorLabel != null)
             {
                 pageIndicatorLabel.text = "";
             }
+
+            // Actualizar indicador de scroll
+            UpdateScrollIndicator();
         }
 
         /// <summary>
@@ -476,6 +491,9 @@ namespace Triskel.UI
                 entryTextScrollView.scrollOffset = Vector2.zero;
             }
 
+            // Actualizar indicador de scroll
+            UpdateScrollIndicator();
+
             Debug.Log($"[DiaryUI] Mostrando entrada: '{entry.title}'");
         }
 
@@ -511,6 +529,42 @@ namespace Triskel.UI
             }
 
             Debug.Log($"[DiaryUI] Tamaño de fuente aplicado: {(large ? "Grande" : "Normal")}");
+        }
+
+        #endregion
+
+        #region Scroll Indicator
+
+        /// <summary>
+        /// Actualiza la visibilidad del indicador de scroll (flecha).
+        /// Solo se muestra si hay contenido scrollable.
+        /// </summary>
+        private void UpdateScrollIndicator()
+        {
+            if (scrollIndicator == null || entryTextScrollView == null || entryTextLabel == null)
+                return;
+
+            // Esperar un frame para que el layout se calcule
+            entryTextScrollView.schedule.Execute(() =>
+            {
+                // Verificar si el contenido es más alto que el contenedor
+                float contentHeight = entryTextLabel.layout.height;
+                float viewportHeight = entryTextScrollView.contentViewport.layout.height;
+                bool isScrollable = contentHeight > viewportHeight;
+
+                // Mostrar/ocultar flecha
+                scrollIndicator.style.display = isScrollable ? DisplayStyle.Flex : DisplayStyle.None;
+            });
+        }
+
+        private void OnScrollIndicatorClicked(ClickEvent evt)
+        {
+            if (entryTextScrollView != null)
+            {
+                // Hacer scroll hacia abajo (1 página)
+                float scrollAmount = entryTextScrollView.contentViewport.layout.height * 0.8f;
+                entryTextScrollView.scrollOffset = new Vector2(0, entryTextScrollView.scrollOffset.y + scrollAmount);
+            }
         }
 
         #endregion
