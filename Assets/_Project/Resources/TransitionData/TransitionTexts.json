@@ -3,68 +3,114 @@
     {
       "id": "nivel0",
       "level": 0,
+      "title": "El Viaje Comienza",
       "text": "El camino se abre ante ti. Las sombras esperan en el bosque.",
       "displayTime": 3
     },
     {
       "id": "nivel1_bueno",
       "level": 1,
+      "title": "Sendero Iluminado",
       "text": "La estatua les dio calor. Las sombras se apartaron como si despertaran. El bosque parece menos solitario cuando compartes tu luz.",
-      "displayTime": 0
+      "displayTime": 5
     },
     {
       "id": "nivel1_malo",
       "level": 1,
+      "title": "Sendero de Ébano",
       "text": "Gritaron cuando alcé la flor. No quería hacerles daño, solo quería pasar. ¿Verdad? Eran ellos o yo.",
-      "displayTime": 0
+      "displayTime": 5
     },
     {
       "id": "nivel2_bueno",
       "level": 2,
+      "title": "La Fortaleza se Inclina",
       "text": "Las piedras se apartaron como si me conocieran. El Gigante sonrió entre el polvo.",
-      "displayTime": 0
+      "displayTime": 5
     },
     {
       "id": "nivel2_malo",
       "level": 2,
+      "title": "Ruinas y Remordimiento",
       "text": "Tuve que golpearlo con todo lo que tenía. Mis manos tiemblan. El Gigante no me miró al cruzar.",
-      "displayTime": 0
+      "displayTime": 5
+    },
+    {
+      "id": "nivel3_bueno",
+      "level": 3,
+      "title": "Secretos Revelados",
+      "text": "La verdad es un espejo cruel. Les mostré lo que ocultan bajo la piel. Algunas brujas lloraron, otras rieron. Ahora saben quiénes son.",
+      "displayTime": 5
+    },
+    {
+      "id": "nivel3_malo",
+      "level": 3,
+      "title": "Mentiras Piadosas",
+      "text": "Guardé su secreto como quien entierra un cadáver. Sonrieron aliviadas. Pero yo vi la verdad, y no puedo olvidarla.",
+      "displayTime": 5
+    },
+    {
+      "id": "nivel4_bueno",
+      "level": 4,
+      "title": "Victoria",
+      "text": "El claro de almas respira paz. El jefe ha caído, y con él, la oscuridad que asfixiaba el bosque. Tu luz persiste.",
+      "displayTime": 6
+    },
+    {
+      "id": "nivel4_malo",
+      "level": 4,
+      "title": "Victoria Amarga",
+      "text": "El claro de almas está en silencio. Has ganado, pero el precio fue alto. Las almas murmuran tu nombre con temor.",
+      "displayTime": 6
     },
     {
       "id": "hub_intro",
       "level": 0,
+      "title": "Regreso al Refugio",
       "text": "Has regresado al refugio. La voz te espera en la penumbra.",
       "displayTime": 3
     },
     {
       "id": "muerte_nivel1",
       "level": 1,
+      "title": "La Luz se Desvanece",
       "text": "La oscuridad te ha consumido. Pero las sombras no pueden retener tu luz para siempre...",
       "displayTime": 4
     },
     {
       "id": "muerte_nivel2",
       "level": 2,
+      "title": "Aplastado por la Piedra",
       "text": "El Gigante de piedra observa tu caída. No es el fin, solo un tropiezo en el camino...",
       "displayTime": 4
     },
     {
       "id": "muerte_nivel3",
       "level": 3,
+      "title": "Atrapado en las Sombras",
       "text": "Las garras de las sombras te atraparon. Pero cada caída te hace más fuerte...",
       "displayTime": 4
     },
     {
       "id": "muerte_nivel4",
       "level": 4,
-      "text": "El bosque te ha derrotado. Pero aún tienes fuerzas para intentarlo de nuevo...",
+      "title": "El Bosque Reclama su Deuda",
+      "text": "El jefe final te ha derrotado. El claro de almas permanece en tinieblas... por ahora.",
       "displayTime": 4
     },
     {
       "id": "muerte_hub",
       "level": 0,
+      "title": "Ni el Refugio es Seguro",
       "text": "Incluso en el refugio, el peligro acecha. Vuelve a intentarlo...",
       "displayTime": 3
+    },
+    {
+      "id": "victoria_final",
+      "level": 4,
+      "title": "El Fin del Viaje",
+      "text": "El bosque respira de nuevo. Tu luz ha dispersado las sombras más antiguas. Pero algo te dice que este no es el verdadero final...",
+      "displayTime": 7
     }
   ]
 }

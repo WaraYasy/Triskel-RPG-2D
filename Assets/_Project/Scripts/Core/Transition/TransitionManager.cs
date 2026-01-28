@@ -28,6 +28,7 @@
 
           // Elementos UI
           private VisualElement root;
+          private Label transitionTitle;
           private Label transitionText;
 
           private void Awake()
@@ -39,6 +40,7 @@
           {
               // Obtener elementos del UXML
               root = uiDocument.rootVisualElement.Q<VisualElement>("root");
+              transitionTitle = root.Q<Label>("transition-title");
               transitionText = root.Q<Label>("transition-text");
 
               // Verificar si tenemos datos
@@ -59,6 +61,11 @@
               }
 
               // Iniciar secuencia
+              if (transitionTitle != null)
+              {
+                  transitionTitle.text = string.IsNullOrEmpty(entry.title) ? "" : entry.title;
+              }
+
               transitionText.text = entry.text;
               float tiempoTexto = entry.displayTime > 0 ? entry.displayTime
   : tiempoTextoPorDefecto;

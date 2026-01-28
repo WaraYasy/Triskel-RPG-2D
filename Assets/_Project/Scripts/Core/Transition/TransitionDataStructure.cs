@@ -13,9 +13,10 @@ namespace _Project.Scripts.Core.Transition
     [Serializable]
     public class TransitionEntry
     {
-        public string id; 
-        public int level;             
-        public string text;           
-        public float displayTime;   
+        public string id;
+        public int level;
+        public string title;          // Título de la transición (ej: "Victoria", "Nivel Completado", "Has Muerto")
+        public string text;
+        public float displayTime;
     }
 }
