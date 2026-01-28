@@ -48,6 +48,11 @@ namespace Triskel.UI
             }
 
             var root = settingsDocument.rootVisualElement;
+            if (root == null)
+            {
+                Debug.LogWarning("[SettingsController] rootVisualElement aun no esta listo");
+                return;
+            }
 
             // Obtener referencias
             settingsOverlay = root.Q<VisualElement>("SettingsOverlay");

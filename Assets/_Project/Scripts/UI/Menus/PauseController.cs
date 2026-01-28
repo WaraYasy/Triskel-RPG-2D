@@ -12,7 +12,7 @@ namespace Triskel.UI
     {
         [Header("Referencias")]
         [SerializeField] private UIDocument pauseDocument;
-        [SerializeField] private UIDocument settingsDocument;
+        [SerializeField] private SettingsController settingsController;
 
         [Header("Escenas")]
         [SerializeField] private string mainMenuSceneName = "Home";
@@ -23,10 +23,6 @@ namespace Triskel.UI
         private Button restartButton;
         private Button settingsButton;
         private Button quitButton;
-
-        // Elementos UI - Settings
-        private VisualElement settingsOverlay;
-        private Button backButton;
 
         // Estado
         private bool isPaused;
@@ -47,7 +43,6 @@ namespace Triskel.UI
             if (restartButton != null) restartButton.clicked -= OnRestartClicked;
             if (settingsButton != null) settingsButton.clicked -= OnSettingsClicked;
             if (quitButton != null) quitButton.clicked -= OnQuitClicked;
-            if (backButton != null) backButton.clicked -= OnBackFromSettingsClicked;
         }
 
         private void Update()
@@ -77,6 +72,11 @@ namespace Triskel.UI
             }
 
             var root = pauseDocument.rootVisualElement;
+            if (root == null)
+            {
+                Debug.LogWarning("[PauseController] rootVisualElement aun no esta listo");
+                return;
+            }
 
             // Obtener referencias de pausa
             pauseOverlay = root.Q<VisualElement>("PauseOverlay");
@@ -91,20 +91,8 @@ namespace Triskel.UI
             if (settingsButton != null) settingsButton.clicked += OnSettingsClicked;
             if (quitButton != null) quitButton.clicked += OnQuitClicked;
 
-            // Inicializar settings
-            if (settingsDocument != null)
-            {
-                var settingsRoot = settingsDocument.rootVisualElement;
-                settingsOverlay = settingsRoot.Q<VisualElement>("SettingsOverlay");
-                backButton = settingsRoot.Q<Button>("BackButton");
-
-                if (backButton != null)
-                    backButton.clicked += OnBackFromSettingsClicked;
-            }
-
             // Ocultar inicialmente
             Hide();
-            HideSettings();
         }
 
         #region Public Methods
@@ -138,7 +126,11 @@ namespace Triskel.UI
             isPaused = false;
             Time.timeScale = 1f;
             Hide();
-            HideSettings();
+
+            // Ocultar settings si está abierto
+            if (settingsController != null)
+                settingsController.Hide();
+
             OnResume?.Invoke();
 
             Debug.Log("[PauseController] Juego reanudado");
@@ -180,7 +172,16 @@ namespace Triskel.UI
         private void OnSettingsClicked()
         {
             Debug.Log("[PauseController] Abriendo ajustes...");
-            ShowSettings();
+
+            if (settingsController != null)
+            {
+                Hide();
+                settingsController.Show();
+            }
+            else
+            {
+                Debug.LogWarning("[PauseController] SettingsController no asignado");
+            }
         }
 
         private void OnQuitClicked()
@@ -198,32 +199,6 @@ namespace Triskel.UI
             // Cargar menu principal
             if (!string.IsNullOrEmpty(mainMenuSceneName))
                 SceneManager.LoadScene(mainMenuSceneName);
-        }
-
-        #endregion
-
-        #region Settings Panel
-
-        private void ShowSettings()
-        {
-            if (settingsOverlay != null)
-                settingsOverlay.style.display = DisplayStyle.Flex;
-
-            // Ocultar menu de pausa mientras se muestran settings
-            Hide();
-        }
-
-        private void HideSettings()
-        {
-            if (settingsOverlay != null)
-                settingsOverlay.style.display = DisplayStyle.None;
-        }
-
-        private void OnBackFromSettingsClicked()
-        {
-            Debug.Log("[PauseController] Volviendo al menu de pausa...");
-            HideSettings();
-            Show();
         }
 
         #endregion
