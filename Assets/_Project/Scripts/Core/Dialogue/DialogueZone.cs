@@ -33,6 +33,19 @@ namespace Triskel.Dialogue
         [SerializeField] private bool yaUsado = false;
         private PlayerController cachedPlayer;
 
+        private void Awake()
+        {
+            // Auto-buscar DialogueRunner si no está asignado
+            if (dialogueRunner == null)
+            {
+                dialogueRunner = FindFirstObjectByType<DialogueRunner>();
+                if (dialogueRunner != null)
+                {
+                    Debug.Log($"[DialogueZone] DialogueRunner encontrado automáticamente en '{gameObject.name}'");
+                }
+            }
+        }
+
         private void Start()
         {
             // Si persiste entre escenas, cargar el estado desde memoria
@@ -59,6 +72,13 @@ namespace Triskel.Dialogue
         {
             // Solo reacciona al Player
             if (!other.CompareTag("Player")) return;
+
+            // Verificar que el DialogueRunner esté asignado
+            if (dialogueRunner == null)
+            {
+                Debug.LogWarning($"[DialogueZone] DialogueRunner no asignado en '{gameObject.name}'. Asigna el DialogueRunner en el Inspector.");
+                return;
+            }
 
             // Si ya se usó y es de una sola vez, no hacer nada
             if (soloUnaVez && yaUsado) return;

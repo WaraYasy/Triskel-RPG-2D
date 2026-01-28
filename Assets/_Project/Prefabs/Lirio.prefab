@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6534f45f0893af84189290bda3526c4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glowColor: {r: 1, g: 0.9578788, b: 0.38679248, a: 1}
+  glowColor: {r: 1, g: 0.990908, b: 0.4339623, a: 1}
   intensity: 1.2
   radius: 3
   pulseEffect: 1
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 0.9568628, b: 0.38823533, a: 1}
+  m_Color: {r: 1, g: 0.9921569, b: 0.43529415, a: 1}
   m_Intensity: 2
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
