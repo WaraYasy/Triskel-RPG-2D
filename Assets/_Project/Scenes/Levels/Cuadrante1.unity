@@ -881,8 +881,24 @@ PrefabInstance:
       value: 5.3999996
       objectReference: {fileID: 0}
     - target: {fileID: 7153998470911297965, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
+      propertyPath: baseRadius
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7153998470911297965, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
+      propertyPath: lilioRadius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7153998470911297965, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
       propertyPath: baseIntensity
-      value: 1
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7153998470911297965, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
+      propertyPath: lilioIntensity
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7153998470911297965, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
+      propertyPath: abilityIntensity
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8113486159504391756, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
       propertyPath: m_Intensity
