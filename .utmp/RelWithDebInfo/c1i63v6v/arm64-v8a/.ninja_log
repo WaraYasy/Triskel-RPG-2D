@@ -1,12 +1,12 @@
 # ninja log v5
-77	414	7912598151173620	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	6f60f9e71dbca786
-417	580	7912598152834549	C:/Users/GaizkaClase/Desktop/Trsikel-RPG-2D/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/c1i63v6v/obj/arm64-v8a/libswappywrapper.so	fbac88d0e6485d30
-37	1390	7912598160763661	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	2ab0f33cbbeea2e4
-28	1421	7912598161182688	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	cfb562e047fc2cac
-1	1426	7912598161244706	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	d708c03b8e226415
-56	1479	7912598161772246	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	44cdc858d852a453
-19	1509	7912598162079785	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	202a6a0f15510871
-66	1730	7912598164314827	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	9f2cf3974b8a2160
-46	1757	7912598164574386	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	97784b46bd40ff56
-10	1898	7912598165972502	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	63c94308151bca77
-1898	2005	7912598167103377	C:/Users/GaizkaClase/Desktop/Trsikel-RPG-2D/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/c1i63v6v/obj/arm64-v8a/libgame.so	998f4c17e81389d7
+74	402	7912929590400361	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	6f60f9e71dbca786
+405	563	7912929591966582	C:/Users/GaizkaClase/Desktop/Trsikel-RPG-2D/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/c1i63v6v/obj/arm64-v8a/libswappywrapper.so	fbac88d0e6485d30
+38	1921	7912929605541749	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	2ab0f33cbbeea2e4
+47	1928	7912929605536046	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	cfb562e047fc2cac
+17	1949	7912929605798300	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	d708c03b8e226415
+66	1966	7912929605980187	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	44cdc858d852a453
+0	2007	7912929606385076	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	202a6a0f15510871
+25	2218	7912929608476963	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	97784b46bd40ff56
+8	2316	7912929609449544	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	63c94308151bca77
+56	2448	7912929610812594	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	9f2cf3974b8a2160
+2449	2559	7912929611950520	C:/Users/GaizkaClase/Desktop/Trsikel-RPG-2D/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/c1i63v6v/obj/arm64-v8a/libgame.so	998f4c17e81389d7
