@@ -1,3 +1,12 @@
+// =======================================================================================
+// Triskel RPG 2D - Pause Controller
+// =======================================================================================
+// Autor: Mandrágora - Wara Pacheco
+// Descripción: Controlador del menú de pausa del juego. Gestiona la pausa del tiempo
+//              (Time.timeScale), muestra/oculta el menú y proporciona opciones de
+//              continuar, reiniciar, ajustes y salir al menú principal.
+// =======================================================================================
+
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
@@ -6,8 +15,15 @@ using UnityEngine.InputSystem;
 namespace Triskel.UI
 {
     /// <summary>
-    /// Controlador del menu de pausa.
+    /// Controlador del menú de pausa del juego.
     /// </summary>
+    /// <remarks>
+    /// Este controlador gestiona el estado de pausa del juego usando Time.timeScale.
+    /// Detecta las teclas ESC y P para pausar/despausar, y coordina con el SettingsController
+    /// para mostrar el menú de ajustes cuando sea necesario.
+    ///
+    /// Eventos disponibles: OnPause, OnResume
+    /// </remarks>
     public class PauseController : MonoBehaviour
     {
         [Header("Referencias")]
@@ -26,10 +42,19 @@ namespace Triskel.UI
 
         // Estado
         private bool isPaused;
+        /// <summary>
+        /// Indica si el juego está actualmente pausado.
+        /// </summary>
         public bool IsPaused => isPaused;
 
         // Eventos
+        /// <summary>
+        /// Evento que se dispara cuando el juego se pausa.
+        /// </summary>
         public event System.Action OnPause;
+        /// <summary>
+        /// Evento que se dispara cuando el juego se reanuda.
+        /// </summary>
         public event System.Action OnResume;
 
         private void OnEnable()
@@ -78,6 +103,9 @@ namespace Triskel.UI
             }
         }
 
+        /// <summary>
+        /// Inicializa el menú de pausa obteniendo referencias a los elementos UI y registrando eventos.
+        /// </summary>
         private void InitializePauseMenu()
         {
             if (pauseDocument == null)
@@ -115,6 +143,13 @@ namespace Triskel.UI
 
         #region Public Methods
 
+        /// <summary>
+        /// Pausa el juego estableciendo Time.timeScale a 0 y muestra el menú de pausa.
+        /// </summary>
+        /// <remarks>
+        /// Este método puede ser llamado desde botones Unity UI (como el botón de pausa móvil)
+        /// o desde código. Dispara el evento OnPause.
+        /// </remarks>
         public void Pause()
         {
             if (isPaused)
@@ -137,6 +172,12 @@ namespace Triskel.UI
             Debug.Log("[PauseController] Juego pausado - Presiona ESC o P para continuar");
         }
 
+        /// <summary>
+        /// Reanuda el juego restaurando Time.timeScale a 1 y oculta el menú de pausa.
+        /// </summary>
+        /// <remarks>
+        /// También oculta el menú de ajustes si está abierto. Dispara el evento OnResume.
+        /// </remarks>
         public void Resume()
         {
             if (!isPaused) return;
@@ -154,12 +195,18 @@ namespace Triskel.UI
             Debug.Log("[PauseController] Juego reanudado");
         }
 
+        /// <summary>
+        /// Muestra el menú de pausa sin modificar el estado de Time.timeScale.
+        /// </summary>
         public void Show()
         {
             if (pauseOverlay != null)
                 pauseOverlay.style.display = DisplayStyle.Flex;
         }
 
+        /// <summary>
+        /// Oculta el menú de pausa sin modificar el estado de Time.timeScale.
+        /// </summary>
         public void Hide()
         {
             if (pauseOverlay != null)
@@ -170,6 +217,10 @@ namespace Triskel.UI
 
         #region Button Handlers
 
+        /// <summary>
+        /// Callback cuando se hace clic en el botón "Continuar".
+        /// Reanuda el juego llamando a Resume().
+        /// </summary>
         private void OnContinueClicked()
         {
             // Prevenir doble-click
@@ -178,6 +229,10 @@ namespace Triskel.UI
             Resume();
         }
 
+        /// <summary>
+        /// Callback cuando se hace clic en el botón "Reiniciar".
+        /// Guarda el progreso actual y recarga la escena actual.
+        /// </summary>
         private void OnRestartClicked()
         {
             Debug.Log("[PauseController] Reiniciando nivel...");
@@ -201,6 +256,10 @@ namespace Triskel.UI
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
+        /// <summary>
+        /// Callback cuando se hace clic en el botón "Ajustes".
+        /// Oculta el menú de pausa y muestra el menú de ajustes.
+        /// </summary>
         private void OnSettingsClicked()
         {
             Debug.Log("[PauseController] Abriendo ajustes...");
@@ -216,6 +275,10 @@ namespace Triskel.UI
             }
         }
 
+        /// <summary>
+        /// Callback cuando se hace clic en el botón "Salir".
+        /// Guarda el progreso, restablece Time.timeScale y carga el menú principal.
+        /// </summary>
         private void OnQuitClicked()
         {
             Debug.Log("[PauseController] Volviendo al menu principal...");

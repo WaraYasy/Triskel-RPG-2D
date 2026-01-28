@@ -1,3 +1,12 @@
+// =======================================================================================
+// Triskel RPG 2D - Register Controller
+// =======================================================================================
+// Autor: Mandrágora - Wara Pacheco
+// Descripción: Controlador de la pantalla de registro (creación de cuenta). Funciona
+//              como overlay dentro del menú principal y gestiona el registro de nuevos
+//              jugadores mediante la API REST de Triskel.
+// =======================================================================================
+
 using System;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -6,9 +15,16 @@ using Triskel.API;
 namespace Triskel.UI
 {
     /// <summary>
-    /// Controlador de la pantalla de Registro.
-    /// Funciona como overlay dentro del MainMenu.
+    /// Controlador de la pantalla de registro del juego.
     /// </summary>
+    /// <remarks>
+    /// Este controlador gestiona el formulario de registro, validando entradas
+    /// (nombre de usuario, contraseña, confirmación y email opcional) y comunicándose
+    /// con el TriskelAPIClient para crear nuevas cuentas de jugador.
+    /// Funciona como un overlay que se muestra sobre el menú principal.
+    ///
+    /// Eventos disponibles: OnGoToLogin, OnRegisterSuccess
+    /// </remarks>
     public class RegisterController : MonoBehaviour
     {
         [Header("Referencias")]
@@ -24,7 +40,13 @@ namespace Triskel.UI
         private VisualElement registerOverlay;
 
         // Eventos para comunicarse con MainMenuController
+        /// <summary>
+        /// Evento que se dispara cuando el jugador hace clic en "Ir a Login".
+        /// </summary>
         public event Action OnGoToLogin;
+        /// <summary>
+        /// Evento que se dispara cuando el registro es exitoso.
+        /// </summary>
         public event Action OnRegisterSuccess;
 
         private void OnEnable()
@@ -80,6 +102,10 @@ namespace Triskel.UI
                 goToLoginButton.clicked -= OnGoToLoginClicked;
         }
 
+        /// <summary>
+        /// Callback cuando se hace clic en el botón "Crear cuenta".
+        /// Valida las entradas y realiza la petición de registro a la API.
+        /// </summary>
         private void OnRegisterClicked()
         {
             if (!ValidateInputs())
@@ -116,12 +142,27 @@ namespace Triskel.UI
             );
         }
 
+        /// <summary>
+        /// Callback cuando se hace clic en el botón "Ir a Login".
+        /// Limpia los campos y dispara el evento OnGoToLogin.
+        /// </summary>
         private void OnGoToLoginClicked()
         {
             ClearFields();
             OnGoToLogin?.Invoke();
         }
 
+        /// <summary>
+        /// Valida los campos de entrada del formulario de registro.
+        /// </summary>
+        /// <returns>True si las entradas son válidas, False en caso contrario.</returns>
+        /// <remarks>
+        /// Valida:
+        /// - Nombre de usuario: 3-20 caracteres
+        /// - Contraseña: al menos 6 caracteres
+        /// - Confirmación de contraseña: debe coincidir
+        /// - Email (opcional): formato básico válido
+        /// </remarks>
         private bool ValidateInputs()
         {
             string username = userInput?.value?.Trim();
@@ -175,12 +216,25 @@ namespace Triskel.UI
             return true;
         }
 
+        /// <summary>
+        /// Valida el formato básico de un email.
+        /// </summary>
+        /// <param name="email">Email a validar.</param>
+        /// <returns>True si el email tiene un formato válido básico.</returns>
+        /// <remarks>
+        /// Validación simple que verifica la presencia de '@' y '.'.
+        /// </remarks>
         private bool IsValidEmail(string email)
         {
             // Validacion basica de email
             return email.Contains("@") && email.Contains(".");
         }
 
+        /// <summary>
+        /// Parsea mensajes de error de la API y los convierte en mensajes amigables para el usuario.
+        /// </summary>
+        /// <param name="error">Mensaje de error de la API.</param>
+        /// <returns>Mensaje de error amigable en español.</returns>
         private string ParseError(string error)
         {
             if (error.Contains("400") || error.Contains("already exists"))
@@ -198,6 +252,10 @@ namespace Triskel.UI
             return "Error al crear cuenta. Intenta de nuevo";
         }
 
+        /// <summary>
+        /// Muestra un mensaje de error en la UI.
+        /// </summary>
+        /// <param name="message">Mensaje de error a mostrar.</param>
         private void ShowError(string message)
         {
             if (errorLabel == null)
@@ -207,6 +265,9 @@ namespace Triskel.UI
             errorLabel.style.display = DisplayStyle.Flex;
         }
 
+        /// <summary>
+        /// Oculta el mensaje de error en la UI.
+        /// </summary>
         private void HideError()
         {
             if (errorLabel == null)
@@ -215,6 +276,10 @@ namespace Triskel.UI
             errorLabel.style.display = DisplayStyle.None;
         }
 
+        /// <summary>
+        /// Establece el estado de carga de la UI, deshabilitando/habilitando controles.
+        /// </summary>
+        /// <param name="loading">True para mostrar estado de carga, False para estado normal.</param>
         private void SetLoading(bool loading)
         {
             if (registerButton != null)
@@ -239,6 +304,9 @@ namespace Triskel.UI
                 emailInput.SetEnabled(!loading);
         }
 
+        /// <summary>
+        /// Limpia todos los campos del formulario de registro.
+        /// </summary>
         private void ClearFields()
         {
             if (userInput != null)
@@ -256,6 +324,9 @@ namespace Triskel.UI
             HideError();
         }
 
+        /// <summary>
+        /// Muestra el overlay de registro y limpia los campos del formulario.
+        /// </summary>
         public void Show()
         {
             if (registerOverlay != null)
@@ -264,6 +335,9 @@ namespace Triskel.UI
             ClearFields();
         }
 
+        /// <summary>
+        /// Oculta el overlay de registro y limpia los campos del formulario.
+        /// </summary>
         public void Hide()
         {
             if (registerOverlay != null)

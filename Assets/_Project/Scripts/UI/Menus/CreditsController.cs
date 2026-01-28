@@ -1,3 +1,12 @@
+// =======================================================================================
+// Triskel RPG 2D - Credits Controller
+// =======================================================================================
+// Autor: Mandrágora - Wara Pacheco
+// Descripción: Controlador de la pantalla de créditos del juego. Lee los créditos desde
+//              un archivo JSON y los muestra con scroll automático. Permite al jugador
+//              saltar los créditos presionando ESC o haciendo clic en un botón.
+// =======================================================================================
+
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
@@ -8,9 +17,16 @@ using System.Collections.Generic;
 namespace Triskel.UI
 {
     /// <summary>
-    /// Controlador de la pantalla de créditos.
-    /// Lee datos de un archivo JSON y los muestra con scroll automático.
+    /// Controlador de la pantalla de créditos del juego.
     /// </summary>
+    /// <remarks>
+    /// Este controlador lee los créditos desde un archivo JSON estructurado y los muestra
+    /// con scroll automático vertical. Los créditos se organizan en secciones con títulos
+    /// y entradas.
+    ///
+    /// El jugador puede saltar los créditos presionando ESC o haciendo clic en el botón "Saltar".
+    /// Al finalizar, carga automáticamente la escena configurada (normalmente el menú principal).
+    /// </remarks>
     public class CreditsController : MonoBehaviour
     {
         [Header("Referencias")]
@@ -37,18 +53,29 @@ namespace Triskel.UI
         private CreditsData creditsData;
 
         // Datos del JSON
+        /// <summary>
+        /// Estructura de datos para los créditos cargados desde JSON.
+        /// </summary>
         [System.Serializable]
         private class CreditsData
         {
+            /// <summary>Título principal de los créditos.</summary>
             public string title;
+            /// <summary>Lista de secciones de créditos.</summary>
             public List<CreditSection> sections;
+            /// <summary>Texto del pie de página.</summary>
             public string footer;
         }
 
+        /// <summary>
+        /// Estructura de datos para una sección de créditos.
+        /// </summary>
         [System.Serializable]
         private class CreditSection
         {
+            /// <summary>Título de la sección (ej: "Desarrollo", "Arte", "Música").</summary>
             public string title;
+            /// <summary>Lista de entradas de la sección (nombres, roles, etc.).</summary>
             public List<string> entries;
         }
 
@@ -74,6 +101,9 @@ namespace Triskel.UI
             }
         }
 
+        /// <summary>
+        /// Inicializa la pantalla de créditos obteniendo referencias a elementos UI.
+        /// </summary>
         private void InitializeCredits()
         {
             if (creditsDocument == null)
@@ -106,6 +136,9 @@ namespace Triskel.UI
             }
         }
 
+        /// <summary>
+        /// Carga los datos de créditos desde el archivo JSON asignado.
+        /// </summary>
         private void LoadCreditsData()
         {
             if (creditsJsonFile == null)
@@ -125,6 +158,13 @@ namespace Triskel.UI
             }
         }
 
+        /// <summary>
+        /// Rellena el contenedor de créditos con los datos cargados del JSON.
+        /// </summary>
+        /// <remarks>
+        /// Crea dinámicamente Labels para el título, secciones, entradas y footer,
+        /// aplicando las clases CSS apropiadas para el estilo.
+        /// </remarks>
         private void PopulateCredits()
         {
             if (creditsData == null || creditsContainer == null)
@@ -166,6 +206,14 @@ namespace Triskel.UI
             Debug.Log("[CreditsController] Créditos cargados exitosamente");
         }
 
+        /// <summary>
+        /// Corrutina que realiza el scroll automático de los créditos.
+        /// </summary>
+        /// <returns>IEnumerator para la corrutina.</returns>
+        /// <remarks>
+        /// Espera un delay inicial, luego scrollea automáticamente a la velocidad configurada,
+        /// espera un delay al final y finalmente carga la escena siguiente.
+        /// </remarks>
         private IEnumerator AutoScrollRoutine()
         {
             if (scrollView == null)
@@ -197,11 +245,17 @@ namespace Triskel.UI
                 LoadNextScene();
         }
 
+        /// <summary>
+        /// Callback cuando se hace clic en el botón "Saltar".
+        /// </summary>
         private void OnSkipClicked()
         {
             SkipCredits();
         }
 
+        /// <summary>
+        /// Detiene el scroll automático y carga la escena siguiente.
+        /// </summary>
         private void SkipCredits()
         {
             Debug.Log("[CreditsController] Saltando créditos...");
@@ -210,6 +264,9 @@ namespace Triskel.UI
             LoadNextScene();
         }
 
+        /// <summary>
+        /// Carga la escena configurada como siguiente (normalmente el menú principal).
+        /// </summary>
         private void LoadNextScene()
         {
             if (!string.IsNullOrEmpty(nextSceneName))
@@ -226,16 +283,18 @@ namespace Triskel.UI
         #region Public Methods
 
         /// <summary>
-        /// Permite cambiar la velocidad de scroll en tiempo de ejecución
+        /// Permite cambiar la velocidad de scroll en tiempo de ejecución.
         /// </summary>
+        /// <param name="speed">Nueva velocidad de scroll en píxeles por segundo.</param>
         public void SetScrollSpeed(float speed)
         {
             scrollSpeed = Mathf.Max(0f, speed);
         }
 
         /// <summary>
-        /// Permite cambiar la escena de destino
+        /// Permite cambiar la escena de destino al finalizar los créditos.
         /// </summary>
+        /// <param name="sceneName">Nombre de la escena a cargar.</param>
         public void SetNextScene(string sceneName)
         {
             nextSceneName = sceneName;

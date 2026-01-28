@@ -1,3 +1,13 @@
+// =======================================================================================
+// Triskel RPG 2D - HTTP Service
+// =======================================================================================
+// Autor: Mandrágora - Wara Pacheco
+// Descripción: Servicio HTTP centralizado para realizar peticiones a la API REST.
+//              Maneja autenticación mediante headers personalizados (X-Player-ID,
+//              X-Player-Token), serialización/deserialización JSON y manejo de errores
+//              de forma unificada.
+// =======================================================================================
+
 using System;
 using System.Collections;
 using System.Text;
@@ -7,22 +17,48 @@ using UnityEngine.Networking;
 namespace Triskel.API
 {
     /// <summary>
-    /// Servicio HTTP base para realizar peticiones a la API.
-    /// Maneja autenticacion, headers y errores de forma centralizada.
+    /// Servicio HTTP base para realizar peticiones a la API REST de Triskel.
     /// </summary>
+    /// <remarks>
+    /// Este servicio encapsula toda la lógica de comunicación HTTP usando UnityWebRequest.
+    /// Maneja automáticamente:
+    /// - Headers de autenticación (X-Player-ID, X-Player-Token)
+    /// - Serialización/deserialización JSON con JsonUtility
+    /// - Manejo de errores HTTP con callbacks
+    /// - Logging de peticiones y respuestas
+    ///
+    /// Es utilizado internamente por TriskelAPIClient.
+    /// </remarks>
     public class HttpService
     {
         private readonly string baseURL;
         private readonly MonoBehaviour coroutineRunner;
 
         // Credenciales del jugador
+        /// <summary>
+        /// ID del jugador para incluir en headers de autenticación.
+        /// </summary>
         public string PlayerID { get; set; }
+        /// <summary>
+        /// Token del jugador para incluir en headers de autenticación.
+        /// </summary>
         public string PlayerToken { get; set; }
 
         // Eventos para notificaciones globales
+        /// <summary>
+        /// Evento que se dispara cuando ocurre un error en una petición.
+        /// </summary>
         public event Action<string> OnRequestError;
+        /// <summary>
+        /// Evento que se dispara cuando ocurre un error HTTP con código de estado.
+        /// </summary>
         public event Action<int, string> OnHttpError; // statusCode, message
 
+        /// <summary>
+        /// Constructor del servicio HTTP.
+        /// </summary>
+        /// <param name="baseURL">URL base de la API (ej: "http://localhost:8000").</param>
+        /// <param name="runner">MonoBehaviour para ejecutar corrutinas.</param>
         public HttpService(string baseURL, MonoBehaviour runner)
         {
             this.baseURL = baseURL.TrimEnd('/');
@@ -32,16 +68,26 @@ namespace Triskel.API
         #region Public Methods
 
         /// <summary>
-        /// Realiza una peticion GET.
+        /// Realiza una petición GET a la API.
         /// </summary>
+        /// <typeparam name="T">Tipo de la respuesta esperada.</typeparam>
+        /// <param name="endpoint">Endpoint relativo (ej: "/v1/players/me").</param>
+        /// <param name="onSuccess">Callback ejecutado con la respuesta deserializada.</param>
+        /// <param name="onError">Callback ejecutado si ocurre un error.</param>
         public void Get<T>(string endpoint, Action<T> onSuccess, Action<string> onError = null)
         {
             coroutineRunner.StartCoroutine(GetCoroutine(endpoint, onSuccess, onError));
         }
 
         /// <summary>
-        /// Realiza una peticion POST con body JSON.
+        /// Realiza una petición POST con body JSON a la API.
         /// </summary>
+        /// <typeparam name="TRequest">Tipo del objeto a enviar (será serializado a JSON).</typeparam>
+        /// <typeparam name="TResponse">Tipo de la respuesta esperada.</typeparam>
+        /// <param name="endpoint">Endpoint relativo (ej: "/v1/games").</param>
+        /// <param name="body">Objeto a serializar y enviar como body.</param>
+        /// <param name="onSuccess">Callback ejecutado con la respuesta deserializada.</param>
+        /// <param name="onError">Callback ejecutado si ocurre un error.</param>
         public void Post<TRequest, TResponse>(string endpoint, TRequest body, Action<TResponse> onSuccess, Action<string> onError = null)
         {
             string json = JsonUtility.ToJson(body);
@@ -57,8 +103,14 @@ namespace Triskel.API
         }
 
         /// <summary>
-        /// Realiza una peticion PATCH con body JSON.
+        /// Realiza una petición PATCH con body JSON a la API.
         /// </summary>
+        /// <typeparam name="TRequest">Tipo del objeto a enviar (será serializado a JSON).</typeparam>
+        /// <typeparam name="TResponse">Tipo de la respuesta esperada.</typeparam>
+        /// <param name="endpoint">Endpoint relativo (ej: "/v1/games/{game_id}").</param>
+        /// <param name="body">Objeto a serializar y enviar como body.</param>
+        /// <param name="onSuccess">Callback ejecutado con la respuesta deserializada.</param>
+        /// <param name="onError">Callback ejecutado si ocurre un error.</param>
         public void Patch<TRequest, TResponse>(string endpoint, TRequest body, Action<TResponse> onSuccess, Action<string> onError = null)
         {
             string json = JsonUtility.ToJson(body);
@@ -66,8 +118,11 @@ namespace Triskel.API
         }
 
         /// <summary>
-        /// Realiza una peticion DELETE.
+        /// Realiza una petición DELETE a la API.
         /// </summary>
+        /// <param name="endpoint">Endpoint relativo (ej: "/v1/games/{game_id}").</param>
+        /// <param name="onSuccess">Callback ejecutado si la operación es exitosa.</param>
+        /// <param name="onError">Callback ejecutado si ocurre un error.</param>
         public void Delete(string endpoint, Action onSuccess, Action<string> onError = null)
         {
             coroutineRunner.StartCoroutine(DeleteCoroutine(endpoint, onSuccess, onError));
@@ -166,6 +221,13 @@ namespace Triskel.API
 
         #region Helpers
 
+        /// <summary>
+        /// Añade headers de autenticación a la petición HTTP.
+        /// </summary>
+        /// <param name="request">Petición UnityWebRequest a modificar.</param>
+        /// <remarks>
+        /// Añade X-Player-ID y X-Player-Token si están configurados.
+        /// </remarks>
         private void AddAuthHeaders(UnityWebRequest request)
         {
             if (!string.IsNullOrEmpty(PlayerID))
@@ -175,6 +237,13 @@ namespace Triskel.API
                 request.SetRequestHeader("X-Player-Token", PlayerToken);
         }
 
+        /// <summary>
+        /// Maneja la respuesta de una petición HTTP, deserializando el JSON y ejecutando callbacks.
+        /// </summary>
+        /// <typeparam name="T">Tipo de la respuesta esperada.</typeparam>
+        /// <param name="request">Petición completada.</param>
+        /// <param name="onSuccess">Callback de éxito.</param>
+        /// <param name="onError">Callback de error.</param>
         private void HandleResponse<T>(UnityWebRequest request, Action<T> onSuccess, Action<string> onError)
         {
             if (request.result == UnityWebRequest.Result.Success)
@@ -201,6 +270,11 @@ namespace Triskel.API
             }
         }
 
+        /// <summary>
+        /// Maneja errores de peticiones HTTP, logueando detalles y ejecutando callbacks.
+        /// </summary>
+        /// <param name="request">Petición con error.</param>
+        /// <param name="onError">Callback de error.</param>
         private void HandleError(UnityWebRequest request, Action<string> onError)
         {
             string error = request.error;
@@ -216,6 +290,12 @@ namespace Triskel.API
             OnHttpError?.Invoke((int)statusCode, responseBody);
         }
 
+        /// <summary>
+        /// Loguea información de una petición HTTP para debugging.
+        /// </summary>
+        /// <param name="method">Método HTTP (GET, POST, etc.).</param>
+        /// <param name="url">URL completa.</param>
+        /// <param name="body">Body JSON (opcional).</param>
         private void LogRequest(string method, string url, string body)
         {
             Debug.Log($"[HTTP] {method} {url}");
