@@ -15,7 +15,6 @@ public class PlayerStealth : MonoBehaviour
     
     [Header("Velocidad Sigilosa")]
     [SerializeField] private float stealthSpeedMultiplier = 0.5f;  // Al agacharse se mueve más lento
-    [SerializeField] private bool canCrouchMove = true;
     
     [Header("UI")]
     [SerializeField] private GameObject stealthUI;              // UI de sigilo activo

@@ -73,7 +73,6 @@ public class ShadowPatrol : MonoBehaviour
     private float searchTimer = 0f;
     
     // Variables de mirada hacia atrás
-    private bool isLookingBack = false;
     private Vector2 originalDirection;
     
     // Dirección para animación
@@ -511,7 +510,6 @@ public class ShadowPatrol : MonoBehaviour
     /// </summary>
     private IEnumerator LookBack()
     {
-        isLookingBack = true;
         originalDirection = currentDirection;
         
         // Girar 180 grados
@@ -539,7 +537,6 @@ public class ShadowPatrol : MonoBehaviour
                         if (hit.collider == null)
                         {
                             Debug.Log("🔴 ¡Te pillé por detrás!");
-                            isLookingBack = false;
                             StartChasing();
                             yield break;
                         }
@@ -554,7 +551,6 @@ public class ShadowPatrol : MonoBehaviour
         // Volver a la dirección original
         currentDirection = originalDirection;
         UpdateAnimation(Vector2.zero);
-        isLookingBack = false;
     }
 
     private void ReturnToPatrol()

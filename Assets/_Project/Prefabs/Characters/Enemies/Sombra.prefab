@@ -152,12 +152,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolPoints: []
-  patrolSpeed: 2
-  waitTimeAtPoint: 1
+  patrolSpeed: 4
+  waitTimeAtPoint: 0.2
   loopPatrol: 1
   detectionRadius: 4
   detectionAngle: 60
-  chaseSpeed: 4
+  chaseSpeed: 7
   chaseDuration: 5
   obstacleLayer:
     serializedVersion: 2
@@ -168,6 +168,10 @@ MonoBehaviour:
   suspicionTime: 2
   alertSearchDuration: 3
   hearingRadius: 2
+  proximityDetectionRadius: 2
+  lookBackEnabled: 1
+  lookBackChance: 0.5
+  lookBackDuration: 0.8
   safeZoneLayer:
     serializedVersion: 2
     m_Bits: 0
