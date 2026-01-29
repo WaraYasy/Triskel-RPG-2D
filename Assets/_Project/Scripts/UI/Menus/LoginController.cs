@@ -1,3 +1,12 @@
+// =======================================================================================
+// Triskel RPG 2D - Login Controller
+// =======================================================================================
+// Autor: Mandrágora - Wara Pacheco
+// Descripción: Controlador de la pantalla de login (inicio de sesión). Funciona como
+//              overlay dentro del menú principal y gestiona la autenticación de
+//              jugadores mediante la API REST de Triskel.
+// =======================================================================================
+
 using System;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -6,9 +15,15 @@ using Triskel.API;
 namespace Triskel.UI
 {
     /// <summary>
-    /// Controlador de la pantalla de Login.
-    /// Funciona como overlay dentro del MainMenu.
+    /// Controlador de la pantalla de login del juego.
     /// </summary>
+    /// <remarks>
+    /// Este controlador gestiona el formulario de inicio de sesión, validando entradas
+    /// y comunicándose con el TriskelAPIClient para autenticar al jugador.
+    /// Funciona como un overlay que se muestra sobre el menú principal.
+    ///
+    /// Eventos disponibles: OnGoToRegister, OnLoginSuccess
+    /// </remarks>
     public class LoginController : MonoBehaviour
     {
         [Header("Referencias")]
@@ -22,7 +37,13 @@ namespace Triskel.UI
         private VisualElement loginOverlay;
 
         // Eventos para comunicarse con MainMenuController
+        /// <summary>
+        /// Evento que se dispara cuando el jugador hace clic en "Ir a Registro".
+        /// </summary>
         public event Action OnGoToRegister;
+        /// <summary>
+        /// Evento que se dispara cuando el login es exitoso.
+        /// </summary>
         public event Action OnLoginSuccess;
 
         private void OnEnable()
@@ -76,6 +97,10 @@ namespace Triskel.UI
                 goToRegisterButton.clicked -= OnGoToRegisterClicked;
         }
 
+        /// <summary>
+        /// Callback cuando se hace clic en el botón "Entrar".
+        /// Valida las entradas y realiza la petición de login a la API.
+        /// </summary>
         private void OnLoginClicked()
         {
             if (!ValidateInputs())
@@ -106,12 +131,24 @@ namespace Triskel.UI
             );
         }
 
+        /// <summary>
+        /// Callback cuando se hace clic en el botón "Ir a Registro".
+        /// Limpia los campos y dispara el evento OnGoToRegister.
+        /// </summary>
         private void OnGoToRegisterClicked()
         {
             ClearFields();
             OnGoToRegister?.Invoke();
         }
 
+        /// <summary>
+        /// Valida los campos de entrada del formulario de login.
+        /// </summary>
+        /// <returns>True si las entradas son válidas, False en caso contrario.</returns>
+        /// <remarks>
+        /// Valida que el nombre de usuario tenga al menos 3 caracteres y que
+        /// la contraseña no esté vacía.
+        /// </remarks>
         private bool ValidateInputs()
         {
             string username = userInput?.value?.Trim();
@@ -138,6 +175,11 @@ namespace Triskel.UI
             return true;
         }
 
+        /// <summary>
+        /// Parsea mensajes de error de la API y los convierte en mensajes amigables para el usuario.
+        /// </summary>
+        /// <param name="error">Mensaje de error de la API.</param>
+        /// <returns>Mensaje de error amigable en español.</returns>
         private string ParseError(string error)
         {
             if (error.Contains("401") || error.Contains("Unauthorized"))
@@ -152,6 +194,10 @@ namespace Triskel.UI
             return "Error al iniciar sesion. Intenta de nuevo";
         }
 
+        /// <summary>
+        /// Muestra un mensaje de error en la UI.
+        /// </summary>
+        /// <param name="message">Mensaje de error a mostrar.</param>
         private void ShowError(string message)
         {
             if (errorLabel == null)
@@ -161,6 +207,9 @@ namespace Triskel.UI
             errorLabel.style.display = DisplayStyle.Flex;
         }
 
+        /// <summary>
+        /// Oculta el mensaje de error en la UI.
+        /// </summary>
         private void HideError()
         {
             if (errorLabel == null)
@@ -169,6 +218,10 @@ namespace Triskel.UI
             errorLabel.style.display = DisplayStyle.None;
         }
 
+        /// <summary>
+        /// Establece el estado de carga de la UI, deshabilitando/habilitando controles.
+        /// </summary>
+        /// <param name="loading">True para mostrar estado de carga, False para estado normal.</param>
         private void SetLoading(bool loading)
         {
             if (loginButton != null)
@@ -187,6 +240,9 @@ namespace Triskel.UI
                 passwordInput.SetEnabled(!loading);
         }
 
+        /// <summary>
+        /// Limpia todos los campos del formulario de login.
+        /// </summary>
         private void ClearFields()
         {
             if (userInput != null)
@@ -198,6 +254,9 @@ namespace Triskel.UI
             HideError();
         }
 
+        /// <summary>
+        /// Muestra el overlay de login y limpia los campos del formulario.
+        /// </summary>
         public void Show()
         {
             if (loginOverlay != null)
@@ -206,6 +265,9 @@ namespace Triskel.UI
             ClearFields();
         }
 
+        /// <summary>
+        /// Oculta el overlay de login y limpia los campos del formulario.
+        /// </summary>
         public void Hide()
         {
             if (loginOverlay != null)

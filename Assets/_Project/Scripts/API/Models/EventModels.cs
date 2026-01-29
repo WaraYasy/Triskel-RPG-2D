@@ -1,3 +1,13 @@
+// =======================================================================================
+// Triskel RPG 2D - Event Models
+// =======================================================================================
+// Autor: Mandrágora - Wara Pacheco
+// Descripción: Modelos de datos (DTOs) para operaciones relacionadas con eventos de
+//              gameplay: muerte del jugador, checkpoints, recogida de ítems, interacción
+//              con NPCs, encuentros con jefes. Sistema flexible para analytics y
+//              tracking de comportamiento del jugador.
+// =======================================================================================
+
 using System;
 using System.Collections.Generic;
 

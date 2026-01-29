@@ -1,3 +1,13 @@
+// =======================================================================================
+// Triskel RPG 2D - Game Models
+// =======================================================================================
+// Autor: Mandrágora - Wara Pacheco
+// Descripción: Modelos de datos (DTOs) para operaciones relacionadas con partidas:
+//              creación, actualización, completar niveles, métricas y decisiones.
+//              Estos modelos se serializan/deserializan con JsonUtility para
+//              comunicación con la API REST.
+// =======================================================================================
+
 using System;
 
 namespace Triskel.API.Models

@@ -1,3 +1,13 @@
+// =======================================================================================
+// Triskel RPG 2D - Main Menu Controller
+// =======================================================================================
+// Autor: Mandrágora - Wara Pacheco
+// Descripción: Controlador del menú principal del juego. Coordina los overlays de login
+//              y registro, gestiona el estado de sesión del jugador y muestra diferentes
+//              opciones según si el jugador está autenticado o no. Se comunica con la
+//              API REST de Triskel para verificar sesiones y gestionar partidas.
+// =======================================================================================
+
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
@@ -6,10 +16,17 @@ using Triskel.API;
 namespace Triskel.UI
 {
     /// <summary>
-    /// Controlador del Menu Principal.
-    /// Muestra diferentes opciones segun el estado de sesion.
-    /// Coordina los overlays de Login y Registro.
+    /// Controlador del menú principal del juego.
     /// </summary>
+    /// <remarks>
+    /// Este controlador orquesta el menú principal, mostrando diferentes opciones según
+    /// el estado de autenticación del jugador:
+    /// - Sin sesión: Botones de "Login" y "Salir"
+    /// - Con sesión: Botones de "Continuar" (si hay partida activa), "Nueva Partida" y "Cerrar Sesión"
+    ///
+    /// Coordina los overlays de LoginController y RegisterController, y se suscribe a eventos
+    /// del TriskelAPIClient para reaccionar a cambios de sesión.
+    /// </remarks>
     public class MainMenuController : MonoBehaviour
     {
         [Header("Referencias")]
@@ -28,6 +45,8 @@ namespace Triskel.UI
         private Button continueButton;
         private Button newGameButton;
         private Button logoutButton;
+        private VisualElement loadingIndicator;
+        private Label loadingLabel;
 
         private void OnEnable()
         {
@@ -90,6 +109,9 @@ namespace Triskel.UI
             if (logoutButton != null) logoutButton.clicked -= OnLogoutClicked;
         }
 
+        /// <summary>
+        /// Inicializa la UI del menú principal obteniendo referencias a elementos y registrando eventos.
+        /// </summary>
         private void InitializeUI()
         {
             if (uiDocument == null)
@@ -111,6 +133,8 @@ namespace Triskel.UI
             continueButton = root.Q<Button>("ContinueButton");
             newGameButton = root.Q<Button>("NewGameButton");
             logoutButton = root.Q<Button>("LogoutButton");
+            loadingIndicator = root.Q<VisualElement>("LoadingIndicator");
+            loadingLabel = root.Q<Label>("LoadingLabel");
 
             // Configurar eventos
             if (loginButton != null) loginButton.clicked += OnLoginClicked;
@@ -120,6 +144,13 @@ namespace Triskel.UI
             if (logoutButton != null) logoutButton.clicked += OnLogoutClicked;
         }
 
+        /// <summary>
+        /// Verifica el estado de sesión del jugador al iniciar el menú.
+        /// </summary>
+        /// <remarks>
+        /// Si hay una sesión guardada, verifica su validez con la API.
+        /// Muestra el estado apropiado según el resultado.
+        /// </remarks>
         private void CheckSessionState()
         {
             if (TriskelAPIClient.Instance == null)
@@ -131,10 +162,21 @@ namespace Triskel.UI
 
             if (TriskelAPIClient.Instance.IsLoggedIn)
             {
+                // Mostrar loader mientras verifica
+                ShowLoading("Verificando sesion...");
+
                 // Verificar que la sesion sea valida
                 TriskelAPIClient.Instance.VerifySession(
-                    profile => ShowLoggedInState(profile.username),
-                    error => ShowLoggedOutState()
+                    profile =>
+                    {
+                        HideLoading();
+                        ShowLoggedInState(profile.username);
+                    },
+                    error =>
+                    {
+                        HideLoading();
+                        ShowLoggedOutState();
+                    }
                 );
             }
             else
@@ -143,8 +185,18 @@ namespace Triskel.UI
             }
         }
 
+        /// <summary>
+        /// Muestra el menú en estado de sesión iniciada (jugador autenticado).
+        /// </summary>
+        /// <param name="username">Nombre del jugador a mostrar en el mensaje de bienvenida (opcional).</param>
+        /// <remarks>
+        /// Muestra botones de "Continuar" (si hay partida activa), "Nueva Partida" y "Cerrar Sesión".
+        /// Oculta botones de "Login" y "Salir".
+        /// </remarks>
         private void ShowLoggedInState(string username = null)
         {
+            HideLoading();
+
             // Mostrar mensaje de bienvenida
             if (welcomeLabel != null)
             {
@@ -158,8 +210,12 @@ namespace Triskel.UI
             SetDisplay(loginButton, false);
             SetDisplay(exitButton, false);
 
+            // Verificar si hay partida activa para mostrar "Continuar"
+            bool hasActiveGame = TriskelAPIClient.Instance != null &&
+                                 !string.IsNullOrEmpty(TriskelAPIClient.Instance.CurrentGameID);
+
             // Mostrar botones de logueado
-            SetDisplay(continueButton, true);
+            SetDisplay(continueButton, hasActiveGame); // Solo si hay partida activa
             SetDisplay(newGameButton, true);
             SetDisplay(logoutButton, true);
 
@@ -167,8 +223,17 @@ namespace Triskel.UI
             HideAuthOverlays();
         }
 
+        /// <summary>
+        /// Muestra el menú en estado sin sesión (jugador no autenticado).
+        /// </summary>
+        /// <remarks>
+        /// Muestra botones de "Login" y "Salir".
+        /// Oculta botones de sesión activa.
+        /// </remarks>
         private void ShowLoggedOutState()
         {
+            HideLoading();
+
             // Ocultar mensaje de bienvenida
             if (welcomeLabel != null)
                 welcomeLabel.style.display = DisplayStyle.None;
@@ -186,19 +251,60 @@ namespace Triskel.UI
             HideAuthOverlays();
         }
 
+        /// <summary>
+        /// Método auxiliar para mostrar u ocultar un elemento de UI.
+        /// </summary>
+        /// <param name="element">Elemento de UI a modificar.</param>
+        /// <param name="visible">True para mostrar, False para ocultar.</param>
         private void SetDisplay(VisualElement element, bool visible)
         {
             if (element != null)
                 element.style.display = visible ? DisplayStyle.Flex : DisplayStyle.None;
         }
 
+        /// <summary>
+        /// Muestra un indicador de carga y oculta todos los botones del menú.
+        /// </summary>
+        /// <param name="message">Mensaje a mostrar en el indicador de carga.</param>
+        private void ShowLoading(string message = "Cargando...")
+        {
+            if (loadingLabel != null)
+                loadingLabel.text = message;
+
+            SetDisplay(loadingIndicator, true);
+
+            // Ocultar todos los botones mientras carga
+            SetDisplay(loginButton, false);
+            SetDisplay(exitButton, false);
+            SetDisplay(continueButton, false);
+            SetDisplay(newGameButton, false);
+            SetDisplay(logoutButton, false);
+            SetDisplay(welcomeLabel, false);
+        }
+
+        /// <summary>
+        /// Oculta el indicador de carga.
+        /// </summary>
+        private void HideLoading()
+        {
+            SetDisplay(loadingIndicator, false);
+        }
+
         #region Button Handlers
 
+        /// <summary>
+        /// Callback cuando se hace clic en el botón "Login".
+        /// Muestra el overlay de login.
+        /// </summary>
         private void OnLoginClicked()
         {
             ShowLogin();
         }
 
+        /// <summary>
+        /// Callback cuando se hace clic en el botón "Salir".
+        /// Cierra la aplicación.
+        /// </summary>
         private void OnExitClicked()
         {
             Debug.Log("[MainMenuController] Saliendo del juego...");
@@ -210,9 +316,17 @@ namespace Triskel.UI
             #endif
         }
 
+        /// <summary>
+        /// Callback cuando se hace clic en el botón "Continuar".
+        /// Carga la partida guardada y continúa desde donde se quedó el jugador.
+        /// </summary>
         private void OnContinueClicked()
         {
             Debug.Log("[MainMenuController] Continuando partida...");
+
+            // Prevenir doble-click
+            if (continueButton != null)
+                continueButton.SetEnabled(false);
 
             // Cargar partida guardada
             if (GameManager.Instance != null)
@@ -222,9 +336,17 @@ namespace Triskel.UI
             LoadGameScene();
         }
 
+        /// <summary>
+        /// Callback cuando se hace clic en el botón "Nueva Partida".
+        /// Crea una nueva partida en la API, inicia una sesión de juego y carga la escena del juego.
+        /// </summary>
         private void OnNewGameClicked()
         {
             Debug.Log("[MainMenuController] Nueva partida...");
+
+            // Deshabilitar botón para prevenir doble-click
+            if (newGameButton != null)
+                newGameButton.SetEnabled(false);
 
             // Iniciar nueva partida
             if (GameManager.Instance != null)
@@ -242,15 +364,30 @@ namespace Triskel.UI
                             session => Debug.Log($"[MainMenuController] Sesion iniciada: {session.session_id}"),
                             error => Debug.LogWarning($"[MainMenuController] Error iniciando sesion: {error}")
                         );
+
+                        // Cargar escena del juego
+                        LoadGameScene();
                     },
-                    error => Debug.LogWarning($"[MainMenuController] Error creando partida: {error}")
+                    error =>
+                    {
+                        Debug.LogWarning($"[MainMenuController] Error creando partida: {error}");
+                        // Re-habilitar botón si falla
+                        if (newGameButton != null)
+                            newGameButton.SetEnabled(true);
+                    }
                 );
             }
-
-            // Cargar escena del juego
-            LoadGameScene();
+            else
+            {
+                // Si no hay API, cargar escena directamente
+                LoadGameScene();
+            }
         }
 
+        /// <summary>
+        /// Callback cuando se hace clic en el botón "Cerrar Sesión".
+        /// Cierra la sesión del jugador mediante la API.
+        /// </summary>
         private void OnLogoutClicked()
         {
             Debug.Log("[MainMenuController] Cerrando sesion...");
@@ -263,6 +400,9 @@ namespace Triskel.UI
 
         #region Auth Overlay Management
 
+        /// <summary>
+        /// Muestra el overlay de login y oculta el de registro.
+        /// </summary>
         private void ShowLogin()
         {
             HideRegister();
@@ -270,6 +410,9 @@ namespace Triskel.UI
                 loginController.Show();
         }
 
+        /// <summary>
+        /// Muestra el overlay de registro y oculta el de login.
+        /// </summary>
         private void ShowRegister()
         {
             HideLogin();
@@ -277,30 +420,46 @@ namespace Triskel.UI
                 registerController.Show();
         }
 
+        /// <summary>
+        /// Oculta el overlay de login.
+        /// </summary>
         private void HideLogin()
         {
             if (loginController != null)
                 loginController.Hide();
         }
 
+        /// <summary>
+        /// Oculta el overlay de registro.
+        /// </summary>
         private void HideRegister()
         {
             if (registerController != null)
                 registerController.Hide();
         }
 
+        /// <summary>
+        /// Oculta ambos overlays de autenticación (login y registro).
+        /// </summary>
         private void HideAuthOverlays()
         {
             HideLogin();
             HideRegister();
         }
 
+        /// <summary>
+        /// Callback cuando la autenticación (login o registro) es exitosa.
+        /// Oculta overlays, muestra loader y obtiene el perfil del jugador.
+        /// </summary>
         private void OnAuthSuccess()
         {
             Debug.Log("[MainMenuController] Autenticacion exitosa");
 
             // Ocultar overlays
             HideAuthOverlays();
+
+            // Mostrar loader mientras obtiene perfil
+            ShowLoading("Cargando perfil...");
 
             // Obtener perfil y actualizar UI
             if (TriskelAPIClient.Instance != null)
@@ -310,14 +469,24 @@ namespace Triskel.UI
                     error => ShowLoggedInState()
                 );
             }
+            else
+            {
+                HideLoading();
+            }
         }
 
         #endregion
 
         #region Event Handlers
 
+        /// <summary>
+        /// Callback cuando el evento OnLoggedIn del TriskelAPIClient se dispara.
+        /// Actualiza la UI al estado de sesión iniciada.
+        /// </summary>
         private void OnLoggedIn()
         {
+            ShowLoading("Cargando perfil...");
+
             // Obtener perfil para mostrar nombre
             TriskelAPIClient.Instance?.GetMyProfile(
                 profile => ShowLoggedInState(profile.username),
@@ -325,6 +494,10 @@ namespace Triskel.UI
             );
         }
 
+        /// <summary>
+        /// Callback cuando el evento OnLoggedOut del TriskelAPIClient se dispara.
+        /// Actualiza la UI al estado sin sesión.
+        /// </summary>
         private void OnLoggedOut()
         {
             ShowLoggedOutState();
@@ -332,6 +505,9 @@ namespace Triskel.UI
 
         #endregion
 
+        /// <summary>
+        /// Carga la escena del juego configurada en el Inspector.
+        /// </summary>
         private void LoadGameScene()
         {
             if (!string.IsNullOrEmpty(gameSceneName))

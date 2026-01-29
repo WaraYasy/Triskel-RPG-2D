@@ -1,3 +1,13 @@
+// =======================================================================================
+// Triskel RPG 2D - Triskel API Client
+// =======================================================================================
+// Autor: Mandrágora - Wara Pacheco
+// Descripción: Cliente principal para comunicarse con la API REST de Triskel.
+//              Proporciona métodos para gestionar jugadores, partidas, sesiones y eventos
+//              de gameplay. Implementa patrón Singleton y persiste credenciales en
+//              PlayerPrefs para mantener sesiones entre ejecuciones.
+// =======================================================================================
+
 using System;
 using UnityEngine;
 using Triskel.API.Models;
@@ -5,24 +15,35 @@ using Triskel.API.Models;
 namespace Triskel.API
 {
     /// <summary>
-    /// Cliente principal para comunicarse con la API de Triskel.
+    /// Cliente principal para comunicarse con la API REST de Triskel.
+    /// </summary>
+    /// <remarks>
+    /// Este cliente Singleton gestiona toda la comunicación con el backend de Triskel,
+    /// incluyendo autenticación, gestión de partidas, sesiones y eventos de gameplay.
     ///
     /// COMO USAR:
-    /// 1. Accede via TriskelAPIClient.Instance
+    /// 1. Accede vía TriskelAPIClient.Instance
     /// 2. Configura la URL base en el Inspector
-    /// 3. Usa RegisterPlayer() para crear/cargar jugador
-    /// 4. Llama a los metodos que necesites
+    /// 3. Usa RegisterPlayer() o Login() para autenticar
+    /// 4. Las credenciales se guardan automáticamente en PlayerPrefs
     ///
     /// EJEMPLO:
+    /// <code>
     /// TriskelAPIClient.Instance.CreateGame(game => {
     ///     Debug.Log($"Partida creada: {game.game_id}");
     /// });
-    /// </summary>
+    /// </code>
+    ///
+    /// El cliente usa DontDestroyOnLoad para persistir entre escenas.
+    /// </remarks>
     public class TriskelAPIClient : MonoBehaviour
     {
         // ==========================================
         // SINGLETON
         // ==========================================
+        /// <summary>
+        /// Instancia única del cliente API (patrón Singleton).
+        /// </summary>
         public static TriskelAPIClient Instance { get; private set; }
 
         // ==========================================
@@ -41,16 +62,43 @@ namespace Triskel.API
         private string currentSessionID;
 
         // Propiedades publicas de solo lectura
+        /// <summary>
+        /// ID del jugador actual autenticado.
+        /// </summary>
         public string PlayerID => http?.PlayerID ?? "";
+        /// <summary>
+        /// Token de autenticación del jugador actual.
+        /// </summary>
         public string PlayerToken => http?.PlayerToken ?? "";
+        /// <summary>
+        /// ID de la partida activa actual.
+        /// </summary>
         public string CurrentGameID => currentGameID;
+        /// <summary>
+        /// ID de la sesión de juego activa actual.
+        /// </summary>
         public string CurrentSessionID => currentSessionID;
+        /// <summary>
+        /// Indica si hay un jugador autenticado (credenciales válidas guardadas).
+        /// </summary>
         public bool IsLoggedIn => http?.HasCredentials() ?? false;
+        /// <summary>
+        /// Indica si hay una sesión de juego activa.
+        /// </summary>
         public bool HasActiveSession => !string.IsNullOrEmpty(currentSessionID);
 
         // Eventos
+        /// <summary>
+        /// Evento que se dispara cuando ocurre un error en una petición HTTP.
+        /// </summary>
         public event Action<string> OnError;
+        /// <summary>
+        /// Evento que se dispara cuando un jugador inicia sesión exitosamente.
+        /// </summary>
         public event Action OnLoggedIn;
+        /// <summary>
+        /// Evento que se dispara cuando un jugador cierra sesión.
+        /// </summary>
         public event Action OnLoggedOut;
 
         // ==========================================
@@ -81,8 +129,16 @@ namespace Triskel.API
 
         /// <summary>
         /// Registra un nuevo jugador con username y password.
-        /// Las credenciales se guardan automaticamente.
         /// </summary>
+        /// <param name="username">Nombre de usuario (3-20 caracteres).</param>
+        /// <param name="password">Contraseña (6-100 caracteres).</param>
+        /// <param name="email">Email opcional.</param>
+        /// <param name="onSuccess">Callback ejecutado si el registro es exitoso.</param>
+        /// <param name="onError">Callback ejecutado si ocurre un error.</param>
+        /// <remarks>
+        /// Las credenciales (player_id y player_token) se guardan automáticamente en PlayerPrefs.
+        /// Dispara el evento OnLoggedIn tras un registro exitoso.
+        /// </remarks>
         public void RegisterPlayer(string username, string password, string email = null,
             Action<CreatePlayerResponse> onSuccess = null, Action<string> onError = null)
         {
@@ -109,10 +165,17 @@ namespace Triskel.API
         }
 
         /// <summary>
-        /// Inicia sesion con username y password.
-        /// Las credenciales se guardan automaticamente.
-        /// Si hay una partida activa, se carga automaticamente.
+        /// Inicia sesión con username y password.
         /// </summary>
+        /// <param name="username">Nombre de usuario.</param>
+        /// <param name="password">Contraseña.</param>
+        /// <param name="onSuccess">Callback ejecutado si el login es exitoso.</param>
+        /// <param name="onError">Callback ejecutado si ocurre un error.</param>
+        /// <remarks>
+        /// Las credenciales se guardan automáticamente en PlayerPrefs.
+        /// Si la respuesta incluye un active_game_id, se carga automáticamente como partida actual.
+        /// Dispara el evento OnLoggedIn tras un login exitoso.
+        /// </remarks>
         public void Login(string username, string password,
             Action<LoginResponse> onSuccess = null, Action<string> onError = null)
         {
@@ -146,9 +209,14 @@ namespace Triskel.API
         }
 
         /// <summary>
-        /// Verifica si las credenciales guardadas son validas.
-        /// Usa esto al iniciar el juego para comprobar la sesion.
+        /// Verifica si las credenciales guardadas son válidas.
         /// </summary>
+        /// <param name="onSuccess">Callback ejecutado si la sesión es válida.</param>
+        /// <param name="onError">Callback ejecutado si la sesión es inválida o ha expirado.</param>
+        /// <remarks>
+        /// Usa esto al iniciar el juego para comprobar si hay una sesión activa.
+        /// Si falla, limpia automáticamente las credenciales inválidas.
+        /// </remarks>
         public void VerifySession(Action<PlayerProfile> onSuccess = null, Action<string> onError = null)
         {
             if (!IsLoggedIn)
@@ -184,9 +252,13 @@ namespace Triskel.API
         }
 
         /// <summary>
-        /// Cierra sesion (borra credenciales locales).
-        /// Si hay una sesion de juego activa, la termina primero.
+        /// Cierra sesión del jugador actual.
         /// </summary>
+        /// <remarks>
+        /// Borra las credenciales locales de PlayerPrefs.
+        /// Si hay una sesión de juego activa, la termina primero llamando a EndSession().
+        /// Dispara el evento OnLoggedOut.
+        /// </remarks>
         public void Logout()
         {
             // Terminar sesion de juego si existe
@@ -207,9 +279,14 @@ namespace Triskel.API
         // ==========================================
 
         /// <summary>
-        /// Crea una nueva partida.
-        /// El game_id se guarda automaticamente como partida actual.
+        /// Crea una nueva partida para el jugador actual.
         /// </summary>
+        /// <param name="onSuccess">Callback ejecutado si la partida se crea exitosamente.</param>
+        /// <param name="onError">Callback ejecutado si ocurre un error.</param>
+        /// <remarks>
+        /// El game_id se guarda automáticamente como partida actual (CurrentGameID).
+        /// La partida se crea en estado "in_progress".
+        /// </remarks>
         public void CreateGame(Action<GameData> onSuccess = null, Action<string> onError = null)
         {
             var request = new CreateGameRequest { player_id = PlayerID };
@@ -272,8 +349,18 @@ namespace Triskel.API
         }
 
         /// <summary>
-        /// Completa un nivel en la partida actual.
+        /// Marca un nivel como completado en la partida actual.
         /// </summary>
+        /// <param name="level">Nombre del nivel (usar constantes de APIConstants.Levels).</param>
+        /// <param name="timeSeconds">Tiempo que tardó el jugador en completar el nivel (en segundos).</param>
+        /// <param name="deaths">Número de muertes durante el nivel.</param>
+        /// <param name="choice">Decisión moral tomada (usar constantes de APIConstants.Choices), opcional.</param>
+        /// <param name="relic">Reliquia obtenida (usar constantes de APIConstants.Relics), opcional.</param>
+        /// <param name="onSuccess">Callback ejecutado si el nivel se completa exitosamente.</param>
+        /// <param name="onError">Callback ejecutado si ocurre un error.</param>
+        /// <remarks>
+        /// Actualiza automáticamente las estadísticas de la partida (levels_completed, metrics, choices).
+        /// </remarks>
         public void CompleteLevel(string level, int timeSeconds, int deaths,
             string choice = null, string relic = null,
             Action<GameData> onSuccess = null, Action<string> onError = null)
@@ -318,9 +405,15 @@ namespace Triskel.API
         }
 
         /// <summary>
-        /// Marca la partida actual como completada.
-        /// Usa esto al derrotar al jefe final.
+        /// Marca la partida actual como completada (status = "completed").
         /// </summary>
+        /// <param name="bossDefeated">Indica si el jefe final fue derrotado.</param>
+        /// <param name="onSuccess">Callback ejecutado si la partida se completa exitosamente.</param>
+        /// <param name="onError">Callback ejecutado si ocurre un error.</param>
+        /// <remarks>
+        /// Usa esto al derrotar al jefe final del juego.
+        /// Establece completion_percentage a 100% automáticamente.
+        /// </remarks>
         public void CompleteGame(bool bossDefeated = true,
             Action<GameData> onSuccess = null, Action<string> onError = null)
         {
@@ -368,8 +461,16 @@ namespace Triskel.API
         // ==========================================
 
         /// <summary>
-        /// Registra un evento generico.
+        /// Registra un evento de gameplay genérico.
         /// </summary>
+        /// <param name="eventType">Tipo de evento (usar constantes de APIConstants.EventTypes).</param>
+        /// <param name="level">Nivel donde ocurrió el evento.</param>
+        /// <param name="data">Datos adicionales del evento (opcional).</param>
+        /// <param name="onSuccess">Callback ejecutado si el evento se registra exitosamente.</param>
+        /// <param name="onError">Callback ejecutado si ocurre un error.</param>
+        /// <remarks>
+        /// Si no hay partida activa, el evento no se envía y se muestra una advertencia.
+        /// </remarks>
         public void SendEvent(string eventType, string level, EventData data = null,
             Action<GameEvent> onSuccess = null, Action<string> onError = null)
         {
@@ -392,8 +493,12 @@ namespace Triskel.API
         }
 
         /// <summary>
-        /// Registra la muerte del jugador.
+        /// Registra un evento de muerte del jugador.
         /// </summary>
+        /// <param name="level">Nivel donde murió el jugador.</param>
+        /// <param name="cause">Causa de muerte (usar constantes de APIConstants.DeathCauses).</param>
+        /// <param name="position">Posición donde murió el jugador.</param>
+        /// <param name="enemyType">Tipo de enemigo que causó la muerte (opcional).</param>
         public void SendDeathEvent(string level, string cause, Vector2 position, string enemyType = null)
         {
             var data = new EventData
@@ -469,9 +574,15 @@ namespace Triskel.API
         // ==========================================
 
         /// <summary>
-        /// Inicia una nueva sesion de juego.
-        /// Llamar al abrir el juego o iniciar una partida.
+        /// Inicia una nueva sesión de juego (tracking de tiempo).
         /// </summary>
+        /// <param name="onSuccess">Callback ejecutado si la sesión se inicia exitosamente.</param>
+        /// <param name="onError">Callback ejecutado si ocurre un error.</param>
+        /// <remarks>
+        /// Llamar al abrir el juego o al iniciar/cargar una partida.
+        /// El session_id se guarda automáticamente como sesión actual (CurrentSessionID).
+        /// Detecta automáticamente la plataforma (Windows/Android).
+        /// </remarks>
         public void StartSession(Action<SessionData> onSuccess = null, Action<string> onError = null)
         {
             if (string.IsNullOrEmpty(currentGameID))
@@ -498,9 +609,15 @@ namespace Triskel.API
         }
 
         /// <summary>
-        /// Termina la sesion de juego actual.
-        /// Llamar al cerrar el juego o salir de una partida.
+        /// Termina la sesión de juego actual.
         /// </summary>
+        /// <param name="onSuccess">Callback ejecutado si la sesión se termina exitosamente.</param>
+        /// <param name="onError">Callback ejecutado si ocurre un error.</param>
+        /// <remarks>
+        /// Llamar al cerrar el juego o salir de una partida.
+        /// La API calcula automáticamente la duración de la sesión.
+        /// Limpia CurrentSessionID tras terminar exitosamente.
+        /// </remarks>
         public void EndSession(Action<SessionData> onSuccess = null, Action<string> onError = null)
         {
             if (string.IsNullOrEmpty(currentSessionID))
@@ -545,6 +662,9 @@ namespace Triskel.API
         // PERSISTENCIA LOCAL
         // ==========================================
 
+        /// <summary>
+        /// Guarda las credenciales del jugador en PlayerPrefs.
+        /// </summary>
         private void SaveCredentials()
         {
             PlayerPrefs.SetString("triskel_player_id", http.PlayerID);
@@ -552,6 +672,9 @@ namespace Triskel.API
             PlayerPrefs.Save();
         }
 
+        /// <summary>
+        /// Carga las credenciales guardadas desde PlayerPrefs al iniciar.
+        /// </summary>
         private void LoadCredentials()
         {
             http.PlayerID = PlayerPrefs.GetString("triskel_player_id", "");
@@ -563,6 +686,9 @@ namespace Triskel.API
                 Debug.Log($"[TriskelAPI] Credenciales cargadas: {PlayerID}");
         }
 
+        /// <summary>
+        /// Limpia todas las credenciales y datos guardados en PlayerPrefs (logout completo).
+        /// </summary>
         private void ClearCredentials()
         {
             http.ClearCredentials();
@@ -597,9 +723,14 @@ namespace Triskel.API
         // ==========================================
 
         /// <summary>
-        /// Obtiene partidas en progreso del jugador.
-        /// Util para mostrar menu "Continuar partida".
+        /// Obtiene todas las partidas en progreso del jugador actual.
         /// </summary>
+        /// <param name="onSuccess">Callback ejecutado con el array de partidas activas.</param>
+        /// <param name="onError">Callback ejecutado si ocurre un error.</param>
+        /// <remarks>
+        /// Útil para mostrar un menú "Continuar partida" con múltiples saves.
+        /// Filtra automáticamente solo las partidas con status = "in_progress".
+        /// </remarks>
         public void GetActiveGames(Action<GameData[]> onSuccess, Action<string> onError = null)
         {
             GetMyGames(

@@ -1,3 +1,12 @@
+// =======================================================================================
+// Triskel RPG 2D - Pause Controller
+// =======================================================================================
+// Autor: Mandrágora - Wara Pacheco
+// Descripción: Controlador del menú de pausa del juego. Gestiona la pausa del tiempo
+//              (Time.timeScale), muestra/oculta el menú y proporciona opciones de
+//              continuar, reiniciar, ajustes y salir al menú principal.
+// =======================================================================================
+
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
@@ -6,13 +15,20 @@ using UnityEngine.InputSystem;
 namespace Triskel.UI
 {
     /// <summary>
-    /// Controlador del menu de pausa.
+    /// Controlador del menú de pausa del juego.
     /// </summary>
+    /// <remarks>
+    /// Este controlador gestiona el estado de pausa del juego usando Time.timeScale.
+    /// Detecta las teclas ESC y P para pausar/despausar, y coordina con el SettingsController
+    /// para mostrar el menú de ajustes cuando sea necesario.
+    ///
+    /// Eventos disponibles: OnPause, OnResume
+    /// </remarks>
     public class PauseController : MonoBehaviour
     {
         [Header("Referencias")]
         [SerializeField] private UIDocument pauseDocument;
-        [SerializeField] private UIDocument settingsDocument;
+        [SerializeField] private SettingsController settingsController;
 
         [Header("Escenas")]
         [SerializeField] private string mainMenuSceneName = "Home";
@@ -24,20 +40,34 @@ namespace Triskel.UI
         private Button settingsButton;
         private Button quitButton;
 
-        // Elementos UI - Settings
-        private VisualElement settingsOverlay;
-        private Button backButton;
-
         // Estado
         private bool isPaused;
+        /// <summary>
+        /// Indica si el juego está actualmente pausado.
+        /// </summary>
         public bool IsPaused => isPaused;
 
         // Eventos
+        /// <summary>
+        /// Evento que se dispara cuando el juego se pausa.
+        /// </summary>
         public event System.Action OnPause;
+        /// <summary>
+        /// Evento que se dispara cuando el juego se reanuda.
+        /// </summary>
         public event System.Action OnResume;
 
         private void OnEnable()
         {
+            // Buscar SettingsController si no está asignado (útil con UI persistente)
+            if (settingsController == null)
+            {
+                // Buscar en el padre (UI root)
+                var uiRoot = transform.parent;
+                if (uiRoot != null)
+                    settingsController = uiRoot.GetComponentInChildren<SettingsController>(true);
+            }
+
             InitializePauseMenu();
         }
 
@@ -47,7 +77,6 @@ namespace Triskel.UI
             if (restartButton != null) restartButton.clicked -= OnRestartClicked;
             if (settingsButton != null) settingsButton.clicked -= OnSettingsClicked;
             if (quitButton != null) quitButton.clicked -= OnQuitClicked;
-            if (backButton != null) backButton.clicked -= OnBackFromSettingsClicked;
         }
 
         private void Update()
@@ -57,6 +86,15 @@ namespace Triskel.UI
             {
                 if (Keyboard.current.escapeKey.wasPressedThisFrame || Keyboard.current.pKey.wasPressedThisFrame)
                 {
+                    // Si settings está abierto, cerrar settings primero
+                    if (settingsController != null && settingsController.IsVisible)
+                    {
+                        settingsController.Hide();
+                        Show();
+                        return;
+                    }
+
+                    // Si no, toggle pausa normal
                     if (isPaused)
                         Resume();
                     else
@@ -65,6 +103,9 @@ namespace Triskel.UI
             }
         }
 
+        /// <summary>
+        /// Inicializa el menú de pausa obteniendo referencias a los elementos UI y registrando eventos.
+        /// </summary>
         private void InitializePauseMenu()
         {
             if (pauseDocument == null)
@@ -77,6 +118,11 @@ namespace Triskel.UI
             }
 
             var root = pauseDocument.rootVisualElement;
+            if (root == null)
+            {
+                Debug.LogWarning("[PauseController] rootVisualElement aun no esta listo");
+                return;
+            }
 
             // Obtener referencias de pausa
             pauseOverlay = root.Q<VisualElement>("PauseOverlay");
@@ -91,24 +137,19 @@ namespace Triskel.UI
             if (settingsButton != null) settingsButton.clicked += OnSettingsClicked;
             if (quitButton != null) quitButton.clicked += OnQuitClicked;
 
-            // Inicializar settings
-            if (settingsDocument != null)
-            {
-                var settingsRoot = settingsDocument.rootVisualElement;
-                settingsOverlay = settingsRoot.Q<VisualElement>("SettingsOverlay");
-                backButton = settingsRoot.Q<Button>("BackButton");
-
-                if (backButton != null)
-                    backButton.clicked += OnBackFromSettingsClicked;
-            }
-
             // Ocultar inicialmente
             Hide();
-            HideSettings();
         }
 
         #region Public Methods
 
+        /// <summary>
+        /// Pausa el juego estableciendo Time.timeScale a 0 y muestra el menú de pausa.
+        /// </summary>
+        /// <remarks>
+        /// Este método puede ser llamado desde botones Unity UI (como el botón de pausa móvil)
+        /// o desde código. Dispara el evento OnPause.
+        /// </remarks>
         public void Pause()
         {
             if (isPaused)
@@ -131,6 +172,12 @@ namespace Triskel.UI
             Debug.Log("[PauseController] Juego pausado - Presiona ESC o P para continuar");
         }
 
+        /// <summary>
+        /// Reanuda el juego restaurando Time.timeScale a 1 y oculta el menú de pausa.
+        /// </summary>
+        /// <remarks>
+        /// También oculta el menú de ajustes si está abierto. Dispara el evento OnResume.
+        /// </remarks>
         public void Resume()
         {
             if (!isPaused) return;
@@ -138,18 +185,28 @@ namespace Triskel.UI
             isPaused = false;
             Time.timeScale = 1f;
             Hide();
-            HideSettings();
+
+            // Ocultar settings si está abierto
+            if (settingsController != null)
+                settingsController.Hide();
+
             OnResume?.Invoke();
 
             Debug.Log("[PauseController] Juego reanudado");
         }
 
+        /// <summary>
+        /// Muestra el menú de pausa sin modificar el estado de Time.timeScale.
+        /// </summary>
         public void Show()
         {
             if (pauseOverlay != null)
                 pauseOverlay.style.display = DisplayStyle.Flex;
         }
 
+        /// <summary>
+        /// Oculta el menú de pausa sin modificar el estado de Time.timeScale.
+        /// </summary>
         public void Hide()
         {
             if (pauseOverlay != null)
@@ -160,14 +217,36 @@ namespace Triskel.UI
 
         #region Button Handlers
 
+        /// <summary>
+        /// Callback cuando se hace clic en el botón "Continuar".
+        /// Reanuda el juego llamando a Resume().
+        /// </summary>
         private void OnContinueClicked()
         {
+            // Prevenir doble-click
+            if (!isPaused) return;
+
             Resume();
         }
 
+        /// <summary>
+        /// Callback cuando se hace clic en el botón "Reiniciar".
+        /// Guarda el progreso actual y recarga la escena actual.
+        /// </summary>
         private void OnRestartClicked()
         {
             Debug.Log("[PauseController] Reiniciando nivel...");
+
+            // Guardar progreso antes de reiniciar
+            if (GameManager.Instance != null)
+                GameManager.Instance.SaveGame();
+
+            // Ocultar ventana de pausa
+            Hide();
+
+            // Ocultar settings si está abierto
+            if (settingsController != null)
+                settingsController.Hide();
 
             // Restaurar timeScale antes de recargar
             Time.timeScale = 1f;
@@ -177,53 +256,49 @@ namespace Triskel.UI
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
+        /// <summary>
+        /// Callback cuando se hace clic en el botón "Ajustes".
+        /// Oculta el menú de pausa y muestra el menú de ajustes.
+        /// </summary>
         private void OnSettingsClicked()
         {
             Debug.Log("[PauseController] Abriendo ajustes...");
-            ShowSettings();
+
+            if (settingsController != null)
+            {
+                Hide();
+                settingsController.Show();
+            }
+            else
+            {
+                Debug.LogWarning("[PauseController] SettingsController no asignado");
+            }
         }
 
+        /// <summary>
+        /// Callback cuando se hace clic en el botón "Salir".
+        /// Guarda el progreso, restablece Time.timeScale y carga el menú principal.
+        /// </summary>
         private void OnQuitClicked()
         {
             Debug.Log("[PauseController] Volviendo al menu principal...");
-
-            // Restaurar timeScale antes de cambiar de escena
-            Time.timeScale = 1f;
-            isPaused = false;
 
             // Guardar partida antes de salir
             if (GameManager.Instance != null)
                 GameManager.Instance.SaveGame();
 
+            // Ocultar ventanas
+            Hide();
+            if (settingsController != null)
+                settingsController.Hide();
+
+            // Restaurar timeScale antes de cambiar de escena
+            Time.timeScale = 1f;
+            isPaused = false;
+
             // Cargar menu principal
             if (!string.IsNullOrEmpty(mainMenuSceneName))
                 SceneManager.LoadScene(mainMenuSceneName);
-        }
-
-        #endregion
-
-        #region Settings Panel
-
-        private void ShowSettings()
-        {
-            if (settingsOverlay != null)
-                settingsOverlay.style.display = DisplayStyle.Flex;
-
-            // Ocultar menu de pausa mientras se muestran settings
-            Hide();
-        }
-
-        private void HideSettings()
-        {
-            if (settingsOverlay != null)
-                settingsOverlay.style.display = DisplayStyle.None;
-        }
-
-        private void OnBackFromSettingsClicked()
-        {
-            Debug.Log("[PauseController] Volviendo al menu de pausa...");
-            HideSettings();
-            Show();
         }
 
         #endregion

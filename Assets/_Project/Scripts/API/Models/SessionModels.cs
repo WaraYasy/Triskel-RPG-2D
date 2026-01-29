@@ -1,3 +1,12 @@
+// =======================================================================================
+// Triskel RPG 2D - Session Models
+// =======================================================================================
+// Autor: Mandrágora - Wara Pacheco
+// Descripción: Modelos de datos (DTOs) para operaciones relacionadas con sesiones de
+//              juego: iniciar sesión, terminar sesión y tracking de tiempo. Las sesiones
+//              representan períodos continuos de tiempo jugando una partida.
+// =======================================================================================
+
 using System;
 
 namespace Triskel.API.Models

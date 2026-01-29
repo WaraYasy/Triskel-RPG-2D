@@ -56,7 +56,7 @@ namespace Triskel.Core
         {
             MusicVolume = Mathf.Clamp01(volume);
             PlayerPrefs.SetFloat(KEY_MUSIC, MusicVolume);
-            PlayerPrefs.Save();
+            // No guardar inmediatamente - se guarda al cerrar Settings
             OnMusicVolumeChanged?.Invoke(MusicVolume);
         }
 
@@ -64,7 +64,7 @@ namespace Triskel.Core
         {
             SFXVolume = Mathf.Clamp01(volume);
             PlayerPrefs.SetFloat(KEY_SFX, SFXVolume);
-            PlayerPrefs.Save();
+            // No guardar inmediatamente - se guarda al cerrar Settings
             OnSFXVolumeChanged?.Invoke(SFXVolume);
         }
 
@@ -72,9 +72,9 @@ namespace Triskel.Core
         {
             UseLargeText = enable;
             PlayerPrefs.SetInt(KEY_FONT_SIZE, enable ? 1 : 0);
-            PlayerPrefs.Save();
+            // No guardar inmediatamente - se guarda al cerrar Settings
             OnFontSizeChanged?.Invoke(UseLargeText);
-            
+
             Debug.Log($"[SettingsManager] Texto Grande: {UseLargeText}");
         }
     }

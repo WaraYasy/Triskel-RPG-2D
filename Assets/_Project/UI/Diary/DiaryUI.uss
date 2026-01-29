@@ -21,9 +21,7 @@
     height: 160px;
     margin: 0;
     padding: 0;
-    z-index: 1000;
     cursor: link;
-    background-position-y: center 0;
     -unity-background-scale-mode: stretch-to-fill;
     left: 60px;
 }
@@ -93,6 +91,7 @@
     border-color: rgb(200, 180, 140);
     border-radius: 5px;
     padding: 15px;
+    overflow: hidden;
 }
 
 .entry-text {
@@ -101,6 +100,8 @@
     white-space: normal;
     -unity-text-align: upper-left;
     padding: 10px;
+    width: 100%;
+    flex-shrink: 1;
 }
 
 .navigation-panel {
@@ -154,4 +155,53 @@
     -unity-text-align: middle-center;
     margin-top: 15px;
     -unity-font-style: italic;
+}
+
+/* ====================================== */
+/* SCROLLBAR STYLING - OCULTAR TODAS LAS BARRAS */
+/* ====================================== */
+
+/* Ocultar todas las barras de desplazamiento */
+.entry-text-scrollview .unity-scroller--horizontal {
+    display: none;
+}
+
+.entry-text-scrollview .unity-scroller--vertical {
+    display: none;
+}
+
+/* ====================================== */
+/* SCROLL INDICATOR - FLECHA */
+/* ====================================== */
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(200, 180, 140, 0.8);
+    border-width: 2px;
+    border-color: rgb(230, 210, 170);
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.scroll-indicator-arrow {
+    font-size: 30px;
+    color: rgb(50, 40, 30);
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+}
+
+.scroll-indicator:hover {
+    background-color: rgba(232, 214, 107, 0.9);
+    scale: 1.1;
+}
+
+.scroll-indicator:active {
+    background-color: rgba(255, 230, 150, 0.9);
+    scale: 0.95;
 }

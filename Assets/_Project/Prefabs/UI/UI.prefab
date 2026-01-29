@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6391443399019727353}
   - component: {fileID: 8140041038109796694}
   m_Layer: 0
-  m_Name: UIDocument
+  m_Name: SettingsUXML
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,6 +60,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1961538907921629405}
+  - component: {fileID: 892387051345208149}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -86,6 +87,20 @@ Transform:
   - {fileID: 1924260309750202870}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &892387051345208149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2323072804275017155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4804eb86a809894ca1cce726f7ce87f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseController: {fileID: 4262161603106460648}
+  settingsController: {fileID: 9194275126414513317}
 --- !u!1 &2435297261942677386
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingsDocument: {fileID: 8140041038109796694}
-  pauseController: {fileID: 4028443519380004723}
+  pauseController: {fileID: 4262161603106460648}
 --- !u!1001 &747698406565171913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -318,10 +333,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7369785951063649755, guid: ac46c974af03049488f00c0bfdc0f1e5, type: 3}
-      propertyPath: settingsDocument
+    - target: {fileID: 7676218621386219840, guid: ac46c974af03049488f00c0bfdc0f1e5, type: 3}
+      propertyPath: settingsController
       value: 
-      objectReference: {fileID: 8140041038109796694}
+      objectReference: {fileID: 9194275126414513317}
     - target: {fileID: 8753052475737176536, guid: ac46c974af03049488f00c0bfdc0f1e5, type: 3}
       propertyPath: m_Name
       value: PauseUI
@@ -336,9 +351,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4696384824599355253, guid: ac46c974af03049488f00c0bfdc0f1e5, type: 3}
   m_PrefabInstance: {fileID: 5882076386542138024}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4028443519380004723 stripped
+--- !u!114 &4262161603106460648 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7369785951063649755, guid: ac46c974af03049488f00c0bfdc0f1e5, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7676218621386219840, guid: ac46c974af03049488f00c0bfdc0f1e5, type: 3}
   m_PrefabInstance: {fileID: 5882076386542138024}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
