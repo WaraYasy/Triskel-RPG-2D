@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3100186440983688378}
   - component: {fileID: 7163737623965569639}
   - component: {fileID: 8004340071696542942}
+  - component: {fileID: 8626463593446421147}
+  - component: {fileID: 825543854312169768}
   m_Layer: 0
   m_Name: Sombra
   m_TagString: Untagged
@@ -27,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 963137626952529844}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.52, y: -0.01, z: -14.988718}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -76,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 4716405959910984035, guid: 9554ba68f22b71748988dc3f485b35fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -110,3 +112,71 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &8626463593446421147
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963137626952529844}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &825543854312169768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963137626952529844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b543d2aa21a9b1344b00f84d49a9f846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patrolPoints: []
+  patrolSpeed: 2
+  waitTimeAtPoint: 1
+  loopPatrol: 1
+  detectionRadius: 4
+  detectionAngle: 60
+  chaseSpeed: 4
+  chaseDuration: 5
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  suspicionTime: 2
+  alertSearchDuration: 3
+  hearingRadius: 2
+  safeZoneLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  safeZoneCheckRadius: 0.5
+  detectionIndicator: {fileID: 0}
+  suspicionIndicator: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  suspiciousColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  alertColor: {r: 1, g: 0, b: 0, a: 1}
+  damageAmount: 1
+  catchDistance: 0.5
