@@ -1,0 +1,127 @@
+﻿title: Level3_Start
+---
+Guardian: Shhh... pisa suave, Sacha.
+Guardian: Este es el Akelarre. El lugar donde el bosque sueña con los ojos abiertos.
+Guardian: Tu corazón late rápido. Es normal.
+Guardian: El miedo es la respuesta del cuerpo ante lo desconocido. No es tu enemigo, es tu radar.
+Guardian: Pero recuerda: un radar sirve para guiarte, no para detenerte.
+===
+
+title: Level3_Lore_A
+---
+Guardian: ¿Sientes cómo nos observan desde la espesura?
+Guardian: Recuerda lo que vimos en las montañas con los Gólems.
+Guardian: Ellos no nos atacaban por odio, sino porque creían que éramos una plaga.
+Guardian: Aquí ocurre lo mismo. Las sombras tienen dientes porque piensan que venimos a robarles su hogar.
+===
+
+title: Level3_Lore_B
+---
+Guardian: Es tentador correr. Cerrar los ojos y desear estar en otro lado.
+Guardian: Pero el bosque no necesita un fugitivo, necesita un testigo.
+Guardian: Respira. La oscuridad solo es pesada hasta que decides encender una luz.
+===
+
+title: Level3_Manto
+---
+Guardian: El Manto de la Luna. Tejido con la neblina de la noche.
+Guardian: Es una herramienta sutil. Tiene dos naturalezas, como el propio miedo.
+Guardian: Puedes usarlo para cubrirte y pasar sin perturbar el descanso de nadie...
+Guardian: O puedes usarlo para retirar el velo y obligar al bosque a mostrar su verdadera cara.
+Guardian: Ocultar o Revelar. Ambas son formas de sobrevivir.
+===
+
+title: Level3_Obstaculo_Sombras
+---
+Guardian: Has encontrado las tres reliquias.
+Guardian: Pero ahora las sombras bloquearán tu camino. erizadas y temblorosas. Protegen este camino porque es lo único que les queda.
+Guardian: Tienes una decisión difícil, Guardián.
+Guardian: ¿Merecen seguir en su ignorancia pacífica, o es tu deber romper su ilusión?
+
+-> Usaré el Manto para pasar invisible. No quiero asustarlos más.
+    Guardian: El camino del respeto silencioso.
+    Guardian: Si te ocultas, no perturbarás su guardia. Cruzarás como un suspiro.
+    Guardian: Ellos seguirán vigilando la nada, pero tú estarás a salvo y en paz con tu conciencia.
+    Guardian: Cúbrete y avanza despacio.
+-> Usaré el Manto sobre ellos. Deben ver la verdad.
+    Guardian: El camino del revelador.
+    Guardian: Si retiras el velo, destruirás su mundo de sombras. Se asustarán al principio.
+    Guardian: Es una acción agresiva, pero quizás necesaria.
+    Guardian: ¿Estás dispuesto a ser el que rompa su calma para traer la luz? Hazlo.
+===
+
+title: Level3_Respuesta_Mala
+comments: "Si el jugador se hace invisible (Evasión/Respeto)"
+---
+Guardian: Te mueves como un fantasma. Ni una hoja se ha movido.
+Guardian: Has cruzado sin incidentes. Has respetado su santuario y su miedo.
+Guardian: Pero mira atrás... Siguen ahí. Patrullando en círculos, atrapados en su propia pesadilla.
+Guardian: Te has salvado tú, pero ellos siguen en la oscuridad.
+===
+
+title: Level3_Respuesta_Buena
+comments: "Si el jugador revela la verdad (Confrontación/Verdad)"
+---
+Guardian: ¡El velo cae! La luz inunda el camino.
+Guardian: Míralos. No eran demonios. Eran ciervos, liebres, espíritus del bosque.
+Guardian: Están confundidos, parpadeando ante la luz... pero ya no atacan.
+Guardian: Has roto su pesadilla. A veces, la bondad duele al principio.
+Guardian: Ahora son libres.
+===
+
+title: Level3_Final
+---
+Guardian: Lo tienes todo. 
+Guardian: Has navegado por la Tristeza del agua, la Ira de la piedra y el Miedo de la noche.
+Guardian: Ya no eres una chispa perdida. Eres un incendio controlado.
+Guardian: El Espíritu te espera en el Claro de las Almas. 
+Guardian: Vamos a terminar lo que yo empecé.
+===
+
+title: Level3_Lore_Ojos
+comments: "Colocar en una zona oscura donde parezca haber ojos brillando"
+---
+Guardian: Sé que sientes que te miran. Mil ojos en la nuca.
+Guardian: Pero cuando te giras, no hay nada. Solo soledad.
+Guardian: El miedo es un espejo, Sacha. Lo que ves en la oscuridad es tu propio reflejo asustado.
+===
+
+title: Level3_Lore_Frio
+comments: "En una zona abierta, con niebla o viento"
+---
+Guardian: Este frío no es del clima. Es el frío de estar desconectado.
+Guardian: Nadie camina acompañado aquí. El miedo nos aísla, nos encierra en nuestra propia cabeza.
+Guardian: No dejes que el frío te llegue al centro. Mantén tu chispa caliente.
+===
+
+title: Level3_Lore_Armadura
+comments: "Cerca de algún resto de metal o estructura antigua"
+---
+Guardian: Yo también tuve miedo aquí.
+Guardian: Mi armadura era gruesa, impenetrable... pero el miedo se filtraba igual.
+Guardian: Aprendí que la valentía no es no temblar. Es temblar y dar un paso más.
+===
+
+title: Level3_Lore_Ramas
+comments: "Cerca de árboles con formas retorcidas/garras"
+---
+Guardian: Cuidado con esa sombra. Parece una garra, ¿verdad?
+Guardian: Acércate un poco más. Verás que es solo una rama vieja pidiendo un poco de sol.
+Guardian: La distancia crea monstruos. La cercanía revela la verdad.
+===
+
+title: Level3_Lore_Silencio
+comments: "En una zona donde no haya música o sonido ambiente"
+---
+Guardian: Escucha... Nada.
+Guardian: Un bosque sano debería ser ruidoso. Pájaros, insectos, vida.
+Guardian: Este silencio es lo que más me asusta. Es el sonido de un mundo que ha dejado de hablarse a sí mismo.
+===
+
+title: Level3_Lore_Huida
+---
+Guardian: No hay huellas en el suelo.
+Guardian: Nadie ha pasado por aquí en mucho tiempo.
+Guardian: En mi tiempo, la gente huía de este lugar. Las huellas inundaban el suelo.
+Guardian: Correr cansa el cuerpo, Sacha, pero no calma la mente. Al final, siempre tienes que detenerte y mirar atrás.
+===

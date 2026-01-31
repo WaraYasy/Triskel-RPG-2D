@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3292567254269215823}
   - component: {fileID: 5117663299653835665}
   - component: {fileID: 3321418268786645857}
+  - component: {fileID: 5448255980957147153}
   m_Layer: 0
   m_Name: Lirio
   m_TagString: Untagged
@@ -244,3 +245,17 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &5448255980957147153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8030412881830440153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96644c669b3e7144e90db243d375ef4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.5
+  speed: 3

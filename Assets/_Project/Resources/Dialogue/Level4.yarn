@@ -1,21 +1,31 @@
-﻿title: Final_Intro_Cabana
+﻿title: Final_Intro
 comments: "De vuelta en el Hub, antes de salir a la batalla"
 ---
 Guardian: Ya está. El ciclo está completo.
 Guardian: Tienes las herramientas de los antiguos en los altares.
 Guardian: Sacha... pase lo que pase ahí fuera... Gracias por devolver el fuego a este hogar.
-Guardian: Sal. No lleves armas. Lleva tus decisiones.
+Guardian: El bosque ha sufrido a muchos "héroes" antes que tú. Hombres que venían con espadas y exigencias.
+Guardian: Tú eres diferente. Sal ahí fuera. No lleves armas. Lleva tus decisiones.
 ===
 
 title: Final_Boss_Intro
 comments: "Al entrar en el Claro de las Almas"
 ---
-Espiritu: ¿POR QUÉ HAS VUELTO, PEQUEÑO INTRUSO?
-Espiritu: ¿CREES QUE PUEDES DOMINARME?
-Guardian: No hables, Sacha. Aguanta. Demuéstrale quién eres.
-===
+Espiritu: OTRO MÁS... SIEMPRE LLEGAN MÁS.
+Espiritu: DURANTE SIGLOS HABÉIS VENIDO A ARRANCAR PARTES DE MÍ.
+Espiritu: UNOS QUERÍAN MI MADERA PARA FORJAR VARITAS DE PODER Y GLORIA.
+Espiritu: OTROS QUERÍAN MIS PIEDRAS PARA BURLAR A LA TUMBA Y RECUPERAR LO PERDIDO.
+Espiritu: SIEMPRE PIDIENDO. SIEMPRE ROBANDO. NADIE VINO NUNCA A DAR.
+Espiritu: ¿QUÉ ERES TÚ, PEQUEÑA CHISPA?
+Espiritu: ¿VIENES A PROBAR TU VALOR CONQUISTÁNDOME?
+Espiritu: ¿... O HAS VENIDO AL FIN PARA RECIBIR A LA MUERTE COMO A UNA VIEJA AMIGA?
+    ->  ...
+Guardian: ... No, Sacha. No intentes hablar.
+Guardian: Él ya no escucha palabras humanas. Tienen demasiado veneno.
+Guardian: Tu silencio es tu fuerza. Demuéstrale con tus actos que no eres como los hermanos de la leyenda.
+==
 
-title: Final_Ending_0_Usurpador
+=title: Final_Ending_0_Usurpador
 comments: "0 Aciertos (Todo Malo). Final Triste."
 ---
 Guardian: ... Silencio.

@@ -177369,6 +177369,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7601468624503164915, guid: 25b25b112de0afd49974225a3deb58e2, type: 3}
+      propertyPath: autoStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7601468624503164915, guid: 25b25b112de0afd49974225a3deb58e2, type: 3}
+      propertyPath: startNode
+      value: Level2_Start
+      objectReference: {fileID: 0}
     - target: {fileID: 8430032995033986544, guid: 25b25b112de0afd49974225a3deb58e2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -177671,7 +177679,7 @@ Transform:
   m_GameObject: {fileID: 968947375}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 247.54, y: -22.59, z: -10}
+  m_LocalPosition: {x: 248.5, y: -8.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -474062,7 +474070,7 @@ Transform:
   m_GameObject: {fileID: 1503230687}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 92.29, y: 18.66, z: 0.006549324}
+  m_LocalPosition: {x: 92.15, y: 19.48, z: 0.006549324}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -474104,11 +474112,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2801058867458340857, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 247.54
+      value: 248.5
       objectReference: {fileID: 0}
     - target: {fileID: 2801058867458340857, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -22.59
+      value: -8.3
       objectReference: {fileID: 0}
     - target: {fileID: 2801058867458340857, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -561806,6 +561814,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1681585843 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7601468624503164915, guid: 25b25b112de0afd49974225a3deb58e2, type: 3}
+  m_PrefabInstance: {fileID: 891994597}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1850917928
 GameObject:
   m_ObjectHideFlags: 0
@@ -562053,22 +562072,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: RandomDialogueLevel2
       objectReference: {fileID: 0}
-    - target: {fileID: 2947214228364892377, guid: 4e258c93479337c4babe57d2934bde92, type: 3}
-      propertyPath: dialogueRunner
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3077379993237610717, guid: 4e258c93479337c4babe57d2934bde92, type: 3}
-      propertyPath: dialogueRunner
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6470998706441737215, guid: 4e258c93479337c4babe57d2934bde92, type: 3}
-      propertyPath: dialogueRunner
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9014055924544110885, guid: 4e258c93479337c4babe57d2934bde92, type: 3}
-      propertyPath: dialogueRunner
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -562142,31 +562145,39 @@ PrefabInstance:
     - target: {fileID: 379582562809154990, guid: b47ac78cff9f45b4895ab0b0453ed6bc, type: 3}
       propertyPath: dialogueRunner
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1681585843}
     - target: {fileID: 836058655171653608, guid: b47ac78cff9f45b4895ab0b0453ed6bc, type: 3}
       propertyPath: dialogueRunner
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1681585843}
+    - target: {fileID: 2318301797916851096, guid: b47ac78cff9f45b4895ab0b0453ed6bc, type: 3}
+      propertyPath: dialogueRunner
+      value: 
+      objectReference: {fileID: 1681585843}
     - target: {fileID: 3668843518114949880, guid: b47ac78cff9f45b4895ab0b0453ed6bc, type: 3}
       propertyPath: dialogueRunner
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1681585843}
     - target: {fileID: 5449713307067957680, guid: b47ac78cff9f45b4895ab0b0453ed6bc, type: 3}
       propertyPath: dialogueRunner
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1681585843}
     - target: {fileID: 5796936701104398868, guid: b47ac78cff9f45b4895ab0b0453ed6bc, type: 3}
       propertyPath: dialogueRunner
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1681585843}
     - target: {fileID: 6241170594658561333, guid: b47ac78cff9f45b4895ab0b0453ed6bc, type: 3}
       propertyPath: m_Name
       value: DialogueHistoryLevel2
       objectReference: {fileID: 0}
+    - target: {fileID: 6340084137678802907, guid: b47ac78cff9f45b4895ab0b0453ed6bc, type: 3}
+      propertyPath: dialogueRunner
+      value: 
+      objectReference: {fileID: 1681585843}
     - target: {fileID: 8438137777865748597, guid: b47ac78cff9f45b4895ab0b0453ed6bc, type: 3}
       propertyPath: dialogueRunner
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1681585843}
     - target: {fileID: 8810366958293303443, guid: b47ac78cff9f45b4895ab0b0453ed6bc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 244.09407
@@ -562206,14 +562217,6 @@ PrefabInstance:
     - target: {fileID: 8810366958293303443, guid: b47ac78cff9f45b4895ab0b0453ed6bc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9065613386787955773, guid: b47ac78cff9f45b4895ab0b0453ed6bc, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -154.78
-      objectReference: {fileID: 0}
-    - target: {fileID: 9065613386787955773, guid: b47ac78cff9f45b4895ab0b0453ed6bc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -35.96
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -562297,8 +562300,8 @@ SceneRoots:
   - {fileID: 1404653939}
   - {fileID: 1277699135}
   - {fileID: 1219193461}
-  - {fileID: 2721981438455374466}
   - {fileID: 891994597}
+  - {fileID: 2721981438455374466}
   - {fileID: 6386934101178347469}
   - {fileID: 7656716731000840211}
   - {fileID: 1180715134}

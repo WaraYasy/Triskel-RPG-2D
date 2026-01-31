@@ -1,0 +1,152 @@
+﻿title: Level2_Start
+position: -357,-112
+---
+Guardian: Siente el aire, Sacha. No es calor de sol, es fiebre.
+Guardian: El bosque aquí no está quemado, está enfermo.
+Guardian: Recuerda lo que aprendiste con los fantasmas: a veces lo que asusta solo está pidiendo ayuda.
+Guardian: Mantén los ojos abiertos. La maldad aquí no grita, se esconde en lo que parece inofensivo.
+===
+
+title: Level2_Lore_A
+position: -185,-301
+---
+Guardian: ¿Ves esas formas torpes? No son rocas naturales.
+Guardian: Son los viejos Gólems. Sus mentes se han erosionado más rápido que sus cuerpos.
+Guardian: Vagan en círculos, protegiendo ruinas vacías, olvidados de su propósito original.
+===
+
+title: Level2_Lore_B
+position: 62,-302
+---
+Guardian: Pobres criaturas de piedra... El bosque se ha infectado y ellos no entienden por qué.
+Guardian: Tienen miedo. Sienten que el suelo bajo sus pies ha cambiado, que las raíces ahora son veneno.
+Guardian: No te atacan por maldad, sino por pánico. Creen que tú traes la plaga.
+===
+
+title: Level2_Lore_Arena
+comments: "Al ver las dunas rojas por primera vez"
+position: 318,-292
+---
+Guardian: Ese polvo rojo... son esporas.
+Guardian: Vienen del Gran Árbol que corona este monte. Antes nos daba sombra y color.
+Guardian: Ahora, algo se ha podrido en su corazón y está ahogando todo lo demás con esta "belleza" tóxica.
+===
+
+title: Level2_Lore_Erosion
+comments: "Al ver estructuras desgastadas o casi desaparecidas"
+position: 551,-298
+---
+Guardian: Mira cómo la piedra se deshace al tacto.
+Guardian: La infección no solo mata lo vivo, también corrompe lo eterno.
+Guardian: Es una podredumbre silenciosa. Parece musgo suave, pero devora el granito como si fuera pan.
+===
+
+title: Level2_Lore_Sed
+comments: "En una zona especialmente vacía y seca"
+position: 557,-121
+---
+Guardian: Todo está seco, pero el Gran Árbol aun vive y está fuerte allá arriba.
+Guardian: ¿No te parece sospechoso?
+Guardian: Para mantener su falso esplendor, el árbol está bebiendo la vida de todo lo que le rodea. Es un parásito disfrazado de rey.
+===
+
+title: Level2_Salida_Bloqueada
+comments: "Al intentar ir a la salida al principio del nivel sin tener el Hacha"
+position: -134,-122
+---
+Guardian: El camino está bloqueado, necesitaremos buscar algo que libere el camino.
+Guardian: No uses tu luz aquí todavía. Necesitamos cortar la conexión física.
+Guardian: Busca el Hacha del Arquitecto. Fue forjada para podar, no para matar. 
+Guardian: Quizás sea la única forma de sanar esta herida.
+===
+
+title: Level2_Lore_Viento_Aullante
+comments: "Cuando suene el viento fuerte"
+position: 73,-141
+---
+Guardian: Escucha el viento. No aúlla, tose.
+Guardian: Lleva las semillas de la enfermedad a otros rincones.
+Guardian: Si no detenemos esto aquí, la infección llegará a la Cabaña, y entonces no habrá refugio seguro.
+===
+
+title: Level2_Lore_Gigante_Desierto
+comments: "Viendo al Golem a lo lejos entre la bruma de calor"
+position: 310,-118
+---
+Guardian: Ahí están ellos, tan viejos como el tiempo.
+Guardian: Los gigantes de piedra que protegían el bosque en tiempos antiguos.
+Guardian: Mira cómo tiemblan. Está mirando al Árbol con terror absoluto.
+Guardian: Sabe que algo está mal en aquello que juró proteger.
+Guardian: Pero no tiene voluntad para detenerlo.
+===
+
+title: Level2_Hacha
+comments: "Al recoger el Hacha del Arquitecto"
+position: -169,161
+---
+Guardian: El Hacha del Arquitecto. Pesada y antigua.
+Guardian: Con ella cuidábamos del bosque, separando lo enfermo de lo sano.
+Guardian: Ahora tendrás que usarla tú. Pero recuerda, Sacha:
+Guardian: El objetivo no es talar el bosque, sino extirpar el mal que se esconde dentro de él. ¿Podrás notar la diferencia?
+===
+
+title: Level2_Decision
+comments: "El jugador está frente al Gran Árbol. El Golem intenta derribarlo a golpes."
+position: 27,285
+---
+Guardian: Estamos a los pies del Gran Árbol. El origen de la fiebre roja.
+Guardian: Los golem solo pueden pensar en derribar el árbol entero.
+Guardian: Su lógica es de piedra: si matas al huésped, matas la enfermedad.
+Guardian: Si le ayudas a talarlo, la plaga terminará hoy mismo... pero el bosque perderá su corazón y jamás volverá a florecer.
+Guardian: Tienes el Hacha y tienes tu Luz. ¿Ves solo madera podrida, o eres capaz de ver lo que se esconde dentro?
+
+-> Talaré el Árbol. Quiero ayudar a los golem.
+    Guardian: La solución drástica...
+    Guardian: Si golpeas el tronco principal con el Hacha, caerá. El mal morirá aplastado.
+    Guardian: Pero mira a tu alrededor. Sin este árbol, todo esto será un desierto eterno.
+    Guardian: Es una victoria pírrica, Sacha. Una cicatriz que nunca cerrará.
+    Guardian: Adelante, termina lo que el Gólem empezó.
+-> Pensaré en otra solución.
+    Guardian: Quieres ver más allá de la superficie... Bien.
+    Guardian: El árbol es la víctima, no el villano. Hay algo oscuro latiendo en su interior.
+    Guardian: Has aprendido a usar la luz como herramienta. Ahora debes usarla como medicina.
+    Guardian: Prepara el golpe. No tales... libera.
+===
+
+title: Level2_Respuesta_Mala
+comments: "Si el jugador rompe el puente (Aislamiento)"
+position: 63,438
+---
+Guardian: Has cortado el vínculo. El puente cae al vacío.
+Guardian: El Gólem se detiene. Parece aliviado... pero mira al otro lado con tristeza.
+Guardian: Hemos contenido el síntoma, Sacha, pero no hemos curado la enfermedad.
+Guardian: El árbol seguirá enfermo, solo y aislado.
+===
+
+title: Level2_Respuesta_Buena
+comments: "Si el jugador repara el puente (Confrontación/Sanación)"
+position: 311,143
+---
+Guardian: El puente aguanta. Has forzado el camino hacia la verdad.
+Guardian: El Gólem retrocede, confundido. Ve que tu luz no es infección.
+Guardian: Has elegido el camino difícil: acercarte al foco del dolor para entenderlo.
+Guardian: Cruza rápido, antes de que cambie de opinión.
+===
+
+title: Level2_Final
+position: 300,311
+---
+Guardian: El aire es más denso aquí. Estamos cerca del corazón de la plaga.
+Guardian: Has aprendido que no todo lo que brilla es oro, y no todo lo que ataca es malvado.
+Guardian: Vuelve a la cabaña. Límpiate el polvo rojo. Aún nos queda un misterio más.
+===
+
+title: Level2_Puente_Advertencia
+comments: "Justo antes de cruzar el último puente hacia el Árbol"
+---
+Guardian: Estamos cerca, Sacha. Siento el latido de la fiebre bajo mis pies.
+Guardian: Pero escúchame bien: una vez cruces este puente, debes desconfiar de tus primeras impresiones.
+Guardian: La infección es astuta. Se ha vestido con los colores de la vida para ocultar su podredumbre.
+Guardian: Lo que parece un refugio puede ser una trampa. Lo que brilla como oro, puede ser solo pus.
+Guardian: No mires con los ojos. Mira con el espíritu.
+===
