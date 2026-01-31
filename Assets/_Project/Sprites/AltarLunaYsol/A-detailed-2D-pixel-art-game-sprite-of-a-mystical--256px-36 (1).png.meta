@@ -1,0 +1,1221 @@
+fileFormatVersion: 2
+guid: d6fe78f4f1246d54482991de7ca813c5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4226278570561651466
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_0
+  - first:
+      213: 698602410392071460
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_1
+  - first:
+      213: -6681930510671587264
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_2
+  - first:
+      213: 230229371095944637
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_3
+  - first:
+      213: -7643288821790930640
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_4
+  - first:
+      213: 3024422158512910110
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_5
+  - first:
+      213: 7632336969223502324
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_6
+  - first:
+      213: -7264343240525945248
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_7
+  - first:
+      213: -8759213955315874055
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_8
+  - first:
+      213: 8024467708161586686
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_9
+  - first:
+      213: -7324729768163104202
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_10
+  - first:
+      213: 2014603110014794201
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_11
+  - first:
+      213: 2010682266137370704
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_12
+  - first:
+      213: 2052969325990127960
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_13
+  - first:
+      213: 3509012316527923000
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_14
+  - first:
+      213: 6192774939560220862
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_15
+  - first:
+      213: 8633144203718355056
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_16
+  - first:
+      213: 3281225836622122631
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_17
+  - first:
+      213: -5310614572211136899
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_18
+  - first:
+      213: 2066299378042222496
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_19
+  - first:
+      213: -4224304875503449724
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_20
+  - first:
+      213: 6563852047446202600
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_21
+  - first:
+      213: -8359418505741644190
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_22
+  - first:
+      213: -4001722934959566380
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_23
+  - first:
+      213: -8426562543281018868
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_24
+  - first:
+      213: 8780583722239409104
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_25
+  - first:
+      213: -7402878515650847902
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_26
+  - first:
+      213: -107763603512760870
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_27
+  - first:
+      213: -8132094846731754709
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_28
+  - first:
+      213: -1171026622866153569
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_29
+  - first:
+      213: 4004049064288168905
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_30
+  - first:
+      213: 7360064196983080492
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_31
+  - first:
+      213: -3666348746936522413
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_32
+  - first:
+      213: 6605720958048960948
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_33
+  - first:
+      213: 3656030673768329876
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_34
+  - first:
+      213: -5507195930172846096
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_35
+  - first:
+      213: 9091664330206758871
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_36
+  - first:
+      213: -2950037832829330699
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_37
+  - first:
+      213: 8598619371990943491
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_38
+  - first:
+      213: -4046862550558631329
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_39
+  - first:
+      213: -414346022243325247
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_40
+  - first:
+      213: -7542428135064515242
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_41
+  - first:
+      213: 6813011295449561274
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_42
+  - first:
+      213: 7621189270919467551
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_43
+  - first:
+      213: 3542835733349829445
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_44
+  - first:
+      213: -4766923302049994904
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_45
+  - first:
+      213: 1704275029552163884
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_46
+  - first:
+      213: 4744857758475530047
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_47
+  - first:
+      213: -5827717408147374702
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_48
+  - first:
+      213: 4655209716783875162
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_49
+  - first:
+      213: 2289556180548403854
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_50
+  - first:
+      213: 1671115390195003405
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_51
+  - first:
+      213: 2623757679996591379
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_52
+  - first:
+      213: -9158859018536115366
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_53
+  - first:
+      213: 8008902698544038760
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_54
+  - first:
+      213: 7819574397345745001
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_55
+  - first:
+      213: 1959327685915394161
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_56
+  - first:
+      213: -6974297247457866754
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_57
+  - first:
+      213: 1114456100284101683
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_58
+  - first:
+      213: -7123640885075882308
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_59
+  - first:
+      213: -1487193212920910729
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_60
+  - first:
+      213: -3644269237823826171
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_61
+  - first:
+      213: 8694529977341705804
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_62
+  - first:
+      213: -8624286359085523862
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_63
+  - first:
+      213: -8652726342785648608
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_64
+  - first:
+      213: 7927149280848936172
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_65
+  - first:
+      213: -8443998654293507381
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_66
+  - first:
+      213: 2464976301893535007
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_67
+  - first:
+      213: -3137902723659142629
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_68
+  - first:
+      213: 8109149611725116817
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_69
+  - first:
+      213: 4905300253574871183
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_70
+  - first:
+      213: 1651163775224976411
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_71
+  - first:
+      213: -3412088739536085860
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_72
+  - first:
+      213: 8763446498563401837
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_73
+  - first:
+      213: -4996388969498098719
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_74
+  - first:
+      213: -8155918310556057838
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_75
+  - first:
+      213: 3179026961766197149
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_76
+  - first:
+      213: 976922462068273040
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_77
+  - first:
+      213: 923770429662519268
+    second: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_78
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1630
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a034c28d7f1c6aa30800000000000000
+      internalID: 4226278570561651466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_1
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 1630
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42da6aed03fe1b900800000000000000
+      internalID: 698602410392071460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_2
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 1630
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04853995a930543a0800000000000000
+      internalID: -6681930510671587264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_3
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 1630
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbd0909a460f13300800000000000000
+      internalID: 230229371095944637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_4
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 1630
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 039007dff459de590800000000000000
+      internalID: -7643288821790930640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_5
+      rect:
+        serializedVersion: 2
+        x: 1495
+        y: 1630
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1f6bf8dde7e8f920800000000000000
+      internalID: 3024422158512910110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1304
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f9f5a029028be960800000000000000
+      internalID: 7632336969223502324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_7
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 1304
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 066e0f59f4edf2b90800000000000000
+      internalID: -7264343240525945248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_8
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 1304
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f6c0c1e055017680800000000000000
+      internalID: -8759213955315874055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_9
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 1304
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef570987dd2ac5f60800000000000000
+      internalID: 8024467708161586686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_10
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 1304
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63aa8ec7515595a90800000000000000
+      internalID: -7324729768163104202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_11
+      rect:
+        serializedVersion: 2
+        x: 1495
+        y: 1304
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d934dfcade45fb10800000000000000
+      internalID: 2014603110014794201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 978
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 050ab453ed067eb10800000000000000
+      internalID: 2010682266137370704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_13
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 978
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8592a6299bc9d7c10800000000000000
+      internalID: 2052969325990127960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_14
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 978
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83f0e1f3c1482b030800000000000000
+      internalID: 3509012316527923000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_15
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 978
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb89d6e2ff721f550800000000000000
+      internalID: 6192774939560220862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_16
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 978
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 078ea55b9e61fc770800000000000000
+      internalID: 8633144203718355056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_17
+      rect:
+        serializedVersion: 2
+        x: 1495
+        y: 978
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78e02b38381498d20800000000000000
+      internalID: 3281225836622122631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 652
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d769754fe28ec46b0800000000000000
+      internalID: -5310614572211136899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_19
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 652
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a731db2658fcac10800000000000000
+      internalID: 2066299378042222496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_20
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 652
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4898aa8d8114065c0800000000000000
+      internalID: -4224304875503449724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_21
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 652
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e8504e09ac771b50800000000000000
+      internalID: 6563852047446202600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_22
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 652
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26e417cb8216dfb80800000000000000
+      internalID: -8359418505741644190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_23
+      rect:
+        serializedVersion: 2
+        x: 1495
+        y: 652
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d1933451360778c0800000000000000
+      internalID: -4001722934959566380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 326
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c086f124306de0b80800000000000000
+      internalID: -8426562543281018868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_25
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 326
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0db38a4bf56ead970800000000000000
+      internalID: 8780583722239409104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_26
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 326
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26b924f4631b34990800000000000000
+      internalID: -7402878515650847902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_27
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 326
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad5e7e4d295218ef0800000000000000
+      internalID: -107763603512760870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_28
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 326
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b23e4c492def42f80800000000000000
+      internalID: -8132094846731754709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_29
+      rect:
+        serializedVersion: 2
+        x: 1495
+        y: 326
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9f9989ad7dafbfe0800000000000000
+      internalID: -1171026622866153569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cba12cd86d319730800000000000000
+      internalID: 4004049064288168905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_31
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 0
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c264f315463342660800000000000000
+      internalID: 7360064196983080492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_32
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 0
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35966246d338e1dc0800000000000000
+      internalID: -3666348746936522413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_33
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 0
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b18cd5763c3cab50800000000000000
+      internalID: 6605720958048960948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_34
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 0
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 492b4edf684dcb230800000000000000
+      internalID: 3656030673768329876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_35
+      rect:
+        serializedVersion: 2
+        x: 1495
+        y: 0
+        width: 299
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ff0299da728293b0800000000000000
+      internalID: -5507195930172846096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 53f74dbd2cfcaef4b9b42e2b65b82e57
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_0: 4226278570561651466
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_1: 698602410392071460
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_10: -7324729768163104202
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_11: 2014603110014794201
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_12: 2010682266137370704
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_13: 2052969325990127960
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_14: 3509012316527923000
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_15: 6192774939560220862
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_16: 8633144203718355056
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_17: 3281225836622122631
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_18: -5310614572211136899
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_19: 2066299378042222496
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_2: -6681930510671587264
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_20: -4224304875503449724
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_21: 6563852047446202600
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_22: -8359418505741644190
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_23: -4001722934959566380
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_24: -8426562543281018868
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_25: 8780583722239409104
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_26: -7402878515650847902
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_27: -107763603512760870
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_28: -8132094846731754709
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_29: -1171026622866153569
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_3: 230229371095944637
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_30: 4004049064288168905
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_31: 7360064196983080492
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_32: -3666348746936522413
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_33: 6605720958048960948
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_34: 3656030673768329876
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_35: -5507195930172846096
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_4: -7643288821790930640
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_5: 3024422158512910110
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_6: 7632336969223502324
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_7: -7264343240525945248
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_8: -8759213955315874055
+      A-detailed-2D-pixel-art-game-sprite-of-a-mystical--256px-36 (1)_9: 8024467708161586686
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -152,12 +152,33 @@ public class PlayerStealth : MonoBehaviour
 
     #region Getters
 
-    public bool IsHidden() => isHidden;
+    /// <summary>
+    /// Devuelve true si el jugador está oculto (en zona segura O con manto activo)
+    /// </summary>
+    public bool IsHidden() => isHidden || isMantleInvisible;
+    public bool IsInSafeZone() => isHidden;
+    public bool IsMantleActive() => isMantleInvisible;
     public bool IsCrouching() => isCrouching;
     public bool IsMakingNoise() => isMakingNoise;
     public float GetStealthSpeedMultiplier() => isCrouching ? stealthSpeedMultiplier : 1f;
     public float GetNoiseRadius() => noiseRadius;
 
+    #endregion
+    
+    #region Manto de Luna
+    
+    private bool isMantleInvisible = false;
+    
+    /// <summary>
+    /// Activa/desactiva la invisibilidad del Manto de Luna.
+    /// Llamado por RelicSystem cuando se usa el Manto.
+    /// </summary>
+    public void SetMantleInvisibility(bool invisible)
+    {
+        isMantleInvisible = invisible;
+        Debug.Log($"🌙 Invisibilidad del Manto: {(invisible ? "ACTIVA" : "DESACTIVADA")}");
+    }
+    
     #endregion
 
     #region Gizmos

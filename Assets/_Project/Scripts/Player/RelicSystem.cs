@@ -34,11 +34,13 @@ public class RelicSystem : MonoBehaviour
     private GameObject activeLilioLight; // Referencia a la luz activa
     private bool isLilioActive = false;
     private PlayerController playerController; // Referencia para dirección
+    private PlayerStealth playerStealth; // Referencia para invisibilidad del Manto
     private PlayerInputActions inputActions;
     
     private void Awake()
     {
         playerController = GetComponent<PlayerController>();
+        playerStealth = GetComponent<PlayerStealth>();
         inputActions = new PlayerInputActions();
     }
     
@@ -265,11 +267,18 @@ public class RelicSystem : MonoBehaviour
     {
         isInvisible = !isInvisible;
         
+        // Efecto visual: transparencia del sprite
         if (playerSprite != null)
         {
             Color color = playerSprite.color;
             color.a = isInvisible ? 0.3f : 1f;
             playerSprite.color = color;
+        }
+        
+        // Activar/desactivar invisibilidad real para las sombras
+        if (playerStealth != null)
+        {
+            playerStealth.SetMantleInvisibility(isInvisible);
         }
         
         Debug.Log($"🌙 Manto de Luna - Invisibilidad: {(isInvisible ? "ON" : "OFF")}");
