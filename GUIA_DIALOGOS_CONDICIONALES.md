@@ -631,24 +631,43 @@ dialogoZone.CompletarCondicion(); // ❌ Solo completa el diálogo, no el bloque
 
 ## 🎓 Diferencias con Otras Opciones
 
-| Opción | Comportamiento |
-|--------|----------------|
-| `Solo Una Vez` = ✅ | Se muestra 1 vez y nunca más |
-| `Solo Una Vez` = ❌ | Se muestra cada vez que entras al trigger |
-| `Repetir Hasta Condicion` = ✅ | Se repite hasta llamar `CompletarCondicion()` |
+| Opción | Diálogo | Bloqueo Físico |
+|--------|---------|----------------|
+| `Solo Una Vez` = ✅ | Se muestra 1 vez y nunca más | ❌ No bloquea |
+| `Solo Una Vez` = ❌ | Se muestra cada vez que entras | ❌ No bloquea |
+| `Repetir Hasta Condicion` = ✅ | Se repite hasta completar | ❌ No bloquea |
+| `BloqueadorCondicional` | Se repite hasta completar | ✅ Bloquea físicamente |
 
 **Combinar opciones:**
 - `Solo Una Vez` + `Persiste Entre Escenas` = Diálogo único que se recuerda en el hub
-- `Repetir Hasta Condicion` = Tutorial que se repite hasta completar tarea
+- `Repetir Hasta Condicion` = Tutorial que se repite hasta completar tarea (sin bloqueo físico)
+- `BloqueadorCondicional` + `DialogueZone` = Tutorial con bloqueo físico hasta completar
 
 ---
 
 ## 📝 Notas Adicionales
 
+### General
 - Los diálogos condicionales **no** se guardan en `PlayerPrefs` automáticamente
 - Si necesitas persistencia entre sesiones, deberás implementar tu propio sistema de guardado
 - `ResetearCondicion()` es útil para testing en el Editor
-- Puedes tener múltiples `DialogueZone` con condiciones diferentes
+- Puedes tener múltiples `DialogueZone` y `BloqueadorCondicional` con condiciones diferentes
+
+### Bloqueadores
+- El `BloqueadorCondicional` completa automáticamente el `DialogueZone` asociado
+- No necesitas llamar a ambos métodos, solo `bloqueador.CompletarCondicion()`
+- Puedes reutilizar el mismo bloqueador para múltiples condiciones complejas
+- Si destruyes el bloqueador (`destruirAlCompletar = true`), no podrás llamar a `ResetearCondicion()` después
+
+### Performance
+- Los diálogos condicionales usan diccionario estático en memoria (muy eficiente)
+- Los bloqueadores no tienen impacto en performance una vez completados (se destruyen/desactivan)
+
+### Compatibilidad
+- ✅ Funciona con Input System
+- ✅ Compatible con sistema de pausa
+- ✅ Compatible con sistema de guardado del juego (requiere implementación personalizada)
+- ✅ Funciona con Yarn Spinner 3.1.3+
 
 ---
 
