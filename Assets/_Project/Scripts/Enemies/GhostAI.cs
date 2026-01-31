@@ -27,14 +27,26 @@ public class GhostAI : MonoBehaviour
     [SerializeField] private float separationRadius = 0.8f;
     [SerializeField] private float separationStrength = 5f;
     
+    [Header("Aura de Ralentizacion")]
+    [Tooltip("Radio del aura que ralentiza al jugador")]
+    [SerializeField] private float slowAuraRadius = 3f;
+    [Tooltip("Factor de velocidad cuando el jugador esta en el aura sin Lirio (0.15 = 15% velocidad)")]
+    [SerializeField] private float slowdownFactor = 0.15f;
+    
     private Transform playerTransform;
     private PlayerLight playerLight;
     private PlayerHealth playerHealth;
+    private RelicSystem relicSystem;
+    private PlayerController playerController;
     private Rigidbody2D rb;
     private float lastDamageTime = 0f;
     private Vector2 lastMoveDirection = Vector2.down;
     private Animator animator;
     private GhostLiberation liberationComponent;
+    private bool isSlowingPlayer = false;
+    
+    // Sistema estatico para manejar multiples fantasmas afectando al jugador
+    private static int ghostsSlowingPlayer = 0;
 
     private void Awake()
     {
@@ -60,6 +72,60 @@ public class GhostAI : MonoBehaviour
         {
             FindNearbyFountain();
         }
+        
+        // Aplicar aura de ralentizacion
+        CheckSlowAura();
+    }
+    
+    private void CheckSlowAura()
+    {
+        if (playerTransform == null || playerController == null) return;
+        if (liberationComponent != null && liberationComponent.IsBeingLiberated) return;
+        
+        float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
+        bool playerInAura = distanceToPlayer <= slowAuraRadius;
+        bool lirioProtects = relicSystem != null && relicSystem.IsLirioSelected();
+        
+        // Si el jugador esta en el aura y NO tiene el Lirio seleccionado
+        if (playerInAura && !lirioProtects)
+        {
+            if (!isSlowingPlayer)
+            {
+                isSlowingPlayer = true;
+                ghostsSlowingPlayer++;
+                playerController.SetSpeedMultiplier(slowdownFactor);
+                Debug.Log($"\ud83d\udc7b Aura de frio activa - Jugador ralentizado ({ghostsSlowingPlayer} fantasmas)");
+            }
+        }
+        else
+        {
+            if (isSlowingPlayer)
+            {
+                isSlowingPlayer = false;
+                ghostsSlowingPlayer = Mathf.Max(0, ghostsSlowingPlayer - 1);
+                
+                // Solo restaurar velocidad si no hay otros fantasmas afectando
+                if (ghostsSlowingPlayer == 0)
+                {
+                    playerController.ResetSpeedMultiplier();
+                    Debug.Log("\ud83d\udc7b Aura de frio desactivada - Velocidad restaurada");
+                }
+            }
+        }
+    }
+    
+    private void OnDestroy()
+    {
+        // Limpiar al destruirse
+        if (isSlowingPlayer && playerController != null)
+        {
+            isSlowingPlayer = false;
+            ghostsSlowingPlayer = Mathf.Max(0, ghostsSlowingPlayer - 1);
+            if (ghostsSlowingPlayer == 0)
+            {
+                playerController.ResetSpeedMultiplier();
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -74,10 +140,13 @@ public class GhostAI : MonoBehaviour
         }
 
         // Prioridad 2: Seguir al jugador
-        if (playerTransform == null || playerLight == null) return;
+        if (playerTransform == null) return;
 
         float distanceToPlayer = Vector2.Distance(rb.position, playerTransform.position);
-        bool isAttracted = playerLight.HasLirio() && distanceToPlayer <= detectionRadius;
+        
+        // Solo seguir si el Lirio está SELECCIONADO (en la mano), no solo en inventario
+        bool isLirioSelected = relicSystem != null && relicSystem.IsLirioSelected();
+        bool isAttracted = isLirioSelected && distanceToPlayer <= detectionRadius;
 
         if (isAttracted)
         {
@@ -172,6 +241,8 @@ public class GhostAI : MonoBehaviour
             playerTransform = player.transform;
             playerLight = player.GetComponent<PlayerLight>();
             playerHealth = player.GetComponent<PlayerHealth>();
+            relicSystem = player.GetComponent<RelicSystem>();
+            playerController = player.GetComponent<PlayerController>();
         }
     }
 
@@ -212,5 +283,8 @@ public class GhostAI : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, dissipationDistance);
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, fountainDetectionRadius);
+        // Aura de ralentizacion (azul oscuro)
+        Gizmos.color = new Color(0.2f, 0.2f, 0.8f, 0.5f);
+        Gizmos.DrawWireSphere(transform.position, slowAuraRadius);
     }
 }

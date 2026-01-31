@@ -280,4 +280,10 @@ public class RelicSystem : MonoBehaviour
     public bool HasRelicEquipped() => currentRelic != RelicType.None;
     public float GetAbilityCooldownProgress() => 1f - (abilityCooldownTimer / abilityCooldown);
     public bool IsInvisible() => isInvisible;
+    
+    /// <summary>
+    /// Devuelve true si el Lirio está actualmente seleccionado (en la mano).
+    /// Usado por GhostAI para saber si debe seguir al jugador.
+    /// </summary>
+    public bool IsLirioSelected() => currentRelic == RelicType.LirioAzul;
 }
