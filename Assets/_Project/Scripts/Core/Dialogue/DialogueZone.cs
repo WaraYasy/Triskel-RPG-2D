@@ -26,6 +26,12 @@ namespace Triskel.Dialogue
         [Tooltip("Marcar para diálogos del Hub que persisten entre habitaciones. Desmarcar para niveles que se resetean")]
         public bool persisteEntreEscenas = false;
 
+        [Header("Repetición Condicional")]
+        [Tooltip("El diálogo se repetirá hasta que se llame a CompletarCondicion() programáticamente")]
+        public bool repetirHastaCondicion = false;
+
+        private bool condicionCompletada = false;
+
         [Header("Persistencia en Hub")]
         [Tooltip("ID único para persistir entre escenas del hub (ej: 'hub_npc_anciano'). Dejar vacío usa el sistema automático.")]
         public string uniqueDialogueID = "";
@@ -80,20 +86,26 @@ namespace Triskel.Dialogue
                 return;
             }
 
+            // Si está en modo repetición condicional y la condición se completó, no mostrar
+            if (repetirHastaCondicion && condicionCompletada) return;
+
             // Si ya se usó y es de una sola vez, no hacer nada
-            if (soloUnaVez && yaUsado) return;
+            if (soloUnaVez && yaUsado && !repetirHastaCondicion) return;
 
             // Si ya hay un diálogo activo, no interrumpir
             if (dialogueRunner.IsDialogueRunning) return;
 
-            // Marcar como usado ANTES de iniciar el diálogo
-            yaUsado = true;
-
-            // Si persiste entre escenas, guardar el estado en memoria
-            if (persisteEntreEscenas && soloUnaVez)
+            // Marcar como usado ANTES de iniciar el diálogo (solo si NO es repetición condicional)
+            if (!repetirHastaCondicion)
             {
-                string key = GetSaveKey();
-                dialogosVistos[key] = true;
+                yaUsado = true;
+
+                // Si persiste entre escenas, guardar el estado en memoria
+                if (persisteEntreEscenas && soloUnaVez)
+                {
+                    string key = GetSaveKey();
+                    dialogosVistos[key] = true;
+                }
             }
 
             // Congelar al jugador si la opción está activa
@@ -150,6 +162,29 @@ namespace Triskel.Dialogue
                 dialogosVistos.Remove(key);
                 Debug.Log($"[DialogueZone] Diálogo '{uniqueID}' reseteado.");
             }
+        }
+
+        /// <summary>
+        /// Completa la condición para que el diálogo deje de repetirse.
+        /// Usar cuando el jugador complete la tarea asociada al diálogo.
+        /// </summary>
+        public void CompletarCondicion()
+        {
+            if (repetirHastaCondicion)
+            {
+                condicionCompletada = true;
+                Debug.Log($"[DialogueZone] Condición completada para '{nodoDialogo}'. El diálogo ya no se repetirá.");
+            }
+        }
+
+        /// <summary>
+        /// Resetea la condición para volver a permitir que el diálogo se repita.
+        /// Útil para testing o reiniciar niveles.
+        /// </summary>
+        public void ResetearCondicion()
+        {
+            condicionCompletada = false;
+            Debug.Log($"[DialogueZone] Condición reseteada para '{nodoDialogo}'. El diálogo volverá a repetirse.");
         }
     }
 }
