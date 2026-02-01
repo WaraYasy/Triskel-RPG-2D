@@ -206,7 +206,8 @@ namespace Triskel.API
 
             // IMPORTANTE: Guardar reliquias del inventario ANTES de completar el nivel
             // Esto asegura que todas las reliquias se sincronicen incluso si el nivel se completa en <30s
-            if (inventoryData != null)
+            // SOLO si hay partida activa (para evitar errores al testear directamente desde escena de nivel)
+            if (inventoryData != null && apiClient != null && !string.IsNullOrEmpty(apiClient.CurrentGameID))
             {
                 var updateData = new UpdateGameRequest
                 {
@@ -218,6 +219,10 @@ namespace Triskel.API
                     game => Debug.Log("[APITracker] Reliquias guardadas antes de completar nivel"),
                     error => Debug.LogWarning($"[APITracker] Error guardando reliquias: {error}")
                 );
+            }
+            else if (inventoryData != null && (apiClient == null || string.IsNullOrEmpty(apiClient.CurrentGameID)))
+            {
+                Debug.LogWarning("[APITracker] No hay partida activa. Guardado de reliquias omitido (modo testing)");
             }
 
             // Enviar a la API
