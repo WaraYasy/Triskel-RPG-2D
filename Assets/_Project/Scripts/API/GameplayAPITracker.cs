@@ -209,13 +209,10 @@ namespace Triskel.API
             // SOLO si hay partida activa (para evitar errores al testear directamente desde escena de nivel)
             if (inventoryData != null && apiClient != null && !string.IsNullOrEmpty(apiClient.CurrentGameID))
             {
-                var updateData = new UpdateGameRequest
-                {
-                    current_level = currentLevel,
-                    relics = inventoryData.GetItemIDs()
-                };
-
-                apiClient.UpdateCurrentGame(updateData,
+                // Usar UpdateGameProgress en lugar de UpdateCurrentGame para evitar error 422
+                apiClient.UpdateGameProgress(
+                    currentLevel,
+                    inventoryData.GetItemIDs(),
                     game => Debug.Log("[APITracker] Reliquias guardadas antes de completar nivel"),
                     error => Debug.LogWarning($"[APITracker] Error guardando reliquias: {error}")
                 );
@@ -380,14 +377,11 @@ namespace Triskel.API
                 return;
             }
 
-            var updateData = new UpdateGameRequest
-            {
-                current_level = currentLevel,
-                relics = inventoryData.GetItemIDs()
-                // Nota: total_deaths se sincroniza automáticamente al completar nivel
-            };
-
-            apiClient.UpdateCurrentGame(updateData,
+            // Usar el método específico de auto-save que solo envía current_level y relics
+            // Esto evita el error 422 por campos vacíos (status, ended_at)
+            apiClient.UpdateGameProgress(
+                currentLevel,
+                inventoryData.GetItemIDs(),
                 game => Debug.Log("[APITracker] Auto-save ejecutado"),
                 error => Debug.LogWarning($"[APITracker] Error en auto-save: {error}")
             );

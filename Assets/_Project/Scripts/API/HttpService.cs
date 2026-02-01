@@ -13,6 +13,7 @@ using System.Collections;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
+using Triskel.UI;
 
 namespace Triskel.API
 {
@@ -119,6 +120,19 @@ namespace Triskel.API
         {
             string json = JsonUtility.ToJson(body);
             coroutineRunner.StartCoroutine(PatchCoroutine(endpoint, json, onSuccess, onError));
+        }
+
+        /// <summary>
+        /// Realiza una petición PATCH con JSON raw (string).
+        /// </summary>
+        /// <typeparam name="TResponse">Tipo de la respuesta esperada.</typeparam>
+        /// <param name="endpoint">Endpoint relativo.</param>
+        /// <param name="jsonBody">JSON como string (ya serializado).</param>
+        /// <param name="onSuccess">Callback ejecutado con la respuesta deserializada.</param>
+        /// <param name="onError">Callback ejecutado si ocurre un error.</param>
+        public void PatchRaw<TResponse>(string endpoint, string jsonBody, Action<TResponse> onSuccess, Action<string> onError = null)
+        {
+            coroutineRunner.StartCoroutine(PatchCoroutine(endpoint, jsonBody, onSuccess, onError));
         }
 
         /// <summary>
@@ -303,7 +317,55 @@ namespace Triskel.API
 
             if (isConnectionError)
             {
-                Debug.LogWarning("[HTTP] Error de conexión detectado");
+                Debug.LogWarning("[HTTP] ⚠️ Error de conexión detectado - Mostrando alerta");
+
+                // Llamar directamente al singleton de ConnectionErrorAlertController
+                if (ConnectionErrorAlertController.Instance != null)
+                {
+                    ConnectionErrorAlertController.Instance.Show(
+                        customMessage: null, // Usar mensaje por defecto
+                        onRetry: (onSuccess) =>
+                        {
+                            // Callback de reintento: verificar conexión
+                            Debug.Log("[HTTP] Usuario solicitó reintentar conexión - Verificando...");
+
+                            // Intentar verificar sesión para comprobar conectividad
+                            if (Triskel.API.TriskelAPIClient.Instance != null)
+                            {
+                                Triskel.API.TriskelAPIClient.Instance.VerifySession(
+                                    profile =>
+                                    {
+                                        // Conexión exitosa
+                                        Debug.Log($"[HTTP] ✓ Reconexión exitosa: {profile.username}");
+                                        onSuccess?.Invoke(); // Cerrar alerta
+                                    },
+                                    error =>
+                                    {
+                                        // Conexión fallida
+                                        Debug.LogWarning($"[HTTP] ✗ Reconexión fallida: {error}");
+                                        ConnectionErrorAlertController.Instance.OnRetryFailed(
+                                            "No se pudo conectar al servidor.\n\nVerifica tu conexión a internet."
+                                        );
+                                    }
+                                );
+                            }
+                            else
+                            {
+                                Debug.LogError("[HTTP] TriskelAPIClient no disponible para reintentar");
+                                ConnectionErrorAlertController.Instance.OnRetryFailed(
+                                    "Error interno al reintentar."
+                                );
+                            }
+                        }
+                    );
+                    Debug.Log("[HTTP] ✓ Alerta de conexión mostrada");
+                }
+                else
+                {
+                    Debug.LogError("[HTTP] ConnectionErrorAlertController.Instance no encontrado");
+                }
+
+                // Mantener evento por compatibilidad (por si se usa en otro lugar)
                 OnConnectionError?.Invoke();
             }
 

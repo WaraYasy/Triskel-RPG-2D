@@ -414,6 +414,37 @@ namespace Triskel.API
         }
 
         /// <summary>
+        /// Actualiza solo el nivel actual y las reliquias (para auto-save).
+        /// </summary>
+        /// <param name="currentLevel">Nivel actual.</param>
+        /// <param name="relics">Array de IDs de reliquias.</param>
+        /// <param name="onSuccess">Callback de éxito.</param>
+        /// <param name="onError">Callback de error.</param>
+        /// <remarks>
+        /// Este método crea el JSON manualmente para evitar enviar campos vacíos que causan error 422.
+        /// Solo actualiza current_level y relics, sin tocar status, ended_at, etc.
+        /// </remarks>
+        public void UpdateGameProgress(string currentLevel, string[] relics,
+            Action<GameData> onSuccess = null, Action<string> onError = null)
+        {
+            if (string.IsNullOrEmpty(currentGameID))
+            {
+                onError?.Invoke("No hay partida activa");
+                return;
+            }
+
+            // Crear JSON manualmente solo con los campos necesarios
+            string relicsJson = relics != null && relics.Length > 0
+                ? $"[{string.Join(",", System.Array.ConvertAll(relics, r => $"\"{r}\""))}]"
+                : "[]";
+
+            string jsonBody = $"{{\"current_level\":\"{currentLevel}\",\"relics\":{relicsJson}}}";
+
+            // Usar el método Patch que acepta JSON string directamente
+            http.PatchRaw<GameData>($"/v1/games/{currentGameID}", jsonBody, onSuccess, onError);
+        }
+
+        /// <summary>
         /// Marca la partida actual como completada (status = "completed").
         /// </summary>
         /// <param name="bossDefeated">Indica si el jefe final fue derrotado.</param>

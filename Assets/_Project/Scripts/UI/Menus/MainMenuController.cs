@@ -360,6 +360,13 @@ namespace Triskel.UI
                         error => Debug.LogWarning($"[MainMenuController] Error iniciando sesión: {error}")
                     );
 
+                    // IMPORTANTE: Iniciar tracking del nivel ANTES de cargar la escena
+                    if (GameManager.Instance != null && !string.IsNullOrEmpty(game.current_level))
+                    {
+                        GameManager.Instance.GetAPITracker()?.OnLevelStart(game.current_level);
+                        Debug.Log($"[MainMenuController] Tracking de nivel iniciado: {game.current_level}");
+                    }
+
                     // Cargar la escena correspondiente al nivel actual
                     LoadLevelScene(game.current_level);
                 },

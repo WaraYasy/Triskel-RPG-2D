@@ -45,7 +45,8 @@ namespace Triskel.UI
             }
 
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            // Marcar el root GameObject como persistente (DontDestroyOnLoad solo funciona con root)
+            DontDestroyOnLoad(transform.root.gameObject);
         }
 
         private void OnEnable()
@@ -59,10 +60,12 @@ namespace Triskel.UI
             if (connectionErrorAlert == null)
             {
                 Debug.LogWarning("[GameplayUIManager] ConnectionErrorAlertController no encontrado en la escena");
-                return;
             }
+        }
 
-            // Suscribirse a eventos de error de conexión
+        private void Start()
+        {
+            // Suscribirse en Start() para asegurar que TriskelAPIClient.Awake() ya se ejecutó
             if (TriskelAPIClient.Instance != null)
             {
                 TriskelAPIClient.Instance.OnConnectionError += HandleConnectionError;
@@ -70,7 +73,7 @@ namespace Triskel.UI
             }
             else
             {
-                Debug.LogWarning("[GameplayUIManager] TriskelAPIClient.Instance no encontrado");
+                Debug.LogError("[GameplayUIManager] TriskelAPIClient.Instance no encontrado");
             }
         }
 
@@ -116,13 +119,15 @@ namespace Triskel.UI
         /// <summary>
         /// Intenta reconectar con el servidor verificando la sesión.
         /// </summary>
-        private void AttemptReconnect()
+        /// <param name="onSuccess">Callback a ejecutar si la reconexión es exitosa (cierra la alerta).</param>
+        private void AttemptReconnect(System.Action onSuccess)
         {
             Debug.Log("[GameplayUIManager] Intentando reconectar...");
 
             if (TriskelAPIClient.Instance == null)
             {
                 Debug.LogError("[GameplayUIManager] TriskelAPIClient no disponible");
+                connectionErrorAlert?.OnRetryFailed("Error interno al reconectar.");
                 return;
             }
 
@@ -130,6 +135,7 @@ namespace Triskel.UI
             if (!TriskelAPIClient.Instance.IsLoggedIn)
             {
                 Debug.LogWarning("[GameplayUIManager] No hay sesión activa para reconectar");
+                connectionErrorAlert?.OnRetryFailed("No hay sesión activa.");
                 return;
             }
 
@@ -139,11 +145,12 @@ namespace Triskel.UI
                 {
                     Debug.Log($"[GameplayUIManager] ✓ Reconexión exitosa: {profile.username}");
                     hasShownConnectionError = false; // Resetear flag para permitir mostrar alerta de nuevo si falla
+                    onSuccess?.Invoke(); // Cerrar alerta
                 },
                 error =>
                 {
                     Debug.LogWarning($"[GameplayUIManager] ✗ Reconexión fallida: {error}");
-                    // La alerta se mostrará automáticamente por el evento OnConnectionError
+                    connectionErrorAlert?.OnRetryFailed("No se pudo conectar al servidor.\n\nVerifica tu conexión a internet.");
                 }
             );
         }

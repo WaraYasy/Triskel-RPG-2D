@@ -202,7 +202,7 @@ MonoBehaviour:
   uiDocument: {fileID: 1146817350}
   jsonFileName: TransitionTexts
   tiempoFadeIn: 2
-  tiempoTextoPorDefecto: 6
+  tiempoTextoPorDefecto: 5
   tiempoFadeOut: 2
 --- !u!4 &1663029005
 Transform:

@@ -11,6 +11,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 namespace Triskel.UI
 {
@@ -24,6 +25,11 @@ namespace Triskel.UI
     ///
     /// SINGLETON: Persiste entre escenas con DontDestroyOnLoad.
     /// Eventos disponibles: OnRetry, OnExit
+    ///
+    /// COMPORTAMIENTO:
+    /// - Pausa TODO: Time.timeScale, Input, Diálogos
+    /// - Aparece encima de TODO con sortingOrder 99999
+    /// - El reintento mantiene la alerta abierta hasta que la conexión funcione
     /// </remarks>
     public class ConnectionErrorAlertController : MonoBehaviour
     {
@@ -39,9 +45,15 @@ namespace Triskel.UI
         private Button retryButton;
         private Button exitButton;
         private Label errorMessage;
+        private string defaultMessage = "No tienes conexión con el servidor.\n\nNada de lo que hagas se guardará hasta que se restablezca la conexión.";
 
         // Callback para reintentar la operación fallida
-        private Action retryAction;
+        private Action<Action> retryActionWithCallback; // Recibe un callback de éxito
+
+        // Estado antes de pausar
+        private bool wasInputEnabled = true;
+        private bool wasInventoryVisible = false;
+        private UnityEngine.UIElements.UIDocument inventoryDocument;
 
         // Eventos
         /// <summary>
@@ -63,7 +75,8 @@ namespace Triskel.UI
             }
 
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            // Marcar el root GameObject como persistente (DontDestroyOnLoad solo funciona con root)
+            DontDestroyOnLoad(transform.root.gameObject);
         }
 
         private void OnEnable()
@@ -75,6 +88,13 @@ namespace Triskel.UI
             {
                 Debug.LogError("[ConnectionErrorAlert] UIDocument no asignado");
                 return;
+            }
+
+            // Asegurar que aparezca encima de TODO
+            // Usamos el valor MÁS ALTO posible para garantizar que esté encima
+            if (uiDocument.panelSettings != null)
+            {
+                uiDocument.panelSettings.sortingOrder = 99999;
             }
 
             var root = uiDocument.rootVisualElement;
@@ -109,11 +129,14 @@ namespace Triskel.UI
         /// Muestra la alerta de error de conexión con un mensaje personalizado.
         /// </summary>
         /// <param name="customMessage">Mensaje personalizado opcional. Si es null, usa el mensaje por defecto.</param>
-        /// <param name="onRetry">Callback opcional a ejecutar cuando el usuario haga clic en "Reintentar".</param>
+        /// <param name="onRetry">Callback a ejecutar cuando el usuario haga clic en "Reintentar".
+        /// El callback recibe un Action que DEBE llamar si la reconexión es exitosa para cerrar la alerta.</param>
         /// <remarks>
-        /// Pausa el juego (Time.timeScale = 0) mientras la alerta está visible.
+        /// Pausa TODO: Time.timeScale, Input System, Diálogos de Yarn Spinner.
+        /// La alerta aparece con sortingOrder 99999 para estar encima de TODO.
+        /// El callback de retry recibe un Action que debe invocar SI Y SOLO SI la conexión funciona.
         /// </remarks>
-        public void Show(string customMessage = null, Action onRetry = null)
+        public void Show(string customMessage = null, Action<Action> onRetry = null)
         {
             if (errorOverlay == null)
             {
@@ -122,28 +145,28 @@ namespace Triskel.UI
             }
 
             // Guardar callback de reintentar
-            retryAction = onRetry;
+            retryActionWithCallback = onRetry;
 
-            // Actualizar mensaje si se proporciona
-            if (!string.IsNullOrEmpty(customMessage) && errorMessage != null)
+            // Actualizar mensaje
+            if (errorMessage != null)
             {
-                errorMessage.text = customMessage;
+                errorMessage.text = !string.IsNullOrEmpty(customMessage) ? customMessage : defaultMessage;
             }
 
             // Mostrar overlay
             errorOverlay.style.display = DisplayStyle.Flex;
 
-            // Pausar el juego
-            Time.timeScale = 0f;
+            // PAUSAR TODO EL JUEGO
+            PauseEverything();
 
-            Debug.Log("[ConnectionErrorAlert] Alerta de error de conexión mostrada");
+            Debug.Log("[ConnectionErrorAlert] ⚠️ Alerta mostrada - TODO pausado (sortingOrder: 99999)");
         }
 
         /// <summary>
         /// Oculta la alerta de error de conexión.
         /// </summary>
         /// <remarks>
-        /// Restaura el Time.timeScale a 1 (reanuda el juego).
+        /// Restaura el Time.timeScale a 1 y reactiva el input.
         /// </remarks>
         public void Hide()
         {
@@ -153,31 +176,124 @@ namespace Triskel.UI
             // Restaurar mensaje por defecto
             if (errorMessage != null)
             {
-                errorMessage.text = "No tienes conexión con el servidor.\n\nNada de lo que hagas se guardará hasta que se restablezca la conexión.";
+                errorMessage.text = defaultMessage;
             }
 
             // Limpiar callback
-            retryAction = null;
+            retryActionWithCallback = null;
 
-            // Reanudar el juego
+            // REANUDAR TODO
+            ResumeEverything();
+
+            Debug.Log("[ConnectionErrorAlert] ✓ Alerta cerrada - Juego reanudado");
+        }
+
+        /// <summary>
+        /// Pausa TODO: Time.timeScale, Input, Diálogos, otros menús.
+        /// </summary>
+        private void PauseEverything()
+        {
+            // 1. Pausar tiempo del juego
+            Time.timeScale = 0f;
+
+            // 2. Desactivar Input del jugador
+            var playerInput = FindFirstObjectByType<PlayerInput>();
+            if (playerInput != null)
+            {
+                wasInputEnabled = playerInput.enabled;
+                playerInput.enabled = false;
+                Debug.Log("[ConnectionErrorAlert] Input del jugador desactivado");
+            }
+
+            // 3. Pausar diálogos de Yarn Spinner (si está activo)
+            var dialogueRunner = FindFirstObjectByType<Yarn.Unity.DialogueRunner>();
+            if (dialogueRunner != null && dialogueRunner.IsDialogueRunning)
+            {
+                // Yarn Spinner se pausa automáticamente con Time.timeScale = 0
+                Debug.Log("[ConnectionErrorAlert] Diálogo pausado");
+            }
+
+            // 4. Ocultar menú de pausa si está abierto (para evitar conflictos)
+            var pauseController = FindFirstObjectByType<PauseController>();
+            if (pauseController != null && pauseController.IsPaused)
+            {
+                pauseController.Hide(); // Solo ocultar UI, no resumir el juego
+                Debug.Log("[ConnectionErrorAlert] Menú de pausa ocultado");
+            }
+        }
+
+        /// <summary>
+        /// Reanuda TODO: Time.timeScale, Input.
+        /// </summary>
+        private void ResumeEverything()
+        {
+            // 1. Reanudar tiempo
             Time.timeScale = 1f;
+
+            // 2. Reactivar Input del jugador
+            var playerInput = FindFirstObjectByType<PlayerInput>();
+            if (playerInput != null && wasInputEnabled)
+            {
+                playerInput.enabled = true;
+                Debug.Log("[ConnectionErrorAlert] Input del jugador reactivado");
+            }
         }
 
         /// <summary>
         /// Callback cuando se hace clic en "Reintentar".
+        /// IMPORTANTE: NO cierra la alerta inmediatamente.
+        /// Solo se cierra si el callback de retry tiene éxito.
         /// </summary>
         private void OnRetryClicked()
         {
-            Debug.Log("[ConnectionErrorAlert] Reintentando conexión...");
+            Debug.Log("[ConnectionErrorAlert] Usuario hizo clic en Reintentar...");
 
-            // Ocultar alerta
-            Hide();
+            // Cambiar mensaje a "Reintentando..."
+            if (errorMessage != null)
+            {
+                errorMessage.text = "Reintentando conexión...\n\nEspera un momento.";
+            }
 
-            // Ejecutar callback si existe
-            retryAction?.Invoke();
+            // Deshabilitar botones mientras se reintenta
+            if (retryButton != null) retryButton.SetEnabled(false);
+            if (exitButton != null) exitButton.SetEnabled(false);
+
+            // Ejecutar callback de reintento
+            // Le pasamos un callback que DEBE invocar SI la conexión funciona
+            retryActionWithCallback?.Invoke(OnRetrySuccess);
 
             // Disparar evento
             OnRetry?.Invoke();
+        }
+
+        /// <summary>
+        /// Callback de éxito del reintento.
+        /// Se llama SOLO si la reconexión fue exitosa.
+        /// </summary>
+        private void OnRetrySuccess()
+        {
+            Debug.Log("[ConnectionErrorAlert] ✓ Reconexión exitosa - Cerrando alerta");
+            Hide();
+        }
+
+        /// <summary>
+        /// Callback cuando falla el reintento.
+        /// Restaura los botones y el mensaje de error.
+        /// </summary>
+        public void OnRetryFailed(string errorMsg = null)
+        {
+            Debug.LogWarning("[ConnectionErrorAlert] ✗ Reconexión fallida");
+
+            // Restaurar mensaje de error
+            if (errorMessage != null)
+            {
+                string msg = !string.IsNullOrEmpty(errorMsg) ? errorMsg : defaultMessage;
+                errorMessage.text = msg + "\n\n(Intenta de nuevo o sal al menú)";
+            }
+
+            // Rehabilitar botones
+            if (retryButton != null) retryButton.SetEnabled(true);
+            if (exitButton != null) exitButton.SetEnabled(true);
         }
 
         /// <summary>
@@ -187,7 +303,7 @@ namespace Triskel.UI
         {
             Debug.Log("[ConnectionErrorAlert] Saliendo al menú principal...");
 
-            // Guardar partida antes de salir (si es posible)
+            // Guardar partida localmente antes de salir (sin API)
             if (GameManager.Instance != null)
             {
                 try
@@ -196,7 +312,7 @@ namespace Triskel.UI
                 }
                 catch (System.Exception ex)
                 {
-                    Debug.LogWarning($"[ConnectionErrorAlert] No se pudo guardar: {ex.Message}");
+                    Debug.LogWarning($"[ConnectionErrorAlert] No se pudo guardar localmente: {ex.Message}");
                 }
             }
 
