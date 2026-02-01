@@ -47,16 +47,11 @@ namespace Triskel.API
 
         // Eventos para notificaciones globales
         /// <summary>
-        /// Evento que se dispara cuando ocurre un error en una petición.
-        /// </summary>
-        public event Action<string> OnRequestError;
-        /// <summary>
-        /// Evento que se dispara cuando ocurre un error HTTP con código de estado.
-        /// </summary>
-        public event Action<int, string> OnHttpError; // statusCode, message
-        /// <summary>
         /// Evento que se dispara cuando hay un error de conexión (no se puede alcanzar el servidor).
         /// </summary>
+        /// <remarks>
+        /// Este evento es escuchado por GameplayUIManager para mostrar la alerta de error de conexión.
+        /// </remarks>
         public event Action OnConnectionError;
 
         /// <summary>
@@ -279,7 +274,6 @@ namespace Triskel.API
                     string error = $"Error deserializando respuesta: {e.Message}";
                     Debug.LogError($"[HTTP] {error}");
                     onError?.Invoke(error);
-                    OnRequestError?.Invoke(error);
                 }
             }
             else
@@ -317,61 +311,14 @@ namespace Triskel.API
 
             if (isConnectionError)
             {
-                Debug.LogWarning("[HTTP] ⚠️ Error de conexión detectado - Mostrando alerta");
+                Debug.LogWarning("[HTTP] ⚠️ Error de conexión detectado");
 
-                // Llamar directamente al singleton de ConnectionErrorAlertController
-                if (ConnectionErrorAlertController.Instance != null)
-                {
-                    ConnectionErrorAlertController.Instance.Show(
-                        customMessage: null, // Usar mensaje por defecto
-                        onRetry: (onSuccess) =>
-                        {
-                            // Callback de reintento: verificar conexión
-                            Debug.Log("[HTTP] Usuario solicitó reintentar conexión - Verificando...");
-
-                            // Intentar verificar sesión para comprobar conectividad
-                            if (Triskel.API.TriskelAPIClient.Instance != null)
-                            {
-                                Triskel.API.TriskelAPIClient.Instance.VerifySession(
-                                    profile =>
-                                    {
-                                        // Conexión exitosa
-                                        Debug.Log($"[HTTP] ✓ Reconexión exitosa: {profile.username}");
-                                        onSuccess?.Invoke(); // Cerrar alerta
-                                    },
-                                    error =>
-                                    {
-                                        // Conexión fallida
-                                        Debug.LogWarning($"[HTTP] ✗ Reconexión fallida: {error}");
-                                        ConnectionErrorAlertController.Instance.OnRetryFailed(
-                                            "No se pudo conectar al servidor.\n\nVerifica tu conexión a internet."
-                                        );
-                                    }
-                                );
-                            }
-                            else
-                            {
-                                Debug.LogError("[HTTP] TriskelAPIClient no disponible para reintentar");
-                                ConnectionErrorAlertController.Instance.OnRetryFailed(
-                                    "Error interno al reintentar."
-                                );
-                            }
-                        }
-                    );
-                    Debug.Log("[HTTP] ✓ Alerta de conexión mostrada");
-                }
-                else
-                {
-                    Debug.LogError("[HTTP] ConnectionErrorAlertController.Instance no encontrado");
-                }
-
-                // Mantener evento por compatibilidad (por si se usa en otro lugar)
+                // Disparar evento para que la capa de UI lo maneje
                 OnConnectionError?.Invoke();
             }
 
+            // Ejecutar callback de error si existe
             onError?.Invoke(error);
-            OnRequestError?.Invoke(error);
-            OnHttpError?.Invoke((int)statusCode, responseBody);
         }
 
         /// <summary>

@@ -112,7 +112,11 @@ namespace Triskel.UI
             }
             else
             {
-                Debug.LogError("[GameplayUIManager] ConnectionErrorAlertController no disponible");
+                // FALLBACK: Si no hay alerta disponible, mostrar en consola
+                Debug.LogError("===== ⚠️ ERROR DE CONEXIÓN =====");
+                Debug.LogError("No se puede conectar al servidor.");
+                Debug.LogError("El progreso NO se guardará.");
+                Debug.LogError("================================");
             }
         }
 

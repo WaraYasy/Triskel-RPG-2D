@@ -125,7 +125,6 @@ namespace Triskel.API
 
             // Inicializar HTTP service
             http = new HttpService(baseURL, this);
-            http.OnRequestError += error => OnError?.Invoke(error);
             http.OnConnectionError += () => OnConnectionError?.Invoke();
 
             // Cargar credenciales guardadas
