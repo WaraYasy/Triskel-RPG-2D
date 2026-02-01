@@ -52,8 +52,12 @@ namespace Triskel.UI
 
         // Estado antes de pausar
         private bool wasInputEnabled = true;
-        private bool wasInventoryVisible = false;
-        private UnityEngine.UIElements.UIDocument inventoryDocument;
+
+        // Referencias cacheadas para optimizar PauseEverything()
+        private PlayerInput cachedPlayerInput;
+        private Yarn.Unity.DialogueRunner cachedDialogueRunner;
+        private PauseController cachedPauseController;
+        private bool cacheInitialized = false;
 
         // Eventos
         /// <summary>
@@ -159,7 +163,7 @@ namespace Triskel.UI
             // PAUSAR TODO EL JUEGO
             PauseEverything();
 
-            Debug.Log("[ConnectionErrorAlert] ⚠️ Alerta mostrada - TODO pausado (sortingOrder: 99999)");
+            Debug.LogWarning("[ConnectionErrorAlert] Alerta mostrada - TODO pausado");
         }
 
         /// <summary>
@@ -184,8 +188,23 @@ namespace Triskel.UI
 
             // REANUDAR TODO
             ResumeEverything();
+        }
 
-            Debug.Log("[ConnectionErrorAlert] ✓ Alerta cerrada - Juego reanudado");
+        /// <summary>
+        /// Inicializa el cache de referencias para evitar FindFirstObjectByType repetidos.
+        /// Se llama lazy la primera vez que se pausa.
+        /// </summary>
+        private void InitializeCache()
+        {
+            if (cacheInitialized) return;
+
+            cachedPlayerInput = FindFirstObjectByType<PlayerInput>();
+            cachedDialogueRunner = FindFirstObjectByType<Yarn.Unity.DialogueRunner>();
+            cachedPauseController = FindFirstObjectByType<PauseController>();
+
+            cacheInitialized = true;
+
+            Debug.Log($"[ConnectionErrorAlert] Cache inicializado (PlayerInput: {cachedPlayerInput != null}, DialogueRunner: {cachedDialogueRunner != null}, PauseController: {cachedPauseController != null})");
         }
 
         /// <summary>
@@ -193,32 +212,26 @@ namespace Triskel.UI
         /// </summary>
         private void PauseEverything()
         {
+            // Inicializar cache si es la primera vez
+            InitializeCache();
+
             // 1. Pausar tiempo del juego
             Time.timeScale = 0f;
 
             // 2. Desactivar Input del jugador
-            var playerInput = FindFirstObjectByType<PlayerInput>();
-            if (playerInput != null)
+            if (cachedPlayerInput != null)
             {
-                wasInputEnabled = playerInput.enabled;
-                playerInput.enabled = false;
-                Debug.Log("[ConnectionErrorAlert] Input del jugador desactivado");
+                wasInputEnabled = cachedPlayerInput.enabled;
+                cachedPlayerInput.enabled = false;
             }
 
             // 3. Pausar diálogos de Yarn Spinner (si está activo)
-            var dialogueRunner = FindFirstObjectByType<Yarn.Unity.DialogueRunner>();
-            if (dialogueRunner != null && dialogueRunner.IsDialogueRunning)
-            {
-                // Yarn Spinner se pausa automáticamente con Time.timeScale = 0
-                Debug.Log("[ConnectionErrorAlert] Diálogo pausado");
-            }
+            // Yarn Spinner se pausa automáticamente con Time.timeScale = 0
 
             // 4. Ocultar menú de pausa si está abierto (para evitar conflictos)
-            var pauseController = FindFirstObjectByType<PauseController>();
-            if (pauseController != null && pauseController.IsPaused)
+            if (cachedPauseController != null && cachedPauseController.IsPaused)
             {
-                pauseController.Hide(); // Solo ocultar UI, no resumir el juego
-                Debug.Log("[ConnectionErrorAlert] Menú de pausa ocultado");
+                cachedPauseController.Hide(); // Solo ocultar UI, no resumir el juego
             }
         }
 
@@ -230,12 +243,10 @@ namespace Triskel.UI
             // 1. Reanudar tiempo
             Time.timeScale = 1f;
 
-            // 2. Reactivar Input del jugador
-            var playerInput = FindFirstObjectByType<PlayerInput>();
-            if (playerInput != null && wasInputEnabled)
+            // 2. Reactivar Input del jugador (usa cache)
+            if (cachedPlayerInput != null && wasInputEnabled)
             {
-                playerInput.enabled = true;
-                Debug.Log("[ConnectionErrorAlert] Input del jugador reactivado");
+                cachedPlayerInput.enabled = true;
             }
         }
 
@@ -272,7 +283,6 @@ namespace Triskel.UI
         /// </summary>
         private void OnRetrySuccess()
         {
-            Debug.Log("[ConnectionErrorAlert] ✓ Reconexión exitosa - Cerrando alerta");
             Hide();
         }
 
@@ -282,7 +292,6 @@ namespace Triskel.UI
         /// </summary>
         public void OnRetryFailed(string errorMsg = null)
         {
-            Debug.LogWarning("[ConnectionErrorAlert] ✗ Reconexión fallida");
 
             // Restaurar mensaje de error
             if (errorMessage != null)

@@ -311,7 +311,7 @@ namespace Triskel.API
 
             if (isConnectionError)
             {
-                Debug.LogWarning("[HTTP] ⚠️ Error de conexión detectado");
+                Debug.LogWarning("[HTTP] Error de conexión detectado");
 
                 // Disparar evento para que la capa de UI lo maneje
                 OnConnectionError?.Invoke();

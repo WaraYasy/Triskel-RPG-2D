@@ -98,7 +98,7 @@ namespace Triskel.UI
                 return;
             }
 
-            Debug.LogWarning("[GameplayUIManager] Error de conexión detectado - Mostrando alerta");
+            Debug.LogWarning("[GameplayUIManager] Error de conexión detectado");
 
             if (connectionErrorAlert != null)
             {
@@ -113,10 +113,10 @@ namespace Triskel.UI
             else
             {
                 // FALLBACK: Si no hay alerta disponible, mostrar en consola
-                Debug.LogError("===== ⚠️ ERROR DE CONEXIÓN =====");
-                Debug.LogError("No se puede conectar al servidor.");
-                Debug.LogError("El progreso NO se guardará.");
-                Debug.LogError("================================");
+                Debug.LogError("===== ERROR DE CONEXIÓN =====");
+                Debug.LogError("No se puede conectar al servidor");
+                Debug.LogError("El progreso NO se guardará");
+                Debug.LogError("==============================");
             }
         }
 
