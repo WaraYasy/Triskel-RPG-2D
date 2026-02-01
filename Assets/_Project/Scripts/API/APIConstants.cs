@@ -98,6 +98,13 @@ namespace Triskel.API
             /// </summary>
             /// <param name="choice">Decisión a evaluar.</param>
             /// <returns>True si la decisión es buena (sanar, construir, revelar).</returns>
+            /// <remarks>
+            /// TODO: Integrar con sistema de decisiones morales basado en acciones de gameplay.
+            /// Actualmente hardcodeado. En el futuro, considerar:
+            /// - Llamar desde scripts de objetos interactuables cuando el jugador tome una acción
+            /// - Hacer configurable (JSON/ScriptableObject) en lugar de hardcoded
+            /// - Registrar automáticamente en GameManager.RegistrarDecisionMoral()
+            /// </remarks>
             public static bool IsGoodChoice(string choice)
             {
                 return choice == SANAR || choice == CONSTRUIR || choice == REVELAR;
