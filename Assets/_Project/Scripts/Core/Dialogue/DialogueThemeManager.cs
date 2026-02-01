@@ -25,11 +25,16 @@ namespace Triskel.Dialogue
         [SerializeField] private Button[] optionButtons;
         [SerializeField] private Button continueButton;
 
+        [Header("Configuración de Fuente")]
+        [SerializeField] private TMP_FontAsset dialogueFontAsset;
+
         public DialogueTheme CurrentTheme { get; private set; }
 
         [Header("Tamaño de Texto")]
         [SerializeField] private float normalFontSize = 48f;
         [SerializeField] private float largeFontSize = 64f;
+        [SerializeField] private float normalOptionFontSize = 36f;
+        [SerializeField] private float largeOptionFontSize = 48f;
 
         [Header("Visibilidad y Control")]
         [SerializeField] private DialogueRunner dialogueRunner;
@@ -102,6 +107,7 @@ namespace Triskel.Dialogue
                 uiRootObject = backgroundPanel.transform.parent.gameObject;
 
             ApplyTheme(CurrentTheme);
+            ApplyFontToAllOptions(); // Asegurar que la fuente se aplique al inicio
 
             // Estado inicial: Ocultar si no hay diálogo activo
             if (dialogueRunner != null && !dialogueRunner.IsDialogueRunning)
@@ -109,6 +115,29 @@ namespace Triskel.Dialogue
                 OnDialogueComplete();
             }
         }
+
+        /// <summary>
+        /// Aplica el font asset configurado a todas las opciones del jugador.
+        /// Útil para asegurar consistencia visual al iniciar.
+        /// </summary>
+        private void ApplyFontToAllOptions()
+        {
+            if (dialogueFontAsset == null) return;
+
+            // Buscar dinámicamente todos los botones en la UI de diálogo
+            Button[] allButtons = GetComponentsInChildren<Button>(true);
+
+            foreach (var btn in allButtons)
+            {
+                if (btn == null) continue;
+                var btnText = btn.GetComponentInChildren<TMP_Text>();
+                if (btnText != null)
+                {
+                    btnText.font = dialogueFontAsset;
+                }
+            }
+        }
+
 
         public void SetTheme(DialogueTheme theme)
         {
@@ -139,14 +168,21 @@ namespace Triskel.Dialogue
             if (dialogueText != null) dialogueText.color = texto;
             if (characterNameText != null) characterNameText.color = nombre;
 
-            if (optionButtons != null)
+            // Buscar dinámicamente todos los botones (porque Yarn Spinner los crea en runtime)
+            Button[] allButtons = GetComponentsInChildren<Button>(true);
+            foreach (var btn in allButtons)
             {
-                foreach (var btn in optionButtons)
+                if (btn == null) continue;
+                ApplyButtonColors(btn, boton, botonHover);
+                var btnText = btn.GetComponentInChildren<TMP_Text>();
+                if (btnText != null)
                 {
-                    if (btn == null) continue;
-                    ApplyButtonColors(btn, boton, botonHover);
-                    var btnText = btn.GetComponentInChildren<TMP_Text>();
-                    if (btnText != null) btnText.color = texto;
+                    btnText.color = texto;
+                    // Aplicar el mismo font asset que el texto principal
+                    if (dialogueFontAsset != null)
+                    {
+                        btnText.font = dialogueFontAsset;
+                    }
                 }
             }
 
@@ -170,12 +206,42 @@ namespace Triskel.Dialogue
 
         private void ApplyFontSize(bool large)
         {
+            // Aplicar tamaño al texto principal del diálogo
             if (dialogueText != null)
             {
-                dialogueText.enableAutoSizing = false; // IMPORTANTE: Desactivar auto-ajuste para que el tamaño manual funcione
+                dialogueText.enableAutoSizing = false;
                 dialogueText.fontSize = large ? largeFontSize : normalFontSize;
-                Debug.Log($"[DialogueThemeManager] Tamaño de fuente aplicado: {(large ? "Grande" : "Normal")} ({dialogueText.fontSize})");
             }
+
+            // Aplicar tamaño Y fuente a las opciones del jugador (búsqueda dinámica)
+            float optionSize = large ? largeOptionFontSize : normalOptionFontSize;
+            Button[] allButtons = GetComponentsInChildren<Button>(true);
+
+            foreach (var btn in allButtons)
+            {
+                if (btn == null) continue;
+                var btnText = btn.GetComponentInChildren<TMP_Text>();
+                if (btnText != null)
+                {
+                    btnText.enableAutoSizing = false;
+                    btnText.fontSize = optionSize;
+
+                    // Aplicar el mismo font asset que el texto principal
+                    if (dialogueFontAsset != null)
+                    {
+                        btnText.font = dialogueFontAsset;
+                    }
+                }
+            }
+
+            // Aplicar tamaño al nombre del personaje (si existe)
+            if (characterNameText != null)
+            {
+                characterNameText.enableAutoSizing = false;
+                characterNameText.fontSize = large ? largeFontSize : normalFontSize;
+            }
+
+            Debug.Log($"[DialogueThemeManager] Tamaño de fuente aplicado: {(large ? "Grande" : "Normal")} (Diálogo: {(dialogueText != null ? dialogueText.fontSize : 0)}, Opciones: {optionSize})");
         }
 
 

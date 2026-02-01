@@ -89,10 +89,6 @@ namespace Triskel.API
 
         // Eventos
         /// <summary>
-        /// Evento que se dispara cuando ocurre un error en una petición HTTP.
-        /// </summary>
-        public event Action<string> OnError;
-        /// <summary>
         /// Evento que se dispara cuando hay un error de conexión con el servidor.
         /// </summary>
         /// <remarks>

@@ -473,7 +473,7 @@ public class GameManager : MonoBehaviour
     public void ModifyMoralWithChoice(int delta, string choice)
     {
         ModifyMoral(delta);
-        apiTracker?.RegistrarDecisionMoral(choice);
+        apiTracker?.RegisterMoralChoice(choice);
     }
 
     /// <summary>

@@ -551,6 +551,23 @@ namespace Triskel.UI
         #endregion
 
         /// <summary>
+        /// Verifica si una escena está incluida en Build Settings.
+        /// </summary>
+        /// <param name="sceneName">Nombre de la escena a verificar.</param>
+        /// <returns>True si la escena está en Build Settings, false en caso contrario.</returns>
+        private bool IsSceneInBuildSettings(string sceneName)
+        {
+            for (int i = 0; i < SceneManager.sceneCountInBuildSettings; i++)
+            {
+                string path = SceneUtility.GetScenePathByBuildIndex(i);
+                string name = System.IO.Path.GetFileNameWithoutExtension(path);
+                if (name == sceneName)
+                    return true;
+            }
+            return false;
+        }
+
+        /// <summary>
         /// Carga la escena del juego configurada en el Inspector.
         /// </summary>
         private void LoadGameScene()
@@ -566,40 +583,25 @@ namespace Triskel.UI
         /// </summary>
         /// <param name="apiLevel">Nivel desde la API (ej: "senda_ebano", "hub_central").</param>
         /// <remarks>
-        /// Convierte el nivel de la API a nombre de escena Unity:
-        /// - hub_central → DentroDelHub1
-        /// - senda_ebano → Cuadrante1
-        /// - fortaleza_gigantes → Cuadrante2
-        /// - aquelarre_sombras → Cuadrante3
-        /// - claro_almas → Cuadrante4
+        /// Usa SceneConstants para convertir el nivel de la API a nombre de escena Unity.
+        /// Valida que la escena esté en Build Settings antes de cargarla.
         /// </remarks>
         private void LoadLevelScene(string apiLevel)
         {
-            string sceneName;
-
             // Convertir nivel API a nombre de escena Unity
-            switch (apiLevel)
+            string sceneName = SceneConstants.GetSceneForAPILevel(apiLevel);
+
+            // Validar que la escena esté en Build Settings
+            if (!IsSceneInBuildSettings(sceneName))
             {
-                case APIConstants.Levels.HUB_CENTRAL:
-                    sceneName = "DentroDelHub1";
-                    break;
-                case APIConstants.Levels.SENDA_EBANO:
-                    sceneName = "Cuadrante1";
-                    break;
-                case APIConstants.Levels.FORTALEZA_GIGANTES:
-                    sceneName = "Cuadrante2";
-                    break;
-                case APIConstants.Levels.AQUELARRE_SOMBRAS:
-                    sceneName = "Cuadrante3";
-                    break;
-                case APIConstants.Levels.CLARO_ALMAS:
-                    sceneName = "Cuadrante4";
-                    break;
-                default:
-                    // Fallback al hub si el nivel no se reconoce
-                    Debug.LogWarning($"[MainMenuController] Nivel desconocido '{apiLevel}', cargando hub");
-                    sceneName = "DentroDelHub1";
-                    break;
+                Debug.LogError($"[MainMenuController] La escena '{sceneName}' no está en Build Settings. No se puede cargar.");
+                // Fallback al hub si la escena no está disponible
+                sceneName = SceneConstants.HUB;
+                if (!IsSceneInBuildSettings(sceneName))
+                {
+                    Debug.LogError($"[MainMenuController] La escena del hub '{sceneName}' tampoco está en Build Settings. No se puede continuar.");
+                    return;
+                }
             }
 
             Debug.Log($"[MainMenuController] Cargando escena: {sceneName} (nivel API: {apiLevel})");

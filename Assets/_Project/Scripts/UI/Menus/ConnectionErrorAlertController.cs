@@ -33,6 +33,9 @@ namespace Triskel.UI
     /// </remarks>
     public class ConnectionErrorAlertController : MonoBehaviour
     {
+        // Constantes
+        private const int MAX_SORTING_ORDER = 99999; // Máxima prioridad - debe aparecer encima de TODO
+
         public static ConnectionErrorAlertController Instance { get; private set; }
 
         [Header("Referencias")]
@@ -58,16 +61,6 @@ namespace Triskel.UI
         private Yarn.Unity.DialogueRunner cachedDialogueRunner;
         private PauseController cachedPauseController;
         private bool cacheInitialized = false;
-
-        // Eventos
-        /// <summary>
-        /// Evento que se dispara cuando el usuario hace clic en "Reintentar".
-        /// </summary>
-        public event Action OnRetry;
-        /// <summary>
-        /// Evento que se dispara cuando el usuario hace clic en "Salir".
-        /// </summary>
-        public event Action OnExit;
 
         private void Awake()
         {
@@ -98,7 +91,7 @@ namespace Triskel.UI
             // Usamos el valor MÁS ALTO posible para garantizar que esté encima
             if (uiDocument.panelSettings != null)
             {
-                uiDocument.panelSettings.sortingOrder = 99999;
+                uiDocument.panelSettings.sortingOrder = MAX_SORTING_ORDER;
             }
 
             var root = uiDocument.rootVisualElement;
@@ -272,9 +265,6 @@ namespace Triskel.UI
             // Ejecutar callback de reintento
             // Le pasamos un callback que DEBE invocar SI la conexión funciona
             retryActionWithCallback?.Invoke(OnRetrySuccess);
-
-            // Disparar evento
-            OnRetry?.Invoke();
         }
 
         /// <summary>
@@ -327,9 +317,6 @@ namespace Triskel.UI
 
             // Ocultar alerta
             Hide();
-
-            // Disparar evento
-            OnExit?.Invoke();
 
             // Cargar menú principal
             if (!string.IsNullOrEmpty(mainMenuSceneName))

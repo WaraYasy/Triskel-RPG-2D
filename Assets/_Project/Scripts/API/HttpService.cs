@@ -145,6 +145,30 @@ namespace Triskel.API
 
         #region Coroutines
 
+        /// <summary>
+        /// Crea una petición HTTP con body JSON (para POST/PATCH).
+        /// </summary>
+        /// <param name="url">URL completa de la petición.</param>
+        /// <param name="method">Método HTTP (POST, PATCH).</param>
+        /// <param name="jsonBody">Body JSON como string.</param>
+        /// <returns>UnityWebRequest configurado.</returns>
+        private UnityWebRequest CreateRequestWithBody(string url, string method, string jsonBody)
+        {
+            UnityWebRequest request = new UnityWebRequest(url, method);
+
+            if (!string.IsNullOrEmpty(jsonBody))
+            {
+                byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonBody);
+                request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+            }
+
+            request.downloadHandler = new DownloadHandlerBuffer();
+            request.SetRequestHeader("Content-Type", "application/json");
+            AddAuthHeaders(request);
+
+            return request;
+        }
+
         private IEnumerator GetCoroutine<T>(string endpoint, Action<T> onSuccess, Action<string> onError)
         {
             string url = $"{baseURL}{endpoint}";
@@ -164,21 +188,10 @@ namespace Triskel.API
         {
             string url = $"{baseURL}{endpoint}";
 
-            using (UnityWebRequest request = new UnityWebRequest(url, "POST"))
+            using (UnityWebRequest request = CreateRequestWithBody(url, "POST", jsonBody))
             {
-                if (!string.IsNullOrEmpty(jsonBody))
-                {
-                    byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonBody);
-                    request.uploadHandler = new UploadHandlerRaw(bodyRaw);
-                }
-                request.downloadHandler = new DownloadHandlerBuffer();
-
-                request.SetRequestHeader("Content-Type", "application/json");
-                AddAuthHeaders(request);
                 LogRequest("POST", url, jsonBody);
-
                 yield return request.SendWebRequest();
-
                 HandleResponse(request, onSuccess, onError);
             }
         }
@@ -187,21 +200,10 @@ namespace Triskel.API
         {
             string url = $"{baseURL}{endpoint}";
 
-            using (UnityWebRequest request = new UnityWebRequest(url, "PATCH"))
+            using (UnityWebRequest request = CreateRequestWithBody(url, "PATCH", jsonBody))
             {
-                if (!string.IsNullOrEmpty(jsonBody))
-                {
-                    byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonBody);
-                    request.uploadHandler = new UploadHandlerRaw(bodyRaw);
-                }
-                request.downloadHandler = new DownloadHandlerBuffer();
-
-                request.SetRequestHeader("Content-Type", "application/json");
-                AddAuthHeaders(request);
                 LogRequest("PATCH", url, jsonBody);
-
                 yield return request.SendWebRequest();
-
                 HandleResponse(request, onSuccess, onError);
             }
         }
@@ -291,7 +293,16 @@ namespace Triskel.API
         {
             string error = request.error;
             long statusCode = request.responseCode;
-            string responseBody = request.downloadHandler?.text ?? "";
+            string responseBody = "";
+
+            try
+            {
+                responseBody = request.downloadHandler?.text ?? "";
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"[HTTP] Error leyendo response body: {ex.Message}");
+            }
 
             Debug.LogError($"[HTTP] Error {statusCode}: {error}");
             if (!string.IsNullOrEmpty(responseBody))

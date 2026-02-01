@@ -141,6 +141,21 @@ namespace Triskel.API
         // ==========================================
 
         /// <summary>
+        /// Valida que haya una partida activa antes de realizar operaciones de tracking.
+        /// </summary>
+        /// <param name="context">Mensaje de contexto para el log de advertencia.</param>
+        /// <returns>True si hay una partida activa, false en caso contrario.</returns>
+        private bool ValidateActiveGame(string context)
+        {
+            if (apiClient == null || string.IsNullOrEmpty(apiClient.CurrentGameID))
+            {
+                Debug.LogWarning($"[APITracker] {context}");
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
         /// Inicia el tracking de un nuevo nivel.
         /// </summary>
         /// <param name="levelName">Constante API del nivel (usar APIConstants.Levels).</param>
@@ -150,11 +165,8 @@ namespace Triskel.API
         /// </remarks>
         public void OnLevelStart(string levelName)
         {
-            if (apiClient == null || string.IsNullOrEmpty(apiClient.CurrentGameID))
-            {
-                Debug.LogWarning("[APITracker] No hay partida activa. No se puede iniciar nivel.");
+            if (!ValidateActiveGame("No hay partida activa. No se puede iniciar nivel."))
                 return;
-            }
 
             currentLevel = levelName;
             levelStartTime = Time.time;
@@ -181,11 +193,8 @@ namespace Triskel.API
         /// </remarks>
         public void OnLevelComplete()
         {
-            if (apiClient == null || string.IsNullOrEmpty(apiClient.CurrentGameID))
-            {
-                Debug.LogWarning("[APITracker] No hay partida activa. No se puede completar nivel.");
+            if (!ValidateActiveGame("No hay partida activa. No se puede completar nivel."))
                 return;
-            }
 
             if (string.IsNullOrEmpty(currentLevel))
             {
@@ -206,8 +215,8 @@ namespace Triskel.API
 
             // IMPORTANTE: Guardar reliquias del inventario ANTES de completar el nivel
             // Esto asegura que todas las reliquias se sincronicen incluso si el nivel se completa en <30s
-            // SOLO si hay partida activa (para evitar errores al testear directamente desde escena de nivel)
-            if (inventoryData != null && apiClient != null && !string.IsNullOrEmpty(apiClient.CurrentGameID))
+            // La validación de partida activa ya se hizo al inicio del método
+            if (inventoryData != null)
             {
                 // Usar UpdateGameProgress en lugar de UpdateCurrentGame para evitar error 422
                 apiClient.UpdateGameProgress(
@@ -216,10 +225,6 @@ namespace Triskel.API
                     game => Debug.Log("[APITracker] Reliquias guardadas antes de completar nivel"),
                     error => Debug.LogWarning($"[APITracker] Error guardando reliquias: {error}")
                 );
-            }
-            else if (inventoryData != null && (apiClient == null || string.IsNullOrEmpty(apiClient.CurrentGameID)))
-            {
-                Debug.LogWarning("[APITracker] No hay partida activa. Guardado de reliquias omitido (modo testing)");
             }
 
             // Enviar a la API
@@ -250,11 +255,8 @@ namespace Triskel.API
         /// </remarks>
         public void OnPlayerDeath(Vector2 position, string cause, string enemyType = null)
         {
-            if (apiClient == null || string.IsNullOrEmpty(apiClient.CurrentGameID))
-            {
-                Debug.LogWarning("[APITracker] No hay partida activa. No se puede registrar muerte.");
+            if (!ValidateActiveGame("No hay partida activa. No se puede registrar muerte."))
                 return;
-            }
 
             if (string.IsNullOrEmpty(currentLevel))
             {
@@ -279,7 +281,7 @@ namespace Triskel.API
         /// Llamar desde scripts de diálogo (Yarn Spinner) o GameManager al tomar decisiones.
         /// Se enviará junto con el evento CompleteLevel.
         /// </remarks>
-        public void RegistrarDecisionMoral(string choice)
+        public void RegisterMoralChoice(string choice)
         {
             moralChoice = choice;
             Debug.Log($"[APITracker] Decisión moral registrada: {choice}");
@@ -309,7 +311,7 @@ namespace Triskel.API
 
         private void OnItemAdded(CollectibleItem item)
         {
-            if (apiClient == null || string.IsNullOrEmpty(apiClient.CurrentGameID))
+            if (!ValidateActiveGame("No hay partida activa. No se puede registrar ítem recogido."))
                 return;
 
             if (string.IsNullOrEmpty(currentLevel))
