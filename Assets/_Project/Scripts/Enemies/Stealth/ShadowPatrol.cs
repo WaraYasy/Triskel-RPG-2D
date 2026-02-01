@@ -46,9 +46,22 @@ public class ShadowPatrol : MonoBehaviour
     [SerializeField] private Color suspiciousColor = Color.yellow;
     [SerializeField] private Color alertColor = Color.red;
     
+    [Header("Revelación de la Verdad")]
+    [Tooltip("Sprite del animal real (se muestra cuando se revela la verdad)")]
+    [SerializeField] private Sprite revealedSprite;
+    [Tooltip("Color del animal revelado")]
+    [SerializeField] private Color revealedColor = new Color(0.8f, 0.6f, 0.4f); // Marrón animal
+    [Tooltip("Si está revelado, huye del jugador en vez de atacar")]
+    [SerializeField] private float fleeSpeed = 3f;
+    [SerializeField] private float fleeDistance = 5f;
+    
     [Header("Daño al Jugador")]
     [SerializeField] private float damageAmount = 1f;
     [SerializeField] private float catchDistance = 0.5f;
+    
+    // Estado de revelación
+    private bool isRevealed = false;
+    private Sprite originalSprite;
     
     // Estados
     public enum ShadowState { Patrolling, Suspicious, Chasing, Searching, Returning }
@@ -149,6 +162,8 @@ public class ShadowPatrol : MonoBehaviour
 
     private void CheckForPlayer()
     {
+        // Los animales revelados no detectan agresivamente al jugador
+        if (isRevealed) return;
         if (IsPlayerHidden()) return;
         
         float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
@@ -636,19 +651,107 @@ public class ShadowPatrol : MonoBehaviour
     }
 
     public ShadowState GetCurrentState() => currentState;
+    
+    /// <summary>
+    /// Devuelve true si la sombra ha sido revelada como animal
+    /// </summary>
+    public bool IsRevealed() => isRevealed;
 
     /// <summary>
     /// Llamar cuando el jugador haga ruido para alertar sombras cercanas.
     /// </summary>
     public void AlertToNoise(Vector2 noisePosition)
     {
+        // Los animales revelados no responden a ruidos agresivamente
+        if (isRevealed) return;
+        
         float distance = Vector2.Distance(transform.position, noisePosition);
         if (distance <= hearingRadius && currentState == ShadowState.Patrolling)
         {
             BecomeSuspicious(noisePosition);
         }
     }
-
+    
+    #endregion
+    
+    #region Revelación de la Verdad
+    
+    /// <summary>
+    /// Revela la verdadera forma de la sombra (un animal asustado).
+    /// Llamado por TruthAltar cuando el jugador activa el altar con el Manto.
+    /// </summary>
+    public void RevealTrueForm()
+    {
+        if (isRevealed) return;
+        isRevealed = true;
+        
+        Debug.Log($"🐾 {gameObject.name} revela su verdadera forma: ¡Es un animal asustado!");
+        
+        // Guardar sprite original y cambiar al sprite revelado
+        if (spriteRenderer != null)
+        {
+            originalSprite = spriteRenderer.sprite;
+            
+            if (revealedSprite != null)
+            {
+                spriteRenderer.sprite = revealedSprite;
+            }
+            
+            spriteRenderer.color = revealedColor;
+        }
+        
+        // Ocultar indicadores de amenaza
+        if (detectionIndicator != null) detectionIndicator.SetActive(false);
+        if (suspicionIndicator != null) suspicionIndicator.SetActive(false);
+        
+        // Detener cualquier persecución
+        currentState = ShadowState.Patrolling;
+        rb.linearVelocity = Vector2.zero;
+        
+        // Iniciar comportamiento de huida
+        StartCoroutine(FleeFromPlayerBehavior());
+    }
+    
+    /// <summary>
+    /// Comportamiento de huida: el animal revelado huye del jugador si se acerca.
+    /// </summary>
+    private System.Collections.IEnumerator FleeFromPlayerBehavior()
+    {
+        while (isRevealed)
+        {
+            if (playerTransform != null)
+            {
+                float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
+                
+                // Si el jugador está cerca, huir
+                if (distanceToPlayer < fleeDistance)
+                {
+                    Vector2 fleeDirection = ((Vector2)transform.position - (Vector2)playerTransform.position).normalized;
+                    
+                    // Verificar que no huya hacia una pared
+                    RaycastHit2D hit = Physics2D.Raycast(transform.position, fleeDirection, 1f, obstacleLayer);
+                    if (hit.collider != null)
+                    {
+                        // Buscar dirección alternativa
+                        fleeDirection = Vector2.Perpendicular(fleeDirection);
+                    }
+                    
+                    rb.linearVelocity = fleeDirection * fleeSpeed;
+                    currentDirection = fleeDirection;
+                    UpdateAnimation(fleeDirection);
+                }
+                else
+                {
+                    // Comportamiento tranquilo cuando el jugador está lejos
+                    rb.linearVelocity = Vector2.zero;
+                    UpdateAnimation(Vector2.zero);
+                }
+            }
+            
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+    
     #endregion
 
     #region Gizmos

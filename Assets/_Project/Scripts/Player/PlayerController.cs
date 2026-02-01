@@ -28,6 +28,9 @@ public class PlayerController : MonoBehaviour
     private bool isDashing = false;
     private float dashTimer = 0f;
     private float dashCooldownTimer = 0f;
+    
+    // Multiplicador de velocidad (para efectos externos como ralentización de fantasmas)
+    private float speedMultiplier = 1f;
 
     private void Awake()
     {
@@ -93,13 +96,13 @@ public class PlayerController : MonoBehaviour
     {
         if (isDashing)
         {
-            // Durante el dash, mantener la velocidad del dash
+            // Durante el dash, mantener la velocidad del dash (no afectado por ralentización)
             rb.linearVelocity = lastMoveDirection * dashSpeed;
         }
         else
         {
-            // Movimiento normal
-            rb.linearVelocity = moveInput.normalized * moveSpeed;
+            // Movimiento normal (afectado por speedMultiplier)
+            rb.linearVelocity = moveInput.normalized * moveSpeed * speedMultiplier;
         }
     }
     
@@ -127,4 +130,22 @@ public class PlayerController : MonoBehaviour
     public float GetDashCooldownProgress() => 1f - (dashCooldownTimer / dashCooldown);
     public Vector2 GetLastMoveDirection() => lastMoveDirection;
     public Vector2 GetMoveInput() => moveInput;
+    
+    /// <summary>
+    /// Establece el multiplicador de velocidad (usado por auras de ralentización, etc.)
+    /// </summary>
+    public void SetSpeedMultiplier(float multiplier)
+    {
+        speedMultiplier = Mathf.Clamp(multiplier, 0f, 2f);
+    }
+    
+    /// <summary>
+    /// Restaura la velocidad normal (multiplicador = 1)
+    /// </summary>
+    public void ResetSpeedMultiplier()
+    {
+        speedMultiplier = 1f;
+    }
+    
+    public float GetSpeedMultiplier() => speedMultiplier;
 }
