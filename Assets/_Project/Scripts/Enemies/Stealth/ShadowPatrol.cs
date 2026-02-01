@@ -73,6 +73,7 @@ public class ShadowPatrol : MonoBehaviour
     // Referencias
     private Rigidbody2D rb;
     private Animator animator;
+    private Collider2D myCollider;
     private Transform playerTransform;
     private PlayerHealth playerHealth;
     private PlayerStealth playerStealth;
@@ -98,7 +99,11 @@ public class ShadowPatrol : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        myCollider = GetComponent<Collider2D>();
         if (spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
+        
+        // Configuración inicial: Sombra es Fantasma (Trigger)
+        if (myCollider != null) myCollider.isTrigger = true;
     }
 
     private void Start()
@@ -182,7 +187,7 @@ public class ShadowPatrol : MonoBehaviour
         if (distanceToPlayer <= proximityDetectionRadius)
         {
             Vector2 directionToPlayer = (playerTransform.position - transform.position).normalized;
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToPlayer, distanceToPlayer, obstacleLayer);
+            RaycastHit2D hit = SafeRaycast(transform.position, directionToPlayer, distanceToPlayer, obstacleLayer);
             
             if (hit.collider == null)
             {
@@ -208,7 +213,7 @@ public class ShadowPatrol : MonoBehaviour
             if (angleToPlayer <= detectionAngle / 2f)
             {
                 // Verificar línea de visión
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToPlayer, distanceToPlayer, obstacleLayer);
+                RaycastHit2D hit = SafeRaycast(transform.position, directionToPlayer, distanceToPlayer, obstacleLayer);
                 
                 if (hit.collider == null)
                 {
@@ -643,9 +648,22 @@ public class ShadowPatrol : MonoBehaviour
         animator.SetFloat("Horizontal", currentDirection.x);
         animator.SetFloat("Vertical", currentDirection.y);
         
-        // Ajustar velocidad de la animación según el movimiento
-        float animSpeed = direction.magnitude > 0.1f ? 1f + (direction.magnitude * 0.5f) : 1f;
-        animator.speed = animSpeed;
+        // Parámetro para saber si se mueve (Solo para el Animal Revelado)
+        if (isRevealed)
+        {
+            bool isMoving = direction.magnitude > 0.01f;
+            animator.SetBool("IsMoving", isMoving);
+            
+            // Ajustar velocidad de la animación según el movimiento
+            float animSpeed = isMoving ? 1f + (direction.magnitude * 0.5f) : 1f;
+            animator.speed = animSpeed;
+        }
+        else
+        {
+            // Lógica original para la Sombra
+             float animSpeed = direction.magnitude > 0.1f ? 1f + (direction.magnitude * 0.5f) : 1f;
+             animator.speed = animSpeed;
+        }
     }
 
     private void UpdateIndicators()
@@ -735,6 +753,9 @@ public class ShadowPatrol : MonoBehaviour
         if (detectionIndicator != null) detectionIndicator.SetActive(false);
         if (suspicionIndicator != null) suspicionIndicator.SetActive(false);
         
+        // CAMBIO IMPORTANTE: Ahora el animal es sólido (choca con árboles)
+        if (myCollider != null) myCollider.isTrigger = false;
+        
         // Detener cualquier persecución
         currentState = ShadowState.Patrolling;
         rb.linearVelocity = Vector2.zero;
@@ -764,7 +785,7 @@ public class ShadowPatrol : MonoBehaviour
                     Vector2 fleeDirection = ((Vector2)transform.position - (Vector2)playerTransform.position).normalized;
                     
                     // Verificar paredes
-                    RaycastHit2D hit = Physics2D.Raycast(transform.position, fleeDirection, 1f, obstacleLayer);
+                    RaycastHit2D hit = SafeRaycast(transform.position, fleeDirection, 1f, obstacleLayer);
                     if (hit.collider != null)
                     {
                         fleeDirection = Vector2.Perpendicular(fleeDirection);
@@ -860,6 +881,33 @@ public class ShadowPatrol : MonoBehaviour
             }
         }
     }
+
+    #region Helpers Anti-Bug
+    
+    // Método seguro para lanzar rayos sin chocarse con uno mismo
+    private RaycastHit2D SafeRaycast(Vector2 origin, Vector2 direction, float distance, LayerMask layerMask)
+    {
+        bool wasEnabled = false;
+        
+        // Apagar collider momentáneamente
+        if (myCollider != null)
+        {
+            wasEnabled = myCollider.enabled;
+            myCollider.enabled = false;
+        }
+        
+        RaycastHit2D hit = Physics2D.Raycast(origin, direction, distance, layerMask);
+        
+        // Encender collider de nuevo
+        if (myCollider != null)
+        {
+            myCollider.enabled = wasEnabled;
+        }
+        
+        return hit;
+    }
+    
+    #endregion
 
     #endregion
 }
