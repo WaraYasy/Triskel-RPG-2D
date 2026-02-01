@@ -12,7 +12,7 @@
     padding: 40px;
     align-items: center;
     border-radius: 15px;
-    -unity-background-scale-mode: scale-to-fit;
+    -unity-background-scale-mode: scale-and-crop;
 }
 
 .login-title {
