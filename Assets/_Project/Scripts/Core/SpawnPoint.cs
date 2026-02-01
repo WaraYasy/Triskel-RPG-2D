@@ -13,7 +13,7 @@ public class SpawnPoint : MonoBehaviour
     {
         if (GameManager.Instance == null)
         {
-            Debug.LogError("[SpawnPoint] No se encontró el GameManager. Asegúrate de que exista uno en la escena.");
+            Debug.LogWarning("[SpawnPoint] GameManager no encontrado. Modo testing: El jugador aparecerá en su posición por defecto en la escena.");
             return;
         }
 

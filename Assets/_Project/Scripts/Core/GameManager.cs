@@ -147,6 +147,13 @@ public class GameManager : MonoBehaviour
             apiTracker = gameObject.AddComponent<GameplayAPITracker>();
         }
 
+        // Verificar si TriskelAPIClient existe (puede no existir si se carga una escena de nivel directamente)
+        if (TriskelAPIClient.Instance == null)
+        {
+            Debug.LogWarning("[GameManager] TriskelAPIClient no encontrado. Esto es normal si estás testeando un nivel directamente. El API tracking estará deshabilitado.");
+            return;
+        }
+
         // Inicializar con dependencias (acceso directo a singletons)
         apiTracker.Initialize(TriskelAPIClient.Instance, InventoryData.Instance);
         Debug.Log("[GameManager] API Tracker inicializado.");

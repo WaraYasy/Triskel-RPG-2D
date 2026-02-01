@@ -47,10 +47,12 @@ public class ShadowPatrol : MonoBehaviour
     [SerializeField] private Color alertColor = Color.red;
     
     [Header("Revelación de la Verdad")]
-    [Tooltip("Sprite del animal real (se muestra cuando se revela la verdad)")]
+    [Tooltip("Sprite del animal real (se muestra cuando se revela la verdad). Opcional si usas Animator.")]
     [SerializeField] private Sprite revealedSprite;
+    [Tooltip("Animator Controller del animal revelado (opcional, para animaciones del animal)")]
+    [SerializeField] private RuntimeAnimatorController revealedAnimatorController;
     [Tooltip("Color del animal revelado")]
-    [SerializeField] private Color revealedColor = new Color(0.8f, 0.6f, 0.4f); // Marrón animal
+    [SerializeField] private Color revealedColor = Color.white;
     [Tooltip("Si está revelado, huye del jugador en vez de atacar")]
     [SerializeField] private float fleeSpeed = 3f;
     [SerializeField] private float fleeDistance = 5f;
@@ -62,6 +64,7 @@ public class ShadowPatrol : MonoBehaviour
     // Estado de revelación
     private bool isRevealed = false;
     private Sprite originalSprite;
+    private RuntimeAnimatorController originalAnimatorController;
     
     // Estados
     public enum ShadowState { Patrolling, Suspicious, Chasing, Searching, Returning }
@@ -106,6 +109,10 @@ public class ShadowPatrol : MonoBehaviour
 
     private void Update()
     {
+        // Si está revelado, solo ejecuta el comportamiento de huida (el cual es una corrutina),
+        // así que no hacemos nada en Update para evitar interferencias
+        if (isRevealed) return;
+
         if (playerTransform == null)
         {
             FindPlayer();
@@ -138,6 +145,9 @@ public class ShadowPatrol : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Si está revelado, el movimiento lo controla la corrutina FleeFromPlayerBehavior
+        if (isRevealed) return;
+
         switch (currentState)
         {
             case ShadowState.Patrolling:
@@ -439,6 +449,9 @@ public class ShadowPatrol : MonoBehaviour
 
     private void CatchPlayer()
     {
+        // Seguridad extra: no hacer daño si ya somos un animal
+        if (isRevealed) return;
+
         Debug.Log("💀 ¡Sombra ha atrapado al jugador!");
         
         if (playerHealth != null)
@@ -646,6 +659,9 @@ public class ShadowPatrol : MonoBehaviour
 
     private void UpdateColor(Color color)
     {
+        // No cambiar color si ya fue revelado (mantiene el color del animal)
+        if (isRevealed) return;
+
         if (spriteRenderer != null)
             spriteRenderer.color = color;
     }
@@ -687,16 +703,31 @@ public class ShadowPatrol : MonoBehaviour
         
         Debug.Log($"🐾 {gameObject.name} revela su verdadera forma: ¡Es un animal asustado!");
         
-        // Guardar sprite original y cambiar al sprite revelado
+        // Guardar referencias originales
         if (spriteRenderer != null)
         {
             originalSprite = spriteRenderer.sprite;
-            
-            if (revealedSprite != null)
-            {
-                spriteRenderer.sprite = revealedSprite;
-            }
-            
+        }
+        if (animator != null)
+        {
+            originalAnimatorController = animator.runtimeAnimatorController;
+        }
+        
+        // Cambiar al animator del animal si está configurado
+        if (revealedAnimatorController != null && animator != null)
+        {
+            animator.runtimeAnimatorController = revealedAnimatorController;
+            Debug.Log($"🐾 {gameObject.name} cambiando a animaciones de animal");
+        }
+        // Si no hay animator, usar sprite estático
+        else if (revealedSprite != null && spriteRenderer != null)
+        {
+            spriteRenderer.sprite = revealedSprite;
+        }
+        
+        // Aplicar color del animal revelado
+        if (spriteRenderer != null)
+        {
             spriteRenderer.color = revealedColor;
         }
         
@@ -713,42 +744,75 @@ public class ShadowPatrol : MonoBehaviour
     }
     
     /// <summary>
-    /// Comportamiento de huida: el animal revelado huye del jugador si se acerca.
+    /// Comportamiento de animal: Huir si el jugador se acerca, deambular si está lejos.
     /// </summary>
     private System.Collections.IEnumerator FleeFromPlayerBehavior()
     {
+        float wanderTimer = 0f;
+        float wanderInterval = 2f; // Cambiar dirección cada 2s al deambular
+        Vector2 wanderDirection = Vector2.zero;
+
         while (isRevealed)
         {
             if (playerTransform != null)
             {
                 float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
                 
-                // Si el jugador está cerca, huir
+                // --- CASO 1: HUIR (Prioridad Alta) ---
                 if (distanceToPlayer < fleeDistance)
                 {
                     Vector2 fleeDirection = ((Vector2)transform.position - (Vector2)playerTransform.position).normalized;
                     
-                    // Verificar que no huya hacia una pared
+                    // Verificar paredes
                     RaycastHit2D hit = Physics2D.Raycast(transform.position, fleeDirection, 1f, obstacleLayer);
                     if (hit.collider != null)
                     {
-                        // Buscar dirección alternativa
                         fleeDirection = Vector2.Perpendicular(fleeDirection);
                     }
                     
+                    // Moverse rápido
                     rb.linearVelocity = fleeDirection * fleeSpeed;
                     currentDirection = fleeDirection;
                     UpdateAnimation(fleeDirection);
+                    
+                    // Resetear timer de deambular para que al parar cambie de dirección
+                    wanderTimer = wanderInterval; 
                 }
+                // --- CASO 2: DEAMBULAR (Idle) ---
                 else
                 {
-                    // Comportamiento tranquilo cuando el jugador está lejos
-                    rb.linearVelocity = Vector2.zero;
-                    UpdateAnimation(Vector2.zero);
+                    wanderTimer += Time.deltaTime;
+                    
+                    if (wanderTimer >= wanderInterval)
+                    {
+                        wanderTimer = 0f;
+                        wanderInterval = Random.Range(2f, 5f); // Intervalo aleatorio
+                        
+                        // 50% probabilidad de quedarse quieto, 50% de moverse suave
+                        if (Random.value > 0.5f)
+                        {
+                            // Dirección aleatoria
+                            wanderDirection = Random.insideUnitCircle.normalized;
+                        }
+                        else
+                        {
+                            wanderDirection = Vector2.zero; // Quedarse quieto
+                        }
+                    }
+                    
+                    // Aplicar movimiento de deambular (más lento que huir)
+                    float wanderSpeed = patrolSpeed * 0.5f; // Mitad de velocidad de patrulla
+                    rb.linearVelocity = wanderDirection * wanderSpeed;
+                    
+                    if (wanderDirection != Vector2.zero)
+                    {
+                        currentDirection = wanderDirection;
+                    }
+                    UpdateAnimation(wanderDirection);
                 }
             }
             
-            yield return new WaitForSeconds(0.1f);
+            yield return null; // Esperar al siguiente frame
         }
     }
     

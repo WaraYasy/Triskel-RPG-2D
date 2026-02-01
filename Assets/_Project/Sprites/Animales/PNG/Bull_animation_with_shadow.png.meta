@@ -154,7 +154,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -168,7 +168,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -189,10 +189,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -226,6 +226,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -233,10 +259,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 465
-        width: 24
-        height: 33
+        x: 21
+        y: 466
+        width: 22
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,10 +281,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_1
       rect:
         serializedVersion: 2
-        x: 84
-        y: 465
-        width: 24
-        height: 32
+        x: 85
+        y: 466
+        width: 22
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,10 +303,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_2
       rect:
         serializedVersion: 2
-        x: 148
-        y: 465
-        width: 24
-        height: 33
+        x: 149
+        y: 466
+        width: 22
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,10 +325,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_3
       rect:
         serializedVersion: 2
-        x: 212
-        y: 465
-        width: 24
-        height: 34
+        x: 213
+        y: 466
+        width: 22
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,10 +347,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_4
       rect:
         serializedVersion: 2
-        x: 276
-        y: 465
-        width: 24
-        height: 35
+        x: 277
+        y: 466
+        width: 22
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -343,10 +369,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_5
       rect:
         serializedVersion: 2
-        x: 340
-        y: 465
-        width: 24
-        height: 34
+        x: 341
+        y: 466
+        width: 22
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -365,10 +391,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_6
       rect:
         serializedVersion: 2
-        x: 20
-        y: 401
-        width: 24
-        height: 33
+        x: 21
+        y: 402
+        width: 22
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -387,10 +413,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_7
       rect:
         serializedVersion: 2
-        x: 84
-        y: 401
-        width: 24
-        height: 32
+        x: 85
+        y: 402
+        width: 22
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -409,10 +435,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_8
       rect:
         serializedVersion: 2
-        x: 148
-        y: 401
-        width: 24
-        height: 33
+        x: 149
+        y: 402
+        width: 22
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -431,10 +457,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_9
       rect:
         serializedVersion: 2
-        x: 212
-        y: 401
-        width: 24
-        height: 34
+        x: 213
+        y: 402
+        width: 22
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -453,10 +479,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_10
       rect:
         serializedVersion: 2
-        x: 276
-        y: 401
-        width: 24
-        height: 35
+        x: 277
+        y: 402
+        width: 22
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -475,10 +501,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_11
       rect:
         serializedVersion: 2
-        x: 340
-        y: 401
-        width: 24
-        height: 34
+        x: 341
+        y: 402
+        width: 22
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -497,10 +523,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_12
       rect:
         serializedVersion: 2
-        x: 9
-        y: 338
-        width: 41
-        height: 33
+        x: 10
+        y: 339
+        width: 39
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -519,10 +545,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_13
       rect:
         serializedVersion: 2
-        x: 73
-        y: 338
-        width: 41
-        height: 32
+        x: 74
+        y: 339
+        width: 39
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -541,10 +567,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_14
       rect:
         serializedVersion: 2
-        x: 137
-        y: 338
-        width: 42
-        height: 33
+        x: 138
+        y: 339
+        width: 40
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -563,10 +589,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_15
       rect:
         serializedVersion: 2
-        x: 201
-        y: 338
-        width: 41
-        height: 34
+        x: 202
+        y: 339
+        width: 39
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -585,10 +611,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_16
       rect:
         serializedVersion: 2
-        x: 265
-        y: 338
-        width: 41
-        height: 35
+        x: 266
+        y: 339
+        width: 39
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -607,10 +633,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_17
       rect:
         serializedVersion: 2
-        x: 329
-        y: 338
-        width: 41
-        height: 34
+        x: 330
+        y: 339
+        width: 39
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -629,10 +655,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_18
       rect:
         serializedVersion: 2
-        x: 14
-        y: 274
-        width: 41
-        height: 33
+        x: 15
+        y: 275
+        width: 39
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -651,10 +677,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_19
       rect:
         serializedVersion: 2
-        x: 78
-        y: 274
-        width: 41
-        height: 32
+        x: 79
+        y: 275
+        width: 39
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -673,10 +699,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_20
       rect:
         serializedVersion: 2
-        x: 141
-        y: 274
-        width: 42
-        height: 33
+        x: 142
+        y: 275
+        width: 40
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -695,10 +721,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_21
       rect:
         serializedVersion: 2
-        x: 206
-        y: 274
-        width: 41
-        height: 34
+        x: 207
+        y: 275
+        width: 39
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -717,10 +743,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_22
       rect:
         serializedVersion: 2
-        x: 270
-        y: 274
-        width: 41
-        height: 35
+        x: 271
+        y: 275
+        width: 39
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -739,10 +765,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_23
       rect:
         serializedVersion: 2
-        x: 334
-        y: 274
-        width: 41
-        height: 34
+        x: 335
+        y: 275
+        width: 39
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -761,10 +787,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_24
       rect:
         serializedVersion: 2
-        x: 20
-        y: 209
-        width: 24
-        height: 33
+        x: 21
+        y: 210
+        width: 22
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -783,10 +809,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_25
       rect:
         serializedVersion: 2
-        x: 84
-        y: 209
-        width: 24
-        height: 32
+        x: 85
+        y: 210
+        width: 22
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -805,10 +831,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_26
       rect:
         serializedVersion: 2
-        x: 148
-        y: 209
-        width: 24
-        height: 32
+        x: 149
+        y: 210
+        width: 22
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -827,10 +853,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_27
       rect:
         serializedVersion: 2
-        x: 212
-        y: 209
-        width: 24
-        height: 33
+        x: 213
+        y: 210
+        width: 22
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -849,10 +875,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_28
       rect:
         serializedVersion: 2
-        x: 20
-        y: 145
-        width: 24
-        height: 33
+        x: 21
+        y: 146
+        width: 22
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -871,10 +897,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_29
       rect:
         serializedVersion: 2
-        x: 84
-        y: 145
-        width: 24
-        height: 32
+        x: 85
+        y: 146
+        width: 22
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -893,10 +919,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_30
       rect:
         serializedVersion: 2
-        x: 148
-        y: 145
-        width: 24
-        height: 32
+        x: 149
+        y: 146
+        width: 22
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -915,10 +941,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_31
       rect:
         serializedVersion: 2
-        x: 212
-        y: 145
-        width: 24
-        height: 33
+        x: 213
+        y: 146
+        width: 22
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -937,10 +963,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_32
       rect:
         serializedVersion: 2
-        x: 9
-        y: 82
-        width: 41
-        height: 33
+        x: 10
+        y: 83
+        width: 39
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -959,10 +985,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_33
       rect:
         serializedVersion: 2
-        x: 73
-        y: 82
-        width: 41
-        height: 32
+        x: 74
+        y: 83
+        width: 39
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -981,10 +1007,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_34
       rect:
         serializedVersion: 2
-        x: 137
-        y: 82
-        width: 41
-        height: 32
+        x: 138
+        y: 83
+        width: 39
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1003,10 +1029,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_35
       rect:
         serializedVersion: 2
-        x: 201
-        y: 82
-        width: 42
-        height: 33
+        x: 202
+        y: 83
+        width: 40
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1025,10 +1051,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_36
       rect:
         serializedVersion: 2
-        x: 14
-        y: 18
-        width: 41
-        height: 33
+        x: 15
+        y: 19
+        width: 39
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1047,10 +1073,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_37
       rect:
         serializedVersion: 2
-        x: 78
-        y: 18
-        width: 41
-        height: 32
+        x: 79
+        y: 19
+        width: 39
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1069,10 +1095,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_38
       rect:
         serializedVersion: 2
-        x: 142
-        y: 18
-        width: 41
-        height: 32
+        x: 143
+        y: 19
+        width: 39
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1091,10 +1117,10 @@ TextureImporter:
       name: Bull_animation_with_shadow_39
       rect:
         serializedVersion: 2
-        x: 205
-        y: 18
-        width: 42
-        height: 33
+        x: 206
+        y: 19
+        width: 40
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1113,7 +1139,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ec1f519887a600f43b5fd3a44405df3b
     internalID: 0
     vertices: []
     indices: 

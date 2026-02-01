@@ -216,7 +216,9 @@ namespace Triskel.Environment
             // Destroy(gameObject);
             
             // Alternativa: Dejarlo en el suelo como decoración
-            gameObject.layer = LayerMask.NameToLayer("Background");
+            int backgroundLayer = LayerMask.NameToLayer("Background");
+            // Si el layer no existe (-1), usar Default (0) para evitar el error de layer fuera de rango
+            gameObject.layer = backgroundLayer >= 0 && backgroundLayer <= 31 ? backgroundLayer : 0;
         }
         
         /// <summary>

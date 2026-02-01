@@ -73,7 +73,8 @@ namespace Triskel.UI
             }
             else
             {
-                Debug.LogError("[GameplayUIManager] TriskelAPIClient.Instance no encontrado");
+                // Esto es normal si se carga una escena de nivel directamente sin pasar por Home
+                Debug.LogWarning("[GameplayUIManager] TriskelAPIClient no encontrado. El tracking de errores de conexión estará deshabilitado.");
             }
         }
 

@@ -14,9 +14,10 @@ public class TruthAltar : MonoBehaviour
     [SerializeField] private float activationRadius = 2f;
     [Tooltip("El jugador debe tener el Manto activo y estar dentro del radio")]
     
-    [Header("Efecto de Iluminación")]
+    [Header("Efecto de Iluminación (Amanecer)")]
     [SerializeField] private float revealedLightIntensity = 1.0f;
-    [SerializeField] private float lightTransitionDuration = 3f;
+    [SerializeField] private Color revealedLightColor = new Color(1f, 0.95f, 0.8f); // Luz cálida de sol
+    [SerializeField] private float lightTransitionDuration = 5f; // Más lento para efecto amanecer
     
     [Header("Sombras a Revelar")]
     [Tooltip("Arrastra aquí todas las sombras que serán reveladas como animales")]
@@ -210,13 +211,15 @@ public class TruthAltar : MonoBehaviour
         
         float elapsed = 0f;
         float[] startIntensities = new float[globalLights.Length];
+        Color[] startColors = new Color[globalLights.Length];
         
-        // Guardar intensidades iniciales
+        // Guardar intensidades y colores iniciales
         for (int i = 0; i < globalLights.Length; i++)
         {
             if (globalLights[i].lightType == UnityEngine.Rendering.Universal.Light2D.LightType.Global)
             {
                 startIntensities[i] = globalLights[i].intensity;
+                startColors[i] = globalLights[i].color;
             }
         }
         
@@ -224,17 +227,32 @@ public class TruthAltar : MonoBehaviour
         {
             elapsed += Time.deltaTime;
             float t = elapsed / lightTransitionDuration;
-            t = t * t * (3f - 2f * t); // Smoothstep
+            // Usar curva suave para la intensidad (SmoothStep)
+            float smoothT = t * t * (3f - 2f * t); 
             
             for (int i = 0; i < globalLights.Length; i++)
             {
                 if (globalLights[i].lightType == UnityEngine.Rendering.Universal.Light2D.LightType.Global)
                 {
-                    globalLights[i].intensity = Mathf.Lerp(startIntensities[i], revealedLightIntensity, t);
+                    // Interpolar intensidad
+                    globalLights[i].intensity = Mathf.Lerp(startIntensities[i], revealedLightIntensity, smoothT);
+                    
+                    // Interpolar color (Efecto amanecer: de azul oscuro a cálido)
+                    globalLights[i].color = Color.Lerp(startColors[i], revealedLightColor, smoothT);
                 }
             }
             
             yield return null;
+        }
+        
+        // Asegurar valores finales
+        for (int i = 0; i < globalLights.Length; i++)
+        {
+            if (globalLights[i].lightType == UnityEngine.Rendering.Universal.Light2D.LightType.Global)
+            {
+                globalLights[i].intensity = revealedLightIntensity;
+                globalLights[i].color = revealedLightColor;
+            }
         }
     }
     
@@ -294,6 +312,7 @@ public class TruthAltar : MonoBehaviour
             if (light.lightType == UnityEngine.Rendering.Universal.Light2D.LightType.Global)
             {
                 light.intensity = revealedLightIntensity;
+                light.color = revealedLightColor;
             }
         }
         

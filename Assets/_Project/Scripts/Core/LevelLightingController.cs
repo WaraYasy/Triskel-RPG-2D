@@ -8,11 +8,11 @@ using UnityEngine.SceneManagement;
 public class LevelLightingController : MonoBehaviour
 {
     [Header("Escenas y Modos")]
-    [SerializeField] private string[] darknessScenes = { "Cueva", "Mina" };
+    [SerializeField] private string[] darknessScenes = { "Cueva", "Mina", "Cuadrante3" };
     [SerializeField] private string[] subtleScenes = { "Cuadrante1", "Cuadrante2", "Fortaleza" };
 
     [Header("Intensidades")]
-    [Range(0, 1)] [SerializeField] private float darknessLevel = 0.2f; // Muy oscuro
+    [Range(0, 1)] [SerializeField] private float darknessLevel = 0.05f; // Muy oscuro (Casi negro)
     [Range(0, 1)] [SerializeField] private float subtleLevel = 0.8f;   // Sutil (nublado)
     [Range(0, 1)] [SerializeField] private float normalLevel = 1.0f;   // Soleado
 

@@ -34,6 +34,14 @@ namespace Triskel.Core
             if (Instance == null)
             {
                 Instance = this;
+                
+                // Si el objeto es hijo de otro, debe separarse para ser DontDestroyOnLoad
+                if (transform.parent != null)
+                {
+                    Debug.Log("[SettingsManager] Detaching from parent to allow DontDestroyOnLoad");
+                    transform.SetParent(null);
+                }
+                
                 DontDestroyOnLoad(gameObject);
                 LoadSettings();
             }
