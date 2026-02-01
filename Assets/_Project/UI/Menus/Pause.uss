@@ -54,3 +54,40 @@
     background-color: rgb(40, 70, 80);
     scale: 0.95;
 }
+
+/* Contenedor de botones con iconos */
+.icon-button-row {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+/* Botones cuadrados con iconos */
+.icon-button {
+    width: 100px;
+    height: 100px;
+    font-size: 60px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(35, 75, 90);
+    border-width: 3px;
+    border-color: rgb(127, 179, 192);
+    border-radius: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    -unity-text-align: middle-center;
+    -unity-font-definition: url("project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
+}
+
+.icon-button:hover {
+    background-color: rgb(232, 214, 107);
+    border-color: rgb(255, 240, 150);
+    color: rgb(30, 30, 30);
+    scale: 1.1;
+}
+
+.icon-button:active {
+    background-color: rgb(40, 70, 80);
+    scale: 0.9;
+}

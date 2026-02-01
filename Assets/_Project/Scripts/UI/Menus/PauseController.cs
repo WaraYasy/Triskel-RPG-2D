@@ -30,6 +30,7 @@ namespace Triskel.UI
         [Header("Referencias")]
         [SerializeField] private UIDocument pauseDocument;
         [SerializeField] private SettingsController settingsController;
+        [SerializeField] private ControlsDisplayController controlsDisplay;
 
         [Header("Escenas")]
         [SerializeField] private string mainMenuSceneName = "Home";
@@ -39,6 +40,7 @@ namespace Triskel.UI
         private Button continueButton;
         private Button restartButton;
         private Button settingsButton;
+        private Button helpButton;
         private Button quitButton;
 
         // Estado
@@ -130,12 +132,14 @@ namespace Triskel.UI
             continueButton = root.Q<Button>("ContinueButton");
             restartButton = root.Q<Button>("RestartButton");
             settingsButton = root.Q<Button>("SettingsButton");
+            helpButton = root.Q<Button>("HelpButton");
             quitButton = root.Q<Button>("QuitButton");
 
             // Configurar eventos de pausa
             if (continueButton != null) continueButton.clicked += OnContinueClicked;
             if (restartButton != null) restartButton.clicked += OnRestartClicked;
             if (settingsButton != null) settingsButton.clicked += OnSettingsClicked;
+            if (helpButton != null) helpButton.clicked += OnHelpClicked;
             if (quitButton != null) quitButton.clicked += OnQuitClicked;
 
             // Ocultar inicialmente
@@ -281,6 +285,25 @@ namespace Triskel.UI
             else
             {
                 Debug.LogWarning("[PauseController] SettingsController no asignado");
+            }
+        }
+
+        /// <summary>
+        /// Callback cuando se hace clic en el botón "Ayuda".
+        /// Oculta el menú de pausa y muestra la pantalla de controles.
+        /// </summary>
+        private void OnHelpClicked()
+        {
+            Debug.Log("[PauseController] Abriendo ayuda/controles...");
+
+            if (controlsDisplay != null)
+            {
+                Hide();
+                controlsDisplay.Show();
+            }
+            else
+            {
+                Debug.LogWarning("[PauseController] ControlsDisplayController no asignado");
             }
         }
 

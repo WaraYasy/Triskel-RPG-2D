@@ -1,0 +1,54 @@
+/* Overlay que cubre toda la pantalla */
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Panel central con los controles */
+.controls-panel {
+    width: 80%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Imagen de fondo con los controles */
+.controls-bg {
+    width: 100%;
+    height: 90%;
+    /* IMPORTANTE: Asignar la imagen en Unity Inspector */
+    background-image: none;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+/* Botón de cerrar (mismo estilo que menú de pausa) */
+.close-button {
+    width: 350px;
+    height: 80px;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(35, 75, 90);
+    border-width: 3px;
+    border-color: rgb(127, 179, 192);
+    border-radius: 10px;
+    margin-top: 20px;
+    -unity-text-align: middle-center;
+    letter-spacing: 3px;
+    -unity-font-definition: url("project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
+}
+
+.close-button:hover {
+    background-color: rgb(232, 214, 107);
+    border-color: rgb(255, 240, 150);
+    color: rgb(30, 30, 30);
+    scale: 1.05;
+}
+
+.close-button:active {
+    background-color: rgb(40, 70, 80);
+    scale: 0.95;
+}
