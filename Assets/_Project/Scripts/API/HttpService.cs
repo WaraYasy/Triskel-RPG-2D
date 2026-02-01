@@ -53,6 +53,10 @@ namespace Triskel.API
         /// Evento que se dispara cuando ocurre un error HTTP con código de estado.
         /// </summary>
         public event Action<int, string> OnHttpError; // statusCode, message
+        /// <summary>
+        /// Evento que se dispara cuando hay un error de conexión (no se puede alcanzar el servidor).
+        /// </summary>
+        public event Action OnConnectionError;
 
         /// <summary>
         /// Constructor del servicio HTTP.
@@ -284,6 +288,24 @@ namespace Triskel.API
             Debug.LogError($"[HTTP] Error {statusCode}: {error}");
             if (!string.IsNullOrEmpty(responseBody))
                 Debug.LogError($"[HTTP] Response: {responseBody}");
+
+            // Detectar errores de conexión
+            bool isConnectionError = request.result == UnityWebRequest.Result.ConnectionError ||
+                                     request.result == UnityWebRequest.Result.ProtocolError && statusCode == 0 ||
+                                     request.error.Contains("Cannot connect") ||
+                                     request.error.Contains("Cannot resolve") ||
+                                     request.error.Contains("Unable to connect") ||
+                                     request.error.Contains("No connection") ||
+                                     request.error.Contains("Timeout") ||
+                                     request.error.Contains("timeout") ||
+                                     request.error.Contains("destination host") ||
+                                     statusCode == 0; // statusCode 0 generalmente indica fallo de conexión
+
+            if (isConnectionError)
+            {
+                Debug.LogWarning("[HTTP] Error de conexión detectado");
+                OnConnectionError?.Invoke();
+            }
 
             onError?.Invoke(error);
             OnRequestError?.Invoke(error);

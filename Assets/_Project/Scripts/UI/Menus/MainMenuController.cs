@@ -12,6 +12,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using Triskel.API;
+using Triskel.API.Models;
 
 namespace Triskel.UI
 {
@@ -318,7 +319,7 @@ namespace Triskel.UI
 
         /// <summary>
         /// Callback cuando se hace clic en el botón "Continuar".
-        /// Carga la partida guardada y continúa desde donde se quedó el jugador.
+        /// Carga la partida guardada desde la API y continúa desde donde se quedó el jugador.
         /// </summary>
         private void OnContinueClicked()
         {
@@ -328,12 +329,49 @@ namespace Triskel.UI
             if (continueButton != null)
                 continueButton.SetEnabled(false);
 
-            // Cargar partida guardada
-            if (GameManager.Instance != null)
-                GameManager.Instance.LoadGame();
+            if (TriskelAPIClient.Instance == null || string.IsNullOrEmpty(TriskelAPIClient.Instance.CurrentGameID))
+            {
+                Debug.LogWarning("[MainMenuController] No hay partida activa en la API");
+                // Fallback a cargar local
+                if (GameManager.Instance != null)
+                    GameManager.Instance.LoadGame();
+                LoadGameScene();
+                return;
+            }
 
-            // Cargar escena del juego
-            LoadGameScene();
+            // Mostrar loading
+            ShowLoading("Cargando partida...");
+
+            // Obtener datos de la partida desde la API
+            TriskelAPIClient.Instance.GetCurrentGame(
+                game =>
+                {
+                    Debug.Log($"[MainMenuController] Partida cargada: {game.game_id}, Nivel: {game.current_level}");
+
+                    // Restaurar estado del juego desde la API
+                    if (GameManager.Instance != null)
+                    {
+                        GameManager.Instance.RestoreFromAPI(game);
+                    }
+
+                    // Iniciar sesión de juego
+                    TriskelAPIClient.Instance.StartSession(
+                        session => Debug.Log($"[MainMenuController] Sesión iniciada: {session.session_id}"),
+                        error => Debug.LogWarning($"[MainMenuController] Error iniciando sesión: {error}")
+                    );
+
+                    // Cargar la escena correspondiente al nivel actual
+                    LoadLevelScene(game.current_level);
+                },
+                error =>
+                {
+                    Debug.LogError($"[MainMenuController] Error cargando partida: {error}");
+                    HideLoading();
+                    // Re-habilitar botón si falla
+                    if (continueButton != null)
+                        continueButton.SetEnabled(true);
+                }
+            );
         }
 
         /// <summary>
@@ -514,6 +552,51 @@ namespace Triskel.UI
                 SceneManager.LoadScene(gameSceneName);
             else
                 Debug.LogWarning("[MainMenuController] Nombre de escena del juego no configurado");
+        }
+
+        /// <summary>
+        /// Carga la escena correspondiente a un nivel específico desde la API.
+        /// </summary>
+        /// <param name="apiLevel">Nivel desde la API (ej: "senda_ebano", "hub_central").</param>
+        /// <remarks>
+        /// Convierte el nivel de la API a nombre de escena Unity:
+        /// - hub_central → DentroDelHub1
+        /// - senda_ebano → Cuadrante1
+        /// - fortaleza_gigantes → Cuadrante2
+        /// - aquelarre_sombras → Cuadrante3
+        /// - claro_almas → Cuadrante4
+        /// </remarks>
+        private void LoadLevelScene(string apiLevel)
+        {
+            string sceneName;
+
+            // Convertir nivel API a nombre de escena Unity
+            switch (apiLevel)
+            {
+                case APIConstants.Levels.HUB_CENTRAL:
+                    sceneName = "DentroDelHub1";
+                    break;
+                case APIConstants.Levels.SENDA_EBANO:
+                    sceneName = "Cuadrante1";
+                    break;
+                case APIConstants.Levels.FORTALEZA_GIGANTES:
+                    sceneName = "Cuadrante2";
+                    break;
+                case APIConstants.Levels.AQUELARRE_SOMBRAS:
+                    sceneName = "Cuadrante3";
+                    break;
+                case APIConstants.Levels.CLARO_ALMAS:
+                    sceneName = "Cuadrante4";
+                    break;
+                default:
+                    // Fallback al hub si el nivel no se reconoce
+                    Debug.LogWarning($"[MainMenuController] Nivel desconocido '{apiLevel}', cargando hub");
+                    sceneName = "DentroDelHub1";
+                    break;
+            }
+
+            Debug.Log($"[MainMenuController] Cargando escena: {sceneName} (nivel API: {apiLevel})");
+            SceneManager.LoadScene(sceneName);
         }
     }
 }

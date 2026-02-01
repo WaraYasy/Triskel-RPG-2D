@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Triskel.API;
 
 /// <summary>
 /// Tipos de salida/transición entre escenas
@@ -103,7 +104,7 @@ public class LevelExit : MonoBehaviour
         UnlockDiaryEntry(0);
 
         string targetScene = sceneToLoad;
-        
+
         if (useLevelProgression)
         {
             targetScene = "Cuadrante" + GameManager.Instance.CurrentLevel;
@@ -111,6 +112,13 @@ public class LevelExit : MonoBehaviour
 
         if (!string.IsNullOrEmpty(targetScene))
         {
+            // Iniciar tracking de nivel en la API
+            string apiLevel = LevelMapper.SceneToAPILevel(targetScene);
+            if (!string.IsNullOrEmpty(apiLevel))
+            {
+                GameManager.Instance.GetAPITracker()?.OnLevelStart(apiLevel);
+            }
+
             Debug.Log($"[LevelExit] Hub → Level: {targetScene} (usando transición nivel0)");
             GameManager.Instance.IrATransicion(0, targetScene);
         }
@@ -130,6 +138,9 @@ public class LevelExit : MonoBehaviour
         // Desbloquear entrada del diario según moral
         UnlockDiaryEntry(nivelCompletado);
 
+        // Completar nivel en la API ANTES de avanzar
+        GameManager.Instance.GetAPITracker()?.OnLevelComplete();
+
         GameManager.Instance.NextLevel(); // Avanzar al siguiente nivel
 
         string targetScene = useLevelProgression ?
@@ -138,6 +149,13 @@ public class LevelExit : MonoBehaviour
 
         if (!string.IsNullOrEmpty(targetScene))
         {
+            // Iniciar tracking del siguiente nivel
+            string apiLevel = LevelMapper.SceneToAPILevel(targetScene);
+            if (!string.IsNullOrEmpty(apiLevel))
+            {
+                GameManager.Instance.GetAPITracker()?.OnLevelStart(apiLevel);
+            }
+
             Debug.Log($"[LevelExit] Level Complete: Nivel {nivelCompletado} → {targetScene}");
             GameManager.Instance.IrATransicion(nivelCompletado, targetScene);
         }

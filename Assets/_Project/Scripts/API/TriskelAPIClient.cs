@@ -93,6 +93,14 @@ namespace Triskel.API
         /// </summary>
         public event Action<string> OnError;
         /// <summary>
+        /// Evento que se dispara cuando hay un error de conexión con el servidor.
+        /// </summary>
+        /// <remarks>
+        /// Se dispara cuando no se puede conectar al servidor por problemas de red.
+        /// Útil para mostrar alertas de "sin conexión" al jugador.
+        /// </remarks>
+        public event Action OnConnectionError;
+        /// <summary>
         /// Evento que se dispara cuando un jugador inicia sesión exitosamente.
         /// </summary>
         public event Action OnLoggedIn;
@@ -118,6 +126,7 @@ namespace Triskel.API
             // Inicializar HTTP service
             http = new HttpService(baseURL, this);
             http.OnRequestError += error => OnError?.Invoke(error);
+            http.OnConnectionError += () => OnConnectionError?.Invoke();
 
             // Cargar credenciales guardadas
             LoadCredentials();

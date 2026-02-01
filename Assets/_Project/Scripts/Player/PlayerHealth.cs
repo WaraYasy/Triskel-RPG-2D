@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
+using Triskel.API;
 
 /// <summary>
 /// PlayerHealth - Gestiona la vida del jugador y el daño recibido.
@@ -109,6 +110,19 @@ public class PlayerHealth : MonoBehaviour
         isDead = true;
         Debug.Log("[PlayerHealth] El jugador ha muerto.");
         if (playerSprite != null) playerSprite.color = Color.gray;
+
+        // Notificar muerte a la API ANTES de la transición
+        if (GameManager.Instance != null)
+        {
+            string level = LevelMapper.GetCurrentAPILevel();
+            if (!string.IsNullOrEmpty(level))
+            {
+                GameManager.Instance.GetAPITracker()?.OnPlayerDeath(
+                    transform.position,
+                    APIConstants.DeathCauses.ENEMY_ATTACK
+                );
+            }
+        }
 
         // Notificar evento (para listeners en el Inspector)
         OnPlayerDeath?.Invoke();

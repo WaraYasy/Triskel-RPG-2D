@@ -2,6 +2,8 @@ using _Project.Scripts.Core.Transition;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Triskel.Core;
+using Triskel.API;
+using Triskel.API.Models;
 
 /// <summary>
 /// GameManager - Singleton que persiste entre escenas.
@@ -13,10 +15,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     // ===== REFERENCIAS A SISTEMAS =====
-    private DiaryManager diaryManager;
-    private InventoryData inventoryData;
-    private InventoryPersistence inventoryPersistence;
-    private DiaryPersistence diaryPersistence;
+    private GameplayAPITracker apiTracker;
 
     // ===== ESTADO DEL JUEGO =====
     [Header("Estado del Juego")]
@@ -29,6 +28,87 @@ public class GameManager : MonoBehaviour
     public int MoralScore => moralScore;
     public int CurrentLevel => currentLevel;
     public string LastExitUsed { get => lastExitUsed; set => lastExitUsed = value; }
+
+    /// <summary>
+    /// Obtiene el tracker de API para registrar eventos de gameplay.
+    /// </summary>
+    public GameplayAPITracker GetAPITracker() => apiTracker;
+
+    /// <summary>
+    /// Elimina la reliquia correspondiente al nivel actual del inventario.
+    /// </summary>
+    /// <remarks>
+    /// Se llama al morir o reiniciar un nivel para que el jugador pierda la reliquia
+    /// recogida en ese nivel y tenga que recogerla de nuevo.
+    ///
+    /// Mapeo:
+    /// - Nivel 1 (Cuadrante1/senda_ebano) → Lirio
+    /// - Nivel 2 (Cuadrante2/fortaleza_gigantes) → Hacha
+    /// - Nivel 3 (Cuadrante3/aquelarre_sombras) → Manto
+    /// - Nivel 4 (Cuadrante4/claro_almas) → Sin reliquia
+    /// </remarks>
+    public void RemoveCurrentLevelRelic()
+    {
+        // Acceder directamente a Instance en lugar de usar la variable de campo
+        // (más robusto cuando GameManager está en múltiples escenas)
+        if (InventoryData.Instance == null)
+        {
+            Debug.LogWarning("[GameManager] InventoryData.Instance es null, no se puede eliminar reliquia");
+            return;
+        }
+
+        string relicToRemove = null;
+
+        Debug.Log($"[GameManager] Intentando eliminar reliquia del nivel {currentLevel}");
+
+        // Determinar qué reliquia corresponde al nivel actual
+        switch (currentLevel)
+        {
+            case 1:
+                relicToRemove = "lirio";
+                break;
+            case 2:
+                relicToRemove = "hacha";
+                break;
+            case 3:
+                relicToRemove = "manto";
+                break;
+            case 4:
+                // Nivel 4 no tiene reliquia específica
+                Debug.Log("[GameManager] Nivel 4 no tiene reliquia específica");
+                return;
+            default:
+                Debug.LogWarning($"[GameManager] Nivel {currentLevel} no reconocido");
+                return;
+        }
+
+        // Mostrar items actuales en inventario antes de eliminar
+        var items = InventoryData.Instance.GetAllItems();
+        Debug.Log($"[GameManager] Items en inventario antes de eliminar: {items.Count}");
+        foreach (var item in items)
+        {
+            Debug.Log($"  - {item.displayName} (ID: '{item.itemID}')");
+        }
+
+        // Intentar eliminar la reliquia del inventario
+        if (!string.IsNullOrEmpty(relicToRemove))
+        {
+            Debug.Log($"[GameManager] Intentando eliminar reliquia con ID: '{relicToRemove}'");
+            bool removed = InventoryData.Instance.RemoveItem(relicToRemove);
+            if (removed)
+            {
+                Debug.Log($"[GameManager] ✓ Reliquia '{relicToRemove}' eliminada del inventario (reinicio de nivel {currentLevel})");
+            }
+            else
+            {
+                Debug.LogWarning($"[GameManager] ✗ No se pudo eliminar reliquia '{relicToRemove}' (no encontrada en inventario)");
+            }
+        }
+
+        // Mostrar items después de eliminar
+        items = InventoryData.Instance.GetAllItems();
+        Debug.Log($"[GameManager] Items en inventario después de eliminar: {items.Count}");
+    }
 
     #region Unity Lifecycle
 
@@ -48,8 +128,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        // Obtener referencias DESPUÉS de que todos los Awake() terminen
-        InitializeManagers();
+        InitializeAPITracker();
     }
 
     #endregion
@@ -57,26 +136,20 @@ public class GameManager : MonoBehaviour
     #region Initialization
 
     /// <summary>
-    /// Obtiene referencias a todos los managers del juego.
+    /// Inicializa el GameplayAPITracker para tracking de métricas.
     /// </summary>
-    private void InitializeManagers()
+    private void InitializeAPITracker()
     {
-        diaryManager = FindFirstObjectByType<DiaryManager>();
-        inventoryData = FindFirstObjectByType<InventoryData>();
-        inventoryPersistence = FindFirstObjectByType<InventoryPersistence>();
-        diaryPersistence = FindFirstObjectByType<DiaryPersistence>();
+        // Buscar o crear GameplayAPITracker
+        apiTracker = FindFirstObjectByType<GameplayAPITracker>();
+        if (apiTracker == null)
+        {
+            apiTracker = gameObject.AddComponent<GameplayAPITracker>();
+        }
 
-        // Validación
-        if (diaryManager == null)
-            Debug.LogWarning("[GameManager] DiaryManager no encontrado.");
-        if (inventoryData == null)
-            Debug.LogWarning("[GameManager] InventoryData no encontrado.");
-        if (inventoryPersistence == null)
-            Debug.LogWarning("[GameManager] InventoryPersistence no encontrado.");
-        if (diaryPersistence == null)
-            Debug.LogWarning("[GameManager] DiaryPersistence no encontrado.");
-
-        Debug.Log($"[GameManager] Inicializado. Diary={diaryManager != null}, Inventory={inventoryData != null}");
+        // Inicializar con dependencias (acceso directo a singletons)
+        apiTracker.Initialize(TriskelAPIClient.Instance, InventoryData.Instance);
+        Debug.Log("[GameManager] API Tracker inicializado.");
     }
 
     #endregion
@@ -91,15 +164,15 @@ public class GameManager : MonoBehaviour
         Debug.Log("[GameManager] Guardando partida...");
 
         // 1. Guardar inventario
-        if (inventoryPersistence != null)
+        if (InventoryPersistence.Instance != null)
         {
-            inventoryPersistence.SaveInventory();
+            InventoryPersistence.Instance.SaveInventory();
         }
 
         // 2. Guardar diario
-        if (diaryManager != null && diaryPersistence != null)
+        if (DiaryManager.Instance != null && DiaryPersistence.Instance != null)
         {
-            var unlockedEntries = diaryManager.GetUnlockedEntries();
+            var unlockedEntries = DiaryManager.Instance.GetUnlockedEntries();
             if (unlockedEntries != null && unlockedEntries.Count > 0)
             {
                 var unlockedIDs = new string[unlockedEntries.Count];
@@ -107,12 +180,12 @@ public class GameManager : MonoBehaviour
                 {
                     unlockedIDs[i] = unlockedEntries[i].id;
                 }
-                diaryPersistence.SaveUnlockedEntries(unlockedIDs);
+                DiaryPersistence.Instance.SaveUnlockedEntries(unlockedIDs);
             }
             else
             {
                 // Si no hay entradas, guardar array vacío
-                diaryPersistence.SaveUnlockedEntries(new string[0]);
+                DiaryPersistence.Instance.SaveUnlockedEntries(new string[0]);
             }
         }
 
@@ -133,23 +206,23 @@ public class GameManager : MonoBehaviour
         LoadFromLocal();
 
         // 2. Cargar inventario
-        if (inventoryPersistence != null)
+        if (InventoryPersistence.Instance != null)
         {
-            inventoryPersistence.LoadInventory();
+            InventoryPersistence.Instance.LoadInventory();
         }
 
         // 3. Cargar diario
-        if (diaryManager != null && diaryPersistence != null)
+        if (DiaryManager.Instance != null && DiaryPersistence.Instance != null)
         {
-            string[] unlockedIDs = diaryPersistence.LoadUnlockedEntries();
+            string[] unlockedIDs = DiaryPersistence.Instance.LoadUnlockedEntries();
             foreach (string id in unlockedIDs)
             {
-                diaryManager.RestoreEntry(id);
+                DiaryManager.Instance.RestoreEntry(id);
             }
         }
 
-        int itemCount = inventoryData?.GetAllItems().Count ?? 0;
-        int diaryCount = diaryManager?.GetUnlockedEntries().Count ?? 0;
+        int itemCount = InventoryData.Instance?.GetAllItems().Count ?? 0;
+        int diaryCount = DiaryManager.Instance?.GetUnlockedEntries().Count ?? 0;
 
         Debug.Log($"[GameManager] ✓ Partida cargada: Moral={moralScore}, Nivel={currentLevel}, Items={itemCount}, Entradas={diaryCount}");
 
@@ -176,23 +249,23 @@ public class GameManager : MonoBehaviour
         currentLevel = 1;
 
         // 2. Limpiar inventario
-        if (inventoryData != null)
+        if (InventoryData.Instance != null)
         {
-            inventoryData.ClearInventory();
+            InventoryData.Instance.ClearInventory();
         }
-        if (inventoryPersistence != null)
+        if (InventoryPersistence.Instance != null)
         {
-            inventoryPersistence.ClearSavedData();
+            InventoryPersistence.Instance.ClearSavedData();
         }
 
         // 3. Limpiar diario
-        if (diaryManager != null)
+        if (DiaryManager.Instance != null)
         {
-            diaryManager.ClearAll();
+            DiaryManager.Instance.ClearAll();
         }
-        if (diaryPersistence != null)
+        if (DiaryPersistence.Instance != null)
         {
-            diaryPersistence.ClearSavedData();
+            DiaryPersistence.Instance.ClearSavedData();
         }
 
         // 4. Limpiar PlayerPrefs
@@ -204,6 +277,173 @@ public class GameManager : MonoBehaviour
         Triskel.Dialogue.DialogueZone.ResetearTodosLosDialogos();
 
         Debug.Log("[GameManager] ✓ Nueva partida iniciada");
+    }
+
+    /// <summary>
+    /// Restaura el estado del juego desde los datos de la API.
+    /// </summary>
+    /// <param name="gameData">Datos de la partida desde la API REST.</param>
+    /// <remarks>
+    /// Restaura el nivel actual, reliquias y otros datos relevantes.
+    /// Se llama al hacer clic en "Continuar" para cargar una partida existente.
+    /// </remarks>
+    public void RestoreFromAPI(GameData gameData)
+    {
+        Debug.Log($"[GameManager] Restaurando estado desde API: {gameData.game_id}");
+
+        // Restaurar nivel actual (convertir nivel API a número de nivel)
+        currentLevel = LevelMapper.LevelIndexToAPILevel(1) == gameData.current_level ? 1 :
+                       LevelMapper.LevelIndexToAPILevel(2) == gameData.current_level ? 2 :
+                       LevelMapper.LevelIndexToAPILevel(3) == gameData.current_level ? 3 :
+                       LevelMapper.LevelIndexToAPILevel(4) == gameData.current_level ? 4 : 1;
+
+        // Restaurar reliquias en el inventario
+        if (InventoryData.Instance != null && gameData.relics != null)
+        {
+            InventoryData.Instance.ClearInventory();
+
+            foreach (string relicID in gameData.relics)
+            {
+                CollectibleItem item = LoadCollectibleItemByID(relicID);
+                if (item != null)
+                {
+                    InventoryData.Instance.AddItem(item);
+                    Debug.Log($"[GameManager] Reliquia restaurada: {relicID}");
+                }
+                else
+                {
+                    Debug.LogWarning($"[GameManager] No se pudo cargar reliquia: {relicID}");
+                }
+            }
+        }
+
+        // Restaurar moral basado en las decisiones tomadas
+        // Calculamos moral basado en si las decisiones fueron buenas o malas
+        int calculatedMoral = 0;
+        if (gameData.choices != null)
+        {
+            if (APIConstants.Choices.IsGoodChoice(gameData.choices.senda_ebano))
+                calculatedMoral += 1;
+            else if (!string.IsNullOrEmpty(gameData.choices.senda_ebano))
+                calculatedMoral -= 1;
+
+            if (APIConstants.Choices.IsGoodChoice(gameData.choices.fortaleza_gigantes))
+                calculatedMoral += 1;
+            else if (!string.IsNullOrEmpty(gameData.choices.fortaleza_gigantes))
+                calculatedMoral -= 1;
+
+            if (APIConstants.Choices.IsGoodChoice(gameData.choices.aquelarre_sombras))
+                calculatedMoral += 1;
+            else if (!string.IsNullOrEmpty(gameData.choices.aquelarre_sombras))
+                calculatedMoral -= 1;
+        }
+        moralScore = calculatedMoral;
+
+        // Reconstruir diario desde datos de la API
+        if (DiaryManager.Instance != null)
+        {
+            int unlockedCount = 0;
+
+            // Entrada del hub: se desbloquea al salir del hub por primera vez
+            if (gameData.current_level != APIConstants.Levels.HUB_CENTRAL)
+            {
+                DiaryManager.Instance.UnlockEntry(0, "intro");
+                unlockedCount++;
+                Debug.Log("[GameManager] Diario: Entrada hub desbloqueada");
+            }
+
+            // Nivel 1: si estamos en nivel 2+, ya completamos nivel 1
+            if (currentLevel >= 2)
+            {
+                string decision;
+                if (!string.IsNullOrEmpty(gameData.choices?.senda_ebano))
+                {
+                    decision = APIConstants.Choices.IsGoodChoice(gameData.choices.senda_ebano)
+                        ? "bueno"
+                        : "malo";
+                    Debug.Log($"[GameManager] Diario: Nivel 1 con decisión guardada '{gameData.choices.senda_ebano}' ({decision})");
+                }
+                else
+                {
+                    decision = "bueno"; // Decisión por defecto (buena)
+                    Debug.Log("[GameManager] Diario: Nivel 1 sin decisión guardada, usando decisión buena por defecto");
+                }
+                DiaryManager.Instance.UnlockEntry(1, decision);
+                unlockedCount++;
+            }
+
+            // Nivel 2: si estamos en nivel 3+, ya completamos nivel 2
+            if (currentLevel >= 3)
+            {
+                string decision;
+                if (!string.IsNullOrEmpty(gameData.choices?.fortaleza_gigantes))
+                {
+                    decision = APIConstants.Choices.IsGoodChoice(gameData.choices.fortaleza_gigantes)
+                        ? "bueno"
+                        : "malo";
+                }
+                else
+                {
+                    decision = "bueno"; // Decisión por defecto (buena)
+                }
+                DiaryManager.Instance.UnlockEntry(2, decision);
+                unlockedCount++;
+                Debug.Log($"[GameManager] Diario: Entrada nivel 2 desbloqueada ({decision})");
+            }
+
+            // Nivel 3: si estamos en nivel 4, ya completamos nivel 3
+            if (currentLevel >= 4)
+            {
+                string decision;
+                if (!string.IsNullOrEmpty(gameData.choices?.aquelarre_sombras))
+                {
+                    decision = APIConstants.Choices.IsGoodChoice(gameData.choices.aquelarre_sombras)
+                        ? "bueno"
+                        : "malo";
+                }
+                else
+                {
+                    decision = "bueno"; // Decisión por defecto (buena)
+                }
+                DiaryManager.Instance.UnlockEntry(3, decision);
+                unlockedCount++;
+                Debug.Log($"[GameManager] Diario: Entrada nivel 3 desbloqueada ({decision})");
+            }
+
+            Debug.Log($"[GameManager] Diario reconstruido desde API: {unlockedCount} entradas desbloqueadas");
+        }
+
+        Debug.Log($"[GameManager] ✓ Estado restaurado: Nivel={currentLevel}, Moral={moralScore}, Reliquias={gameData.relics?.Length ?? 0}");
+    }
+
+    /// <summary>
+    /// Carga un CollectibleItem desde Resources usando su ID.
+    /// </summary>
+    /// <param name="itemID">ID del item ("lirio", "hacha", "manto").</param>
+    /// <returns>CollectibleItem cargado, o null si no se encuentra.</returns>
+    /// <remarks>
+    /// Los CollectibleItem deben estar en la carpeta Resources/Items/ con nombres:
+    /// - Lirio.asset (para itemID "lirio")
+    /// - Hacha.asset (para itemID "hacha")
+    /// - Manto.asset (para itemID "manto")
+    /// </remarks>
+    private CollectibleItem LoadCollectibleItemByID(string itemID)
+    {
+        if (string.IsNullOrEmpty(itemID))
+            return null;
+
+        // Capitalizar primera letra: "lirio" → "Lirio"
+        string capitalizedID = char.ToUpper(itemID[0]) + itemID.Substring(1).ToLower();
+
+        // Cargar desde Resources/Items/
+        CollectibleItem item = Resources.Load<CollectibleItem>($"Items/{capitalizedID}");
+
+        if (item == null)
+        {
+            Debug.LogError($"[GameManager] No se encontró CollectibleItem en Resources/Items/{capitalizedID}");
+        }
+
+        return item;
     }
 
     #endregion
@@ -223,6 +463,17 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log($"[GameManager] Moral: {oldMoral} → {moralScore} ({(delta > 0 ? "+" : "")}{delta})");
         }
+    }
+
+    /// <summary>
+    /// Modifica la moral del jugador y registra la decisión en la API.
+    /// </summary>
+    /// <param name="delta">Cambio en moral (+1, -1, etc.)</param>
+    /// <param name="choice">Decisión moral tomada (usar APIConstants.Choices)</param>
+    public void ModifyMoralWithChoice(int delta, string choice)
+    {
+        ModifyMoral(delta);
+        apiTracker?.RegistrarDecisionMoral(choice);
     }
 
     /// <summary>
@@ -265,8 +516,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("===== ESTADO DEL JUEGO =====");
         Debug.Log($"Moral: {moralScore}");
         Debug.Log($"Nivel actual: {currentLevel}");
-        Debug.Log($"Items inventario: {inventoryData?.GetAllItems().Count ?? 0}");
-        Debug.Log($"Entradas diario: {diaryManager?.GetUnlockedEntries().Count ?? 0}");
+        Debug.Log($"Items inventario: {InventoryData.Instance?.GetAllItems().Count ?? 0}");
+        Debug.Log($"Entradas diario: {DiaryManager.Instance?.GetUnlockedEntries().Count ?? 0}");
         Debug.Log("============================");
     }
 
@@ -334,6 +585,12 @@ public class GameManager : MonoBehaviour
     public void OnJugadorMuerto()
     {
         Debug.Log("[GameManager] Jugador ha muerto. Reiniciando nivel con transición...");
+
+        // Resetear tracking de nivel (tiempo y muertes del nivel actual)
+        apiTracker?.ResetLevelTracking();
+
+        // Eliminar la reliquia del nivel actual (se pierde al morir)
+        RemoveCurrentLevelRelic();
 
         // Determinar el nivel actual
         string escenaActual = SceneManager.GetActiveScene().name;

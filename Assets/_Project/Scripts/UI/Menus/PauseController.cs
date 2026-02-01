@@ -11,6 +11,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using Triskel.API;
 
 namespace Triskel.UI
 {
@@ -237,9 +238,17 @@ namespace Triskel.UI
         {
             Debug.Log("[PauseController] Reiniciando nivel...");
 
-            // Guardar progreso antes de reiniciar
+            // Resetear tracking del nivel antes de reiniciar
             if (GameManager.Instance != null)
+            {
                 GameManager.Instance.SaveGame();
+
+                // Resetear tiempo y muertes del nivel (mantiene totalDeaths)
+                GameManager.Instance.GetAPITracker()?.ResetLevelTracking();
+
+                // Eliminar la reliquia del nivel actual (se pierde al reiniciar)
+                GameManager.Instance.RemoveCurrentLevelRelic();
+            }
 
             // Ocultar ventana de pausa
             Hide();

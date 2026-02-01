@@ -476,7 +476,7 @@ namespace Triskel.UI
             // Actualizar título
             if (entryTitleLabel != null)
             {
-                entryTitleLabel.text = $"Nivel {entry.level + 1}: {entry.title}";
+                entryTitleLabel.text = entry.title;
             }
 
             // Actualizar texto
