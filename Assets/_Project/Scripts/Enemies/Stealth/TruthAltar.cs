@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Triskel.API;
 
 /// <summary>
 /// TruthAltar - Altar de la Verdad donde el Manto de Luna revela la verdad oculta.
@@ -133,6 +134,13 @@ public class TruthAltar : MonoBehaviour
         
         Debug.Log("🌙✨ ¡ALTAR DE LA VERDAD ACTIVADO! La luz revela la verdad oculta...");
         
+        // Modificar moral y registrar decisión (Buena decisión: Revelar la verdad)
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.ModifyMoralWithChoice(1, APIConstants.Choices.REVELAR);
+            Debug.Log("[TruthAltar] +1 Moral (Verdad Revelada)");
+        }
+
         // Reproducir sonido
         if (audioSource != null && revelationSound != null)
         {

@@ -73,6 +73,7 @@ public class ShadowPatrol : MonoBehaviour
     // Referencias
     private Rigidbody2D rb;
     private Animator animator;
+    private Collider2D myCollider;
     private Transform playerTransform;
     private PlayerHealth playerHealth;
     private PlayerStealth playerStealth;
@@ -98,7 +99,11 @@ public class ShadowPatrol : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        myCollider = GetComponent<Collider2D>();
         if (spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
+        
+        // Configuración inicial: Sombra es Fantasma (Trigger)
+        if (myCollider != null) myCollider.isTrigger = true;
     }
 
     private void Start()
@@ -182,7 +187,7 @@ public class ShadowPatrol : MonoBehaviour
         if (distanceToPlayer <= proximityDetectionRadius)
         {
             Vector2 directionToPlayer = (playerTransform.position - transform.position).normalized;
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToPlayer, distanceToPlayer, obstacleLayer);
+            RaycastHit2D hit = SafeRaycast(transform.position, directionToPlayer, distanceToPlayer, obstacleLayer);
             
             if (hit.collider == null)
             {
@@ -208,7 +213,7 @@ public class ShadowPatrol : MonoBehaviour
             if (angleToPlayer <= detectionAngle / 2f)
             {
                 // Verificar línea de visión
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToPlayer, distanceToPlayer, obstacleLayer);
+                RaycastHit2D hit = SafeRaycast(transform.position, directionToPlayer, distanceToPlayer, obstacleLayer);
                 
                 if (hit.collider == null)
                 {
@@ -643,9 +648,22 @@ public class ShadowPatrol : MonoBehaviour
         animator.SetFloat("Horizontal", currentDirection.x);
         animator.SetFloat("Vertical", currentDirection.y);
         
-        // Ajustar velocidad de la animación según el movimiento
-        float animSpeed = direction.magnitude > 0.1f ? 1f + (direction.magnitude * 0.5f) : 1f;
-        animator.speed = animSpeed;
+        // Parámetro para saber si se mueve (Solo para el Animal Revelado)
+        if (isRevealed)
+        {
+            bool isMoving = direction.magnitude > 0.01f;
+            animator.SetBool("IsMoving", isMoving);
+            
+            // Ajustar velocidad de la animación según el movimiento
+            float animSpeed = isMoving ? 1f + (direction.magnitude * 0.5f) : 1f;
+            animator.speed = animSpeed;
+        }
+        else
+        {
+            // Lógica original para la Sombra
+             float animSpeed = direction.magnitude > 0.1f ? 1f + (direction.magnitude * 0.5f) : 1f;
+             animator.speed = animSpeed;
+        }
     }
 
     private void UpdateIndicators()
@@ -735,6 +753,9 @@ public class ShadowPatrol : MonoBehaviour
         if (detectionIndicator != null) detectionIndicator.SetActive(false);
         if (suspicionIndicator != null) suspicionIndicator.SetActive(false);
         
+        // CAMBIO IMPORTANTE: Ahora el animal es sólido (choca con árboles)
+        if (myCollider != null) myCollider.isTrigger = false;
+        
         // Detener cualquier persecución
         currentState = ShadowState.Patrolling;
         rb.linearVelocity = Vector2.zero;
@@ -761,21 +782,17 @@ public class ShadowPatrol : MonoBehaviour
                 // --- CASO 1: HUIR (Prioridad Alta) ---
                 if (distanceToPlayer < fleeDistance)
                 {
-                    Vector2 fleeDirection = ((Vector2)transform.position - (Vector2)playerTransform.position).normalized;
+                    Vector2 desiredFleeDir = ((Vector2)transform.position - (Vector2)playerTransform.position).normalized;
                     
-                    // Verificar paredes
-                    RaycastHit2D hit = Physics2D.Raycast(transform.position, fleeDirection, 1f, obstacleLayer);
-                    if (hit.collider != null)
-                    {
-                        fleeDirection = Vector2.Perpendicular(fleeDirection);
-                    }
+                    // Usar "Bigotes" para esquivar obstáculos
+                    Vector2 smartDir = GetSmartDirection(desiredFleeDir);
                     
-                    // Moverse rápido
-                    rb.linearVelocity = fleeDirection * fleeSpeed;
-                    currentDirection = fleeDirection;
-                    UpdateAnimation(fleeDirection);
+                    // Moverse
+                    rb.linearVelocity = smartDir * fleeSpeed;
+                    currentDirection = smartDir;
+                    UpdateAnimation(smartDir);
                     
-                    // Resetear timer de deambular para que al parar cambie de dirección
+                    // Resetear timer de deambular
                     wanderTimer = wanderInterval; 
                 }
                 // --- CASO 2: DEAMBULAR (Idle) ---
@@ -786,29 +803,31 @@ public class ShadowPatrol : MonoBehaviour
                     if (wanderTimer >= wanderInterval)
                     {
                         wanderTimer = 0f;
-                        wanderInterval = Random.Range(2f, 5f); // Intervalo aleatorio
+                        wanderInterval = Random.Range(2f, 5f);
                         
-                        // 50% probabilidad de quedarse quieto, 50% de moverse suave
                         if (Random.value > 0.5f)
                         {
-                            // Dirección aleatoria
                             wanderDirection = Random.insideUnitCircle.normalized;
                         }
                         else
                         {
-                            wanderDirection = Vector2.zero; // Quedarse quieto
+                            wanderDirection = Vector2.zero;
                         }
                     }
                     
-                    // Aplicar movimiento de deambular (más lento que huir)
-                    float wanderSpeed = patrolSpeed * 0.5f; // Mitad de velocidad de patrulla
-                    rb.linearVelocity = wanderDirection * wanderSpeed;
-                    
+                    // También aplicar esquiva suave al deambular si se mueve
                     if (wanderDirection != Vector2.zero)
                     {
-                        currentDirection = wanderDirection;
+                        Vector2 smartWander = GetSmartDirection(wanderDirection);
+                        rb.linearVelocity = smartWander * (patrolSpeed * 0.5f);
+                        currentDirection = smartWander;
+                        UpdateAnimation(smartWander);
                     }
-                    UpdateAnimation(wanderDirection);
+                    else
+                    {
+                        rb.linearVelocity = Vector2.zero;
+                        UpdateAnimation(Vector2.zero);
+                    }
                 }
             }
             
@@ -860,6 +879,85 @@ public class ShadowPatrol : MonoBehaviour
             }
         }
     }
+
+    #region Helpers Anti-Bug
+    
+    // Método seguro para lanzar rayos sin chocarse con uno mismo
+    private RaycastHit2D SafeRaycast(Vector2 origin, Vector2 direction, float distance, LayerMask layerMask)
+    {
+        bool wasEnabled = false;
+        
+        // Apagar collider momentáneamente
+        if (myCollider != null)
+        {
+            wasEnabled = myCollider.enabled;
+            myCollider.enabled = false;
+        }
+        
+        RaycastHit2D hit = Physics2D.Raycast(origin, direction, distance, layerMask);
+        
+        // Encender collider de nuevo
+        if (myCollider != null)
+        {
+            myCollider.enabled = wasEnabled;
+        }
+        
+        return hit;
+    }
+    
+    /// <summary>
+    /// Calcula una dirección segura basándose en "bigotes" (raycasts) frontales y laterales.
+    /// Evita que el animal se choque o se atasque.
+    /// </summary>
+    private Vector2 GetSmartDirection(Vector2 desiredDir)
+    {
+        float feelerDist = 1.5f; // Distancia de detección
+        
+        // 1. Rayo Central
+        RaycastHit2D hitCenter = SafeRaycast(transform.position, desiredDir, feelerDist, obstacleLayer);
+        
+        // 2. Rayo Izquierdo (~45 grados)
+        Vector2 leftDir = Quaternion.Euler(0, 0, 45) * desiredDir;
+        RaycastHit2D hitLeft = SafeRaycast(transform.position, leftDir, feelerDist * 0.8f, obstacleLayer);
+        
+        // 3. Rayo Derecho (~-45 grados)
+        Vector2 rightDir = Quaternion.Euler(0, 0, -45) * desiredDir;
+        RaycastHit2D hitRight = SafeRaycast(transform.position, rightDir, feelerDist * 0.8f, obstacleLayer);
+
+        // --- LÓGICA DE DECISIÓN ---
+        
+        // Si todo está despejado, seguir recto
+        if (hitCenter.collider == null && hitLeft.collider == null && hitRight.collider == null)
+        {
+            return desiredDir;
+        }
+        
+        // Si el centro está bloqueado
+        if (hitCenter.collider != null)
+        {
+            // Intentar ir por los lados
+            if (hitLeft.collider == null && hitRight.collider == null)
+            {
+                // Ambos lados libres: elegir aleatoriamente para evitar patrones repetitivos
+                return Random.value > 0.5f ? leftDir : rightDir;
+            }
+            else if (hitLeft.collider == null) return leftDir;  // Solo izquierda libre
+            else if (hitRight.collider == null) return rightDir; // Solo derecha libre
+            else
+            {
+                 // ¡Todo bloqueado! (Callejón sin salida) -> Dar media vuelta (Pánico)
+                 return -desiredDir;
+            }
+        }
+        
+        // El centro está libre, pero quizás rozamos una pared lateral
+        if (hitLeft.collider != null) return rightDir; // Pared a la izquierda -> empujar derecha
+        if (hitRight.collider != null) return leftDir; // Pared a la derecha -> empujar izquierda
+        
+        return desiredDir;
+    }
+    
+    #endregion
 
     #endregion
 }
