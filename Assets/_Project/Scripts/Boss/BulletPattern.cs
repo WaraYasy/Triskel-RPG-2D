@@ -93,9 +93,9 @@ public class BulletPattern : MonoBehaviour
                 FirePattern(PatternType.Spiral);
                 break;
             case 1:
-                // Zona centrada debajo del boss
+                // Zona centrada (ajustado para estar más cerca del boss)
                 Vector3 bossPos = transform.position;
-                SpawnDangerZone(bossPos + Vector3.down * 3f, 2.5f);
+                SpawnDangerZone(bossPos + Vector3.down * 9f, 2.5f); 
                 break;
             case 2:
                 FirePattern(PatternType.Circle);
@@ -104,10 +104,10 @@ public class BulletPattern : MonoBehaviour
                 FirePattern(PatternType.Cross);
                 break;
             case 4:
-                // Dos zonas a los lados, abajo
+                // Dos zonas a los lados (ajustado para estar más cerca)
                 Vector3 pos = transform.position;
-                SpawnDangerZone(pos + new Vector3(-3f, -3f, 0), 2f);
-                SpawnDangerZone(pos + new Vector3(3f, -3f, 0), 2f);
+                SpawnDangerZone(pos + new Vector3(-6f, -11f, 0), 2f);
+                SpawnDangerZone(pos + new Vector3(6f, -11f, 0), 2f);
                 break;
             case 5:
                 FirePattern(PatternType.Spread);
@@ -185,11 +185,14 @@ public class BulletPattern : MonoBehaviour
     
     private void FireCircle(int count)
     {
-        float angleStep = 360f / count;
+        // Modificado: Ahora dispara en un semicírculo hacia abajo (180 grados)
+        float startAngle = 180f; // Izquierda
+        float endAngle = 360f;   // Derecha
+        float angleStep = (endAngle - startAngle) / (count - 1);
         
         for (int i = 0; i < count; i++)
         {
-            float angle = i * angleStep;
+            float angle = startAngle + (i * angleStep);
             Vector2 direction = Quaternion.Euler(0, 0, angle) * Vector2.right;
             SpawnProjectile(direction, GetFinalSpeed());
         }
@@ -215,12 +218,13 @@ public class BulletPattern : MonoBehaviour
     
     private void FireSpiral(int count)
     {
-        float angleOffset = Time.time * 50f;
-        float angleStep = 360f / count;
+        // Modificado: Espiral limitada al arco inferior
+        float angleOffset = Mathf.PingPong(Time.time * 100f, 180f) - 90f; // Oscila -90 a 90
+        float angleStep = 45f / count;
         
         for (int i = 0; i < count; i++)
         {
-            float angle = (i * angleStep) + angleOffset;
+            float angle = 270f + angleOffset + (i * angleStep); // Centrado en Down (270)
             Vector2 direction = Quaternion.Euler(0, 0, angle) * Vector2.right;
             SpawnProjectile(direction, GetFinalSpeed());
         }
@@ -230,22 +234,20 @@ public class BulletPattern : MonoBehaviour
     
     private void FireCross()
     {
-        // Dispara en 4 direcciones cardinales
-        SpawnProjectile(Vector2.up, GetFinalSpeed());
+        // Modificado: Solo direcciones hacia abajo
         SpawnProjectile(Vector2.down, GetFinalSpeed());
-        SpawnProjectile(Vector2.left, GetFinalSpeed());
-        SpawnProjectile(Vector2.right, GetFinalSpeed());
+        SpawnProjectile(new Vector2(-1, -1).normalized, GetFinalSpeed());
+        SpawnProjectile(new Vector2(1, -1).normalized, GetFinalSpeed());
     }
     
     private void FireRandom(int count)
     {
-        // Dispara en direcciones completamente aleatorias
+        // Modificado: Direcciones aleatorias solo hacia abajo (arco de 180)
         for (int i = 0; i < count; i++)
         {
-            float randomAngle = Random.Range(0f, 360f);
+            float randomAngle = Random.Range(180f, 360f); // Arco inferior
             Vector2 direction = Quaternion.Euler(0, 0, randomAngle) * Vector2.right;
             
-            // Velocidad también aleatoria para caos máximo
             float randomSpeed = GetFinalSpeed() * Random.Range(0.7f, 1.3f);
             SpawnProjectile(direction, randomSpeed);
         }
@@ -257,12 +259,24 @@ public class BulletPattern : MonoBehaviour
     {
         if (projectilePrefab == null || firePoint == null) return;
         
-        GameObject proj = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+        // Forzar posición Z para asegurar visibilidad
+        Vector3 spawnPos = firePoint.position;
+        spawnPos.z = 0;
+
+        GameObject proj = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
         Projectile projScript = proj.GetComponent<Projectile>();
         
         if (projScript != null)
         {
             projScript.Initialize(direction, speed);
+        }
+
+        // Asegurar que el SpriteRenderer tenga un orden alto
+        SpriteRenderer sr = proj.GetComponent<SpriteRenderer>();
+        if (sr != null)
+        {
+            sr.sortingLayerName = "Foreground"; // O la capa que uses delante
+            sr.sortingOrder = 100;
         }
     }
     

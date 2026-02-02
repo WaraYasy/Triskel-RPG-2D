@@ -1,0 +1,1227 @@
+fileFormatVersion: 2
+guid: 4ebf1d8a3d0c2a84295f9b572c5009d2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5659680054872410808
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_0
+  - first:
+      213: -5908303888537388999
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_1
+  - first:
+      213: 2146942132551387339
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_2
+  - first:
+      213: -7016649211711886248
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_3
+  - first:
+      213: -5066204095204509393
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_4
+  - first:
+      213: 7155078898425910912
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_5
+  - first:
+      213: -4295342186086973963
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_6
+  - first:
+      213: 9023259556878372157
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_7
+  - first:
+      213: -786422196357446409
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_8
+  - first:
+      213: -4621012592273077403
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_9
+  - first:
+      213: -7116998700931987180
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_10
+  - first:
+      213: 2062833845053525776
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_11
+  - first:
+      213: 4162902325757926761
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_12
+  - first:
+      213: 7280358803912392178
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_13
+  - first:
+      213: -6299445877883819990
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_14
+  - first:
+      213: -3312187027509975109
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_15
+  - first:
+      213: 933395949394302594
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_16
+  - first:
+      213: -3696391216586407414
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_17
+  - first:
+      213: 1149962608046996539
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_18
+  - first:
+      213: -1815086405225505481
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_19
+  - first:
+      213: 6407004121488443458
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_20
+  - first:
+      213: 5395967259313053742
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_21
+  - first:
+      213: -8368019375638423466
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_22
+  - first:
+      213: 2906100589244824372
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_23
+  - first:
+      213: 8066900687422321459
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_24
+  - first:
+      213: -3380559035045977429
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_25
+  - first:
+      213: -7098301328107187734
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_26
+  - first:
+      213: -7332437087137960330
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_27
+  - first:
+      213: 1518514165059079671
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_28
+  - first:
+      213: -4288682999488758962
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_29
+  - first:
+      213: 523051944777092038
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_30
+  - first:
+      213: 2998846204444196844
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_31
+  - first:
+      213: -7201046439210874291
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_32
+  - first:
+      213: -2235395935246108560
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_33
+  - first:
+      213: -6123001010157773466
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_34
+  - first:
+      213: 2174222318897824836
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_35
+  - first:
+      213: 5552227553729137976
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_36
+  - first:
+      213: -7421395600422703875
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_37
+  - first:
+      213: -8275599631449443204
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_38
+  - first:
+      213: -8160055065019990918
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_39
+  - first:
+      213: 3228800996192615218
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_40
+  - first:
+      213: 4724429199942236146
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_41
+  - first:
+      213: -1198936109826615778
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_42
+  - first:
+      213: -4923045429699283729
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_43
+  - first:
+      213: -2571131082088656128
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_44
+  - first:
+      213: 5138233546495664218
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_45
+  - first:
+      213: 4591162996754904263
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_46
+  - first:
+      213: 4605861400055522768
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_47
+  - first:
+      213: 3162273716729167794
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_48
+  - first:
+      213: -683801627506676835
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_49
+  - first:
+      213: -7317352328306440195
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_50
+  - first:
+      213: 8853716873147241101
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_51
+  - first:
+      213: 4722200693458419835
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_52
+  - first:
+      213: -7430501216656821987
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_53
+  - first:
+      213: -3049590106562129422
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_54
+  - first:
+      213: -6921585210059647772
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_55
+  - first:
+      213: -2847773313695331301
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_56
+  - first:
+      213: -165772115166598212
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_57
+  - first:
+      213: -8297415779145039726
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_58
+  - first:
+      213: -2876238635629801075
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_59
+  - first:
+      213: -1793005479459702070
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_60
+  - first:
+      213: -1381963690240506648
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_61
+  - first:
+      213: 1076306030532756076
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_62
+  - first:
+      213: 7288554213318794581
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_63
+  - first:
+      213: 6141296879861488854
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_64
+  - first:
+      213: 8894379510029478156
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_65
+  - first:
+      213: 7404257007075823384
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_66
+  - first:
+      213: -3508899091507898417
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_67
+  - first:
+      213: -7469358270310349907
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_68
+  - first:
+      213: -380902778796227572
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_69
+  - first:
+      213: 5566807959037416033
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_70
+  - first:
+      213: 1578135693003506251
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_71
+  - first:
+      213: -6180934421627676215
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_72
+  - first:
+      213: 2089559822624079152
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_73
+  - first:
+      213: 8864870665707536184
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_74
+  - first:
+      213: -6642075459824068294
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_75
+  - first:
+      213: 890081690340857550
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_76
+  - first:
+      213: -4084486537713716084
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_77
+  - first:
+      213: -1586177859289474602
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_78
+  - first:
+      213: -7065777142528550267
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_79
+  - first:
+      213: -2505073760774735980
+    second: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_80
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1245
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84577f2f9f6c471b0800000000000000
+      internalID: -5659680054872410808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_1
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 1245
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9387baabaec710ea0800000000000000
+      internalID: -5908303888537388999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_2
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 1245
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc88b0c9e787bcd10800000000000000
+      internalID: 2146942132551387339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_3
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 1245
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85c636eb7badf9e90800000000000000
+      internalID: -7016649211711886248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_4
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 1245
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f29b4b1a73a31b9b0800000000000000
+      internalID: -5066204095204509393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_5
+      rect:
+        serializedVersion: 2
+        x: 1635
+        y: 1245
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 086d1905952fb4360800000000000000
+      internalID: 7155078898425910912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 996
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fd39891a01e364c0800000000000000
+      internalID: -4295342186086973963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_7
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 996
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3d42eb72ce093d70800000000000000
+      internalID: 9023259556878372157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_8
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 996
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f4c1a6dd211615f0800000000000000
+      internalID: -786422196357446409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_9
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 996
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56bc4fec78ddedfb0800000000000000
+      internalID: -4621012592273077403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_10
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 996
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 419480493675b3d90800000000000000
+      internalID: -7116998700931987180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_11
+      rect:
+        serializedVersion: 2
+        x: 1635
+        y: 996
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01f8115e378a0ac10800000000000000
+      internalID: 2062833845053525776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 747
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96dd279fb9995c930800000000000000
+      internalID: 4162902325757926761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_13
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 747
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fdf59852c7090560800000000000000
+      internalID: 7280358803912392178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_14
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 747
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a28afe6995fd398a0800000000000000
+      internalID: -6299445877883819990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_15
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 747
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb76c9b727fb802d0800000000000000
+      internalID: -3312187027509975109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_16
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 747
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2869f6eaba614fc00800000000000000
+      internalID: 933395949394302594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_17
+      rect:
+        serializedVersion: 2
+        x: 1635
+        y: 747
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a024e78d5c7c3bcc0800000000000000
+      internalID: -3696391216586407414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 498
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3c7f9536ec75ff00800000000000000
+      internalID: 1149962608046996539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_19
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 498
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73d94ebf7848fc6e0800000000000000
+      internalID: -1815086405225505481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_20
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 498
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24848cf7d404ae850800000000000000
+      internalID: 6407004121488443458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_21
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 498
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e202efe12a352ea40800000000000000
+      internalID: 5395967259313053742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_22
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 498
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6585c79a6b2dedb80800000000000000
+      internalID: -8368019375638423466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_23
+      rect:
+        serializedVersion: 2
+        x: 1635
+        y: 498
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43bbd77b61b845820800000000000000
+      internalID: 2906100589244824372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 249
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33379285f6363ff60800000000000000
+      internalID: 8066900687422321459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_25
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 249
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba2e8d5f777d511d0800000000000000
+      internalID: -3380559035045977429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_26
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 249
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae1dc7dec84cd7d90800000000000000
+      internalID: -7098301328107187734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_27
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 249
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67eed337153fd3a90800000000000000
+      internalID: -7332437087137960330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_28
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 249
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fdceb27698d21510800000000000000
+      internalID: 1518514165059079671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_29
+      rect:
+        serializedVersion: 2
+        x: 1635
+        y: 249
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4b373dc8898b74c0800000000000000
+      internalID: -4288682999488758962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cb0487f8f0424700800000000000000
+      internalID: 523051944777092038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_31
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 0
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cefbceffbba0e9920800000000000000
+      internalID: 2998846204444196844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_32
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 0
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4a8eb39a6eb01c90800000000000000
+      internalID: -7201046439210874291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_33
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 0
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 078bd439d374af0e0800000000000000
+      internalID: -2235395935246108560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_34
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 0
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66d1036b50bb60ba0800000000000000
+      internalID: -6123001010157773466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_35
+      rect:
+        serializedVersion: 2
+        x: 1635
+        y: 0
+        width: 327
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44481a4fda36c2e10800000000000000
+      internalID: 2174222318897824836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4e4b3e875e22c8a4b94e4941abaf27a6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_0: -5659680054872410808
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_1: -5908303888537388999
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_10: -7116998700931987180
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_11: 2062833845053525776
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_12: 4162902325757926761
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_13: 7280358803912392178
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_14: -6299445877883819990
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_15: -3312187027509975109
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_16: 933395949394302594
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_17: -3696391216586407414
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_18: 1149962608046996539
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_19: -1815086405225505481
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_2: 2146942132551387339
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_20: 6407004121488443458
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_21: 5395967259313053742
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_22: -8368019375638423466
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_23: 2906100589244824372
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_24: 8066900687422321459
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_25: -3380559035045977429
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_26: -7098301328107187734
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_27: -7332437087137960330
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_28: 1518514165059079671
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_29: -4288682999488758962
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_3: -7016649211711886248
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_30: 523051944777092038
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_31: 2998846204444196844
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_32: -7201046439210874291
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_33: -2235395935246108560
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_34: -6123001010157773466
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_35: 2174222318897824836
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_4: -5066204095204509393
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_5: 7155078898425910912
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_6: -4295342186086973963
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_7: 9023259556878372157
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_8: -786422196357446409
+      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_9: -4621012592273077403
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
