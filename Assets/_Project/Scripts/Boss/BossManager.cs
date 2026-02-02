@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
+using Triskel.Core;
+using Triskel.API;
 
 /// <summary>
 /// BossManager - Gestor del combate final
@@ -82,6 +84,12 @@ public class BossManager : MonoBehaviour
         SetPhase(1);
         
         OnCombatStart?.Invoke();
+        
+        // Registrar encuentro con el jefe en la API
+        if (TriskelAPIClient.Instance != null)
+        {
+            TriskelAPIClient.Instance.SendBossEncounterEvent(APIConstants.Levels.CLARO_ALMAS, "Guardian de las Almas");
+        }
         
         if (showDebugLogs)
         {
@@ -167,6 +175,12 @@ public class BossManager : MonoBehaviour
             {
                 Debug.Log("🎉 ¡VICTORIA! Has sobrevivido al infierno");
             }
+
+            // Notificar al GameManager para procesar el final del juego
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.FinalizarJuego();
+            }
         }
         
         OnCombatEnd?.Invoke();
@@ -180,8 +194,7 @@ public class BossManager : MonoBehaviour
         int moral = 0;
         if (GameManager.Instance != null)
         {
-            // TODO: Descomentar cuando GameManager tenga MoralScore
-            // moral = GameManager.Instance.MoralScore;
+            moral = GameManager.Instance.MoralScore;
         }
         
         // Ajustar velocidad según moral

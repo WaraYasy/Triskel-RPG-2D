@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections.Generic;
+using Triskel.API;
 
 namespace Triskel.GiantFortress
 {
@@ -45,7 +46,10 @@ namespace Triskel.GiantFortress
             treesHealed++;
             Debug.Log($"Arbol sanado ({treesHealed} total). Gigante aliviado.");
             
-            GameManager.Instance?.ModifyMoral(moralRewardPerHeal);
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.ModifyMoralWithChoice(moralRewardPerHeal, APIConstants.Choices.CONSTRUIR);
+            }
             
             if (giantAnimator != null && !string.IsNullOrEmpty(happyTrigger))
             {
@@ -63,7 +67,10 @@ namespace Triskel.GiantFortress
             treesChopped++;
             Debug.Log($"Arbol talado ({treesChopped} total). Gigante entristecido.");
             
-            GameManager.Instance?.ModifyMoral(moralPenaltyPerChop);
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.ModifyMoralWithChoice(moralPenaltyPerChop, APIConstants.Choices.DESTRUIR);
+            }
             
             if (giantAnimator != null && !string.IsNullOrEmpty(sadTrigger))
             {

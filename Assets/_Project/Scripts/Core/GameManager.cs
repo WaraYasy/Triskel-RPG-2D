@@ -631,4 +631,35 @@ public class GameManager : MonoBehaviour
         else
             return "muerte_hub"; // Default
     }
+    /// <summary>
+    /// Finaliza el juego, registra el final y carga la escena de créditos.
+    /// </summary>
+    public void FinalizarJuego()
+    {
+        Debug.Log("[GameManager] ¡Juego Finalizado!");
+        
+        // 1. Calcular final basado en la moral (de -10 a 10)
+        // Mapeo: >5: Final 1, >0: Final 2, >-5: Final 3, <=-5: Final 4
+        int goodChoices = 0;
+        if (moralScore >= 3) goodChoices = 3;
+        else if (moralScore >= 1) goodChoices = 2;
+        else if (moralScore >= -1) goodChoices = 1;
+        else goodChoices = 0;
+
+        int endingNumber = APIConstants.Endings.CalculateEnding(goodChoices);
+        
+        // 2. Notificar a la API
+        if (TriskelAPIClient.Instance != null && TriskelAPIClient.Instance.IsLoggedIn)
+        {
+            TriskelAPIClient.Instance.CompleteGame(true);
+            TriskelAPIClient.Instance.SendGameEndingEvent(endingNumber);
+        }
+
+        // 3. Transición al final (Usamos un texto especial de final)
+        TransitionManager.TransitionID = "final_" + endingNumber;
+        TransitionManager.SiguienteEscena = "MainMenu"; // O una escena de créditos si existiera
+
+        Debug.Log($"[GameManager] Final {endingNumber} alcanzado con moral {moralScore}.");
+        SceneManager.LoadScene("LevelTransition");
+    }
 }
