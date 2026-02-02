@@ -22,6 +22,8 @@ namespace Triskel.UI.Menus
         private VideoPlayer videoPlayer;
         private AudioSource audioSource;
         private bool isTransitioning = false;
+        private float skipCooldown = 1.0f; // 1 segundo de espera antes de permitir skip
+        private float startTime;
 
         private void Awake()
         {
@@ -35,12 +37,19 @@ namespace Triskel.UI.Menus
             videoPlayer.audioOutputMode = VideoAudioOutputMode.AudioSource;
             videoPlayer.EnableAudioTrack(0, true);
             videoPlayer.SetTargetAudioSource(0, audioSource);
+
+            // Importante: No saltar frames si hay lag (evita saltos al final)
+            videoPlayer.skipOnDrop = false;
+            // Usar GameTime para la actualización del tiempo
+            videoPlayer.timeUpdateMode = VideoTimeUpdateMode.GameTime;
+            
+            videoPlayer.playOnAwake = false;
         }
 
         private void Start()
         {
+            startTime = Time.time;
             // Configuración inicial para evitar congelamientos
-            videoPlayer.playOnAwake = false; // Controlamos nosotros el inicio
             videoPlayer.isLooping = false;
             
             // Suscribirse a eventos
@@ -55,12 +64,14 @@ namespace Triskel.UI.Menus
         private void OnVideoPrepared(VideoPlayer vp)
         {
             Debug.Log("[Intro] Video preparado. Iniciando reproducción.");
+            vp.time = 0; // Asegurar que empezamos desde el principio
             vp.Play();
         }
 
         private void Update()
         {
-            if (allowSkip && !isTransitioning)
+            // Solo permitir skip si ha pasado el tiempo de cooldown
+            if (allowSkip && !isTransitioning && (Time.time - startTime > skipCooldown))
             {
                 // Detectar input para saltar usando el nuevo Input System
                 // Comprobamos si el teclado o pointer (mouse/touch) existen y se han pulsado
