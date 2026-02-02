@@ -129,7 +129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6347445498604003613, guid: 50ef614bbfe761e4abf974d048f71d3f, type: 3}
       propertyPath: m_Name
-      value: Ghost (7)
+      value: Ghost4
       objectReference: {fileID: 0}
     - target: {fileID: 7993449283238798564, guid: 50ef614bbfe761e4abf974d048f71d3f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd5cae1039f61a4fa6d9a0400341943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundMusic: {fileID: 8300000, guid: 47744e817be588c4e9da6e9943c4583b, type: 3}
+  backgroundMusic: {fileID: 8300000, guid: f190d15aed1b3aa4989d72f593c3b0b7, type: 3}
   volume: 0.3
   playOnAwake: 1
   loop: 1
@@ -236,7 +236,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6347445498604003613, guid: 50ef614bbfe761e4abf974d048f71d3f, type: 3}
       propertyPath: m_Name
-      value: Ghost (6)
+      value: Ghost3
       objectReference: {fileID: 0}
     - target: {fileID: 7993449283238798564, guid: 50ef614bbfe761e4abf974d048f71d3f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -293,7 +293,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6347445498604003613, guid: 50ef614bbfe761e4abf974d048f71d3f, type: 3}
       propertyPath: m_Name
-      value: Ghost (8)
+      value: Ghost5
       objectReference: {fileID: 0}
     - target: {fileID: 7993449283238798564, guid: 50ef614bbfe761e4abf974d048f71d3f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -376406,7 +376406,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6347445498604003613, guid: 50ef614bbfe761e4abf974d048f71d3f, type: 3}
       propertyPath: m_Name
-      value: Ghost
+      value: Ghost1
       objectReference: {fileID: 0}
     - target: {fileID: 7993449283238798564, guid: 50ef614bbfe761e4abf974d048f71d3f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -545133,7 +545133,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6347445498604003613, guid: 50ef614bbfe761e4abf974d048f71d3f, type: 3}
       propertyPath: m_Name
-      value: Ghost (5)
+      value: Ghost2
       objectReference: {fileID: 0}
     - target: {fileID: 7993449283238798564, guid: 50ef614bbfe761e4abf974d048f71d3f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -605446,26 +605446,26 @@ SceneRoots:
   - {fileID: 1332426815}
   - {fileID: 1137978493}
   - {fileID: 833822797}
-  - {fileID: 1380706727}
-  - {fileID: 313086053}
-  - {fileID: 1930391888}
   - {fileID: 1839870530793458595}
-  - {fileID: 1041449077}
   - {fileID: 6323571518974803095}
   - {fileID: 1573753250533566588}
-  - {fileID: 8088743744489931946}
+  - {fileID: 1041449077}
   - {fileID: 123204144}
+  - {fileID: 8088743744489931946}
   - {fileID: 1279713002}
   - {fileID: 2010257985}
   - {fileID: 139325424}
   - {fileID: 57037277}
   - {fileID: 151409956}
   - {fileID: 2015840104}
-  - {fileID: 1354840153}
-  - {fileID: 1933802481}
-  - {fileID: 679558874}
   - {fileID: 1614393407}
-  - {fileID: 582848536}
-  - {fileID: 253057475}
+  - {fileID: 1380706727}
+  - {fileID: 313086053}
+  - {fileID: 1930391888}
+  - {fileID: 1354840153}
+  - {fileID: 679558874}
+  - {fileID: 1933802481}
   - {fileID: 495432469}
+  - {fileID: 253057475}
   - {fileID: 1715751514}
+  - {fileID: 582848536}
