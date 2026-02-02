@@ -1,10 +1,10 @@
 ﻿title: Level3_Start
 ---
 Guardian: Shhh... pisa suave, Sacha.
-Guardian: Este es el Akelarre. El lugar donde el bosque sueña con los ojos abiertos.
-Guardian: Tu corazón late rápido. Es normal.
-Guardian: El miedo es la respuesta del cuerpo ante lo desconocido. No es tu enemigo, es tu radar.
-Guardian: Pero recuerda: un radar sirve para guiarte, no para detenerte.
+Guardian: Bienvenido al Akelarre. Aquí el tiempo se ha congelado en una medianoche eterna.
+Guardian: Hace mucho que el sol no toca estas ramas. Solo queda la luna, fría y pálida.
+Guardian: Bajo esta luz de plata, la realidad se distorsiona. Las sombras crecen y el miedo se hace sólido.
+Guardian: Tu corazón late rápido. Es normal. El miedo es tu radar en la oscuridad... úsalo para encontrar la salida, no para paralizarte.
 ===
 
 title: Level3_Lore_A
@@ -34,7 +34,7 @@ Guardian: Ocultar o Revelar. Ambas son formas de sobrevivir.
 title: Level3_Obstaculo_Sombras
 ---
 Guardian: Has encontrado las tres reliquias.
-Guardian: Pero ahora las sombras bloquearán tu camino. erizadas y temblorosas. Protegen este camino porque es lo único que les queda.
+Guardian: Pero ahora las sombras bloquearán tu camino. Erizadas y temblorosas, protegen este paso porque es lo único que les queda.
 Guardian: Tienes una decisión difícil, Guardián.
 Guardian: ¿Merecen seguir en su ignorancia pacífica, o es tu deber romper su ilusión?
 
@@ -42,31 +42,42 @@ Guardian: ¿Merecen seguir en su ignorancia pacífica, o es tu deber romper su i
     Guardian: El camino del respeto silencioso.
     Guardian: Si te ocultas, no perturbarás su guardia. Cruzarás como un suspiro.
     Guardian: Ellos seguirán vigilando la nada, pero tú estarás a salvo y en paz con tu conciencia.
-    Guardian: Cúbrete y avanza despacio.
--> Usaré el Manto sobre ellos. Deben ver la verdad.
+    Guardian: Cúbrete y avanza despacio hacia la salida.
+-> Descubriré la verdad. Necesitan ver la realidad.
     Guardian: El camino del revelador.
-    Guardian: Si retiras el velo, destruirás su mundo de sombras. Se asustarán al principio.
-    Guardian: Es una acción agresiva, pero quizás necesaria.
-    Guardian: ¿Estás dispuesto a ser el que rompa su calma para traer la luz? Hazlo.
+    Guardian: Para disipar una oscuridad tan antigua, necesitamos algo más fuerte que tu chispa.
+    Guardian: Debemos encontrar El Gran Fanal que corona este bosque.
+    Guardian: Si logras encenderlo, su resplandor tocará cada rincón y obligará al bosque a mostrar su verdadera cara.
+    Guardian: Toma el Manto y busca el mecanismo.
 ===
 
-title: Level3_Respuesta_Mala
-comments: "Si el jugador se hace invisible (Evasión/Respeto)"
+title: Level3_Fanal_Descripcion
+comments: "Al encontrar el objeto. Está emitiendo una luz plateada/azulada tenue."
 ---
-Guardian: Te mueves como un fantasma. Ni una hoja se ha movido.
-Guardian: Has cruzado sin incidentes. Has respetado su santuario y su miedo.
-Guardian: Pero mira atrás... Siguen ahí. Patrullando en círculos, atrapados en su propia pesadilla.
-Guardian: Te has salvado tú, pero ellos siguen en la oscuridad.
+Guardian: Ahí está... El Gran Fanal.
+Guardian: Ahora mismo duerme en su Fase Lunar. Mira esa luz plateada... es fría y engañosa.
+Guardian: Bajo la luna, las sombras se alargan y las formas se distorsionan. Por eso el bosque está aterrado.
+Guardian: Pero el mecanismo es dual. Si colocas tu chispa en el centro, harás rotar el núcleo.
+Guardian: Tienes el poder de terminar esta noche eterna. Convierte la Luna en Sol.
 ===
 
 title: Level3_Respuesta_Buena
-comments: "Si el jugador revela la verdad (Confrontación/Verdad)"
+comments: "Al activar el Fanal. Animación: El orbe gira y la luz cambia de Azul/Plata a Dorado/Cálido."
 ---
-Guardian: ¡El velo cae! La luz inunda el camino.
-Guardian: Míralos. No eran demonios. Eran ciervos, liebres, espíritus del bosque.
-Guardian: Están confundidos, parpadeando ante la luz... pero ya no atacan.
-Guardian: Has roto su pesadilla. A veces, la bondad duele al principio.
-Guardian: Ahora son libres.
+Guardian: ¡El núcleo gira! La plata se funde en oro.
+Guardian: ¡Es el Sol, Sacha! Un amanecer repentino en medio de la oscuridad.
+Guardian: La luz cálida inunda el bosque y la mentira se desvanece.
+Guardian: Mira a las sombras... Al tocarlas el sol, recuperan su forma real.
+Guardian: Ciervos, zorros, liebres... No eran monstruos, solo estaban perdidos en la noche.
+===
+
+title: Level3_Respuesta_Mala
+comments: "Si el jugador se hace invisible y llega a la salida sin activar el Fanal"
+---
+Guardian: Te mueves como un fantasma. Ni una hoja se ha movido.
+Guardian: Has cruzado sin incidentes. Has respetado su santuario y su miedo.
+Guardian: Pero mira atrás... Siguen ahí. Patrullando en círculos, atrapados en su propia oscuridad.
+Guardian: Te has salvado tú, pero ellos siguen prisioneros del miedo.
 ===
 
 title: Level3_Final

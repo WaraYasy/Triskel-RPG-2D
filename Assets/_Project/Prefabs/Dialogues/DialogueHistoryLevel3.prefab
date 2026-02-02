@@ -96,6 +96,7 @@ MonoBehaviour:
   soloUnaVez: 1
   freezePlayer: 1
   persisteEntreEscenas: 0
+  repetirHastaCondicion: 0
   uniqueDialogueID: 
   yaUsado: 0
 --- !u!1 &1457667402265818938
@@ -165,7 +166,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.41264534, y: 0.114868164}
+  m_Offset: {x: -0.29681897, y: 0.114868164}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -175,7 +176,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 7.082699, y: 1.8494415}
+  m_Size: {x: 13.9859085, y: 1.8494415}
   m_EdgeRadius: 0
 --- !u!114 &8148516189422308055
 MonoBehaviour:
@@ -194,6 +195,7 @@ MonoBehaviour:
   soloUnaVez: 1
   freezePlayer: 1
   persisteEntreEscenas: 0
+  repetirHastaCondicion: 0
   uniqueDialogueID: 
   yaUsado: 0
 --- !u!1 &1632506024632618928
@@ -292,6 +294,7 @@ MonoBehaviour:
   soloUnaVez: 1
   freezePlayer: 1
   persisteEntreEscenas: 0
+  repetirHastaCondicion: 0
   uniqueDialogueID: 
   yaUsado: 0
 --- !u!1 &6373947434150331677
@@ -324,6 +327,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4849387908654946113}
+  - {fileID: 783002433138627867}
   - {fileID: 8501444276956824234}
   - {fileID: 2588763065142977788}
   - {fileID: 4061406333545331108}
@@ -425,5 +429,105 @@ MonoBehaviour:
   soloUnaVez: 1
   freezePlayer: 1
   persisteEntreEscenas: 0
+  repetirHastaCondicion: 0
+  uniqueDialogueID: 
+  yaUsado: 0
+--- !u!1 &7347961631171151514
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 783002433138627867}
+  - component: {fileID: 5839645670569891489}
+  - component: {fileID: 6091823797794836656}
+  m_Layer: 0
+  m_Name: Fanal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &783002433138627867
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7347961631171151514}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: 0.5298851, w: 0.8480695}
+  m_LocalPosition: {x: 0.22664452, y: 43.05672, z: 0.18881866}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2275691311909983858}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 63.995}
+--- !u!61 &5839645670569891489
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7347961631171151514}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 2.3624482, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 5.7248964, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &6091823797794836656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7347961631171151514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c034b2ba3052b44d8ce8cba083a1271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodoDialogo: Level3_Fanal_Descripcion
+  dialogueRunner: {fileID: 0}
+  soloUnaVez: 1
+  freezePlayer: 0
+  persisteEntreEscenas: 0
+  repetirHastaCondicion: 0
   uniqueDialogueID: 
   yaUsado: 0
