@@ -653,7 +653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd5cae1039f61a4fa6d9a0400341943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundMusic: {fileID: 8300000, guid: 966cedbd19bd2ef4bb8b75c01d8eff7f, type: 3}
+  backgroundMusic: {fileID: 8300000, guid: 750eb8daee4837245a1d826e913db2cd, type: 3}
   volume: 0.3
   playOnAwake: 1
   loop: 1
@@ -474102,6 +474102,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 316797970781899091, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 881880895286324670, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
       propertyPath: m_Name
       value: Player 1
@@ -474165,6 +474169,10 @@ PrefabInstance:
     - target: {fileID: 4171356868572406566, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4171356868572406566, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.35488
       objectReference: {fileID: 0}
     - target: {fileID: 4387209646159170931, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
       propertyPath: abilityCooldown
