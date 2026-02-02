@@ -1,5 +1,6 @@
 using UnityEngine;
 using Triskel.Core;
+using Triskel.API;
 
 /// <summary>
 /// LiberationFountain - Zona donde se liberan los fantasmas.
@@ -70,8 +71,8 @@ public class LiberationFountain : MonoBehaviour
     {
         if (GameManager.Instance != null)
         {
-            GameManager.Instance.ModifyMoral(1);
-            Debug.Log("[Fountain] ¡4 fantasmas liberados! +1 Moral concedida.");
+            GameManager.Instance.ModifyMoralWithChoice(1, APIConstants.Choices.SANAR);
+            Debug.Log("[Fountain] ¡4 fantasmas liberados! +1 Moral concedida y decisión registrada.");
         }
 
         if (animator != null)

@@ -1,4 +1,5 @@
 using UnityEngine;
+using Triskel.API;
 
 /// <summary>
 /// GhostAI - Fantasma con doble comportamiento frente al Lirio.
@@ -190,6 +191,12 @@ public class GhostAI : MonoBehaviour
     {
         Debug.Log("👻 ¡Fantasma disipado por la luz intensa!");
         
+        // Penalización moral y registro de decisión (Mala elección: Forzar al espíritu)
+        if (GameManager.Instance != null && GameManager.Instance.CurrentLevel == 1)
+        {
+            GameManager.Instance.ModifyMoralWithChoice(-1, APIConstants.Choices.FORZAR);
+        }
+
         if (liberationComponent != null)
         {
             liberationComponent.Liberate(GhostLiberation.LiberationMode.Intense);
