@@ -31,7 +31,7 @@ public class LiberationFountain : MonoBehaviour
     {
         // Intentar obtener el script de liberación
         GhostLiberation liberation = ghostObj.GetComponent<GhostLiberation>();
-        
+
         // Evitar procesar el mismo fantasma si ya está en proceso de liberación
         if (liberation != null && liberation.IsBeingLiberated) return;
 
@@ -46,6 +46,13 @@ public class LiberationFountain : MonoBehaviour
 
         ghostsLiberated++;
         Debug.Log($"[Fountain] Fantasma liberado. Total: {ghostsLiberated}/{ghostsRequiredForMoral}");
+
+        // Notificar al controlador del nivel que se liberó un fantasma
+        var sendaController = FindFirstObjectByType<SendaEbanoController>();
+        if (sendaController != null)
+        {
+            sendaController.OnGhostLiberated();
+        }
 
         if (ghostsLiberated >= ghostsRequiredForMoral)
         {
@@ -71,8 +78,9 @@ public class LiberationFountain : MonoBehaviour
     {
         if (GameManager.Instance != null)
         {
-            GameManager.Instance.ModifyMoralWithChoice(1, APIConstants.Choices.SANAR);
-            Debug.Log("[Fountain] ¡4 fantasmas liberados! +1 Moral concedida y decisión registrada.");
+            // Solo modificar moral local, la decisión se registrará al completar el nivel
+            GameManager.Instance.ModifyMoral(1);
+            Debug.Log("[Fountain] ¡4 fantasmas liberados! +1 Moral concedida.");
         }
 
         if (animator != null)

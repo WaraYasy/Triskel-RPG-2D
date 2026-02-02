@@ -49,7 +49,6 @@ namespace Triskel.API
         // ESTADO DEL NIVEL ACTUAL
         // ==========================================
         private string currentLevel;
-        private float levelStartTime;
         private int levelDeaths;
         private string moralChoice;
         private string relicObtained;
@@ -169,7 +168,6 @@ namespace Triskel.API
                 return;
 
             currentLevel = levelName;
-            levelStartTime = Time.time;
             levelDeaths = 0;
             moralChoice = null;
             relicObtained = null;
@@ -202,16 +200,15 @@ namespace Triskel.API
                 return;
             }
 
-            int timeSeconds = GetLevelTimeSeconds();
-
-            // Decisión por defecto según el nivel (decisión buena si no se registró ninguna)
-            string defaultChoice = GetDefaultChoiceForLevel(currentLevel);
-            string finalChoice = string.IsNullOrEmpty(moralChoice) ? defaultChoice : moralChoice;
+            // Obtener la decisión final basándose en los controladores de cada nivel
+            string finalChoice = GetFinalMoralChoiceFromLevelController(currentLevel);
 
             // Reliquia: si no hay, enviar null (la API lo acepta como opcional)
             string finalRelic = string.IsNullOrEmpty(relicObtained) ? null : relicObtained;
 
-            Debug.Log($"[APITracker] Nivel completado: {currentLevel} (Tiempo: {timeSeconds}s, Muertes: {levelDeaths}, Choice: {finalChoice}, Relic: {finalRelic ?? "NONE"})");
+            // NUEVO: Ya NO enviamos time_seconds - la API lo calcula automáticamente
+            Debug.Log($"[APITracker] Nivel completado: {currentLevel} (Muertes: {levelDeaths}, Choice: {finalChoice}, Relic: {finalRelic ?? "NONE"})");
+            Debug.Log("[APITracker] El tiempo será calculado automáticamente por la API");
 
             // IMPORTANTE: Guardar reliquias del inventario ANTES de completar el nivel
             // Esto asegura que todas las reliquias se sincronicen incluso si el nivel se completa en <30s
@@ -227,13 +224,13 @@ namespace Triskel.API
                 );
             }
 
-            // Enviar a la API
+            // Enviar a la API (sin time_seconds - se calcula automáticamente)
             apiClient.CompleteLevel(
                 level: currentLevel,
-                timeSeconds: timeSeconds,
                 deaths: levelDeaths,
                 choice: finalChoice,
                 relic: finalRelic,
+                timeSeconds: null, // null = API calcula automáticamente desde /level/start
                 game =>
                 {
                     Debug.Log($"[TriskelAPI] Nivel completado: {currentLevel}");
@@ -297,7 +294,6 @@ namespace Triskel.API
         /// </remarks>
         public void ResetLevelTracking()
         {
-            levelStartTime = Time.time; // Reiniciar tiempo
             levelDeaths = 0; // Reiniciar muertes del nivel
             moralChoice = null;
             // relicObtained NO se resetea (la reliquia ya está en inventario)
@@ -393,28 +389,46 @@ namespace Triskel.API
         // UTILIDADES
         // ==========================================
 
-        private int GetLevelTimeSeconds()
-        {
-            return Mathf.RoundToInt(Time.time - levelStartTime);
-        }
-
         /// <summary>
-        /// Obtiene la decisión buena por defecto para un nivel.
+        /// Obtiene la decisión moral final del controlador del nivel actual.
         /// </summary>
         /// <param name="level">Nivel actual (usar constantes de APIConstants.Levels).</param>
-        /// <returns>Decisión buena por defecto, o "sanar" si no se reconoce el nivel.</returns>
-        private string GetDefaultChoiceForLevel(string level)
+        /// <returns>La decisión moral final basada en las acciones del jugador en el nivel.</returns>
+        private string GetFinalMoralChoiceFromLevelController(string level)
         {
             switch (level)
             {
                 case APIConstants.Levels.SENDA_EBANO:
-                    return APIConstants.Choices.SANAR; // "sanar"
+                    var sendaController = FindFirstObjectByType<SendaEbanoController>();
+                    if (sendaController != null)
+                    {
+                        return sendaController.GetFinalMoralChoice();
+                    }
+                    Debug.LogWarning("[APITracker] SendaEbanoController no encontrado. Usando decisión por defecto: SANAR");
+                    return APIConstants.Choices.SANAR;
+
                 case APIConstants.Levels.FORTALEZA_GIGANTES:
-                    return APIConstants.Choices.CONSTRUIR; // "construir"
+                    var giantController = FindFirstObjectByType<Triskel.GiantFortress.GiantFortressController>();
+                    if (giantController != null)
+                    {
+                        return giantController.GetFinalMoralChoice();
+                    }
+                    Debug.LogWarning("[APITracker] GiantFortressController no encontrado. Usando decisión por defecto: CONSTRUIR");
+                    return APIConstants.Choices.CONSTRUIR;
+
                 case APIConstants.Levels.AQUELARRE_SOMBRAS:
-                    return APIConstants.Choices.REVELAR; // "revelar"
+                    var aquelarreController = FindFirstObjectByType<AquelarreSombrasController>();
+                    if (aquelarreController != null)
+                    {
+                        return aquelarreController.GetFinalMoralChoice();
+                    }
+                    Debug.LogWarning("[APITracker] AquelarreSombrasController no encontrado. Usando decisión por defecto: REVELAR");
+                    return APIConstants.Choices.REVELAR;
+
                 default:
-                    return APIConstants.Choices.SANAR; // Fallback (nivel 4 o desconocido)
+                    // Para niveles sin decisión moral (hub, nivel 4)
+                    Debug.Log($"[APITracker] Nivel {level} no requiere decisión moral");
+                    return null;
             }
         }
     }

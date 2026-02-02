@@ -190,11 +190,18 @@ public class GhostAI : MonoBehaviour
     private void Dissipate()
     {
         Debug.Log("👻 ¡Fantasma disipado por la luz intensa!");
-        
-        // Penalización moral y registro de decisión (Mala elección: Forzar al espíritu)
+
+        // Solo modificar moral local, la decisión se registrará al completar el nivel
         if (GameManager.Instance != null && GameManager.Instance.CurrentLevel == 1)
         {
-            GameManager.Instance.ModifyMoralWithChoice(-1, APIConstants.Choices.FORZAR);
+            GameManager.Instance.ModifyMoral(-1);
+        }
+
+        // Notificar al controlador del nivel que se mató un fantasma
+        var sendaController = FindFirstObjectByType<SendaEbanoController>();
+        if (sendaController != null)
+        {
+            sendaController.OnGhostKilled();
         }
 
         if (liberationComponent != null)

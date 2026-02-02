@@ -133,11 +133,11 @@ public class TruthAltar : MonoBehaviour
         truthRevealed = true;
         
         Debug.Log("🌙✨ ¡ALTAR DE LA VERDAD ACTIVADO! La luz revela la verdad oculta...");
-        
-        // Modificar moral y registrar decisión (Buena decisión: Revelar la verdad)
+
+        // Solo modificar moral local, la decisión se registrará al completar el nivel
         if (GameManager.Instance != null)
         {
-            GameManager.Instance.ModifyMoralWithChoice(1, APIConstants.Choices.REVELAR);
+            GameManager.Instance.ModifyMoral(1);
             Debug.Log("[TruthAltar] +1 Moral (Verdad Revelada)");
         }
 

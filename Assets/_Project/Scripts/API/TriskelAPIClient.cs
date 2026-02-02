@@ -368,17 +368,19 @@ namespace Triskel.API
         /// Marca un nivel como completado en la partida actual.
         /// </summary>
         /// <param name="level">Nombre del nivel (usar constantes de APIConstants.Levels).</param>
-        /// <param name="timeSeconds">Tiempo que tardó el jugador en completar el nivel (en segundos).</param>
         /// <param name="deaths">Número de muertes durante el nivel.</param>
         /// <param name="choice">Decisión moral tomada (usar constantes de APIConstants.Choices), opcional.</param>
         /// <param name="relic">Reliquia obtenida (usar constantes de APIConstants.Relics), opcional.</param>
+        /// <param name="timeSeconds">OPCIONAL: Tiempo en segundos. Si es null, la API lo calcula automáticamente.</param>
         /// <param name="onSuccess">Callback ejecutado si el nivel se completa exitosamente.</param>
         /// <param name="onError">Callback ejecutado si ocurre un error.</param>
         /// <remarks>
+        /// NUEVO: time_seconds es opcional. Si no se envía, la API calcula automáticamente el tiempo
+        /// usando el timestamp de /level/start y el timestamp actual. RECOMENDADO: dejar en null.
         /// Actualiza automáticamente las estadísticas de la partida (levels_completed, metrics, choices).
         /// </remarks>
-        public void CompleteLevel(string level, int timeSeconds, int deaths,
-            string choice = null, string relic = null,
+        public void CompleteLevel(string level, int deaths,
+            string choice = null, string relic = null, int? timeSeconds = null,
             Action<GameData> onSuccess = null, Action<string> onError = null)
         {
             if (string.IsNullOrEmpty(currentGameID))
@@ -390,7 +392,7 @@ namespace Triskel.API
             var request = new CompleteLevelRequest
             {
                 level = level,
-                time_seconds = timeSeconds,
+                time_seconds = timeSeconds, // null = API calcula automáticamente
                 deaths = deaths,
                 choice = choice,
                 relic = relic
