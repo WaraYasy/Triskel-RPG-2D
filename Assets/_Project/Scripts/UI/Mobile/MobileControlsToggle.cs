@@ -9,17 +9,20 @@ public class MobileControlsToggle : MonoBehaviour
 
     void Awake()
     {
-        // En el editor, podemos elegir si queremos verlos para testear
+        // En el editor, respetamos la variable para testear
         if (Application.isEditor)
         {
             gameObject.SetActive(showInEditor);
             return;
         }
 
-        // En otros casos, solo se activan si es plataforma móvil
-        // Esto incluye Android, iOS, Windows Phone, etc.
-        bool isMobile = Application.isMobilePlatform;
-        
-        gameObject.SetActive(isMobile);
+        // Para exportaciones (Builds)
+#if UNITY_ANDROID
+        // Si es Android, activamos
+        gameObject.SetActive(true);
+#else
+        // En cualquier otra plataforma (PC, WebGL, iOS, etc.), desactivamos/ocultamos
+        gameObject.SetActive(false);
+#endif
     }
 }

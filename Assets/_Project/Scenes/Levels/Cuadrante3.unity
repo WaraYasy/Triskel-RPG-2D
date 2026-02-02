@@ -132,6 +132,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 825543854312169768, guid: f65ec19d76905264995746af42532e1b, type: 3}
+      propertyPath: damageAmount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 825543854312169768, guid: f65ec19d76905264995746af42532e1b, type: 3}
       propertyPath: detectionAngle
       value: 60
       objectReference: {fileID: 0}
@@ -65425,6 +65429,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 825543854312169768, guid: f65ec19d76905264995746af42532e1b, type: 3}
+      propertyPath: damageAmount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 825543854312169768, guid: f65ec19d76905264995746af42532e1b, type: 3}
       propertyPath: detectionAngle
       value: 60
       objectReference: {fileID: 0}
@@ -107022,6 +107030,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 825543854312169768, guid: f65ec19d76905264995746af42532e1b, type: 3}
       propertyPath: patrolSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 825543854312169768, guid: f65ec19d76905264995746af42532e1b, type: 3}
+      propertyPath: damageAmount
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 825543854312169768, guid: f65ec19d76905264995746af42532e1b, type: 3}
@@ -205728,6 +205740,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 825543854312169768, guid: f65ec19d76905264995746af42532e1b, type: 3}
+      propertyPath: damageAmount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 825543854312169768, guid: f65ec19d76905264995746af42532e1b, type: 3}
       propertyPath: detectionAngle
       value: 60
       objectReference: {fileID: 0}
@@ -205986,6 +206002,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 825543854312169768, guid: f65ec19d76905264995746af42532e1b, type: 3}
+      propertyPath: damageAmount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 825543854312169768, guid: f65ec19d76905264995746af42532e1b, type: 3}
       propertyPath: detectionAngle
       value: 60
       objectReference: {fileID: 0}
@@ -206104,6 +206124,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 825543854312169768, guid: f65ec19d76905264995746af42532e1b, type: 3}
       propertyPath: patrolSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 825543854312169768, guid: f65ec19d76905264995746af42532e1b, type: 3}
+      propertyPath: damageAmount
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 825543854312169768, guid: f65ec19d76905264995746af42532e1b, type: 3}
@@ -206324,6 +206348,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 825543854312169768, guid: f65ec19d76905264995746af42532e1b, type: 3}
+      propertyPath: damageAmount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 825543854312169768, guid: f65ec19d76905264995746af42532e1b, type: 3}
       propertyPath: detectionAngle
       value: 60
       objectReference: {fileID: 0}
@@ -206536,6 +206564,10 @@ PrefabInstance:
     - target: {fileID: 825543854312169768, guid: f65ec19d76905264995746af42532e1b, type: 3}
       propertyPath: patrolSpeed
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 825543854312169768, guid: f65ec19d76905264995746af42532e1b, type: 3}
+      propertyPath: damageAmount
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 825543854312169768, guid: f65ec19d76905264995746af42532e1b, type: 3}
       propertyPath: detectionAngle
