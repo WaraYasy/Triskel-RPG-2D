@@ -217,11 +217,14 @@ namespace Triskel.API
         /// </summary>
         /// <param name="onSuccess">Callback ejecutado si la sesión es válida.</param>
         /// <param name="onError">Callback ejecutado si la sesión es inválida o ha expirado.</param>
+        /// <param name="clearCredentialsOnError">Si es true, limpia las credenciales al fallar (default: true).
+        /// Usar false cuando se reintenta una conexión temporal.</param>
         /// <remarks>
         /// Usa esto al iniciar el juego para comprobar si hay una sesión activa.
-        /// Si falla, limpia automáticamente las credenciales inválidas.
+        /// Por defecto, limpia las credenciales si la verificación falla.
+        /// Para reintentos de conexión, usa clearCredentialsOnError=false para preservar las credenciales.
         /// </remarks>
-        public void VerifySession(Action<PlayerProfile> onSuccess = null, Action<string> onError = null)
+        public void VerifySession(Action<PlayerProfile> onSuccess = null, Action<string> onError = null, bool clearCredentialsOnError = true)
         {
             if (!IsLoggedIn)
             {
@@ -232,8 +235,17 @@ namespace Triskel.API
             http.Get<PlayerProfile>("/v1/players/me", onSuccess,
                 error =>
                 {
-                    // Si falla, limpiar credenciales invalidas
-                    ClearCredentials();
+                    // Solo limpiar credenciales si está configurado (no durante reintentos)
+                    if (clearCredentialsOnError)
+                    {
+                        Debug.LogWarning("[TriskelAPI] Credenciales inválidas - limpiando sesión");
+                        ClearCredentials();
+                    }
+                    else
+                    {
+                        Debug.Log("[TriskelAPI] Error de conexión temporal - preservando credenciales");
+                    }
+
                     onError?.Invoke(error);
                 });
         }

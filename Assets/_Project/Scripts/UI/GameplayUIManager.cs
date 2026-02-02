@@ -127,7 +127,8 @@ namespace Triskel.UI
         /// <param name="onSuccess">Callback a ejecutar si la reconexión es exitosa (cierra la alerta).</param>
         private void AttemptReconnect(System.Action onSuccess)
         {
-            Debug.Log("[GameplayUIManager] Intentando reconectar...");
+            Debug.Log("[GameplayUIManager] ========== INICIANDO REINTENTO DE CONEXIÓN ==========");
+            Debug.Log($"[GameplayUIManager] Callback onSuccess es null: {onSuccess == null}");
 
             if (TriskelAPIClient.Instance == null)
             {
@@ -144,19 +145,25 @@ namespace Triskel.UI
                 return;
             }
 
+            Debug.Log("[GameplayUIManager] Llamando a VerifySession...");
+
             // Intentar verificar sesión para comprobar conectividad
+            // IMPORTANTE: clearCredentialsOnError = false para preservar las credenciales durante reintentos
             TriskelAPIClient.Instance.VerifySession(
-                profile =>
+                onSuccess: profile =>
                 {
                     Debug.Log($"[GameplayUIManager] ✓ Reconexión exitosa: {profile.username}");
+                    Debug.Log("[GameplayUIManager] Invocando callback onSuccess para cerrar alerta...");
                     hasShownConnectionError = false; // Resetear flag para permitir mostrar alerta de nuevo si falla
                     onSuccess?.Invoke(); // Cerrar alerta
+                    Debug.Log("[GameplayUIManager] Callback onSuccess invocado");
                 },
-                error =>
+                onError: error =>
                 {
                     Debug.LogWarning($"[GameplayUIManager] ✗ Reconexión fallida: {error}");
                     connectionErrorAlert?.OnRetryFailed("No se pudo conectar al servidor.\n\nVerifica tu conexión a internet.");
-                }
+                },
+                clearCredentialsOnError: false // NO limpiar credenciales - solo es un problema de red temporal
             );
         }
 

@@ -102,9 +102,19 @@ namespace Triskel.UI
             exitButton = root.Q<Button>("ExitButton");
             errorMessage = root.Q<Label>("ErrorMessage");
 
+            // Debug: Verificar que se encontraron los elementos
+            Debug.Log($"[ConnectionErrorAlert] Elementos UI encontrados - ErrorOverlay: {errorOverlay != null}, RetryButton: {retryButton != null}, ExitButton: {exitButton != null}");
+
             // Configurar eventos
             if (retryButton != null)
+            {
                 retryButton.clicked += OnRetryClicked;
+                Debug.Log("[ConnectionErrorAlert] ✓ Evento OnRetryClicked suscrito");
+            }
+            else
+            {
+                Debug.LogError("[ConnectionErrorAlert] ⚠️ RetryButton no encontrado - no se puede suscribir el evento");
+            }
 
             if (exitButton != null)
                 exitButton.clicked += OnExitClicked;
@@ -143,6 +153,15 @@ namespace Triskel.UI
 
             // Guardar callback de reintentar
             retryActionWithCallback = onRetry;
+
+            if (onRetry == null)
+            {
+                Debug.LogWarning("[ConnectionErrorAlert] ⚠️ No se proporcionó callback de reintento");
+            }
+            else
+            {
+                Debug.Log("[ConnectionErrorAlert] ✓ Callback de reintento configurado");
+            }
 
             // Actualizar mensaje
             if (errorMessage != null)
@@ -252,6 +271,17 @@ namespace Triskel.UI
         {
             Debug.Log("[ConnectionErrorAlert] Usuario hizo clic en Reintentar...");
 
+            // Verificar si el callback existe
+            if (retryActionWithCallback == null)
+            {
+                Debug.LogError("[ConnectionErrorAlert] ⚠️ No hay callback de reintento configurado!");
+                if (errorMessage != null)
+                {
+                    errorMessage.text = "Error interno: No se puede reintentar.\n\nIntenta salir al menú.";
+                }
+                return;
+            }
+
             // Cambiar mensaje a "Reintentando..."
             if (errorMessage != null)
             {
@@ -261,6 +291,8 @@ namespace Triskel.UI
             // Deshabilitar botones mientras se reintenta
             if (retryButton != null) retryButton.SetEnabled(false);
             if (exitButton != null) exitButton.SetEnabled(false);
+
+            Debug.Log("[ConnectionErrorAlert] Ejecutando callback de reintento...");
 
             // Ejecutar callback de reintento
             // Le pasamos un callback que DEBE invocar SI la conexión funciona
@@ -273,7 +305,9 @@ namespace Triskel.UI
         /// </summary>
         private void OnRetrySuccess()
         {
+            Debug.Log("[ConnectionErrorAlert] ✓ OnRetrySuccess - Cerrando alerta...");
             Hide();
+            Debug.Log("[ConnectionErrorAlert] ✓ Alerta cerrada exitosamente");
         }
 
         /// <summary>
