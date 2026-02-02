@@ -205696,6 +205696,20 @@ MonoBehaviour:
   lilioLightPrefab: {fileID: 0}
   axeRange: 1.2
   axeRadius: 0.6
+--- !u!114 &1050457756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050457748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96644c669b3e7144e90db243d375ef4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.1
+  speed: 2
 --- !u!1 &1109445095
 GameObject:
   m_ObjectHideFlags: 0
@@ -218990,6 +219004,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5708960148236929654, guid: 25fdd11cacfed6d4dbce2dab80efd500, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1050457749}
+    - targetCorrespondingSourceObject: {fileID: 5708960148236929654, guid: 25fdd11cacfed6d4dbce2dab80efd500, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1050457756}
   m_SourcePrefab: {fileID: 100100000, guid: 25fdd11cacfed6d4dbce2dab80efd500, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
