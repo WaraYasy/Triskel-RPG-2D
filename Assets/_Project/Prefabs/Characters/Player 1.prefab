@@ -107,8 +107,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.4710531}
-  m_Radius: 0.3260925
+  m_Offset: {x: -0.0035951866, y: -0.5049656}
+  m_Radius: 0.28974482
 --- !u!212 &1740344116099198231
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -153,7 +153,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 1313336827645281769, guid: 84bb255a3d84d9d4eaf8f16408483bbb, type: 3}
+  m_Sprite: {fileID: -2476436172666999534, guid: 84bb255a3d84d9d4eaf8f16408483bbb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -411,12 +411,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881880895286324670}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f461872ffcc8a8446b6d808ba7a4665b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  footstepSounds: []
+  footstepSounds:
+  - {fileID: 8300000, guid: 003b032dfa5d9fc4087052659a0eb6af, type: 3}
+  - {fileID: 8300000, guid: 6dce3131fe195fd469392c6a5b618e6a, type: 3}
+  - {fileID: 8300000, guid: 2c3db39b517f793469f526873fea99ef, type: 3}
   volumeMin: 0.8
   volumeMax: 1
   pitchMin: 0.95
@@ -526,7 +529,7 @@ Transform:
   m_GameObject: {fileID: 7128821115742827991}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 1, z: -10}
+  m_LocalPosition: {x: -8.03305, y: -12.445045, z: -8.35488}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
