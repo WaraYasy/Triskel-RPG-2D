@@ -1,0 +1,1092 @@
+fileFormatVersion: 2
+guid: 24fc4954220600247a8860d694e957b0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3176026745069462267
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_0
+  - first:
+      213: -5715266217038823851
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_1
+  - first:
+      213: -8598823981386374444
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_2
+  - first:
+      213: 2506823336555667617
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_3
+  - first:
+      213: 8174682065422774274
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_4
+  - first:
+      213: -994711670326189000
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_5
+  - first:
+      213: -7485780810169616068
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_6
+  - first:
+      213: -4656548148813223066
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_7
+  - first:
+      213: 3685396209688221917
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_8
+  - first:
+      213: 539281537155864526
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_9
+  - first:
+      213: 2509334405137207850
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_10
+  - first:
+      213: 196960425202018143
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_11
+  - first:
+      213: 3152388047106482464
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_12
+  - first:
+      213: 760253399668835919
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_13
+  - first:
+      213: 8052939462617965565
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_14
+  - first:
+      213: 6054076202747881558
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_15
+  - first:
+      213: -8101352956978514685
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_16
+  - first:
+      213: -5794681853461973451
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_17
+  - first:
+      213: -8302736641820295313
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_18
+  - first:
+      213: 1556404557711557657
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_19
+  - first:
+      213: 2883314336896552094
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_20
+  - first:
+      213: -9108241561854791018
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_21
+  - first:
+      213: -7259420944622476601
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_22
+  - first:
+      213: -549754828205946327
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_23
+  - first:
+      213: -2794147941591078964
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_24
+  - first:
+      213: 5500286362515607403
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_25
+  - first:
+      213: 3845348783791330367
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_26
+  - first:
+      213: 9153875050884667060
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_27
+  - first:
+      213: 1037556156353675302
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_28
+  - first:
+      213: 5620290757528752840
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_29
+  - first:
+      213: 6002335526863741560
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_30
+  - first:
+      213: -2518666790701830006
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_31
+  - first:
+      213: 2055856756926897323
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_32
+  - first:
+      213: 5642366367054137600
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_33
+  - first:
+      213: -4786232242551936373
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_34
+  - first:
+      213: -1861381945410567572
+    second: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1335
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50d9efea08c7ce3d0800000000000000
+      internalID: -3176026745069462267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_1
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 1335
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55e3c9808ab4fa0b0800000000000000
+      internalID: -5715266217038823851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_2
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 1335
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d2ea5fb527daa880800000000000000
+      internalID: -8598823981386374444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_3
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 1335
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a06f0afa860ac220800000000000000
+      internalID: 2506823336555667617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_4
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 1335
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 200f745f60e427170800000000000000
+      internalID: 8174682065422774274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_5
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 1335
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 834a54c81031232f0800000000000000
+      internalID: -994711670326189000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1068
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c397767b30a2d1890800000000000000
+      internalID: -7485780810169616068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_7
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 1068
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66b2c7e412e906fb0800000000000000
+      internalID: -4656548148813223066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_8
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 1068
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd8990f9358252330800000000000000
+      internalID: 3685396209688221917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_9
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 1068
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec71a1863b9eb7700800000000000000
+      internalID: 539281537155864526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_10
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 1068
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a229ed0b852f2d220800000000000000
+      internalID: 2509334405137207850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_11
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 1068
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f57e9f2967ebbb200800000000000000
+      internalID: 196960425202018143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 801
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02128fd0a388fbb20800000000000000
+      internalID: 3152388047106482464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_13
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 801
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f464b826076fc8a00800000000000000
+      internalID: 760253399668835919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_14
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 801
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df3a11366c9c1cf60800000000000000
+      internalID: 8052939462617965565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_15
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 801
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 658eee30b36640450800000000000000
+      internalID: 6054076202747881558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_16
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 801
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3053c3f8866329f80800000000000000
+      internalID: -8101352956978514685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_17
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 801
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5363ff94e87259fa0800000000000000
+      internalID: -5794681853461973451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 534
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6f7ea89301c6cc80800000000000000
+      internalID: -8302736641820295313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_19
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 534
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9144235f2b5799510800000000000000
+      internalID: 1556404557711557657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_20
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 534
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9c828aec17930820800000000000000
+      internalID: 2883314336896552094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_21
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 534
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69232399e86099180800000000000000
+      internalID: -9108241561854791018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_22
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 534
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c22fb8ec1b514b90800000000000000
+      internalID: -7259420944622476601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_23
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 534
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92a8a3f75e0ee58f0800000000000000
+      internalID: -549754828205946327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 267
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc7239b40413939d0800000000000000
+      internalID: -2794147941591078964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_25
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 267
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6f0ba01e41f45c40800000000000000
+      internalID: 5500286362515607403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_26
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 267
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f34dc57685c6d5530800000000000000
+      internalID: 3845348783791330367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_27
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 267
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b69a460cd8190f70800000000000000
+      internalID: 9153875050884667060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_28
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 267
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6200bf5b3d3266e00800000000000000
+      internalID: 1037556156353675302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_29
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 267
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c299e89aa84ffd40800000000000000
+      internalID: 5620290757528752840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 872ab652c549c4350800000000000000
+      internalID: 6002335526863741560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_31
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 0
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a80f4a8f5e5eb0dd0800000000000000
+      internalID: -2518666790701830006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_32
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 0
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bacd6b9f3ded78c10800000000000000
+      internalID: 2055856756926897323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_33
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 0
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0098fd8f056bd4e40800000000000000
+      internalID: 5642366367054137600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_34
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 0
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8aab2a4223e39db0800000000000000
+      internalID: -4786232242551936373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_35
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 0
+        width: 294
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c624a709bfa0b26e0800000000000000
+      internalID: -1861381945410567572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 2b6b2526b86fc1b44ad02f68c7e82b48
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_0: -3176026745069462267
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_1: -5715266217038823851
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_10: 2509334405137207850
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_11: 196960425202018143
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_12: 3152388047106482464
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_13: 760253399668835919
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_14: 8052939462617965565
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_15: 6054076202747881558
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_16: -8101352956978514685
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_17: -5794681853461973451
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_18: -8302736641820295313
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_19: 1556404557711557657
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_2: -8598823981386374444
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_20: 2883314336896552094
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_21: -9108241561854791018
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_22: -7259420944622476601
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_23: -549754828205946327
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_24: -2794147941591078964
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_25: 5500286362515607403
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_26: 3845348783791330367
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_27: 9153875050884667060
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_28: 1037556156353675302
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_29: 5620290757528752840
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_3: 2506823336555667617
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_30: 6002335526863741560
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_31: -2518666790701830006
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_32: 2055856756926897323
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_33: 5642366367054137600
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_34: -4786232242551936373
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_35: -1861381945410567572
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_4: 8174682065422774274
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_5: -994711670326189000
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_6: -7485780810169616068
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_7: -4656548148813223066
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_8: 3685396209688221917
+      A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_9: 539281537155864526
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
