@@ -133,6 +133,16 @@ public class RelicSystem : MonoBehaviour
     {
         currentRelic = relic;
         UpdateVisualFeedback();
+
+        // Actualizar la UI del inventario para mostrar el efecto visual
+        var inventoryUI = FindFirstObjectByType<Triskel.UI.HUD.InventoryUI>();
+        if (inventoryUI != null && relic != RelicType.None)
+        {
+            // Mapear tipo de reliquia a índice de slot (1=Lirio->0, 2=Hacha->1, 3=Manto->2)
+            int slotIndex = (int)relic - 1;
+            inventoryUI.UpdateSlotVisual(slotIndex);
+        }
+
         Debug.Log($"Reliquia seleccionada: {relic}");
     }
     
