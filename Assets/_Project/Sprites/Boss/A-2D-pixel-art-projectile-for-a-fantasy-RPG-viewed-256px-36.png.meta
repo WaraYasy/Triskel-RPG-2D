@@ -277,7 +277,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -291,7 +291,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -312,10 +312,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -349,6 +349,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -356,10 +382,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_0
       rect:
         serializedVersion: 2
-        x: 31
-        y: 1248
-        width: 264
-        height: 243
+        x: 0
+        y: 1245
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -378,10 +404,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_1
       rect:
         serializedVersion: 2
-        x: 359
-        y: 1248
-        width: 262
-        height: 243
+        x: 327
+        y: 1245
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -400,10 +426,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_2
       rect:
         serializedVersion: 2
-        x: 687
-        y: 1248
-        width: 261
-        height: 241
+        x: 654
+        y: 1245
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -422,10 +448,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_3
       rect:
         serializedVersion: 2
-        x: 1014
-        y: 1248
-        width: 261
-        height: 244
+        x: 981
+        y: 1245
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -444,10 +470,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_4
       rect:
         serializedVersion: 2
-        x: 1342
-        y: 1248
-        width: 259
-        height: 244
+        x: 1308
+        y: 1245
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -466,10 +492,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_5
       rect:
         serializedVersion: 2
-        x: 1669
-        y: 1248
-        width: 259
-        height: 242
+        x: 1635
+        y: 1245
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -488,10 +514,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_6
       rect:
         serializedVersion: 2
-        x: 1783
-        y: 1483
-        width: 7
-        height: 9
+        x: 0
+        y: 996
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -510,10 +536,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_7
       rect:
         serializedVersion: 2
-        x: 1263
-        y: 1350
-        width: 13
-        height: 12
+        x: 327
+        y: 996
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -532,10 +558,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_8
       rect:
         serializedVersion: 2
-        x: 1592
-        y: 1350
-        width: 12
-        height: 12
+        x: 654
+        y: 996
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -554,10 +580,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_9
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 1350
-        width: 12
-        height: 12
+        x: 981
+        y: 996
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -576,10 +602,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_10
       rect:
         serializedVersion: 2
-        x: 34
-        y: 999
-        width: 260
-        height: 242
+        x: 1308
+        y: 996
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -598,10 +624,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_11
       rect:
         serializedVersion: 2
-        x: 146
-        y: 1232
-        width: 26
-        height: 11
+        x: 1635
+        y: 996
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -620,10 +646,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_12
       rect:
         serializedVersion: 2
-        x: 361
-        y: 999
-        width: 260
-        height: 242
+        x: 0
+        y: 747
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -642,10 +668,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_13
       rect:
         serializedVersion: 2
-        x: 473
-        y: 1235
-        width: 7
-        height: 8
+        x: 327
+        y: 747
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -664,10 +690,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_14
       rect:
         serializedVersion: 2
-        x: 688
-        y: 999
-        width: 265
-        height: 243
+        x: 654
+        y: 747
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -686,10 +712,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_15
       rect:
         serializedVersion: 2
-        x: 1015
-        y: 999
-        width: 266
-        height: 242
+        x: 981
+        y: 747
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -708,10 +734,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_16
       rect:
         serializedVersion: 2
-        x: 1128
-        y: 1232
-        width: 25
-        height: 11
+        x: 1308
+        y: 747
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -730,10 +756,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_17
       rect:
         serializedVersion: 2
-        x: 1342
-        y: 999
-        width: 260
-        height: 245
+        x: 1635
+        y: 747
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -752,10 +778,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_18
       rect:
         serializedVersion: 2
-        x: 1669
-        y: 999
-        width: 260
-        height: 242
+        x: 0
+        y: 498
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -774,10 +800,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_19
       rect:
         serializedVersion: 2
-        x: 1784
-        y: 1235
-        width: 6
-        height: 9
+        x: 327
+        y: 498
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -796,10 +822,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_20
       rect:
         serializedVersion: 2
-        x: 286
-        y: 1101
-        width: 12
-        height: 12
+        x: 654
+        y: 498
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -818,10 +844,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_21
       rect:
         serializedVersion: 2
-        x: 617
-        y: 1101
-        width: 9
-        height: 12
+        x: 981
+        y: 498
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -840,10 +866,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_22
       rect:
         serializedVersion: 2
-        x: 945
-        y: 1104
-        width: 10
-        height: 10
+        x: 1308
+        y: 498
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -862,10 +888,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_23
       rect:
         serializedVersion: 2
-        x: 1272
-        y: 1104
-        width: 12
-        height: 10
+        x: 1635
+        y: 498
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -884,10 +910,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_24
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 1102
-        width: 12
-        height: 12
+        x: 0
+        y: 249
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -906,10 +932,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_25
       rect:
         serializedVersion: 2
-        x: 1928
-        y: 1102
-        width: 12
-        height: 12
+        x: 327
+        y: 249
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -928,10 +954,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_26
       rect:
         serializedVersion: 2
-        x: 33
-        y: 750
-        width: 261
-        height: 239
+        x: 654
+        y: 249
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -950,10 +976,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_27
       rect:
         serializedVersion: 2
-        x: 148
-        y: 986
-        width: 10
-        height: 9
+        x: 981
+        y: 249
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -972,10 +998,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_28
       rect:
         serializedVersion: 2
-        x: 360
-        y: 750
-        width: 261
-        height: 242
+        x: 1308
+        y: 249
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -994,10 +1020,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_29
       rect:
         serializedVersion: 2
-        x: 475
-        y: 986
-        width: 8
-        height: 8
+        x: 1635
+        y: 249
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1016,10 +1042,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_30
       rect:
         serializedVersion: 2
-        x: 687
-        y: 750
-        width: 261
-        height: 245
+        x: 0
+        y: 0
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1038,10 +1064,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_31
       rect:
         serializedVersion: 2
-        x: 1014
-        y: 737
-        width: 261
-        height: 256
+        x: 327
+        y: 0
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1060,10 +1086,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_32
       rect:
         serializedVersion: 2
-        x: 1132
-        y: 986
-        width: 6
-        height: 8
+        x: 654
+        y: 0
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1082,10 +1108,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_33
       rect:
         serializedVersion: 2
-        x: 1341
-        y: 737
-        width: 261
-        height: 257
+        x: 981
+        y: 0
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1104,10 +1130,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_34
       rect:
         serializedVersion: 2
-        x: 1668
-        y: 737
-        width: 261
-        height: 257
+        x: 1308
+        y: 0
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1126,10 +1152,10 @@ TextureImporter:
       name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_35
       rect:
         serializedVersion: 2
-        x: 294
-        y: 853
-        width: 12
-        height: 12
+        x: 1635
+        y: 0
+        width: 327
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1144,1001 +1170,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_36
-      rect:
-        serializedVersion: 2
-        x: 623
-        y: 853
-        width: 11
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 83d492c0b897d0d40800000000000000
-      internalID: 5552227553729137976
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_37
-      rect:
-        serializedVersion: 2
-        x: 951
-        y: 854
-        width: 12
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dfc682b8508e10990800000000000000
-      internalID: -7421395600422703875
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_38
-      rect:
-        serializedVersion: 2
-        x: 1280
-        y: 853
-        width: 11
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c743a103bf9272d80800000000000000
-      internalID: -8275599631449443204
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_39
-      rect:
-        serializedVersion: 2
-        x: 1609
-        y: 854
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a7c3bd5f629a1ce80800000000000000
-      internalID: -8160055065019990918
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_40
-      rect:
-        serializedVersion: 2
-        x: 1938
-        y: 854
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 23bfc7c26610fcc20800000000000000
-      internalID: 3228800996192615218
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_41
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 488
-        width: 261
-        height: 257
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2f73a05835b809140800000000000000
-      internalID: 4724429199942236146
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_42
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 605
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e165569d5f58c5fe0800000000000000
-      internalID: -1198936109826615778
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_43
-      rect:
-        serializedVersion: 2
-        x: 360
-        y: 488
-        width: 261
-        height: 257
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fe4f9add344ddabb0800000000000000
-      internalID: -4923045429699283729
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_44
-      rect:
-        serializedVersion: 2
-        x: 632
-        y: 605
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 003d32d37e1815cd0800000000000000
-      internalID: -2571131082088656128
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_45
-      rect:
-        serializedVersion: 2
-        x: 687
-        y: 487
-        width: 261
-        height: 258
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a50aedfdf2cae4740800000000000000
-      internalID: 5138233546495664218
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_46
-      rect:
-        serializedVersion: 2
-        x: 959
-        y: 605
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7c47e77ab6617bf30800000000000000
-      internalID: 4591162996754904263
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_47
-      rect:
-        serializedVersion: 2
-        x: 1014
-        y: 488
-        width: 261
-        height: 251
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0d52efa5a8e4bef30800000000000000
-      internalID: 4605861400055522768
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_48
-      rect:
-        serializedVersion: 2
-        x: 1286
-        y: 605
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2bf3230e037a2eb20800000000000000
-      internalID: 3162273716729167794
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_49
-      rect:
-        serializedVersion: 2
-        x: 1341
-        y: 489
-        width: 261
-        height: 250
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d9b61afea06a286f0800000000000000
-      internalID: -683801627506676835
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_50
-      rect:
-        serializedVersion: 2
-        x: 1614
-        y: 606
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: df7caee83da837a90800000000000000
-      internalID: -7317352328306440195
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_51
-      rect:
-        serializedVersion: 2
-        x: 1668
-        y: 489
-        width: 261
-        height: 250
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d82d2dd4698beda70800000000000000
-      internalID: 8853716873147241101
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_52
-      rect:
-        serializedVersion: 2
-        x: 1942
-        y: 606
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b7041bbe280a88140800000000000000
-      internalID: 4722200693458419835
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_53
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 240
-        width: 261
-        height: 250
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d11ff0e038e81e890800000000000000
-      internalID: -7430501216656821987
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_54
-      rect:
-        serializedVersion: 2
-        x: 308
-        y: 357
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2f191db94fdada5d0800000000000000
-      internalID: -3049590106562129422
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_55
-      rect:
-        serializedVersion: 2
-        x: 360
-        y: 239
-        width: 262
-        height: 251
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4e41ccf6ce691ff90800000000000000
-      internalID: -6921585210059647772
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_56
-      rect:
-        serializedVersion: 2
-        x: 636
-        y: 358
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b1c4a54624daa78d0800000000000000
-      internalID: -2847773313695331301
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_57
-      rect:
-        serializedVersion: 2
-        x: 687
-        y: 239
-        width: 262
-        height: 251
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cbb64d9b32f03bdf0800000000000000
-      internalID: -165772115166598212
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_58
-      rect:
-        serializedVersion: 2
-        x: 964
-        y: 358
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 290c65a7f48a9dc80800000000000000
-      internalID: -8297415779145039726
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_59
-      rect:
-        serializedVersion: 2
-        x: 1014
-        y: 239
-        width: 262
-        height: 251
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d81180a233c8518d0800000000000000
-      internalID: -2876238635629801075
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_60
-      rect:
-        serializedVersion: 2
-        x: 1292
-        y: 358
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: acab9742407fd17e0800000000000000
-      internalID: -1793005479459702070
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_61
-      rect:
-        serializedVersion: 2
-        x: 1340
-        y: 239
-        width: 263
-        height: 251
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8e40abe785742dce0800000000000000
-      internalID: -1381963690240506648
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_62
-      rect:
-        serializedVersion: 2
-        x: 1620
-        y: 358
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c62048bd1aecfee00800000000000000
-      internalID: 1076306030532756076
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_63
-      rect:
-        serializedVersion: 2
-        x: 1667
-        y: 239
-        width: 263
-        height: 251
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 55d1b0bc075262560800000000000000
-      internalID: 7288554213318794581
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_64
-      rect:
-        serializedVersion: 2
-        x: 1948
-        y: 358
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6dcdb5869f44a3550800000000000000
-      internalID: 6141296879861488854
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_65
-      rect:
-        serializedVersion: 2
-        x: 1152
-        y: 243
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c09e1d83a0f2f6b70800000000000000
-      internalID: 8894379510029478156
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_66
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 3
-        width: 263
-        height: 238
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 81f837cb48431c660800000000000000
-      internalID: 7404257007075823384
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_67
-      rect:
-        serializedVersion: 2
-        x: 126
-        y: 234
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fc71bf10ed2ed4fc0800000000000000
-      internalID: -3508899091507898417
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_68
-      rect:
-        serializedVersion: 2
-        x: 359
-        y: 3
-        width: 263
-        height: 238
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: da3860e3a32875890800000000000000
-      internalID: -7469358270310349907
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_69
-      rect:
-        serializedVersion: 2
-        x: 685
-        y: 3
-        width: 264
-        height: 238
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c0444e7d0f2c6baf0800000000000000
-      internalID: -380902778796227572
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_70
-      rect:
-        serializedVersion: 2
-        x: 1012
-        y: 3
-        width: 264
-        height: 238
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1621e333856414d40800000000000000
-      internalID: 5566807959037416033
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_71
-      rect:
-        serializedVersion: 2
-        x: 1338
-        y: 3
-        width: 265
-        height: 238
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b42c6dc2d0aa6e510800000000000000
-      internalID: 1578135693003506251
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_72
-      rect:
-        serializedVersion: 2
-        x: 1430
-        y: 235
-        width: 8
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9c9d5ea34e8e83aa0800000000000000
-      internalID: -6180934421627676215
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_73
-      rect:
-        serializedVersion: 2
-        x: 1666
-        y: 3
-        width: 263
-        height: 238
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 03dbf64769b9ffc10800000000000000
-      internalID: 2089559822624079152
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_74
-      rect:
-        serializedVersion: 2
-        x: 1759
-        y: 235
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 83f374107e8560b70800000000000000
-      internalID: 8864870665707536184
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_75
-      rect:
-        serializedVersion: 2
-        x: 314
-        y: 109
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a39d8dd7f8b92d3a0800000000000000
-      internalID: -6642075459824068294
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_76
-      rect:
-        serializedVersion: 2
-        x: 643
-        y: 109
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ec698ddd4943a5c00800000000000000
-      internalID: 890081690340857550
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_77
-      rect:
-        serializedVersion: 2
-        x: 971
-        y: 109
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c8475bd622df057c0800000000000000
-      internalID: -4084486537713716084
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_78
-      rect:
-        serializedVersion: 2
-        x: 1299
-        y: 109
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6d9167214a3ccf9e0800000000000000
-      internalID: -1586177859289474602
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_79
-      rect:
-        serializedVersion: 2
-        x: 1626
-        y: 110
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 58ad28dff1151fd90800000000000000
-      internalID: -7065777142528550267
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_80
-      rect:
-        serializedVersion: 2
-        x: 1954
-        y: 109
-        width: 8
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 497bed0efa03c3dd0800000000000000
-      internalID: -2505073760774735980
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 295bda27a122f5a4795ba7e82cdc5352
     internalID: 0
     vertices: []
     indices: 
@@ -2178,56 +1214,11 @@ TextureImporter:
       A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_33: -2235395935246108560
       A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_34: -6123001010157773466
       A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_35: 2174222318897824836
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_36: 5552227553729137976
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_37: -7421395600422703875
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_38: -8275599631449443204
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_39: -8160055065019990918
       A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_4: -5066204095204509393
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_40: 3228800996192615218
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_41: 4724429199942236146
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_42: -1198936109826615778
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_43: -4923045429699283729
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_44: -2571131082088656128
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_45: 5138233546495664218
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_46: 4591162996754904263
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_47: 4605861400055522768
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_48: 3162273716729167794
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_49: -683801627506676835
       A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_5: 7155078898425910912
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_50: -7317352328306440195
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_51: 8853716873147241101
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_52: 4722200693458419835
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_53: -7430501216656821987
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_54: -3049590106562129422
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_55: -6921585210059647772
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_56: -2847773313695331301
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_57: -165772115166598212
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_58: -8297415779145039726
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_59: -2876238635629801075
       A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_6: -4295342186086973963
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_60: -1793005479459702070
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_61: -1381963690240506648
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_62: 1076306030532756076
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_63: 7288554213318794581
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_64: 6141296879861488854
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_65: 8894379510029478156
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_66: 7404257007075823384
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_67: -3508899091507898417
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_68: -7469358270310349907
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_69: -380902778796227572
       A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_7: 9023259556878372157
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_70: 5566807959037416033
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_71: 1578135693003506251
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_72: -6180934421627676215
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_73: 2089559822624079152
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_74: 8864870665707536184
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_75: -6642075459824068294
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_76: 890081690340857550
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_77: -4084486537713716084
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_78: -1586177859289474602
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_79: -7065777142528550267
       A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_8: -786422196357446409
-      A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_80: -2505073760774735980
       A-2D-pixel-art-projectile-for-a-fantasy-RPG-viewed-256px-36_9: -4621012592273077403
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
