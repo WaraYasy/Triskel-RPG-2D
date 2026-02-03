@@ -32052,6 +32052,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 586a01a164d4d2b45859cd6a3d0ac62e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &796353399
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796353395}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f862deb85771394ca94f0abfceb4a2e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &811697566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32212,6 +32234,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4533076a8248b744b1ff40761fa9bd1, type: 3}
+--- !u!1 &852935946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 852935947}
+  m_Layer: 0
+  m_Name: PosicionFinalJugador
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &852935947
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852935946}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.09, y: 11.47, z: -0.032808114}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &957385966
 GameObject:
   m_ObjectHideFlags: 0
@@ -63703,6 +63756,8 @@ MonoBehaviour:
   art1_Agridulce: {fileID: 1363879747060010867, guid: 8ba8bee349d857d48a7a8593787ac65c, type: 3}
   art2_Bueno: {fileID: 7406614236561345952, guid: b67e51fdb30bbd9408808efdb154aad3, type: 3}
   art3_Perfecto: {fileID: 3626282992816410546, guid: 70850ea527c8d844f81789eb24b9ea19, type: 3}
+  playerEndPosition: {fileID: 852935947}
+  movementSpeed: 3
 --- !u!1001 &1625984826
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63798,6 +63853,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7433568350342539106, guid: 5eef9f8e057d5eb4da6f0fb6aac32a84, type: 3}
       insertIndex: -1
       addedObject: {fileID: 796353396}
+    - targetCorrespondingSourceObject: {fileID: 7433568350342539106, guid: 5eef9f8e057d5eb4da6f0fb6aac32a84, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 796353399}
   m_SourcePrefab: {fileID: 100100000, guid: 5eef9f8e057d5eb4da6f0fb6aac32a84, type: 3}
 --- !u!1001 &1988188594
 PrefabInstance:
@@ -64192,3 +64250,4 @@ SceneRoots:
   - {fileID: 1313149582}
   - {fileID: 834005054}
   - {fileID: 1133785288}
+  - {fileID: 852935947}

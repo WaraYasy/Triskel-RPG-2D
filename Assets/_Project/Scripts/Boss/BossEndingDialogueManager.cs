@@ -3,6 +3,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using Yarn.Unity;
 using Triskel.Core;
+using System.Collections;
 
 public class BossEndingDialogueManager : MonoBehaviour
 {
@@ -32,6 +33,11 @@ public class BossEndingDialogueManager : MonoBehaviour
     public Sprite art2_Bueno;
     public Sprite art3_Perfecto;
 
+    [Header("Cinematica Final")]
+    [Tooltip("Posicion a la que se movera el jugador antes de hablar")]
+    public Transform playerEndPosition;
+    public float movementSpeed = 3f;
+
     private int finalMoralState = 0;
 
     private void Awake()
@@ -59,6 +65,12 @@ public class BossEndingDialogueManager : MonoBehaviour
             bossManager.OnVictory.AddListener(OnBossDefeated);
     }
 
+    private void OnDisable()
+    {
+        if (bossManager != null)
+            bossManager.OnVictory.RemoveListener(OnBossDefeated);
+    }
+
     private void OnBossDefeated()
     {
         if (GameManager.Instance == null || dialogueRunner == null) return;
@@ -71,10 +83,50 @@ public class BossEndingDialogueManager : MonoBehaviour
         else finalMoralState = 0;
 
         string bossNode = GetBossNodeByState(finalMoralState);
-        Debug.Log($"[BossEndingDialogueManager] Boss derrotado. Moral: {moral}. Habla Boss: {bossNode}");
+        Debug.Log($"[BossEndingDialogueManager] Boss derrotado. Moral: {moral}. Iniciando secuencia...");
 
+        // Iniciar secuencia cinemática (mover jugador -> dialogo)
+        StartCoroutine(CinematicSequence(bossNode));
+    }
+
+    private IEnumerator CinematicSequence(string dialogueNode)
+    {
+        // 1. Desactivar control del jugador
+        PlayerController player = FindFirstObjectByType<PlayerController>();
+        if (player != null)
+        {
+            player.SetInputActive(false);
+            
+            // 2. Mover jugador si hay posicion destino
+            if (playerEndPosition != null)
+            {
+                Debug.Log("[BossEnding] Moviendo jugador a posicion final...");
+                
+                // Mover jugador suavemente
+                while (Vector2.Distance(player.transform.position, playerEndPosition.position) > 0.1f)
+                {
+                    player.transform.position = Vector2.MoveTowards(
+                        player.transform.position, 
+                        playerEndPosition.position, 
+                        movementSpeed * Time.deltaTime
+                    );
+                    
+                    // Opcional: Actualizar animacion de movimiento si tienes referencia al Animator
+                    // Animator anim = player.GetComponent<Animator>();
+                    // if (anim) { ... }
+
+                    yield return null;
+                }
+                
+                // Asegurar posicion final
+                player.transform.position = playerEndPosition.position;
+            }
+        }
+
+        // 3. Iniciar Dialogo
+        Debug.Log($"[BossEnding] Iniciando dialogo: {dialogueNode}");
         dialogueRunner.onDialogueComplete.AddListener(OnBossDialogueComplete);
-        dialogueRunner.StartDialogue(bossNode);
+        dialogueRunner.StartDialogue(dialogueNode);
     }
 
     private void OnBossDialogueComplete()

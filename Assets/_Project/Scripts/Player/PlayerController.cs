@@ -63,8 +63,14 @@ public class PlayerController : MonoBehaviour
         inputActions.Disable();
     }
 
+    // Estado de control
+    private bool inputEnabled = true;
+
     private void Update()
     {
+        // Si el input está desactivado, no procesar nada
+        if (!inputEnabled) return;
+
         // No permitir input durante dash
         if (isDashing)
         {
@@ -148,4 +154,20 @@ public class PlayerController : MonoBehaviour
     }
     
     public float GetSpeedMultiplier() => speedMultiplier;
+    
+    /// <summary>
+    /// Activa o desactiva el control del jugador.
+    /// Útil para cinemáticas o diálogos.
+    /// </summary>
+    public void SetInputActive(bool active)
+    {
+        inputEnabled = active;
+        
+        if (!active)
+        {
+            moveInput = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
+            // Opcional: Resetear animaciones a Idle si tienes acceso al Animator aquí
+        }
+    }
 }

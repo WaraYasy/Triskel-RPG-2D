@@ -30755,12 +30755,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 316797970781899091, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 316797970781899091, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
       propertyPath: footstepSounds.Array.size
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 316797970781899091, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
+      propertyPath: 'footstepSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 358ae5b0d4be0fc4b82a385cf46755d8, type: 3}
+    - target: {fileID: 316797970781899091, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
+      propertyPath: 'footstepSounds.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 5894a1ad07ffa08499ac27da2d0af684, type: 3}
+    - target: {fileID: 316797970781899091, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
+      propertyPath: 'footstepSounds.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 8acf1bfb66919d249972e3fac9e9d965, type: 3}
     - target: {fileID: 881880895286324670, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
       propertyPath: m_Name
       value: Player 1
