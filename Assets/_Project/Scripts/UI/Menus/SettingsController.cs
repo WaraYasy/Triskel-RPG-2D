@@ -29,12 +29,16 @@ namespace Triskel.UI
         [Header("Referencias")]
         [SerializeField] private UIDocument settingsDocument;
         [SerializeField] private PauseController pauseController;
+        [SerializeField] private GameConstants gameConstants;
+        [SerializeField] private Font pixelFont;
+        [SerializeField] private Font dyslexicFont;
 
         // Elementos UI
         private VisualElement settingsOverlay;
         private Slider musicSlider;
         private Slider sfxSlider;
         private DropdownField fontSizeDropdown;
+        private DropdownField fontTypeDropdown;
         private Button backButton;
 
         // Estado
@@ -56,11 +60,25 @@ namespace Triskel.UI
 
             InitializeSettings();
             RefreshUI();
+
+            // Suscribirse a eventos de SettingsManager para actualizar la UI del menú
+            if (SettingsManager.Instance != null)
+            {
+                SettingsManager.Instance.OnFontChanged += OnMenuFontChanged;
+                SettingsManager.Instance.OnFontSizeChanged += OnMenuFontSizeChanged;
+            }
         }
 
         private void OnDisable()
         {
             UnregisterEvents();
+
+            // Desuscribirse de eventos de SettingsManager
+            if (SettingsManager.Instance != null)
+            {
+                SettingsManager.Instance.OnFontChanged -= OnMenuFontChanged;
+                SettingsManager.Instance.OnFontSizeChanged -= OnMenuFontSizeChanged;
+            }
         }
 
         /// <summary>
@@ -89,12 +107,18 @@ namespace Triskel.UI
             musicSlider = root.Q<Slider>("MusicSlider");
             sfxSlider = root.Q<Slider>("SFXSlider");
             fontSizeDropdown = root.Q<DropdownField>("DialogueFontSizeDropdown");
+            fontTypeDropdown = root.Q<DropdownField>("FontTypeDropdown");
             backButton = root.Q<Button>("BackButton");
 
-            // Configurar Dropdown
+            // Configurar Dropdowns
             if (fontSizeDropdown != null)
             {
                 fontSizeDropdown.choices = new List<string> { "Normal", "Grande" };
+            }
+
+            if (fontTypeDropdown != null)
+            {
+                fontTypeDropdown.choices = new List<string> { "Pixelada", "Dislexia" };
             }
 
             RegisterEvents();
@@ -111,6 +135,7 @@ namespace Triskel.UI
             if (musicSlider != null) musicSlider.RegisterValueChangedCallback(OnMusicSliderChanged);
             if (sfxSlider != null) sfxSlider.RegisterValueChangedCallback(OnSFXSliderChanged);
             if (fontSizeDropdown != null) fontSizeDropdown.RegisterValueChangedCallback(OnFontSizeChanged);
+            if (fontTypeDropdown != null) fontTypeDropdown.RegisterValueChangedCallback(OnFontTypeChanged);
             if (backButton != null) backButton.clicked += OnBackClicked;
         }
 
@@ -122,6 +147,7 @@ namespace Triskel.UI
             if (musicSlider != null) musicSlider.UnregisterValueChangedCallback(OnMusicSliderChanged);
             if (sfxSlider != null) sfxSlider.UnregisterValueChangedCallback(OnSFXSliderChanged);
             if (fontSizeDropdown != null) fontSizeDropdown.UnregisterValueChangedCallback(OnFontSizeChanged);
+            if (fontTypeDropdown != null) fontTypeDropdown.UnregisterValueChangedCallback(OnFontTypeChanged);
             if (backButton != null) backButton.clicked -= OnBackClicked;
         }
 
@@ -176,6 +202,61 @@ namespace Triskel.UI
                 int index = SettingsManager.Instance.UseLargeText ? 1 : 0;
                 fontSizeDropdown.index = index;
             }
+
+            if (fontTypeDropdown != null)
+            {
+                fontTypeDropdown.index = SettingsManager.Instance.UseDyslexicFont ? 1 : 0;
+            }
+
+            ApplyFontToSettingsUI();
+            ApplyFontSizeToSettingsUI();
+        }
+
+        /// <summary>
+        /// Aplica el tamaño de fuente activo a todos los elementos de texto del overlay de Settings.
+        /// </summary>
+        private void ApplyFontSizeToSettingsUI()
+        {
+            if (settingsOverlay == null)
+            {
+                Debug.LogWarning("[SettingsController] settingsOverlay es null");
+                return;
+            }
+
+            if (gameConstants == null)
+            {
+                Debug.LogWarning("[SettingsController] ⚠️ GameConstants no asignado - no se puede aplicar tamaño de fuente");
+                return;
+            }
+
+            bool large = SettingsManager.Instance != null && SettingsManager.Instance.UseLargeText;
+            bool dyslexic = SettingsManager.Instance != null && SettingsManager.Instance.UseDyslexicFont;
+
+            float fontSize = dyslexic
+                ? (large ? gameConstants.menuFontSizeLargeDyslexic : gameConstants.menuFontSizeNormalDyslexic)
+                : (large ? gameConstants.menuFontSizeLarge : gameConstants.menuFontSizeNormal);
+
+            Debug.Log($"[SettingsController] Aplicando tamaño: {fontSize}px (Grande: {large}, Dislexia: {dyslexic})");
+
+            settingsOverlay.Query<Label>().ForEach(label => label.style.fontSize = fontSize);
+            settingsOverlay.Query<Button>().ForEach(btn => btn.style.fontSize = fontSize);
+            settingsOverlay.Query<DropdownField>().ForEach(dd => dd.style.fontSize = fontSize);
+        }
+
+        /// <summary>
+        /// Callback cuando cambia el tipo de fuente desde otro menú/UI.
+        /// </summary>
+        private void OnMenuFontChanged(bool useDyslexic)
+        {
+            ApplyFontToSettingsUI();
+        }
+
+        /// <summary>
+        /// Callback cuando cambia el tamaño de fuente desde otro menú/UI.
+        /// </summary>
+        private void OnMenuFontSizeChanged(bool useLarge)
+        {
+            ApplyFontSizeToSettingsUI();
         }
 
         #region Event Handlers
@@ -211,6 +292,46 @@ namespace Triskel.UI
                 bool largeText = evt.newValue == "Grande";
                 SettingsManager.Instance.SetLargeText(largeText);
             }
+        }
+
+        /// <summary>
+        /// Callback cuando el dropdown de tipo de fuente cambia de selección.
+        /// </summary>
+        /// <param name="evt">Evento con el nuevo valor ("Pixelada" o "Dislexia").</param>
+        private void OnFontTypeChanged(ChangeEvent<string> evt)
+        {
+            if (SettingsManager.Instance != null)
+            {
+                bool dyslexic = evt.newValue == "Dislexia";
+                SettingsManager.Instance.SetDyslexicFont(dyslexic);
+                ApplyFontToSettingsUI();
+                // Reaplicar tamaño porque cada fuente tiene tamaños diferentes
+                ApplyFontSizeToSettingsUI();
+            }
+        }
+
+        /// <summary>
+        /// Aplica la fuente activa (Pixelada o Dislexia) a todos los elementos de texto del overlay de Settings.
+        /// </summary>
+        private void ApplyFontToSettingsUI()
+        {
+            if (settingsOverlay == null) return;
+
+            bool useDyslexic = SettingsManager.Instance != null && SettingsManager.Instance.UseDyslexicFont;
+            Font activeFont = (useDyslexic && dyslexicFont != null) ? dyslexicFont : pixelFont;
+
+            if (activeFont == null)
+            {
+                Debug.LogWarning($"[SettingsController] ⚠️ No hay fuente asignada - pixelFont: {(pixelFont != null ? pixelFont.name : "NULL")}, dyslexicFont: {(dyslexicFont != null ? dyslexicFont.name : "NULL")}");
+                return;
+            }
+
+            Debug.Log($"[SettingsController] Aplicando fuente: {activeFont.name} (Dislexia: {useDyslexic})");
+
+            var fontDef = FontDefinition.FromFont(activeFont);
+            settingsOverlay.Query<Label>().ForEach(label => label.style.unityFontDefinition = fontDef);
+            settingsOverlay.Query<Button>().ForEach(btn => btn.style.unityFontDefinition = fontDef);
+            settingsOverlay.Query<DropdownField>().ForEach(dd => dd.style.unityFontDefinition = fontDef);
         }
 
         /// <summary>

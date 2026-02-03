@@ -86,10 +86,59 @@ public class GameConstants : ScriptableObject
     [Header("=== TIEMPOS ===")]
     [Tooltip("Duración del dash")]
     public float dashDuration = 0.2f;
-    
+
     [Tooltip("Cooldown del dash")]
     public float dashCooldown = 1.5f;
-    
+
     [Tooltip("Tiempo de advertencia de zona de peligro")]
     public float dangerZoneWarningTime = 1.5f;
+
+    [Header("=== TAMAÑOS DE FUENTE ===")]
+    [Header("Menús (Settings, Pause, Connection, MainMenu)")]
+    [Tooltip("Tamaño normal de fuente pixelada para menús UI Toolkit")]
+    public float menuFontSizeNormal = 35f;
+    [Tooltip("Tamaño grande de fuente pixelada para menús UI Toolkit")]
+    public float menuFontSizeLarge = 45f;
+    [Tooltip("Tamaño normal de fuente dislexia para menús UI Toolkit")]
+    public float menuFontSizeNormalDyslexic = 32f;
+    [Tooltip("Tamaño grande de fuente dislexia para menús UI Toolkit")]
+    public float menuFontSizeLargeDyslexic = 42f;
+
+    [Header("Diálogo")]
+    [Tooltip("Tamaño normal del texto principal del diálogo (pixelada)")]
+    public float dialogueFontSizeNormal = 48f;
+    [Tooltip("Tamaño grande del texto principal del diálogo (pixelada)")]
+    public float dialogueFontSizeLarge = 64f;
+    [Tooltip("Tamaño normal del texto principal del diálogo (dislexia)")]
+    public float dialogueFontSizeNormalDyslexic = 44f;
+    [Tooltip("Tamaño grande del texto principal del diálogo (dislexia)")]
+    public float dialogueFontSizeLargeDyslexic = 58f;
+
+    [Tooltip("Tamaño normal de opciones del diálogo (pixelada)")]
+    public float dialogueOptionSizeNormal = 36f;
+    [Tooltip("Tamaño grande de opciones del diálogo (pixelada)")]
+    public float dialogueOptionSizeLarge = 48f;
+    [Tooltip("Tamaño normal de opciones del diálogo (dislexia)")]
+    public float dialogueOptionSizeNormalDyslexic = 33f;
+    [Tooltip("Tamaño grande de opciones del diálogo (dislexia)")]
+    public float dialogueOptionSizeLargeDyslexic = 44f;
+
+    [Header("Diario")]
+    [Tooltip("Tamaño normal del título del diario (pixelada)")]
+    public float diaryTitleSizeNormal = 50f;
+    [Tooltip("Tamaño grande del título del diario (pixelada)")]
+    public float diaryTitleSizeLarge = 55f;
+    [Tooltip("Tamaño normal del título del diario (dislexia)")]
+    public float diaryTitleSizeNormalDyslexic = 46f;
+    [Tooltip("Tamaño grande del título del diario (dislexia)")]
+    public float diaryTitleSizeLargeDyslexic = 52f;
+
+    [Tooltip("Tamaño normal del texto del diario (pixelada)")]
+    public float diaryTextSizeNormal = 35f;
+    [Tooltip("Tamaño grande del texto del diario (pixelada)")]
+    public float diaryTextSizeLarge = 45f;
+    [Tooltip("Tamaño normal del texto del diario (dislexia)")]
+    public float diaryTextSizeNormalDyslexic = 32f;
+    [Tooltip("Tamaño grande del texto del diario (dislexia)")]
+    public float diaryTextSizeLargeDyslexic = 42f;
 }

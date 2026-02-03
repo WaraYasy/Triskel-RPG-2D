@@ -13,6 +13,7 @@ using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using Triskel.API;
 using Triskel.API.Models;
+using Triskel.Core;
 
 namespace Triskel.UI
 {
@@ -34,6 +35,9 @@ namespace Triskel.UI
         [SerializeField] private UIDocument uiDocument;
         [SerializeField] private LoginController loginController;
         [SerializeField] private RegisterController registerController;
+        [SerializeField] private GameConstants gameConstants;
+        [SerializeField] private Font pixelFont;
+        [SerializeField] private Font dyslexicFont;
 
         [Header("Escenas")]
         [SerializeField] private string gameSceneName = "Game";
@@ -52,6 +56,17 @@ namespace Triskel.UI
         private void OnEnable()
         {
             InitializeUI();
+
+            // Aplicar fuente y tamaño inicial
+            ApplyFontToMainMenuUI(SettingsManager.Instance != null && SettingsManager.Instance.UseDyslexicFont);
+            ApplyFontSizeToMainMenuUI(SettingsManager.Instance != null && SettingsManager.Instance.UseLargeText);
+
+            // Suscribirse a eventos de SettingsManager
+            if (SettingsManager.Instance != null)
+            {
+                SettingsManager.Instance.OnFontChanged += ApplyFontToMainMenuUI;
+                SettingsManager.Instance.OnFontSizeChanged += ApplyFontSizeToMainMenuUI;
+            }
         }
 
         private void Start()
@@ -108,6 +123,42 @@ namespace Triskel.UI
             if (continueButton != null) continueButton.clicked -= OnContinueClicked;
             if (newGameButton != null) newGameButton.clicked -= OnNewGameClicked;
             if (logoutButton != null) logoutButton.clicked -= OnLogoutClicked;
+
+            // Desuscribirse de eventos de SettingsManager
+            if (SettingsManager.Instance != null)
+            {
+                SettingsManager.Instance.OnFontChanged -= ApplyFontToMainMenuUI;
+                SettingsManager.Instance.OnFontSizeChanged -= ApplyFontSizeToMainMenuUI;
+            }
+        }
+
+        private void ApplyFontToMainMenuUI(bool useDyslexic)
+        {
+            if (mainMenuOverlay == null) return;
+
+            Font activeFont = (useDyslexic && dyslexicFont != null) ? dyslexicFont : pixelFont;
+            if (activeFont == null) return;
+
+            var fontDef = FontDefinition.FromFont(activeFont);
+            mainMenuOverlay.Query<Label>().ForEach(label => label.style.unityFontDefinition = fontDef);
+            mainMenuOverlay.Query<Button>().ForEach(btn => btn.style.unityFontDefinition = fontDef);
+
+            // Reaplicar tamaño porque cada fuente tiene tamaños diferentes
+            ApplyFontSizeToMainMenuUI(SettingsManager.Instance != null && SettingsManager.Instance.UseLargeText);
+        }
+
+        private void ApplyFontSizeToMainMenuUI(bool useLarge)
+        {
+            if (mainMenuOverlay == null || gameConstants == null) return;
+
+            bool dyslexic = SettingsManager.Instance != null && SettingsManager.Instance.UseDyslexicFont;
+
+            float fontSize = dyslexic
+                ? (useLarge ? gameConstants.menuFontSizeLargeDyslexic : gameConstants.menuFontSizeNormalDyslexic)
+                : (useLarge ? gameConstants.menuFontSizeLarge : gameConstants.menuFontSizeNormal);
+
+            mainMenuOverlay.Query<Label>().ForEach(label => label.style.fontSize = fontSize);
+            mainMenuOverlay.Query<Button>().ForEach(btn => btn.style.fontSize = fontSize);
         }
 
         /// <summary>

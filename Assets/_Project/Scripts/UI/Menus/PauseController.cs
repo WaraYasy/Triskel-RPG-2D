@@ -12,6 +12,7 @@ using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using Triskel.API;
+using Triskel.Core;
 
 namespace Triskel.UI
 {
@@ -31,6 +32,9 @@ namespace Triskel.UI
         [SerializeField] private UIDocument pauseDocument;
         [SerializeField] private SettingsController settingsController;
         [SerializeField] private ControlsDisplayController controlsDisplay;
+        [SerializeField] private GameConstants gameConstants;
+        [SerializeField] private Font pixelFont;
+        [SerializeField] private Font dyslexicFont;
 
         [Header("Escenas")]
         [SerializeField] private string mainMenuSceneName = "Home";
@@ -72,6 +76,13 @@ namespace Triskel.UI
             }
 
             InitializePauseMenu();
+
+            // Suscribirse a eventos de SettingsManager
+            if (SettingsManager.Instance != null)
+            {
+                SettingsManager.Instance.OnFontChanged += ApplyFontToPauseUI;
+                SettingsManager.Instance.OnFontSizeChanged += ApplyFontSizeToPauseUI;
+            }
         }
 
         private void OnDisable()
@@ -80,6 +91,13 @@ namespace Triskel.UI
             if (restartButton != null) restartButton.clicked -= OnRestartClicked;
             if (settingsButton != null) settingsButton.clicked -= OnSettingsClicked;
             if (quitButton != null) quitButton.clicked -= OnQuitClicked;
+
+            // Desuscribirse de eventos de SettingsManager
+            if (SettingsManager.Instance != null)
+            {
+                SettingsManager.Instance.OnFontChanged -= ApplyFontToPauseUI;
+                SettingsManager.Instance.OnFontSizeChanged -= ApplyFontSizeToPauseUI;
+            }
         }
 
         private void Update()
@@ -144,6 +162,58 @@ namespace Triskel.UI
 
             // Ocultar inicialmente
             Hide();
+
+            // Aplicar fuente y tamaño inicial
+            ApplyFontToPauseUI(SettingsManager.Instance != null && SettingsManager.Instance.UseDyslexicFont);
+            ApplyFontSizeToPauseUI(SettingsManager.Instance != null && SettingsManager.Instance.UseLargeText);
+        }
+
+        private void ApplyFontToPauseUI(bool useDyslexic)
+        {
+            if (pauseOverlay == null) return;
+
+            Font activeFont = (useDyslexic && dyslexicFont != null) ? dyslexicFont : pixelFont;
+
+            if (activeFont == null)
+            {
+                Debug.LogWarning($"[PauseController] ⚠️ No hay fuente asignada - pixelFont: {(pixelFont != null ? pixelFont.name : "NULL")}, dyslexicFont: {(dyslexicFont != null ? dyslexicFont.name : "NULL")}");
+                return;
+            }
+
+            Debug.Log($"[PauseController] Aplicando fuente: {activeFont.name} (Dislexia: {useDyslexic})");
+
+            var fontDef = FontDefinition.FromFont(activeFont);
+            pauseOverlay.Query<Label>().ForEach(label => label.style.unityFontDefinition = fontDef);
+            pauseOverlay.Query<Button>().ForEach(btn => btn.style.unityFontDefinition = fontDef);
+
+            // Reaplicar tamaño porque cada fuente tiene tamaños diferentes
+            ApplyFontSizeToPauseUI(SettingsManager.Instance != null && SettingsManager.Instance.UseLargeText);
+        }
+
+        private void ApplyFontSizeToPauseUI(bool useLarge)
+        {
+            if (pauseOverlay == null)
+            {
+                Debug.LogWarning("[PauseController] pauseOverlay es null");
+                return;
+            }
+
+            if (gameConstants == null)
+            {
+                Debug.LogWarning("[PauseController] ⚠️ GameConstants no asignado - no se puede aplicar tamaño de fuente");
+                return;
+            }
+
+            bool dyslexic = SettingsManager.Instance != null && SettingsManager.Instance.UseDyslexicFont;
+
+            float fontSize = dyslexic
+                ? (useLarge ? gameConstants.menuFontSizeLargeDyslexic : gameConstants.menuFontSizeNormalDyslexic)
+                : (useLarge ? gameConstants.menuFontSizeLarge : gameConstants.menuFontSizeNormal);
+
+            Debug.Log($"[PauseController] Aplicando tamaño: {fontSize}px (Grande: {useLarge}, Dislexia: {dyslexic})");
+
+            pauseOverlay.Query<Label>().ForEach(label => label.style.fontSize = fontSize);
+            pauseOverlay.Query<Button>().ForEach(btn => btn.style.fontSize = fontSize);
         }
 
         #region Public Methods

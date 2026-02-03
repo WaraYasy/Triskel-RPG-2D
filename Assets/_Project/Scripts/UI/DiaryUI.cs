@@ -42,11 +42,10 @@ namespace Triskel.UI
         private int currentPageIndex = 0;
         private bool isInitialized = false;
 
-        [Header("Tamaño de Texto")]
-        [SerializeField] private float normalTitleSize = 50f;
-        [SerializeField] private float largeTitleSize = 55f;
-        [SerializeField] private float normalTextSize = 35f;
-        [SerializeField] private float largeTextSize = 45f;
+        [Header("Referencias")]
+        [SerializeField] private GameConstants gameConstants;
+        [SerializeField] private Font pixelFont;
+        [SerializeField] private Font dyslexicFont;
 
         // Botón móvil del diario
         private UnityEngine.UI.Button mobileDiaryButton;
@@ -80,6 +79,7 @@ namespace Triskel.UI
             if (SettingsManager.Instance != null)
             {
                 SettingsManager.Instance.OnFontSizeChanged += ApplyFontSize;
+                SettingsManager.Instance.OnFontChanged += ApplyFont;
             }
         }
 
@@ -97,6 +97,7 @@ namespace Triskel.UI
             if (SettingsManager.Instance != null)
             {
                 SettingsManager.Instance.OnFontSizeChanged -= ApplyFontSize;
+                SettingsManager.Instance.OnFontChanged -= ApplyFont;
             }
         }
 
@@ -138,9 +139,10 @@ namespace Triskel.UI
             isInitialized = true;
             Debug.Log("[DiaryUI] UI inicializada correctamente.");
             
-            // Aplicar tamaño inicial
+            // Aplicar fuente y tamaño inicial
             if (SettingsManager.Instance != null)
             {
+                ApplyFont(SettingsManager.Instance.UseDyslexicFont);
                 ApplyFontSize(SettingsManager.Instance.UseLargeText);
             }
 
@@ -154,8 +156,11 @@ namespace Triskel.UI
                  // Asegurar no suscribirse doble
                  SettingsManager.Instance.OnFontSizeChanged -= ApplyFontSize;
                  SettingsManager.Instance.OnFontSizeChanged += ApplyFontSize;
-                 
+                 SettingsManager.Instance.OnFontChanged -= ApplyFont;
+                 SettingsManager.Instance.OnFontChanged += ApplyFont;
+
                  // Aplicar inicial
+                 ApplyFont(SettingsManager.Instance.UseDyslexicFont);
                  ApplyFontSize(SettingsManager.Instance.UseLargeText);
             }
         }
@@ -514,21 +519,56 @@ namespace Triskel.UI
         }
 
         #endregion
-        #region Font Size Control
+        #region Font Control
+
+        private void ApplyFont(bool useDyslexic)
+        {
+            Font activeFont = (useDyslexic && dyslexicFont != null) ? dyslexicFont : pixelFont;
+            if (activeFont == null) return;
+
+            var fontDef = FontDefinition.FromFont(activeFont);
+
+            if (entryTitleLabel != null)
+                entryTitleLabel.style.unityFontDefinition = fontDef;
+
+            if (entryTextLabel != null)
+                entryTextLabel.style.unityFontDefinition = fontDef;
+
+            if (pageIndicatorLabel != null)
+                pageIndicatorLabel.style.unityFontDefinition = fontDef;
+
+            if (prevButton != null)
+                prevButton.style.unityFontDefinition = fontDef;
+
+            if (nextButton != null)
+                nextButton.style.unityFontDefinition = fontDef;
+
+            // Re-aplicar tamaños para usar los valores correctos según la fuente activa
+            if (SettingsManager.Instance != null)
+                ApplyFontSize(SettingsManager.Instance.UseLargeText);
+        }
 
         private void ApplyFontSize(bool large)
         {
+            if (gameConstants == null) return;
+
+            bool dyslexic = SettingsManager.Instance != null && SettingsManager.Instance.UseDyslexicFont;
+
+            float titleSize = dyslexic
+                ? (large ? gameConstants.diaryTitleSizeLargeDyslexic : gameConstants.diaryTitleSizeNormalDyslexic)
+                : (large ? gameConstants.diaryTitleSizeLarge : gameConstants.diaryTitleSizeNormal);
+
+            float textSize = dyslexic
+                ? (large ? gameConstants.diaryTextSizeLargeDyslexic : gameConstants.diaryTextSizeNormalDyslexic)
+                : (large ? gameConstants.diaryTextSizeLarge : gameConstants.diaryTextSizeNormal);
+
             if (entryTitleLabel != null)
-            {
-                entryTitleLabel.style.fontSize = new Length(large ? largeTitleSize : normalTitleSize, LengthUnit.Pixel);
-            }
+                entryTitleLabel.style.fontSize = new Length(titleSize, LengthUnit.Pixel);
 
             if (entryTextLabel != null)
-            {
-                entryTextLabel.style.fontSize = new Length(large ? largeTextSize : normalTextSize, LengthUnit.Pixel);
-            }
+                entryTextLabel.style.fontSize = new Length(textSize, LengthUnit.Pixel);
 
-            Debug.Log($"[DiaryUI] Tamaño de fuente aplicado: {(large ? "Grande" : "Normal")}");
+            Debug.Log($"[DiaryUI] Tamaño de fuente aplicado: {(large ? "Grande" : "Normal")} ({(dyslexic ? "Dislexia" : "Pixelada")})");
         }
 
         #endregion

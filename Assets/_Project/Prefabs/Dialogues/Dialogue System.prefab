@@ -1441,9 +1441,10 @@ MonoBehaviour:
   optionButtons: []
   continueButton: {fileID: 3684718113456293766}
   dialogueFontAsset: {fileID: 11400000, guid: 88bc9261d125b6f42ba313d55059bfe2, type: 2}
+  dyslexicFontAsset: {fileID: 11400000, guid: 944ab80fbe461b34a9a0e09ccf491448, type: 2}
   normalFontSize: 48
   largeFontSize: 64
-  normalOptionFontSize: 36
+  normalOptionFontSize: 40
   largeOptionFontSize: 48
   dialogueRunner: {fileID: 0}
   uiCanvasGroup: {fileID: 0}

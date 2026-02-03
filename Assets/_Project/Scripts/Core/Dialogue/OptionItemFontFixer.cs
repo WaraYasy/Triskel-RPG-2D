@@ -23,6 +23,7 @@ namespace Triskel.Dialogue
     {
         [Header("Configuración de Fuente")]
         [SerializeField] private TMP_FontAsset fontAsset;
+        [SerializeField] private TMP_FontAsset dyslexicFontAsset;
 
         [Header("Tamaños de Texto")]
         [SerializeField] private float normalFontSize = 40f;
@@ -32,7 +33,6 @@ namespace Triskel.Dialogue
 
         private void Start()
         {
-            // Buscar el TMP_Text en este objeto o en sus hijos
             textComponent = GetComponentInChildren<TMP_Text>();
 
             if (textComponent == null)
@@ -41,34 +41,33 @@ namespace Triskel.Dialogue
                 return;
             }
 
-            // Aplicar fuente
-            if (fontAsset != null)
-            {
-                textComponent.font = fontAsset;
-            }
-
-            // Aplicar tamaño inicial
+            ApplyFont();
             ApplyFontSize();
 
-            // Suscribirse a cambios de tamaño
             if (SettingsManager.Instance != null)
             {
                 SettingsManager.Instance.OnFontSizeChanged += OnFontSizeChanged;
+                SettingsManager.Instance.OnFontChanged += OnFontTypeChanged;
             }
         }
 
         private void OnDestroy()
         {
-            // Desuscribirse al destruir
             if (SettingsManager.Instance != null)
             {
                 SettingsManager.Instance.OnFontSizeChanged -= OnFontSizeChanged;
+                SettingsManager.Instance.OnFontChanged -= OnFontTypeChanged;
             }
         }
 
         private void OnFontSizeChanged(bool useLargeText)
         {
             ApplyFontSize();
+        }
+
+        private void OnFontTypeChanged(bool useDyslexic)
+        {
+            ApplyFont();
         }
 
         private void ApplyFontSize()
@@ -78,6 +77,22 @@ namespace Triskel.Dialogue
             bool useLarge = SettingsManager.Instance != null && SettingsManager.Instance.UseLargeText;
             textComponent.enableAutoSizing = false;
             textComponent.fontSize = useLarge ? largeFontSize : normalFontSize;
+        }
+
+        private void ApplyFont()
+        {
+            if (textComponent == null) return;
+
+            bool useDyslexic = SettingsManager.Instance != null && SettingsManager.Instance.UseDyslexicFont;
+            TMP_FontAsset targetFont = (useDyslexic && dyslexicFontAsset != null) ? dyslexicFontAsset : fontAsset;
+
+            if (targetFont != null)
+            {
+                textComponent.font = targetFont;
+                textComponent.fontSharedMaterial = targetFont.material;
+
+                Debug.Log($"[OptionItemFontFixer] Fuente aplicada: {targetFont.name} (Dislexia: {useDyslexic})");
+            }
         }
     }
 }

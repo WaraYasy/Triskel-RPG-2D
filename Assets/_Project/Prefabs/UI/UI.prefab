@@ -116,6 +116,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiDocument: {fileID: 4503134419886206686}
+  gameConstants: {fileID: 11400000, guid: 975d9a5019ef22c459a306f3eff825ba, type: 2}
+  pixelFont: {fileID: 12800000, guid: 89ae0ccf11ce0314bb60394e36bc1305, type: 3}
+  dyslexicFont: {fileID: 12800000, guid: 3381314dc730bfd4ea8aeee908c00afd, type: 3}
   mainMenuSceneName: Home
 --- !u!1 &1833703802475595086
 GameObject:
@@ -275,6 +278,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settingsDocument: {fileID: 8140041038109796694}
   pauseController: {fileID: 4262161603106460648}
+  gameConstants: {fileID: 11400000, guid: 975d9a5019ef22c459a306f3eff825ba, type: 2}
+  pixelFont: {fileID: 12800000, guid: 89ae0ccf11ce0314bb60394e36bc1305, type: 3}
+  dyslexicFont: {fileID: 12800000, guid: 3381314dc730bfd4ea8aeee908c00afd, type: 3}
 --- !u!1001 &747698406565171913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -283,6 +289,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1961538907921629405}
     m_Modifications:
+    - target: {fileID: 1935952902116546393, guid: b789a4f519fe3954bb90b191f4c337f6, type: 3}
+      propertyPath: pixelFont
+      value: 
+      objectReference: {fileID: 12800000, guid: 89ae0ccf11ce0314bb60394e36bc1305, type: 3}
+    - target: {fileID: 1935952902116546393, guid: b789a4f519fe3954bb90b191f4c337f6, type: 3}
+      propertyPath: dyslexicFont
+      value: 
+      objectReference: {fileID: 12800000, guid: 3381314dc730bfd4ea8aeee908c00afd, type: 3}
+    - target: {fileID: 1935952902116546393, guid: b789a4f519fe3954bb90b191f4c337f6, type: 3}
+      propertyPath: gameConstants
+      value: 
+      objectReference: {fileID: 11400000, guid: 975d9a5019ef22c459a306f3eff825ba, type: 2}
+    - target: {fileID: 1935952902116546393, guid: b789a4f519fe3954bb90b191f4c337f6, type: 3}
+      propertyPath: normalTextSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935952902116546393, guid: b789a4f519fe3954bb90b191f4c337f6, type: 3}
+      propertyPath: dyslexicLargeTextSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935952902116546393, guid: b789a4f519fe3954bb90b191f4c337f6, type: 3}
+      propertyPath: dyslexicLargeTitleSize
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935952902116546393, guid: b789a4f519fe3954bb90b191f4c337f6, type: 3}
+      propertyPath: dyslexicNormalTextSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935952902116546393, guid: b789a4f519fe3954bb90b191f4c337f6, type: 3}
+      propertyPath: dyslexicNormalTitleSize
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 3152743458087353297, guid: b789a4f519fe3954bb90b191f4c337f6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 363.97922
@@ -447,6 +485,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7676218621386219840, guid: ac46c974af03049488f00c0bfdc0f1e5, type: 3}
+      propertyPath: pixelFont
+      value: 
+      objectReference: {fileID: 12800000, guid: 89ae0ccf11ce0314bb60394e36bc1305, type: 3}
+    - target: {fileID: 7676218621386219840, guid: ac46c974af03049488f00c0bfdc0f1e5, type: 3}
+      propertyPath: dyslexicFont
+      value: 
+      objectReference: {fileID: 12800000, guid: 3381314dc730bfd4ea8aeee908c00afd, type: 3}
+    - target: {fileID: 7676218621386219840, guid: ac46c974af03049488f00c0bfdc0f1e5, type: 3}
+      propertyPath: gameConstants
+      value: 
+      objectReference: {fileID: 11400000, guid: 975d9a5019ef22c459a306f3eff825ba, type: 2}
     - target: {fileID: 7676218621386219840, guid: ac46c974af03049488f00c0bfdc0f1e5, type: 3}
       propertyPath: settingsController
       value: 
