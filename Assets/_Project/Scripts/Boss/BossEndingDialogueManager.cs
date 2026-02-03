@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 using Yarn.Unity;
 using Triskel.Core;
 
@@ -21,8 +23,8 @@ public class BossEndingDialogueManager : MonoBehaviour
     public string story3_Leyenda = "Final_Ending_3_Leyenda";
 
     [Header("UI Transition")]
-    public GameObject blackScreenPanel; // El panel negro con la imagen que describes
-    public UnityEngine.UI.Image finalArtDisplay;
+    public GameObject blackScreenPanel;
+    public Image finalArtDisplay;
 
     [Header("Sprites de Final")]
     public Sprite art0_Malo;
@@ -31,6 +33,25 @@ public class BossEndingDialogueManager : MonoBehaviour
     public Sprite art3_Perfecto;
 
     private int finalMoralState = 0;
+
+    private void Awake()
+    {
+        // Auto-encontrar referencias si faltan (Fallback de seguridad)
+        if (bossManager == null)
+            bossManager = FindFirstObjectByType<BossManager>();
+            
+        if (dialogueRunner == null)
+            dialogueRunner = FindFirstObjectByType<DialogueRunner>();
+
+        if (blackScreenPanel == null)
+            blackScreenPanel = GameObject.Find("BlackScreenPanel");
+            
+        if (finalArtDisplay == null)
+        {
+             GameObject imgObj = GameObject.Find("FinalArtDisplay");
+             if (imgObj != null) finalArtDisplay = imgObj.GetComponent<Image>();
+        }
+    }
 
     private void OnEnable()
     {

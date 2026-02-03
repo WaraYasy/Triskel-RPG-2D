@@ -31817,17 +31817,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &566485057 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7601468624503164915, guid: 25b25b112de0afd49974225a3deb58e2, type: 3}
-  m_PrefabInstance: {fileID: 2082342867}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &635307043
 GameObject:
   m_ObjectHideFlags: 0
@@ -63663,7 +63652,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1394514955}
-  - component: {fileID: 1394514954}
+  - component: {fileID: 1394514956}
   m_Layer: 0
   m_Name: GestorDeFinal
   m_TagString: Untagged
@@ -63671,34 +63660,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1394514954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1394514953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 433bb0e68ee09a247a520a9da445b38b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bossManager: {fileID: 796353398}
-  dialogueRunner: {fileID: 566485057}
-  boss0_Malo: Final_Boss_Defeated_0
-  boss1_Agridulce: Final_Boss_Defeated_1
-  boss2_Bueno: Final_Boss_Defeated_2
-  boss3_Perfecto: Final_Boss_Defeated_3
-  story0_Usurpador: Final_Ending_0_Usurpador
-  story1_Ermitano: Final_Ending_1_Ermitano
-  story2_Cicatrizado: Final_Ending_2_Cicatrizado
-  story3_Leyenda: Final_Ending_3_Leyenda
-  blackScreenPanel: {fileID: 422525043}
-  finalArtDisplay: {fileID: 62694247}
-  art0_Malo: {fileID: -4623136847871638960, guid: 5797ccd5a0eefa24eb05fb5c27b8b589, type: 3}
-  art1_Agridulce: {fileID: 1363879747060010867, guid: 8ba8bee349d857d48a7a8593787ac65c, type: 3}
-  art2_Bueno: {fileID: 7406614236561345952, guid: b67e51fdb30bbd9408808efdb154aad3, type: 3}
-  art3_Perfecto: {fileID: 3626282992816410546, guid: 70850ea527c8d844f81789eb24b9ea19, type: 3}
 --- !u!4 &1394514955
 Transform:
   m_ObjectHideFlags: 0
@@ -63714,6 +63675,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1394514956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394514953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 433bb0e68ee09a247a520a9da445b38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossManager: {fileID: 796353398}
+  dialogueRunner: {fileID: 2082342868}
+  boss0_Malo: Final_Boss_Defeated_0
+  boss1_Agridulce: Final_Boss_Defeated_1
+  boss2_Bueno: Final_Boss_Defeated_2
+  boss3_Perfecto: Final_Boss_Defeated_3
+  story0_Usurpador: Final_Ending_0_Usurpador
+  story1_Ermitano: Final_Ending_1_Ermitano
+  story2_Cicatrizado: Final_Ending_2_Cicatrizado
+  story3_Leyenda: Final_Ending_3_Leyenda
+  blackScreenPanel: {fileID: 422525043}
+  finalArtDisplay: {fileID: 62694247}
+  art0_Malo: {fileID: -4623136847871638960, guid: 5797ccd5a0eefa24eb05fb5c27b8b589, type: 3}
+  art1_Agridulce: {fileID: 1363879747060010867, guid: 8ba8bee349d857d48a7a8593787ac65c, type: 3}
+  art2_Bueno: {fileID: 7406614236561345952, guid: b67e51fdb30bbd9408808efdb154aad3, type: 3}
+  art3_Perfecto: {fileID: 3626282992816410546, guid: 70850ea527c8d844f81789eb24b9ea19, type: 3}
 --- !u!1001 &1625984826
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64076,6 +64065,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 395001498}
   m_SourcePrefab: {fileID: 100100000, guid: 25b25b112de0afd49974225a3deb58e2, type: 3}
+--- !u!114 &2082342868 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7601468624503164915, guid: 25b25b112de0afd49974225a3deb58e2, type: 3}
+  m_PrefabInstance: {fileID: 2082342867}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &581061511802907029
 PrefabInstance:
   m_ObjectHideFlags: 0

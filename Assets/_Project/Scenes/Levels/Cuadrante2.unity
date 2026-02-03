@@ -4534,7 +4534,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 6
   m_Sprite: {fileID: 3850792892168746322, guid: b0a4692dbc8219a4185de085dc613fbb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -190747,6 +190747,71 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77f4d21daf811d44d91ae035052b9695, type: 3}
+--- !u!1 &1096090378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1096090380}
+  - component: {fileID: 1096090379}
+  m_Layer: 0
+  m_Name: Giant
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1096090379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096090378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c63fb9e64746fd248a591d79f2394c07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treesToClear: 2
+  giantObstacle: {fileID: 0}
+  giantAnimator: {fileID: 0}
+  sadTrigger: Sad
+  happyTrigger: Happy
+  moralRewardPerHeal: 1
+  moralPenaltyPerChop: -1
+  blockedPath: {fileID: 1180715130}
+  pathUnlockPosition: {fileID: 0}
+  OnPathCleared:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGoodEnding:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBadEnding:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMixedEnding:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &1096090380
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096090378}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 536.7631, y: 371.75238, z: -0.55102086}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1135623501
 GameObject:
   m_ObjectHideFlags: 0
@@ -488244,9 +488309,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 1151939807}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: c63fb9e64746fd248a591d79f2394c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  treesToClear: 2
+  giantObstacle: {fileID: 0}
+  giantAnimator: {fileID: 0}
+  sadTrigger: Sad
+  happyTrigger: Happy
+  moralRewardPerHeal: 1
+  moralPenaltyPerChop: -1
+  blockedPath: {fileID: 0}
+  pathUnlockPosition: {fileID: 0}
+  OnPathCleared:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGoodEnding:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBadEnding:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMixedEnding:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1151939807
 GameObject:
   m_ObjectHideFlags: 0
@@ -488678,13 +488764,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1275530289}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 256.29, y: 2.88, z: 0}
-  m_LocalScale: {x: 1.563735, y: 1.563735, z: 1.563735}
+  m_LocalRotation: {x: -0.112834774, y: 0.008327585, z: 0.0009457408, w: 0.99357843}
+  m_LocalPosition: {x: 256.79, y: 2.27, z: 0}
+  m_LocalScale: {x: 1.591413, y: 1.591413, z: 1.591413}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -12.958, y: 0.96, z: 0}
 --- !u!1001 &1277699135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -583103,13 +583189,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1957998955}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 243.02, y: 2.84, z: 0}
-  m_LocalScale: {x: 1.563735, y: 1.563735, z: 1.563735}
+  m_LocalRotation: {x: -0.19473012, y: -0, z: -0, w: 0.9808569}
+  m_LocalPosition: {x: 242.61, y: 2.21, z: 0}
+  m_LocalScale: {x: 1.7157301, y: 1.7157301, z: 1.7157301}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -22.458, y: 0, z: 0}
 --- !u!95 &1957998958
 Animator:
   serializedVersion: 7
@@ -583577,3 +583663,4 @@ SceneRoots:
   - {fileID: 6386934101178347469}
   - {fileID: 1067705668}
   - {fileID: 277785685}
+  - {fileID: 1096090380}

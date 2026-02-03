@@ -79,8 +79,9 @@ public class LiberationFountain : MonoBehaviour
         if (GameManager.Instance != null)
         {
             // Solo modificar moral local, la decisión se registrará al completar el nivel
-            GameManager.Instance.ModifyMoral(1);
-            Debug.Log("[Fountain] ¡4 fantasmas liberados! +1 Moral concedida.");
+            // Moral modification moved to SendaEbanoController centrally
+            // GameManager.Instance.ModifyMoral(1);
+            Debug.Log("[Fountain] ¡4 fantasmas liberados! (Moral gestionada por SendaEbanoController)");
         }
 
         if (animator != null)

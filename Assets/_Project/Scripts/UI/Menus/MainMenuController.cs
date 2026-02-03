@@ -40,7 +40,7 @@ namespace Triskel.UI
         [SerializeField] private Font dyslexicFont;
 
         [Header("Escenas")]
-        [SerializeField] private string gameSceneName = "Game";
+        [SerializeField] private string gameSceneName = "DentroDelHub1";
 
         // Elementos UI - Menu Principal
         private VisualElement mainMenuOverlay;

@@ -30603,6 +30603,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2002349988544515146, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
+      propertyPath: 'mobileOnlyElements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1446692678}
+    - target: {fileID: -2002349988544515146, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
+      propertyPath: 'mobileOnlyElements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1446692677}
+    - target: {fileID: -2002349988544515146, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
+      propertyPath: 'mobileOnlyElements.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1446692676}
+    - target: {fileID: -2002349988544515146, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
+      propertyPath: 'mobileOnlyElements.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1446692675}
+    - target: {fileID: -2002349988544515146, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
+      propertyPath: 'mobileOnlyElements.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1446692674}
     - target: {fileID: 15599436616681413, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
       propertyPath: m_Name
       value: MobileControls_UI
@@ -30700,6 +30720,31 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
+--- !u!1 &1446692674 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6488220744747833576, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
+  m_PrefabInstance: {fileID: 1446692673}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1446692675 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7708201607417875880, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
+  m_PrefabInstance: {fileID: 1446692673}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1446692676 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7590465859632672266, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
+  m_PrefabInstance: {fileID: 1446692673}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1446692677 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4522625969600916462, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
+  m_PrefabInstance: {fileID: 1446692673}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1446692678 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 916209306822019166, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
+  m_PrefabInstance: {fileID: 1446692673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1470600488
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,6 +9,10 @@ public class SendaEbanoController : MonoBehaviour
 {
     private int ghostsLiberated = 0;
     private int ghostsKilled = 0;
+    
+    // Trackea la contribución moral actual de este nivel (-1, 0, o +1)
+    // Para evitar inflar la moral global infinita
+    private int currentLevelMoralContribution = 0;
 
     /// <summary>
     /// Llamar cuando un fantasma es liberado en la fuente.
@@ -17,6 +21,7 @@ public class SendaEbanoController : MonoBehaviour
     {
         ghostsLiberated++;
         Debug.Log($"[SendaEbano] Fantasma liberado. Total: {ghostsLiberated} liberados, {ghostsKilled} matados");
+        UpdateMoralState();
     }
 
     /// <summary>
@@ -26,6 +31,41 @@ public class SendaEbanoController : MonoBehaviour
     {
         ghostsKilled++;
         Debug.Log($"[SendaEbano] Fantasma matado. Total: {ghostsLiberated} liberados, {ghostsKilled} matados");
+        UpdateMoralState();
+    }
+
+    /// <summary>
+    /// Actualiza la moral global basada en el estado actual del nivel.
+    /// Regla: 
+    /// - Si matas 2 o más fantasmas -> Moral Mala (-1).
+    /// - Si matas < 2 y has liberado al menos 1 -> Moral Buena (+1).
+    /// - Si no has hecho nada -> Moral Neutra (0).
+    /// </summary>
+    private void UpdateMoralState()
+    {
+        int desiredContribution = 0;
+
+        if (ghostsKilled >= 2)
+        {
+            desiredContribution = -1;
+        }
+        else if (ghostsLiberated > 0)
+        {
+            desiredContribution = 1;
+        }
+
+        // Aplicar la diferencia si ha cambiado
+        if (desiredContribution != currentLevelMoralContribution)
+        {
+            int diff = desiredContribution - currentLevelMoralContribution;
+            currentLevelMoralContribution = desiredContribution;
+
+            if (GameManager.Instance != null && diff != 0)
+            {
+                GameManager.Instance.ModifyMoral(diff);
+                Debug.Log($"[SendaEbano] Moral actualizada. Contribución nivel: {currentLevelMoralContribution} (Diff: {diff})");
+            }
+        }
     }
 
     /// <summary>
@@ -35,17 +75,17 @@ public class SendaEbanoController : MonoBehaviour
     /// <returns>La decisión moral: "sanar" si liberó más fantasmas, "forzar" en caso contrario</returns>
     public string GetFinalMoralChoice()
     {
-        // Si liberó más fantasmas de los que mató → decisión buena (sanar)
-        // En caso de empate, se considera mala decisión (forzar)
-        if (ghostsLiberated > ghostsKilled)
+        // Regla solicitada: "solo es moral baja si matas a dos o mas fantasmas"
+        // Si matas < 2 (0 o 1) se considera BUENO (SANAR), asumiendo que el resto son liberados o ignorados.
+        if (ghostsKilled >= 2)
         {
-            Debug.Log($"[SendaEbano] Decisión BUENA: Liberados ({ghostsLiberated}) > Matados ({ghostsKilled}) → SANAR");
-            return APIConstants.Choices.SANAR;
+            Debug.Log($"[SendaEbano] Decisión MALA: Matados ({ghostsKilled}) >= 2 → FORZAR");
+            return APIConstants.Choices.FORZAR;
         }
         else
         {
-            Debug.Log($"[SendaEbano] Decisión MALA: Matados ({ghostsKilled}) >= Liberados ({ghostsLiberated}) → FORZAR");
-            return APIConstants.Choices.FORZAR;
+            Debug.Log($"[SendaEbano] Decisión BUENA: Matados ({ghostsKilled}) < 2 → SANAR");
+            return APIConstants.Choices.SANAR;
         }
     }
 
@@ -55,6 +95,7 @@ public class SendaEbanoController : MonoBehaviour
         Debug.Log("===== ESTADO SENDA DEL ÉBANO =====");
         Debug.Log($"Fantasmas Liberados: {ghostsLiberated}");
         Debug.Log($"Fantasmas Matados: {ghostsKilled}");
+        Debug.Log($"Contribución Moral: {currentLevelMoralContribution}");
         Debug.Log($"Decisión Final: {GetFinalMoralChoice()}");
         Debug.Log("==================================");
     }

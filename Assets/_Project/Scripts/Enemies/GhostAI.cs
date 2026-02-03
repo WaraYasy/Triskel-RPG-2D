@@ -192,10 +192,11 @@ public class GhostAI : MonoBehaviour
         Debug.Log("👻 ¡Fantasma disipado por la luz intensa!");
 
         // Solo modificar moral local, la decisión se registrará al completar el nivel
-        if (GameManager.Instance != null && GameManager.Instance.CurrentLevel == 1)
-        {
-            GameManager.Instance.ModifyMoral(-1);
-        }
+        // Moral modification moved to SendaEbanoController centrally
+        // if (GameManager.Instance != null && GameManager.Instance.CurrentLevel == 1)
+        // {
+        //     GameManager.Instance.ModifyMoral(-1);
+        // }
 
         // Notificar al controlador del nivel que se mató un fantasma
         var sendaController = FindFirstObjectByType<SendaEbanoController>();
