@@ -131,9 +131,65 @@ public class RelicSystem : MonoBehaviour
     
     public void SelectRelic(RelicType relic)
     {
+        // Buscar InventoryUI una sola vez
+        var inventoryUI = FindFirstObjectByType<Triskel.UI.HUD.InventoryUI>();
+
+        // Toggle: si la reliquia ya está seleccionada, deseleccionar
+        if (currentRelic == relic && relic != RelicType.None)
+        {
+            currentRelic = RelicType.None;
+            UpdateVisualFeedback();
+
+            // Deseleccionar todos los slots en la UI del inventario
+            if (inventoryUI != null)
+            {
+                inventoryUI.DeselectAllSlots();
+            }
+
+            Debug.Log("Reliquia deseleccionada");
+            return;
+        }
+
+        // Validar que el jugador tenga la reliquia en el inventario
+        if (relic != RelicType.None && !HasRelicInInventory(relic))
+        {
+            Debug.LogWarning($"⚠️ No puedes seleccionar {relic} - no está en tu inventario");
+            return;
+        }
+
+        // Seleccionar nueva reliquia
         currentRelic = relic;
         UpdateVisualFeedback();
+
+        // Actualizar la UI del inventario para mostrar el efecto visual
+        if (inventoryUI != null && relic != RelicType.None)
+        {
+            // Mapear tipo de reliquia a índice de slot (1=Lirio->0, 2=Hacha->1, 3=Manto->2)
+            int slotIndex = (int)relic - 1;
+            inventoryUI.UpdateSlotVisual(slotIndex);
+        }
+
         Debug.Log($"Reliquia seleccionada: {relic}");
+    }
+
+    /// <summary>
+    /// Verifica si el jugador tiene una reliquia en el inventario
+    /// </summary>
+    private bool HasRelicInInventory(RelicType relic)
+    {
+        if (Triskel.Core.InventoryData.Instance == null)
+            return false;
+
+        // Mapear tipo de reliquia a itemID
+        string itemID = relic switch
+        {
+            RelicType.LirioAzul => "lirio",
+            RelicType.HachaSagrada => "hacha",
+            RelicType.MantoDeLuna => "manto",
+            _ => ""
+        };
+
+        return Triskel.Core.InventoryData.Instance.HasItem(itemID);
     }
     
     private void UpdateVisualFeedback()

@@ -239,12 +239,52 @@ namespace Triskel.UI.HUD
         /// Selecciona un slot por su índice (usado para teclado).
         /// Solo puede haber un slot seleccionado a la vez.
         /// </summary>
-        private void SelectSlotByIndex(int slotIndex)
+        public void SelectSlotByIndex(int slotIndex)
         {
             if (slotIndex < 0 || slotIndex >= slots.Length) return;
             if (slots[slotIndex] == null) return;
 
             OnSlotClicked(slots[slotIndex], slotIndex);
+        }
+
+        /// <summary>
+        /// Actualiza solo el visual del slot seleccionado sin disparar lógica de gameplay.
+        /// Usado cuando la selección viene desde RelicSystem para evitar bucles.
+        /// </summary>
+        public void UpdateSlotVisual(int slotIndex)
+        {
+            if (slotIndex < 0 || slotIndex >= slots.Length) return;
+            if (slots[slotIndex] == null) return;
+
+            // Verificar que el slot tenga un item
+            if (InventoryData.Instance == null) return;
+            CollectibleItem item = InventoryData.Instance.GetItemAtSlot(slotIndex);
+            if (item == null) return;
+
+            // Deseleccionar el slot anterior si existe
+            if (currentlySelectedIndex >= 0 && currentlySelectedIndex < slots.Length)
+            {
+                DeselectSlot(slots[currentlySelectedIndex]);
+            }
+
+            // Seleccionar el nuevo slot visualmente
+            SelectSlot(slots[slotIndex]);
+            currentlySelectedIndex = slotIndex;
+        }
+
+        /// <summary>
+        /// Deselecciona todos los slots visualmente sin disparar lógica de gameplay.
+        /// Usado cuando se deselecciona desde RelicSystem con teclas.
+        /// </summary>
+        public void DeselectAllSlots()
+        {
+            // Deseleccionar el slot actual si existe
+            if (currentlySelectedIndex >= 0 && currentlySelectedIndex < slots.Length)
+            {
+                DeselectSlot(slots[currentlySelectedIndex]);
+            }
+
+            currentlySelectedIndex = -1;
         }
 
         #endregion
@@ -341,8 +381,13 @@ namespace Triskel.UI.HUD
         {
             Debug.Log($"[InventoryUI] Item deseleccionado: {item.displayName}");
 
-            // TODO: Añadir lógica de gameplay
-            // Ejemplo: PlayerController.Instance.UnequipItem();
+            // Sincronizar con RelicSystem - Deseleccionar reliquia
+            RelicSystem relicSystem = FindFirstObjectByType<RelicSystem>();
+            if (relicSystem != null)
+            {
+                relicSystem.SelectRelic(RelicSystem.RelicType.None);
+                Debug.Log("[InventoryUI] Reliquia deseleccionada");
+            }
         }
 
         #endregion

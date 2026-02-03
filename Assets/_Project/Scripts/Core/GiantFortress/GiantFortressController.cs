@@ -45,20 +45,21 @@ namespace Triskel.GiantFortress
         {
             treesHealed++;
             Debug.Log($"Arbol sanado ({treesHealed} total). Gigante aliviado.");
-            
+
+            // Solo modificar moral local, NO registrar decisión todavía
             if (GameManager.Instance != null)
             {
-                GameManager.Instance.ModifyMoralWithChoice(moralRewardPerHeal, APIConstants.Choices.CONSTRUIR);
+                GameManager.Instance.ModifyMoral(moralRewardPerHeal);
             }
-            
+
             if (giantAnimator != null && !string.IsNullOrEmpty(happyTrigger))
             {
                 giantAnimator.SetTrigger(happyTrigger);
             }
-            
+
             CheckPuzzleCompletion();
         }
-        
+
         /// <summary>
         /// Llamar desde el UnityEvent OnChopped del CursedTree
         /// </summary>
@@ -66,18 +67,40 @@ namespace Triskel.GiantFortress
         {
             treesChopped++;
             Debug.Log($"Arbol talado ({treesChopped} total). Gigante entristecido.");
-            
+
+            // Solo modificar moral local, NO registrar decisión todavía
             if (GameManager.Instance != null)
             {
-                GameManager.Instance.ModifyMoralWithChoice(moralPenaltyPerChop, APIConstants.Choices.DESTRUIR);
+                GameManager.Instance.ModifyMoral(moralPenaltyPerChop);
             }
-            
+
             if (giantAnimator != null && !string.IsNullOrEmpty(sadTrigger))
             {
                 giantAnimator.SetTrigger(sadTrigger);
             }
-            
+
             CheckPuzzleCompletion();
+        }
+
+        /// <summary>
+        /// Determina la decisión moral final basándose en las acciones del jugador.
+        /// Llamar al completar el nivel para registrar la decisión en la API.
+        /// </summary>
+        /// <returns>La decisión moral: "construir" si sanó más árboles, "destruir" en caso contrario</returns>
+        public string GetFinalMoralChoice()
+        {
+            // Si sanó más árboles que los que taló → decisión buena (construir)
+            // En caso de empate, se considera mala decisión (destruir)
+            if (treesHealed > treesChopped)
+            {
+                Debug.Log($"[GiantFortress] Decisión BUENA: Sanados ({treesHealed}) > Talados ({treesChopped}) → CONSTRUIR");
+                return APIConstants.Choices.CONSTRUIR;
+            }
+            else
+            {
+                Debug.Log($"[GiantFortress] Decisión MALA: Talados ({treesChopped}) >= Sanados ({treesHealed}) → DESTRUIR");
+                return APIConstants.Choices.DESTRUIR;
+            }
         }
         
         private void CheckPuzzleCompletion()

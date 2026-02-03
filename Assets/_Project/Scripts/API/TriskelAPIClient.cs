@@ -217,11 +217,14 @@ namespace Triskel.API
         /// </summary>
         /// <param name="onSuccess">Callback ejecutado si la sesión es válida.</param>
         /// <param name="onError">Callback ejecutado si la sesión es inválida o ha expirado.</param>
+        /// <param name="clearCredentialsOnError">Si es true, limpia las credenciales al fallar (default: true).
+        /// Usar false cuando se reintenta una conexión temporal.</param>
         /// <remarks>
         /// Usa esto al iniciar el juego para comprobar si hay una sesión activa.
-        /// Si falla, limpia automáticamente las credenciales inválidas.
+        /// Por defecto, limpia las credenciales si la verificación falla.
+        /// Para reintentos de conexión, usa clearCredentialsOnError=false para preservar las credenciales.
         /// </remarks>
-        public void VerifySession(Action<PlayerProfile> onSuccess = null, Action<string> onError = null)
+        public void VerifySession(Action<PlayerProfile> onSuccess = null, Action<string> onError = null, bool clearCredentialsOnError = true)
         {
             if (!IsLoggedIn)
             {
@@ -232,8 +235,17 @@ namespace Triskel.API
             http.Get<PlayerProfile>("/v1/players/me", onSuccess,
                 error =>
                 {
-                    // Si falla, limpiar credenciales invalidas
-                    ClearCredentials();
+                    // Solo limpiar credenciales si está configurado (no durante reintentos)
+                    if (clearCredentialsOnError)
+                    {
+                        Debug.LogWarning("[TriskelAPI] Credenciales inválidas - limpiando sesión");
+                        ClearCredentials();
+                    }
+                    else
+                    {
+                        Debug.Log("[TriskelAPI] Error de conexión temporal - preservando credenciales");
+                    }
+
                     onError?.Invoke(error);
                 });
         }
@@ -356,17 +368,19 @@ namespace Triskel.API
         /// Marca un nivel como completado en la partida actual.
         /// </summary>
         /// <param name="level">Nombre del nivel (usar constantes de APIConstants.Levels).</param>
-        /// <param name="timeSeconds">Tiempo que tardó el jugador en completar el nivel (en segundos).</param>
         /// <param name="deaths">Número de muertes durante el nivel.</param>
         /// <param name="choice">Decisión moral tomada (usar constantes de APIConstants.Choices), opcional.</param>
         /// <param name="relic">Reliquia obtenida (usar constantes de APIConstants.Relics), opcional.</param>
+        /// <param name="timeSeconds">OPCIONAL: Tiempo en segundos. Si es null, la API lo calcula automáticamente.</param>
         /// <param name="onSuccess">Callback ejecutado si el nivel se completa exitosamente.</param>
         /// <param name="onError">Callback ejecutado si ocurre un error.</param>
         /// <remarks>
+        /// NUEVO: time_seconds es opcional. Si no se envía, la API calcula automáticamente el tiempo
+        /// usando el timestamp de /level/start y el timestamp actual. RECOMENDADO: dejar en null.
         /// Actualiza automáticamente las estadísticas de la partida (levels_completed, metrics, choices).
         /// </remarks>
-        public void CompleteLevel(string level, int timeSeconds, int deaths,
-            string choice = null, string relic = null,
+        public void CompleteLevel(string level, int deaths,
+            string choice = null, string relic = null, int? timeSeconds = null,
             Action<GameData> onSuccess = null, Action<string> onError = null)
         {
             if (string.IsNullOrEmpty(currentGameID))
@@ -378,7 +392,7 @@ namespace Triskel.API
             var request = new CompleteLevelRequest
             {
                 level = level,
-                time_seconds = timeSeconds,
+                time_seconds = timeSeconds, // null = API calcula automáticamente
                 deaths = deaths,
                 choice = choice,
                 relic = relic

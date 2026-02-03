@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 24fc4954220600247a8860d694e957b0
+guid: 12e36f814abc4274489368871a5fe5d8
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -142,7 +142,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -156,7 +156,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -177,10 +177,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -214,32 +214,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -247,10 +221,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1335
-        width: 294
-        height: 267
+        x: 18
+        y: 1345
+        width: 258
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,10 +243,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_1
       rect:
         serializedVersion: 2
-        x: 294
-        y: 1335
-        width: 294
-        height: 267
+        x: 317
+        y: 1345
+        width: 249
+        height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,10 +265,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_2
       rect:
         serializedVersion: 2
-        x: 588
-        y: 1335
-        width: 294
-        height: 267
+        x: 614
+        y: 1345
+        width: 244
+        height: 251
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,10 +287,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_3
       rect:
         serializedVersion: 2
-        x: 882
-        y: 1335
-        width: 294
-        height: 267
+        x: 911
+        y: 1345
+        width: 238
+        height: 253
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -335,10 +309,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_4
       rect:
         serializedVersion: 2
-        x: 1176
-        y: 1335
-        width: 294
-        height: 267
+        x: 1208
+        y: 1345
+        width: 233
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -357,10 +331,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_5
       rect:
         serializedVersion: 2
-        x: 1470
-        y: 1335
-        width: 294
-        height: 267
+        x: 1504
+        y: 1345
+        width: 228
+        height: 255
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -379,10 +353,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1068
-        width: 294
-        height: 267
+        x: 36
+        y: 1078
+        width: 225
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -401,10 +375,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_7
       rect:
         serializedVersion: 2
-        x: 294
-        y: 1068
-        width: 294
-        height: 267
+        x: 331
+        y: 1078
+        width: 223
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -423,10 +397,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_8
       rect:
         serializedVersion: 2
-        x: 588
-        y: 1068
-        width: 294
-        height: 267
+        x: 623
+        y: 1078
+        width: 228
+        height: 255
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -445,10 +419,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_9
       rect:
         serializedVersion: 2
-        x: 882
-        y: 1068
-        width: 294
-        height: 267
+        x: 913
+        y: 1078
+        width: 235
+        height: 253
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -467,10 +441,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_10
       rect:
         serializedVersion: 2
-        x: 1176
-        y: 1068
-        width: 294
-        height: 267
+        x: 1203
+        y: 1078
+        width: 242
+        height: 251
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -489,10 +463,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_11
       rect:
         serializedVersion: 2
-        x: 1470
-        y: 1068
-        width: 294
-        height: 267
+        x: 1493
+        y: 1078
+        width: 250
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -511,10 +485,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_12
       rect:
         serializedVersion: 2
-        x: 0
-        y: 801
-        width: 294
-        height: 267
+        x: 17
+        y: 811
+        width: 262
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -533,10 +507,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_13
       rect:
         serializedVersion: 2
-        x: 294
-        y: 801
-        width: 294
-        height: 267
+        x: 305
+        y: 811
+        width: 272
+        height: 241
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -555,10 +529,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_14
       rect:
         serializedVersion: 2
-        x: 588
-        y: 801
-        width: 294
-        height: 267
+        x: 595
+        y: 811
+        width: 280
+        height: 237
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -577,10 +551,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_15
       rect:
         serializedVersion: 2
-        x: 882
-        y: 801
-        width: 294
-        height: 267
+        x: 886
+        y: 811
+        width: 286
+        height: 234
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -599,10 +573,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_16
       rect:
         serializedVersion: 2
-        x: 1176
-        y: 801
-        width: 294
-        height: 267
+        x: 1178
+        y: 811
+        width: 290
+        height: 230
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -621,10 +595,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_17
       rect:
         serializedVersion: 2
-        x: 1470
-        y: 801
-        width: 294
-        height: 267
+        x: 1469
+        y: 811
+        width: 295
+        height: 226
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -644,9 +618,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 534
-        width: 294
-        height: 267
+        y: 544
+        width: 295
+        height: 227
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -665,10 +639,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_19
       rect:
         serializedVersion: 2
-        x: 294
-        y: 534
-        width: 294
-        height: 267
+        x: 295
+        y: 544
+        width: 292
+        height: 229
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -687,10 +661,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_20
       rect:
         serializedVersion: 2
-        x: 588
-        y: 534
-        width: 294
-        height: 267
+        x: 592
+        y: 544
+        width: 286
+        height: 232
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -709,10 +683,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_21
       rect:
         serializedVersion: 2
-        x: 882
-        y: 534
-        width: 294
-        height: 267
+        x: 887
+        y: 544
+        width: 284
+        height: 234
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -731,10 +705,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_22
       rect:
         serializedVersion: 2
-        x: 1176
-        y: 534
-        width: 294
-        height: 267
+        x: 1182
+        y: 544
+        width: 283
+        height: 237
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -753,10 +727,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_23
       rect:
         serializedVersion: 2
-        x: 1470
-        y: 534
-        width: 294
-        height: 267
+        x: 1477
+        y: 544
+        width: 281
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -775,10 +749,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_24
       rect:
         serializedVersion: 2
-        x: 0
-        y: 267
-        width: 294
-        height: 267
+        x: 9
+        y: 277
+        width: 276
+        height: 244
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -797,10 +771,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_25
       rect:
         serializedVersion: 2
-        x: 294
-        y: 267
-        width: 294
-        height: 267
+        x: 307
+        y: 277
+        width: 269
+        height: 247
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -819,10 +793,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_26
       rect:
         serializedVersion: 2
-        x: 588
-        y: 267
-        width: 294
-        height: 267
+        x: 605
+        y: 277
+        width: 261
+        height: 251
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -841,10 +815,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_27
       rect:
         serializedVersion: 2
-        x: 882
-        y: 267
-        width: 294
-        height: 267
+        x: 903
+        y: 277
+        width: 253
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -863,10 +837,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_28
       rect:
         serializedVersion: 2
-        x: 1176
-        y: 267
-        width: 294
-        height: 267
+        x: 1200
+        y: 277
+        width: 247
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -885,10 +859,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_29
       rect:
         serializedVersion: 2
-        x: 1470
-        y: 267
-        width: 294
-        height: 267
+        x: 1497
+        y: 277
+        width: 242
+        height: 257
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -907,10 +881,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_30
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 294
-        height: 267
+        x: 30
+        y: 10
+        width: 237
+        height: 258
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -929,10 +903,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_31
       rect:
         serializedVersion: 2
-        x: 294
-        y: 0
-        width: 294
-        height: 267
+        x: 326
+        y: 10
+        width: 233
+        height: 258
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -951,10 +925,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_32
       rect:
         serializedVersion: 2
-        x: 588
-        y: 0
-        width: 294
-        height: 267
+        x: 623
+        y: 10
+        width: 227
+        height: 258
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -973,10 +947,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_33
       rect:
         serializedVersion: 2
-        x: 882
-        y: 0
-        width: 294
-        height: 267
+        x: 918
+        y: 10
+        width: 225
+        height: 258
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -995,10 +969,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_34
       rect:
         serializedVersion: 2
-        x: 1176
-        y: 0
-        width: 294
-        height: 267
+        x: 1213
+        y: 10
+        width: 224
+        height: 258
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1017,10 +991,10 @@ TextureImporter:
       name: A-detailed-16-bit-pixel-art-boss-sprite-of-an-anci-256px-36_35
       rect:
         serializedVersion: 2
-        x: 1470
-        y: 0
-        width: 294
-        height: 267
+        x: 1496
+        y: 10
+        width: 245
+        height: 251
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1039,7 +1013,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 2b6b2526b86fc1b44ad02f68c7e82b48
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 

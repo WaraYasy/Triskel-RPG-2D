@@ -84,11 +84,15 @@ namespace Triskel.API.Models
     /// Request para completar un nivel.
     /// POST /v1/games/{game_id}/level/complete
     /// </summary>
+    /// <remarks>
+    /// NUEVO: time_seconds es opcional. Si se omite, la API lo calcula automáticamente
+    /// usando el timestamp de /level/start y el timestamp actual.
+    /// </remarks>
     [Serializable]
     public class CompleteLevelRequest
     {
         public string level;
-        public int time_seconds;
+        public int? time_seconds; // OPCIONAL: la API lo calcula automáticamente si es null
         public int deaths;
         public string choice; // Opcional: decision moral
         public string relic;  // Opcional: reliquia obtenida
