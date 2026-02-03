@@ -32,6 +32,15 @@ MonoBehaviour:
   projectileNormal: {r: 1, g: 0, b: 0, a: 1}
   projectileFast: {r: 1, g: 0.5, b: 0, a: 1}
   projectileSlow: {r: 0, g: 0.5, b: 1, a: 1}
+  diaryNavButton: {r: 0.23, g: 0.1, b: 0.05, a: 1}
+  diaryNavButtonBorder: {r: 0.59, g: 0.55, b: 0.47, a: 1}
+  diaryNavButtonHover: {r: 0.71, g: 0.47, b: 0.16, a: 1}
+  diaryNavButtonBorderHover: {r: 0.9, g: 0.78, b: 0.47, a: 1}
+  diaryNavButtonActive: {r: 0.12, g: 0.06, b: 0.02, a: 1}
+  diaryNavButtonBorderActive: {r: 0.39, g: 0.31, b: 0.2, a: 1}
+  diaryNavButtonDisabled: {r: 0.31, g: 0.29, b: 0.27, a: 1}
+  diaryNavButtonBorderDisabled: {r: 0.39, g: 0.37, b: 0.35, a: 1}
+  diaryNavButtonTextDisabled: {r: 0.51, g: 0.49, b: 0.47, a: 1}
   dangerZoneSmallRadius: 2
   dangerZoneLargeRadius: 2.5
   playerMoveSpeed: 5
@@ -39,3 +48,23 @@ MonoBehaviour:
   dashDuration: 0.2
   dashCooldown: 1.5
   dangerZoneWarningTime: 1.5
+  menuFontSizeNormal: 45
+  menuFontSizeLarge: 46
+  menuFontSizeNormalDyslexic: 25
+  menuFontSizeLargeDyslexic: 27
+  dialogueFontSizeNormal: 48
+  dialogueFontSizeLarge: 60
+  dialogueFontSizeNormalDyslexic: 44
+  dialogueFontSizeLargeDyslexic: 58
+  dialogueOptionSizeNormal: 36
+  dialogueOptionSizeLarge: 48
+  dialogueOptionSizeNormalDyslexic: 33
+  dialogueOptionSizeLargeDyslexic: 44
+  diaryTitleSizeNormal: 50
+  diaryTitleSizeLarge: 55
+  diaryTitleSizeNormalDyslexic: 35
+  diaryTitleSizeLargeDyslexic: 35
+  diaryTextSizeNormal: 45
+  diaryTextSizeLarge: 45
+  diaryTextSizeNormalDyslexic: 30
+  diaryTextSizeLargeDyslexic: 33

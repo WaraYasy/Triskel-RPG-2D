@@ -608155,6 +608155,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2002349988544515146, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
+      propertyPath: showInEditor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 15599436616681413, guid: d46c28997bcc68c4ca4d174c9f0bda21, type: 3}
       propertyPath: m_Name
       value: MobileControls_UI

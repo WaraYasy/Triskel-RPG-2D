@@ -14,20 +14,24 @@ namespace Triskel.Core
         private const string KEY_MUSIC = "Settings_MusicVolume";
         private const string KEY_SFX = "Settings_SFXVolume";
         private const string KEY_FONT_SIZE = "Settings_LargeText";
+        private const string KEY_DYSLEXIC_FONT = "Settings_DyslexicFont";
 
         // Valores por defecto
         private const float DEFAULT_VOLUME = 0.8f;
         private const bool DEFAULT_LARGE_TEXT = false;
+        private const bool DEFAULT_DYSLEXIC_FONT = false;
 
         // Propiedades públicas
         public float MusicVolume { get; private set; }
         public float SFXVolume { get; private set; }
         public bool UseLargeText { get; private set; }
+        public bool UseDyslexicFont { get; private set; }
 
         // Eventos para notificar cambios
         public event System.Action<float> OnMusicVolumeChanged;
         public event System.Action<float> OnSFXVolumeChanged;
         public event System.Action<bool> OnFontSizeChanged;
+        public event System.Action<bool> OnFontChanged;
 
         private void Awake()
         {
@@ -56,8 +60,9 @@ namespace Triskel.Core
             MusicVolume = PlayerPrefs.GetFloat(KEY_MUSIC, DEFAULT_VOLUME);
             SFXVolume = PlayerPrefs.GetFloat(KEY_SFX, DEFAULT_VOLUME);
             UseLargeText = PlayerPrefs.GetInt(KEY_FONT_SIZE, DEFAULT_LARGE_TEXT ? 1 : 0) == 1;
+            UseDyslexicFont = PlayerPrefs.GetInt(KEY_DYSLEXIC_FONT, DEFAULT_DYSLEXIC_FONT ? 1 : 0) == 1;
 
-            Debug.Log($"[SettingsManager] Cargado. Music: {MusicVolume:P0}, SFX: {SFXVolume:P0}, LargeText: {UseLargeText}");
+            Debug.Log($"[SettingsManager] Cargado. Music: {MusicVolume:P0}, SFX: {SFXVolume:P0}, LargeText: {UseLargeText}, DyslexicFont: {UseDyslexicFont}");
         }
 
         public void SetMusicVolume(float volume)
@@ -84,6 +89,14 @@ namespace Triskel.Core
             OnFontSizeChanged?.Invoke(UseLargeText);
 
             Debug.Log($"[SettingsManager] Texto Grande: {UseLargeText}");
+        }
+
+        public void SetDyslexicFont(bool enable)
+        {
+            UseDyslexicFont = enable;
+            PlayerPrefs.SetInt(KEY_DYSLEXIC_FONT, enable ? 1 : 0);
+            // No guardar inmediatamente - se guarda al cerrar Settings
+            OnFontChanged?.Invoke(UseDyslexicFont);
         }
     }
 }

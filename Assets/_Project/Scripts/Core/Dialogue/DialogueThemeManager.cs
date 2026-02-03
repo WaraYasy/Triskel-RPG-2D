@@ -17,6 +17,17 @@ namespace Triskel.Dialogue
         [Header("Configuración")]
         [SerializeField] private GameConstants gameConstants;
 
+        // NOTA: Si GameConstants no está asignado, usa estos valores por defecto
+        private float NormalFontSize => gameConstants != null ? gameConstants.dialogueFontSizeNormal : normalFontSize;
+        private float LargeFontSize => gameConstants != null ? gameConstants.dialogueFontSizeLarge : largeFontSize;
+        private float NormalFontSizeDyslexic => gameConstants != null ? gameConstants.dialogueFontSizeNormalDyslexic : normalFontSize - 4f;
+        private float LargeFontSizeDyslexic => gameConstants != null ? gameConstants.dialogueFontSizeLargeDyslexic : largeFontSize - 6f;
+
+        private float NormalOptionFontSize => gameConstants != null ? gameConstants.dialogueOptionSizeNormal : normalOptionFontSize;
+        private float LargeOptionFontSize => gameConstants != null ? gameConstants.dialogueOptionSizeLarge : largeOptionFontSize;
+        private float NormalOptionFontSizeDyslexic => gameConstants != null ? gameConstants.dialogueOptionSizeNormalDyslexic : normalOptionFontSize - 3f;
+        private float LargeOptionFontSizeDyslexic => gameConstants != null ? gameConstants.dialogueOptionSizeLargeDyslexic : largeOptionFontSize - 4f;
+
         [Header("Referencias UI")]
         [SerializeField] private Image backgroundPanel;
         [SerializeField] private Image borderImage;
@@ -27,8 +38,13 @@ namespace Triskel.Dialogue
 
         [Header("Configuración de Fuente")]
         [SerializeField] private TMP_FontAsset dialogueFontAsset;
+        [SerializeField] private TMP_FontAsset dyslexicFontAsset;
 
         public DialogueTheme CurrentTheme { get; private set; }
+
+        private TMP_FontAsset ActiveFontAsset =>
+            (SettingsManager.Instance != null && SettingsManager.Instance.UseDyslexicFont && dyslexicFontAsset != null)
+                ? dyslexicFontAsset : dialogueFontAsset;
 
         [Header("Tamaño de Texto")]
         [SerializeField] private float normalFontSize = 48f;
@@ -55,6 +71,7 @@ namespace Triskel.Dialogue
             if (SettingsManager.Instance != null)
             {
                 SettingsManager.Instance.OnFontSizeChanged += ApplyFontSize;
+                SettingsManager.Instance.OnFontChanged += ApplyFont;
             }
         }
 
@@ -69,6 +86,7 @@ namespace Triskel.Dialogue
             if (SettingsManager.Instance != null)
             {
                 SettingsManager.Instance.OnFontSizeChanged -= ApplyFontSize;
+                SettingsManager.Instance.OnFontChanged -= ApplyFont;
             }
         }
 
@@ -92,9 +110,12 @@ namespace Triskel.Dialogue
                  // Asegurar no suscribirse doble
                  SettingsManager.Instance.OnFontSizeChanged -= ApplyFontSize;
                  SettingsManager.Instance.OnFontSizeChanged += ApplyFontSize;
-                 
+                 SettingsManager.Instance.OnFontChanged -= ApplyFont;
+                 SettingsManager.Instance.OnFontChanged += ApplyFont;
+
                  // Aplicar inicial
                  ApplyFontSize(SettingsManager.Instance.UseLargeText);
+                 ApplyFont(SettingsManager.Instance.UseDyslexicFont);
             }
 
             // Intentar encontrar referencias de UI si faltan
@@ -122,7 +143,7 @@ namespace Triskel.Dialogue
         /// </summary>
         private void ApplyFontToAllOptions()
         {
-            if (dialogueFontAsset == null) return;
+            if (ActiveFontAsset == null) return;
 
             // Buscar dinámicamente todos los botones en la UI de diálogo
             Button[] allButtons = GetComponentsInChildren<Button>(true);
@@ -133,9 +154,44 @@ namespace Triskel.Dialogue
                 var btnText = btn.GetComponentInChildren<TMP_Text>();
                 if (btnText != null)
                 {
-                    btnText.font = dialogueFontAsset;
+                    btnText.font = ActiveFontAsset;
+                    btnText.fontSharedMaterial = ActiveFontAsset.material;
                 }
             }
+        }
+
+        private void ApplyFont(bool useDyslexic)
+        {
+            var fontToApply = ActiveFontAsset;
+
+            Debug.Log($"[DialogueThemeManager] ApplyFont llamado - UseDyslexic: {useDyslexic}, dyslexicFontAsset: {(dyslexicFontAsset != null ? dyslexicFontAsset.name : "NULL")}, dialogueFontAsset: {(dialogueFontAsset != null ? dialogueFontAsset.name : "NULL")}, Aplicando: {(fontToApply != null ? fontToApply.name : "NULL")}");
+
+            if (fontToApply == null)
+            {
+                Debug.LogError("[DialogueThemeManager] ⚠️ ActiveFontAsset es NULL - no se puede aplicar fuente");
+                return;
+            }
+
+            if (dialogueText != null)
+            {
+                dialogueText.font = fontToApply;
+                dialogueText.fontSharedMaterial = fontToApply.material;
+                Debug.Log($"[DialogueThemeManager] 🔍 dialogueText.font ahora es: {dialogueText.font.name}");
+            }
+
+            if (characterNameText != null)
+            {
+                characterNameText.font = fontToApply;
+                characterNameText.fontSharedMaterial = fontToApply.material;
+                Debug.Log($"[DialogueThemeManager] 🔍 characterNameText.font ahora es: {characterNameText.font.name}");
+            }
+
+            ApplyFontToAllOptions();
+
+            // Reaplicar tamaño de fuente para asegurar que sea correcto con la nueva fuente
+            ApplyFontSize(SettingsManager.Instance != null && SettingsManager.Instance.UseLargeText);
+
+            Debug.Log($"[DialogueThemeManager] ✓ Fuente aplicada: {fontToApply.name}");
         }
 
 
@@ -179,9 +235,10 @@ namespace Triskel.Dialogue
                 {
                     btnText.color = texto;
                     // Aplicar el mismo font asset que el texto principal
-                    if (dialogueFontAsset != null)
+                    if (ActiveFontAsset != null)
                     {
-                        btnText.font = dialogueFontAsset;
+                        btnText.font = ActiveFontAsset;
+                        btnText.fontSharedMaterial = ActiveFontAsset.material;
                     }
                 }
             }
@@ -206,15 +263,35 @@ namespace Triskel.Dialogue
 
         private void ApplyFontSize(bool large)
         {
+            bool dyslexic = SettingsManager.Instance != null && SettingsManager.Instance.UseDyslexicFont;
+
+            // Calcular tamaños según fuente activa
+            float mainTextSize = dyslexic
+                ? (large ? LargeFontSizeDyslexic : NormalFontSizeDyslexic)
+                : (large ? LargeFontSize : NormalFontSize);
+
+            float optionSize = dyslexic
+                ? (large ? LargeOptionFontSizeDyslexic : NormalOptionFontSizeDyslexic)
+                : (large ? LargeOptionFontSize : NormalOptionFontSize);
+
+            Debug.Log($"[DialogueThemeManager] 📏 Calculando tamaños - Large: {large}, Dyslexic: {dyslexic}, MainText: {mainTextSize}, Options: {optionSize}");
+
             // Aplicar tamaño al texto principal del diálogo
             if (dialogueText != null)
             {
                 dialogueText.enableAutoSizing = false;
-                dialogueText.fontSize = large ? largeFontSize : normalFontSize;
+                dialogueText.fontSize = mainTextSize;
+                Debug.Log($"[DialogueThemeManager] 📏 dialogueText.fontSize ahora es: {dialogueText.fontSize}");
+            }
+
+            // Aplicar tamaño al nombre del personaje (si existe)
+            if (characterNameText != null)
+            {
+                characterNameText.enableAutoSizing = false;
+                characterNameText.fontSize = mainTextSize;
             }
 
             // Aplicar tamaño Y fuente a las opciones del jugador (búsqueda dinámica)
-            float optionSize = large ? largeOptionFontSize : normalOptionFontSize;
             Button[] allButtons = GetComponentsInChildren<Button>(true);
 
             foreach (var btn in allButtons)
@@ -227,27 +304,69 @@ namespace Triskel.Dialogue
                     btnText.fontSize = optionSize;
 
                     // Aplicar el mismo font asset que el texto principal
-                    if (dialogueFontAsset != null)
+                    if (ActiveFontAsset != null)
                     {
-                        btnText.font = dialogueFontAsset;
+                        btnText.font = ActiveFontAsset;
+                        btnText.fontSharedMaterial = ActiveFontAsset.material;
                     }
                 }
             }
 
-            // Aplicar tamaño al nombre del personaje (si existe)
-            if (characterNameText != null)
+            // Forzar actualización al final
+            if (dialogueText != null) dialogueText.ForceMeshUpdate();
+            if (characterNameText != null) characterNameText.ForceMeshUpdate();
+            foreach (var btn in allButtons)
             {
-                characterNameText.enableAutoSizing = false;
-                characterNameText.fontSize = large ? largeFontSize : normalFontSize;
+                var btnText = btn?.GetComponentInChildren<TMP_Text>();
+                if (btnText != null) btnText.ForceMeshUpdate();
             }
 
-            Debug.Log($"[DialogueThemeManager] Tamaño de fuente aplicado: {(large ? "Grande" : "Normal")} (Diálogo: {(dialogueText != null ? dialogueText.fontSize : 0)}, Opciones: {optionSize})");
+            Debug.Log($"[DialogueThemeManager] ✓ Tamaño de fuente aplicado: {(large ? "Grande" : "Normal")} ({(dyslexic ? "Dislexia" : "Pixelada")}) (Diálogo: {mainTextSize}, Opciones: {optionSize})");
         }
 
 
         private void OnDialogueStart()
         {
             ShowUI();
+            ApplyTheme(CurrentTheme);
+
+            // Aplicar fuente y tamaño
+            bool useDyslexic = SettingsManager.Instance != null && SettingsManager.Instance.UseDyslexicFont;
+            bool useLarge = SettingsManager.Instance != null && SettingsManager.Instance.UseLargeText;
+
+            ApplyFont(useDyslexic);
+
+            // Aplicar nuevamente con delay para sobrescribir cualquier cambio de Yarn Spinner
+            StartCoroutine(ApplySettingsDelayed(useDyslexic, useLarge));
+        }
+
+        private System.Collections.IEnumerator ApplySettingsDelayed(bool useDyslexic, bool useLarge)
+        {
+            yield return new WaitForEndOfFrame();
+
+            Debug.Log("[DialogueThemeManager] 🔄 Re-aplicando configuración después del frame");
+
+            // Re-aplicar fuente
+            var fontToApply = ActiveFontAsset;
+            if (fontToApply != null)
+            {
+                if (dialogueText != null)
+                {
+                    dialogueText.font = fontToApply;
+                    dialogueText.fontSharedMaterial = fontToApply.material;
+                }
+                if (characterNameText != null)
+                {
+                    characterNameText.font = fontToApply;
+                    characterNameText.fontSharedMaterial = fontToApply.material;
+                }
+                ApplyFontToAllOptions();
+            }
+
+            // Re-aplicar tamaño
+            ApplyFontSize(useLarge);
+
+            Debug.Log("[DialogueThemeManager] ✓ Configuración re-aplicada");
         }
 
         private void OnDialogueComplete()
