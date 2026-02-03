@@ -39,6 +39,13 @@ public class PlayerController : MonoBehaviour
         
         // Crear instancia de Input Actions
         inputActions = new PlayerInputActions();
+        
+        // CORRECCIÓN VISUAL: Forzar interpolación para evitar "jitters" o borrosidad
+        // al mover el jugador en FixedUpdate pero renderizar a más FPS.
+        if (rb != null)
+        {
+            rb.interpolation = RigidbodyInterpolation2D.Interpolate;
+        }
     }
 
     private void OnEnable()
