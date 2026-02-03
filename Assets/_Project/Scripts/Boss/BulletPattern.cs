@@ -155,9 +155,22 @@ public class BulletPattern : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player == null) return;
 
-        // Spawn directo bajo el jugador
-        SpawnDangerZone(player.transform.position, 2.5f);
-        Debug.Log("[BulletPattern] Raíz generada bajo el jugador.");
+        Vector3 playerPos = player.transform.position;
+
+        // Calculamos límites basados en la posición del Boss para usar las variables
+        float minX = transform.position.x - arenaRangeX;
+        float maxX = transform.position.x + arenaRangeX;
+        float minY = transform.position.y - arenaMaxY;
+        float maxY = transform.position.y - arenaMinY;
+
+        // Clampeamos la posición para asegurar que la raíz esté dentro de la arena
+        float clampedX = Mathf.Clamp(playerPos.x, minX, maxX);
+        float clampedY = Mathf.Clamp(playerPos.y, minY, maxY);
+        Vector3 spawnPos = new Vector3(clampedX, clampedY, playerPos.z);
+
+        // Spawn directo bajo el jugador (o en el borde de la arena si está fuera)
+        SpawnDangerZone(spawnPos, 2.5f);
+        Debug.Log("[BulletPattern] Raíz generada en arena (cerca del jugador).");
     }
     
     public void FirePattern(PatternType pattern)
