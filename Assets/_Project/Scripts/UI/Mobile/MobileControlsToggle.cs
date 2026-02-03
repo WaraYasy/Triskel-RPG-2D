@@ -6,23 +6,37 @@ using UnityEngine;
 public class MobileControlsToggle : MonoBehaviour
 {
     [SerializeField] private bool showInEditor = true;
+    [Header("Elementos exclusivos de móvil (Joystick, botones)")]
+    [SerializeField] private GameObject[] mobileOnlyElements;
 
     void Awake()
     {
-        // En el editor, respetamos la variable para testear
+        bool shouldShowMobile = false;
+
         if (Application.isEditor)
         {
-            gameObject.SetActive(showInEditor);
-            return;
+            shouldShowMobile = showInEditor;
+        }
+        else
+        {
+#if UNITY_ANDROID || UNITY_IOS
+            shouldShowMobile = true;
+#else
+            shouldShowMobile = false;
+#endif
         }
 
-        // Para exportaciones (Builds)
-#if UNITY_ANDROID
-        // Si es Android, activamos
-        gameObject.SetActive(true);
-#else
-        // En cualquier otra plataforma (PC, WebGL, iOS, etc.), desactivamos/ocultamos
-        gameObject.SetActive(false);
-#endif
+        // En lugar de ocultar TODO el objeto (que incluye la vida),
+        // ocultamos solo lo que sea exclusivo de móvil.
+        if (!shouldShowMobile)
+        {
+            foreach (GameObject element in mobileOnlyElements)
+            {
+                if (element != null)
+                {
+                    element.SetActive(false);
+                }
+            }
+        }
     }
 }
