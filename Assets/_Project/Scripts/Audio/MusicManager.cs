@@ -88,9 +88,10 @@ public class MusicManager : MonoBehaviour
         if (useFadeIn && audioSource.isPlaying && audioSource.volume != targetVolume)
         {
             // Calcular velocidad de fade (más rápido para cambios de slider, más lento para fade inicial)
+            // Usar unscaledDeltaTime para que funcione cuando el juego está pausado (ajustes)
             float fadeSpeed = Mathf.Abs(audioSource.volume - targetVolume) > 0.1f
-                ? (1f / fadeInDuration) * Time.deltaTime  // Fade inicial lento
-                : 2f * Time.deltaTime; // Cambios de slider más rápidos
+                ? (1f / fadeInDuration) * Time.unscaledDeltaTime  // Fade inicial lento
+                : 2f * Time.unscaledDeltaTime; // Cambios de slider más rápidos
 
             audioSource.volume = Mathf.MoveTowards(
                 audioSource.volume,

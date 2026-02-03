@@ -1,4 +1,5 @@
 using UnityEngine;
+using Triskel.Core;
 
 /// <summary>
 /// PlayerFootsteps - Reproduce sonidos de pasos
@@ -38,8 +39,9 @@ public class PlayerFootsteps : MonoBehaviour
         // Seleccionar sonido aleatorio
         AudioClip clip = footstepSounds[Random.Range(0, footstepSounds.Length)];
         
-        // Variar volumen y pitch para más realismo
-        audioSource.volume = Random.Range(volumeMin, volumeMax);
+        // Variar volumen y pitch para más realismo, respetando volumen global de SFX
+        float globalSFX = SettingsManager.Instance != null ? SettingsManager.Instance.SFXVolume : 1f;
+        audioSource.volume = Random.Range(volumeMin, volumeMax) * globalSFX;
         audioSource.pitch = Random.Range(pitchMin, pitchMax);
         
         // Reproducir
