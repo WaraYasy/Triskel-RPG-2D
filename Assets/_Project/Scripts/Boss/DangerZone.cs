@@ -7,19 +7,28 @@ using System.Collections;
 /// </summary>
 public class DangerZone : MonoBehaviour
 {
-    [Header("Configuración")]
-    [SerializeField] private GameConstants gameConstants; // Referencia al ScriptableObject
+    [Header("Configuración Base")]
+    [SerializeField] private GameConstants gameConstants;
     [SerializeField] private float warningDuration = 1.5f;
     [SerializeField] private float explosionRadius = 2f;
+
+    [Header("Efectos de Naturaleza")]
+    [SerializeField] private AnimationCurve emergenceCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+    [SerializeField] private float shakeIntensity = 0.1f;
+    [SerializeField] private float sizeMultiplier = 1f;
+    [SerializeField] private Sprite natureSprite;
     
     private SpriteRenderer spriteRenderer;
     private CircleCollider2D damageCollider;
+    private Animator animator;
     private bool hasExploded = false;
+    private float baseScale;
 
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         damageCollider = GetComponent<CircleCollider2D>();
+        animator = GetComponent<Animator>();
         
         if (damageCollider != null)
         {
@@ -32,72 +41,70 @@ public class DangerZone : MonoBehaviour
         transform.position = position;
         explosionRadius = radius;
         warningDuration = warningTime;
+        baseScale = radius * 2f * sizeMultiplier;
         
-        // Configurar tamaño visual
-        transform.localScale = Vector3.one * radius * 2f;
-        
-        // Color inicial
-        if (spriteRenderer != null && gameConstants != null)
+        // Empezar invisible y pequeño para efecto de brote
+        transform.localScale = Vector3.zero;
+        if (spriteRenderer != null)
         {
-            spriteRenderer.color = gameConstants.dangerZoneWarning;
+            if (natureSprite != null) spriteRenderer.sprite = natureSprite;
+            spriteRenderer.color = new Color(1, 1, 1, 0);
         }
         
-        // Configurar collider
+        // Ajustar radio del collider
         if (damageCollider != null)
         {
             damageCollider.radius = 0.5f;
         }
         
-        StartCoroutine(WarningSequence());
+        StartCoroutine(NatureWarningSequence());
     }
 
-    private IEnumerator WarningSequence()
+    private IEnumerator NatureWarningSequence()
     {
-        if (gameConstants == null)
-        {
-            Debug.LogError("GameConstants no asignado en DangerZone!");
-            yield break;
-        }
-        
-        // FASE 1: Parpadeo NARANJA (60% del tiempo)
-        float phase1Duration = warningDuration * 0.6f;
         float elapsed = 0f;
-        
-        while (elapsed < phase1Duration)
+        Vector3 originalPos = transform.position;
+
+        while (elapsed < warningDuration)
         {
             elapsed += Time.deltaTime;
-            
-            // Parpadeo naranja
-            float blink = Mathf.PingPong(Time.time * 6f, 1f);
-            Color currentColor = gameConstants.dangerZoneWarning;
-            currentColor.a = Mathf.Lerp(0.2f, 0.6f, blink);
-            
+            float progress = elapsed / warningDuration;
+
+            // 1. EMERGENCIA: Brotar del suelo
+            float currentScale = emergenceCurve.Evaluate(progress) * baseScale;
+            transform.localScale = Vector3.one * currentScale;
+
             if (spriteRenderer != null)
             {
-                spriteRenderer.color = currentColor;
+                // 2. COLOR Y OPACIDAD:
+                // Usamos un parpadeo sutil de opacidad solo durante el aviso
+                float blink = 1f;
+                if (progress < 0.8f) 
+                {
+                    blink = Mathf.Lerp(0.4f, 1f, Mathf.PingPong(Time.time * 12f, 1f));
+                }
+
+                // El color final es Blanco puro (sin tinte) para mostrar el sprite original
+                Color finalColor = Color.white;
+                finalColor.a = progress * blink;
+                
+                spriteRenderer.color = finalColor;
+
+                // 3. TEMBLOR: La tierra vibra
+                if (progress > 0.4f)
+                {
+                    float currentShake = shakeIntensity * (progress - 0.4f);
+                    transform.position = originalPos + (Vector3)Random.insideUnitCircle * currentShake;
+                }
             }
-            
+
             yield return null;
         }
+
+        // Asegurar estado final perfecto antes de explotar
+        if (spriteRenderer != null) spriteRenderer.color = Color.white;
+        transform.position = originalPos;
         
-        // FASE 2: ROJO SÓLIDO BRILLANTE (40% del tiempo)
-        float phase2Duration = warningDuration - phase1Duration;
-        elapsed = 0f;
-        
-        while (elapsed < phase2Duration)
-        {
-            elapsed += Time.deltaTime;
-            
-            // ROJO SIN PARPADEO
-            if (spriteRenderer != null)
-            {
-                spriteRenderer.color = gameConstants.dangerZoneDanger;
-            }
-            
-            yield return null;
-        }
-        
-        // FASE 3: Explosión
         Explode();
     }
 
@@ -105,32 +112,41 @@ public class DangerZone : MonoBehaviour
     {
         if (hasExploded) return;
         hasExploded = true;
-        
-        Debug.Log("💥 DangerZone EXPLOTÓ!");
-        
-        // Activar collider para daño
+
+        // ACTIVAR ANIMACIÓN: Ejecuta el trigger de estallido si existe
+        if (animator != null)
+        {
+            animator.SetTrigger("Burst");
+        }
+
+        // ACTIVAR DAÑO
         if (damageCollider != null)
         {
             damageCollider.enabled = true;
         }
-        
-        // Iniciar corrutina de destrucción
-        StartCoroutine(DestroyAfterFrame());
+
+        StartCoroutine(CleanupAfterAnimation());
     }
-    
-    private IEnumerator DestroyAfterFrame()
+
+    private IEnumerator CleanupAfterAnimation()
     {
-        // Esperar un frame para que el collider pueda detectar al player
-        yield return new WaitForEndOfFrame();
+        // Esperamos a que la animación de estallido termine (ajustable)
+        yield return new WaitForSeconds(0.6f);
         
-        // Ocultar sprite
-        if (spriteRenderer != null)
+        // Desvanecimiento suave final
+        float fade = 1f;
+        while (fade > 0)
         {
-            spriteRenderer.enabled = false;
+            fade -= Time.deltaTime * 2.5f;
+            if (spriteRenderer != null)
+            {
+                Color c = spriteRenderer.color;
+                c.a = fade;
+                spriteRenderer.color = c;
+            }
+            yield return null;
         }
-        
-        // Destruir en el siguiente frame
-        yield return null;
+
         Destroy(gameObject);
     }
 
@@ -140,7 +156,8 @@ public class DangerZone : MonoBehaviour
         
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("💥 ¡Player golpeado!");
+            Debug.Log("💥 Player atrapado por las raíces!");
+            // Aquí se llamaría al método del Player para recibir daño
         }
     }
 }

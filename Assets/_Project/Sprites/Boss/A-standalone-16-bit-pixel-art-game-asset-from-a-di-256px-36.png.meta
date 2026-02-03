@@ -1,0 +1,2091 @@
+fileFormatVersion: 2
+guid: 2757ad6925b9ce044b2b224c8fdbc826
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 228033033248591531
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_0
+  - first:
+      213: -3258370417933108032
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_1
+  - first:
+      213: -5240094792301453814
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_2
+  - first:
+      213: -8181421218427957474
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_3
+  - first:
+      213: -5705410213583492082
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_4
+  - first:
+      213: 1641632895947935802
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_5
+  - first:
+      213: 3406076748620079374
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_6
+  - first:
+      213: 8582759476938183175
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_7
+  - first:
+      213: -5902109030465810897
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_8
+  - first:
+      213: 4431592168019985131
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_9
+  - first:
+      213: -1202111203995079383
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_10
+  - first:
+      213: -4322278231791402509
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_11
+  - first:
+      213: 1805668396326191389
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_12
+  - first:
+      213: -7579361978253870744
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_13
+  - first:
+      213: 3382968580388835688
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_14
+  - first:
+      213: -4993154987052443677
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_15
+  - first:
+      213: 7134696494330740540
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_16
+  - first:
+      213: 3692348186234111267
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_17
+  - first:
+      213: 5615953895774606880
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_18
+  - first:
+      213: -5410123231989531177
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_19
+  - first:
+      213: -6905408216328766522
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_20
+  - first:
+      213: -536590698588298599
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_21
+  - first:
+      213: 4589560950496822128
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_22
+  - first:
+      213: 4352095966747944073
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_23
+  - first:
+      213: 2470314345886456310
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_24
+  - first:
+      213: 3947870724836394058
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_25
+  - first:
+      213: -5192670325469112355
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_26
+  - first:
+      213: 6542683841401733745
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_27
+  - first:
+      213: 685297958069691770
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_28
+  - first:
+      213: -8858302214822042611
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_29
+  - first:
+      213: 7506541500955046824
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_30
+  - first:
+      213: -3349240840826540211
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_31
+  - first:
+      213: 3890630249500993868
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_32
+  - first:
+      213: -4493477018850755158
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_33
+  - first:
+      213: 5812253164482513579
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_34
+  - first:
+      213: 4657538083388681458
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_35
+  - first:
+      213: -4344634057287918653
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_36
+  - first:
+      213: 726756533899475414
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_37
+  - first:
+      213: 8176845084523219266
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_38
+  - first:
+      213: -930625355563017165
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_39
+  - first:
+      213: -9057592425762175788
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_40
+  - first:
+      213: 7131405231262494792
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_41
+  - first:
+      213: 8018297427762474011
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_42
+  - first:
+      213: -6878972607875012923
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_43
+  - first:
+      213: 3721553301582673735
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_44
+  - first:
+      213: -8422988272401010839
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_45
+  - first:
+      213: 5901591154929677670
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_46
+  - first:
+      213: -8676149401194304570
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_47
+  - first:
+      213: 6977874107633779191
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_48
+  - first:
+      213: -7984723770501884694
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_49
+  - first:
+      213: -8129641498533264693
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_50
+  - first:
+      213: 5210725400100663848
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_51
+  - first:
+      213: 3508884146512237058
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_52
+  - first:
+      213: -91788072688369560
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_53
+  - first:
+      213: 8148472411245055942
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_54
+  - first:
+      213: -4101174883948783913
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_55
+  - first:
+      213: -7017331062392510652
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_56
+  - first:
+      213: 3793050513147664861
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_57
+  - first:
+      213: 2892152287350424884
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_58
+  - first:
+      213: -1888713555308161722
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_59
+  - first:
+      213: -337287237745276928
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_60
+  - first:
+      213: -3467362943850006675
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_61
+  - first:
+      213: 6768713305694882861
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_62
+  - first:
+      213: 1915996695705716749
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_63
+  - first:
+      213: -4546211207698123030
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_64
+  - first:
+      213: -8468401973641922633
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_65
+  - first:
+      213: -8002624423750100150
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_66
+  - first:
+      213: -3219735113915593455
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_67
+  - first:
+      213: -4999725570056958524
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_68
+  - first:
+      213: -4818887686816356058
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_69
+  - first:
+      213: 7787411605746135470
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_70
+  - first:
+      213: -6056576319341109855
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_71
+  - first:
+      213: 1768931776541445816
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_72
+  - first:
+      213: -435530598163487986
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_73
+  - first:
+      213: -88529954282147848
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_74
+  - first:
+      213: 7020769276868712728
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_75
+  - first:
+      213: 538715095649515097
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_76
+  - first:
+      213: -5129554783409997240
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_77
+  - first:
+      213: 2144694401973906563
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_78
+  - first:
+      213: -6453161670553348369
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_79
+  - first:
+      213: 8420737469147419131
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_80
+  - first:
+      213: 2831065283708090798
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_81
+  - first:
+      213: -3690329930348788785
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_82
+  - first:
+      213: -8983064234162899860
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_83
+  - first:
+      213: 6772378459261788394
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_84
+  - first:
+      213: -5879616647586983311
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_85
+  - first:
+      213: 2108247504730398377
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_86
+  - first:
+      213: -661093601304967752
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_87
+  - first:
+      213: -2534751256231688759
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_88
+  - first:
+      213: -8647398956378999295
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_89
+  - first:
+      213: 6788843779084691073
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_90
+  - first:
+      213: -3403917802487765567
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_91
+  - first:
+      213: 359151928002259328
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_92
+  - first:
+      213: -8730952442457222395
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_93
+  - first:
+      213: -7599487320579850564
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_94
+  - first:
+      213: 7016111808062211430
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_95
+  - first:
+      213: -534217395631066136
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_96
+  - first:
+      213: -8333549922764768297
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_97
+  - first:
+      213: -4879769058800916193
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_98
+  - first:
+      213: -4454169215799600687
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_99
+  - first:
+      213: -8606895187353513388
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_100
+  - first:
+      213: -4831733342654980110
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_101
+  - first:
+      213: -8516260531827840573
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_102
+  - first:
+      213: 8763657284955398610
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_103
+  - first:
+      213: -8069162382352406389
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_104
+  - first:
+      213: -5370485856530217822
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_105
+  - first:
+      213: -4759407902845213891
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_106
+  - first:
+      213: 1275165229918919622
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_107
+  - first:
+      213: 3630095615429771172
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_108
+  - first:
+      213: 5143091861371177909
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_109
+  - first:
+      213: 7100503980760764872
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_110
+  - first:
+      213: -5762208018336654095
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_111
+  - first:
+      213: -5466449450502030041
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_112
+  - first:
+      213: -1860826109311433093
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_113
+  - first:
+      213: 221521220497118328
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_114
+  - first:
+      213: -6895392714849689494
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_115
+  - first:
+      213: -7772070392044680978
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_116
+  - first:
+      213: -6401736472355860552
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_117
+  - first:
+      213: -1945690027036542582
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_118
+  - first:
+      213: 1603729571382016096
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_119
+  - first:
+      213: 5066428455481165585
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_120
+  - first:
+      213: 7387975263015439910
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_121
+  - first:
+      213: -265188392474677452
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_122
+  - first:
+      213: 6229433285188598249
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_123
+  - first:
+      213: -2361091446104413063
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_124
+  - first:
+      213: -3921429841987501533
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_125
+  - first:
+      213: 6883836313167777669
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_126
+  - first:
+      213: -2565394955695527759
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_127
+  - first:
+      213: 3442552311143044944
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_128
+  - first:
+      213: 2111648310540839146
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_129
+  - first:
+      213: 7083335823690876686
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_130
+  - first:
+      213: 676716123421373790
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_131
+  - first:
+      213: -2774768809075919597
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_132
+  - first:
+      213: -6809823702319387420
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_133
+  - first:
+      213: 2921812597496456980
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_134
+  - first:
+      213: -2010023623514470485
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_135
+  - first:
+      213: -8695084859880440686
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_136
+  - first:
+      213: 5035212409281176693
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_137
+  - first:
+      213: -7925381652181055201
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_138
+  - first:
+      213: -7173153753402310413
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_139
+  - first:
+      213: 2250597051830975487
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_140
+  - first:
+      213: 2193021435450757599
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_141
+  - first:
+      213: 4158014457098214264
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_142
+  - first:
+      213: 5769289675753856520
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_143
+  - first:
+      213: -8479015140265240717
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_144
+  - first:
+      213: -878010409669738024
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_145
+  - first:
+      213: 8105808639453891917
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_146
+  - first:
+      213: 3058337641992083180
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_147
+  - first:
+      213: -145978164397248594
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_148
+  - first:
+      213: -5944049654266155131
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_149
+  - first:
+      213: 4349377063980999623
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_150
+  - first:
+      213: -2941233094453878587
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_151
+  - first:
+      213: 8535408664189827422
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_152
+  - first:
+      213: 666915109433283050
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_153
+  - first:
+      213: -199086364737193619
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_154
+  - first:
+      213: -1264005831886073804
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_155
+  - first:
+      213: -7258944291469987570
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_156
+  - first:
+      213: -2473121700906059941
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_157
+  - first:
+      213: -4865483401062177560
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_158
+  - first:
+      213: -6695153532321372826
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_159
+  - first:
+      213: 4265305521574123212
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_160
+  - first:
+      213: 2009770177213339900
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_161
+  - first:
+      213: 8137945853950108484
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_162
+  - first:
+      213: -8813670874369225622
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_163
+  - first:
+      213: -3138493826712781484
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_164
+  - first:
+      213: -910944365110160011
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_165
+  - first:
+      213: -2335691574917722245
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_166
+  - first:
+      213: 5099672351426400928
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_167
+  - first:
+      213: -31401931142842699
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_168
+  - first:
+      213: 3510368883657549939
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_169
+  - first:
+      213: -7312302681929815787
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_170
+  - first:
+      213: -8211546572271913186
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_171
+  - first:
+      213: -6137074377668162844
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_172
+  - first:
+      213: 628119459594604254
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_173
+  - first:
+      213: 8253279494110760296
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_174
+  - first:
+      213: 4996088015304823901
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_175
+  - first:
+      213: 5844400202761737110
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_176
+  - first:
+      213: 5720744149367899800
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_177
+  - first:
+      213: -6495245126221351483
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_178
+  - first:
+      213: -6639463419477482169
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_179
+  - first:
+      213: -1580788753838654151
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_180
+  - first:
+      213: -7940642406317489887
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_181
+  - first:
+      213: 8269334105224892218
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_182
+  - first:
+      213: -8802249417280174423
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_183
+  - first:
+      213: 4859526540388848718
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_184
+  - first:
+      213: 124838740372623396
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_185
+  - first:
+      213: -4775671719100320743
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_186
+  - first:
+      213: -1805680143893841095
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_187
+  - first:
+      213: -241740963588338877
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_188
+  - first:
+      213: -7680738798563748358
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_189
+  - first:
+      213: 4573266242416178293
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_190
+  - first:
+      213: -738951509626914518
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_191
+  - first:
+      213: -8979036949002543047
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_192
+  - first:
+      213: 5123868436510995360
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_193
+  - first:
+      213: -2968339680626971244
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_194
+  - first:
+      213: -9210847273330384984
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_195
+  - first:
+      213: 3862575238661157770
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_196
+  - first:
+      213: -8484148268241949349
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_197
+  - first:
+      213: -7345693408620177641
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_198
+  - first:
+      213: 8485960512734677851
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_199
+  - first:
+      213: 1500428154801368146
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_200
+  - first:
+      213: 8821156529111461990
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_201
+  - first:
+      213: 8866555932751829102
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_202
+  - first:
+      213: -2658053192152367706
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_203
+  - first:
+      213: -3860121198717587441
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_204
+  - first:
+      213: 6893234966786460557
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_205
+  - first:
+      213: 5751232665772098504
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_206
+  - first:
+      213: 4860438925000551086
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_207
+  - first:
+      213: 3042628144533312088
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_208
+  - first:
+      213: -7124209726647804345
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_209
+  - first:
+      213: -4664617199245838801
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_210
+  - first:
+      213: -8994375205495836453
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_211
+  - first:
+      213: -7689863172469025305
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_212
+  - first:
+      213: -3621235685295276128
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_213
+  - first:
+      213: -2642245800308597357
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_214
+  - first:
+      213: -6495656741718890511
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_215
+  - first:
+      213: 1133610193767657033
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_216
+  - first:
+      213: -7855843782403143631
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_217
+  - first:
+      213: 5901692483528656324
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_218
+  - first:
+      213: 7238976449440683161
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_219
+  - first:
+      213: 5396411068879121009
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_220
+  - first:
+      213: 7351103148658320613
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_221
+  - first:
+      213: 8469497382067779563
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_222
+  - first:
+      213: 4339439624090366341
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_223
+  - first:
+      213: 3782523726329275659
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_224
+  - first:
+      213: -2305696586301298502
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_225
+  - first:
+      213: -5246019290857792998
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_226
+  - first:
+      213: 8545247032033335486
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_227
+  - first:
+      213: -329689962732634841
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_228
+  - first:
+      213: 3698422719575745861
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_229
+  - first:
+      213: 5672888478915367387
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_230
+  - first:
+      213: 3232715209463857861
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_231
+  - first:
+      213: -7225710360705710072
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_232
+  - first:
+      213: -2855723344780931383
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_233
+  - first:
+      213: -1770102917308715425
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_234
+  - first:
+      213: -3209582737265354389
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_235
+  - first:
+      213: 6254416713196076922
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_236
+  - first:
+      213: 7070442515001501484
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_237
+  - first:
+      213: 9129997738118862210
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_238
+  - first:
+      213: 442436059777046962
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_239
+  - first:
+      213: 2738996903144042071
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_240
+  - first:
+      213: -7549632714984547259
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_241
+  - first:
+      213: -8725660631929454839
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_242
+  - first:
+      213: -5327365528054839619
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_243
+  - first:
+      213: -7863026245109456606
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_244
+  - first:
+      213: -1062420635294744060
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_245
+  - first:
+      213: 7305973966339634509
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_246
+  - first:
+      213: -2239574986872889165
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_247
+  - first:
+      213: 3923779487865578154
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_248
+  - first:
+      213: -2408327887649460995
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_249
+  - first:
+      213: -7459392724860170476
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_250
+  - first:
+      213: 8226103073846976501
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_251
+  - first:
+      213: -6460830531723244340
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_252
+  - first:
+      213: 3468364957719776517
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_253
+  - first:
+      213: -302639350095062079
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_254
+  - first:
+      213: -399481204064542277
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_255
+  - first:
+      213: 5873706663540331381
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_256
+  - first:
+      213: 2104425347973113514
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_257
+  - first:
+      213: -6670951622516073323
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_258
+  - first:
+      213: 6694843876609087814
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_259
+  - first:
+      213: 1595005888113481919
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_260
+  - first:
+      213: 1979506939421381098
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_261
+  - first:
+      213: 7049806412540074804
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_262
+  - first:
+      213: 770940558381982536
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_263
+  - first:
+      213: 5257661324285574659
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_264
+  - first:
+      213: 3469413972779135067
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_265
+  - first:
+      213: 3105063310910365648
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_266
+  - first:
+      213: 3336479507097735544
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_267
+  - first:
+      213: -1829189370353443095
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_268
+  - first:
+      213: -7075494154221548411
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_269
+  - first:
+      213: -1789002386040605788
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_270
+  - first:
+      213: 6044158415436522639
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_271
+  - first:
+      213: -2345251798110254025
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_272
+  - first:
+      213: 1855466099606368522
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_273
+  - first:
+      213: 2812476033999817638
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_274
+  - first:
+      213: -6081480193215475822
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_275
+  - first:
+      213: -4984138297594025278
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_276
+  - first:
+      213: -470237190864089349
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_277
+  - first:
+      213: 6777006711450846621
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_278
+  - first:
+      213: 5781755332882905726
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_279
+  - first:
+      213: 4854971345987602811
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_280
+  - first:
+      213: 6055713421266762846
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_281
+  - first:
+      213: 7358811233508595704
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_282
+  - first:
+      213: 5908752182288254614
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_283
+  - first:
+      213: -3141258514885920128
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_284
+  - first:
+      213: 601698491757738299
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_285
+  - first:
+      213: -2206744411332820113
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_286
+  - first:
+      213: -5115955328904918451
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_287
+  - first:
+      213: -3790905292100457327
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_288
+  - first:
+      213: 5112610376150841917
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_289
+  - first:
+      213: 3170132296390239640
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_290
+  - first:
+      213: -1718508060579043881
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_291
+  - first:
+      213: -3590871310636075977
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_292
+  - first:
+      213: -2630596372848271183
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_293
+  - first:
+      213: 6038608493378949401
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_294
+  - first:
+      213: 7756474096298921606
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_295
+  - first:
+      213: -1191274530777743419
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_296
+  - first:
+      213: 271796567894189962
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_297
+  - first:
+      213: -7006761702620131745
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_298
+  - first:
+      213: 6967328610538604355
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_299
+  - first:
+      213: 7447071321780253703
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_300
+  - first:
+      213: 2897618221985663855
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_301
+  - first:
+      213: -1723427799061136991
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_302
+  - first:
+      213: -9200220264421001458
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_303
+  - first:
+      213: 6952710060363090549
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_304
+  - first:
+      213: 8905196968795321604
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_305
+  - first:
+      213: -1958315544939123225
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_306
+  - first:
+      213: -2726315018167621256
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_307
+  - first:
+      213: 8197622753389403269
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_308
+  - first:
+      213: 8285062605290998521
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_309
+  - first:
+      213: 5901616665917240423
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_310
+  - first:
+      213: 4376345640101105715
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_311
+  - first:
+      213: 5244770908398165910
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_312
+  - first:
+      213: 7229740033349388266
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_313
+  - first:
+      213: -7336672800185373900
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_314
+  - first:
+      213: 8313587153746469438
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_315
+  - first:
+      213: 1461382926574854330
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_316
+  - first:
+      213: 3021591515625225539
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_317
+  - first:
+      213: -1043797897118514359
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_318
+  - first:
+      213: -7931033738229978256
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_319
+  - first:
+      213: 5626209294507212602
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_320
+  - first:
+      213: -5334333778134076514
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_321
+  - first:
+      213: 6680908566486401993
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_322
+  - first:
+      213: 7004803445275624374
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_323
+  - first:
+      213: -8281289582538688430
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_324
+  - first:
+      213: 6357119830819547182
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_325
+  - first:
+      213: 5566466605355596571
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_326
+  - first:
+      213: -4147214534103947795
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_327
+  - first:
+      213: 3728863692487576957
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_328
+  - first:
+      213: -3999478184810731861
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_329
+  - first:
+      213: -1863905931329449229
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_330
+  - first:
+      213: 1257510213782066035
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_331
+  - first:
+      213: -1314839960244802161
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_332
+  - first:
+      213: 6949068436343891024
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_333
+  - first:
+      213: 1023802601244070369
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_334
+  - first:
+      213: -8495319592802214251
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_335
+  - first:
+      213: 847505893695260177
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_336
+  - first:
+      213: 4438939863723176097
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_337
+  - first:
+      213: 3090928682355488672
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_338
+  - first:
+      213: 8405229090401651172
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_339
+  - first:
+      213: -1017187765303108904
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_340
+  - first:
+      213: 3963158643831346739
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_341
+  - first:
+      213: 6440540071063005645
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_342
+  - first:
+      213: -6017762423280014699
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_343
+  - first:
+      213: 8246938894434425574
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_344
+  - first:
+      213: 2150309145364441166
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_345
+  - first:
+      213: 6568691368511070076
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_346
+  - first:
+      213: -1607450634225349086
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_347
+  - first:
+      213: -6444097255242428725
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_348
+  - first:
+      213: -3048815548786382099
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_349
+  - first:
+      213: -1654885391770909434
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_350
+  - first:
+      213: 7351319730822817902
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_351
+  - first:
+      213: 5809469329650443946
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_352
+  - first:
+      213: 1082048986434384906
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_353
+  - first:
+      213: -6129371677647758759
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_354
+  - first:
+      213: -7409413387178667370
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_355
+  - first:
+      213: 7471521470400321652
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_356
+  - first:
+      213: 3205643081348679020
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_357
+  - first:
+      213: -2618842867917874025
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_358
+  - first:
+      213: -5860881166678527900
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_359
+  - first:
+      213: 6619946691683232259
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_360
+  - first:
+      213: 3738838415495241712
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_361
+  - first:
+      213: -7054486671874423499
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_362
+  - first:
+      213: -565615684332623451
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_363
+  - first:
+      213: 5916277020399509549
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_364
+  - first:
+      213: 4495955623523830765
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_365
+  - first:
+      213: -325960392441720029
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_366
+  - first:
+      213: 8730011694090006934
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_367
+  - first:
+      213: -4421235597117299247
+    second: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_368
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2165
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bae46d7e5d22a2300800000000000000
+      internalID: 228033033248591531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_1
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 2165
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ccb4745e51f7c2d0800000000000000
+      internalID: -3258370417933108032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_2
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 2165
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0e5f73bc817747b0800000000000000
+      internalID: -5240094792301453814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_3
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 2165
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1f02c5bfb0c57e80800000000000000
+      internalID: -8181421218427957474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_4
+      rect:
+        serializedVersion: 2
+        x: 1732
+        y: 2165
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0c6879a3af42d0b0800000000000000
+      internalID: -5705410213583492082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_5
+      rect:
+        serializedVersion: 2
+        x: 2165
+        y: 2165
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a30929ecb6048c610800000000000000
+      internalID: 1641632895947935802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1732
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e01a737b1c0d44f20800000000000000
+      internalID: 3406076748620079374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_7
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 1732
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 702948755461c1770800000000000000
+      internalID: 8582759476938183175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_8
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 1732
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2ec5758b1f771ea0800000000000000
+      internalID: -5902109030465810897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_9
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 1732
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be20c34e89d208d30800000000000000
+      internalID: 4431592168019985131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_10
+      rect:
+        serializedVersion: 2
+        x: 1732
+        y: 1732
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92d2b51aa3e315fe0800000000000000
+      internalID: -1202111203995079383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_11
+      rect:
+        serializedVersion: 2
+        x: 2165
+        y: 1732
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f18bad39de2404c0800000000000000
+      internalID: -4322278231791402509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1299
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d110c21f6d50f0910800000000000000
+      internalID: 1805668396326191389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_13
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 1299
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 869731e1072b0d690800000000000000
+      internalID: -7579361978253870744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_14
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 1299
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86152680008b2fe20800000000000000
+      internalID: 3382968580388835688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_15
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 1299
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e7d4408effb4bab0800000000000000
+      internalID: -4993154987052443677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_16
+      rect:
+        serializedVersion: 2
+        x: 1732
+        y: 1299
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3ffecc09a8830360800000000000000
+      internalID: 7134696494330740540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_17
+      rect:
+        serializedVersion: 2
+        x: 2165
+        y: 1299
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 325ca8bcc1bdd3330800000000000000
+      internalID: 3692348186234111267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 866
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 026dd984050efed40800000000000000
+      internalID: 5615953895774606880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_19
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 866
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ddfc26a5916be4b0800000000000000
+      internalID: -5410123231989531177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_20
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 866
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cbf8ac40df0b20a0800000000000000
+      internalID: -6905408216328766522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_21
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 866
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 992add44a95ad88f0800000000000000
+      internalID: -536590698588298599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_22
+      rect:
+        serializedVersion: 2
+        x: 1732
+        y: 866
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0730e513e5561bf30800000000000000
+      internalID: 4589560950496822128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_23
+      rect:
+        serializedVersion: 2
+        x: 2165
+        y: 866
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 984eb6e2930c56c30800000000000000
+      internalID: 4352095966747944073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 433
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f91d1e2fc1584220800000000000000
+      internalID: 2470314345886456310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_25
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 433
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a44890de187a9c630800000000000000
+      internalID: 3947870724836394058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_26
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 433
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd793b6d9ddefe7b0800000000000000
+      internalID: -5192670325469112355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_27
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 433
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17240740a484cca50800000000000000
+      internalID: 6542683841401733745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_28
+      rect:
+        serializedVersion: 2
+        x: 1732
+        y: 433
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a756b0cacdaa28900800000000000000
+      internalID: 685297958069691770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_29
+      rect:
+        serializedVersion: 2
+        x: 2165
+        y: 433
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d04e974a11df01580800000000000000
+      internalID: -8858302214822042611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a3372849b79c2860800000000000000
+      internalID: 7506541500955046824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_31
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 0
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4fad47433b1581d0800000000000000
+      internalID: -3349240840826540211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_32
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 0
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4965e5399b4ef530800000000000000
+      internalID: 3890630249500993868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_33
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 0
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aadf4057576f3a1c0800000000000000
+      internalID: -4493477018850755158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_34
+      rect:
+        serializedVersion: 2
+        x: 1732
+        y: 0
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baace9d557549a050800000000000000
+      internalID: 5812253164482513579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_35
+      rect:
+        serializedVersion: 2
+        x: 2165
+        y: 0
+        width: 433
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fc6c3cc536e2a040800000000000000
+      internalID: 4657538083388681458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: cc469cfcc6bacad4a9d96719f0f828ee
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_0: 228033033248591531
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_1: -3258370417933108032
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_10: -1202111203995079383
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_11: -4322278231791402509
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_12: 1805668396326191389
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_13: -7579361978253870744
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_14: 3382968580388835688
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_15: -4993154987052443677
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_16: 7134696494330740540
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_17: 3692348186234111267
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_18: 5615953895774606880
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_19: -5410123231989531177
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_2: -5240094792301453814
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_20: -6905408216328766522
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_21: -536590698588298599
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_22: 4589560950496822128
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_23: 4352095966747944073
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_24: 2470314345886456310
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_25: 3947870724836394058
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_26: -5192670325469112355
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_27: 6542683841401733745
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_28: 685297958069691770
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_29: -8858302214822042611
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_3: -8181421218427957474
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_30: 7506541500955046824
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_31: -3349240840826540211
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_32: 3890630249500993868
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_33: -4493477018850755158
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_34: 5812253164482513579
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_35: 4657538083388681458
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_4: -5705410213583492082
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_5: 1641632895947935802
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_6: 3406076748620079374
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_7: 8582759476938183175
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_8: -5902109030465810897
+      A-standalone-16-bit-pixel-art-game-asset-from-a-di-256px-36_9: 4431592168019985131
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

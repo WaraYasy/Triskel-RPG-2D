@@ -33,18 +33,21 @@ public class BossManager : MonoBehaviour
     
     [Header("Debug")]
     [SerializeField] private bool showDebugLogs = true;
-    
+
+    [Header("Condiciones de Inicio")]
+    [SerializeField] private bool startOnStart = true;
+
     // Estado del combate
     private float timeRemaining;
     private bool combatActive = false;
     private int currentPhase = 1;
-    
+
     // Eventos
     public UnityEvent OnCombatStart = new UnityEvent();
     public UnityEvent OnCombatEnd = new UnityEvent();
     public UnityEvent OnVictory = new UnityEvent();
     public UnityEvent<int> OnPhaseChange = new UnityEvent<int>();
-    
+
     // Propiedades públicas
     public float TimeRemaining => timeRemaining;
     public float CombatProgress => 1f - (timeRemaining / combatDuration);
@@ -54,7 +57,10 @@ public class BossManager : MonoBehaviour
     private void Start()
     {
         timeRemaining = combatDuration;
-        StartCombat();
+        if (startOnStart)
+        {
+            StartCombat();
+        }
     }
 
     private void Update()
@@ -89,6 +95,11 @@ public class BossManager : MonoBehaviour
         if (TriskelAPIClient.Instance != null)
         {
             TriskelAPIClient.Instance.SendBossEncounterEvent(APIConstants.Levels.CLARO_ALMAS, "Guardian de las Almas");
+        }
+        
+        if (bulletPattern != null)
+        {
+            bulletPattern.ToggleFiring(true);
         }
         
         if (showDebugLogs)
@@ -167,6 +178,11 @@ public class BossManager : MonoBehaviour
     {
         combatActive = false;
         
+        if (bulletPattern != null)
+        {
+            bulletPattern.ToggleFiring(false);
+        }
+
         if (victory)
         {
             OnVictory?.Invoke();

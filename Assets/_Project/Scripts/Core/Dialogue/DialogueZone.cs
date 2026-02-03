@@ -36,6 +36,10 @@ namespace Triskel.Dialogue
         [Tooltip("ID único para persistir entre escenas del hub (ej: 'hub_npc_anciano'). Dejar vacío usa el sistema automático.")]
         public string uniqueDialogueID = "";
 
+        [Header("Eventos")]
+        [Tooltip("Evento que se dispara cuando el diálogo termina")]
+        public UnityEngine.Events.UnityEvent OnDialogueEnd;
+
         [SerializeField] private bool yaUsado = false;
         private PlayerController cachedPlayer;
 
@@ -140,6 +144,9 @@ namespace Triskel.Dialogue
             }
             // Limpiar el evento para que no se acumule
             dialogueRunner.onDialogueComplete.RemoveListener(UnfreezePlayer);
+
+            // Disparar evento de finalización
+            OnDialogueEnd?.Invoke();
         }
 
         /// <summary>

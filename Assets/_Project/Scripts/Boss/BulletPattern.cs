@@ -19,6 +19,7 @@ public class BulletPattern : MonoBehaviour
     private float speedMultiplier = 1f;
     private float moralMultiplier = 1f;
     private int currentPhase = 1;
+    private bool isActive = false; // El boss empieza sin disparar
     
     public enum PatternType
     {
@@ -32,9 +33,21 @@ public class BulletPattern : MonoBehaviour
     
     private void Update()
     {
+        if (!isActive) return; // Si no está activo, no hace nada
+
         if (Time.time >= nextFireTime)
         {
             FirePatternByPhase();
+            nextFireTime = Time.time + fireRate;
+        }
+    }
+
+    public void ToggleFiring(bool active)
+    {
+        isActive = active;
+        if (active)
+        {
+            // Resetear el tiempo de disparo para que no dispare una ráfaga acumulada
             nextFireTime = Time.time + fireRate;
         }
     }

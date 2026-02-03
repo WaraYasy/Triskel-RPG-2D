@@ -31626,6 +31626,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &796353398 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6188312589994974122, guid: 5eef9f8e057d5eb4da6f0fb6aac32a84, type: 3}
+  m_PrefabInstance: {fileID: 1625984826}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796353395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 586a01a164d4d2b45859cd6a3d0ac62e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &832162600 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 881880895286324670, guid: 638cda14d4db54b4c96e8861ec79b9f3, type: 3}
@@ -63001,6 +63012,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -2.28
       objectReference: {fileID: 0}
+    - target: {fileID: 6188312589994974122, guid: 5eef9f8e057d5eb4da6f0fb6aac32a84, type: 3}
+      propertyPath: startOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6188312589994974122, guid: 5eef9f8e057d5eb4da6f0fb6aac32a84, type: 3}
+      propertyPath: phase1FireRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6188312589994974122, guid: 5eef9f8e057d5eb4da6f0fb6aac32a84, type: 3}
+      propertyPath: phase3FireRate
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7433568350342539106, guid: 5eef9f8e057d5eb4da6f0fb6aac32a84, type: 3}
       propertyPath: m_Name
       value: Boss
@@ -63285,6 +63308,34 @@ PrefabInstance:
     - target: {fileID: 645727126352275088, guid: 9972898950c208c498893ae659ba30e7, type: 3}
       propertyPath: dialogueRunner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 645727126352275088, guid: 9972898950c208c498893ae659ba30e7, type: 3}
+      propertyPath: OnDialogueEnd.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 645727126352275088, guid: 9972898950c208c498893ae659ba30e7, type: 3}
+      propertyPath: OnDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 645727126352275088, guid: 9972898950c208c498893ae659ba30e7, type: 3}
+      propertyPath: OnDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 796353398}
+    - target: {fileID: 645727126352275088, guid: 9972898950c208c498893ae659ba30e7, type: 3}
+      propertyPath: OnDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 645727126352275088, guid: 9972898950c208c498893ae659ba30e7, type: 3}
+      propertyPath: OnDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartCombat
+      objectReference: {fileID: 0}
+    - target: {fileID: 645727126352275088, guid: 9972898950c208c498893ae659ba30e7, type: 3}
+      propertyPath: OnDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BossManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 645727126352275088, guid: 9972898950c208c498893ae659ba30e7, type: 3}
+      propertyPath: OnDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4187355229294807794, guid: 9972898950c208c498893ae659ba30e7, type: 3}
       propertyPath: m_LocalPosition.x

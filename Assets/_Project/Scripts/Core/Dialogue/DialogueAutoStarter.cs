@@ -26,6 +26,9 @@ namespace Triskel.Dialogue
         [Tooltip("Clave única para guardar si ya se vio (ej: Hub_IntroVisto)")]
         [SerializeField] private string saveKey = "Hub_IntroVisto";
 
+        [Header("Eventos")]
+        public UnityEngine.Events.UnityEvent OnDialogueEnd;
+
         private PlayerController cachedPlayer;
 
         private void Start()
@@ -111,6 +114,9 @@ namespace Triskel.Dialogue
 
             // Limpiar el listener
             dialogueRunner.onDialogueComplete.RemoveListener(OnDialogueComplete);
+
+            // Disparar evento personalizado
+            OnDialogueEnd?.Invoke();
         }
 
         /// <summary>
