@@ -13,11 +13,11 @@
             </ui:VisualElement>
             <ui:VisualElement name="FontTypeSection" class="theme-section" style="background-image: none; background-color: rgb(203, 184, 157);">
                 <ui:Label text="Fuente" name="FontTypeLabel" class="theme-label" style="-unity-font-definition: url(&quot;project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&amp;guid=89ae0ccf11ce0314bb60394e36bc1305&amp;type=3#BoldPixels&quot;);" />
-                <ui:DropdownField name="FontTypeDropdown" index="0" choices="Pixelada,Dislexia" class="font-size-dropdown" style="-unity-font-definition: url(&quot;project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&amp;guid=89ae0ccf11ce0314bb60394e36bc1305&amp;type=3#BoldPixels&quot;); width: 200px; font-size: 25px;" />
+                <ui:DropdownField name="FontTypeDropdown" index="0" choices="Pixelada,Dislexia" class="font-size-dropdown" style="-unity-font-definition: url(&quot;project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&amp;guid=89ae0ccf11ce0314bb60394e36bc1305&amp;type=3#BoldPixels&quot;); width: 280px; min-width: 280px; font-size: 25px;" />
             </ui:VisualElement>
             <ui:VisualElement name="DialogueFontSizeSection" class="theme-section" style="background-image: none; background-color: rgb(203, 184, 157);">
                 <ui:Label text="Tamaño" name="DialogueFontSizeLabel" class="theme-label" style="-unity-font-definition: url(&quot;project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&amp;guid=89ae0ccf11ce0314bb60394e36bc1305&amp;type=3#BoldPixels&quot;);" />
-                <ui:DropdownField name="DialogueFontSizeDropdown" index="0" choices="Normal,Grande" class="font-size-dropdown" style="-unity-font-definition: url(&quot;project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&amp;guid=89ae0ccf11ce0314bb60394e36bc1305&amp;type=3#BoldPixels&quot;); width: 150px; font-size: 25px;" />
+                <ui:DropdownField name="DialogueFontSizeDropdown" index="0" choices="Normal,Grande" class="font-size-dropdown" style="-unity-font-definition: url(&quot;project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&amp;guid=89ae0ccf11ce0314bb60394e36bc1305&amp;type=3#BoldPixels&quot;); width: 220px; min-width: 220px; font-size: 25px;" />
             </ui:VisualElement>
             <ui:Button text="Volver" name="BackButton" class="settings-button" style="font-size: 35px; -unity-font-definition: url(&quot;project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&amp;guid=89ae0ccf11ce0314bb60394e36bc1305&amp;type=3#BoldPixels&quot;); height: 69px; width: 230px;" />
         </ui:VisualElement>
