@@ -23,9 +23,42 @@ Espiritu: ¿... O HAS VENIDO AL FIN PARA RECIBIR A LA MUERTE COMO A UNA VIEJA AM
 Guardian: ... No, Sacha. No intentes hablar.
 Guardian: Él ya no escucha palabras humanas. Tienen demasiado veneno.
 Guardian: Tu silencio es tu fuerza. Demuéstrale con tus actos que no eres como los hermanos de la leyenda.
-==
+===
 
-=title: Final_Ending_0_Usurpador
+title: Final_Boss_Defeated_0
+comments: "Boss derrotado - Moral Mala"
+---
+Espiritu: MI LUZ SE APAGA... PERO NO HAY VICTORIA EN TUS OJOS.
+Espiritu: LO QUE HAS HECHO NO ES SALVAR EL BOSQUE... ES CONQUISTAR SU CADÁVER.
+Espiritu: DISFRUTA DE TU REINO DE CENIZAS, PEQUEÑA LLAMA NEGRA.
+===
+
+title: Final_Boss_Defeated_1
+comments: "Boss derrotado - Moral Agridulce"
+---
+Espiritu: EL COMBATE CESA... PERO EL RENCOR PERMANECE.
+Espiritu: ME HAS DERROTADO, PERO NO ME HAS CURADO.
+Espiritu: BUSCA TU PROPIA PAZ, PORQUE LA DEL BOSQUE ESTÁ ROTA POR MUCHO TIEMPO.
+===
+
+title: Final_Boss_Defeated_2
+comments: "Boss derrotado - Moral Buena"
+---
+Espiritu: EL DOLOR... SE CALMA. SIENTO QUE LAS RAÍCES VUELVEN A RESPIRAR.
+Espiritu: HAS ACTUADO CON SABIDURÍA, PEQUEÑA CHISPA.
+Espiritu: EL BOSQUE TE RECONOCE... NO COMO DUEÑO, SINO COMO AMIGO.
+===
+
+title: Final_Boss_Defeated_3
+comments: "Boss derrotado - Moral Perfecta"
+---
+Espiritu: YA NO SIENTO ODIO... SOLO LUZ.
+Espiritu: TU ALMA Y LA MÍA HABLAN EL MISMO IDIOMA, EL DE LA VIDA PURA.
+Espiritu: NO HAY DERROTA AQUÍ, SINO UNA UNIÓN QUE SERÁ CANTADA POR SIGLOS.
+Espiritu: GRACIAS... GUARDIÁN.
+===
+
+title: Final_Ending_0_Usurpador
 comments: "0 Aciertos (Todo Malo). Final Triste."
 ---
 Guardian: ... Silencio.

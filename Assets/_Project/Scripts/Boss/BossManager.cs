@@ -21,11 +21,11 @@ public class BossManager : MonoBehaviour
     [Header("Configuración por Fase")]
     [SerializeField] private float phase1FireRate = 1.5f;
     [SerializeField] private float phase2FireRate = 0.8f;
-    [SerializeField] private float phase3FireRate = 0.4f; // ¡MUY RÁPIDO!
+    [SerializeField] private float phase3FireRate = 1.0f; // Disparos continuos
     
     [SerializeField] private float phase1Speed = 1f;
     [SerializeField] private float phase2Speed = 1.3f;
-    [SerializeField] private float phase3Speed = 1.8f;
+    [SerializeField] private float phase3Speed = 1.2f; // Velocidad reducida para mayor control
     
     [Header("Moral Integration")]
     [SerializeField] private float highMoralMultiplier = 0.7f;  // Más lento si moral > 0
@@ -174,6 +174,9 @@ public class BossManager : MonoBehaviour
         AdjustDifficultyByMoral();
     }
     
+    [Header("Condiciones de Finalización")]
+    [SerializeField] private bool autoFinishGame = false; // Desactivado por defecto para dar paso a los diálogos
+
     private void EndCombat(bool victory)
     {
         combatActive = false;
@@ -192,8 +195,8 @@ public class BossManager : MonoBehaviour
                 Debug.Log("🎉 ¡VICTORIA! Has sobrevivido al infierno");
             }
 
-            // Notificar al GameManager para procesar el final del juego
-            if (GameManager.Instance != null)
+            // Notificar al GameManager solo si está configurado para hacerlo automáticamente
+            if (autoFinishGame && GameManager.Instance != null)
             {
                 GameManager.Instance.FinalizarJuego();
             }

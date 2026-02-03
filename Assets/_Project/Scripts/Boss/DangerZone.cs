@@ -156,8 +156,12 @@ public class DangerZone : MonoBehaviour
         
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("💥 Player atrapado por las raíces!");
-            // Aquí se llamaría al método del Player para recibir daño
+            PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(1f, transform.position); // Daño de 1 corazón
+                Debug.Log("💥 Player atrapado por las raíces!");
+            }
         }
     }
 }

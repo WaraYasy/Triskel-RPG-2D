@@ -35,14 +35,17 @@ public class Projectile : MonoBehaviour
             rb.linearVelocity = direction * speed;
         }
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Si toca al player
         if (collision.CompareTag("Player"))
         {
-            // TODO: Hacer daño al player
-            Debug.Log("💥 Player golpeado!");
+            PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(1f, transform.position); // Daño de 1 corazón
+                Debug.Log("💥 Player golpeado por proyectil!");
+            }
             Destroy(gameObject);
         }
         

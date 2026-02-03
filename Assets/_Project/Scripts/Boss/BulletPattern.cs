@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 /// <summary>
 /// BulletPattern - Patrones de disparo del boss
@@ -15,6 +16,10 @@ public class BulletPattern : MonoBehaviour
     [SerializeField] private float baseProjectileSpeed = 5f;
     [SerializeField] private float fireRate = 1f;
     
+    [Header("Configuración de Raíces")]
+    [SerializeField] private float rootCooldown = 4.0f; // Una raíz cada 4 segundos
+    private float nextRootTime = 0f;
+
     private float nextFireTime = 0f;
     private float speedMultiplier = 1f;
     private float moralMultiplier = 1f;
@@ -54,6 +59,13 @@ public class BulletPattern : MonoBehaviour
     
     // === SECUENCIAS DE ATAQUES POR FASE ===
     
+    [Header("Configuración de Arena")]
+    [Tooltip("Rango horizontal desde el centro del boss")]
+    [SerializeField] private float arenaRangeX = 10f;
+    [Tooltip("Distancia mínima y máxima hacia abajo desde el boss")]
+    [SerializeField] private float arenaMinY = 4f;
+    [SerializeField] private float arenaMaxY = 13f;
+
     private int attackSequenceIndex = 0;
     
     private void FirePatternByPhase()
@@ -97,8 +109,8 @@ public class BulletPattern : MonoBehaviour
     
     private void FirePhase2Sequence()
     {
-        // Secuencia: Spiral → DangerZone → Circle → Cross → DangerZone → Spread → Repeat
-        int attack = attackSequenceIndex % 6;
+        // Secuencia simplificada: Solo proyectiles para que las DangerZones sean exclusivas de la fase final
+        int attack = attackSequenceIndex % 4;
         
         switch (attack)
         {
@@ -106,23 +118,12 @@ public class BulletPattern : MonoBehaviour
                 FirePattern(PatternType.Spiral);
                 break;
             case 1:
-                // Zona centrada (ajustado para estar más cerca del boss)
-                Vector3 bossPos = transform.position;
-                SpawnDangerZone(bossPos + Vector3.down * 9f, 2.5f); 
-                break;
-            case 2:
                 FirePattern(PatternType.Circle);
                 break;
-            case 3:
+            case 2:
                 FirePattern(PatternType.Cross);
                 break;
-            case 4:
-                // Dos zonas a los lados (ajustado para estar más cerca)
-                Vector3 pos = transform.position;
-                SpawnDangerZone(pos + new Vector3(-6f, -11f, 0), 2f);
-                SpawnDangerZone(pos + new Vector3(6f, -11f, 0), 2f);
-                break;
-            case 5:
+            case 3:
                 FirePattern(PatternType.Spread);
                 break;
         }
@@ -130,38 +131,33 @@ public class BulletPattern : MonoBehaviour
     
     private void FirePhase3Sequence()
     {
-        // Secuencia compleja pero repetible
-        int attack = attackSequenceIndex % 6;
+        // Disparos continuos (según el fireRate del boss)
+        int attack = attackSequenceIndex % 4;
         
         switch (attack)
         {
-            case 0: // Spiral + Circle
-                FirePattern(PatternType.Spiral);
-                FirePattern(PatternType.Circle);
-                break;
-            
-            case 1: // Cross solo (respiro)
-                FirePattern(PatternType.Cross);
-                break;
-            
-            case 2: // Spread + Line
-                FirePattern(PatternType.Spread);
-                FirePattern(PatternType.Line);
-                break;
-            
-            case 3: // Circle grande
-                FireCircle(16); // Más denso
-                break;
-            
-            case 4: // Spiral + Cross
-                FirePattern(PatternType.Spiral);
-                FirePattern(PatternType.Cross);
-                break;
-            
-            case 5: // Random controlado (15 proyectiles)
-                FireRandom(15);
-                break;
+            case 0: FirePattern(PatternType.Spiral); break;
+            case 1: FirePattern(PatternType.Cross); break;
+            case 2: FirePattern(PatternType.Spread); break;
+            case 3: FireCircle(8); break;
         }
+
+        // Lógica de rídices INDEPENDIENTE: Solo una cada rootCooldown segundos
+        if (Time.time >= nextRootTime)
+        {
+            SpawnRandomDangerZone();
+            nextRootTime = Time.time + rootCooldown;
+        }
+    }
+
+    private void SpawnRandomDangerZone()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player == null) return;
+
+        // Spawn directo bajo el jugador
+        SpawnDangerZone(player.transform.position, 2.5f);
+        Debug.Log("[BulletPattern] Raíz generada bajo el jugador.");
     }
     
     public void FirePattern(PatternType pattern)
