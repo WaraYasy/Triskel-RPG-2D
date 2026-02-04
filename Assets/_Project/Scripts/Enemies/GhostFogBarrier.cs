@@ -23,6 +23,10 @@ public class GhostFogBarrier : MonoBehaviour
     [Header("Audio (Opcional)")]
     [SerializeField] private AudioClip barrierOpenSound;
     
+    [Header("UI / Diálogos")]
+    [Tooltip("Objeto de diálogo (ej: 'dialoguefog') que se desactivará al abrir la barrera")]
+    [SerializeField] private GameObject dialogueFog;
+    
     private bool isBarrierOpen = false;
     private int initialGhostCount;
     private AudioSource audioSource;
@@ -85,6 +89,13 @@ public class GhostFogBarrier : MonoBehaviour
             audioSource.PlayOneShot(barrierOpenSound);
         }
         
+        // Desactivar diálogo de pista si existe
+        if (dialogueFog != null)
+        {
+            dialogueFog.SetActive(false);
+            Debug.Log("[GhostFogBarrier] Diálogo desactivado.");
+        }
+
         // Desvanecer partículas
         if (fogParticles != null)
         {

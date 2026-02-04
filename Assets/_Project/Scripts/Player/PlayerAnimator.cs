@@ -18,6 +18,7 @@ public class PlayerAnimator : MonoBehaviour
     private readonly int lastHorizontalParam = Animator.StringToHash("LastHorizontal");
     private readonly int lastVerticalParam = Animator.StringToHash("LastVertical");
     private readonly int equippedItemParam = Animator.StringToHash("EquippedItem");
+    private readonly int attackTriggerParam = Animator.StringToHash("Attack"); // Nuevo parámetro para el ataque
     
     private Vector2 lastMoveDirection = Vector2.down; // Dirección por defecto
 
@@ -47,9 +48,16 @@ public class PlayerAnimator : MonoBehaviour
         if (animator == null || rb == null) return;
         
         // Actualizar item equipado (0: Nada, 1: Lirio, 2: Hacha, 3: Manto)
+        // Actualizar item equipado
+        // FIX: Solo el Hacha (2) tiene animación de sostener. Manto (3) y Lirio (1) deben usar la animación base (0).
         if (relicSystem != null)
         {
-            animator.SetFloat(equippedItemParam, (float)relicSystem.GetCurrentRelic());
+            float paramValue = 0f;
+            if (relicSystem.GetCurrentRelic() == RelicSystem.RelicType.HachaSagrada)
+            {
+                paramValue = (float)RelicSystem.RelicType.HachaSagrada; // 2.0f
+            }
+            animator.SetFloat(equippedItemParam, paramValue);
         }
 
         // Obtener velocidad REAL del Rigidbody
@@ -82,6 +90,11 @@ public class PlayerAnimator : MonoBehaviour
         
         // Actualizar velocidad AL FINAL
         animator.SetFloat(speedParam, speed);
+    }
+    
+    public void TriggerAttack()
+    {
+        animator.SetTrigger(attackTriggerParam);
     }
 }
 

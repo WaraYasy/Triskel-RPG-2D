@@ -35,12 +35,14 @@ public class RelicSystem : MonoBehaviour
     private bool isLilioActive = false;
     private PlayerController playerController; // Referencia para dirección
     private PlayerStealth playerStealth; // Referencia para invisibilidad del Manto
+    private PlayerAnimator playerAnimator; // Referencia para animaciones
     private PlayerInputActions inputActions;
     
     private void Awake()
     {
         playerController = GetComponent<PlayerController>();
         playerStealth = GetComponent<PlayerStealth>();
+        playerAnimator = GetComponent<PlayerAnimator>();
         inputActions = new PlayerInputActions();
     }
     
@@ -272,6 +274,12 @@ public class RelicSystem : MonoBehaviour
     private void UseHacha()
     {
         Debug.Log("⚔️ Hacha Sagrada - Golpe");
+        
+        // Disparar animación de ataque
+        if (playerAnimator != null)
+        {
+            playerAnimator.TriggerAttack();
+        }
         
         // Obtener dirección del movimiento
         Vector2 direction = playerController != null ? 
