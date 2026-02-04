@@ -363,7 +363,7 @@ namespace Triskel.API
             }
         }
 
-        private void SaveProgress()
+        public void SaveProgress()
         {
             if (inventoryData == null)
                 return;

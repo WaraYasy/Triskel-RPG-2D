@@ -38,7 +38,7 @@
     margin-top: 20px;
     -unity-text-align: middle-center;
     letter-spacing: 3px;
-    -unity-font-definition: url("project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
+    -unity-font-definition: url("project://database/Assets/Triskel_Proyect/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
 }
 
 .close-button:hover {

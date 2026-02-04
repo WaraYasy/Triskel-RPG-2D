@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
-    <Style src="project://database/Assets/_Project/UI/Menus/Login.uss?fileID=7433441132597879392&amp;guid=aa648517a0de50142ac1a5f6d80a3c47&amp;type=3#Login" />
+    <Style src="project://database/Assets/Triskel_Proyect/UI/Menus/Login.uss?fileID=7433441132597879392&amp;guid=aa648517a0de50142ac1a5f6d80a3c47&amp;type=3#Login" />
     <ui:VisualElement name="LoginOverlay" class="login-overlay">
-        <ui:VisualElement name="LoginPanel" class="login-panel" style="background-image: url(&quot;project://database/Assets/_Project/Sprites/UI/Common/Backgrounds/bg_box2.png?fileID=2800000&amp;guid=737dc65ba81f06949a890a8d57b33928&amp;type=3#bg_box2&quot;); -unity-background-scale-mode: scale-and-crop; height: 1101px; width: 1101px;">
+        <ui:VisualElement name="LoginPanel" class="login-panel" style="background-image: url(&quot;project://database/Assets/Triskel_Proyect/Sprites/UI/Common/Backgrounds/bg_box2.png?fileID=2800000&amp;guid=737dc65ba81f06949a890a8d57b33928&amp;type=3#bg_box2&quot;); -unity-background-scale-mode: scale-and-crop; height: 1101px; width: 1101px;">
             <ui:Label text="INICIAR SESIÓN" name="LoginTitle" class="login-title" />
             <ui:VisualElement name="UserSection" class="login-section" style="width: 70%;">
                 <ui:Label text="Usuario" name="UserLabel" class="login-label" />

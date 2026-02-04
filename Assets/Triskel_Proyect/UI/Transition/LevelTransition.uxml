@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <Style src="project://database/Assets/_Project/UI/Transition/LevelTransition.uss?fileID=7433441132597879392&amp;guid=79a347d161c55a94bb006c66fb75bb02&amp;type=3#LevelTransition" />
+    <Style src="project://database/Assets/Triskel_Proyect/UI/Transition/LevelTransition.uss?fileID=7433441132597879392&amp;guid=79a347d161c55a94bb006c66fb75bb02&amp;type=3#LevelTransition" />
     <ui:VisualElement name="root" class="transition-root">
         <ui:VisualElement name="background" class="transition-background" />
         <ui:VisualElement name="header-container" class="header-container">

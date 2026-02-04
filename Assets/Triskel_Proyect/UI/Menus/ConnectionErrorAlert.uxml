@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
-    <Style src="project://database/Assets/_Project/UI/Menus/ConnectionErrorAlert.uss?fileID=7433441132597879392&amp;guid=c71bcc1bce231af4f9ba6ba5f64c1c3d&amp;type=3#ConnectionErrorAlert" />
+    <Style src="project://database/Assets/Triskel_Proyect/UI/Menus/ConnectionErrorAlert.uss?fileID=7433441132597879392&amp;guid=c71bcc1bce231af4f9ba6ba5f64c1c3d&amp;type=3#ConnectionErrorAlert" />
     <ui:VisualElement name="ErrorOverlay" class="error-overlay" style="display: flex; color: rgb(0, 0, 0);">
-        <ui:VisualElement name="ErrorPanel" class="error-panel" style="background-image: url(&quot;project://database/Assets/_Project/Sprites/UI/Common/Backgrounds/bg_pause.png?fileID=2800000&amp;guid=e2463e23cff697647ae58e92412aaaab&amp;type=3#bg_pause&quot;); height: 926px; width: 922px; justify-content: center;">
+        <ui:VisualElement name="ErrorPanel" class="error-panel" style="background-image: url(&quot;project://database/Assets/Triskel_Proyect/Sprites/UI/Common/Backgrounds/bg_pause.png?fileID=2800000&amp;guid=e2463e23cff697647ae58e92412aaaab&amp;type=3#bg_pause&quot;); height: 926px; width: 922px; justify-content: center;">
             <ui:Label text="SIN CONEXIÓN" name="ErrorTitle" class="error-title" />
             <ui:Label text="No tienes conexión con el servidor.&#10;&#10;Nada de lo que hagas se guardará hasta que se restablezca la conexión." name="ErrorMessage" class="error-message" />
             <ui:VisualElement name="ButtonContainer" class="button-container">

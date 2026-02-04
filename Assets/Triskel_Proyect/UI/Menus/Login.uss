@@ -22,7 +22,7 @@
     margin-bottom: 0;
     -unity-text-align: middle-center;
     margin-top: 50px;
-    -unity-font-definition: url("project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
+    -unity-font-definition: url("project://database/Assets/Triskel_Proyect/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
     white-space: pre-wrap;
     width: 60%;
     -unity-background-scale-mode: scale-and-crop;
@@ -44,7 +44,7 @@
     color: rgb(40, 35, 30);
     margin-bottom: 5px;
     -unity-text-align: middle-left;
-    -unity-font-definition: url("project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
+    -unity-font-definition: url("project://database/Assets/Triskel_Proyect/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
 }
 
 .login-input {
@@ -61,7 +61,7 @@
     border-right-color: rgb(39, 93, 107);
     border-top-color: rgb(39, 93, 107);
     border-bottom-color: rgb(39, 93, 107);
-    -unity-font-definition: url("project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
+    -unity-font-definition: url("project://database/Assets/Triskel_Proyect/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
 }
 
 .login-input:focus {
@@ -80,7 +80,7 @@
     border-radius: 10px;
     margin-top: 15px;
     -unity-text-align: middle-center;
-    -unity-font-definition: url("project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
+    -unity-font-definition: url("project://database/Assets/Triskel_Proyect/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
     letter-spacing: 5px;
     -unity-font-style: normal;
 }
@@ -132,5 +132,5 @@
     -unity-text-align: middle-center;
     white-space: normal;
     max-width: 90%;
-    -unity-font-definition: url("project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
+    -unity-font-definition: url("project://database/Assets/Triskel_Proyect/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
 }

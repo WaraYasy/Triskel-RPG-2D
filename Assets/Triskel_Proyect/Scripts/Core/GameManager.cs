@@ -199,7 +199,21 @@ public class GameManager : MonoBehaviour
         // 3. Guardar estado global
         SaveToLocal();
 
+        // 4. Sincronizar con la API inmediatamente si estamos logueados
+        SyncProgressWithAPI();
+
         Debug.Log($"[GameManager] ✓ Partida guardada (Moral={moralScore}, Nivel={currentLevel})");
+    }
+
+    /// <summary>
+    /// Sincroniza el nivel actual y las reliquias con la API de forma inmediata.
+    /// </summary>
+    public void SyncProgressWithAPI()
+    {
+        if (apiTracker != null && TriskelAPIClient.Instance != null && TriskelAPIClient.Instance.IsLoggedIn)
+        {
+            apiTracker.SaveProgress();
+        }
     }
 
     /// <summary>
@@ -216,6 +230,8 @@ public class GameManager : MonoBehaviour
         if (InventoryPersistence.Instance != null)
         {
             InventoryPersistence.Instance.LoadInventory();
+            // Asegurar reliquias obligatorias según nivel
+            EnsureRelicsForCurrentLevel();
         }
 
         // 3. Cargar diario
@@ -298,11 +314,29 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log($"[GameManager] Restaurando estado desde API: {gameData.game_id}");
 
-        // Restaurar nivel actual (convertir nivel API a número de nivel)
-        currentLevel = LevelMapper.LevelIndexToAPILevel(1) == gameData.current_level ? 1 :
-                       LevelMapper.LevelIndexToAPILevel(2) == gameData.current_level ? 2 :
-                       LevelMapper.LevelIndexToAPILevel(3) == gameData.current_level ? 3 :
-                       LevelMapper.LevelIndexToAPILevel(4) == gameData.current_level ? 4 : 1;
+        // Restaurar nivel actual: 
+        // 1. Prioridad: niveles_completados (más fiable en progresión lineal)
+        // 2. Fallback: current_level string
+        if (gameData.levels_completed != null && gameData.levels_completed.Length > 0)
+        {
+            // El nivel actual es el siguiente al último completado (excluyendo hub_central si existe)
+            int effectiveCompletedCount = 0;
+            foreach (var l in gameData.levels_completed)
+            {
+                if (l != APIConstants.Levels.HUB_CENTRAL) effectiveCompletedCount++;
+            }
+            currentLevel = effectiveCompletedCount + 1;
+            Debug.Log($"[GameManager] Nivel restaurado vía completed_levels: {currentLevel}");
+        }
+        else
+        {
+            // Fallback al mapeo por string current_level
+            currentLevel = LevelMapper.LevelIndexToAPILevel(1) == gameData.current_level ? 1 :
+                           LevelMapper.LevelIndexToAPILevel(2) == gameData.current_level ? 2 :
+                           LevelMapper.LevelIndexToAPILevel(3) == gameData.current_level ? 3 :
+                           LevelMapper.LevelIndexToAPILevel(4) == gameData.current_level ? 4 : 1;
+            Debug.Log($"[GameManager] Nivel restaurado vía current_level string: {currentLevel}");
+        }
 
         // Restaurar reliquias en el inventario
         if (InventoryData.Instance != null && gameData.relics != null)
@@ -420,10 +454,56 @@ public class GameManager : MonoBehaviour
             Debug.Log($"[GameManager] Diario reconstruido desde API: {unlockedCount} entradas desbloqueadas");
         }
 
+        // Asegurar reliquias obligatorias según el nivel de la API
+        EnsureRelicsForCurrentLevel();
+
         // IMPORTANTE: Sincronizar estado local (PlayerPrefs) con lo que acabamos de bajar de la API
         SaveGame();
 
         Debug.Log($"[GameManager] ✓ Estado restaurado y sincronizado localmente: Nivel={currentLevel}, Moral={moralScore}, Reliquias={gameData.relics?.Length ?? 0}");
+    }
+
+    /// <summary>
+    /// Asegura que el jugador tenga las reliquias de los niveles anteriores según el progreso actual.
+    /// Útil para recuperar el inventario si el guardado local o la API no las incluyeron por error.
+    /// Las reliquias se añaden en su orden lógico (Lirio, Hacha, Manto).
+    /// </summary>
+    public void EnsureRelicsForCurrentLevel()
+    {
+        if (InventoryData.Instance == null) return;
+
+        bool hasLirio = InventoryData.Instance.HasItem("lirio") || currentLevel >= 2;
+        bool hasHacha = InventoryData.Instance.HasItem("hacha") || currentLevel >= 3;
+        bool hasManto = InventoryData.Instance.HasItem("manto") || currentLevel >= 4;
+
+        // Comprobar si falta alguna reliquia obligatoria O si el orden es incorrecto
+        // (Nota: el orden se garantiza al reconstruir la lista)
+        bool needsRestore = (currentLevel >= 2 && !InventoryData.Instance.HasItem("lirio")) ||
+                            (currentLevel >= 3 && !InventoryData.Instance.HasItem("hacha")) ||
+                            (currentLevel >= 4 && !InventoryData.Instance.HasItem("manto"));
+
+        if (needsRestore)
+        {
+            Debug.Log("[GameManager] Reconstruyendo inventario para asegurar orden y reliquias obligatorias...");
+            
+            // Reconstruir el inventario en orden
+            InventoryData.Instance.ClearInventory();
+
+            if (hasLirio) {
+                CollectibleItem item = LoadCollectibleItemByID("lirio");
+                if (item != null) InventoryData.Instance.AddItem(item);
+            }
+            if (hasHacha) {
+                CollectibleItem item = LoadCollectibleItemByID("hacha");
+                if (item != null) InventoryData.Instance.AddItem(item);
+            }
+            if (hasManto) {
+                CollectibleItem item = LoadCollectibleItemByID("manto");
+                if (item != null) InventoryData.Instance.AddItem(item);
+            }
+
+            SaveGame();
+        }
     }
 
     /// <summary>

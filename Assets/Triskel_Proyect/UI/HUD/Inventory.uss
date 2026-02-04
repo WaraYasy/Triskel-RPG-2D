@@ -14,7 +14,7 @@
     height: 120px;
     margin-left: 8px;
     margin-right: 8px;
-    background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/inven_slot.png?fileID=2800000&guid=192a8bd1c02a48349b531f6d9bc00160&type=3#inven_slot");
+    background-image: url("project://database/Assets/Triskel_Proyect/Sprites/UI/Elements/Inventary/Colored/inven_slot.png?fileID=2800000&guid=192a8bd1c02a48349b531f6d9bc00160&type=3#inven_slot");
     -unity-background-scale-mode: scale-to-fit;
     background-color: rgba(0, 0, 0, 0);
     border-width: 0;
@@ -22,7 +22,7 @@
 }
 
 .inventory-slot.selected {
-    background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/inven_slot_pressed%201.png?fileID=2800000&guid=4ecaaff05a65b03488104088fdce267a&type=3#inven_slot_pressed 1");
+    background-image: url("project://database/Assets/Triskel_Proyect/Sprites/UI/Elements/Inventary/Colored/inven_slot_pressed%201.png?fileID=2800000&guid=4ecaaff05a65b03488104088fdce267a&type=3#inven_slot_pressed 1");
     scale: 1.1;
     transition-duration: 0.15s;
 }
@@ -36,41 +36,41 @@
 }
 
 .inventory-slot.blue {
-    background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/blue.png?fileID=21300000&guid=1cbb2b68e42c0994e8eb413a9f9e15b8&type=3#blue");
+    background-image: url("project://database/Assets/Triskel_Proyect/Sprites/UI/Elements/Inventary/Colored/blue.png?fileID=21300000&guid=1cbb2b68e42c0994e8eb413a9f9e15b8&type=3#blue");
 }
 
 .inventory-slot.blue.selected {
-    background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/blue_pressed.png?fileID=21300000&guid=3a9177e108afcb6478e2dd52ae720a05&type=3#blue_pressed");
+    background-image: url("project://database/Assets/Triskel_Proyect/Sprites/UI/Elements/Inventary/Colored/blue_pressed.png?fileID=21300000&guid=3a9177e108afcb6478e2dd52ae720a05&type=3#blue_pressed");
     scale: 1.1;
     transition-duration: 0.15s;
 }
 
 .inventory-slot.green {
-    background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/green.png?fileID=21300000&guid=cd694af832bf7c5479802d873d829df8&type=3#green");
+    background-image: url("project://database/Assets/Triskel_Proyect/Sprites/UI/Elements/Inventary/Colored/green.png?fileID=21300000&guid=cd694af832bf7c5479802d873d829df8&type=3#green");
 }
 
 .inventory-slot.green.selected {
-    background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/green_pressed.png?fileID=21300000&guid=56cfc5ee772b8924c95aa168071d470e&type=3#green_pressed");
+    background-image: url("project://database/Assets/Triskel_Proyect/Sprites/UI/Elements/Inventary/Colored/green_pressed.png?fileID=21300000&guid=56cfc5ee772b8924c95aa168071d470e&type=3#green_pressed");
     scale: 1.1;
     transition-duration: 0.15s;
 }
 
 .inventory-slot.red {
-    background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/red.png?fileID=21300000&guid=4ea31fcfb1aeb9845a0eb740ac08f6bb&type=3#red");
+    background-image: url("project://database/Assets/Triskel_Proyect/Sprites/UI/Elements/Inventary/Colored/red.png?fileID=21300000&guid=4ea31fcfb1aeb9845a0eb740ac08f6bb&type=3#red");
 }
 
 .inventory-slot.red.selected {
-    background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/red_pressed.png?fileID=21300000&guid=1312a9f4090fe8f459a458e6d2f75f9b&type=3#red_pressed");
+    background-image: url("project://database/Assets/Triskel_Proyect/Sprites/UI/Elements/Inventary/Colored/red_pressed.png?fileID=21300000&guid=1312a9f4090fe8f459a458e6d2f75f9b&type=3#red_pressed");
     scale: 1.1;
     transition-duration: 0.15s;
 }
 
 .inventory-slot.yellow {
-    background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/yellow.png?fileID=21300000&guid=c60dd7faf10a7154f86ba07a856c0cdf&type=3#yellow");
+    background-image: url("project://database/Assets/Triskel_Proyect/Sprites/UI/Elements/Inventary/Colored/yellow.png?fileID=21300000&guid=c60dd7faf10a7154f86ba07a856c0cdf&type=3#yellow");
 }
 
 .inventory-slot.yellow.selected {
-    background-image: url("project://database/Assets/_Project/Sprites/UI/Elements/Inventary/Colored/yellow_pressed.png?fileID=21300000&guid=7dcabd5328a2fc84b8547b0e21fb6de3&type=3#yellow_pressed");
+    background-image: url("project://database/Assets/Triskel_Proyect/Sprites/UI/Elements/Inventary/Colored/yellow_pressed.png?fileID=21300000&guid=7dcabd5328a2fc84b8547b0e21fb6de3&type=3#yellow_pressed");
     scale: 1.1;
     transition-duration: 0.15s;
 }

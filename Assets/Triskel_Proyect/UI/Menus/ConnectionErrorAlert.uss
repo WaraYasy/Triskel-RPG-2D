@@ -50,7 +50,7 @@
     -unity-font-style: bold;
     margin-bottom: 30px;
     -unity-text-align: middle-center;
-    -unity-font-definition: url("project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
+    -unity-font-definition: url("project://database/Assets/Triskel_Proyect/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
 }
 
 .error-message {
@@ -60,7 +60,7 @@
     -unity-text-align: middle-center;
     white-space: normal;
     max-width: 90%;
-    -unity-font-definition: url("project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
+    -unity-font-definition: url("project://database/Assets/Triskel_Proyect/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
     line-height: 50px;
 }
 
@@ -82,7 +82,7 @@
     margin-left: 15px;
     margin-right: 15px;
     -unity-text-align: middle-center;
-    -unity-font-definition: url("project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
+    -unity-font-definition: url("project://database/Assets/Triskel_Proyect/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
 }
 
 .error-button.primary {

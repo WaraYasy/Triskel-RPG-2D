@@ -26,7 +26,7 @@
     color: rgb(232, 214, 107);
     -unity-text-align: upper-center;
     -unity-font-style: normal;
-    -unity-font-definition: url("project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
+    -unity-font-definition: url("project://database/Assets/Triskel_Proyect/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
@@ -46,7 +46,7 @@
     white-space: normal;
     max-width: 80%;
     padding: 30px;
-    -unity-font-definition: url("project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
+    -unity-font-definition: url("project://database/Assets/Triskel_Proyect/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
 }
 
 .footer-container {
@@ -62,7 +62,7 @@
     color: rgba(200, 200, 200, 0.7);
     -unity-text-align: middle-center;
     -unity-font-style: italic;
-    -unity-font-definition: url("project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
+    -unity-font-definition: url("project://database/Assets/Triskel_Proyect/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
 }
 
 #root {
@@ -87,5 +87,5 @@
     white-space: normal;
     max-width: 80%;
     padding: 30px;
-    -unity-font-definition: url("project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
+    -unity-font-definition: url("project://database/Assets/Triskel_Proyect/Fonts/BoldPixels.ttf?fileID=12800000&guid=89ae0ccf11ce0314bb60394e36bc1305&type=3#BoldPixels");
 }

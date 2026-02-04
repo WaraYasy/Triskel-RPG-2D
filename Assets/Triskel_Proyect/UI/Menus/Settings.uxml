@@ -1,25 +1,25 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
-    <Style src="project://database/Assets/_Project/UI/Menus/Settings.uss?fileID=7433441132597879392&amp;guid=7abaf149cefb65544b7ccbba7f7e09ba&amp;type=3#Settings" />
+    <Style src="project://database/Assets/Triskel_Proyect/UI/Menus/Settings.uss?fileID=7433441132597879392&amp;guid=7abaf149cefb65544b7ccbba7f7e09ba&amp;type=3#Settings" />
     <ui:VisualElement name="SettingsOverlay" class="settings-overlay" style="display: flex; background-image: none; white-space: nowrap; top: 0; left: 0;">
-        <ui:VisualElement name="SettingsPanel" class="settings-panel" style="height: 845px; width: 790px; background-image: url(&quot;project://database/Assets/_Project/Sprites/UI/Common/Backgrounds/bg_box2.png?fileID=2800000&amp;guid=737dc65ba81f06949a890a8d57b33928&amp;type=3#bg_box2&quot;); -unity-background-scale-mode: scale-and-crop;">
-            <ui:Label text="AJUSTES" name="SettingsTitle" class="settings-title" style="-unity-font-definition: url(&quot;project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&amp;guid=89ae0ccf11ce0314bb60394e36bc1305&amp;type=3#BoldPixels&quot;); margin-top: 70px;" />
+        <ui:VisualElement name="SettingsPanel" class="settings-panel" style="height: 845px; width: 790px; background-image: url(&quot;project://database/Assets/Triskel_Proyect/Sprites/UI/Common/Backgrounds/bg_box2.png?fileID=2800000&amp;guid=737dc65ba81f06949a890a8d57b33928&amp;type=3#bg_box2&quot;); -unity-background-scale-mode: scale-and-crop;">
+            <ui:Label text="AJUSTES" name="SettingsTitle" class="settings-title" style="-unity-font-definition: url(&quot;project://database/Assets/Triskel_Proyect/Fonts/BoldPixels.ttf?fileID=12800000&amp;guid=89ae0ccf11ce0314bb60394e36bc1305&amp;type=3#BoldPixels&quot;); margin-top: 70px;" />
             <ui:VisualElement name="MusicSection" class="settings-section">
-                <ui:Label text="Música" name="MusicLabel" class="settings-label" style="-unity-font-definition: url(&quot;project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&amp;guid=89ae0ccf11ce0314bb60394e36bc1305&amp;type=3#BoldPixels&quot;); font-size: 35px;" />
+                <ui:Label text="Música" name="MusicLabel" class="settings-label" style="-unity-font-definition: url(&quot;project://database/Assets/Triskel_Proyect/Fonts/BoldPixels.ttf?fileID=12800000&amp;guid=89ae0ccf11ce0314bb60394e36bc1305&amp;type=3#BoldPixels&quot;); font-size: 35px;" />
                 <ui:Slider name="MusicSlider" low-value="0" high-value="100" value="80" class="settings-slider" />
             </ui:VisualElement>
             <ui:VisualElement name="SFXSection" class="settings-section">
-                <ui:Label text="Sonidos" name="SFXLabel" class="settings-label" style="-unity-font-definition: url(&quot;project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&amp;guid=89ae0ccf11ce0314bb60394e36bc1305&amp;type=3#BoldPixels&quot;); font-size: 35px;" />
+                <ui:Label text="Sonidos" name="SFXLabel" class="settings-label" style="-unity-font-definition: url(&quot;project://database/Assets/Triskel_Proyect/Fonts/BoldPixels.ttf?fileID=12800000&amp;guid=89ae0ccf11ce0314bb60394e36bc1305&amp;type=3#BoldPixels&quot;); font-size: 35px;" />
                 <ui:Slider name="SFXSlider" low-value="0" high-value="100" value="80" class="settings-slider" />
             </ui:VisualElement>
             <ui:VisualElement name="FontTypeSection" class="theme-section" style="background-image: none; background-color: rgb(203, 184, 157);">
-                <ui:Label text="Fuente" name="FontTypeLabel" class="theme-label" style="-unity-font-definition: url(&quot;project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&amp;guid=89ae0ccf11ce0314bb60394e36bc1305&amp;type=3#BoldPixels&quot;);" />
-                <ui:DropdownField name="FontTypeDropdown" index="0" choices="Pixelada,Dislexia" class="font-size-dropdown" style="-unity-font-definition: url(&quot;project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&amp;guid=89ae0ccf11ce0314bb60394e36bc1305&amp;type=3#BoldPixels&quot;); width: 280px; min-width: 280px; font-size: 25px;" />
+                <ui:Label text="Fuente" name="FontTypeLabel" class="theme-label" style="-unity-font-definition: url(&quot;project://database/Assets/Triskel_Proyect/Fonts/BoldPixels.ttf?fileID=12800000&amp;guid=89ae0ccf11ce0314bb60394e36bc1305&amp;type=3#BoldPixels&quot;);" />
+                <ui:DropdownField name="FontTypeDropdown" index="0" choices="Pixelada,Dislexia" class="font-size-dropdown" style="-unity-font-definition: url(&quot;project://database/Assets/Triskel_Proyect/Fonts/BoldPixels.ttf?fileID=12800000&amp;guid=89ae0ccf11ce0314bb60394e36bc1305&amp;type=3#BoldPixels&quot;); width: 280px; min-width: 280px; font-size: 25px;" />
             </ui:VisualElement>
             <ui:VisualElement name="DialogueFontSizeSection" class="theme-section" style="background-image: none; background-color: rgb(203, 184, 157);">
-                <ui:Label text="Tamaño" name="DialogueFontSizeLabel" class="theme-label" style="-unity-font-definition: url(&quot;project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&amp;guid=89ae0ccf11ce0314bb60394e36bc1305&amp;type=3#BoldPixels&quot;);" />
-                <ui:DropdownField name="DialogueFontSizeDropdown" index="0" choices="Normal,Grande" class="font-size-dropdown" style="-unity-font-definition: url(&quot;project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&amp;guid=89ae0ccf11ce0314bb60394e36bc1305&amp;type=3#BoldPixels&quot;); width: 220px; min-width: 220px; font-size: 25px;" />
+                <ui:Label text="Tamaño" name="DialogueFontSizeLabel" class="theme-label" style="-unity-font-definition: url(&quot;project://database/Assets/Triskel_Proyect/Fonts/BoldPixels.ttf?fileID=12800000&amp;guid=89ae0ccf11ce0314bb60394e36bc1305&amp;type=3#BoldPixels&quot;);" />
+                <ui:DropdownField name="DialogueFontSizeDropdown" index="0" choices="Normal,Grande" class="font-size-dropdown" style="-unity-font-definition: url(&quot;project://database/Assets/Triskel_Proyect/Fonts/BoldPixels.ttf?fileID=12800000&amp;guid=89ae0ccf11ce0314bb60394e36bc1305&amp;type=3#BoldPixels&quot;); width: 220px; min-width: 220px; font-size: 25px;" />
             </ui:VisualElement>
-            <ui:Button text="Volver" name="BackButton" class="settings-button" style="font-size: 35px; -unity-font-definition: url(&quot;project://database/Assets/_Project/Fonts/BoldPixels.ttf?fileID=12800000&amp;guid=89ae0ccf11ce0314bb60394e36bc1305&amp;type=3#BoldPixels&quot;); height: 69px; width: 230px;" />
+            <ui:Button text="Volver" name="BackButton" class="settings-button" style="font-size: 35px; -unity-font-definition: url(&quot;project://database/Assets/Triskel_Proyect/Fonts/BoldPixels.ttf?fileID=12800000&amp;guid=89ae0ccf11ce0314bb60394e36bc1305&amp;type=3#BoldPixels&quot;); height: 69px; width: 230px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -54,6 +54,12 @@ namespace Triskel.UI
         {
             uiDocument = GetComponent<UIDocument>();
 
+            // Intentar inicialización inmediata por si acaso
+            if (uiDocument != null && uiDocument.rootVisualElement != null)
+            {
+                InitializeUI();
+            }
+
             // Buscar el botón del diario en los controles móviles (incluso si están inactivos al inicio)
             FindMobileDiaryButton();
         }
@@ -278,7 +284,7 @@ namespace Triskel.UI
         /// </summary>
         private void OnMobileDiaryButtonClicked()
         {
-            Debug.Log("[DiaryUI] Botón móvil del diario presionado");
+            Debug.Log("[DiaryUI] EVENTO: Botón móvil del diario presionado (onClick)");
             TogglePanel();
         }
 
@@ -308,8 +314,15 @@ namespace Triskel.UI
         {
             if (diaryPanel == null)
             {
-                Debug.LogError("[DiaryUI] DiaryPanel es null. No se puede abrir.");
-                return;
+                // Re-intentar inicializar por si el Awake falló o el UIDocument se recargó
+                Debug.LogWarning("[DiaryUI] Panel nulo al intentar abrir. Re-inicializando...");
+                InitializeUI();
+                
+                if (diaryPanel == null)
+                {
+                    Debug.LogError("[DiaryUI] ERROR CRÍTICO: No se puede abrir el diario porque 'DiaryPanel' no existe en el UXML.");
+                    return;
+                }
             }
 
             diaryPanel.style.display = DisplayStyle.Flex;
