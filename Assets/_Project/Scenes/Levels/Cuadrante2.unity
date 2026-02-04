@@ -180877,6 +180877,10 @@ PrefabInstance:
       propertyPath: startNode
       value: Level2_Start
       objectReference: {fileID: 0}
+    - target: {fileID: 7601468624503164915, guid: 25b25b112de0afd49974225a3deb58e2, type: 3}
+      propertyPath: runSelectedOptionAsLine
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8430032995033986544, guid: 25b25b112de0afd49974225a3deb58e2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
