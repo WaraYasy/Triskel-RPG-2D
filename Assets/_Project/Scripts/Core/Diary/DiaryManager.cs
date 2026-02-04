@@ -82,6 +82,12 @@ namespace Triskel.Core
         /// </summary>
         public DiaryEntry GetEntry(string id)
         {
+            // Lazy load safeguard: Si por alguna razón (race condition) no se cargó el JSON, intentar ahora
+            if (entries.Count == 0)
+            {
+                LoadEntriesFromJSON();
+            }
+
             return entries.ContainsKey(id) ? entries[id] : null;
         }
 

@@ -60,21 +60,8 @@ namespace Triskel.UI
 
         private void OnEnable()
         {
-            // Intentar inicializar inmediatamente para evitar que la UI aparezca un segundo (parpadeo)
-            if (!isInitialized)
-            {
-                if (uiDocument == null) uiDocument = GetComponent<UIDocument>();
-
-                if (uiDocument != null && uiDocument.rootVisualElement != null)
-                {
-                    InitializeUI();
-                }
-                else
-                {
-                    // Fallback: Si por alguna razón no está lista, esperar lo mínimo posible
-                    Invoke(nameof(InitializeUI), 0.01f);
-                }
-            }
+            // Iniciar rutina de inicialización robusta
+            StartCoroutine(InitializeUIRoutine());
 
             if (SettingsManager.Instance != null)
             {
@@ -101,13 +88,33 @@ namespace Triskel.UI
             }
         }
 
-        private void InitializeUI()
+        private System.Collections.IEnumerator InitializeUIRoutine()
         {
+            // 1. Esperar a que UIDocument esté listo (especialmente en Android/Scenes load)
+            int safetyCounter = 0;
+            while ((uiDocument == null || uiDocument.rootVisualElement == null) && safetyCounter < 20)
+            {
+                uiDocument = GetComponent<UIDocument>();
+                yield return new WaitForSeconds(0.1f);
+                safetyCounter++;
+            }
+
             if (uiDocument == null || uiDocument.rootVisualElement == null)
             {
-                Debug.LogError("[DiaryUI] UIDocument o rootVisualElement es null.");
-                return;
+                Debug.LogError("[DiaryUI] Timeout: UIDocument no se inicializó correctamente.");
+                yield break;
             }
+
+            // 2. Inicializar UI Toolkit
+            InitializeUI();
+
+            // 3. Buscar botón móvil insistentemente (ya que puede ser spawneado por MobileControlsToggle)
+            StartCoroutine(FindMobileButtonRoutine());
+        }
+
+        private void InitializeUI()
+        {
+            if (isInitialized && uiDocument.rootVisualElement == root) return;
 
             root = uiDocument.rootVisualElement;
 
@@ -122,52 +129,44 @@ namespace Triskel.UI
             nextButton = root.Q<Button>("NextButton");
             scrollIndicator = root.Q<VisualElement>("ScrollIndicator");
 
-            // Validar referencias
+            // Validar referencias críticas
             if (diaryPanel == null)
             {
-                Debug.LogError("[DiaryUI] No se encontró 'DiaryPanel' en el UXML. Verifica el nombre del elemento.");
-                return;
+                 // Intento de recuperación por si el nombre es diferente
+                 diaryPanel = root.Q<VisualElement>("Container"); 
+                 if(diaryPanel == null) Debug.LogError("[DiaryUI] No se encontró 'DiaryPanel' ni 'Container'.");
             }
 
-            // Registrar eventos
             RegisterEvents();
+            ClosePanel(); // Inicialmente oculto
 
-            // Inicialmente oculto
-            ClosePanel();
-
-            isInitialized = true;
             isInitialized = true;
             Debug.Log("[DiaryUI] UI inicializada correctamente.");
             
-            // Aplicar fuente y tamaño inicial
+            // Aplicar configuración inicial
             if (SettingsManager.Instance != null)
             {
                 ApplyFont(SettingsManager.Instance.UseDyslexicFont);
                 ApplyFontSize(SettingsManager.Instance.UseLargeText);
             }
-
         }
 
-        private void Start()
+        private System.Collections.IEnumerator FindMobileButtonRoutine()
         {
-             // Reintentar buscar el botón móvil si no se encontró en Awake
-             if (mobileDiaryButton == null)
-             {
-                 FindMobileDiaryButton();
-             }
-
-             // Retry subscription if it failed in OnEnable (Race Condition fix)
-            if (SettingsManager.Instance != null)
+            // Intentar buscar el botón durante 5 segundos (útil si MobileControlsToggle tarda en instanciarlo)
+            float timeout = 5f;
+            while (mobileDiaryButton == null && timeout > 0)
             {
-                 // Asegurar no suscribirse doble
-                 SettingsManager.Instance.OnFontSizeChanged -= ApplyFontSize;
-                 SettingsManager.Instance.OnFontSizeChanged += ApplyFontSize;
-                 SettingsManager.Instance.OnFontChanged -= ApplyFont;
-                 SettingsManager.Instance.OnFontChanged += ApplyFont;
+                FindMobileDiaryButton();
+                if (mobileDiaryButton != null) break;
+                
+                yield return new WaitForSeconds(0.5f);
+                timeout -= 0.5f;
+            }
 
-                 // Aplicar inicial
-                 ApplyFont(SettingsManager.Instance.UseDyslexicFont);
-                 ApplyFontSize(SettingsManager.Instance.UseLargeText);
+            if (mobileDiaryButton == null && Application.isMobilePlatform)
+            {
+                 Debug.LogWarning("[DiaryUI] Timeout buscando botón móvil del diario.");
             }
         }
 
