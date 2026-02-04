@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89abcf8b1f21af4418214b2a2d361a57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  moveSpeed: 6
   detectionRadius: 3
   stopDistance: 0.7
   damageAmount: 1
@@ -200,6 +200,8 @@ MonoBehaviour:
   fountainDetectionRadius: 7
   separationRadius: 0.7
   separationStrength: 1
+  slowAuraRadius: 3
+  slowdownFactor: 0.15
 --- !u!114 &5410134978316698649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,7 +214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a796631c0d09c94a80d68d64698c7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  liberationDuration: 2.5
+  peacefulDuration: 2.5
+  intenseDuration: 1.2
   ascendHeight: 4
-  liberationColor: {r: 0, g: 1, b: 1, a: 1}
-  useParticles: 0
+  peacefulColor: {r: 0, g: 1, b: 1, a: 1}
+  intenseColor: {r: 1, g: 0, b: 0, a: 1}

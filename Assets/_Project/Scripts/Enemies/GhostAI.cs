@@ -11,7 +11,7 @@ public class GhostAI : MonoBehaviour
 {
     [Header("Configuracion de Movimiento")]
     [SerializeField] private float moveSpeed = 2f;
-    [SerializeField] private float detectionRadius = 8f;
+    [SerializeField] private float detectionRadius = 15f;
     [SerializeField] private float stopDistance = 0.5f;
     
     [Header("Configuracion de Combate")]
