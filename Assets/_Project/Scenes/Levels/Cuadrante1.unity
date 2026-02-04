@@ -443,6 +443,7 @@ MonoBehaviour:
   barrierCollider: {fileID: 0}
   fadeOutDuration: 2
   barrierOpenSound: {fileID: 0}
+  dialogueFog: {fileID: 495432466}
 --- !u!114 &253057477
 MonoBehaviour:
   m_ObjectHideFlags: 0

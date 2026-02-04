@@ -1,8 +1,0 @@
-C:/Users/GaizkaClase/Desktop/Trsikel-RPG-2D/.utmp/RelWithDebInfo/c1i63v6v/arm64-v8a/CMakeFiles/edit_cache.dir
-C:/Users/GaizkaClase/Desktop/Trsikel-RPG-2D/.utmp/RelWithDebInfo/c1i63v6v/arm64-v8a/CMakeFiles/rebuild_cache.dir
-C:/Users/GaizkaClase/Desktop/Trsikel-RPG-2D/.utmp/RelWithDebInfo/c1i63v6v/arm64-v8a/GameActivity/CMakeFiles/game.dir
-C:/Users/GaizkaClase/Desktop/Trsikel-RPG-2D/.utmp/RelWithDebInfo/c1i63v6v/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
-C:/Users/GaizkaClase/Desktop/Trsikel-RPG-2D/.utmp/RelWithDebInfo/c1i63v6v/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
-C:/Users/GaizkaClase/Desktop/Trsikel-RPG-2D/.utmp/RelWithDebInfo/c1i63v6v/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
-C:/Users/GaizkaClase/Desktop/Trsikel-RPG-2D/.utmp/RelWithDebInfo/c1i63v6v/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
-C:/Users/GaizkaClase/Desktop/Trsikel-RPG-2D/.utmp/RelWithDebInfo/c1i63v6v/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir

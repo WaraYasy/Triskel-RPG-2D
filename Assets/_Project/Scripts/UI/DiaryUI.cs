@@ -54,7 +54,7 @@ namespace Triskel.UI
         {
             uiDocument = GetComponent<UIDocument>();
 
-            // Buscar el botón del diario en los controles móviles
+            // Buscar el botón del diario en los controles móviles (incluso si están inactivos al inicio)
             FindMobileDiaryButton();
         }
 
@@ -150,6 +150,12 @@ namespace Triskel.UI
 
         private void Start()
         {
+             // Reintentar buscar el botón móvil si no se encontró en Awake
+             if (mobileDiaryButton == null)
+             {
+                 FindMobileDiaryButton();
+             }
+
              // Retry subscription if it failed in OnEnable (Race Condition fix)
             if (SettingsManager.Instance != null)
             {
@@ -242,8 +248,9 @@ namespace Triskel.UI
         /// </summary>
         private void FindMobileDiaryButton()
         {
-            // Buscar todos los botones en la escena
-            UnityEngine.UI.Button[] allButtons = FindObjectsByType<UnityEngine.UI.Button>(FindObjectsSortMode.None);
+            // Buscar todos los botones en la escena, INCLUYENDO los inactivos
+            // "DiaryButton", "ButtonDiary", "BtnDiary" o similar en su nombre.
+            UnityEngine.UI.Button[] allButtons = FindObjectsByType<UnityEngine.UI.Button>(FindObjectsInactive.Include, FindObjectsSortMode.None);
 
             foreach (var button in allButtons)
             {
@@ -253,13 +260,18 @@ namespace Triskel.UI
                 if (buttonName.Contains("diary") || buttonName.Contains("diario"))
                 {
                     mobileDiaryButton = button;
+                    mobileDiaryButton.onClick.RemoveListener(OnMobileDiaryButtonClicked); // Prevenir duplicados
                     mobileDiaryButton.onClick.AddListener(OnMobileDiaryButtonClicked);
                     Debug.Log($"[DiaryUI] Botón móvil del diario encontrado y conectado: {button.gameObject.name}");
                     return;
                 }
             }
 
-            Debug.LogWarning("[DiaryUI] No se encontró botón de diario en los controles móviles. Asegúrate de que el botón tenga 'Diary' o 'Diario' en su nombre.");
+            // No emitir warning en editor si no estamos emulando móvil, para no saturar la consola
+            if (Application.isMobilePlatform || Debug.isDebugBuild)
+            {
+                Debug.LogWarning("[DiaryUI] No se encontró botón de diario en los controles móviles (buscando 'Diary' o 'Diario').");
+            }
         }
 
         /// <summary>

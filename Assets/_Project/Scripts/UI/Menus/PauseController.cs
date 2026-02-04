@@ -366,6 +366,12 @@ namespace Triskel.UI
         {
             Debug.Log("[PauseController] Abriendo ayuda/controles...");
 
+            // Buscar ControlsDisplayController si no está asignado
+            if (controlsDisplay == null)
+            {
+                controlsDisplay = FindFirstObjectByType<ControlsDisplayController>();
+            }
+
             if (controlsDisplay != null)
             {
                 Hide();
@@ -373,7 +379,7 @@ namespace Triskel.UI
             }
             else
             {
-                Debug.LogWarning("[PauseController] ControlsDisplayController no asignado");
+                Debug.LogWarning("[PauseController] ControlsDisplayController no encontrado en la escena");
             }
         }
 

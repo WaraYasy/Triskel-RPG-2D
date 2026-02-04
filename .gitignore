@@ -140,3 +140,6 @@ iOS/
 PC/
 
 PruebaMovilTriskel/
+
+# Temporary Unity Folders (Mobile/Web builds)
+.utmp
