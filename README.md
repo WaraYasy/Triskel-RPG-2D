@@ -43,7 +43,8 @@ El juego combina:
 
 - **Diálogos Interactivos**: Sistema basado en Yarn Spinner con árboles de decisión
 - **Diario del Jugador**: Entradas narrativas desbloqueables según progreso
-- **Decisiones Morales**: 3 elecciones clave que determinan 4 finales posibles
+- **Sistema de Moral**: Tracking de decisiones que afectan el estado emocional del jugador
+- **Decisiones Morales**: 3 elecciones clave por nivel que determinan múltiples finales
 - **Transiciones Cinemáticas**: Textos narrativos entre niveles
 
 ### ✨ Reliquias Mágicas
@@ -100,13 +101,19 @@ Assets/_Project/
 │   └── Levels/          # 4 niveles jugables
 │
 ├── 📂 Scripts/
-│   ├── Core/            # GameManager, Diary, Inventory, Dialogue
-│   ├── Player/          # Movimiento, salud, reliquias
-│   ├── Enemies/         # IA de enemigos
-│   ├── Boss/            # Sistema de jefes
-│   ├── API/             # Cliente REST y modelos de datos
-│   ├── UI/              # Controladores de interfaces
-│   └── Audio/           # Gestión de música y SFX
+│   ├── Core/
+│   │   ├── GameManager.cs           # Singleton principal
+│   │   ├── SendaEbano/              # Controlador nivel 1
+│   │   ├── GiantFortress/           # Controlador nivel 2 + CursedTree, MalignCrystal
+│   │   ├── AquelarreSombras/        # Controlador nivel 3
+│   │   ├── Dialogue/                # Sistema de diálogos (Yarn Spinner)
+│   │   └── Inventory/               # Sistema de inventario y reliquias
+│   ├── Player/          # Movimiento, salud, dash, reliquias
+│   ├── Enemies/         # IA de enemigos (fantasmas, etc.)
+│   ├── Boss/            # Sistema de jefes con patrones de ataque
+│   ├── API/             # Cliente REST, modelos de datos, tracking
+│   ├── UI/              # Controladores de menús y HUD
+│   └── Audio/           # Gestión de música, SFX y voces
 │
 ├── 📂 Prefabs/          # Objetos reutilizables
 ├── 📂 Audio/            # Música, efectos de sonido y voces
@@ -168,14 +175,17 @@ Assets/_Project/
 ### Flujo del Juego
 
 1. **🔐 Login/Registro** - Crea una cuenta o inicia sesión
-2. **🏠 Hub Central** - Explora y habla con NPCs
+2. **🏠 Hub Central** - Explora y habla con NPCs para obtener contexto
 3. **🗺️ Niveles** - Completa 4 niveles en orden:
-   - Senda del Ébano
-   - Fortaleza de los Gigantes
-   - Aquelarre de las Sombras
-   - Claro de las Almas (Final)
-4. **⚖️ Decisiones** - Toma decisiones morales en cada nivel
-5. **🏆 Final** - Obtén uno de 4 finales según tus elecciones
+   - **Senda del Ébano**: Decide el destino de los fantasmas (liberar vs matar)
+   - **Fortaleza del Gigante**: Elige entre sanar o talar árboles malditos
+   - **Aquelarre de las Sombras**: Activa o no el Altar de la Verdad
+   - **Claro de las Almas** (Final): Enfrenta al jefe final
+4. **⚖️ Sistema de Moral**:
+   - Cada decisión buena aumenta tu moral (+1)
+   - Cada decisión mala disminuye tu moral (-1)
+   - Tu moral total determina el final del juego
+5. **🏆 Finales Múltiples** - Obtén diferentes finales según tus decisiones acumuladas
 
 ---
 
@@ -186,6 +196,38 @@ Orquestador central con persistencia `DontDestroyOnLoad`. Gestiona:
 - Referencias a sistemas principales
 - Carga/guardado de partidas
 - Transiciones entre escenas
+- Sistema de moral global (aumenta/disminuye según decisiones)
+
+### ⚖️ Controladores de Nivel
+
+Cada nivel principal tiene su propio controlador que trackea las decisiones morales del jugador:
+
+#### 🌲 SendaEbanoController (Nivel 1)
+- **Trackea**: Fantasmas liberados vs fantasmas matados
+- **Decisión Moral**:
+  - ✅ BUENA: Liberar más fantasmas → "SANAR"
+  - ❌ MALA: Matar más fantasmas → "FORZAR"
+- **Efecto**: Modifica la moral del jugador según las acciones
+
+#### 🏰 GiantFortressController (Nivel 2)
+- **Trackea**: Árboles malditos sanados vs árboles talados
+- **Decisión Moral**:
+  - ✅ BUENA: Sanar más árboles → "CONSTRUIR"
+  - ❌ MALA: Talar más árboles → "DESTRUIR"
+- **Funcionalidades**:
+  - Controla el estado emocional del gigante (feliz/triste)
+  - Desbloquea el camino tras resolver 2 árboles
+  - Mueve al gigante cuando se completa el puzzle
+- **Finales del nivel**: Bueno, malo o mixto según las acciones
+
+#### 🌙 AquelarreSombrasController (Nivel 3)
+- **Trackea**: Si el Altar de la Verdad fue activado
+- **Decisión Moral**:
+  - ✅ BUENA: Activar el altar → "REVELAR"
+  - ❌ MALA: No activar el altar → "OCULTAR"
+- **Efecto**: Determina si el jugador prefiere la verdad o el secreto
+
+**Nota**: Todos los controladores implementan el método `GetFinalMoralChoice()` que se llama al completar el nivel para registrar la decisión en la API.
 
 ### 📦 Sistema de Inventario
 - Recogida automática de reliquias
@@ -215,6 +257,36 @@ Orquestador central con persistencia `DontDestroyOnLoad`. Gestiona:
 - Tamaño de fuente (Normal/Grande) para accesibilidad
 - Persistencia automática en PlayerPrefs
 
+### ⚖️ Sistema de Moral (Detallado)
+
+El sistema de moral es el núcleo narrativo del juego:
+
+1. **Tracking Local**: Cada controlador de nivel trackea las acciones del jugador
+   ```csharp
+   // Ejemplo: GiantFortressController
+   public void OnTreeHealed() {
+       treesHealed++;
+       GameManager.Instance.ModifyMoral(+1); // Aumenta moral
+   }
+   ```
+
+2. **Determinación de Decisión**: Al completar el nivel, se calcula la decisión final
+   ```csharp
+   public string GetFinalMoralChoice() {
+       return (treesHealed > treesChopped) ? "CONSTRUIR" : "DESTRUIR";
+   }
+   ```
+
+3. **Registro en API**: La decisión se envía al backend para persistencia
+   ```csharp
+   GameplayAPITracker.Instance.RecordMoralDecision(levelName, choice);
+   ```
+
+4. **Moral Global**: El GameManager suma todas las decisiones
+   - Moral alta (decisiones mayormente buenas) → Final bueno
+   - Moral baja (decisiones mayormente malas) → Final malo
+   - Moral mixta → Finales intermedios
+
 ### 🌐 Integración API
 
 #### Flujo de Nueva Partida
@@ -233,7 +305,10 @@ Login (detecta active_game_id) → GetGame() → Restaurar estado → StartSessi
 - Ítems recogidos
 - Interacciones con NPCs
 - Encuentros con jefes
-- Decisiones morales
+- **Decisiones morales** (sanar/forzar, construir/destruir, revelar/ocultar)
+- Tiempo jugado por sesión
+- Árboles sanados/talados, fantasmas liberados/matados
+- Activación del Altar de la Verdad
 
 ---
 
@@ -335,14 +410,19 @@ Ubicación: `C:\Users\Wara\Documents\Ethazi\Api\TriskelApi\docs\`
 - Verifica volumen en menú de Settings
 - Comprueba que los AudioSource tengan `SFXVolumeListener` (para SFX)
 
+### Error: "Script missing or no valid script is attached"
+- Verifica que los GameObjects tengan el controlador correcto asignado
+- Los controladores de nivel deben estar asignados:
+  - `SendaEbanoController` en Nivel 1
+  - `GiantFortressController` en Nivel 2 (Cuadrante2)
+  - `AquelarreSombrasController` en Nivel 3
+
+### Error de compilación con Yarn Spinner
+- Si ves errores de `LinkMarkupHandler`, es un bug del paquete de samples
+- Solución: Eliminar `Library/PackageCache/dev.yarnspinner.unity.samples@*`
+- El paquete principal de Yarn Spinner seguirá funcionando correctamente
+
 ---
-
-## 🤝 Créditos
-
-### Desarrollo
-- [@GaizkaDM](https://github.com/GaizkaDM)
-- [@UnaiZugaza](https://github.com/UnaiZugaza)
-- [@WaraYasy](https://github.com/WaraYasy)
 
 ### Herramientas y Librerías
 - Unity Technologies - Motor Unity
@@ -359,9 +439,14 @@ Ubicación: `C:\Users\Wara\Documents\Ethazi\Api\TriskelApi\docs\`
 
 ---
 
+
 <div align="center">
-
-**Hecho con ❤️ por Madrágora**
-
-
+  <p>
+    <strong>✦ Hecho por Mandrágora ✦</strong>
+  </p>
+  <p>
+    <a href="https://github.com/GaizkaDM">Gaizka</a> •
+    <a href="https://github.com/UnaiZugaza">Unai</a> •
+    <a href="https://github.com/WaraYasy">Wara</a>
+  </p>
 </div>
