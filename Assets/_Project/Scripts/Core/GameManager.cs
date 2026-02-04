@@ -657,7 +657,7 @@ public class GameManager : MonoBehaviour
 
         // 3. Transición al final (Usamos un texto especial de final)
         TransitionManager.TransitionID = "final_" + endingNumber;
-        TransitionManager.SiguienteEscena = "MainMenu"; // O una escena de créditos si existiera
+        TransitionManager.SiguienteEscena = SceneConstants.MAIN_MENU; // Ir al menú principal
 
         Debug.Log($"[GameManager] Final {endingNumber} alcanzado con moral {moralScore}.");
         SceneManager.LoadScene("LevelTransition");

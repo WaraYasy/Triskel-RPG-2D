@@ -28,6 +28,7 @@ namespace Triskel.API
         public const string LEVEL_2 = "Cuadrante2";
         public const string LEVEL_3 = "Cuadrante3";
         public const string LEVEL_4 = "Cuadrante4";
+        public const string MAIN_MENU = "Home";
 
         /// <summary>
         /// Convierte un nivel de la API a su nombre de escena correspondiente en Unity.
