@@ -184,5 +184,22 @@ namespace Triskel.GiantFortress
         public bool IsPuzzleComplete() => isPuzzleComplete;
         public int GetTreesHealed() => treesHealed;
         public int GetTreesChopped() => treesChopped;
+
+        /// <summary>
+        /// Finaliza el nivel y envía los datos a la API.
+        /// Llamar al terminar el nivel.
+        /// </summary>
+        public void CompleteLevel()
+        {
+            Debug.Log("[GiantFortress] Completando nivel explícitamente...");
+            if (GameManager.Instance != null && GameManager.Instance.GetAPITracker() != null)
+            {
+                GameManager.Instance.GetAPITracker().OnLevelComplete();
+            }
+            else
+            {
+                Debug.LogWarning("[GiantFortress] No se pudo completar nivel: GameManager o API Tracker null");
+            }
+        }
     }
 }

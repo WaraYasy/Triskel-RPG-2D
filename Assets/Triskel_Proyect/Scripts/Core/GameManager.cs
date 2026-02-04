@@ -420,7 +420,10 @@ public class GameManager : MonoBehaviour
             Debug.Log($"[GameManager] Diario reconstruido desde API: {unlockedCount} entradas desbloqueadas");
         }
 
-        Debug.Log($"[GameManager] ✓ Estado restaurado: Nivel={currentLevel}, Moral={moralScore}, Reliquias={gameData.relics?.Length ?? 0}");
+        // IMPORTANTE: Sincronizar estado local (PlayerPrefs) con lo que acabamos de bajar de la API
+        SaveGame();
+
+        Debug.Log($"[GameManager] ✓ Estado restaurado y sincronizado localmente: Nivel={currentLevel}, Moral={moralScore}, Reliquias={gameData.relics?.Length ?? 0}");
     }
 
     /// <summary>
@@ -591,23 +594,34 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void OnJugadorMuerto()
     {
-        Debug.Log("[GameManager] Jugador ha muerto. Reiniciando nivel con transición...");
+        Debug.Log("[GameManager] Jugador ha muerto. Reiniciando nivel...");
 
-        // Resetear tracking de nivel (tiempo y muertes del nivel actual)
+        // 1. Resetear tracking de nivel (muertes del nivel actual)
         apiTracker?.ResetLevelTracking();
 
-        // Eliminar la reliquia del nivel actual (se pierde al morir)
+        // 2. IMPORTANTE: Restaurar moral al estado del inicio del nivel (último guardado local)
+        // para evitar que se dupliquen puntos al repetir acciones tras morir.
+        LoadFromLocal();
+
+        // 3. Eliminar la reliquia del nivel actual (se pierde al morir)
         RemoveCurrentLevelRelic();
 
-        // Determinar el nivel actual
+        // 4. Guardar este estado (sin reliquia y con moral restaurada)
+        SaveGame();
+
+        // 5. Determinar escena actual y notificar REINICIO a la API para ajustar tiempos
         string escenaActual = SceneManager.GetActiveScene().name;
+        string apiLevel = LevelMapper.SceneToAPILevel(escenaActual);
+        if (!string.IsNullOrEmpty(apiLevel))
+        {
+            // Iniciamos el tracking otra vez para que la API tenga un nuevo timestamp
+            apiTracker?.OnLevelStart(apiLevel);
+        }
 
-        // Determinar qué texto de muerte mostrar
+        // 6. Configurar y cargar transición de muerte
         string transitionID = ObtenerIDMuerte(escenaActual);
-
-        // Reiniciar el mismo nivel
         TransitionManager.TransitionID = transitionID;
-        TransitionManager.SiguienteEscena = escenaActual; // Misma escena (reiniciar)
+        TransitionManager.SiguienteEscena = escenaActual; // Reiniciar escena
 
         SceneManager.LoadScene("LevelTransition");
     }

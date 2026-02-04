@@ -167,7 +167,21 @@ namespace Triskel.Core
                 }
                 else
                 {
-                    Debug.LogError($"[InventoryPersistence] No se encontró item con ID '{id}' en availableItems.");
+                    // Fallback: Intentar cargar desde Resources si no está en availableItems
+                    Debug.LogWarning($"[InventoryPersistence] ID '{id}' no encontrado en availableItems. Buscando en Resources...");
+                    
+                    string capitalizedID = char.ToUpper(id[0]) + id.Substring(1).ToLower();
+                    item = Resources.Load<CollectibleItem>($"Items/{capitalizedID}");
+                    
+                    if (item != null)
+                    {
+                        InventoryData.Instance.AddItem(item);
+                        Debug.Log($"[InventoryPersistence] ✓ Item cargado desde Resources: {item.displayName}");
+                    }
+                    else
+                    {
+                        Debug.LogError($"[InventoryPersistence] No se encontró item con ID '{id}' ni en dictionary ni en Resources.");
+                    }
                 }
             }
         }

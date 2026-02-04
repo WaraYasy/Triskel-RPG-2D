@@ -102,4 +102,21 @@ public class SendaEbanoController : MonoBehaviour
 
     public int GetGhostsLiberated() => ghostsLiberated;
     public int GetGhostsKilled() => ghostsKilled;
+
+    /// <summary>
+    /// Finaliza el nivel y envía los datos a la API.
+    /// Llamar al terminar el nivel (ej: al llegar a la salida).
+    /// </summary>
+    public void CompleteLevel()
+    {
+        Debug.Log("[SendaEbano] Completando nivel explícitamente...");
+        if (GameManager.Instance != null && GameManager.Instance.GetAPITracker() != null)
+        {
+            GameManager.Instance.GetAPITracker().OnLevelComplete();
+        }
+        else
+        {
+            Debug.LogWarning("[SendaEbano] No se pudo completar nivel: GameManager o API Tracker null");
+        }
+    }
 }
